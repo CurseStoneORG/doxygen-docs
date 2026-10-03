@@ -1,4 +1,4 @@
-# atomik-docs
-The all docs oficial of Atomik Server Software 
+# cursestone-docs
+The all docs oficial of CurseStone Server Software 
 
 - Changelogs and more docs
