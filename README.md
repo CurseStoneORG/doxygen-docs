@@ -144,5 +144,7 @@ serves the result. Still open for the maintainer:
   under a `/cursestone-docs/` subpath.
 
 **Status: verified.** Pages is enabled and built, `main` holds the generated
-Doxygen HTML under `api/`, and the root redirect plus `/api/` have been checked in
-a browser after the change above was pushed.
+Doxygen HTML under `api/`, and after the change above was pushed the deployment
+for that commit reported `built` and both `https://cursestoneteam.github.io/`
+(the redirect) and `https://cursestoneteam.github.io/api/` answered HTTP 200 with
+the expected content.
