@@ -108,67 +108,48 @@ $(document).ready(function(){initNavTree('MemoryManager_8h_source.html',''); ini
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// MemoryManager — THE single global GarbageCollector for the whole</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// server. There must be exactly ONE instance (Meyers singleton) and it</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// is the only place that decides when memory is reclaimed.</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Why one global GC: the codebase used to have several scattered</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// reclaimers (Server::tick&#39;s chunk-unload sweep, World::tick&#39;s</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// dropped-item sweep, Player::onUpdate&#39;s used_chunks_ cleanup, tile</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// eviction) running on their own schedules. Independent schedules mean</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// the world state players interact with (dropped items, open chests,</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// loaded chunks) can disappear in the middle of a player action — the</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// classic cause of pickup/inventory desyncs. Everything now funnels</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// through collect(): the per-subsystem sweeps keep their cheap local</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// bookkeeping, but any SWEEP THAT TOUCHES SHARED WORLD STATE only runs</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// when the global GC authorizes it, on a single coordinated schedule.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>cursestone {</div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classcursestone_1_1MemoryManager.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1MemoryManager.html">MemoryManager</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1MemoryManager.html">MemoryManager</a>&amp; get();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Config (from cursestone.yml).</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> setLimitMB(<span class="keywordtype">int</span> mb) { limit_mb_ = mb; }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> limitMB()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> limit_mb_; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Interval between global GC passes, in ticks (20 TPS =&gt; 10s).</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> setGcIntervalTicks(uint64_t t) { gc_interval_ticks_ = t; }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    uint64_t gcIntervalTicks()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> gc_interval_ticks_; }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Process RSS, as reported by /proc (0 when unavailable).</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    int64_t currentUsageKB() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// True when RSS exceeds the configured budget. Cheap enough to be</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// polled; the decision to actually collect is made in collect().</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> shouldGc() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// THE GC entry point — everything else must call this.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// &quot;force&quot; runs the full sweep immediately (shutdown, /save, tests);</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// otherwise the pass is rate-limited by gc_interval_ticks_ so the</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// world can never be swept mid-tick by several unrelated callers.</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Runs on the main thread only (all world registries are main-thread</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// or guarded there).</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> collect(<span class="keywordtype">bool</span> force = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Legacy name kept for compatibility with existing call sites.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> runGc() { collect(<span class="keyword">true</span>); }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Diagnostics.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    uint64_t collectCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> collects_.load(std::memory_order_relaxed); }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    uint64_t lastCollectTick()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> last_collect_tick_.load(std::memory_order_relaxed); }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classcursestone_1_1MemoryManager.html">MemoryManager</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">int</span> limit_mb_ = 512;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    uint64_t gc_interval_ticks_ = 200;  <span class="comment">// 10s at 20 TPS</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::atomic&lt;uint64_t&gt; last_collect_tick_{0};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::atomic&lt;uint64_t&gt; collects_{0};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;};</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="ttc" id="aclasscursestone_1_1MemoryManager_html"><div class="ttname"><a href="classcursestone_1_1MemoryManager.html">cursestone::MemoryManager</a></div><div class="ttdef"><b>Definition:</b> MemoryManager.h:41</div></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;atomic&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classcursestone_1_1MemoryManager.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1MemoryManager.html">MemoryManager</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1MemoryManager.html">MemoryManager</a>&amp; get();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Config (from cursestone.yml).</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> setLimitMB(<span class="keywordtype">int</span> mb) { limit_mb_ = mb; }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> limitMB()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> limit_mb_; }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Interval between global GC passes, in ticks (20 TPS =&gt; 10s).</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> setGcIntervalTicks(uint64_t t) { gc_interval_ticks_ = t; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    uint64_t gcIntervalTicks()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> gc_interval_ticks_; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    int64_t <a class="code" href="classcursestone_1_1MemoryManager.html#aa06ee7311b760fedcda882fe58052bbc">currentUsageKB</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcursestone_1_1MemoryManager.html#a9a471ab2707ed6b00145f47be6a3d334">shouldGc</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99">collect</a>(<span class="keywordtype">bool</span> force = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8">   96</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8">runGc</a>() { <a class="code" href="classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99">collect</a>(<span class="keyword">true</span>); }</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// Diagnostics.</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    uint64_t collectCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> collects_.load(std::memory_order_relaxed); }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    uint64_t lastCollectTick()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> last_collect_tick_.load(std::memory_order_relaxed); }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    MemoryManager() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> limit_mb_ = 512;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    uint64_t gc_interval_ticks_ = 200;  <span class="comment">// 10s at 20 TPS</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::atomic&lt;uint64_t&gt; last_collect_tick_{0};</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    std::atomic&lt;uint64_t&gt; collects_{0};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="ttc" id="aclasscursestone_1_1MemoryManager_html"><div class="ttname"><a href="classcursestone_1_1MemoryManager.html">cursestone::MemoryManager</a></div><div class="ttdef"><b>Definition:</b> MemoryManager.h:45</div></div>
+<div class="ttc" id="aclasscursestone_1_1MemoryManager_html_a55ee0d4272c1a644342045ba962bab99"><div class="ttname"><a href="classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99">cursestone::MemoryManager::collect</a></div><div class="ttdeci">void collect(bool force=false)</div><div class="ttdoc">Runs one coordinated global collection pass.</div><div class="ttdef"><b>Definition:</b> MemoryManager.cpp:69</div></div>
+<div class="ttc" id="aclasscursestone_1_1MemoryManager_html_a9a471ab2707ed6b00145f47be6a3d334"><div class="ttname"><a href="classcursestone_1_1MemoryManager.html#a9a471ab2707ed6b00145f47be6a3d334">cursestone::MemoryManager::shouldGc</a></div><div class="ttdeci">bool shouldGc() const</div><div class="ttdoc">Reports whether RSS exceeds the configured budget.</div><div class="ttdef"><b>Definition:</b> MemoryManager.cpp:61</div></div>
+<div class="ttc" id="aclasscursestone_1_1MemoryManager_html_aa06ee7311b760fedcda882fe58052bbc"><div class="ttname"><a href="classcursestone_1_1MemoryManager.html#aa06ee7311b760fedcda882fe58052bbc">cursestone::MemoryManager::currentUsageKB</a></div><div class="ttdeci">int64_t currentUsageKB() const</div><div class="ttdoc">Reads the process resident set size (RSS).</div><div class="ttdef"><b>Definition:</b> MemoryManager.cpp:45</div></div>
+<div class="ttc" id="aclasscursestone_1_1MemoryManager_html_abe6056f1dc8807e76032c33c90b00ee8"><div class="ttname"><a href="classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8">cursestone::MemoryManager::runGc</a></div><div class="ttdeci">void runGc()</div><div class="ttdoc">Runs a forced collection pass (legacy alias for collect(true)).</div><div class="ttdef"><b>Definition:</b> MemoryManager.h:96</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

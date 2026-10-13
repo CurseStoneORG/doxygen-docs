@@ -109,99 +109,82 @@ $(document).ready(function(){initNavTree('AsyncMainLogger_8h_source.html',''); i
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// AsyncMainLogger.h — async logger with background pthread worker.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Mirrors Nukkit&#39;s MainLogger pattern:</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   - info()/warn()/error() only push to a ring buffer + signal condvar</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   - A background pthread does the actual I/O (format, color, fputs)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   - Batch writes in 4KB blocks, force-flush every 25 seconds</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// The struct has `mcp_logger_t vtable` as its first field, so it&#39;s</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// layout-compatible with `mcp_main_logger_t*` — the C++ wrapper</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// `utils::MainLogger::get()` works without changes.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Thread model:</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//   Producer (tick thread):  lock → push entry → signal → unlock</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   Consumer (worker thread): lock → wait(cond, 25s) → drain → unlock → I/O</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// When the ring is full, the entry is dropped and `dropped_count` is</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// incremented. On the next drain, &quot;[LOG DROPPED xN]&quot; is emitted first.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;../utils/Logger.h&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// Ring buffer dimensions.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define ASYNC_LOG_RING_SIZE  8192   </span><span class="comment">// entries</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define ASYNC_LOG_LINE_MAX   1024   </span><span class="comment">// max chars per raw message</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define ASYNC_LOG_BATCH_SIZE 4096   </span><span class="comment">// batch write block size</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define ASYNC_LOG_FLUSH_MS   25000  </span><span class="comment">// force flush interval (25 s)</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// One entry in the ring buffer.</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="structasync__log__entry__t.html">   60</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">char</span>            text[ASYNC_LOG_LINE_MAX];  <span class="comment">// raw message (no timestamp)</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    mcp_log_level_t level;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    uint16_t        len;                        <span class="comment">// strlen(text)</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <a class="code" href="structasync__log__entry__t.html">async_log_entry_t</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// The async logger singleton. First field is the vtable so that</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// `&amp;g_async.vtable` is the same pointer as `(mcp_logger_t*)&amp;g_async`.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="structmcp__async__logger.html">   68</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__async__logger.html">mcp_async_logger</a> {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="structmcp__logger.html">mcp_logger_t</a>    vtable;                     <span class="comment">// must be first</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Ring buffer (single-producer-safe via mutex, but head/tail are</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// also volatile for the worker&#39;s lock-free peek).</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="structasync__log__entry__t.html">async_log_entry_t</a> ring[ASYNC_LOG_RING_SIZE];</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">volatile</span> uint32_t head;                     <span class="comment">// next write slot</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">volatile</span> uint32_t tail;                     <span class="comment">// next read slot</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">volatile</span> uint32_t count;                    <span class="comment">// entries in ring</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Synchronization.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    pthread_mutex_t mtx;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    pthread_cond_t  cond;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    pthread_t       worker;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span>            worker_started;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// I/O targets.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    FILE*           log_file;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span>            colored;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Lifecycle.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span>   running;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span>   shutdown_requested;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Stats.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">volatile</span> uint64_t dropped_count;             <span class="comment">// entries dropped (ring full)</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <a class="code" href="structmcp__async__logger.html">mcp_async_logger_t</a>;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// Initialize the async logger singleton. `log_path` may be NULL to</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// skip file logging. Spawns the worker thread.</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> mcp_main_logger_async_init(<span class="keyword">const</span> <span class="keywordtype">char</span>* log_path, <span class="keywordtype">bool</span> colored);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// Shutdown: signals the worker, waits for it to drain + join.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// Call once at process exit (after the tick loop has stopped).</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keywordtype">void</span> mcp_main_logger_async_destroy(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">// Get the singleton instance. The vtable is at offset 0, so this</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// pointer can be cast to `mcp_logger_t*` directly.</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<a class="code" href="structmcp__async__logger.html">mcp_async_logger_t</a>* mcp_async_logger_get_instance(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">// Check if the async logger has been initialized.</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="keywordtype">bool</span> mcp_async_logger_is_initialized(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astructasync__log__entry__t_html"><div class="ttname"><a href="structasync__log__entry__t.html">async_log_entry_t</a></div><div class="ttdef"><b>Definition:</b> AsyncMainLogger.h:60</div></div>
-<div class="ttc" id="astructmcp__async__logger_html"><div class="ttname"><a href="structmcp__async__logger.html">mcp_async_logger</a></div><div class="ttdef"><b>Definition:</b> AsyncMainLogger.h:68</div></div>
-<div class="ttc" id="astructmcp__logger_html"><div class="ttname"><a href="structmcp__logger.html">mcp_logger</a></div><div class="ttdef"><b>Definition:</b> Logger.h:45</div></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;../utils/Logger.h&quot;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// Ring buffer dimensions.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#define ASYNC_LOG_RING_SIZE  8192   </span><span class="comment">// entries</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define ASYNC_LOG_LINE_MAX   1024   </span><span class="comment">// max chars per raw message</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define ASYNC_LOG_BATCH_SIZE 4096   </span><span class="comment">// batch write block size</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#define ASYNC_LOG_FLUSH_MS   25000  </span><span class="comment">// force flush interval (25 s)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// One entry in the ring buffer.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="structasync__log__entry__t.html">   62</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">char</span>            text[ASYNC_LOG_LINE_MAX];  <span class="comment">// raw message (no timestamp)</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    mcp_log_level_t level;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    uint16_t        len;                        <span class="comment">// strlen(text)</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <a class="code" href="structasync__log__entry__t.html">async_log_entry_t</a>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// The async logger singleton. First field is the vtable so that</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// `&amp;g_async.vtable` is the same pointer as `(mcp_logger_t*)&amp;g_async`.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structmcp__async__logger.html">   70</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__async__logger.html">mcp_async_logger</a> {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="structmcp__logger.html">mcp_logger_t</a>    vtable;                     <span class="comment">// must be first</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// Ring buffer (single-producer-safe via mutex, but head/tail are</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// also volatile for the worker&#39;s lock-free peek).</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="structasync__log__entry__t.html">async_log_entry_t</a> ring[ASYNC_LOG_RING_SIZE];</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">volatile</span> uint32_t head;                     <span class="comment">// next write slot</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">volatile</span> uint32_t tail;                     <span class="comment">// next read slot</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">volatile</span> uint32_t count;                    <span class="comment">// entries in ring</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Synchronization.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    pthread_mutex_t mtx;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    pthread_cond_t  cond;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    pthread_t       worker;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span>            worker_started;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// I/O targets.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    FILE*           log_file;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span>            colored;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Lifecycle.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span>   running;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span>   shutdown_requested;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// Stats.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">volatile</span> uint64_t dropped_count;             <span class="comment">// entries dropped (ring full)</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <a class="code" href="structmcp__async__logger.html">mcp_async_logger_t</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// Initialize the async logger singleton. `log_path` may be NULL to</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// skip file logging. Spawns the worker thread.</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">void</span> mcp_main_logger_async_init(<span class="keyword">const</span> <span class="keywordtype">char</span>* log_path, <span class="keywordtype">bool</span> colored);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// Shutdown: signals the worker, waits for it to drain + join.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">// Call once at process exit (after the tick loop has stopped).</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span> mcp_main_logger_async_destroy(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// Get the singleton instance. The vtable is at offset 0, so this</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// pointer can be cast to `mcp_logger_t*` directly.</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<a class="code" href="structmcp__async__logger.html">mcp_async_logger_t</a>* mcp_async_logger_get_instance(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">// Check if the async logger has been initialized.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">bool</span> mcp_async_logger_is_initialized(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="astructasync__log__entry__t_html"><div class="ttname"><a href="structasync__log__entry__t.html">async_log_entry_t</a></div><div class="ttdef"><b>Definition:</b> AsyncMainLogger.h:62</div></div>
+<div class="ttc" id="astructmcp__async__logger_html"><div class="ttname"><a href="structmcp__async__logger.html">mcp_async_logger</a></div><div class="ttdef"><b>Definition:</b> AsyncMainLogger.h:70</div></div>
+<div class="ttc" id="astructmcp__logger_html"><div class="ttname"><a href="structmcp__logger.html">mcp_logger</a></div><div class="ttdef"><b>Definition:</b> Logger.h:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

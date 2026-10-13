@@ -105,17 +105,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setGcIntervalTicks</b
 <tr class="memitem:a3d938f950ed6cf050994288229514dcf"><td class="memItemLeft" align="right" valign="top"><a id="a3d938f950ed6cf050994288229514dcf"></a>
 uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>gcIntervalTicks</b> () const</td></tr>
 <tr class="separator:a3d938f950ed6cf050994288229514dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa06ee7311b760fedcda882fe58052bbc"><td class="memItemLeft" align="right" valign="top"><a id="aa06ee7311b760fedcda882fe58052bbc"></a>
-int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>currentUsageKB</b> () const</td></tr>
+<tr class="memitem:aa06ee7311b760fedcda882fe58052bbc"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1MemoryManager.html#aa06ee7311b760fedcda882fe58052bbc">currentUsageKB</a> () const</td></tr>
+<tr class="memdesc:aa06ee7311b760fedcda882fe58052bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads the process resident set size (RSS).  <a href="classcursestone_1_1MemoryManager.html#aa06ee7311b760fedcda882fe58052bbc">More...</a><br /></td></tr>
 <tr class="separator:aa06ee7311b760fedcda882fe58052bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a471ab2707ed6b00145f47be6a3d334"><td class="memItemLeft" align="right" valign="top"><a id="a9a471ab2707ed6b00145f47be6a3d334"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>shouldGc</b> () const</td></tr>
+<tr class="memitem:a9a471ab2707ed6b00145f47be6a3d334"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1MemoryManager.html#a9a471ab2707ed6b00145f47be6a3d334">shouldGc</a> () const</td></tr>
+<tr class="memdesc:a9a471ab2707ed6b00145f47be6a3d334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports whether RSS exceeds the configured budget.  <a href="classcursestone_1_1MemoryManager.html#a9a471ab2707ed6b00145f47be6a3d334">More...</a><br /></td></tr>
 <tr class="separator:a9a471ab2707ed6b00145f47be6a3d334"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55ee0d4272c1a644342045ba962bab99"><td class="memItemLeft" align="right" valign="top"><a id="a55ee0d4272c1a644342045ba962bab99"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>collect</b> (bool force=false)</td></tr>
+<tr class="memitem:a55ee0d4272c1a644342045ba962bab99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99">collect</a> (bool force=false)</td></tr>
+<tr class="memdesc:a55ee0d4272c1a644342045ba962bab99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs one coordinated global collection pass.  <a href="classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99">More...</a><br /></td></tr>
 <tr class="separator:a55ee0d4272c1a644342045ba962bab99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe6056f1dc8807e76032c33c90b00ee8"><td class="memItemLeft" align="right" valign="top"><a id="abe6056f1dc8807e76032c33c90b00ee8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>runGc</b> ()</td></tr>
+<tr class="memitem:abe6056f1dc8807e76032c33c90b00ee8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8">runGc</a> ()</td></tr>
+<tr class="memdesc:abe6056f1dc8807e76032c33c90b00ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs a forced collection pass (legacy alias for collect(true)).  <a href="classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8">More...</a><br /></td></tr>
 <tr class="separator:abe6056f1dc8807e76032c33c90b00ee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa7bf0122101ac4cb54b05d60900b5e9"><td class="memItemLeft" align="right" valign="top"><a id="afa7bf0122101ac4cb54b05d60900b5e9"></a>
 uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>collectCount</b> () const</td></tr>
@@ -130,6 +130,104 @@ Static Public Member Functions</h2></td></tr>
 static <a class="el" href="classcursestone_1_1MemoryManager.html">MemoryManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> ()</td></tr>
 <tr class="separator:a30690c6a031cf4f5deefdda1a5abe71a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a55ee0d4272c1a644342045ba962bab99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ee0d4272c1a644342045ba962bab99">&#9670;&nbsp;</a></span>collect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cursestone::MemoryManager::collect </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>force</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Runs one coordinated global collection pass. </p>
+<p>Everything else must call this. "force" runs the full sweep immediately (shutdown, /save, tests); otherwise the pass is rate-limited by gc_interval_ticks_ so the world can never be swept mid-tick by several unrelated callers. Runs on the main thread only (all world registries are main-thread or guarded there).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">force</td><td>bypass the interval gate but never the single-entry exclusivity of a pass. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa06ee7311b760fedcda882fe58052bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa06ee7311b760fedcda882fe58052bbc">&#9670;&nbsp;</a></span>currentUsageKB()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t cursestone::MemoryManager::currentUsageKB </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads the process resident set size (RSS). </p>
+<p>Reads VmRSS from /proc/self/status on Linux; returns 0 when the value is unavailable (other platforms).</p>
+<dl class="section return"><dt>Returns</dt><dd>RSS in kB, or 0 when unavailable. </dd></dl>
+
+</div>
+</div>
+<a id="abe6056f1dc8807e76032c33c90b00ee8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe6056f1dc8807e76032c33c90b00ee8">&#9670;&nbsp;</a></span>runGc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cursestone::MemoryManager::runGc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Runs a forced collection pass (legacy alias for collect(true)). </p>
+<p>Name kept for compatibility with existing call sites. </p>
+
+</div>
+</div>
+<a id="a9a471ab2707ed6b00145f47be6a3d334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a471ab2707ed6b00145f47be6a3d334">&#9670;&nbsp;</a></span>shouldGc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cursestone::MemoryManager::shouldGc </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reports whether RSS exceeds the configured budget. </p>
+<p>Cheap enough to be polled; the decision to actually collect is made by <a class="el" href="classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99" title="Runs one coordinated global collection pass.">collect()</a>. A non-positive limit disables the check.</p>
+<dl class="section return"><dt>Returns</dt><dd>true when the budget is exceeded and collection may run. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="MemoryManager_8h_source.html">MemoryManager.h</a></li>
 <li>src/MemoryManager.cpp</li>
@@ -139,7 +237,7 @@ static <a class="el" href="classcursestone_1_1MemoryManager.html">MemoryManager<
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>cursestone</b></li><li class="navelem"><a class="el" href="classcursestone_1_1MemoryManager.html">MemoryManager</a></li>
+    <li class="navelem"><a class="el" href="namespacecursestone.html">cursestone</a></li><li class="navelem"><a class="el" href="classcursestone_1_1MemoryManager.html">MemoryManager</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

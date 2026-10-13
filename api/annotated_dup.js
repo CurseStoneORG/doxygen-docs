@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "cursestone", null, [
+    [ "cursestone", "namespacecursestone.html", [
       [ "block", null, [
         [ "Block", "classcursestone_1_1block_1_1Block.html", "classcursestone_1_1block_1_1Block" ],
         [ "BlockAir", "classcursestone_1_1block_1_1BlockAir.html", "classcursestone_1_1block_1_1BlockAir" ],
@@ -579,7 +579,7 @@ var annotated_dup =
         [ "TileSign", "classcursestone_1_1tile_1_1TileSign.html", "classcursestone_1_1tile_1_1TileSign" ],
         [ "TileSpawner", "classcursestone_1_1tile_1_1TileSpawner.html", "classcursestone_1_1tile_1_1TileSpawner" ]
       ] ],
-      [ "utils", null, [
+      [ "utils", "namespacecursestone_1_1utils.html", [
         [ "BlockIterator", "classcursestone_1_1utils_1_1BlockIterator.html", "classcursestone_1_1utils_1_1BlockIterator" ],
         [ "Config", "classcursestone_1_1utils_1_1Config.html", "classcursestone_1_1utils_1_1Config" ],
         [ "MainLogger", "classcursestone_1_1utils_1_1MainLogger.html", "classcursestone_1_1utils_1_1MainLogger" ],
