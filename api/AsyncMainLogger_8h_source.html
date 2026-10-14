@@ -112,9 +112,9 @@ $(document).ready(function(){initNavTree('AsyncMainLogger_8h_source.html',''); i
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment"></span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &quot;../utils/Logger.h&quot;</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;../utils/ThreadPort.h&quot;</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
@@ -146,45 +146,49 @@ $(document).ready(function(){initNavTree('AsyncMainLogger_8h_source.html',''); i
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">volatile</span> uint32_t tail;                     <span class="comment">// next read slot</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">volatile</span> uint32_t count;                    <span class="comment">// entries in ring</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Synchronization.</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    pthread_mutex_t mtx;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    pthread_cond_t  cond;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    pthread_t       worker;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span>            worker_started;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// I/O targets.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    FILE*           log_file;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span>            colored;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Lifecycle.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span>   running;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span>   shutdown_requested;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// Stats.</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">volatile</span> uint64_t dropped_count;             <span class="comment">// entries dropped (ring full)</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <a class="code" href="structmcp__async__logger.html">mcp_async_logger_t</a>;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// Initialize the async logger singleton. `log_path` may be NULL to</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// skip file logging. Spawns the worker thread.</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="keywordtype">void</span> mcp_main_logger_async_init(<span class="keyword">const</span> <span class="keywordtype">char</span>* log_path, <span class="keywordtype">bool</span> colored);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// Shutdown: signals the worker, waits for it to drain + join.</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">// Call once at process exit (after the tick loop has stopped).</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span> mcp_main_logger_async_destroy(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">// Get the singleton instance. The vtable is at offset 0, so this</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// pointer can be cast to `mcp_logger_t*` directly.</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<a class="code" href="structmcp__async__logger.html">mcp_async_logger_t</a>* mcp_async_logger_get_instance(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">// Check if the async logger has been initialized.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">bool</span> mcp_async_logger_is_initialized(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Synchronization (portable layer: pthreads on POSIX, Win32 on</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Windows — see src/utils/ThreadPort.h).</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="structmcp__mutex.html">mcp_mutex_t</a>  mtx;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="structmcp__cond.html">mcp_cond_t</a>   cond;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="structmcp__thread.html">mcp_thread_t</a> worker;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span>         worker_started;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// I/O targets.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    FILE*           log_file;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">bool</span>            colored;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Lifecycle.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span>   running;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">volatile</span> <span class="keywordtype">bool</span>   shutdown_requested;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Stats.</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">volatile</span> uint64_t dropped_count;             <span class="comment">// entries dropped (ring full)</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <a class="code" href="structmcp__async__logger.html">mcp_async_logger_t</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// Initialize the async logger singleton. `log_path` may be NULL to</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// skip file logging. Spawns the worker thread.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> mcp_main_logger_async_init(<span class="keyword">const</span> <span class="keywordtype">char</span>* log_path, <span class="keywordtype">bool</span> colored);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">// Shutdown: signals the worker, waits for it to drain + join.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">// Call once at process exit (after the tick loop has stopped).</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> mcp_main_logger_async_destroy(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// Get the singleton instance. The vtable is at offset 0, so this</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">// pointer can be cast to `mcp_logger_t*` directly.</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<a class="code" href="structmcp__async__logger.html">mcp_async_logger_t</a>* mcp_async_logger_get_instance(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// Check if the async logger has been initialized.</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keywordtype">bool</span> mcp_async_logger_is_initialized(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructasync__log__entry__t_html"><div class="ttname"><a href="structasync__log__entry__t.html">async_log_entry_t</a></div><div class="ttdef"><b>Definition:</b> AsyncMainLogger.h:62</div></div>
 <div class="ttc" id="astructmcp__async__logger_html"><div class="ttname"><a href="structmcp__async__logger.html">mcp_async_logger</a></div><div class="ttdef"><b>Definition:</b> AsyncMainLogger.h:70</div></div>
+<div class="ttc" id="astructmcp__cond_html"><div class="ttname"><a href="structmcp__cond.html">mcp_cond</a></div><div class="ttdoc">Condition variable paired with one mcp_mutex_t.</div><div class="ttdef"><b>Definition:</b> ThreadPort.h:74</div></div>
 <div class="ttc" id="astructmcp__logger_html"><div class="ttname"><a href="structmcp__logger.html">mcp_logger</a></div><div class="ttdef"><b>Definition:</b> Logger.h:49</div></div>
+<div class="ttc" id="astructmcp__mutex_html"><div class="ttname"><a href="structmcp__mutex.html">mcp_mutex</a></div><div class="ttdoc">Recursive-usage-safe mutual exclusion lock.</div><div class="ttdef"><b>Definition:</b> ThreadPort.h:65</div></div>
+<div class="ttc" id="astructmcp__thread_html"><div class="ttname"><a href="structmcp__thread.html">mcp_thread</a></div><div class="ttdoc">Handle of a running thread, created by mcp_thread_start().</div><div class="ttdef"><b>Definition:</b> ThreadPort.h:83</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

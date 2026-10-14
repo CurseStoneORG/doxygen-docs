@@ -93,43 +93,50 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ]
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
+        [ "Macros", "globals_defs.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"ACK_8h_source.html",
-"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a6adc065e0e1371a047110539908614cd",
-"ChunkPopulateEvent_8h_source.html",
-"Info_8h.html#a0fcd5ee2613322608f188e1af4bfa426",
-"ItemConstants_8h.html#a68cfb0146b496c29bececdfedf2cf55b",
-"ItemConstants_8h.html#afa31ef19ce5728daf4697328f4df2a94",
-"Normal_8h_source.html",
-"TerrainShape_8h_source.html",
-"classcursestone_1_1OfflinePlayer.html#a6875070b735e706b3b3a258ecabb8c12",
-"classcursestone_1_1TimeCommand.html#a4aca7af96c12dcb88dd7703b284951f9",
-"classcursestone_1_1block_1_1BlockGlowstone.html#aade68e4647c5c71d2760cfff0305d179",
-"classcursestone_1_1block_1_1BlockStairsSandstone.html",
-"classcursestone_1_1event_1_1Cancellable.html#ab1a5bbe021cee37d29fd8a1908f3e7c5",
-"classcursestone_1_1event_1_1inventory_1_1FurnaceBurnEvent.html#ac4aeae437f55e8157601ac49de516336",
-"classcursestone_1_1event_1_1server_1_1QueryRegenerateEvent.html",
-"classcursestone_1_1item_1_1ItemApple.html#a1ceef23a748904b22d71521348302a2f",
-"classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#a94476487df485fed720917015a912ced",
-"classcursestone_1_1network_1_1protocol_1_1DropItemPacket.html#a0f8a538452739ff0481f2f5c127f7db7",
-"classcursestone_1_1network_1_1protocol_1_1SetDifficultyPacket.html#a664eaeb0bd81dfa59cb5cbea557d7d2b",
-"classcursestone_1_1tile_1_1Tile.html#a6901279463c00608e0a634f6dfca863c",
-"classcursestone_1_1world_1_1format_1_1ChunkAdapter.html#a7914bf5c9484c1619efb0a0de1666bd8",
-"classcursestone_1_1world_1_1generator_1_1object_1_1LakeGenerator.html",
-"md_CONTRIBUTING.html#autotoc_md21",
-"structcursestone_1_1world_1_1WorldConfig.html#a9fb0f516099b279cb7c6e02e088e729f",
-"structmcp__pkt__client__connect.html#a21f676ca5f5d98e4dfd1799fcd447e63",
-"structmcp__rak__session.html#ab383547370689c69308fd22c7c7f0cb2"
+"",
+"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a3f6c126526eb749487c0982800a5fc4c",
+"BlockStemPumpkin_8h_source.html",
+"EntityXPOrb_8h_source.html",
+"ItemConstants_8h.html#a49d32d5c768a7299e2ea25699a3e5e94",
+"ItemConstants_8h.html#adff5ec534c3e68a02f7e531cfc8b3364",
+"LakeGenerator_8h_source.html",
+"Spawnable_8h_source.html",
+"classcursestone_1_1CommandMap.html#a8d089a8e28843bca5062c0819c13fdf8",
+"classcursestone_1_1Server.html#a64de480b9c722ece23c5c9b248f4e374",
+"classcursestone_1_1block_1_1BlockEndStone.html#a9448d0fef0c2bfa52b0ef7776a4d17c4",
+"classcursestone_1_1block_1_1BlockSapling.html",
+"classcursestone_1_1entity_1_1EntityPrimedTNT.html#aa67c48f85ba5dcddd7fc2b99d1a64285",
+"classcursestone_1_1event_1_1entity_1_1EntityShootBowEvent.html#a06f560ca039bc54df82a2bcaf371f270",
+"classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html#a8a8eca91dcc9e6ff12202ac26771494f",
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a4986b2839aa5d3475ebdde3e371a7f2d",
+"classcursestone_1_1item_1_1ItemShovelDiamond.html",
+"classcursestone_1_1network_1_1protocol_1_1ContainerOpenPacket.html#a46048b1a85508effbb430c87a26d09d4",
+"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#af13b76db4169d9d022a7026771bbb166",
+"classcursestone_1_1scheduler_1_1AsyncTask.html#a11f563f4f681f6c6ba2e8240c5da441f",
+"classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672",
+"classcursestone_1_1world_1_1generator_1_1Synth.html#a7e97c9585a7480d43366a3256cdc48fc",
+"dir_8250e12e5a19acb8ece30f1703b6dc16.html",
+"structcursestone_1_1network_1_1protocol_1_1PlayerListPacket_1_1Entry.html#ae8608098f7044f5cc951d686ce687a26",
+"structmcp__encapsulated__header.html#a0a6f492f0a509dc4cf8d696525193980",
+"structmcp__pkt__unconnected__ping.html#aef0ebdbadf6b9d20d1264c90470389c7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
