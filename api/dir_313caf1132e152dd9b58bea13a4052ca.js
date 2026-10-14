@@ -8,6 +8,7 @@ var dir_313caf1132e152dd9b58bea13a4052ca =
     [ "Logger.h", "Logger_8h_source.html", null ],
     [ "MainLogger.h", "MainLogger_8h_source.html", null ],
     [ "MainLogger.hpp", "MainLogger_8hpp_source.html", null ],
+    [ "PlatformCompat.h", "PlatformCompat_8h.html", null ],
     [ "Random.h", "Random_8h_source.html", null ],
     [ "Terminal.h", "Terminal_8h_source.html", null ],
     [ "TextColor.h", "TextColor_8h_source.html", null ],
