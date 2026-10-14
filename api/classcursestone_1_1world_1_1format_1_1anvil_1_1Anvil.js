@@ -2,6 +2,7 @@ var classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil =
 [
     [ "Anvil", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a2206c29e33319097a074e1180844069b", null ],
     [ "~Anvil", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a69d7172852553f117c2c5b9acf951b9a", null ],
+    [ "flushPendingSaves", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a518ab2ce7af1065c67cff54dadd2010e", null ],
     [ "getCurrentTime", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#afd721de004dd26d74f5c70ed5704ea9d", null ],
     [ "getGenerator", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a7be98dabc81fce356758638165c5e608", null ],
     [ "getName", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#aff9cc3b2d9dfc4d82335a9c7217e2503", null ],

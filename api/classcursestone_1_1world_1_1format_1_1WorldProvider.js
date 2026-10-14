@@ -1,6 +1,7 @@
 var classcursestone_1_1world_1_1format_1_1WorldProvider =
 [
     [ "~WorldProvider", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a65a095651db2739b4436330066054369", null ],
+    [ "flushPendingSaves", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a42bfdbcb06fd7193562a3d8bfae4ac31", null ],
     [ "getCurrentTime", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a100afae62d14a95a3555c3444caf5a90", null ],
     [ "getGenerator", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a1a40a55bee45074119d8b8ccf6507069", null ],
     [ "getName", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#ae11c7f5ff113e1e1fc6f4d56cb588e37", null ],

@@ -1122,6 +1122,7 @@ var namespacecursestone =
       [ "kNbtEnchLvl", "ItemNbt_8h.html#a3ecaf1e33349f2224f1a101fc58acda5", null ],
       [ "kNbtEnchLvlAlt", "ItemNbt_8h.html#a8bc762d1bca0dab071b658cc0f914727", null ],
       [ "kNbtId", "ItemNbt_8h.html#a2db620bda3fa55c8af1d823d67a2cc18", null ],
+      [ "kNbtTag", "ItemNbt_8h.html#a2993d10f1822449e6910dc62eead3b58", null ],
       [ "LADDER", "ItemConstants_8h.html#aa4fadebd599b8dfe4c17c3df59d48551", null ],
       [ "LAPIS_BLOCK", "ItemConstants_8h.html#a85bc7aa694f26b4248c9bdaa228a0ae4", null ],
       [ "LAPIS_ORE", "ItemConstants_8h.html#a9ae0dd2b7afd9c62d8203085e681333d", null ],

@@ -153,33 +153,39 @@ $(document).ready(function(){initNavTree('ItemNbt_8h_source.html',''); initResiz
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// always emits &quot;lvl&quot;.</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnchLvl      = <span class="stringliteral">&quot;lvl&quot;</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnchLvlAlt   = <span class="stringliteral">&quot;level&quot;</span>;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// Serialize `stack` into the compound `entry`, replacing any previous</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// id/Count/Damage/ench it held. A stack with no enchantments has its</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// &quot;ench&quot; key removed rather than written as an empty list, so ordinary</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// items keep the exact byte layout they had before this module existed.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// No-op if `entry` is not a CompoundTag.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> itemStackToNbt(<span class="keyword">const</span> ItemStack&amp; stack, <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* entry);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// Read a container entry back. Returns false when `entry` is not a</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// compound or holds no item (id == 0 or Count &lt;= 0) — in that case `out` is</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// left empty. Otherwise id / meta / count / enchantments all come back.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">bool</span> itemStackFromNbt(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* entry, ItemStack&amp; out);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// Just the &quot;ench&quot; list of `entry`, decoded into `out` (which is NOT</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// cleared first: entries accumulate, which is what EnchantmentList::add</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// is for). Exposed for callers that already have the item fields, and for</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// the regression test.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> enchantmentsFromNbt(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* entry, enchantment::EnchantmentList&amp; out);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// Vanilla item-extra-data key. Java saves the client&#39;s {display:{Name}},</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// {ench}, etc. compound under &quot;tag&quot;; CurseStone persists the stack&#39;s raw</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// little-endian network NBT blob (ItemStack::nbt) the same way so a</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// custom-named item survives player/chest/furnace save + load round</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// trips. See itemStackToNbt()/itemStackFromNbt().</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtTag          = <span class="stringliteral">&quot;tag&quot;</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// Serialize `stack` into the compound `entry`, replacing any previous</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// id/Count/Damage/ench it held. A stack with no enchantments has its</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// &quot;ench&quot; key removed rather than written as an empty list, so ordinary</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// items keep the exact byte layout they had before this module existed.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// No-op if `entry` is not a CompoundTag.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> itemStackToNbt(<span class="keyword">const</span> ItemStack&amp; stack, <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* entry);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// Read a container entry back. Returns false when `entry` is not a</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// compound or holds no item (id == 0 or Count &lt;= 0) — in that case `out` is</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// left empty. Otherwise id / meta / count / enchantments all come back.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">bool</span> itemStackFromNbt(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* entry, ItemStack&amp; out);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// Builds the little-endian network NBT compound that gives an item a</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// custom visible name on 0.15.10 clients: {display:{Name:&quot;...&quot;}}. The</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// returned blob goes verbatim into ItemStack::nbt; every slot writer</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// prefixes it with its u16 LE length (Genisys putSlot). An empty name</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">// yields an empty blob (an unnamed item has no NBT at all).</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;std::string buildDisplayNbt(<span class="keyword">const</span> std::string&amp; name);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// Just the &quot;ench&quot; list of `entry`, decoded into `out` (which is NOT</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// cleared first: entries accumulate, which is what EnchantmentList::add</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// is for). Exposed for callers that already have the item fields, and for</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// the regression test.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">void</span> enchantmentsFromNbt(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* entry, enchantment::EnchantmentList&amp; out);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// Builds the little-endian network NBT compound that gives an item a</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// custom visible name on 0.15.10 clients: {display:{Name:&quot;...&quot;}}. The</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// returned blob goes verbatim into ItemStack::nbt; every slot writer</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// prefixes it with its u16 LE length (Genisys putSlot). An empty name</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// yields an empty blob (an unnamed item has no NBT at all).</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;std::string buildDisplayNbt(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
 <div class="ttc" id="astructmcp__tag_html"><div class="ttname"><a href="structmcp__tag.html">mcp_tag</a></div><div class="ttdef"><b>Definition:</b> Tag.h:79</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
