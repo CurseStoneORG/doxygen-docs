@@ -1,5 +1,13 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html#af5fdaf3b9456e24016ecb1869a0ca46a":[4,0,0,3,3,29,7],
+"classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html":[4,0,0,3,3,30],
+"classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html#a0690158a006147152ed610517470081e":[4,0,0,3,3,30,1],
+"classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html#a7084e40da7ceb736533fb76465f50475":[4,0,0,3,3,30,0],
+"classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html#aa94aed0df1bb460166560a549f45799c":[4,0,0,3,3,30,2],
+"classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html":[4,0,0,3,3,31],
+"classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html#a1e704ba88050f5366c154b2b1d9e53a8":[4,0,0,3,3,31,2],
+"classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html#a60e90de4973726dcad1e6535246d2913":[4,0,0,3,3,31,0],
 "classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html#a8c9f76069a123a0cb2909d80b3e78636":[4,0,0,3,3,31,1],
 "classcursestone_1_1event_1_1plugin_1_1PluginDisableEvent.html":[4,0,0,3,4,0],
 "classcursestone_1_1event_1_1plugin_1_1PluginDisableEvent.html#a7f44baccb156f37db058ae2c8c515b3b":[4,0,0,3,4,0,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1inventory_1_1PlayerInventory.html#aa86c34e7b3b71a53e3bf5617097f400d":[4,0,0,4,8,6],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#ab3ffa4c4375d4a99fc0de4b1cb9ae821":[4,0,0,4,8,30],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#aba0e94a04dd8eaac67be8680e5b3141a":[4,0,0,4,8,13],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#ac17528ec47cfa3899556603e0cf30d95":[4,0,0,4,8,12],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#ac7e3b3336ab10568474e64d30d8a4e0d":[4,0,0,4,8,2],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#acd36657449f692b42cfef1fdb07e5a1a":[4,0,0,4,8,29],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#ad575ad709e954aefaab004ce987d799d":[4,0,0,4,8,9],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#adce4f2673b73f49e6f9259b7bd3db544":[4,0,0,4,8,3],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#add4c4307b95465384abc5662588b0a72":[4,0,0,4,8,20],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#ae8636ba8b3dd062693642e754750765e":[4,0,0,4,8,0],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#afe24a8bcb6cf75b963607b7f8e09f682":[4,0,0,4,8,4],
-"classcursestone_1_1inventory_1_1Recipe.html":[4,0,0,4,9]
+"classcursestone_1_1inventory_1_1PlayerInventory.html#ac17528ec47cfa3899556603e0cf30d95":[4,0,0,4,8,12]
 };

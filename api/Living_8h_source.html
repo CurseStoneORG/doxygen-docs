@@ -119,72 +119,88 @@ $(document).ready(function(){initNavTree('Living_8h_source.html',''); initResiza
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>cursestone::entity {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classcursestone_1_1entity_1_1Living.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1entity_1_1Living.html">Living</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1entity_1_1Entity.html">Entity</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">using</span> Entity::Entity;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">float</span> health()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> health_; }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> setHealth(<span class="keywordtype">float</span> h) { health_ = h; }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> maxHealth()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> max_health_; }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> setMaxHealth(<span class="keywordtype">float</span> m) { max_health_ = m; }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Damage the entity with a generic/no-attacker cause. Dispara</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// EntityDamageEvent (cause=CUSTOM) antes de aplicar el dano; un</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// listener puede reescribir la cantidad o cancelar el evento.</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Devuelve true si murio como resultado de ESTA llamada (health</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// cruzo de &gt;0 a &lt;=0).</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> damage(<span class="keywordtype">float</span> amount);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Igual que damage(), pero con un atacante conocido — dispara</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// EntityDamageByEntityEvent en vez de EntityDamageEvent. Usado</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// por el pipeline de combate cuerpo a cuerpo (ver</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Player::handleInteract / INTERACT_PACKET).</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> damageByEntity(<span class="keywordtype">float</span> amount, <a class="code" href="classcursestone_1_1entity_1_1Entity.html">Entity</a>* damager);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// mirrors PMMP Entity::attack(EntityDamageEvent) — punto de</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// entrada generico sin atacante conocido (p.ej.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// BlockFire::onEntityCollide). Delega en damage().</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> attack(<span class="keywordtype">float</span> amount)<span class="keyword"> override </span>{ damage(amount); }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Damage with an explicit cause (Infinity-style): fires</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// EntityDamageEvent with that cause so listeners can cancel/reduce</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// per-cause (armor on FALL, fire resistance on LAVA, etc.). Used by</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// the ambient damage pipeline: fall damage, lava, fire, cactus,</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// drowning, starvation.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> damage(<span class="keywordtype">float</span> amount, event::entity::DamageCause cause);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Heal the entity by amount (capped at maxHealth).</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> heal(<span class="keywordtype">float</span> amount);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Dead flag (used by sweep removal).</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> isDead()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> health_ &lt;= 0.0f; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> addEffect(std::shared_ptr&lt;Effect&gt; e) { effects_.push_back(std::move(e)); }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Effect&gt;&gt;&amp; effects()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> effects_; }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> tick(uint64_t current_tick) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Llamado por damage()/damageByEntity() cada vez que la salud baja</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// por dano SIN morir (cuando muere se llama onDeath()). Player lo</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// sobreescribe para sincronizar la vida al cliente AL INSTANTE</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// (barra de corazones fluida) y mandar la animacion de golpe, igual</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// que Infinity (Player::setHealth + EntityEventPacket::HURT_ANIMATION).</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> onHealthChanged() {}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Llamado por damage()/damageByEntity() la primera vez que la</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// salud cae a &lt;= 0. No-op por defecto (mobs genericos no</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// necesitan un evento de muerte todavia); Player lo sobreescribe</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// para disparar PlayerDeathEvent.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDeath() {}</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Aplica `amount` a health_ (clamp a 0) y llama onDeath() si esta</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// fue la transicion viva-&gt;muerta. Compartido por damage() y</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// damageByEntity() para no duplicar la logica de clamping/onDeath.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">bool</span> applyDamage(<span class="keywordtype">float</span> amount);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">float</span> health_   = 20.0f;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">float</span> max_health_ = 20.0f;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::vector&lt;std::shared_ptr&lt;Effect&gt;&gt; effects_;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Result of a damage()/damageByEntity() call:</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//   CANCELLED — no damage happened (already dead, a plugin cancelled the</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//               event, or the victim is immune — e.g. creative players).</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//   HURT      — damage applied, the entity is still alive.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//   KILLED    — damage applied and this was the lethal blow (onDeath ran).</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Callers use this to decide whether the hit must be synced to clients:</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// on CANCELLED not a single packet goes out (Infinity: a cancelled</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// EntityDamageEvent produces no EntityEventPacket, no health sync and no</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// knockback).</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">enum class</span> DamageApply {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    CANCELLED = 0,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    HURT      = 1,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    KILLED    = 2,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classcursestone_1_1entity_1_1Living.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1entity_1_1Living.html">Living</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1entity_1_1Entity.html">Entity</a> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">using</span> Entity::Entity;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">float</span> health()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> health_; }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> setHealth(<span class="keywordtype">float</span> h) { health_ = h; }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> maxHealth()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> max_health_; }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> setMaxHealth(<span class="keywordtype">float</span> m) { max_health_ = m; }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Damage the entity with a generic/no-attacker cause (CUSTOM). Dispara</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// EntityDamageEvent antes de aplicar el dano; un listener puede</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// reescribir la cantidad o cancelar el evento.</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> DamageApply damage(<span class="keywordtype">float</span> amount);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Igual que damage(), pero con un atacante conocido — dispara</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// EntityDamageByEntityEvent en vez de EntityDamageEvent. Usado</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// por el pipeline de combate cuerpo a cuerpo (ver</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Player::handleInteract / INTERACT_PACKET) y por las flechas</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// (World::tickArrows, cause=PROJECTILE).</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> DamageApply damageByEntity(<span class="keywordtype">float</span> amount, <a class="code" href="classcursestone_1_1entity_1_1Entity.html">Entity</a>* damager,</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                                       event::entity::DamageCause cause =</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                           event::entity::DamageCause::ENTITY_ATTACK);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// mirrors PMMP Entity::attack(EntityDamageEvent) — punto de</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// entrada generico sin atacante conocido (p.ej.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// BlockFire::onEntityCollide). Delega en damage().</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> attack(<span class="keywordtype">float</span> amount)<span class="keyword"> override </span>{ damage(amount); }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Damage with an explicit cause (Infinity-style): fires</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// EntityDamageEvent with that cause so listeners can cancel/reduce</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// per-cause (armor on FALL, fire resistance on LAVA, etc.). Used by</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// the ambient damage pipeline: fall damage, lava, fire, cactus,</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// drowning, starvation.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">virtual</span> DamageApply damage(<span class="keywordtype">float</span> amount, event::entity::DamageCause cause);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Heal the entity by amount (capped at maxHealth).</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> heal(<span class="keywordtype">float</span> amount);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Dead flag (used by sweep removal).</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> isDead()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> health_ &lt;= 0.0f; }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">void</span> addEffect(std::shared_ptr&lt;Effect&gt; e) { effects_.push_back(std::move(e)); }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">const</span> std::vector&lt;std::shared_ptr&lt;Effect&gt;&gt;&amp; effects()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> effects_; }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> tick(uint64_t current_tick) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Llamado por damage()/damageByEntity() cada vez que la salud baja</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// por dano SIN morir (cuando muere se llama onDeath()). Player lo</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// sobreescribe para sincronizar la vida al cliente AL INSTANTE</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// (barra de corazones fluida) y mandar la animacion de golpe, igual</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// que Infinity (Player::setHealth + EntityEventPacket::HURT_ANIMATION).</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> onHealthChanged() {}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// Llamado por damage()/damageByEntity() la primera vez que la</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// salud cae a &lt;= 0. No-op por defecto (mobs genericos no</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// necesitan un evento de muerte todavia); Player lo sobreescribe</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// para disparar PlayerDeathEvent.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> onDeath() {}</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// Aplica `amount` a health_ (clamp a 0) y llama onDeath() si esta</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// fue la transicion viva-&gt;muerta. Compartido por damage() y</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// damageByEntity() para no duplicar la logica de clamping/onDeath.</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">bool</span> applyDamage(<span class="keywordtype">float</span> amount);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">float</span> health_   = 20.0f;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">float</span> max_health_ = 20.0f;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::vector&lt;std::shared_ptr&lt;Effect&gt;&gt; effects_;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;};</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1entity_1_1Entity_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:35</div></div>
-<div class="ttc" id="aclasscursestone_1_1entity_1_1Living_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Living.html">cursestone::entity::Living</a></div><div class="ttdef"><b>Definition:</b> Living.h:34</div></div>
+<div class="ttc" id="aclasscursestone_1_1entity_1_1Living_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Living.html">cursestone::entity::Living</a></div><div class="ttdef"><b>Definition:</b> Living.h:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

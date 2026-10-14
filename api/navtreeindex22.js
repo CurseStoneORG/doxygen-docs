@@ -1,5 +1,13 @@
 var NAVTREEINDEX22 =
 {
+"dir_8c559a8bd664375b6611e00b162a8314.html":[5,0,0,21,3],
+"dir_90f3a8e31cebd4750b6269e00e76ab93.html":[5,0,0,21,1,5,0],
+"dir_941f38c4e38886800e591b0dff3cead0.html":[5,0,0,2],
+"dir_97090f4220ba4078553c00c1394c6eb2.html":[5,0,0,20],
+"dir_975424cdae97a07db69e55371758444e.html":[5,0,0,13],
+"dir_9bd54e99df749fe3cf01962d780ac34f.html":[5,0,0,4,4],
+"dir_9d6fa2a8476abc8567ee5f18d995c0e6.html":[5,0,0,4,1],
+"dir_ae9a93452e2a84339148a16bcf2eb561.html":[5,0,0,8],
 "dir_b6683dbc3b5812556bf60157cce0d9de.html":[5,0,0,21,1,1],
 "dir_b6f0bb288e976a059ae88387d5b9ae90.html":[5,0,0,3],
 "dir_b702ecc703e3b27b910e01cd8842c7a4.html":[5,0,0,21,0,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX22 =
 "structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a11feeff249f3341ad7a4788425e8dc54":[4,0,0,7,0,52,0,3],
 "structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a3a42e291368e28c59f16d00d7fd156e4":[4,0,0,7,0,52,0,0],
 "structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a6f0e47c76f9bc5315162d7d1e90e9dff":[4,0,0,7,0,52,0,2],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a80e2122af8a7b5f21a8d0ff1934a90eb":[4,0,0,7,0,52,0,1],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#ad86631e7545e2dddf0d63724d4e2cbe8":[4,0,0,7,0,52,0,4],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html":[4,0,0,7,0,54,0],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#a94878d109a34eca8afaf557d79b1dc5e":[4,0,0,7,0,54,0,0],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#a9bd746d3414301fbba3a340015bc8351":[4,0,0,7,0,54,0,3],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#aaea050900c59f60b3236e232aa670530":[4,0,0,7,0,54,0,2],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#ae5affe75bd19c026f4cb2c31f010bafe":[4,0,0,7,0,54,0,1],
-"structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html":[4,0,0,7,0,64,0],
-"structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#a47b8d02a63879e24e4c9fa7a72d305cc":[4,0,0,7,0,64,0,0]
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a80e2122af8a7b5f21a8d0ff1934a90eb":[4,0,0,7,0,52,0,1]
 };

@@ -1,5 +1,13 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1entity_1_1EntityTeleportEvent.html#acd54f08c731b9506845e815f08f7910d":[4,0,0,3,1,21,4],
+"classcursestone_1_1event_1_1entity_1_1EntityWorldChangeEvent.html":[4,0,0,3,1,22],
+"classcursestone_1_1event_1_1entity_1_1EntityWorldChangeEvent.html#a1b47405515f1003e1535bb0716af84d8":[4,0,0,3,1,22,0],
+"classcursestone_1_1event_1_1entity_1_1EntityWorldChangeEvent.html#a2499319f14702cc6679a7504a2418bc3":[4,0,0,3,1,22,2],
+"classcursestone_1_1event_1_1entity_1_1EntityWorldChangeEvent.html#a2711c5e311956ad832c005b94403ad3a":[4,0,0,3,1,22,1],
+"classcursestone_1_1event_1_1entity_1_1EntityWorldChangeEvent.html#a8512d9c51d5a8edd3535877a8156b8a8":[4,0,0,3,1,22,3],
+"classcursestone_1_1event_1_1entity_1_1EntityWorldChangeEvent.html#aa1184d3473ed537d79e2a5dbc52d474a":[4,0,0,3,1,22,4],
+"classcursestone_1_1event_1_1entity_1_1ExplosionPrimeEvent.html":[4,0,0,3,1,23],
 "classcursestone_1_1event_1_1entity_1_1ExplosionPrimeEvent.html#a5269dce8a0f43c878b2e02d141d728db":[4,0,0,3,1,23,0],
 "classcursestone_1_1event_1_1entity_1_1ExplosionPrimeEvent.html#a67bd2362b5a7dae0e4221fac802a5788":[4,0,0,3,1,23,3],
 "classcursestone_1_1event_1_1entity_1_1ExplosionPrimeEvent.html#ab2b650cdee8ac5a4dd8e53f6db871f75":[4,0,0,3,1,23,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html#aa001542d981e8a476fdc2822d1dbaf1b":[4,0,0,3,3,29,1],
 "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html#ab0735d9f03fc68dfb43d70c834cafcbb":[4,0,0,3,3,29,3],
 "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html#ad72eeaaad050fa68345c3d2742bcbe05":[4,0,0,3,3,29,2],
-"classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html#af0d9416067479c4261ddfd4ad1373d3f":[4,0,0,3,3,29,0],
-"classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html#af5fdaf3b9456e24016ecb1869a0ca46a":[4,0,0,3,3,29,7],
-"classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html":[4,0,0,3,3,30],
-"classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html#a0690158a006147152ed610517470081e":[4,0,0,3,3,30,1],
-"classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html#a7084e40da7ceb736533fb76465f50475":[4,0,0,3,3,30,0],
-"classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html#aa94aed0df1bb460166560a549f45799c":[4,0,0,3,3,30,2],
-"classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html":[4,0,0,3,3,31],
-"classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html#a1e704ba88050f5366c154b2b1d9e53a8":[4,0,0,3,3,31,2],
-"classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html#a60e90de4973726dcad1e6535246d2913":[4,0,0,3,3,31,0]
+"classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html#af0d9416067479c4261ddfd4ad1373d3f":[4,0,0,3,3,29,0]
 };

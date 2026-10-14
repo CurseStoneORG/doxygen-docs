@@ -1,5 +1,8 @@
 var NAVTREEINDEX7 =
 {
+"TerrainShape_8cpp.html#abc4e32c7d5a44457b00180a534aa351d":[3,0,0,17,1,38],
+"TerrainShape_8cpp.html#ac99cee4a390bc6db1e5716034f9df897":[3,0,0,17,1,40],
+"TerrainShape_8cpp.html#af3faccef239071cf76ea034951fb1074":[3,0,0,17,1,32],
 "TerrainShape_8cpp.html#afa20821c7c0ddd39f6b74574b4ada529":[3,0,0,17,1,44],
 "TerrainShape_8h.html#a28efe861e66e8f2b39644a54f73ced5f":[3,0,0,17,1,45],
 "TerrainShape_8h_source.html":[5,0,0,21,1,12],
@@ -204,12 +207,13 @@ var NAVTREEINDEX7 =
 "classcursestone_1_1Command.html#ae344ed6b6ab6c49c77a25a5ef8437dc0":[4,0,0,16,6],
 "classcursestone_1_1Command.html#ae4c0067eca43a3efd353c4ee2c34c265":[4,0,0,16,1],
 "classcursestone_1_1CommandMap.html":[4,0,0,17],
+"classcursestone_1_1CommandMap.html#a19d574b7965f27dcb7c7af4075d56df0":[4,0,0,17,4],
 "classcursestone_1_1CommandMap.html#a22a5cd6ce32c0332581b478a0d30d5d5":[4,0,0,17,3],
 "classcursestone_1_1CommandMap.html#a47583f794077bb3a9f688a141ef49c37":[4,0,0,17,1],
 "classcursestone_1_1CommandMap.html#a5b787bf933585e92026d84eb7b5219bf":[4,0,0,17,2],
 "classcursestone_1_1CommandMap.html#a8d089a8e28843bca5062c0819c13fdf8":[4,0,0,17,0],
-"classcursestone_1_1CommandMap.html#aadf5ce7f878e30a1aad51a85dcbef6d8":[4,0,0,17,4],
-"classcursestone_1_1CommandMap.html#adc413a8821cc5bc948cdfce58de7246f":[4,0,0,17,5],
+"classcursestone_1_1CommandMap.html#aadf5ce7f878e30a1aad51a85dcbef6d8":[4,0,0,17,5],
+"classcursestone_1_1CommandMap.html#adc413a8821cc5bc948cdfce58de7246f":[4,0,0,17,6],
 "classcursestone_1_1CommandReader.html":[4,0,0,18],
 "classcursestone_1_1CommandReader.html#a0d8c449194a1dc93c3eb6bbe7d79497a":[4,0,0,18,0],
 "classcursestone_1_1CommandReader.html#a4455ae31f51c6d1fa57c31d62f475555":[4,0,0,18,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "classcursestone_1_1IPlayer.html":[4,0,0,39],
 "classcursestone_1_1IPlayer.html#a57b684c992c8d9575001fb4cae49f0fc":[4,0,0,39,1],
 "classcursestone_1_1IPlayer.html#a7bb50c2ae28ca169ec9b56f081829199":[4,0,0,39,4],
-"classcursestone_1_1IPlayer.html#a824ddc5f0cde1c77902ce09764b3b23e":[4,0,0,39,2],
-"classcursestone_1_1IPlayer.html#a8e83cd8ca61c41087e3c579c340ead02":[4,0,0,39,0],
-"classcursestone_1_1IPlayer.html#ab038b86060f8e35478436e967012722f":[4,0,0,39,5],
-"classcursestone_1_1IPlayer.html#ae3b9ad960aa496e6cfee40e38396572a":[4,0,0,39,3],
-"classcursestone_1_1KickCommand.html":[4,0,0,25]
+"classcursestone_1_1IPlayer.html#a824ddc5f0cde1c77902ce09764b3b23e":[4,0,0,39,2]
 };

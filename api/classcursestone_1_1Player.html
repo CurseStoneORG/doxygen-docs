@@ -524,6 +524,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>dataPacket</b> (std::
 <tr class="memitem:a095856482539ecd9e13dc1495388725d"><td class="memItemLeft" align="right" valign="top"><a id="a095856482539ecd9e13dc1495388725d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>directDataPacket</b> (std::shared_ptr&lt; <a class="el" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">network::protocol::DataPacket</a> &gt; pk)</td></tr>
 <tr class="separator:a095856482539ecd9e13dc1495388725d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208dca4a52e73f89541645dc8d81790d"><td class="memItemLeft" align="right" valign="top"><a id="a208dca4a52e73f89541645dc8d81790d"></a>
+entity::DamageApply&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b> (float amount) override</td></tr>
+<tr class="separator:a208dca4a52e73f89541645dc8d81790d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c130b5473c211933b52de3abd9b646"><td class="memItemLeft" align="right" valign="top"><a id="ac3c130b5473c211933b52de3abd9b646"></a>
+entity::DamageApply&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b> (float amount, event::entity::DamageCause cause) override</td></tr>
+<tr class="separator:ac3c130b5473c211933b52de3abd9b646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f44b504fbc7310b837b6045d0af85a"><td class="memItemLeft" align="right" valign="top"><a id="a94f44b504fbc7310b837b6045d0af85a"></a>
+entity::DamageApply&#160;</td><td class="memItemRight" valign="bottom"><b>damageByEntity</b> (float amount, <a class="el" href="classcursestone_1_1entity_1_1Entity.html">entity::Entity</a> *damager, event::entity::DamageCause cause=event::entity::DamageCause::ENTITY_ATTACK) override</td></tr>
+<tr class="separator:a94f44b504fbc7310b837b6045d0af85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a940e11d1053a8b3a01154fe30a810179"><td class="memItemLeft" align="right" valign="top"><a id="a940e11d1053a8b3a01154fe30a810179"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPendingRemoval</b> () const</td></tr>
 <tr class="separator:a940e11d1053a8b3a01154fe30a810179"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -565,18 +574,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>maxHealth</b> () con
 <tr class="memitem:a172320fd23291c5968281d91dccf8f19 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a172320fd23291c5968281d91dccf8f19"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setMaxHealth</b> (float m)</td></tr>
 <tr class="separator:a172320fd23291c5968281d91dccf8f19 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829ac31ad9dfd24c0b40a971e45ab9dd inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a829ac31ad9dfd24c0b40a971e45ab9dd"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b> (float amount)</td></tr>
-<tr class="separator:a829ac31ad9dfd24c0b40a971e45ab9dd inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabab223d2f9fbaf115fc15d519892226 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="aabab223d2f9fbaf115fc15d519892226"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>damageByEntity</b> (float amount, <a class="el" href="classcursestone_1_1entity_1_1Entity.html">Entity</a> *damager)</td></tr>
-<tr class="separator:aabab223d2f9fbaf115fc15d519892226 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accbba971b4a76afb26f9f8a9076e5472 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="accbba971b4a76afb26f9f8a9076e5472"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>attack</b> (float amount) override</td></tr>
 <tr class="separator:accbba971b4a76afb26f9f8a9076e5472 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14582743503207fd414476a77aa723e2 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a14582743503207fd414476a77aa723e2"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>damage</b> (float amount, event::entity::DamageCause cause)</td></tr>
-<tr class="separator:a14582743503207fd414476a77aa723e2 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2fd91be9f4d5e3ea1139956042ad4e27 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a2fd91be9f4d5e3ea1139956042ad4e27"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>heal</b> (float amount)</td></tr>
 <tr class="separator:a2fd91be9f4d5e3ea1139956042ad4e27 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>

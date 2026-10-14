@@ -414,6 +414,11 @@ var namespacecursestone =
       [ "Living", "classcursestone_1_1entity_1_1Living.html", "classcursestone_1_1entity_1_1Living" ],
       [ "Monster", "classcursestone_1_1entity_1_1Monster.html", null ],
       [ "Projectile", "classcursestone_1_1entity_1_1Projectile.html", "classcursestone_1_1entity_1_1Projectile" ],
+      [ "DamageApply", "Living_8h.html#a03b3d764b4bc34eb878bb8a5d36452d6", [
+        [ "CANCELLED", "Living_8h.html#a03b3d764b4bc34eb878bb8a5d36452d6a9f935beb31030ad0d4d26126c0f39bf2", null ],
+        [ "HURT", "Living_8h.html#a03b3d764b4bc34eb878bb8a5d36452d6a0f1484d199a29e1d494be6d0cdd42864", null ],
+        [ "KILLED", "Living_8h.html#a03b3d764b4bc34eb878bb8a5d36452d6a4d216b2c8ca203bbd08ff87244bf565c", null ]
+      ] ],
       [ "EffectId", "Effect_8h.html#a8838c0d1a6070e90c5a456a1ca1719ad", [
         [ "EFF_SPEED", "Effect_8h.html#a8838c0d1a6070e90c5a456a1ca1719adadaac2c26524196f59c3d414579055c95", null ],
         [ "EFF_SLOWNESS", "Effect_8h.html#a8838c0d1a6070e90c5a456a1ca1719ada54bfbbac31bddea4a6f73fb13b69fc47", null ],
@@ -1509,8 +1514,7 @@ var namespacecursestone =
       [ "bindWorld", "BindingsWorld_8cpp.html#ab5b899f5098fc6972a6761d8bca15ec2", null ],
       [ "pushWorldHandle", "BindingsWorld_8cpp.html#afa32faa5c5a247d9203ed89061b4aeb4", null ],
       [ "registerApi", "LuaBindings_8cpp.html#aabad3b3084d4e535f4eacbdabd4e2516", null ],
-      [ "sanitizeRelPath", "PathSafe_8h.html#afbd058607f6a3e530dfbf7929da1752a", null ],
-      [ "PLUGIN_API_VERSION", "LuaBindings_8h.html#a12d41d0c7baac29627244806d8f2c831", null ]
+      [ "sanitizeRelPath", "PathSafe_8h.html#afbd058607f6a3e530dfbf7929da1752a", null ]
     ] ],
     [ "redstone", null, [
       [ "getEmittedPower", "RedstoneManager_8cpp.html#a1b8ef9a7a611a7e42340760032b5d6ff", null ],

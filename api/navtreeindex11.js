@@ -1,5 +1,13 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockSlime.html":[4,0,0,0,133],
+"classcursestone_1_1block_1_1BlockSlime.html#aaa94aabfd04b9e4e57edd84f54ce40b8":[4,0,0,0,133,0],
+"classcursestone_1_1block_1_1BlockSlime.html#ae3b4313fbd643f3111d6283c49d744c6":[4,0,0,0,133,1],
+"classcursestone_1_1block_1_1BlockSnow.html":[4,0,0,0,134],
+"classcursestone_1_1block_1_1BlockSnow.html#a4fd892efbc2626741bd5f21534c95bb9":[4,0,0,0,134,0],
+"classcursestone_1_1block_1_1BlockSnow.html#acb0f4679834d617e4ff0f931e8701805":[4,0,0,0,134,1],
+"classcursestone_1_1block_1_1BlockSnowLayer.html":[4,0,0,0,135],
+"classcursestone_1_1block_1_1BlockSnowLayer.html#a1a28f1f9c2cb953deeb59cd289c2a122":[4,0,0,0,135,0],
 "classcursestone_1_1block_1_1BlockSnowLayer.html#a53145a253a2f7be7dd5a9077021d1a15":[4,0,0,0,135,1],
 "classcursestone_1_1block_1_1BlockSolid.html":[4,0,0,0,136],
 "classcursestone_1_1block_1_1BlockSolid.html#ac942a6a79da18d069a4cf921770b456a":[4,0,0,0,136,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1EntityZombie.html#a8b8408401af7f6073eb57d6851927edf":[4,0,0,2,18,0],
 "classcursestone_1_1entity_1_1EntityZombie.html#acddb859a55c2e8155a6ea31e970fff01":[4,0,0,2,18,1],
 "classcursestone_1_1entity_1_1Human.html":[4,0,0,2,19],
-"classcursestone_1_1entity_1_1Human.html#a06aecff478ae7bd236883a3cdda51f5b":[4,0,0,2,19,4],
-"classcursestone_1_1entity_1_1Human.html#a0d23d0aa6a0a1cd225689dc7ff759f23":[4,0,0,2,19,9],
-"classcursestone_1_1entity_1_1Human.html#a21dcb5a1c671328661cafaa9fd519d0c":[4,0,0,2,19,1],
-"classcursestone_1_1entity_1_1Human.html#a2fa92a24a3349dce6e91d746ff66cd99":[4,0,0,2,19,11],
-"classcursestone_1_1entity_1_1Human.html#a36e433f101390f125d674aed91be2e5a":[4,0,0,2,19,0],
-"classcursestone_1_1entity_1_1Human.html#a5f8f372ece47455cbe4d6a71eb01ad24":[4,0,0,2,19,7],
-"classcursestone_1_1entity_1_1Human.html#a620f45b2580caa13c3667c38cb689d96":[4,0,0,2,19,3],
-"classcursestone_1_1entity_1_1Human.html#a7c689ece3762c8c619c2c04e172d6586":[4,0,0,2,19,5],
-"classcursestone_1_1entity_1_1Human.html#a8afc368a622c4591ecbdd4161d40e7a6":[4,0,0,2,19,6]
+"classcursestone_1_1entity_1_1Human.html#a06aecff478ae7bd236883a3cdda51f5b":[4,0,0,2,19,4]
 };
