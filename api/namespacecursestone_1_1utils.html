@@ -84,7 +84,8 @@ $(document).ready(function(){initNavTree('namespacecursestone_1_1utils.html','')
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::utils Namespace Reference</div>  </div>
 </div><!--header-->
@@ -106,6 +107,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a6f60c55af7c4285a24043573e24ad7a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1utils.html#a6f60c55af7c4285a24043573e24ad7a1">writeDefaultConfigs</a> (const std::string &amp;dataPath, std::vector&lt; std::string &gt; *created=nullptr)</td></tr>
+<tr class="memdesc:a6f60c55af7c4285a24043573e24ad7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates <code>dataPath</code> and any missing config file from the defaults.  <a href="namespacecursestone_1_1utils.html#a6f60c55af7c4285a24043573e24ad7a1">More...</a><br /></td></tr>
+<tr class="separator:a6f60c55af7c4285a24043573e24ad7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5645fe9cf148a69e62272a15dfc57795"><td class="memItemLeft" align="right" valign="top"><a id="a5645fe9cf148a69e62272a15dfc57795"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>split</b> (const std::string &amp;s, char delim)</td></tr>
 <tr class="separator:a5645fe9cf148a69e62272a15dfc57795"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,17 +122,131 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toLower</b> (s
 <tr class="memitem:a419f94d4e820fe780a0e546cbb9c053c"><td class="memItemLeft" align="right" valign="top"><a id="a419f94d4e820fe780a0e546cbb9c053c"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toUpper</b> (std::string s)</td></tr>
 <tr class="separator:a419f94d4e820fe780a0e546cbb9c053c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a6e5678992d5c297c2f1e82b84e4cfbb0"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0">kDefaultServerProperties</a></td></tr>
+<tr class="memdesc:a6e5678992d5c297c2f1e82b84e4cfbb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic settings (network, players, gameplay, world name and seed).  <a href="namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0">More...</a><br /></td></tr>
+<tr class="separator:a6e5678992d5c297c2f1e82b84e4cfbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad226ae8dd23b9117aaa285c7ad6acf50"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1utils.html#ad226ae8dd23b9117aaa285c7ad6acf50">kDefaultCursestoneYml</a></td></tr>
+<tr class="memdesc:ad226ae8dd23b9117aaa285c7ad6acf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advanced settings (workers, autosave, memory, world format/generator).  <a href="namespacecursestone_1_1utils.html#ad226ae8dd23b9117aaa285c7ad6acf50">More...</a><br /></td></tr>
+<tr class="separator:ad226ae8dd23b9117aaa285c7ad6acf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Loads the server config file (YAML / INI / JSON). </p>
 <p>Wraps a semantic version string.</p>
 <p>Provides the C++ helpers on top of the C Utils interface.</p>
 <p>Wraps the C mcp_main_logger_t as a C++ singleton.</p>
-<p>Implements a minimal subset of YAML (nested maps, lists, scalars, comments) sufficient to parse <code>resources/cursestone.yml</code>. For full YAML support, future phases may vendor yaml-cpp.</p>
+<p>Implements a minimal subset of YAML (nested maps, lists, scalars, comments) sufficient to parse <code>cursestone.yml</code>. For full YAML support, future phases may vendor yaml-cpp.</p>
 <p>Exposes utils::MainLogger::get().info/warn/error/debug(string). All C++ files that log should include this; C files include <a class="el" href="MainLogger_8h_source.html">MainLogger.h</a>.</p>
 <p>Include this in C++ files; C files include <a class="el" href="Utils_8h_source.html">utils/Utils.h</a>.</p>
 <p>Used by the <a class="el" href="classcursestone_1_1Server.html" title="Server singleton: boot, tick loop, and coordinated shutdown.">Server</a> and by plugin manifests. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a6f60c55af7c4285a24043573e24ad7a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f60c55af7c4285a24043573e24ad7a1">&#9670;&nbsp;</a></span>writeDefaultConfigs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cursestone::utils::writeDefaultConfigs </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dataPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; *&#160;</td>
+          <td class="paramname"><em>created</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates <code>dataPath</code> and any missing config file from the defaults. </p>
+<p>Existing files are never overwritten.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataPath</td><td>server data directory. </td></tr>
+    <tr><td class="paramname">created</td><td>optional; receives the names of the files written. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if both config files exist when the call returns. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="ad226ae8dd23b9117aaa285c7ad6acf50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad226ae8dd23b9117aaa285c7ad6acf50">&#9670;&nbsp;</a></span>kDefaultCursestoneYml</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char *const cursestone::utils::kDefaultCursestoneYml</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    <span class="stringliteral">&quot;# CurseStone advanced configuration.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;# Basic settings (port, MOTD, players, world name) live in server.properties.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;settings:\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  async-workers: 4       # threads in the async task pool\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  autosave-ticks: 6000   # 6000 ticks = 5 min at 20 TPS\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  advanced-log: true     # verbose session/packet logging\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;world:\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  format: \&quot;anvil\&quot;        # anvil | leveldb\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  generator: \&quot;normal\&quot;    # normal | flat | nether | void\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;memory:\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  max-mb: 512            # RSS budget (MB) for the garbage collector\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  gc-interval-ticks: 200 # ticks between GC passes (200 = 10 s at 20 TPS)\n&quot;</span></div>
+</div><!-- fragment -->
+<p>Advanced settings (workers, autosave, memory, world format/generator). </p>
+
+</div>
+</div>
+<a id="a6e5678992d5c297c2f1e82b84e4cfbb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e5678992d5c297c2f1e82b84e4cfbb0">&#9670;&nbsp;</a></span>kDefaultServerProperties</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char *const cursestone::utils::kDefaultServerProperties</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    <span class="stringliteral">&quot;# CurseStone server properties (basic settings).\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;# Advanced settings live in cursestone.yml.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;motd=CurseStone Server\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;server-ip=0.0.0.0\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;server-port=19132\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;max-players=20\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;gamemode=0\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;difficulty=1\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;white-list=false\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;online-mode=false\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;view-distance=8\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;world-name=world\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;# Empty or 0 picks a random seed.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;world-seed=\n&quot;</span></div>
+</div><!-- fragment -->
+<p>Basic settings (network, players, gameplay, world name and seed). </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

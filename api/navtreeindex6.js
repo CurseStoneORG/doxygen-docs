@@ -1,5 +1,8 @@
 var NAVTREEINDEX6 =
 {
+"Item_8h_source.html":[5,0,0,6,1],
+"JungleTree_8h_source.html":[5,0,0,21,1,3,0,6],
+"KickCommand_8h_source.html":[5,0,0,1,0,4],
 "LakeGenerator_8h_source.html":[5,0,0,21,1,3,1],
 "LeavesDecayEvent_8h_source.html":[5,0,0,4,0,10],
 "LevelDB_8cpp.html#a7e215cba446811bf03e0960d976c3d88":[3,0,0,17,0,1,2],
@@ -12,7 +15,7 @@ var NAVTREEINDEX6 =
 "Listener_8h_source.html":[5,0,0,4,16],
 "Living_8h_source.html":[5,0,0,3,21],
 "Location_8h_source.html":[5,0,0,21,8],
-"Logger_8h_source.html":[5,0,0,18,5],
+"Logger_8h_source.html":[5,0,0,18,6],
 "LoginPacket_8h_source.html":[5,0,0,10,0,31],
 "LongTag_8h_source.html":[5,0,0,9,0,9],
 "LuaBindings_8cpp.html#a3adcabcbb2f602c64c05c44a9efa2e05":[3,0,0,10,5],
@@ -21,8 +24,8 @@ var NAVTREEINDEX6 =
 "LuaBindings_8h_source.html":[5,0,0,14,0],
 "LuaCommand_8h_source.html":[5,0,0,14,1],
 "LuaPlugin_8h_source.html":[5,0,0,14,2],
-"MainLogger_8h_source.html":[5,0,0,18,6],
-"MainLogger_8hpp_source.html":[5,0,0,18,7],
+"MainLogger_8h_source.html":[5,0,0,18,7],
+"MainLogger_8hpp_source.html":[5,0,0,18,8],
 "MapInfoRequestPacket_8h_source.html":[5,0,0,10,0,32],
 "Math_8h_source.html":[5,0,0,8,2],
 "MemoryManager_8h_source.html":[5,0,0,25],
@@ -102,8 +105,8 @@ var NAVTREEINDEX6 =
 "Physics_8cpp.html#a01e2c58dcdd907f4ca5123681f8a3048":[3,0,0,9,3],
 "Physics_8cpp.html#a26cd138d87afb9713c3089604431127e":[3,0,0,9,2],
 "Physics_8h_source.html":[5,0,0,12,0],
-"PlatformCompat_8h.html":[5,0,0,18,8],
-"PlatformCompat_8h_source.html":[5,0,0,18,8],
+"PlatformCompat_8h.html":[5,0,0,18,9],
+"PlatformCompat_8h_source.html":[5,0,0,18,9],
 "PlayStatusPacket_8h_source.html":[5,0,0,10,0,42],
 "PlayerAchievementAwardedEvent_8h_source.html":[5,0,0,4,3,0],
 "PlayerActionPacket_8h_source.html":[5,0,0,10,0,39],
@@ -181,7 +184,7 @@ var NAVTREEINDEX6 =
 "RakLibInterface_8h_source.html":[5,0,0,10,7],
 "RakLibServer_8h_source.html":[5,0,0,10,2,3],
 "RakLib_8h_source.html":[5,0,0,10,2,2],
-"Random_8h_source.html":[5,0,0,18,9],
+"Random_8h_source.html":[5,0,0,18,10],
 "Recipe_8h.html#af4c101e5ac26f445471bb5d6b78cd1f5":[3,0,0,4,10],
 "Recipe_8h.html#af4c101e5ac26f445471bb5d6b78cd1f5a1caa35d59714874c9cba3152189ae2d0":[3,0,0,4,10,2],
 "Recipe_8h.html#af4c101e5ac26f445471bb5d6b78cd1f5aa7e7da32d415609f01c3c15258ca9313":[3,0,0,4,10,1],
@@ -246,8 +249,5 @@ var NAVTREEINDEX6 =
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26aa6f0c1c3193d72db77cbcc424ca426cb":[3,0,0,17,3,2,9],
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26abddecf4e84ed219de7fa89fc4f09613a":[3,0,0,17,3,2,2],
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26ac46abd2f38bfc22582216c07bc9a4cac":[3,0,0,17,3,2,14],
-"Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26ace40d1568e7503f781a4a3468dc94364":[3,0,0,17,3,2,4],
-"Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26adc2c020b932912403ef2de88c4037ae9":[3,0,0,17,3,2,5],
-"Sound_8h_source.html":[5,0,0,21,3,1],
-"SourceInterface_8h_source.html":[5,0,0,10,8]
+"Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26ace40d1568e7503f781a4a3468dc94364":[3,0,0,17,3,2,4]
 };

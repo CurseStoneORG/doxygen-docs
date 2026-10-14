@@ -1,5 +1,8 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a0252081aee9cf51adce374dcfdc1c0e9":[4,0,0,4,8,25],
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a1bfe8955f831bae6933ae47a64095835":[4,0,0,4,8,11],
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a2e645f7528ad3ccb618de75e17197b60":[4,0,0,4,8,18],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a2f168d8694af764abba9fd3e98f27e55":[4,0,0,4,8,15],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a413512eb6911e3e86b6590c94bb2e0e7":[4,0,0,4,8,16],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a4986b2839aa5d3475ebdde3e371a7f2d":[4,0,0,4,8,14],
@@ -246,8 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1item_1_1ItemRawPorkchop.html":[4,0,0,5,59],
 "classcursestone_1_1item_1_1ItemRawPorkchop.html#a0b2e65c10fc11edb8a24f1cc5c3f87f2":[4,0,0,5,59,1],
 "classcursestone_1_1item_1_1ItemRawPorkchop.html#ad33bf5a31e78e3b586b9c301614353b0":[4,0,0,5,59,0],
-"classcursestone_1_1item_1_1ItemRedstone.html":[4,0,0,5,60],
-"classcursestone_1_1item_1_1ItemRedstone.html#a12ce51fe2ce5898d872d99d0b228fb34":[4,0,0,5,60,0],
-"classcursestone_1_1item_1_1ItemRedstone.html#a86e104da7e95e14718cf228fa0f7f40e":[4,0,0,5,60,1],
-"classcursestone_1_1item_1_1ItemShears.html":[4,0,0,5,61]
+"classcursestone_1_1item_1_1ItemRedstone.html":[4,0,0,5,60]
 };

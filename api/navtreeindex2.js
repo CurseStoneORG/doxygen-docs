@@ -100,6 +100,9 @@ var NAVTREEINDEX2 =
 "DataPacketReceiveEvent_8h_source.html":[5,0,0,4,7,0],
 "DataPacketSendEvent_8h_source.html":[5,0,0,4,7,1],
 "DataPacket_8h_source.html":[5,0,0,10,0,20],
+"DefaultConfig_8h.html":[5,0,0,18,5],
+"DefaultConfig_8h.html#a6f60c55af7c4285a24043573e24ad7a1":[5,0,0,18,5,0],
+"DefaultConfig_8h_source.html":[5,0,0,18,5],
 "DefaultPermissions_8h_source.html":[5,0,0,11,2],
 "Defaults_8h_source.html":[5,0,0,1,6],
 "DeopCommand_8h_source.html":[5,0,0,1,0,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX2 =
 "EntitySheep_8h_source.html":[5,0,0,3,15],
 "EntityShootBowEvent_8h_source.html":[5,0,0,4,1,19],
 "EntitySkeleton_8h_source.html":[5,0,0,3,16],
-"EntitySpawnEvent_8h_source.html":[5,0,0,4,1,20],
-"EntityTeleportEvent_8h_source.html":[5,0,0,4,1,21],
-"EntityWolf_8h_source.html":[5,0,0,3,17],
-"EntityWorldChangeEvent_8h_source.html":[5,0,0,4,1,22]
+"EntitySpawnEvent_8h_source.html":[5,0,0,4,1,20]
 };

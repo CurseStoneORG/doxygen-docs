@@ -99,9 +99,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac33206e7cf304cb313de3cb905d80e18"><td class="memItemLeft" align="right" valign="top"><a id="ac33206e7cf304cb313de3cb905d80e18"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>loadAll</b> (const std::string &amp;pluginsDir)</td></tr>
-<tr class="separator:ac33206e7cf304cb313de3cb905d80e18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c668fcf9e431c4f31550720e8d6f5ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce">loadAll</a> (const std::string &amp;pluginsDir, const std::string &amp;dataRoot)</td></tr>
+<tr class="memdesc:a7c668fcf9e431c4f31550720e8d6f5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Scans pluginsDir, then loads and enables every plugin.  <a href="classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce">More...</a><br /></td></tr>
+<tr class="separator:a7c668fcf9e431c4f31550720e8d6f5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adda3d304e09a16e3b4c1a3f1179544df"><td class="memItemLeft" align="right" valign="top"><a id="adda3d304e09a16e3b4c1a3f1179544df"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>reloadAll</b> ()</td></tr>
 <tr class="separator:adda3d304e09a16e3b4c1a3f1179544df"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -118,6 +118,45 @@ Static Public Member Functions</h2></td></tr>
 static <a class="el" href="classcursestone_1_1plugin_1_1PluginManager.html">PluginManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get</b> ()</td></tr>
 <tr class="separator:adcf17a01d57a6847e17fb3b0792c515f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7c668fcf9e431c4f31550720e8d6f5ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c668fcf9e431c4f31550720e8d6f5ce">&#9670;&nbsp;</a></span>loadAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cursestone::plugin::PluginManager::loadAll </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>pluginsDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>dataRoot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Scans pluginsDir, then loads and enables every plugin. </p>
+<p>Creates pluginsDir and dataRoot, and moves a legacy &lt;pluginsDir&gt;/data_pl into dataRoot when dataRoot does not exist yet.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pluginsDir</td><td>folder holding one subfolder per plugin. </td></tr>
+    <tr><td class="paramname">dataRoot</td><td>root of the per-plugin data folders (data_pl). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/plugin/<a class="el" href="PluginManager_8h_source.html">PluginManager.h</a></li>
 <li>src/plugin/PluginManager.cpp</li>

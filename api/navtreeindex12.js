@@ -1,5 +1,8 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1entity_1_1EntityPig.html":[4,0,0,2,12],
+"classcursestone_1_1entity_1_1EntityPig.html#aeb90e204534b0fcc2b29ddc7658f8b7e":[4,0,0,2,12,0],
+"classcursestone_1_1entity_1_1EntityPig.html#af3c67749f29ed46bac081bda56759753":[4,0,0,2,12,1],
 "classcursestone_1_1entity_1_1EntityPrimedTNT.html":[4,0,0,2,13],
 "classcursestone_1_1entity_1_1EntityPrimedTNT.html#a158d845b1cd2791802e606b5cacfd1e1":[4,0,0,2,13,1],
 "classcursestone_1_1entity_1_1EntityPrimedTNT.html#aa67c48f85ba5dcddd7fc2b99d1a64285":[4,0,0,2,13,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html#a09a7e960c17e60b5750901fd1c138ad4":[4,0,0,3,1,17,0],
 "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html#a3a9859a2a1650881ff4a0b3bb1b045dc":[4,0,0,3,1,17,1],
 "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html#ad2f9e2d46a95eb93808b28a1ef9de414":[4,0,0,3,1,17,2],
-"classcursestone_1_1event_1_1entity_1_1EntityRegainHealthEvent.html":[4,0,0,3,1,18],
-"classcursestone_1_1event_1_1entity_1_1EntityRegainHealthEvent.html#a12a4d48355f0aebc0318dd0f61795dff":[4,0,0,3,1,18,3],
-"classcursestone_1_1event_1_1entity_1_1EntityRegainHealthEvent.html#a18ab1464e7233d7a18f14ae6c535ee4c":[4,0,0,3,1,18,2],
-"classcursestone_1_1event_1_1entity_1_1EntityRegainHealthEvent.html#a39d5e773a00dc07c0ebc3f9f8d6da95e":[4,0,0,3,1,18,0]
+"classcursestone_1_1event_1_1entity_1_1EntityRegainHealthEvent.html":[4,0,0,3,1,18]
 };

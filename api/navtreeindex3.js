@@ -1,5 +1,8 @@
 var NAVTREEINDEX3 =
 {
+"EntityTeleportEvent_8h_source.html":[5,0,0,4,1,21],
+"EntityWolf_8h_source.html":[5,0,0,3,17],
+"EntityWorldChangeEvent_8h_source.html":[5,0,0,4,1,22],
 "EntityXPOrb_8h_source.html":[5,0,0,3,18],
 "EntityZombie_8h_source.html":[5,0,0,3,19],
 "Entity_8h_source.html":[5,0,0,3,5],
@@ -246,8 +249,5 @@ var NAVTREEINDEX3 =
 "ItemConstants_8h.html#a446c582b613effdb08de0bf9e030aa6f":[3,0,0,5,230],
 "ItemConstants_8h.html#a446faaf86952337d185eb348f57fa056":[3,0,0,5,453],
 "ItemConstants_8h.html#a453f4949b97f40dbf39e190fd55fc578":[3,0,0,5,235],
-"ItemConstants_8h.html#a45d089d651608acfcd1e8aa1c232771d":[3,0,0,5,273],
-"ItemConstants_8h.html#a45ea15cc9e33d7418846c0cdce674cf9":[3,0,0,5,294],
-"ItemConstants_8h.html#a46a118a44a80e69a77f27a4e567d140c":[3,0,0,5,287],
-"ItemConstants_8h.html#a4930669496b305ab801941529d8d890c":[3,0,0,5,325]
+"ItemConstants_8h.html#a45d089d651608acfcd1e8aa1c232771d":[3,0,0,5,273]
 };

@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('Installer_8h_source.html',''); initRes
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Installer — first-run config seeding. As of the &quot;no-setup&quot; change,</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// the server NEVER asks questions on first boot: CurseStone.cpp only calls</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// shouldRun() + generateDefaultConfig(), which silently writes the</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// default cursestone.yml (same content as resources/cursestone.yml) and</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// default cursestone.yml and server.properties (built-in defaults) and</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// logs one informational line. The interactive runWizard() is kept for</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// manual/opt-in use (e.g. a future `--setup` flag) but is no longer on</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// any startup path. Mirrors pocketmine/wizard/Installer.php minus the</span></div>

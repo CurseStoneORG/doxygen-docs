@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('LuaPlugin_8h_source.html',''); initRes
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//     plugin.yml        &lt;- manifiesto: api, name, author, version, main</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//     src/main.lua      &lt;- script de entrada (lo que diga `main`)</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//     src/...           &lt;- subcarpetas con más archivos Lua del plugin</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//     (datos propios)   &lt;- en plugins/data_pl/&lt;nombre&gt;/ (NO en su carpeta)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//     (datos propios)   &lt;- en data_pl/&lt;nombre&gt;/ (NO en su carpeta)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   El manifiesto plugin.yml se ve así:</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//</span></div>
@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('LuaPlugin_8h_source.html',''); initRes
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   sin manifiesto no carga como plugin.</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Datos y configs:</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//   Cada plugin recibe plugins/data_pl/&lt;carpetaDelPlugin&gt;/ para guardar</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//   Cada plugin recibe data_pl/&lt;carpetaDelPlugin&gt;/ para guardar</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//   lo que quiera (configs .yml/.json, datos .dat binarios, lo que sea),</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//   SOLO a través de la API `data.*` (que sanitiza rutas: sin &quot;..&quot; ni</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//   rutas absolutas). La carpeta se crea al cargar el plugin.</span></div>
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('LuaPlugin_8h_source.html',''); initRes
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classcursestone_1_1plugin_1_1LuaPlugin.html">   74</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a> {</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// dir: carpeta del plugin. dataRoot: carpeta RAÍZ de datos de plugins</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// (normalmente &lt;plugins&gt;/data_pl); dentro se crea &lt;dataRoot&gt;/&lt;carpeta&gt;.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// (normalmente &lt;dataPath&gt;/data_pl); dentro se crea &lt;dataRoot&gt;/&lt;carpeta&gt;.</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a>(std::string dir, std::string dataRoot);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    ~<a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a>();                       <span class="comment">// lua_close si hay state</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
@@ -211,7 +211,7 @@ $(document).ready(function(){initNavTree('LuaPlugin_8h_source.html',''); initRes
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="keyword">private</span>:</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    std::string dir_;                   <span class="comment">// carpeta del plugin</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    std::string folderName_;            <span class="comment">// nombre de la carpeta (clave en data_pl)</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::string dataRoot_;              <span class="comment">// raíz de datos (plugins/data_pl)</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::string dataRoot_;              <span class="comment">// raíz de datos (data_pl)</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::string dataDir_;               <span class="comment">// dataRoot_ + &quot;/&quot; + folderName_</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    std::string name_;</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    std::string version_ = <span class="stringliteral">&quot;?&quot;</span>;</div>

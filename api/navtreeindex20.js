@@ -1,5 +1,8 @@
 var NAVTREEINDEX20 =
 {
+"classcursestone_1_1world_1_1World.html#a017f1ec41619bdbe5dba2ec6f897d83f":[4,0,0,15,14,5],
+"classcursestone_1_1world_1_1World.html#a1ecbceacc98d77768c3809655b6324ab":[4,0,0,15,14,14],
+"classcursestone_1_1world_1_1World.html#a228ca692a04d7c3f8c83e62267b8556e":[4,0,0,15,14,44],
 "classcursestone_1_1world_1_1World.html#a23ea7a220a4cc9ebe0cae258eb59ca7c":[4,0,0,15,14,35],
 "classcursestone_1_1world_1_1World.html#a299933da0df76fdf2a1fb5c9414dce78":[4,0,0,15,14,29],
 "classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672":[4,0,0,15,14,15],
@@ -246,8 +249,5 @@ var NAVTREEINDEX20 =
 "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html#a283854527b0453eacdc695be1d80fc6e":[4,0,0,15,1,14,3],
 "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html#a661b5e786d32db83e1efff9143be444e":[4,0,0,15,1,14,4],
 "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html#a7abb1de3dbf94414cc792ffb2f7a3173":[4,0,0,15,1,14,10],
-"classcursestone_1_1world_1_1generator_1_1PerlinNoise.html#a8ef99e33d090df0eae971706e3262669":[4,0,0,15,1,14,2],
-"classcursestone_1_1world_1_1generator_1_1PerlinNoise.html#acb28c4a59a13948d21d814f452b68eb8":[4,0,0,15,1,14,5],
-"classcursestone_1_1world_1_1generator_1_1PerlinNoise.html#aee333e5f6ac0f67ba144cb590810f70d":[4,0,0,15,1,14,8],
-"classcursestone_1_1world_1_1generator_1_1Synth.html":[4,0,0,15,1,15]
+"classcursestone_1_1world_1_1generator_1_1PerlinNoise.html#a8ef99e33d090df0eae971706e3262669":[4,0,0,15,1,14,2]
 };

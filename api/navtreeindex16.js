@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"classcursestone_1_1item_1_1ItemRedstone.html#a12ce51fe2ce5898d872d99d0b228fb34":[4,0,0,5,60,0],
+"classcursestone_1_1item_1_1ItemRedstone.html#a86e104da7e95e14718cf228fa0f7f40e":[4,0,0,5,60,1],
+"classcursestone_1_1item_1_1ItemShears.html":[4,0,0,5,61],
 "classcursestone_1_1item_1_1ItemShears.html#a3c5c39281b33079abe3ad7b279974e1d":[4,0,0,5,61,0],
 "classcursestone_1_1item_1_1ItemShears.html#aecbcedb3db583a43345201b28ce1d157":[4,0,0,5,61,1],
 "classcursestone_1_1item_1_1ItemShovelDiamond.html":[4,0,0,5,62],
@@ -246,8 +249,5 @@ var NAVTREEINDEX16 =
 "classcursestone_1_1network_1_1protocol_1_1ClientboundMapItemDataPacket.html#a67bdacdb186b208e35ad281b70b2f88f":[4,0,0,7,0,12,1],
 "classcursestone_1_1network_1_1protocol_1_1ClientboundMapItemDataPacket.html#ae935579232dd9751c6fc8996ccd0aaf2":[4,0,0,7,0,12,2],
 "classcursestone_1_1network_1_1protocol_1_1ContainerClosePacket.html":[4,0,0,7,0,13],
-"classcursestone_1_1network_1_1protocol_1_1ContainerClosePacket.html#a2fbcf5e86df4bcdd57966ee603701d7e":[4,0,0,7,0,13,1],
-"classcursestone_1_1network_1_1protocol_1_1ContainerClosePacket.html#a76a1d55110624f014852879bd4eed0f5":[4,0,0,7,0,13,3],
-"classcursestone_1_1network_1_1protocol_1_1ContainerClosePacket.html#ab4a63f8b13a5359641d1862514ed22d0":[4,0,0,7,0,13,2],
-"classcursestone_1_1network_1_1protocol_1_1ContainerClosePacket.html#adce3d04c476bff6655184ac076a791a7":[4,0,0,7,0,13,0]
+"classcursestone_1_1network_1_1protocol_1_1ContainerClosePacket.html#a2fbcf5e86df4bcdd57966ee603701d7e":[4,0,0,7,0,13,1]
 };
