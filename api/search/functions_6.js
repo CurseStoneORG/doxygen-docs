@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['playerssnapshot_1539',['playersSnapshot',['../classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b',1,'cursestone::Server']]]
+  ['loadall_1555',['loadAll',['../classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce',1,'cursestone::plugin::PluginManager']]],
+  ['loadworld_1556',['loadWorld',['../classcursestone_1_1Server.html#a5b261a0ca53391d20529f4a03a265b76',1,'cursestone::Server']]]
 ];

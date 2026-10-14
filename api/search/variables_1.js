@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fn_1551',['fn',['../structmcp__thread.html#a01931db06c1817b2ede26a873b7b7e97',1,'mcp_thread']]]
+  ['dimension_1583',['dimension',['../classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#af0a15c1f9993b742f4294f53b6297db3',1,'cursestone::network::protocol::ChangeDimensionPacket::dimension()'],['../structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a',1,'cursestone::world::WorldConfig::dimension()']]]
 ];

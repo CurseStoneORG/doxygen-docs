@@ -1,6 +1,7 @@
 var structcursestone_1_1world_1_1WorldConfig =
 [
     [ "dataPath", "structcursestone_1_1world_1_1WorldConfig.html#ae517570f00449b4641925a221f82fe6b", null ],
+    [ "dimension", "structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a", null ],
     [ "format", "structcursestone_1_1world_1_1WorldConfig.html#a6266fe7a819a9ddbda93a93c2a042e5c", null ],
     [ "generator", "structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c", null ],
     [ "name", "structcursestone_1_1world_1_1WorldConfig.html#aafccbd9ad72880ffc007f5c9882de6d0", null ],

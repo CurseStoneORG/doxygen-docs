@@ -109,6 +109,7 @@ var dir_46a300e4974f45ffe4be063a03f2fd9d =
     [ "BlockPistonSticky.h", "BlockPistonSticky_8h_source.html", null ],
     [ "BlockPlanks.h", "BlockPlanks_8h_source.html", null ],
     [ "BlockPodzol.h", "BlockPodzol_8h_source.html", null ],
+    [ "BlockPortal.h", "BlockPortal_8h_source.html", null ],
     [ "BlockPotato.h", "BlockPotato_8h_source.html", null ],
     [ "BlockPressurePlate.h", "BlockPressurePlate_8h_source.html", null ],
     [ "BlockPressurePlateStone.h", "BlockPressurePlateStone_8h_source.html", null ],

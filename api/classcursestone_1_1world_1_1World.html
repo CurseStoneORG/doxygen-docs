@@ -121,11 +121,15 @@ int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>seed</b> () const<
 <tr class="memitem:aa963b6ff4068185c8a03ca98db191036"><td class="memItemLeft" align="right" valign="top"><a id="aa963b6ff4068185c8a03ca98db191036"></a>
 const <a class="el" href="structcursestone_1_1world_1_1WorldConfig.html">WorldConfig</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>config</b> () const</td></tr>
 <tr class="separator:aa963b6ff4068185c8a03ca98db191036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4b2e3241f8fa81d91580925b3399a8f"><td class="memItemLeft" align="right" valign="top"><a id="ae4b2e3241f8fa81d91580925b3399a8f"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#ae4b2e3241f8fa81d91580925b3399a8f">dimension</a> () const</td></tr>
+<tr class="memdesc:ae4b2e3241f8fa81d91580925b3399a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">dimension of this world: 0 surface, 1 Nether. <br /></td></tr>
+<tr class="separator:ae4b2e3241f8fa81d91580925b3399a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f67dbbc61d836a9ffc36626f28d86fc"><td class="memItemLeft" align="right" valign="top"><a id="a9f67dbbc61d836a9ffc36626f28d86fc"></a>
 <a class="el" href="classcursestone_1_1world_1_1ChunkManager.html">ChunkManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>chunks</b> ()</td></tr>
 <tr class="separator:a9f67dbbc61d836a9ffc36626f28d86fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ce9afacee86234fadde0927f9eca672"><td class="memItemLeft" align="right" valign="top"><a id="a2ce9afacee86234fadde0927f9eca672"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getBlockId</b> (int32_t x, int32_t y, int32_t z)</td></tr>
+<tr class="memitem:a2ce9afacee86234fadde0927f9eca672"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672">getBlockId</a> (int32_t x, int32_t y, int32_t z)</td></tr>
+<tr class="memdesc:a2ce9afacee86234fadde0927f9eca672"><td class="mdescLeft">&#160;</td><td class="mdescRight">id of the block in coordinates of world.  <a href="classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672">More...</a><br /></td></tr>
 <tr class="separator:a2ce9afacee86234fadde0927f9eca672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ecbceacc98d77768c3809655b6324ab"><td class="memItemLeft" align="right" valign="top"><a id="a1ecbceacc98d77768c3809655b6324ab"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getBlockData</b> (int32_t x, int32_t y, int32_t z)</td></tr>
@@ -263,6 +267,44 @@ static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>
 static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>LIGHTNING_STRIKE_INTERVAL</b> = 200</td></tr>
 <tr class="separator:acb836d37034a6161b7b1d7aac1912c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2ce9afacee86234fadde0927f9eca672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ce9afacee86234fadde0927f9eca672">&#9670;&nbsp;</a></span>getBlockId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t cursestone::world::World::getBlockId </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>id of the block in coordinates of world. </p>
+<p>returns 0 if the chunk not is loaded (not forces generation; for that is chunks().getChunk()). </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/world/<a class="el" href="World_8h_source.html">World.h</a></li>
 <li>src/world/World.cpp</li>

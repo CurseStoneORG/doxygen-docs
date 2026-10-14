@@ -109,6 +109,7 @@ var annotated_dup =
         [ "BlockPistonSticky", "classcursestone_1_1block_1_1BlockPistonSticky.html", "classcursestone_1_1block_1_1BlockPistonSticky" ],
         [ "BlockPlanks", "classcursestone_1_1block_1_1BlockPlanks.html", "classcursestone_1_1block_1_1BlockPlanks" ],
         [ "BlockPodzol", "classcursestone_1_1block_1_1BlockPodzol.html", "classcursestone_1_1block_1_1BlockPodzol" ],
+        [ "BlockPortal", "classcursestone_1_1block_1_1BlockPortal.html", "classcursestone_1_1block_1_1BlockPortal" ],
         [ "BlockPotato", "classcursestone_1_1block_1_1BlockPotato.html", "classcursestone_1_1block_1_1BlockPotato" ],
         [ "BlockPressurePlate", "classcursestone_1_1block_1_1BlockPressurePlate.html", "classcursestone_1_1block_1_1BlockPressurePlate" ],
         [ "BlockPressurePlateStone", "classcursestone_1_1block_1_1BlockPressurePlateStone.html", "classcursestone_1_1block_1_1BlockPressurePlateStone" ],

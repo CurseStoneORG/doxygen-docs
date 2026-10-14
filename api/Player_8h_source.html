@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">| \__/\ |_| | |  \__ \  __/\__/ / || (_) | | | |  __/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> \____/\__,_|_|  |___/\___\____/ \__\___/|_| |_|\___|</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * CurseStone | Open Source Server Software</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * CurseStone | Open Source server Software</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Copyright (C) 2026 CurseStoneTeam</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
@@ -108,18 +108,18 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Player — full player session. Owns the network session, inventory,</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// view distance, current chunk, gamemode, position, and a per-player</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// tick. The Player class is the most complex class in CurseStone;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// player — full player session. Owns the network session, inventory,</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// view distance, current chunk, gamemode, position, and to per-player</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// tick. The player class is the most complex class in CurseStone;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// it&#39;s the bridge between the protocol layer (LoginPacket → MovePlayerPacket)</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// and the world layer (World, Chunk, Entity).</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Mirrors pocketmine/Player.php but in C++. Lifecycle:</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   1. RakLibInterface receives CLIENT_HANDSHAKE → Server::openSession()</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   2. LoginPacket validated → Player::handleLogin() sends PlayStatusPacket</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   3. Player::doFirstSpawn() sends StartGamePacket + PlayerListPacket</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   4. Each tick: Player::onUpdate() sends chunk updates, processes input</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   5. Disconnect: Player::close() saves inventory, sends DisconnectPacket</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Mirrors pocketmine/player.php but in C++. Lifecycle:</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   1. RakLibInterface receives CLIENT_HANDSHAKE → server::openSession()</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   2. LoginPacket validated → player::handleLogin() sends PlayStatusPacket</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   3. player::doFirstSpawn() sends StartGamePacket + PlayerListPacket</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   4. Each tick: player::onUpdate() sends chunk updates, processes input</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   5. Disconnect: player::close() saves inventory, sends DisconnectPacket</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;CurseStone.h&quot;</span>                          <span class="comment">// defines math::Vector3 alias</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;IPlayer.h&quot;</span></div>
@@ -153,14 +153,14 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Skin as the client sent it in its login JWT (Genisys LoginPacket</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// does base64_decode(&quot;SkinData&quot;) and keeps &quot;SkinId&quot; verbatim; the</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// PlayerListPacket entry carries BOTH). Empty only when the client</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// sent none — Player normalises that to a valid default skin.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// sent none — player normalises that to to valid default skin.</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::string skin_id;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::string skin_data;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    std::string ip;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    uint16_t port = 0;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> gamemode = 0;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> view_distance = 8;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    int64_t runtime_eid = 1;       <span class="comment">// unique runtime entity ID (allocated by Server)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    int64_t runtime_eid = 1;       <span class="comment">// unique runtime entity id (allocated by server)</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classcursestone_1_1Player.html">   78</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1Player.html">Player</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1IPlayer.html">IPlayer</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1entity_1_1Human.html">entity::Human</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1permission_1_1PermissibleBase.html">permission::PermissibleBase</a>,</div>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// --- IPlayer ---</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::string getName()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> cfg_.username; }</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Skin forwarded to the other players&#39; PlayerListPacket entries.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Never empty: a client that sent none gets the default skin built in</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Never empty: to client that sent none gets the default skin built in</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// handleLoginPacket().</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">const</span> std::string&amp; skinId()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.skin_id; }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">const</span> std::string&amp; skinData()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.skin_data; }</div>
@@ -183,11 +183,11 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> setBanned(<span class="keywordtype">bool</span> v) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">bool</span> isWhitelisted() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> setWhitelisted(<span class="keywordtype">bool</span> v) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// Permisos: los nodos explicitos (attachments/plugins) mandan; si no hay</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// ninguno, un op tiene por defecto todo el sub-arbol &quot;cursestone.*&quot;</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// y un jugador normal no tiene nada. Es lo que describe</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// Permisos: the nodos explicitos (attachments/plugins) mandan; if not there is</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// none, a op has by default everything the sub-arbol &quot;cursestone.*&quot;</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// and a player normal not has nothing. is what describe</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// permission/DefaultPermissions (&quot;Sub-tree cursestone.* — given to</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// ops only by default&quot;), que todavia no esta cableado al login.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// ops only by default&quot;), that not yet this cableado to the login.</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">bool</span> hasPermission(<span class="keyword">const</span> std::string&amp; name)<span class="keyword"> const override </span>{</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">if</span> (PermissibleBase::hasPermission(name)) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">if</span> (!isOp()) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -196,14 +196,14 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> recalculatePermissions()<span class="keyword"> override </span>{}</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// --- Player session lifecycle ---</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// --- player session lifecycle ---</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">bool</span> isConnected()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> connected_.load(std::memory_order_relaxed); }</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">bool</span> loggedIn()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> logged_in_.load(std::memory_order_relaxed); }</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> close(<span class="keyword">const</span> std::string&amp; reason = <span class="stringliteral">&quot;disconnect.quitting&quot;</span>);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// --- Network callbacks (called from Network::dispatchSingle) ---</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> handleDataPacket(<a class="code" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">network::protocol::DataPacket</a>&amp; p);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Called when a packet handler throws. Writes a diagnostics report and</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Called when to packet handler throws. Writes to diagnostics report and</span></div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// kicks this player with the error attached (Nukkit-style).</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> handlePacketError(uint8_t pid, <span class="keyword">const</span> std::string&amp; what);</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> handleLogin(<a class="code" href="classcursestone_1_1network_1_1protocol_1_1LoginPacket.html">network::protocol::LoginPacket</a>&amp; p);</div>
@@ -218,77 +218,77 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                          <span class="keywordtype">float</span> fx = 0.5f, <span class="keywordtype">float</span> fy = 0.5f, <span class="keywordtype">float</span> fz = 0.5f);</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> handlePlayerAction(<span class="keywordtype">int</span> action, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, <span class="keywordtype">int</span> face);</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// Difunde la pose (agachado / sprintando) de ESTE jugador a todos los</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// clientes con los que comparte vista. Es la razon por la que el</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// agachado antes era invisible para los demas: Genisys 0.15.0 solo</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// cambia la propiedad local en Player::setSneaking()</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// (Player.php:3017-3034) y nunca manda SetEntityDataPacket, asi que</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// los otros clientes se quedan con la pose anterior para siempre.</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// broadcasts the pose (sneaking / sprintando) of this player to all the</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// clients with those that shares vista. is the razon by that which the</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// sneaking before era invisible for the other: Genisys 0.15.0 only</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="comment">// changes the property local in player::setSneaking()</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// (player.php:3017-3034) and never takes precedence SetEntityDataPacket, this way that</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="comment">// the other clients is remain with the pose anterior forever.</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// Los bits de agachado y sprint comparten la MISMA propiedad de</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// metadata (Entity::DATA_FLAGS = 0), asi que se manda el byte entero</span></div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// con los dos bits, nunca uno solo.</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">// the bits of sneaking and sprint comparten the same property of</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="comment">// metadata (Entity::DATA_FLAGS = 0), this way that is takes precedence the byte entero</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="comment">// with the two bits, never uno only.</span></div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> broadcastPoseFlags();</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Anuncia a ESTE jugador (entrada de lista de jugadores +</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// AddPlayerPacket) a cada otro jugador ya spawneado. Se usa en</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// doFirstSpawn() y en respawn(): Genisys Player::respawn() vuelve a</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// llamar spawnToAll() porque el cliente del 0.15.x tira su lista de</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// entidades al reaparecer y sin esto los demas no lo ven mas.</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Anuncia to this player (entrada of list of players +</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// AddPlayerPacket) to each other player already spawned. is uses in</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// doFirstSpawn() and in respawn(): Genisys player::respawn() scans again to</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// call spawnToAll() because the client of the 0.15.x tira its list of</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// entities to the reaparecer and without this the other not it ven but.</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">void</span> announceSelfToOthers();</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// Re-spawna a ESTE jugador los OTROS jugadores que tenga alrededor</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// (entrada de lista + AddPlayerPacket). El otro extremo de</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// announceSelfToOthers() y, igual que en Genisys, parte de</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// Player::respawn().</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// Re-spawna to this player the other players that tenga around</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// (entrada of list + AddPlayerPacket). the other extremo of</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// announceSelfToOthers() and, just like in Genisys, part of</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// player::respawn().</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// Ataque cuerpo a cuerpo (INTERACT_PACKET, ACTION_LEFT_CLICK contra</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// otra entidad). `targetEid` es el runtime id reportado por el</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// cliente; se resuelve contra srv_-&gt;playersSnapshot() (unicos</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// objetivos soportados por ahora — no hay mobs con AI todavia).</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// Aplica un cooldown server-side minimo (ver ATTACK_COOLDOWN_MS)</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// para que un cliente modificado no pueda spamear golpes.</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">// Ataque cuerpo to cuerpo (INTERACT_PACKET, ACTION_LEFT_CLICK contra</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="comment">// other entity). `targetEid` is the runtime id reported by the</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// client; is resolves contra srv_-&gt;playersSnapshot() (unicos</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// objetivos soportados for now — not there is mobs with AI still).</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// applies a cooldown server-side minimo (ver ATTACK_COOLDOWN_MS)</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// so that a client modificado not can spamear hits.</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">void</span> handleInteract(<span class="keywordtype">int</span> action, int64_t targetEid);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Reaparece al jugador tras morir. Se llama desde</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// handlePlayerAction al recibir ACTION_SPAWN_SAME_DIMENSION (el</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// cliente lo manda al tocar &quot;Respawn&quot; en la pantalla de muerte).</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// No-op si el jugador no esta muerto.</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Reaparece to the player tras morir. is flame from</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// handlePlayerAction when receiving ACTION_SPAWN_SAME_DIMENSION (the</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// client it takes precedence to the touch &quot;Respawn&quot; in the screen of death).</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// not-op if the player not this dead.</span></div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">void</span> respawn();</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// Abre el cofre en (x,y,z) para este jugador. Se llama desde</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">// handleBlockPlace, DESPUES del chequeo de PlayerInteractEvent (asi</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// cancelar la interaccion tambien bloquea abrir el cofre), cuando el</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// bloque clickeado es block::CHEST. Reutiliza el TileChest existente</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// en esa posicion via World::getTile (o crea uno nuevo la primera</span></div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// vez, via World::setTile) para que el contenido persista mientras</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// el proceso siga corriendo. Dispara InventoryOpenEvent; no hace</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// nada si se cancela. Si el jugador ya tenia otro cofre abierto, lo</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">// cierra primero (closeOpenChest()) — un jugador solo puede tener</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// un contenedor abierto a la vez.</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="comment">// opens the chest in (x,and,z) for this player. is flame from</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="comment">// handleBlockPlace, DESPUES of the chequeo of PlayerInteractEvent (this way</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="comment">// cancelar the interaccion tambien bloquea abrir the chest), when the</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// block clickeado is block::CHEST. Reutiliza the TileChest existente</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="comment">// in that position via World::getTile (or creates uno new the first</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="comment">// time, via World::setTile) so that the contenido persista while</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="comment">// the proceso siga running. Dispara InventoryOpenEvent; not does</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// nothing if is cancela. if the player already had other chest abierto, it</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">// closes first (closeOpenChest()) — a player only can have</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// a contenedor abierto to the time.</span></div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">void</span> openChestAt(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z);</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// Cierra el contenedor que este jugador tiene abierto actualmente</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// (cofre o horno). Manda ContainerClosePacket, saca al jugador de</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="comment">// los viewers del tile y limpia open_container_. No-op si no hay</span></div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">// ninguno abierto. Se llama al recibir CONTAINER_CLOSE_PACKET,</span></div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">// antes de abrir otro contenedor, y desde close() al desconectarse.</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="comment">// closes the contenedor that this player has abierto actualmente</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="comment">// (chest or furnace). takes precedence ContainerClosePacket, removes to the player of</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="comment">// the viewers of the tile and clean open_container_. not-op if not there is</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="comment">// none abierto. is flame when receiving CONTAINER_CLOSE_PACKET,</span></div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">// before abrir other contenedor, and from close() to the desconectarse.</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> closeOpenChest();</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// Abre el horno en (x,y,z). Espejo exacto de openChestAt():</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// reutiliza (o crea) el TileFurnace via World::getTile/setTile,</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// dispara InventoryOpenEvent (cancelable), registra al jugador en</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// los viewers del tile (para que TileFurnace::tick le mande el</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// progreso via ContainerSetDataPacket), abre su ventana de</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// contenedor y manda el volcado completo de los 3 slots.</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// opens the furnace in (x,and,z). mirror exacto of openChestAt():</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// reutiliza (or creates) the TileFurnace via World::getTile/setTile,</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// dispara InventoryOpenEvent (cancelable), registers to the player in</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">// the viewers of the tile (so that TileFurnace::tick it mande the</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">// progress via ContainerSetDataPacket), opens its window of</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="comment">// contenedor and takes precedence the dump complete of the 3 slots.</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">void</span> openFurnaceAt(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z);</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// Spawn a dropped item entity — pocketmine\level\Level::dropItem()</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="comment">// spawn to dropped item entity — pocketmine\level\Level::dropItem()</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="comment">// (Genisys 0.15). `motion*` is the $motion Vector3 the entity is created</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// with and the one we ship as speedX/Y/Z in AddItemEntityPacket; the</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="comment">// with and the one we ship as speedX/and/Z in AddItemEntityPacket; the</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// server then integrates it every tick in World::tickDroppedItems().</span></div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    <span class="comment">// `pickup_delay` is Genisys&#39; PickupDelay NBT short (10 by default,</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// 40 for a Q drop). Returns the allocated runtime entity ID, or 0 when</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="comment">// 40 for to Q drop). Returns the allocated runtime entity id, or 0 when</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">// the stack was empty.</span></div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    int64_t dropItem(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z,</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                     uint16_t itemId, uint8_t count, uint16_t damage,</div>
@@ -296,108 +296,108 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                     uint32_t pickup_delay = 10);</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// Entity::getDirectionVector() (Genisys 0.15) — the unit vector the</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">// player is looking along. Player::DROP_ITEM_PACKET multiplies it by</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">// player is looking along. player::DROP_ITEM_PACKET multiplies it by</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="comment">// 0.4 to throw the stack.</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <a class="code" href="structmcp__vector3.html">math::Vector3</a> getDirectionVector() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">// Portado de Genisys Player::handleDataPacket case DROP_ITEM_PACKET:</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// valida que el item esté en el inventario, dispara PlayerDropItemEvent</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// (cancelable) y suelta una entidad item con movimiento hacia adelante.</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="comment">// Portado of Genisys player::handleDataPacket case DROP_ITEM_PACKET:</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="comment">// valida that the item is in the inventory, dispara PlayerDropItemEvent</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="comment">// (cancelable) and emits a entity item with movement hacia adelante.</span></div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    <span class="keywordtype">void</span> handleDropItem(<a class="code" href="classcursestone_1_1network_1_1protocol_1_1DropItemPacket.html">network::protocol::DropItemPacket</a>&amp; pk);</div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">// Portado de Genisys Player::handleDataPacket case</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// BLOCK_ENTITY_DATA_PACKET: edición de cartel. Valida distancia,</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// que el tile sea un Sign y el Creator contra el UUID del jugador, y</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">// dispara SignChangeEvent (cancelable) antes de aplicar el texto.</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">// Portado of Genisys player::handleDataPacket case</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// BLOCK_ENTITY_DATA_PACKET: editing of sign. Valida distancia,</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="comment">// that the tile is a Sign and the Creator contra the UUID of the player, and</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="comment">// dispara SignChangeEvent (cancelable) before apply the text.</span></div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">void</span> handleSignEdit(<a class="code" href="classcursestone_1_1network_1_1protocol_1_1BlockEntityDataPacket.html">network::protocol::BlockEntityDataPacket</a>&amp; pk);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">// Portado de Genisys Player::consumeHeldItem(): si el item de la mano</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// es comida, dispara PlayerItemConsumeEvent (cancelable), repone</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// hambre y descuenta una unidad del stack. Llamado desde</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <span class="comment">// Portado of Genisys player::consumeHeldItem(): if the item of the mano</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// is comida, dispara PlayerItemConsumeEvent (cancelable), repone</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// hambre and descuenta a unidad of the stack. Llamado from</span></div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// ENTITY_EVENT_PACKET (evento 9, Eating).</span></div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">void</span> consumeHeldItem();</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// Serializa el NBT de un block entity (cartel, cofre, horno...) y manda</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">// un BlockEntityDataPacket a los jugadores que trackean su chunk. Si</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">// `only` no es null, se envía únicamente a ese jugador (equivale a</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// Genisys Tile::spawnTo($player)); si es null, a todos los viewers del</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// chunk (equivale a Tile::spawnToAll()).</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// Serializa the NBT of a block entity (sign, chest, furnace...) and takes precedence</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">// a BlockEntityDataPacket to the players that trackean its chunk. if</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">// `only` not is null, is sends only to that player (equivale to</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// Genisys tile::spawnTo($player)); if is null, to all the viewers of the</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="comment">// chunk (equivale to tile::spawnToAll()).</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">void</span> sendBlockEntityData(int32_t x, int32_t y, int32_t z,</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                             <a class="code" href="classcursestone_1_1tile_1_1Tile.html">tile::Tile</a>&amp; t, <a class="code" href="classcursestone_1_1Player.html">Player</a>* only = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">// Reenvía a este jugador los BlockEntityData de todos los tiles</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">// registrados en el chunk (cx,cz). Se llama después de mandar el</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">// FullChunkDataPacket, para que carteles/cofres/hornos ya guardados</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">// tengan su NBT en el cliente al reconectar (PMMP envía los tiles</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">// junto con el chunk).</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">// forwards to this player the BlockEntityData of all the tiles</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">// registrados in the chunk (cx,cz). is flame after send the</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    <span class="comment">// FullChunkDataPacket, so that carteles/cofres/hornos already guardados</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">// tengan its NBT in the client when reconnecting (PMMP sends the tiles</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    <span class="comment">// next to with the chunk).</span></div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="keywordtype">void</span> sendChunkTiles(int32_t cx, int32_t cz);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">// Send the creative-inventory contents (ContainerSetContentPacket with</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">// windowid=0x79). Mirrors PMMP Player.php:2301 + 1461.</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="comment">// windowid=0x79). Mirrors PMMP player.php:2301 + 1461.</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordtype">void</span> sendCreativeInventory();</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// Send the player&#39;s main inventory + armor to the client. Called on</span></div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// spawn and after inventory changes that the client must sync to.</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">// Mirrors Nukkit&#39;s Player.sendInventory() / sendArmor().</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">// Mirrors Nukkit&#39;s player.sendInventory() / sendArmor().</span></div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordtype">void</span> sendInventory();</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">// Send a single slot confirmation to the client. Mirrors Nukkit&#39;s</span></div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// PlayerInventory.sendSlot() — after setItem(), Nukkit sends a</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">// Send to single slot confirmation to the client. Mirrors Nukkit&#39;s</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// PlayerInventory.sendSlot() — after setItem(), Nukkit sends to</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="comment">// ContainerSetSlotPacket back to the client so it confirms the</span></div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">// change. Without this, MCPE 0.15.x reverts the slot visually.</span></div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">void</span> sendSlot(<span class="keywordtype">int</span> slot);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// Save this player&#39;s data (NBT + inventory) to disk via Server.</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// Save this player&#39;s data (NBT + inventory) to disk via server.</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keywordtype">void</span> saveData();</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">// Returns true if this player is currently tracking the given chunk.</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">// Used to broadcast particles + sounds only to nearby players.</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordtype">bool</span> isTrackingChunk(int32_t cx, int32_t cz) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">// ¿Este cliente puede ver el bloque del chunk (cx, cz)?</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="comment">// ¿this client can ver the block of the chunk (cx, cz)?</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// DISTINTO de isTrackingChunk(), que consulta used_chunks_ — el</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// registro de chunks &quot;ya enviados&quot;. Ese registro se vacia y se vuelve</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">// a poblar por caminos administrativos (teleport(), el ACK de spawn</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// del cliente, handleClientSpawnAck(), sendChunksAroundSpawn) y</span></div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// durante esas ventanas used_chunks_ puede estar VACIO mientras el</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// cliente sigue mostrando el mundo que ya tiene en pantalla.</span></div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// different of isTrackingChunk(), that consulta used_chunks_ — the</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// registro of chunks &quot;already enviados&quot;. that registro is vacia and is scans again</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="comment">// to poblar by paths administrativos (teleport(), the ACK of spawn</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">// of the client, handleClientSpawnAck(), sendChunksAroundSpawn) and</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// during esas ventanas used_chunks_ can estar empty while the</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="comment">// client sigue mostrando the world that already has in screen.</span></div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// Usar ese registro como filtro de la difusión de cambios de bloque</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// es la causa del bug reportado: &quot;cuando alguien rompe un bloque los</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">// demas aun ven el bloque y se puede atravesar como fantasma&quot; —</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="comment">// el receptor queda con el bloque dibujado y su malla de colisión</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">// intacta porque nunca le llega el UpdateBlockPacket.</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="comment">// use that registro as filtro of the difusión of changes of block</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">// is the cause of the bug reported: &quot;when someone breaks a block the</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="comment">// other even ven the block and is can atravesar as ghost&quot; —</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="comment">// the receptor remains with the block dibujado and its malla of colisión</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="comment">// intacta because never it arrives the UpdateBlockPacket.</span></div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="comment">// Este metodo responde la pregunta REAL (&quot;¿el chunk esta dentro de</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// la distancia de vision de este jugador?&quot;) con la misma criterio que</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// usa buildChunkSpiral(view_distance) para decidir que chunks</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// streamed. Mandarle un UpdateBlockPacket a un cliente que todavia no</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// tiene ese chunk no hace daño: el cambio llega igual dentro del</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">// FullChunkDataPacket cuando el chunk se descarga.</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="comment">// this metodo responde the pregunta actual (&quot;¿the chunk this inside of</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="comment">// the distancia of vision of this player?&quot;) with the same criterio that</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="comment">// uses buildChunkSpiral(view_distance) for decidir that chunks</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// streamed. Mandarle a UpdateBlockPacket to a client that not yet</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// has that chunk not does damage: the change arrives igual inside of the</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="comment">// FullChunkDataPacket when the chunk is unloads.</span></div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keywordtype">bool</span> canSeeBlock(int32_t cx, int32_t cz) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">// --- Server → Player packets ---</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">// --- server → player packets ---</span></div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="comment">// ordered=true guarantees this packet is delivered to the client</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="comment">// strictly after every earlier ordered=true packet sent to this</span></div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// player (RELIABLE_ORDERED on a dedicated channel) — use for the</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// login/spawn handshake sequence, where the real MCPE client</span></div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// player (RELIABLE_ORDERED on to dedicated channel) — use for the</span></div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="comment">// login/spawn handshake sequence, where the actual MCPE client</span></div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">// requires strict order. Default false keeps packets on the</span></div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">// separate unordered RELIABLE channel (chunks, entity updates,</span></div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="comment">// anything where inter-packet order doesn&#39;t matter).</span></div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordtype">void</span> sendPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; p,</div>
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                     <span class="keywordtype">bool</span> ordered = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// Vuelca los paquetes pendientes del buffer por tick como UN</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">// BatchPacket por clase de canal (unordered/ordered). Se llama al</span></div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">// final de Server::tick (una vez por tick por jugador), cuando el</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// buffer cruza BATCH_FLUSH_BYTES, y en kick() para que el</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// DisconnectPacket salga antes de cerrar la sesion RakNet.</span></div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// Vuelca the packets pendientes of the buffer per tick as a</span></div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">// BatchPacket by clase of canal (unordered/ordered). is flame to the</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="comment">// end of server::tick (a time per tick per player), when the</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// buffer cruza BATCH_FLUSH_BYTES, and in kick() so that the</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// DisconnectPacket salga before close the sesion RakNet.</span></div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordtype">void</span> flushPendingPackets();</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordtype">void</span> sendMessage(<span class="keyword">const</span> std::string&amp; msg) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keywordtype">void</span> kick(<span class="keyword">const</span> std::string&amp; reason = <span class="stringliteral">&quot;disconnect.kick&quot;</span>);</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="comment">// Nukkit-style kick: the DisconnectPacket the client shows on screen</span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// carries both `reason` and an extra `detail` line. Used to surface</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">// server-side errors (e.g. an exception while handling a packet) to</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="comment">// server-side errors (e.g. an exception while handling to packet) to</span></div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    <span class="comment">// the affected player instead of silently dropping them.</span></div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">void</span> kick(<span class="keyword">const</span> std::string&amp; reason, <span class="keyword">const</span> std::string&amp; detail);</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <span class="keywordtype">void</span> teleport(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z);</div>
@@ -409,37 +409,37 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keywordtype">int</span> gamemode()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.gamemode; }</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordtype">void</span> setGamemode(<span class="keywordtype">int</span> gm);</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// --- Tick ---</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// --- tick ---</span></div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordtype">void</span> onUpdate(uint64_t current_tick);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="comment">// Client spawn ACK (PlayStatus PLAYER_SPAWN). Marks this client as</span></div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="comment">// actually rendering the world; clears used_chunks_ and re-centers the</span></div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">// streaming queue so any chunk lost during the client&#39;s loading screen</span></div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">// gets delivered. See handleDataPacket(PLAY_STATUS_PACKET).</span></div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">// ROOT CAUSE this closes (&quot;a veces los chunks no se renderizan&quot;):</span></div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">// ROOT CAUSE this closes (&quot;to veces the chunks not is renderizan&quot;):</span></div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="comment">// every FullChunkDataPacket sent BEFORE the client&#39;s spawn ACK can be</span></div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="comment">// silently discarded by the client while it is still on its loading</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="comment">// screen, yet used_chunks_ had already marked those chunks as sent —</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="comment">// so they were never re-sent and the world showed a permanent hole</span></div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="comment">// so they were never re-sent and the world showed to permanent hole</span></div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;    <span class="comment">// exactly where the pre-ACK burst went. Clearing the set and letting</span></div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="comment">// onUpdate() re-stream in view is safe: chunks the client DID keep are</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// ignored by it as duplicates; the ones it lost now arrive. The actual</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// ignored by it as duplicates; the ones it lost now arrive. The current</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// sending stays inside the usual MAX_CHUNKS_PER_TICK throttle.</span></div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">// SOLO EL PRIMER ACK CUENTA (bug de &quot;no puedo ver el terreno al</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// entrar&quot;). El re-stream arranca DE NUEVO por el centro de la</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">// espiral, asi que vaciar used_chunks_ tira tambien el anillo</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">// exterior ya streamed. Si el cliente vuelve a mandar</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// PlayStatus(PLAYER_SPAWN) antes de que la espiral termine, el</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="comment">// progreso se reinicia una y otra vez y el horizonte NUNCA crece.</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// Medido con tools/terrain_check.py mandando un ACK cada 2 s:</span></div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="comment">// distinct se clavaba en 138 de 289 chunks con 750 reenvios, mientras</span></div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// cada ACK siguiente volvia a tirar todo. El primer ACK es el que</span></div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">// aporta informacion (&quot;ya arme el mundo&quot;); los siguientes no dicen</span></div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="comment">// nada nuevo, asi que se ignoran.</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">// only the PRIMER ACK CUENTA (bug of &quot;not puedo ver the terrain to the</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// enter&quot;). the re-stream arranca again by the centro of the</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">// espiral, this way that vaciar used_chunks_ tira tambien the anillo</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">// outside already streamed. if the client scans again to send</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// PlayStatus(PLAYER_SPAWN) before that the espiral termine, the</span></div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="comment">// progress is reinicia a and again and the horizon never crece.</span></div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// Medido with tools/terrain_check.py mandando a ACK each 2 s:</span></div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="comment">// distinct is clavaba in 138 of 289 chunks with 750 reenvios, while</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// each ACK next volvia to tirar everything. the primer ACK is that which</span></div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">// aporta informacion (&quot;already arme the world&quot;); the siguientes not dicen</span></div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="comment">// nothing new, this way that is ignoran.</span></div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">void</span> handleClientSpawnAck() {</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        <span class="keywordflow">if</span> (!srv_ || !srv_-&gt;getDefaultWorld()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">// compare_exchange: solo entra el PRIMER ACK; el resto sale aca.</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;        <span class="comment">// compare_exchange: only entra the PRIMER ACK; the rest leaves aca.</span></div>
 <div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordtype">bool</span> expected = <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        <span class="keywordflow">if</span> (!spawn_ack_done_.compare_exchange_strong(expected, <span class="keyword">true</span>))</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;            <span class="keywordflow">return</span>;</div>
@@ -467,12 +467,12 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="comment">// --- Inventory ---</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    std::shared_ptr&lt;inventory::PlayerInventory&gt; getInventory()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> inv_; }</div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160; </div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="comment">// Contenedor genérico abierto (cofre o horno). El dispatcher de</span></div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// ContainerSetSlotPacket lo usa para rutear clicks en la ventana 1</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="comment">// (cofre) o 2 (horno) sin duplicar código por tipo.</span></div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="comment">// Contenedor genérico abierto (chest or furnace). the dispatcher of</span></div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// ContainerSetSlotPacket it uses for rutear clicks in the window 1</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="comment">// (chest) or 2 (furnace) without duplicar code by tipo.</span></div>
 <div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <a class="code" href="classcursestone_1_1inventory_1_1Inventory.html">inventory::Inventory</a>* openContainerInventory() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="comment">// True if this player currently has a container (chest/furnace) open.</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="comment">// True if this player currently has to container (chest/furnace) open.</span></div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="comment">// Used by the diagnostics snapshot; see open_chest_/open_furnace_.</span></div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordtype">bool</span> hasOpenContainer()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> open_chest_ != <span class="keyword">nullptr</span> || open_furnace_ != <span class="keyword">nullptr</span>; }</div>
 <div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
@@ -482,7 +482,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordtype">int</span> viewDistance()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.view_distance; }</div>
 <div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160; </div>
 <div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="comment">// --- NetworkSession accessors ---</span></div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="comment">// Player stores a non-owning pointer to AdvancedSourceInterface (the RakLib</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="comment">// player stores to non-owning pointer to AdvancedSourceInterface (the RakLib</span></div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="comment">// instance is owned by Network). Lifetime is bounded by Network&#39;s lifetime.</span></div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    <span class="keywordtype">void</span> setSourceInterface(<a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">network::AdvancedSourceInterface</a>* iface) { adv_iface_ = iface; }</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">network::AdvancedSourceInterface</a>* sourceInterface()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> adv_iface_; }</div>
@@ -493,7 +493,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keyword">const</span> std::string&amp; ip()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.ip; }</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    uint16_t port()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.port; }</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="comment">// --- Player NBT data ---</span></div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="comment">// --- player NBT data ---</span></div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    NbtPtr namedTag()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> named_tag_; }</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordtype">void</span> setNamedTag(NbtPtr n) { named_tag_ = std::move(n); }</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
@@ -503,7 +503,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordtype">bool</span> isAdventure()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.gamemode == 2; }</div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordtype">bool</span> isSpectator()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.gamemode == 3; }</div>
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160; </div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="comment">// --- Player info (Nukkit: getDisplayName/getAddress/getClientId) ---</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="comment">// --- player info (Nukkit: getDisplayName/getAddress/getClientId) ---</span></div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    std::string getDisplayName()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.username; }</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    std::string getAddress()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> cfg_.ip; }</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    int64_t getClientId()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> std::stoll(cfg_.client_id.empty() ? <span class="stringliteral">&quot;0&quot;</span> : cfg_.client_id); }</div>
@@ -512,7 +512,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="comment">// --- Position/teleport (Nukkit: getNextPosition/getSpawn/sendPosition) ---</span></div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <a class="code" href="structmcp__vector3.html">math::Vector3</a> getNextPosition()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pos_; }</div>
 <div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <a class="code" href="structmcp__vector3.html">math::Vector3</a> getSpawn() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="comment">// Server spawn with the Y snapped to the real terrain surface of the</span></div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="comment">// server spawn with the and snapped to the actual terrain surface of the</span></div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="comment">// column (fixes the &quot;first join spawns you in the sky&quot; bug).</span></div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <a class="code" href="structmcp__vector3.html">math::Vector3</a> getServerSpawnSafe() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    <span class="keywordtype">void</span> sendPosition(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z, <span class="keywordtype">double</span> yaw = 0, <span class="keywordtype">double</span> pitch = 0, uint8_t mode = 0);</div>
@@ -532,7 +532,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="comment">// Hunger HUD sync (protocol 84 UpdateAttributesPacket): shows the</span></div>
 <div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="comment">// server-side food value on the client&#39;s hunger bar.</span></div>
 <div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordtype">void</span> sendFoodLevel();</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="comment">// Health-only attribute sync (Infinity Player::setHealth): updates</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="comment">// Health-only attribute sync (Infinity player::setHealth): updates</span></div>
 <div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="comment">// the hearts immediately after ANY health change.</span></div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordtype">void</span> sendHealthAttribute();</div>
 <div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="comment">// Full attribute sync (health + hunger) — used after respawn/heal.</span></div>
@@ -553,12 +553,12 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keywordtype">void</span> announceTo(<a class="code" href="classcursestone_1_1Player.html">Player</a>* viewer);</div>
 <div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160; </div>
 <div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="comment">// --- Sneak (crouch) ---</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="comment">// Estado de agachado, reportado por el cliente via</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="comment">// state of sneaking, reported by the client via</span></div>
 <div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="comment">// PlayerActionPacket ACTION_START_SNEAK=11 / ACTION_STOP_SNEAK=12</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="comment">// (protocol 84, Genisys 0.15.0 PlayerActionPacket.php). Mientras es</span></div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="comment">// true el vanilla bloquea toda interaccion con tiles y bloques</span></div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="comment">// (cofres, hornos, mesas, palancas, botones, chispa, cubos) y solo</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="comment">// permite colocar bloques y atacar — ver handleBlockPlace().</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="comment">// (protocol 84, Genisys 0.15.0 PlayerActionPacket.php). while is</span></div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="comment">// true the vanilla bloquea all interaccion with tiles and blocks</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="comment">// (cofres, hornos, mesas, palancas, botones, chispa, cubos) and only</span></div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="comment">// allows place blocks and atacar — ver handleBlockPlace().</span></div>
 <div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    <span class="keywordtype">bool</span> isSneaking()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> sneaking_; }</div>
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="keywordtype">void</span> setSneaking(<span class="keywordtype">bool</span> v);</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
@@ -586,203 +586,223 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="keywordtype">void</span> removeWindow(<span class="keywordtype">void</span>* <span class="comment">/*inventory*/</span>) {}</div>
 <div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
 <div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <span class="comment">// --- Crafting (MCPE 0.15.x CraftingEventPacket) ---</span></div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="comment">// Estado del último CraftingEventPacket recibido. El cliente manda</span></div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="comment">// ESTE packet (no ContainerSetSlot) cuando termina de craftear:</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="comment">// trae el UUID de la receta + input/output reportado. El flujo</span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="comment">// server-side es: validar receta + materiales en inv_, consumir</span></div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="comment">// ingredientes y dar el resultado — ver handleCraftingEvent().</span></div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="comment">// state of the last CraftingEventPacket received. the client takes precedence</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="comment">// this packet (not ContainerSetSlot) when termina of craft:</span></div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="comment">// trae the UUID of the receta + input/output reported. the flujo</span></div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="comment">// server-side is: validar receta + materiales in inv_, consumir</span></div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="comment">// ingredients and dar the result — ver handleCraftingEvent().</span></div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordtype">void</span> handleCraftingEvent(<span class="keyword">const</span> std::array&lt;uint8_t, 16&gt;&amp; recipe_uuid,</div>
 <div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;                             <span class="keyword">const</span> std::vector&lt;cursestone::item::ItemStack&gt;&amp; input,</div>
 <div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;                             <span class="keyword">const</span> std::vector&lt;cursestone::item::ItemStack&gt;&amp; output,</div>
 <div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;                             uint8_t window_id);</div>
 <div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="comment">// Fallback: matchea la grilla 2x2 del inventario contra las recetas</span></div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="comment">// y ejecuta el craft si hay match. Llamado desde el</span></div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="comment">// CONTAINER_CLOSE_PACKET de la ventana 0 (ver Player.cpp).</span></div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="comment">// Fallback: matchea the grilla 2x2 of the inventory contra the recetas</span></div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="comment">// and executes the craft if there is match. Llamado from the</span></div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="comment">// CONTAINER_CLOSE_PACKET of the window 0 (ver player.cpp).</span></div>
 <div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <span class="keywordtype">void</span> handleInventoryCraft();</div>
 <div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="comment">// --- Dimension (Nukkit: setDimension/teleportToNether/teleportToOverworld) ---</span></div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <span class="keywordtype">void</span> setDimension() {}</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="keywordtype">void</span> teleportToNether() {}</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="keywordtype">void</span> teleportToOverworld() {}</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160; </div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="comment">// --- Settings (Nukkit: setMovementSpeed/setAttribute/sendSettings) ---</span></div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordtype">void</span> setMovementSpeed(<span class="keywordtype">float</span> speed);</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="keywordtype">void</span> setAttribute(<span class="keywordtype">int</span> attrId, <span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordtype">void</span> sendSettings();</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <span class="comment">// --- Killer (Nukkit: getKiller) ---</span></div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    Entity* getKiller()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="comment">// Damage constante de mano vacia. CurseStone no tiene todavia una</span></div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    <span class="comment">// tabla de dano por item (espadas/hachas), asi que todo golpe</span></div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="comment">// cuerpo a cuerpo usa este valor fijo hasta que exista una.</span></div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">float</span> BASE_ATTACK_DAMAGE = 1.0f;</div>
-<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="comment">// Cooldown server-side entre golpes de un mismo jugador, en ms.</span></div>
-<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="comment">// MCPE 0.15.x no tiene &quot;attack cooldown&quot; de combate como versiones</span></div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <span class="comment">// modernas — esto es puramente anti-spam server-side, no gameplay.</span></div>
-<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    <span class="keyword">static</span> constexpr uint64_t ATTACK_COOLDOWN_MS = 250;</div>
-<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160; </div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="comment">// Window id of the container this player currently has open</span></div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;    <span class="comment">// (0 = none). Infinity assigns container windows from 2 upwards</span></div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="comment">// (Player::addWindow: max(2, ++windowCnt % 99)) because the client</span></div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="comment">// owns id 0 (its own inventory) and 0x78/0x79/0x7a (armor,</span></div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="comment">// creative, hotbar) — id 1 is never used by the server, and a</span></div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="comment">// client that gets it can refuse to open the UI. Every packet of an</span></div>
-<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;    <span class="comment">// open container (open, content, per-slot, progress, close) carries</span></div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="comment">// THIS id, and ContainerSetSlot is routed back by it.</span></div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    uint8_t containerWindowId()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> container_window_id_; }</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="comment">// --- dimension (Nukkit: setDimension/teleportToNether/teleportToOverworld) ---</span></div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <span class="comment">// Ver player/PlayerWorld.cpp: switchWorld() does the change actual of</span></div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="comment">// world (ChangeDimensionPacket + re-stream of chunks) and the</span></div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="comment">// teleport*dimension() resuelven/crean the world target.</span></div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;<span class="comment"></span>    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* <a class="code" href="classcursestone_1_1Player.html#a751b2798547e26bba801ea6acbf1c61a">getWorld</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcursestone_1_1Player.html#a57a1ce0ede813a86e6df3ea1b5388679">switchWorld</a>(<a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* target, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z, <span class="keywordtype">bool</span> throughPortal);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a">teleportToNether</a>();</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38">teleportToOverworld</a>();</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">checkPortal</a>();</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="comment">// --- Settings (Nukkit: setMovementSpeed/setAttribute/sendSettings) ---</span></div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordtype">void</span> setMovementSpeed(<span class="keywordtype">float</span> speed);</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="keywordtype">void</span> setAttribute(<span class="keywordtype">int</span> attrId, <span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordtype">void</span> sendSettings();</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="comment">// --- Killer (Nukkit: getKiller) ---</span></div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    Entity* getKiller()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
 <div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="comment">// Next container window id for this player: 2..98, cycling, the</span></div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="comment">// same range Infinity hands out. Returns the id it just handed out.</span></div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    uint8_t openContainerWindow();</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160; </div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <span class="comment">// --- Batch packets (Nukkit: batchDataPacket/dataPacket/directDataPacket) ---</span></div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="keywordtype">bool</span> batchDataPacket(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data);</div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="keywordtype">bool</span> dataPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; pk) { sendPacket(pk); <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keywordtype">bool</span> directDataPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; pk) { sendPacket(pk); <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="comment">// Damage constante of mano vacia. CurseStone not has still a</span></div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="comment">// tabla of damage by item (espadas/hachas), this way that everything hit</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <span class="comment">// cuerpo to cuerpo uses this valor fixed until exista a.</span></div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">float</span> BASE_ATTACK_DAMAGE = 1.0f;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <span class="comment">// Cooldown server-side between hits of a same player, in ms.</span></div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="comment">// MCPE 0.15.x not has &quot;attack cooldown&quot; of combate as versions</span></div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="comment">// modernas — esto is puramente anti-spam server-side, not gameplay.</span></div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keyword">static</span> constexpr uint64_t ATTACK_COOLDOWN_MS = 250;</div>
 <div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="comment">// entity::Living hook — dispara PlayerDeathEvent + broadcast del</span></div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="comment">// mensaje de muerte. Ver Living::applyDamage(). No implementa</span></div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="comment">// reaparicion (RespawnPacket es un stub sin encode() real en esta</span></div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="comment">// base de codigo todavia — ver TODO junto a la definicion).</span></div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="keywordtype">void</span> onDeath() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="comment">// Living hook tras cada dano no mortal: manda la animación de golpe</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="comment">// (HURT_ANIMATION con eid=0 = &quot;yo&quot; en protocolo 84, Infinity</span></div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="comment">// Player::attack) y sincroniza el atributo de salud al instante</span></div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="comment">// (Infinity Player::setHealth) para que los corazones bajen fluidos.</span></div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="keywordtype">void</span> onHealthChanged() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160; </div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv_;</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <a class="code" href="structcursestone_1_1PlayerConfig.html">PlayerConfig</a> cfg_;</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">network::AdvancedSourceInterface</a>* adv_iface_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    std::shared_ptr&lt;inventory::PlayerInventory&gt; inv_;</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    std::shared_ptr&lt;World&gt; world_;</div>
-<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;    <span class="comment">// El contenedor abierto ahora mismo (cofre u horno), tipado por</span></div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <span class="comment">// tipo de tile. Solo hay UNO a la vez (ver container_window_id_ /</span></div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="comment">// openContainerWindow()). Set por openChestAt()/openFurnaceAt(),</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="comment">// limpiado por closeOpenChest().</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    std::shared_ptr&lt;tile::TileChest&gt; open_chest_;</div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    std::shared_ptr&lt;tile::TileFurnace&gt; open_furnace_;</div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="comment">// Window id currently in use by open_chest_/open_furnace_, and the</span></div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="comment">// counter that hands out the next one (see containerWindowId()).</span></div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    uint8_t container_window_id_ = 0;</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    uint8_t next_container_window_id_ = 2;</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    NbtPtr named_tag_;                       <span class="comment">// player.dat contents (lazy load)</span></div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    std::atomic&lt;bool&gt; connected_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    std::atomic&lt;bool&gt; logged_in_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    std::atomic&lt;bool&gt; spawned_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="comment">// BUG FIX (creative items unusable on a player&#39;s very first session,</span></div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="comment">// but fine after reconnecting — see doFirstSpawn()/onUpdate() in</span></div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    <span class="comment">// Player.cpp for the full explanation): before this fix, doFirstSpawn()</span></div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="comment">// fired immediately at login, sending PLAYER_SPAWN + the creative</span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <span class="comment">// catalog + the player&#39;s own inventory contents before a single chunk</span></div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="comment">// had reached the client. Real PMMP (see Player::onUpdate()&#39;s</span></div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <span class="comment">// chunkLoadCount/spawnThreshold gate) withholds PLAYER_SPAWN — and the</span></div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">// own-inventory ContainerSetContentPacket that rides on it — until a</span></div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="comment">// minimum number of chunks around the player have actually been sent.</span></div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="comment">// awaiting_first_spawn_ replicates that gate.</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    std::atomic&lt;bool&gt; awaiting_first_spawn_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> FIRST_SPAWN_CHUNK_THRESHOLD = 9;  <span class="comment">// 3x3 area, like PMMP&#39;s default</span></div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    uint64_t last_save_tick_ = 0;</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    uint64_t start_time_ms_ = 0;       <span class="comment">// Wall-clock when player joined (for workbench)</span></div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    uint64_t last_activity_ms_ = 0;    <span class="comment">// Wall-clock of last received packet</span></div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    uint64_t last_attack_ms_ = 0;      <span class="comment">// Wall-clock of last accepted melee attack (cooldown)</span></div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160; </div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="comment">// --- Hunger + ambient damage state (Infinity Player.php foodData) ---</span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="keywordtype">float</span> food_saturation_ = 5.0f;   <span class="comment">// hidden saturation, drains before food</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <span class="keywordtype">int</span>   food_tick_timer_ = 0;      <span class="comment">// countdown to next exhaustion drain</span></div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keywordtype">int</span>   food_depletion_ = 0;       <span class="comment">// accumulated exhaustion (Infinity: exhaustionLevel)</span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    uint64_t last_pos_y_ = 0;        <span class="comment">// last tick&#39;s Y as uint64 for fall tracking</span></div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="keywordtype">bool</span>  last_pos_set_ = <span class="keyword">false</span>;     <span class="comment">// first-move guard for fall damage</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <span class="keywordtype">bool</span>  was_in_lava_ = <span class="keyword">false</span>;      <span class="comment">// lava-damage throttle (PMMP resetFireTicks semantics)</span></div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keywordtype">bool</span>  was_on_fire_ = <span class="keyword">false</span>;      <span class="comment">// fire-tick state (carry after leaving the block)</span></div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    uint64_t last_fire_dmg_ms_ = 0;  <span class="comment">// fire damage interval gate (0.5s, vanilla)</span></div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    uint64_t last_lava_dmg_ms_ = 0;  <span class="comment">// lava damage interval gate (0.5s, vanilla)</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    uint64_t last_fire_tick_dmg_ms_ = 0;</div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    uint64_t last_drown_dmg_ms_ = 0; <span class="comment">// drowning damage interval gate (1s, vanilla)</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    uint64_t last_cactus_dmg_ms_ = 0;</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    uint64_t last_regen_ms_ = 0;     <span class="comment">// natural-regen gate (4s at food&gt;=17)</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="keywordtype">int</span>   starve_ticks_ = 0;         <span class="comment">// starve damage accumulator (80 ticks @1 dmg)</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="keywordtype">int</span>   air_ticks_ = 300;          <span class="comment">// remaining air underwater (vanilla 300 ticks)</span></div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keywordtype">int</span>   fire_ticks_ = 0;           <span class="comment">// remaining burn ticks (8s after fire/lava)</span></div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="keywordtype">bool</span>  moved_this_tick_ = <span class="keyword">false</span>;  <span class="comment">// set by handleMovePlayer, read by tickHungerAndDamage</span></div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="keywordtype">bool</span>  sprinting_ = <span class="keyword">false</span>;        <span class="comment">// client reports sprint (PlayerAction 9/10)</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keywordtype">bool</span>  sneaking_  = <span class="keyword">false</span>;        <span class="comment">// client reports crouch (PlayerAction 11/12)</span></div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    <span class="keywordtype">bool</span>  on_ground_fall_check_ = <span class="keyword">true</span>; <span class="comment">// last client-reported onGround</span></div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <span class="keywordtype">float</span> fall_distance_ = 0.0f;     <span class="comment">// accumulated fall distance in blocks</span></div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="comment">// Fix #3: shared spiral algorithm — single source of truth.</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::pair&lt;int32_t,int32_t&gt;&gt;</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;        buildChunkSpiral(<span class="keywordtype">int</span> vd);</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="comment">// Chunks already sent to this player (chunkHash = (cx&lt;&lt;32)|cz&amp;0xFFFFFFFF).</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="comment">// Guarded by chunks_mtx_.</span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    std::unordered_set&lt;int64_t&gt; used_chunks_;</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keyword">mutable</span> std::mutex chunks_mtx_;</div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <span class="comment">// Ya llego el ACK de spawn del cliente (PlayStatus PLAYER_SPAWN). El</span></div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <span class="comment">// re-stream pre-ACK de handleClientSpawnAck() es de una sola vez: sin</span></div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <span class="comment">// este flag, cada ACK repetido reiniciaba la espiral desde el centro y</span></div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="comment">// el horizonte nunca crecia. Ver el comentario de handleClientSpawnAck().</span></div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    std::atomic&lt;bool&gt; spawn_ack_done_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160; </div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <span class="comment">// Pending chunk request queue (spiral order, set by sendChunksAroundSpawn).</span></div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    std::vector&lt;std::pair&lt;int32_t,int32_t&gt;&gt; chunk_queue_;</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="keyword">mutable</span> std::mutex queue_mtx_;</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; </div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="comment">// --- Per-tick outbound packet batching (anti-lag en servidores</span></div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="comment">// publicos de bajos recursos) ---</span></div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="comment">// BUG ARREGLADO (&quot;en Linux hay lag / las particulas no se</span></div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    <span class="comment">// sincronizan; en Android va bien&quot;): antes CADA paquete se</span></div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="comment">// comprimia en SU PROPIO BatchPacket (zlib nivel 7) y viajaba como</span></div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="comment">// SU PROPIO datagrama fiable. Un romper-bloques emite UpdateBlock +</span></div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <span class="comment">// LevelEvent(2001) + MoveEntity por item + ...: en un servidor</span></div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="comment">// publico con RTT real eso multiplica x4-8 el numero de datagramas,</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="comment">// de compresiones zlib y de ACKs — el backlog de retransmisiones</span></div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="comment">// retrasa TODO (particulas, bloques, entidades) y en maquinas de</span></div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <span class="comment">// bajos recursos el zlib por paquete se come la CPU. PMMP/Genisys</span></div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="comment">// agrupan TODOS los paquetes de un tick a un jugador en UN solo</span></div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <span class="comment">// BatchPacket comprimido (BatchPacket::addSubPacket). Este buffer</span></div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    <span class="comment">// replica eso: sendPacket() encola el cuerpo ya codificado y el</span></div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="comment">// flush (fin de Server::tick, o umbral de tamaño, o kick) lo envia</span></div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="comment">// como un unico BatchPacket. El orden dentro de cada clase (ordered</span></div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <span class="comment">// channel 0 / unordered channel 1) se conserva FIFO, y los paquetes</span></div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="comment">// ordered (handshake de login) mantienen su canal propio.</span></div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="comment">// Umbral de vuelco inmediato: con 32 KB pendientes ya vale la pena</span></div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <span class="comment">// mandar (equivale a ~un chunk) y acota la memoria de una rafaga.</span></div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="comment">// --- Thread-safe close ---</span></div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="comment">// close() may be called from the RakLib network thread (timeout,</span></div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="comment">// client disconnect) while the main server thread holds a shared_ptr</span></div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="comment">// to this Player. std::call_once guarantees the cleanup body runs</span></div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="comment">// exactly once even if two threads call close() simultaneously.</span></div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    std::once_flag close_once_;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="comment">// When true, the main thread will remove this player from players_</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="comment">// on the next tick. Set by close() on the network thread; read+acted</span></div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="comment">// on by Server::tick() on the main thread. This avoids destroying</span></div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="comment">// the shared_ptr (and thus the Player) from the network thread</span></div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="comment">// while the main thread is iterating players_.</span></div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="comment">// Returns true if close() has been called (cleanup may still be</span></div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// in progress on another thread). Used by Server::tick() to skip</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">// players that are being torn down.</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire); }</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;};</div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <span class="comment">// Window id of the container this player currently has open</span></div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="comment">// (0 = none). Infinity assigns container windows from 2 upwards</span></div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="comment">// (player::addWindow: max(2, ++windowCnt % 99)) because the client</span></div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="comment">// owns id 0 (its own inventory) and 0x78/0x79/0x7a (armor,</span></div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="comment">// creative, hotbar) — id 1 is never used by the server, and to</span></div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="comment">// client that gets it can refuse to open the UI. Every packet of an</span></div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="comment">// open container (open, content, per-slot, progress, close) carries</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="comment">// THIS id, and ContainerSetSlot is routed back by it.</span></div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    uint8_t containerWindowId()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> container_window_id_; }</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="comment">// Next container window id for this player: 2..98, cycling, the</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="comment">// same range Infinity hands out. Returns the id it just handed out.</span></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    uint8_t openContainerWindow();</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <span class="comment">// --- Batch packets (Nukkit: batchDataPacket/dataPacket/directDataPacket) ---</span></div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keywordtype">bool</span> batchDataPacket(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data);</div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <span class="keywordtype">bool</span> dataPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; pk) { sendPacket(pk); <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keywordtype">bool</span> directDataPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; pk) { sendPacket(pk); <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="comment">// entity::Living hook — dispara PlayerDeathEvent + broadcast of the</span></div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="comment">// message of death. Ver Living::applyDamage(). not implementa</span></div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="comment">// reaparicion (RespawnPacket is a stub without encode() actual in this</span></div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <span class="comment">// base of code still — ver everything next to to the definition).</span></div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keywordtype">void</span> onDeath() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="comment">// Living hook tras each damage not mortal: takes precedence the animation of hit</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="comment">// (HURT_ANIMATION with eid=0 = &quot;yo&quot; in protocolo 84, Infinity</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="comment">// player::attack) and sincroniza the atributo of salud to the instante</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="comment">// (Infinity player::setHealth) so that the corazones bajen fluidos.</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keywordtype">void</span> onHealthChanged() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv_;</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <a class="code" href="structcursestone_1_1PlayerConfig.html">PlayerConfig</a> cfg_;</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">network::AdvancedSourceInterface</a>* adv_iface_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    std::shared_ptr&lt;inventory::PlayerInventory&gt; inv_;</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="comment">// world current of the player. pointer borrowed: the worlds are</span></div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <span class="comment">// property of server::worlds_ (unloadWorld moves to the players</span></div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="comment">// before soltarlos).</span></div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* world_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">// the contenedor abierto now same (chest or furnace), tipado by</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="comment">// tipo of tile. only there is UNO to the time (ver container_window_id_ /</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="comment">// openContainerWindow()). Set by openChestAt()/openFurnaceAt(),</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="comment">// limpiado by closeOpenChest().</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    std::shared_ptr&lt;tile::TileChest&gt; open_chest_;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    std::shared_ptr&lt;tile::TileFurnace&gt; open_furnace_;</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">// Window id currently in use by open_chest_/open_furnace_, and the</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="comment">// counter that hands out the next one (see containerWindowId()).</span></div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    uint8_t container_window_id_ = 0;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    uint8_t next_container_window_id_ = 2;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    NbtPtr named_tag_;                       <span class="comment">// player.dat contents (lazy load)</span></div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    std::atomic&lt;bool&gt; connected_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    std::atomic&lt;bool&gt; logged_in_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    std::atomic&lt;bool&gt; spawned_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="comment">// bug FIX (creative items unusable on to player&#39;s very first session,</span></div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <span class="comment">// but fine after reconnecting — see doFirstSpawn()/onUpdate() in</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="comment">// player.cpp for the full explanation): before this fix, doFirstSpawn()</span></div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="comment">// fired immediately at login, sending PLAYER_SPAWN + the creative</span></div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="comment">// catalog + the player&#39;s own inventory contents before to single chunk</span></div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">// had reached the client. actual PMMP (see player::onUpdate()&#39;s</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="comment">// chunkLoadCount/spawnThreshold gate) withholds PLAYER_SPAWN — and the</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="comment">// own-inventory ContainerSetContentPacket that rides on it — until to</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="comment">// minimum number of chunks around the player have actually been sent.</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// awaiting_first_spawn_ replicates that gate.</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    std::atomic&lt;bool&gt; awaiting_first_spawn_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> FIRST_SPAWN_CHUNK_THRESHOLD = 9;  <span class="comment">// 3x3 area, like PMMP&#39;s default</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    uint64_t last_save_tick_ = 0;</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    uint64_t start_time_ms_ = 0;       <span class="comment">// Wall-clock when player joined (for workbench)</span></div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    uint64_t last_activity_ms_ = 0;    <span class="comment">// Wall-clock of last received packet</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    uint64_t last_attack_ms_ = 0;      <span class="comment">// Wall-clock of last accepted melee attack (cooldown)</span></div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="comment">// --- Hunger + ambient damage state (Infinity player.php foodData) ---</span></div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordtype">float</span> food_saturation_ = 5.0f;   <span class="comment">// hidden saturation, drains before food</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keywordtype">int</span>   food_tick_timer_ = 0;      <span class="comment">// countdown to next exhaustion drain</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordtype">int</span>   food_depletion_ = 0;       <span class="comment">// accumulated exhaustion (Infinity: exhaustionLevel)</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    uint64_t last_pos_y_ = 0;        <span class="comment">// last tick&#39;s and as uint64 for fall tracking</span></div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="keywordtype">bool</span>  last_pos_set_ = <span class="keyword">false</span>;     <span class="comment">// first-move guard for fall damage</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordtype">bool</span>  was_in_lava_ = <span class="keyword">false</span>;      <span class="comment">// lava-damage throttle (PMMP resetFireTicks semantics)</span></div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keywordtype">bool</span>  was_on_fire_ = <span class="keyword">false</span>;      <span class="comment">// fire-tick state (carry after leaving the block)</span></div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    uint64_t last_fire_dmg_ms_ = 0;  <span class="comment">// fire damage interval gate (0.5s, vanilla)</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    uint64_t last_lava_dmg_ms_ = 0;  <span class="comment">// lava damage interval gate (0.5s, vanilla)</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    uint64_t last_fire_tick_dmg_ms_ = 0;</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    uint64_t last_drown_dmg_ms_ = 0; <span class="comment">// drowning damage interval gate (1s, vanilla)</span></div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    uint64_t last_cactus_dmg_ms_ = 0;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    uint64_t last_regen_ms_ = 0;     <span class="comment">// natural-regen gate (4s at food&gt;=17)</span></div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    <span class="keywordtype">int</span>   starve_ticks_ = 0;         <span class="comment">// starve damage accumulator (80 ticks @1 dmg)</span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <span class="keywordtype">int</span>   air_ticks_ = 300;          <span class="comment">// remaining air underwater (vanilla 300 ticks)</span></div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keywordtype">int</span>   fire_ticks_ = 0;           <span class="comment">// remaining burn ticks (8s after fire/lava)</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="keywordtype">bool</span>  moved_this_tick_ = <span class="keyword">false</span>;  <span class="comment">// set by handleMovePlayer, read by tickHungerAndDamage</span></div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="keywordtype">bool</span>  sprinting_ = <span class="keyword">false</span>;        <span class="comment">// client reports sprint (PlayerAction 9/10)</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="keywordtype">bool</span>  sneaking_  = <span class="keyword">false</span>;        <span class="comment">// client reports crouch (PlayerAction 11/12)</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160; </div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="comment">// --- portal of the Nether (ver checkPortal in player/PlayerWorld.cpp) ---</span></div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordtype">bool</span>     in_portal_ = <span class="keyword">false</span>;      <span class="comment">// the player sigue inside of the block of portal</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    uint64_t last_portal_ms_ = 0;     <span class="comment">// ms of the last travel by portal (cooldown)</span></div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="comment">// world of surface of the that salió hacia the Nether, for volver</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="comment">// to the same (the plugins can create several worlds of surface).</span></div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>*   portal_return_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="keywordtype">bool</span>  on_ground_fall_check_ = <span class="keyword">true</span>; <span class="comment">// last client-reported onGround</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="keywordtype">float</span> fall_distance_ = 0.0f;     <span class="comment">// accumulated fall distance in blocks</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; </div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <span class="comment">// Fix #3: shared spiral algorithm — single source of truth.</span></div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::pair&lt;int32_t,int32_t&gt;&gt;</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        buildChunkSpiral(<span class="keywordtype">int</span> vd);</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="comment">// chunks already sent to this player (chunkHash = (cx&lt;&lt;32)|cz&amp;0xFFFFFFFF).</span></div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="comment">// Guarded by chunks_mtx_.</span></div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    std::unordered_set&lt;int64_t&gt; used_chunks_;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="keyword">mutable</span> std::mutex chunks_mtx_;</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <span class="comment">// already arrived the ACK of spawn of the client (PlayStatus PLAYER_SPAWN). the</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="comment">// re-stream pre-ACK of handleClientSpawnAck() is of a sola time: without</span></div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <span class="comment">// this flag, each ACK repetido reiniciaba the espiral from the centro and</span></div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="comment">// the horizon never crecia. Ver the comment of handleClientSpawnAck().</span></div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    std::atomic&lt;bool&gt; spawn_ack_done_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="comment">// Pending chunk request queue (spiral order, set by sendChunksAroundSpawn).</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    std::vector&lt;std::pair&lt;int32_t,int32_t&gt;&gt; chunk_queue_;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keyword">mutable</span> std::mutex queue_mtx_;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160; </div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="comment">// --- Per-tick outbound packet batching (anti-lag in servers</span></div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="comment">// publicos of bajos recursos) ---</span></div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="comment">// bug fixed (&quot;in Linux there is lag / the particulas not is</span></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="comment">// sincronizan; in Android va well&quot;): before each packet is</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="comment">// comprimia in its own BatchPacket (zlib nivel 7) and viajaba as</span></div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="comment">// its own datagrama fiable. a break-blocks emite UpdateBlock +</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="comment">// LevelEvent(2001) + MoveEntity by item + ...: in a server</span></div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="comment">// publico with RTT actual that multiplica x4-8 the numero of datagramas,</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="comment">// of compresiones zlib and of ACKs — the backlog of retransmisiones</span></div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="comment">// retrasa everything (particulas, blocks, entities) and in maquinas of</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="comment">// bajos recursos the zlib by packet is come the CPU. PMMP/Genisys</span></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="comment">// agrupan all the packets of a tick to a player in a only</span></div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// BatchPacket comprimido (BatchPacket::addSubPacket). this buffer</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">// replica that: sendPacket() encola the cuerpo already codificado and the</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// flush (end of server::tick, or umbral of tamaño, or kick) it sends</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// as a unico BatchPacket. the order inside of each clase (ordered</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// channel 0 / unordered channel 1) is conserva FIFO, and the packets</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// ordered (handshake of login) mantienen its canal own.</span></div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="comment">// Umbral of vuelco inmediato: with 32 KB pendientes already vale the pena</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">// send (equivale to ~a chunk) and acota the memoria of a burst.</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="comment">// --- Thread-safe close ---</span></div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="comment">// close() may be called from the RakLib network thread (timeout,</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="comment">// client disconnect) while the main server thread holds to shared_ptr</span></div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="comment">// to this player. std::call_once guarantees the cleanup body runs</span></div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="comment">// exactly once even if two threads call close() simultaneously.</span></div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    std::once_flag close_once_;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="comment">// When true, the main thread will remove this player from players_</span></div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="comment">// on the next tick. Set by close() on the network thread; read+acted</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="comment">// on by server::tick() on the main thread. This avoids destroying</span></div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="comment">// the shared_ptr (and thus the player) from the network thread</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="comment">// while the main thread is iterating players_.</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="comment">// Returns true if close() has been called (cleanup may still be</span></div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="comment">// in progress on another thread). Used by server::tick() to skip</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <span class="comment">// players that are being torn down.</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire); }</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;};</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1IPlayer_html"><div class="ttname"><a href="classcursestone_1_1IPlayer.html">cursestone::IPlayer</a></div><div class="ttdef"><b>Definition:</b> IPlayer.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:79</div></div>
-<div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">Server singleton: boot, tick loop, and coordinated shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:79</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a4bb647650803d85e1b49ac7227898b38"><div class="ttname"><a href="classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38">cursestone::Player::teleportToOverworld</a></div><div class="ttdeci">bool teleportToOverworld()</div><div class="ttdoc">scans again to the surface escalando the coordinates 8:1.</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:336</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a57a1ce0ede813a86e6df3ea1b5388679"><div class="ttname"><a href="classcursestone_1_1Player.html#a57a1ce0ede813a86e6df3ea1b5388679">cursestone::Player::switchWorld</a></div><div class="ttdeci">bool switchWorld(World *target, double x, double y, double z, bool throughPortal)</div><div class="ttdoc">moves to the player to target in (x,and,z).</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:68</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a751b2798547e26bba801ea6acbf1c61a"><div class="ttname"><a href="classcursestone_1_1Player.html#a751b2798547e26bba801ea6acbf1c61a">cursestone::Player::getWorld</a></div><div class="ttdeci">World * getWorld() const</div><div class="ttdoc">world in that which is this player now (never null tras login).</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:56</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a94da833438a5645887eddc9b3b9bae29"><div class="ttname"><a href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">cursestone::Player::checkPortal</a></div><div class="ttdeci">void checkPortal()</div><div class="ttdoc">checks if the player is inside of a block of portal and, with the cooldown cumplido,...</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:282</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_ae64c96959f40bbbea0939114f85ba07a"><div class="ttname"><a href="classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a">cursestone::Player::teleportToNether</a></div><div class="ttdeci">bool teleportToNether()</div><div class="ttdoc">travels to the Nether escalando the coordinates 1:8 and buscando (or construyendo) a portal in the ta...</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:317</div></div>
+<div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">server singleton: boot, tick loop, and coordinated shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:79</div></div>
 <div class="ttc" id="aclasscursestone_1_1entity_1_1Human_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Human.html">cursestone::entity::Human</a></div><div class="ttdef"><b>Definition:</b> Human.h:31</div></div>
 <div class="ttc" id="aclasscursestone_1_1inventory_1_1Inventory_html"><div class="ttname"><a href="classcursestone_1_1inventory_1_1Inventory.html">cursestone::inventory::Inventory</a></div><div class="ttdef"><b>Definition:</b> Inventory.h:48</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1AdvancedSourceInterface_html"><div class="ttname"><a href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">cursestone::network::AdvancedSourceInterface</a></div><div class="ttdef"><b>Definition:</b> AdvancedSourceInterface.h:40</div></div>
@@ -792,6 +812,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1LoginPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1LoginPacket.html">cursestone::network::protocol::LoginPacket</a></div><div class="ttdef"><b>Definition:</b> LoginPacket.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1permission_1_1PermissibleBase_html"><div class="ttname"><a href="classcursestone_1_1permission_1_1PermissibleBase.html">cursestone::permission::PermissibleBase</a></div><div class="ttdef"><b>Definition:</b> PermissibleBase.h:34</div></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Tile_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Tile.html">cursestone::tile::Tile</a></div><div class="ttdef"><b>Definition:</b> Tile.h:47</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:152</div></div>
 <div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
 <div class="ttc" id="astructcursestone_1_1PlayerConfig_html"><div class="ttname"><a href="structcursestone_1_1PlayerConfig.html">cursestone::PlayerConfig</a></div><div class="ttdef"><b>Definition:</b> Player.h:60</div></div>
 <div class="ttc" id="astructmcp__vector3_html"><div class="ttname"><a href="structmcp__vector3.html">mcp_vector3</a></div><div class="ttdef"><b>Definition:</b> Vector3.h:40</div></div>

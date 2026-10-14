@@ -96,14 +96,19 @@ Public Attributes</h2></td></tr>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
 <tr class="separator:aafccbd9ad72880ffc007f5c9882de6d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6266fe7a819a9ddbda93a93c2a042e5c"><td class="memItemLeft" align="right" valign="top"><a id="a6266fe7a819a9ddbda93a93c2a042e5c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>format</b> = &quot;anvil&quot;</td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1world_1_1WorldConfig.html#a6266fe7a819a9ddbda93a93c2a042e5c">format</a> = &quot;anvil&quot;</td></tr>
+<tr class="memdesc:a6266fe7a819a9ddbda93a93c2a042e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">anvil (by default) | leveldb <br /></td></tr>
 <tr class="separator:a6266fe7a819a9ddbda93a93c2a042e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746a342ab93b97d7d694bd01039bf25c"><td class="memItemLeft" align="right" valign="top"><a id="a746a342ab93b97d7d694bd01039bf25c"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>generator</b> = &quot;normal&quot;</td></tr>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c">generator</a> = &quot;normal&quot;</td></tr>
+<tr class="memdesc:a746a342ab93b97d7d694bd01039bf25c"><td class="mdescLeft">&#160;</td><td class="mdescRight">normal | flat | Nether | void <br /></td></tr>
 <tr class="separator:a746a342ab93b97d7d694bd01039bf25c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b4e7bcfb524bc00c43d5f11947fd1f4"><td class="memItemLeft" align="right" valign="top"><a id="a7b4e7bcfb524bc00c43d5f11947fd1f4"></a>
 int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>seed</b> = 0</td></tr>
 <tr class="separator:a7b4e7bcfb524bc00c43d5f11947fd1f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a856c8d9cd0cc6fb1919f3d3a804df90a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a">dimension</a> = 0</td></tr>
+<tr class="memdesc:a856c8d9cd0cc6fb1919f3d3a804df90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">dimension of the world according to the protocolo: 0 surface, 1 Nether.  <a href="structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a">More...</a><br /></td></tr>
+<tr class="separator:a856c8d9cd0cc6fb1919f3d3a804df90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae18f38b92d716cea9e4a1bfc61907a8"><td class="memItemLeft" align="right" valign="top"><a id="aae18f38b92d716cea9e4a1bfc61907a8"></a>
 int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>time</b> = 0</td></tr>
 <tr class="separator:aae18f38b92d716cea9e4a1bfc61907a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -123,6 +128,24 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>view_distance</b> 
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>dataPath</b></td></tr>
 <tr class="separator:ae517570f00449b4641925a221f82fe6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a856c8d9cd0cc6fb1919f3d3a804df90a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a856c8d9cd0cc6fb1919f3d3a804df90a">&#9670;&nbsp;</a></span>dimension</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t cursestone::world::WorldConfig::dimension = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>dimension of the world according to the protocolo: 0 surface, 1 Nether. </p>
+<p>if remains to 0 and the generador is "Nether", the constructor the sube to 1. </p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/world/<a class="el" href="World_8h_source.html">World.h</a></li>
 </ul>

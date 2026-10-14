@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['joinall_1527',['joinAll',['../classcursestone_1_1ThreadManager.html#a832f25990a6862710b22b378fc382c88',1,'cursestone::ThreadManager']]]
+  ['find_1548',['find',['../classcursestone_1_1plugin_1_1PluginManager.html#acd34ab2cec27310116f4c2a0cb43c41c',1,'cursestone::plugin::PluginManager']]]
 ];

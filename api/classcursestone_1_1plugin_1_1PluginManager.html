@@ -111,6 +111,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>disableAll</b> ()</td
 <tr class="memitem:a7cfdfdf1a3f13bc362bcd3b25babfb0c"><td class="memItemLeft" align="right" valign="top"><a id="a7cfdfdf1a3f13bc362bcd3b25babfb0c"></a>
 std::vector&lt; <a class="el" href="structcursestone_1_1plugin_1_1PluginManager_1_1Info.html">Info</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>list</b> () const</td></tr>
 <tr class="separator:a7cfdfdf1a3f13bc362bcd3b25babfb0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd34ab2cec27310116f4c2a0cb43c41c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1PluginManager.html#acd34ab2cec27310116f4c2a0cb43c41c">find</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:acd34ab2cec27310116f4c2a0cb43c41c"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the plugin with that name, or nullptr if not exists.  <a href="classcursestone_1_1plugin_1_1PluginManager.html#acd34ab2cec27310116f4c2a0cb43c41c">More...</a><br /></td></tr>
+<tr class="separator:acd34ab2cec27310116f4c2a0cb43c41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -119,6 +122,27 @@ static <a class="el" href="classcursestone_1_1plugin_1_1PluginManager.html">Plug
 <tr class="separator:adcf17a01d57a6847e17fb3b0792c515f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="acd34ab2cec27310116f4c2a0cb43c41c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd34ab2cec27310116f4c2a0cb43c41c">&#9670;&nbsp;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a> * cursestone::plugin::PluginManager::find </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>returns the plugin with that name, or nullptr if not exists. </p>
+<p>Resolución in CALIENTE: prevents retain pointers of <a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a> more allá of the tick in that is obtuvieron (a /plugins reload destroys and recrea the objetos). </p>
+
+</div>
+</div>
 <a id="a7c668fcf9e431c4f31550720e8d6f5ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c668fcf9e431c4f31550720e8d6f5ce">&#9670;&nbsp;</a></span>loadAll()</h2>
 
@@ -146,7 +170,7 @@ static <a class="el" href="classcursestone_1_1plugin_1_1PluginManager.html">Plug
 </div><div class="memdoc">
 
 <p>Scans pluginsDir, then loads and enables every plugin. </p>
-<p>Creates pluginsDir and dataRoot, and moves a legacy &lt;pluginsDir&gt;/data_pl into dataRoot when dataRoot does not exist yet.</p>
+<p>Creates pluginsDir and dataRoot, and moves to legacy &lt;pluginsDir&gt;/data_pl into dataRoot when dataRoot does not exist yet.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pluginsDir</td><td>folder holding one subfolder per plugin. </td></tr>

@@ -20,6 +20,7 @@ var hierarchy =
     [ "cursestone::world::generator::biome::BiomeRegistry", "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeRegistry.html", null ],
     [ "cursestone::block::Block", "classcursestone_1_1block_1_1Block.html", [
       [ "cursestone::block::BlockAir", "classcursestone_1_1block_1_1BlockAir.html", null ],
+      [ "cursestone::block::BlockPortal", "classcursestone_1_1block_1_1BlockPortal.html", null ],
       [ "cursestone::block::BlockSolid", "classcursestone_1_1block_1_1BlockSolid.html", [
         [ "cursestone::block::BlockBedrock", "classcursestone_1_1block_1_1BlockBedrock.html", null ],
         [ "cursestone::block::BlockBedrockInvisible", "classcursestone_1_1block_1_1BlockBedrockInvisible.html", null ],
