@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a29cf5bef9d7282bcd01bf3287673d835":[4,0,0,10,2,0,3],
 "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a86f4082a70998f5f0af7784b03c72b1a":[4,0,0,10,2,0,1],
 "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#aeae39e41227323c186a8ec6805055b16":[4,0,0,10,2,0,0],
 "structcursestone_1_1utils_1_1Config_1_1Node.html":[4,0,0,13,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "structmcp__list__tag.html":[4,0,19],
 "structmcp__list__tag.html#a0ad747425623157cbc63dd0ec3512435":[4,0,19,3],
 "structmcp__list__tag.html#a0f1fa00aff5febe9cb705000d952f49c":[4,0,19,4],
-"structmcp__list__tag.html#ab01a37efc963116a54ec9baf62a03177":[4,0,19,1],
-"structmcp__list__tag.html#ae50f2be6f6d7f63f7a09e75a015038ec":[4,0,19,2]
+"structmcp__list__tag.html#ab01a37efc963116a54ec9baf62a03177":[4,0,19,1]
 };

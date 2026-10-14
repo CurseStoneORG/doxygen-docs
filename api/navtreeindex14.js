@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1event_1_1plugin_1_1PluginEvent.html#a65c3c7896007f05b0ccf3e8b2c4019ac":[4,0,0,3,4,2,1],
 "classcursestone_1_1event_1_1plugin_1_1PluginEvent.html#ab6e4e377a720e307f66e607c49256bd0":[4,0,0,3,4,2,2],
 "classcursestone_1_1event_1_1plugin_1_1PluginEvent.html#aefc8a28612d2385ab3ddcd5df0255f75":[4,0,0,3,4,2,0],
 "classcursestone_1_1event_1_1potion_1_1PotionApplyEvent.html":[4,0,0,3,5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1inventory_1_1Recipe.html#a416ced745eb222c64dc6a3595a0bb16e":[4,0,0,4,9,17],
 "classcursestone_1_1inventory_1_1Recipe.html#a44dc067c6f7c364e84134b6bf795d83e":[4,0,0,4,9,0],
 "classcursestone_1_1inventory_1_1Recipe.html#a473557283a810fb592d32e5474a9b016":[4,0,0,4,9,19],
-"classcursestone_1_1inventory_1_1Recipe.html#a6152542a323fc09ff40cbea1e558e751":[4,0,0,4,9,9],
-"classcursestone_1_1inventory_1_1Recipe.html#a8096916b5c5c949f14a4daf8dd4a0612":[4,0,0,4,9,6]
+"classcursestone_1_1inventory_1_1Recipe.html#a6152542a323fc09ff40cbea1e558e751":[4,0,0,4,9,9]
 };

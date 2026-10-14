@@ -23,6 +23,7 @@ var classcursestone_1_1Player =
     [ "directDataPacket", "classcursestone_1_1Player.html#a095856482539ecd9e13dc1495388725d", null ],
     [ "doFirstSpawn", "classcursestone_1_1Player.html#a783144e5daa03d9234ddbdb065d1c064", null ],
     [ "dropItem", "classcursestone_1_1Player.html#abf37a28551b8e4eb752cde714b226acc", null ],
+    [ "finishDimensionSwitch", "classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89", null ],
     [ "flushPendingPackets", "classcursestone_1_1Player.html#a45fd0a96856b22794b758f5287b338b3", null ],
     [ "gamemode", "classcursestone_1_1Player.html#a2a5cea64feaebb5ec3309fca61bcbf0f", null ],
     [ "getAddress", "classcursestone_1_1Player.html#a3fbe1199b25187756b01f71879938d74", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1entity_1_1ItemSpawnEvent.html#a5637269dab1c847252987553c89e5909":[4,0,0,3,1,25,0],
 "classcursestone_1_1event_1_1entity_1_1ItemSpawnEvent.html#ab03522dc8a0f139cd5fb66d1d94a0556":[4,0,0,3,1,25,1],
 "classcursestone_1_1event_1_1entity_1_1ProjectileHitEvent.html":[4,0,0,3,1,26],
 "classcursestone_1_1event_1_1entity_1_1ProjectileHitEvent.html#a5e88d820afca1ec2d5539983e0aa3fb7":[4,0,0,3,1,26,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1event_1_1plugin_1_1PluginEnableEvent.html":[4,0,0,3,4,1],
 "classcursestone_1_1event_1_1plugin_1_1PluginEnableEvent.html#a15489d6c888ccf56e85498ea51e6d711":[4,0,0,3,4,1,0],
 "classcursestone_1_1event_1_1plugin_1_1PluginEnableEvent.html#a23cfb6a3c0966022b162caa18f07e9d5":[4,0,0,3,4,1,1],
-"classcursestone_1_1event_1_1plugin_1_1PluginEvent.html":[4,0,0,3,4,2],
-"classcursestone_1_1event_1_1plugin_1_1PluginEvent.html#a65c3c7896007f05b0ccf3e8b2c4019ac":[4,0,0,3,4,2,1]
+"classcursestone_1_1event_1_1plugin_1_1PluginEvent.html":[4,0,0,3,4,2]
 };

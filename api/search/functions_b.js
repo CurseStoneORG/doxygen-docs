@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['teleporttonether_1577',['teleportToNether',['../classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a',1,'cursestone::Player']]],
-  ['teleporttooverworld_1578',['teleportToOverworld',['../classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38',1,'cursestone::Player']]],
-  ['tick_1579',['tick',['../classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1',1,'cursestone::Server']]]
+  ['teleporttonether_1579',['teleportToNether',['../classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a',1,'cursestone::Player']]],
+  ['teleporttooverworld_1580',['teleportToOverworld',['../classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38',1,'cursestone::Player']]],
+  ['tick_1581',['tick',['../classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1',1,'cursestone::Server']]]
 ];

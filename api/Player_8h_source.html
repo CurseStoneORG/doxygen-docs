@@ -610,198 +610,205 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a">teleportToNether</a>();</div>
 <div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38">teleportToOverworld</a>();</div>
 <div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">checkPortal</a>();</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160; </div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    <span class="comment">// --- Settings (Nukkit: setMovementSpeed/setAttribute/sendSettings) ---</span></div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordtype">void</span> setMovementSpeed(<span class="keywordtype">float</span> speed);</div>
-<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;    <span class="keywordtype">void</span> setAttribute(<span class="keywordtype">int</span> attrId, <span class="keywordtype">float</span> value);</div>
-<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordtype">void</span> sendSettings();</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89">finishDimensionSwitch</a>();</div>
 <div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160; </div>
-<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="comment">// --- Killer (Nukkit: getKiller) ---</span></div>
-<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    Entity* getKiller()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160; </div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="comment">// Damage constante of mano vacia. CurseStone not has still a</span></div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;    <span class="comment">// tabla of damage by item (espadas/hachas), this way that everything hit</span></div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <span class="comment">// cuerpo to cuerpo uses this valor fixed until exista a.</span></div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">float</span> BASE_ATTACK_DAMAGE = 1.0f;</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <span class="comment">// Cooldown server-side between hits of a same player, in ms.</span></div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="comment">// MCPE 0.15.x not has &quot;attack cooldown&quot; of combate as versions</span></div>
-<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="comment">// modernas — esto is puramente anti-spam server-side, not gameplay.</span></div>
-<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="keyword">static</span> constexpr uint64_t ATTACK_COOLDOWN_MS = 250;</div>
-<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
-<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <span class="comment">// Window id of the container this player currently has open</span></div>
-<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="comment">// (0 = none). Infinity assigns container windows from 2 upwards</span></div>
-<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="comment">// (player::addWindow: max(2, ++windowCnt % 99)) because the client</span></div>
-<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="comment">// owns id 0 (its own inventory) and 0x78/0x79/0x7a (armor,</span></div>
-<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <span class="comment">// creative, hotbar) — id 1 is never used by the server, and to</span></div>
-<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="comment">// client that gets it can refuse to open the UI. Every packet of an</span></div>
-<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="comment">// open container (open, content, per-slot, progress, close) carries</span></div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="comment">// THIS id, and ContainerSetSlot is routed back by it.</span></div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    uint8_t containerWindowId()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> container_window_id_; }</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="comment">// Next container window id for this player: 2..98, cycling, the</span></div>
-<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="comment">// same range Infinity hands out. Returns the id it just handed out.</span></div>
-<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    uint8_t openContainerWindow();</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;    <span class="comment">// --- Batch packets (Nukkit: batchDataPacket/dataPacket/directDataPacket) ---</span></div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="keywordtype">bool</span> batchDataPacket(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data);</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <span class="keywordtype">bool</span> dataPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; pk) { sendPacket(pk); <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    <span class="keywordtype">bool</span> directDataPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; pk) { sendPacket(pk); <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;    <span class="comment">// --- Settings (Nukkit: setMovementSpeed/setAttribute/sendSettings) ---</span></div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;    <span class="keywordtype">void</span> setMovementSpeed(<span class="keywordtype">float</span> speed);</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;    <span class="keywordtype">void</span> setAttribute(<span class="keywordtype">int</span> attrId, <span class="keywordtype">float</span> value);</div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;    <span class="keywordtype">void</span> sendSettings();</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160; </div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;    <span class="comment">// --- Killer (Nukkit: getKiller) ---</span></div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;    Entity* getKiller()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="comment">// Damage constante of mano vacia. CurseStone not has still a</span></div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;    <span class="comment">// tabla of damage by item (espadas/hachas), this way that everything hit</span></div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <span class="comment">// cuerpo to cuerpo uses this valor fixed until exista a.</span></div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">float</span> BASE_ATTACK_DAMAGE = 1.0f;</div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;    <span class="comment">// Cooldown server-side between hits of a same player, in ms.</span></div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;    <span class="comment">// MCPE 0.15.x not has &quot;attack cooldown&quot; of combate as versions</span></div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="comment">// modernas — esto is puramente anti-spam server-side, not gameplay.</span></div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;    <span class="keyword">static</span> constexpr uint64_t ATTACK_COOLDOWN_MS = 250;</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160; </div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    <span class="comment">// Window id of the container this player currently has open</span></div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="comment">// (0 = none). Infinity assigns container windows from 2 upwards</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;    <span class="comment">// (player::addWindow: max(2, ++windowCnt % 99)) because the client</span></div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;    <span class="comment">// owns id 0 (its own inventory) and 0x78/0x79/0x7a (armor,</span></div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    <span class="comment">// creative, hotbar) — id 1 is never used by the server, and to</span></div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="comment">// client that gets it can refuse to open the UI. Every packet of an</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="comment">// open container (open, content, per-slot, progress, close) carries</span></div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;    <span class="comment">// THIS id, and ContainerSetSlot is routed back by it.</span></div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;    uint8_t containerWindowId()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> container_window_id_; }</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160; </div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;    <span class="comment">// Next container window id for this player: 2..98, cycling, the</span></div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;    <span class="comment">// same range Infinity hands out. Returns the id it just handed out.</span></div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;    uint8_t openContainerWindow();</div>
 <div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160; </div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="comment">// entity::Living hook — dispara PlayerDeathEvent + broadcast of the</span></div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="comment">// message of death. Ver Living::applyDamage(). not implementa</span></div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="comment">// reaparicion (RespawnPacket is a stub without encode() actual in this</span></div>
-<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;    <span class="comment">// base of code still — ver everything next to to the definition).</span></div>
-<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keywordtype">void</span> onDeath() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="comment">// Living hook tras each damage not mortal: takes precedence the animation of hit</span></div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="comment">// (HURT_ANIMATION with eid=0 = &quot;yo&quot; in protocolo 84, Infinity</span></div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="comment">// player::attack) and sincroniza the atributo of salud to the instante</span></div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="comment">// (Infinity player::setHealth) so that the corazones bajen fluidos.</span></div>
-<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keywordtype">void</span> onHealthChanged() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160; </div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv_;</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <a class="code" href="structcursestone_1_1PlayerConfig.html">PlayerConfig</a> cfg_;</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">network::AdvancedSourceInterface</a>* adv_iface_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;    std::shared_ptr&lt;inventory::PlayerInventory&gt; inv_;</div>
-<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;    <span class="comment">// world current of the player. pointer borrowed: the worlds are</span></div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <span class="comment">// property of server::worlds_ (unloadWorld moves to the players</span></div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="comment">// before soltarlos).</span></div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* world_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">// the contenedor abierto now same (chest or furnace), tipado by</span></div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="comment">// tipo of tile. only there is UNO to the time (ver container_window_id_ /</span></div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="comment">// openContainerWindow()). Set by openChestAt()/openFurnaceAt(),</span></div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="comment">// limpiado by closeOpenChest().</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    std::shared_ptr&lt;tile::TileChest&gt; open_chest_;</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    std::shared_ptr&lt;tile::TileFurnace&gt; open_furnace_;</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">// Window id currently in use by open_chest_/open_furnace_, and the</span></div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="comment">// counter that hands out the next one (see containerWindowId()).</span></div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    uint8_t container_window_id_ = 0;</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    uint8_t next_container_window_id_ = 2;</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    NbtPtr named_tag_;                       <span class="comment">// player.dat contents (lazy load)</span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    std::atomic&lt;bool&gt; connected_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    std::atomic&lt;bool&gt; logged_in_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    std::atomic&lt;bool&gt; spawned_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    <span class="comment">// bug FIX (creative items unusable on to player&#39;s very first session,</span></div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <span class="comment">// but fine after reconnecting — see doFirstSpawn()/onUpdate() in</span></div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="comment">// player.cpp for the full explanation): before this fix, doFirstSpawn()</span></div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    <span class="comment">// fired immediately at login, sending PLAYER_SPAWN + the creative</span></div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="comment">// catalog + the player&#39;s own inventory contents before to single chunk</span></div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">// had reached the client. actual PMMP (see player::onUpdate()&#39;s</span></div>
-<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="comment">// chunkLoadCount/spawnThreshold gate) withholds PLAYER_SPAWN — and the</span></div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="comment">// own-inventory ContainerSetContentPacket that rides on it — until to</span></div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="comment">// minimum number of chunks around the player have actually been sent.</span></div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// awaiting_first_spawn_ replicates that gate.</span></div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    std::atomic&lt;bool&gt; awaiting_first_spawn_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> FIRST_SPAWN_CHUNK_THRESHOLD = 9;  <span class="comment">// 3x3 area, like PMMP&#39;s default</span></div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    uint64_t last_save_tick_ = 0;</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    uint64_t start_time_ms_ = 0;       <span class="comment">// Wall-clock when player joined (for workbench)</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    uint64_t last_activity_ms_ = 0;    <span class="comment">// Wall-clock of last received packet</span></div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    uint64_t last_attack_ms_ = 0;      <span class="comment">// Wall-clock of last accepted melee attack (cooldown)</span></div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160; </div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    <span class="comment">// --- Hunger + ambient damage state (Infinity player.php foodData) ---</span></div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keywordtype">float</span> food_saturation_ = 5.0f;   <span class="comment">// hidden saturation, drains before food</span></div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    <span class="keywordtype">int</span>   food_tick_timer_ = 0;      <span class="comment">// countdown to next exhaustion drain</span></div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordtype">int</span>   food_depletion_ = 0;       <span class="comment">// accumulated exhaustion (Infinity: exhaustionLevel)</span></div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;    uint64_t last_pos_y_ = 0;        <span class="comment">// last tick&#39;s and as uint64 for fall tracking</span></div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="keywordtype">bool</span>  last_pos_set_ = <span class="keyword">false</span>;     <span class="comment">// first-move guard for fall damage</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordtype">bool</span>  was_in_lava_ = <span class="keyword">false</span>;      <span class="comment">// lava-damage throttle (PMMP resetFireTicks semantics)</span></div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keywordtype">bool</span>  was_on_fire_ = <span class="keyword">false</span>;      <span class="comment">// fire-tick state (carry after leaving the block)</span></div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    uint64_t last_fire_dmg_ms_ = 0;  <span class="comment">// fire damage interval gate (0.5s, vanilla)</span></div>
-<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    uint64_t last_lava_dmg_ms_ = 0;  <span class="comment">// lava damage interval gate (0.5s, vanilla)</span></div>
-<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    uint64_t last_fire_tick_dmg_ms_ = 0;</div>
-<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    uint64_t last_drown_dmg_ms_ = 0; <span class="comment">// drowning damage interval gate (1s, vanilla)</span></div>
-<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    uint64_t last_cactus_dmg_ms_ = 0;</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    uint64_t last_regen_ms_ = 0;     <span class="comment">// natural-regen gate (4s at food&gt;=17)</span></div>
-<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    <span class="keywordtype">int</span>   starve_ticks_ = 0;         <span class="comment">// starve damage accumulator (80 ticks @1 dmg)</span></div>
-<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    <span class="keywordtype">int</span>   air_ticks_ = 300;          <span class="comment">// remaining air underwater (vanilla 300 ticks)</span></div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    <span class="keywordtype">int</span>   fire_ticks_ = 0;           <span class="comment">// remaining burn ticks (8s after fire/lava)</span></div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    <span class="keywordtype">bool</span>  moved_this_tick_ = <span class="keyword">false</span>;  <span class="comment">// set by handleMovePlayer, read by tickHungerAndDamage</span></div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    <span class="keywordtype">bool</span>  sprinting_ = <span class="keyword">false</span>;        <span class="comment">// client reports sprint (PlayerAction 9/10)</span></div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="keywordtype">bool</span>  sneaking_  = <span class="keyword">false</span>;        <span class="comment">// client reports crouch (PlayerAction 11/12)</span></div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160; </div>
-<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="comment">// --- portal of the Nether (ver checkPortal in player/PlayerWorld.cpp) ---</span></div>
-<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordtype">bool</span>     in_portal_ = <span class="keyword">false</span>;      <span class="comment">// the player sigue inside of the block of portal</span></div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    uint64_t last_portal_ms_ = 0;     <span class="comment">// ms of the last travel by portal (cooldown)</span></div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="comment">// world of surface of the that salió hacia the Nether, for volver</span></div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    <span class="comment">// to the same (the plugins can create several worlds of surface).</span></div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>*   portal_return_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="keywordtype">bool</span>  on_ground_fall_check_ = <span class="keyword">true</span>; <span class="comment">// last client-reported onGround</span></div>
-<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    <span class="keywordtype">float</span> fall_distance_ = 0.0f;     <span class="comment">// accumulated fall distance in blocks</span></div>
-<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160; </div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <span class="comment">// Fix #3: shared spiral algorithm — single source of truth.</span></div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::pair&lt;int32_t,int32_t&gt;&gt;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;        buildChunkSpiral(<span class="keywordtype">int</span> vd);</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="comment">// chunks already sent to this player (chunkHash = (cx&lt;&lt;32)|cz&amp;0xFFFFFFFF).</span></div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="comment">// Guarded by chunks_mtx_.</span></div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    std::unordered_set&lt;int64_t&gt; used_chunks_;</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="keyword">mutable</span> std::mutex chunks_mtx_;</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <span class="comment">// already arrived the ACK of spawn of the client (PlayStatus PLAYER_SPAWN). the</span></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <span class="comment">// re-stream pre-ACK of handleClientSpawnAck() is of a sola time: without</span></div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <span class="comment">// this flag, each ACK repetido reiniciaba the espiral from the centro and</span></div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="comment">// the horizon never crecia. Ver the comment of handleClientSpawnAck().</span></div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    std::atomic&lt;bool&gt; spawn_ack_done_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;    <span class="comment">// --- Batch packets (Nukkit: batchDataPacket/dataPacket/directDataPacket) ---</span></div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;    <span class="keywordtype">bool</span> batchDataPacket(<span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data);</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;    <span class="keywordtype">bool</span> dataPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; pk) { sendPacket(pk); <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;    <span class="keywordtype">bool</span> directDataPacket(std::shared_ptr&lt;network::protocol::DataPacket&gt; pk) { sendPacket(pk); <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160; </div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <span class="comment">// entity::Living hook — dispara PlayerDeathEvent + broadcast of the</span></div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="comment">// message of death. Ver Living::applyDamage(). not implementa</span></div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <span class="comment">// reaparicion (RespawnPacket is a stub without encode() actual in this</span></div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="comment">// base of code still — ver everything next to to the definition).</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    <span class="keywordtype">void</span> onDeath() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;    <span class="comment">// Living hook tras each damage not mortal: takes precedence the animation of hit</span></div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;    <span class="comment">// (HURT_ANIMATION with eid=0 = &quot;yo&quot; in protocolo 84, Infinity</span></div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;    <span class="comment">// player::attack) and sincroniza the atributo of salud to the instante</span></div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;    <span class="comment">// (Infinity player::setHealth) so that the corazones bajen fluidos.</span></div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;    <span class="keywordtype">void</span> onHealthChanged() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160; </div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv_;</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <a class="code" href="structcursestone_1_1PlayerConfig.html">PlayerConfig</a> cfg_;</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;    <a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">network::AdvancedSourceInterface</a>* adv_iface_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    std::shared_ptr&lt;inventory::PlayerInventory&gt; inv_;</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="comment">// world current of the player. pointer borrowed: the worlds are</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="comment">// property of server::worlds_ (unloadWorld moves to the players</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="comment">// before soltarlos).</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* world_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="comment">// the contenedor abierto now same (chest or furnace), tipado by</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">// tipo of tile. only there is UNO to the time (ver container_window_id_ /</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="comment">// openContainerWindow()). Set by openChestAt()/openFurnaceAt(),</span></div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;    <span class="comment">// limpiado by closeOpenChest().</span></div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    std::shared_ptr&lt;tile::TileChest&gt; open_chest_;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    std::shared_ptr&lt;tile::TileFurnace&gt; open_furnace_;</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="comment">// Window id currently in use by open_chest_/open_furnace_, and the</span></div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <span class="comment">// counter that hands out the next one (see containerWindowId()).</span></div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    uint8_t container_window_id_ = 0;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    uint8_t next_container_window_id_ = 2;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    NbtPtr named_tag_;                       <span class="comment">// player.dat contents (lazy load)</span></div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    std::atomic&lt;bool&gt; connected_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    std::atomic&lt;bool&gt; logged_in_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    std::atomic&lt;bool&gt; spawned_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="comment">// bug FIX (creative items unusable on to player&#39;s very first session,</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;    <span class="comment">// but fine after reconnecting — see doFirstSpawn()/onUpdate() in</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="comment">// player.cpp for the full explanation): before this fix, doFirstSpawn()</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="comment">// fired immediately at login, sending PLAYER_SPAWN + the creative</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// catalog + the player&#39;s own inventory contents before to single chunk</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="comment">// had reached the client. actual PMMP (see player::onUpdate()&#39;s</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="comment">// chunkLoadCount/spawnThreshold gate) withholds PLAYER_SPAWN — and the</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <span class="comment">// own-inventory ContainerSetContentPacket that rides on it — until to</span></div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="comment">// minimum number of chunks around the player have actually been sent.</span></div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="comment">// awaiting_first_spawn_ replicates that gate.</span></div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    std::atomic&lt;bool&gt; awaiting_first_spawn_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> FIRST_SPAWN_CHUNK_THRESHOLD = 9;  <span class="comment">// 3x3 area, like PMMP&#39;s default</span></div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    uint64_t last_save_tick_ = 0;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    uint64_t start_time_ms_ = 0;       <span class="comment">// Wall-clock when player joined (for workbench)</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    uint64_t last_activity_ms_ = 0;    <span class="comment">// Wall-clock of last received packet</span></div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    uint64_t last_attack_ms_ = 0;      <span class="comment">// Wall-clock of last accepted melee attack (cooldown)</span></div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;    <span class="comment">// --- Hunger + ambient damage state (Infinity player.php foodData) ---</span></div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;    <span class="keywordtype">float</span> food_saturation_ = 5.0f;   <span class="comment">// hidden saturation, drains before food</span></div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    <span class="keywordtype">int</span>   food_tick_timer_ = 0;      <span class="comment">// countdown to next exhaustion drain</span></div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;    <span class="keywordtype">int</span>   food_depletion_ = 0;       <span class="comment">// accumulated exhaustion (Infinity: exhaustionLevel)</span></div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    uint64_t last_pos_y_ = 0;        <span class="comment">// last tick&#39;s and as uint64 for fall tracking</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <span class="keywordtype">bool</span>  last_pos_set_ = <span class="keyword">false</span>;     <span class="comment">// first-move guard for fall damage</span></div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;    <span class="keywordtype">bool</span>  was_in_lava_ = <span class="keyword">false</span>;      <span class="comment">// lava-damage throttle (PMMP resetFireTicks semantics)</span></div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;    <span class="keywordtype">bool</span>  was_on_fire_ = <span class="keyword">false</span>;      <span class="comment">// fire-tick state (carry after leaving the block)</span></div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;    uint64_t last_fire_dmg_ms_ = 0;  <span class="comment">// fire damage interval gate (0.5s, vanilla)</span></div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    uint64_t last_lava_dmg_ms_ = 0;  <span class="comment">// lava damage interval gate (0.5s, vanilla)</span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    uint64_t last_fire_tick_dmg_ms_ = 0;</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    uint64_t last_drown_dmg_ms_ = 0; <span class="comment">// drowning damage interval gate (1s, vanilla)</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;    uint64_t last_cactus_dmg_ms_ = 0;</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;    uint64_t last_regen_ms_ = 0;     <span class="comment">// natural-regen gate (4s at food&gt;=17)</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;    <span class="keywordtype">int</span>   starve_ticks_ = 0;         <span class="comment">// starve damage accumulator (80 ticks @1 dmg)</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;    <span class="keywordtype">int</span>   air_ticks_ = 300;          <span class="comment">// remaining air underwater (vanilla 300 ticks)</span></div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    <span class="keywordtype">int</span>   fire_ticks_ = 0;           <span class="comment">// remaining burn ticks (8s after fire/lava)</span></div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;    <span class="keywordtype">bool</span>  moved_this_tick_ = <span class="keyword">false</span>;  <span class="comment">// set by handleMovePlayer, read by tickHungerAndDamage</span></div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    <span class="keywordtype">bool</span>  sprinting_ = <span class="keyword">false</span>;        <span class="comment">// client reports sprint (PlayerAction 9/10)</span></div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <span class="keywordtype">bool</span>  sneaking_  = <span class="keyword">false</span>;        <span class="comment">// client reports crouch (PlayerAction 11/12)</span></div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160; </div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <span class="comment">// --- portal of the Nether (ver checkPortal in player/PlayerWorld.cpp) ---</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    <span class="keywordtype">bool</span>     in_portal_ = <span class="keyword">false</span>;      <span class="comment">// the player sigue inside of the block of portal</span></div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;    uint64_t last_portal_ms_ = 0;     <span class="comment">// ms of the last travel by portal (cooldown)</span></div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;    <span class="comment">// Pending cross-dimension switch: PlayStatus(PLAYER_SPAWN) waits until</span></div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;    <span class="comment">// the whole new view has been streamed to the client (see</span></div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;    <span class="comment">// finishDimensionSwitch()); dimension_switch_ms_ bounds the wait.</span></div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;    <span class="keywordtype">bool</span>     dimension_spawn_pending_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;    uint64_t dimension_switch_ms_ = 0;</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="comment">// world of surface of the that salió hacia the Nether, for volver</span></div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="comment">// to the same (the plugins can create several worlds of surface).</span></div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>*   portal_return_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="keywordtype">bool</span>  on_ground_fall_check_ = <span class="keyword">true</span>; <span class="comment">// last client-reported onGround</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <span class="keywordtype">float</span> fall_distance_ = 0.0f;     <span class="comment">// accumulated fall distance in blocks</span></div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <span class="comment">// Fix #3: shared spiral algorithm — single source of truth.</span></div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::pair&lt;int32_t,int32_t&gt;&gt;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;        buildChunkSpiral(<span class="keywordtype">int</span> vd);</div>
 <div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="comment">// Pending chunk request queue (spiral order, set by sendChunksAroundSpawn).</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    std::vector&lt;std::pair&lt;int32_t,int32_t&gt;&gt; chunk_queue_;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <span class="keyword">mutable</span> std::mutex queue_mtx_;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160; </div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="comment">// --- Per-tick outbound packet batching (anti-lag in servers</span></div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="comment">// publicos of bajos recursos) ---</span></div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="comment">// bug fixed (&quot;in Linux there is lag / the particulas not is</span></div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="comment">// sincronizan; in Android va well&quot;): before each packet is</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="comment">// comprimia in its own BatchPacket (zlib nivel 7) and viajaba as</span></div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="comment">// its own datagrama fiable. a break-blocks emite UpdateBlock +</span></div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="comment">// LevelEvent(2001) + MoveEntity by item + ...: in a server</span></div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="comment">// publico with RTT actual that multiplica x4-8 the numero of datagramas,</span></div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    <span class="comment">// of compresiones zlib and of ACKs — the backlog of retransmisiones</span></div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="comment">// retrasa everything (particulas, blocks, entities) and in maquinas of</span></div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="comment">// bajos recursos the zlib by packet is come the CPU. PMMP/Genisys</span></div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="comment">// agrupan all the packets of a tick to a player in a only</span></div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// BatchPacket comprimido (BatchPacket::addSubPacket). this buffer</span></div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">// replica that: sendPacket() encola the cuerpo already codificado and the</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// flush (end of server::tick, or umbral of tamaño, or kick) it sends</span></div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// as a unico BatchPacket. the order inside of each clase (ordered</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// channel 0 / unordered channel 1) is conserva FIFO, and the packets</span></div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// ordered (handshake of login) mantienen its canal own.</span></div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="comment">// Umbral of vuelco inmediato: with 32 KB pendientes already vale the pena</span></div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">// send (equivale to ~a chunk) and acota the memoria of a burst.</span></div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="comment">// --- Thread-safe close ---</span></div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="comment">// close() may be called from the RakLib network thread (timeout,</span></div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="comment">// client disconnect) while the main server thread holds to shared_ptr</span></div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="comment">// to this player. std::call_once guarantees the cleanup body runs</span></div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="comment">// exactly once even if two threads call close() simultaneously.</span></div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    std::once_flag close_once_;</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="comment">// When true, the main thread will remove this player from players_</span></div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="comment">// on the next tick. Set by close() on the network thread; read+acted</span></div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="comment">// on by server::tick() on the main thread. This avoids destroying</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="comment">// the shared_ptr (and thus the player) from the network thread</span></div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="comment">// while the main thread is iterating players_.</span></div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="comment">// Returns true if close() has been called (cleanup may still be</span></div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="comment">// in progress on another thread). Used by server::tick() to skip</span></div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <span class="comment">// players that are being torn down.</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire); }</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;};</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="comment">// chunks already sent to this player (chunkHash = (cx&lt;&lt;32)|cz&amp;0xFFFFFFFF).</span></div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="comment">// Guarded by chunks_mtx_.</span></div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    std::unordered_set&lt;int64_t&gt; used_chunks_;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="keyword">mutable</span> std::mutex chunks_mtx_;</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="comment">// already arrived the ACK of spawn of the client (PlayStatus PLAYER_SPAWN). the</span></div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="comment">// re-stream pre-ACK of handleClientSpawnAck() is of a sola time: without</span></div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="comment">// this flag, each ACK repetido reiniciaba the espiral from the centro and</span></div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="comment">// the horizon never crecia. Ver the comment of handleClientSpawnAck().</span></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    std::atomic&lt;bool&gt; spawn_ack_done_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    <span class="comment">// Pending chunk request queue (spiral order, set by sendChunksAroundSpawn).</span></div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    std::vector&lt;std::pair&lt;int32_t,int32_t&gt;&gt; chunk_queue_;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    <span class="keyword">mutable</span> std::mutex queue_mtx_;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160; </div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="comment">// --- Per-tick outbound packet batching (anti-lag in servers</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    <span class="comment">// publicos of bajos recursos) ---</span></div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    <span class="comment">// bug fixed (&quot;in Linux there is lag / the particulas not is</span></div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">// sincronizan; in Android va well&quot;): before each packet is</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    <span class="comment">// comprimia in its own BatchPacket (zlib nivel 7) and viajaba as</span></div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="comment">// its own datagrama fiable. a break-blocks emite UpdateBlock +</span></div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// LevelEvent(2001) + MoveEntity by item + ...: in a server</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    <span class="comment">// publico with RTT actual that multiplica x4-8 the numero of datagramas,</span></div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="comment">// of compresiones zlib and of ACKs — the backlog of retransmisiones</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    <span class="comment">// retrasa everything (particulas, blocks, entities) and in maquinas of</span></div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// bajos recursos the zlib by packet is come the CPU. PMMP/Genisys</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    <span class="comment">// agrupan all the packets of a tick to a player in a only</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    <span class="comment">// BatchPacket comprimido (BatchPacket::addSubPacket). this buffer</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">// replica that: sendPacket() encola the cuerpo already codificado and the</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    <span class="comment">// flush (end of server::tick, or umbral of tamaño, or kick) it sends</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="comment">// as a unico BatchPacket. the order inside of each clase (ordered</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="comment">// channel 0 / unordered channel 1) is conserva FIFO, and the packets</span></div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="comment">// ordered (handshake of login) mantienen its canal own.</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="comment">// Umbral of vuelco inmediato: with 32 KB pendientes already vale the pena</span></div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="comment">// send (equivale to ~a chunk) and acota the memoria of a burst.</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160; </div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="comment">// --- Thread-safe close ---</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="comment">// close() may be called from the RakLib network thread (timeout,</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="comment">// client disconnect) while the main server thread holds to shared_ptr</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="comment">// to this player. std::call_once guarantees the cleanup body runs</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="comment">// exactly once even if two threads call close() simultaneously.</span></div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    std::once_flag close_once_;</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    <span class="comment">// When true, the main thread will remove this player from players_</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    <span class="comment">// on the next tick. Set by close() on the network thread; read+acted</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <span class="comment">// on by server::tick() on the main thread. This avoids destroying</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <span class="comment">// the shared_ptr (and thus the player) from the network thread</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="comment">// while the main thread is iterating players_.</span></div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="comment">// Returns true if close() has been called (cleanup may still be</span></div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="comment">// in progress on another thread). Used by server::tick() to skip</span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="comment">// players that are being torn down.</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire); }</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;};</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1IPlayer_html"><div class="ttname"><a href="classcursestone_1_1IPlayer.html">cursestone::IPlayer</a></div><div class="ttdef"><b>Definition:</b> IPlayer.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:79</div></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html_a4bb647650803d85e1b49ac7227898b38"><div class="ttname"><a href="classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38">cursestone::Player::teleportToOverworld</a></div><div class="ttdeci">bool teleportToOverworld()</div><div class="ttdoc">scans again to the surface escalando the coordinates 8:1.</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:336</div></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html_a57a1ce0ede813a86e6df3ea1b5388679"><div class="ttname"><a href="classcursestone_1_1Player.html#a57a1ce0ede813a86e6df3ea1b5388679">cursestone::Player::switchWorld</a></div><div class="ttdeci">bool switchWorld(World *target, double x, double y, double z, bool throughPortal)</div><div class="ttdoc">moves to the player to target in (x,and,z).</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:68</div></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html_a751b2798547e26bba801ea6acbf1c61a"><div class="ttname"><a href="classcursestone_1_1Player.html#a751b2798547e26bba801ea6acbf1c61a">cursestone::Player::getWorld</a></div><div class="ttdeci">World * getWorld() const</div><div class="ttdoc">world in that which is this player now (never null tras login).</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:56</div></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html_a94da833438a5645887eddc9b3b9bae29"><div class="ttname"><a href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">cursestone::Player::checkPortal</a></div><div class="ttdeci">void checkPortal()</div><div class="ttdoc">checks if the player is inside of a block of portal and, with the cooldown cumplido,...</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:282</div></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html_ae64c96959f40bbbea0939114f85ba07a"><div class="ttname"><a href="classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a">cursestone::Player::teleportToNether</a></div><div class="ttdeci">bool teleportToNether()</div><div class="ttdoc">travels to the Nether escalando the coordinates 1:8 and buscando (or construyendo) a portal in the ta...</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:317</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a164a53abf2e5608cae4457a023678b89"><div class="ttname"><a href="classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89">cursestone::Player::finishDimensionSwitch</a></div><div class="ttdeci">void finishDimensionSwitch()</div><div class="ttdoc">closes a cross-dimension switch: PlayStatus(PLAYER_SPAWN) plus the position reset.</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:160</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a4bb647650803d85e1b49ac7227898b38"><div class="ttname"><a href="classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38">cursestone::Player::teleportToOverworld</a></div><div class="ttdeci">bool teleportToOverworld()</div><div class="ttdoc">scans again to the surface escalando the coordinates 8:1.</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:372</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a57a1ce0ede813a86e6df3ea1b5388679"><div class="ttname"><a href="classcursestone_1_1Player.html#a57a1ce0ede813a86e6df3ea1b5388679">cursestone::Player::switchWorld</a></div><div class="ttdeci">bool switchWorld(World *target, double x, double y, double z, bool throughPortal)</div><div class="ttdoc">moves to the player to target in (x,and,z).</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:74</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a751b2798547e26bba801ea6acbf1c61a"><div class="ttname"><a href="classcursestone_1_1Player.html#a751b2798547e26bba801ea6acbf1c61a">cursestone::Player::getWorld</a></div><div class="ttdeci">World * getWorld() const</div><div class="ttdoc">world in that which is this player now (never null tras login).</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:60</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_a94da833438a5645887eddc9b3b9bae29"><div class="ttname"><a href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">cursestone::Player::checkPortal</a></div><div class="ttdeci">void checkPortal()</div><div class="ttdoc">checks if the player is inside of a block of portal and, with the cooldown cumplido,...</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:318</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html_ae64c96959f40bbbea0939114f85ba07a"><div class="ttname"><a href="classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a">cursestone::Player::teleportToNether</a></div><div class="ttdeci">bool teleportToNether()</div><div class="ttdoc">travels to the Nether escalando the coordinates 1:8 and buscando (or construyendo) a portal in the ta...</div><div class="ttdef"><b>Definition:</b> PlayerWorld.cpp:353</div></div>
 <div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">server singleton: boot, tick loop, and coordinated shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:79</div></div>
 <div class="ttc" id="aclasscursestone_1_1entity_1_1Human_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Human.html">cursestone::entity::Human</a></div><div class="ttdef"><b>Definition:</b> Human.h:31</div></div>
 <div class="ttc" id="aclasscursestone_1_1inventory_1_1Inventory_html"><div class="ttname"><a href="classcursestone_1_1inventory_1_1Inventory.html">cursestone::inventory::Inventory</a></div><div class="ttdef"><b>Definition:</b> Inventory.h:48</div></div>

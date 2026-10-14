@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1network_1_1protocol
 </div><!--header-->
 <div class="contents">
 
-<p>change of dimension (protocolo 84).  
+<p>Dimension change (protocol 84).  
  <a href="classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ChangeDimensionPacket_8h_source.html">ChangeDimensionPacket.h</a>&gt;</code></p>
@@ -124,29 +124,29 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>writePacket</b> (std:
 Public Attributes</h2></td></tr>
 <tr class="memitem:af0a15c1f9993b742f4294f53b6297db3"><td class="memItemLeft" align="right" valign="top"><a id="af0a15c1f9993b742f4294f53b6297db3"></a>
 int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#af0a15c1f9993b742f4294f53b6297db3">dimension</a> = 0</td></tr>
-<tr class="memdesc:af0a15c1f9993b742f4294f53b6297db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 surface, 1 Nether <br /></td></tr>
+<tr class="memdesc:af0a15c1f9993b742f4294f53b6297db3"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 Overworld, 1 Nether <br /></td></tr>
 <tr class="separator:af0a15c1f9993b742f4294f53b6297db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a804bab03d83e35b2062ca875f1200335"><td class="memItemLeft" align="right" valign="top"><a id="a804bab03d83e35b2062ca875f1200335"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a804bab03d83e35b2062ca875f1200335">x</a> = 0.0f</td></tr>
-<tr class="memdesc:a804bab03d83e35b2062ca875f1200335"><td class="mdescLeft">&#160;</td><td class="mdescRight">X of target. <br /></td></tr>
+<tr class="memdesc:a804bab03d83e35b2062ca875f1200335"><td class="mdescLeft">&#160;</td><td class="mdescRight">destination X <br /></td></tr>
 <tr class="separator:a804bab03d83e35b2062ca875f1200335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe1dba2855937555b3df165751d0507"><td class="memItemLeft" align="right" valign="top"><a id="abfe1dba2855937555b3df165751d0507"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#abfe1dba2855937555b3df165751d0507">y</a> = 0.0f</td></tr>
-<tr class="memdesc:abfe1dba2855937555b3df165751d0507"><td class="mdescLeft">&#160;</td><td class="mdescRight">and of target <br /></td></tr>
+<tr class="memdesc:abfe1dba2855937555b3df165751d0507"><td class="mdescLeft">&#160;</td><td class="mdescRight">destination Y <br /></td></tr>
 <tr class="separator:abfe1dba2855937555b3df165751d0507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c4efa102599ded750fbb5083b80867d"><td class="memItemLeft" align="right" valign="top"><a id="a4c4efa102599ded750fbb5083b80867d"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a4c4efa102599ded750fbb5083b80867d">z</a> = 0.0f</td></tr>
-<tr class="memdesc:a4c4efa102599ded750fbb5083b80867d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Z of target. <br /></td></tr>
+<tr class="memdesc:a4c4efa102599ded750fbb5083b80867d"><td class="mdescLeft">&#160;</td><td class="mdescRight">destination Z <br /></td></tr>
 <tr class="separator:a4c4efa102599ded750fbb5083b80867d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad290920f3248153574791558bf032da2"><td class="memItemLeft" align="right" valign="top"><a id="ad290920f3248153574791558bf032da2"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#ad290920f3248153574791558bf032da2">unknown</a> = 0</td></tr>
-<tr class="memdesc:ad290920f3248153574791558bf032da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">the client of 0.15.x it ignora <br /></td></tr>
+<tr class="memdesc:ad290920f3248153574791558bf032da2"><td class="mdescLeft">&#160;</td><td class="mdescRight">ignored by the 0.15.x client <br /></td></tr>
 <tr class="separator:ad290920f3248153574791558bf032da2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>change of dimension (protocolo 84). </p>
-<p>the server it sends justo before move to a player to a world of other dimension (0 surface, 1 Nether). the client shows its screen of load of dimension and leaves of ella when receives the chunks new and the position end. format of the cuerpo:</p>
-<p>[Int32 BE] dimension [Float BE] x [Float BE] and [Float BE] z [Uint8 ] unknown (0) </p>
+<div class="textblock"><p>Dimension change (protocol 84). </p>
+<p>Sent right before moving a player into a world of another dimension (0 Overworld, 1 Nether). The client shows its dimension loading screen and leaves it once the new chunks and the final position arrive. Body layout (same bytes PMMP/Genisys send on protocol 84):</p>
+<p>[Uint8 ] dimension [Float BE] x [Float BE] y [Float BE] z [Uint8 ] unknown (0) </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/network/protocol/<a class="el" href="ChangeDimensionPacket_8h_source.html">ChangeDimensionPacket.h</a></li>
 <li>src/network/protocol/ChangeDimensionPacket.cpp</li>

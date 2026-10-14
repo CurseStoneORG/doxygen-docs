@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"dir_fc4c7f03e1a69a98c370fae55a743828.html":[5,0,0,10],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[5,0,0,7],
 "files.html":[5,0],
 "functions.html":[4,3,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "structcursestone_1_1physics_1_1MotionResult.html#aab775ffae57312f976fc93dd0b99071c":[4,0,0,9,1,2],
 "structcursestone_1_1physics_1_1MotionResult.html#ab2c4f0390b46118f0516ca8ee5859b66":[4,0,0,9,1,3],
 "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html":[4,0,0,10,2,0],
-"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a0ca23a57ee0ad30b6eee82baad86bc91":[4,0,0,10,2,0,2],
-"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a29cf5bef9d7282bcd01bf3287673d835":[4,0,0,10,2,0,3]
+"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a0ca23a57ee0ad30b6eee82baad86bc91":[4,0,0,10,2,0,2]
 };

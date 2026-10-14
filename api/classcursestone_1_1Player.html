@@ -479,6 +479,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a94da833438a5645887eddc9b3b9bae29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">checkPortal</a> ()</td></tr>
 <tr class="memdesc:a94da833438a5645887eddc9b3b9bae29"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the player is inside of a block of portal and, with the cooldown cumplido, dispara the travel dimensional.  <a href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">More...</a><br /></td></tr>
 <tr class="separator:a94da833438a5645887eddc9b3b9bae29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a164a53abf2e5608cae4457a023678b89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89">finishDimensionSwitch</a> ()</td></tr>
+<tr class="memdesc:a164a53abf2e5608cae4457a023678b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">closes a cross-dimension switch: PlayStatus(PLAYER_SPAWN) plus the position reset.  <a href="classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89">More...</a><br /></td></tr>
+<tr class="separator:a164a53abf2e5608cae4457a023678b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f952e8be535f3e75d2e6b4b1acda2e"><td class="memItemLeft" align="right" valign="top"><a id="a23f952e8be535f3e75d2e6b4b1acda2e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setMovementSpeed</b> (float speed)</td></tr>
 <tr class="separator:a23f952e8be535f3e75d2e6b4b1acda2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -734,6 +737,26 @@ std::shared_ptr&lt; <a class="el" href="classcursestone_1_1world_1_1World.html">
 
 <p>checks if the player is inside of a block of portal and, with the cooldown cumplido, dispara the travel dimensional. </p>
 <p>Llamado a time per tick from onUpdate(). </p>
+
+</div>
+</div>
+<a id="a164a53abf2e5608cae4457a023678b89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a164a53abf2e5608cae4457a023678b89">&#9670;&nbsp;</a></span>finishDimensionSwitch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cursestone::Player::finishDimensionSwitch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>closes a cross-dimension switch: PlayStatus(PLAYER_SPAWN) plus the position reset. </p>
+<p>Called from onUpdate() once every chunk of the new view has been streamed (never before — sending it earlier leaves the client stuck on the loading screen). </p>
 
 </div>
 </div>
