@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['saveall_1573',['saveAll',['../classcursestone_1_1Server.html#a6ef3c80a186b12163c835a40faa80ce8',1,'cursestone::Server']]],
-  ['setexternalstopflag_1574',['setExternalStopFlag',['../classcursestone_1_1Server.html#aa9dd0c36ea68bb26e14f341cc9375807',1,'cursestone::Server']]],
-  ['shouldgc_1575',['shouldGc',['../classcursestone_1_1MemoryManager.html#a9a471ab2707ed6b00145f47be6a3d334',1,'cursestone::MemoryManager']]],
-  ['shutdown_1576',['shutdown',['../classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31',1,'cursestone::Server']]],
-  ['start_1577',['start',['../classcursestone_1_1Server.html#aa146861aee07ae4819af202d0f37ac80',1,'cursestone::Server']]],
-  ['switchworld_1578',['switchWorld',['../classcursestone_1_1Player.html#a57a1ce0ede813a86e6df3ea1b5388679',1,'cursestone::Player']]]
+  ['saveall_1575',['saveAll',['../classcursestone_1_1Server.html#a6ef3c80a186b12163c835a40faa80ce8',1,'cursestone::Server']]],
+  ['setexternalstopflag_1576',['setExternalStopFlag',['../classcursestone_1_1Server.html#aa9dd0c36ea68bb26e14f341cc9375807',1,'cursestone::Server']]],
+  ['shouldgc_1577',['shouldGc',['../classcursestone_1_1MemoryManager.html#a9a471ab2707ed6b00145f47be6a3d334',1,'cursestone::MemoryManager']]],
+  ['shutdown_1578',['shutdown',['../classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31',1,'cursestone::Server']]],
+  ['start_1579',['start',['../classcursestone_1_1Server.html#aa146861aee07ae4819af202d0f37ac80',1,'cursestone::Server']]],
+  ['switchworld_1580',['switchWorld',['../classcursestone_1_1Player.html#a57a1ce0ede813a86e6df3ea1b5388679',1,'cursestone::Player']]]
 ];

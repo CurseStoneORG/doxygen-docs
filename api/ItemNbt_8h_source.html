@@ -172,7 +172,14 @@ $(document).ready(function(){initNavTree('ItemNbt_8h_source.html',''); initResiz
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// the regression test.</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keywordtype">void</span> enchantmentsFromNbt(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* entry, enchantment::EnchantmentList&amp; out);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// Builds the little-endian network NBT compound that gives an item a</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// custom visible name on 0.15.10 clients: {display:{Name:&quot;...&quot;}}. The</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// returned blob goes verbatim into ItemStack::nbt; every slot writer</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// prefixes it with its u16 LE length (Genisys putSlot). An empty name</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">// yields an empty blob (an unnamed item has no NBT at all).</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;std::string buildDisplayNbt(<span class="keyword">const</span> std::string&amp; name);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
 <div class="ttc" id="astructmcp__tag_html"><div class="ttname"><a href="structmcp__tag.html">mcp_tag</a></div><div class="ttdef"><b>Definition:</b> Tag.h:79</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

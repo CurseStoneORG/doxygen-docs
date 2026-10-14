@@ -136,20 +136,21 @@ $(document).ready(function(){initNavTree('AddEntityPacket_8h_source.html',''); i
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Entity type network ids (Infinity Entity.php).</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_LIGHTNING = 93;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    int64_t eid = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    int32_t type = 0;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">float</span> x = 0, y = 0, z = 0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> speedX = 0, speedY = 0, speedZ = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">float</span> yaw = 0, pitch = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    int32_t modifiers = 0;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> yawPitchScaled = <span class="keyword">true</span>;   <span class="comment">// Infinity multiplies both by 0.71111</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_ARROW     = 80;   <span class="comment">// Infinity Arrow::NETWORK_ID</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    int64_t eid = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    int32_t type = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">float</span> x = 0, y = 0, z = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">float</span> speedX = 0, speedY = 0, speedZ = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">float</span> yaw = 0, pitch = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    int32_t modifiers = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> yawPitchScaled = <span class="keyword">true</span>;   <span class="comment">// Infinity multiplies both by 0.71111</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1AddEntityPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html">cursestone::network::protocol::AddEntityPacket</a></div><div class="ttdef"><b>Definition:</b> AddEntityPacket.h:45</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">cursestone::network::protocol::DataPacket</a></div><div class="ttdef"><b>Definition:</b> DataPacket.h:44</div></div>
 </div><!-- fragment --></div><!-- contents -->

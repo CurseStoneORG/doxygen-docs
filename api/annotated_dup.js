@@ -706,6 +706,7 @@ var annotated_dup =
         [ "MovingObjectPosition", "classcursestone_1_1world_1_1MovingObjectPosition.html", "classcursestone_1_1world_1_1MovingObjectPosition" ],
         [ "Position", "classcursestone_1_1world_1_1Position.html", "classcursestone_1_1world_1_1Position" ],
         [ "SimpleChunkManager", "classcursestone_1_1world_1_1SimpleChunkManager.html", "classcursestone_1_1world_1_1SimpleChunkManager" ],
+        [ "ArrowEntity", "structcursestone_1_1world_1_1ArrowEntity.html", "structcursestone_1_1world_1_1ArrowEntity" ],
         [ "DroppedItem", "structcursestone_1_1world_1_1DroppedItem.html", "structcursestone_1_1world_1_1DroppedItem" ],
         [ "WorldConfig", "structcursestone_1_1world_1_1WorldConfig.html", "structcursestone_1_1world_1_1WorldConfig" ],
         [ "World", "classcursestone_1_1world_1_1World.html", "classcursestone_1_1world_1_1World" ]

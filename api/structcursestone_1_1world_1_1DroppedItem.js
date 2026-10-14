@@ -7,6 +7,7 @@ var structcursestone_1_1world_1_1DroppedItem =
     [ "lx", "structcursestone_1_1world_1_1DroppedItem.html#a9993c52ea4b25d1aff24ebc695fa9326", null ],
     [ "ly", "structcursestone_1_1world_1_1DroppedItem.html#a6fb6807e0fa2a439189de0d9b56df686", null ],
     [ "lz", "structcursestone_1_1world_1_1DroppedItem.html#a6a3184333ad0b6ba97f7b3fd240fa7d9", null ],
+    [ "nbt", "structcursestone_1_1world_1_1DroppedItem.html#a902b36df17dfc4899269d3fd057f93f1", null ],
     [ "on_ground", "structcursestone_1_1world_1_1DroppedItem.html#a4bc051ea7ce69b77c7b50a78b4c4cfc9", null ],
     [ "pickup_delay_ticks", "structcursestone_1_1world_1_1DroppedItem.html#aaec9f4a19b4f8645014094c578f1c69a", null ],
     [ "spawn_tick", "structcursestone_1_1world_1_1DroppedItem.html#a54f6dce9eb870cddcc69891ea344d537", null ],

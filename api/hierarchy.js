@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "cursestone::world::format::anvil::AnvilRegionLoader", "classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html", null ],
     [ "cursestone::world::format::anvil::AnvilRegistrar", "structcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegistrar.html", null ],
+    [ "cursestone::world::ArrowEntity", "structcursestone_1_1world_1_1ArrowEntity.html", null ],
     [ "async_log_entry_t", "structasync__log__entry__t.html", null ],
     [ "cursestone::scheduler::AsyncPool", "classcursestone_1_1scheduler_1_1AsyncPool.html", null ],
     [ "cursestone::scheduler::AsyncWorker", "classcursestone_1_1scheduler_1_1AsyncWorker.html", null ],

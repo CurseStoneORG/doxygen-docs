@@ -7,6 +7,7 @@ var classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket =
     [ "itemCount", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html#a431df5e85ded1708829d6c1fa908ab7b", null ],
     [ "itemDamage", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html#a1aaf689e870902631cb21febaa8cadf8", null ],
     [ "itemId", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html#aaa0c8e445a2df960e1196c8a508f95e2", null ],
+    [ "itemNbt", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html#afb998f96fcbd9c932c514a2f45439c0f", null ],
     [ "speedX", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html#ae987305f2027c56fe55116a24419ef58", null ],
     [ "speedY", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html#ac5013ac26bebb680610fca87f75cecea", null ],
     [ "speedZ", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html#a33e33e243031a87a83821f9d939503b7", null ],

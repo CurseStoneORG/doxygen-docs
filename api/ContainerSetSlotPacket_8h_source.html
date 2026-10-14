@@ -140,12 +140,15 @@ $(document).ready(function(){initNavTree('ContainerSetSlotPacket_8h_source.html'
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    int16_t  itemId = 0;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    uint8_t  itemCount = 0;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    int16_t  itemDamage = 0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Raw little-endian NBT compound of the item (custom names live</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// here). Written after the slot&#39;s nbtLen short; empty = no NBT.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::string itemNbt;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html">cursestone::network::protocol::ContainerSetSlotPacket</a></div><div class="ttdef"><b>Definition:</b> ContainerSetSlotPacket.h:40</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">cursestone::network::protocol::DataPacket</a></div><div class="ttdef"><b>Definition:</b> DataPacket.h:44</div></div>
 </div><!-- fragment --></div><!-- contents -->

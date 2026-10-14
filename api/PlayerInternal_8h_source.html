@@ -143,17 +143,19 @@ $(document).ready(function(){initNavTree('PlayerInternal_8h_source.html',''); in
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// (Genisys Entity.php:87-105). Se mandan los dos bits juntos porque</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// comparten la misma propiedad.</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">inline</span> network::protocol::SetEntityDataPacket::Entry makePoseFlagEntry(<span class="keywordtype">bool</span> sneaking,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                      <span class="keywordtype">bool</span> sprinting) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    network::protocol::SetEntityDataPacket::Entry e;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    e.index = network::protocol::SetEntityDataPacket::PROP_FLAGS;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    e.type  = network::protocol::SetEntityDataPacket::TYPE_BYTE;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint8_t flags = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (sneaking)  flags |= (1 &lt;&lt; network::protocol::SetEntityDataPacket::FLAG_BIT_SNEAKING);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (sprinting) flags |= (1 &lt;&lt; network::protocol::SetEntityDataPacket::FLAG_BIT_SPRINTING);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    e.ival = flags;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> e;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;} <span class="comment">// namespace cursestone</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                                                      <span class="keywordtype">bool</span> sprinting,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                                                      <span class="keywordtype">bool</span> action = <span class="keyword">false</span>) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    network::protocol::SetEntityDataPacket::Entry e;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    e.index = network::protocol::SetEntityDataPacket::PROP_FLAGS;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    e.type  = network::protocol::SetEntityDataPacket::TYPE_BYTE;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    uint8_t flags = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">if</span> (sneaking)  flags |= (1 &lt;&lt; network::protocol::SetEntityDataPacket::FLAG_BIT_SNEAKING);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (sprinting) flags |= (1 &lt;&lt; network::protocol::SetEntityDataPacket::FLAG_BIT_SPRINTING);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span> (action)    flags |= (1 &lt;&lt; network::protocol::SetEntityDataPacket::FLAG_BIT_ACTION);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    e.ival = flags;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> e;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} <span class="comment">// namespace cursestone</span></div>
 <div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

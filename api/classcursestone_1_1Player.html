@@ -102,6 +102,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acfb54b4f2bdff79e91b4279234d35f31"><td class="memItemLeft" align="right" valign="top"><a id="acfb54b4f2bdff79e91b4279234d35f31"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getName</b> () const override</td></tr>
 <tr class="separator:acfb54b4f2bdff79e91b4279234d35f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3358bfc5ea464c1c8a021a2eda9de8c5"><td class="memItemLeft" align="right" valign="top"><a id="a3358bfc5ea464c1c8a021a2eda9de8c5"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNameTag</b> () const</td></tr>
+<tr class="separator:a3358bfc5ea464c1c8a021a2eda9de8c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8965f52661e316e70837195b32d5db87"><td class="memItemLeft" align="right" valign="top"><a id="a8965f52661e316e70837195b32d5db87"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setNameTag</b> (const std::string &amp;tag)</td></tr>
+<tr class="separator:a8965f52661e316e70837195b32d5db87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc4b7076ee4162f3fc78b173455ead5c"><td class="memItemLeft" align="right" valign="top"><a id="afc4b7076ee4162f3fc78b173455ead5c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setDisplayName</b> (const std::string &amp;name)</td></tr>
+<tr class="separator:afc4b7076ee4162f3fc78b173455ead5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7615cd043e55cc6ce46c2f4174f1e6ad"><td class="memItemLeft" align="right" valign="top"><a id="a7615cd043e55cc6ce46c2f4174f1e6ad"></a>
 const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>skinId</b> () const</td></tr>
 <tr class="separator:a7615cd043e55cc6ce46c2f4174f1e6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -171,6 +180,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>handleBlockPlace</b> 
 <tr class="memitem:ac7c76de956f4d07d5d07e93ea9cb28d7"><td class="memItemLeft" align="right" valign="top"><a id="ac7c76de956f4d07d5d07e93ea9cb28d7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>handlePlayerAction</b> (int action, int x, int y, int z, int face)</td></tr>
 <tr class="separator:ac7c76de956f4d07d5d07e93ea9cb28d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9c5dd85d64b09aa6d1a13955a4e5341"><td class="memItemLeft" align="right" valign="top"><a id="aa9c5dd85d64b09aa6d1a13955a4e5341"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>handleUseItemAir</b> (int16_t heldItemId)</td></tr>
+<tr class="separator:aa9c5dd85d64b09aa6d1a13955a4e5341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac85ed2704f56c3e055011d44bfed5066"><td class="memItemLeft" align="right" valign="top"><a id="ac85ed2704f56c3e055011d44bfed5066"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>releaseBow</b> ()</td></tr>
+<tr class="separator:ac85ed2704f56c3e055011d44bfed5066"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60c81966b5a5a6b3ab148f4a2a8a54e4"><td class="memItemLeft" align="right" valign="top"><a id="a60c81966b5a5a6b3ab148f4a2a8a54e4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>broadcastPoseFlags</b> ()</td></tr>
 <tr class="separator:a60c81966b5a5a6b3ab148f4a2a8a54e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,9 +207,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>closeOpenChest</b> ()
 <tr class="memitem:a800a56213f32f912a8feca3c0605b98f"><td class="memItemLeft" align="right" valign="top"><a id="a800a56213f32f912a8feca3c0605b98f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>openFurnaceAt</b> (int x, int y, int z)</td></tr>
 <tr class="separator:a800a56213f32f912a8feca3c0605b98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf37a28551b8e4eb752cde714b226acc"><td class="memItemLeft" align="right" valign="top"><a id="abf37a28551b8e4eb752cde714b226acc"></a>
-int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>dropItem</b> (double x, double y, double z, uint16_t itemId, uint8_t count, uint16_t damage, double motionX=0.0, double motionY=0.2, double motionZ=0.0, uint32_t pickup_delay=10)</td></tr>
-<tr class="separator:abf37a28551b8e4eb752cde714b226acc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6304feeabb9bb1333156c7c3b984a75"><td class="memItemLeft" align="right" valign="top"><a id="ae6304feeabb9bb1333156c7c3b984a75"></a>
+int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>dropItem</b> (double x, double y, double z, uint16_t itemId, uint8_t count, uint16_t damage, double motionX=0.0, double motionY=0.2, double motionZ=0.0, uint32_t pickup_delay=10, const std::string &amp;nbt=&quot;&quot;)</td></tr>
+<tr class="separator:ae6304feeabb9bb1333156c7c3b984a75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d60b6a14750ca6159fd3f20f69dae1e"><td class="memItemLeft" align="right" valign="top"><a id="a2d60b6a14750ca6159fd3f20f69dae1e"></a>
 <a class="el" href="structmcp__vector3.html">math::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getDirectionVector</b> () const</td></tr>
 <tr class="separator:a2d60b6a14750ca6159fd3f20f69dae1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -327,9 +342,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isAdventure</b> () co
 <tr class="memitem:add176ce135d68defb99f8c8901f6c341"><td class="memItemLeft" align="right" valign="top"><a id="add176ce135d68defb99f8c8901f6c341"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSpectator</b> () const</td></tr>
 <tr class="separator:add176ce135d68defb99f8c8901f6c341"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a668d0aaa30100425afac63939c10d380"><td class="memItemLeft" align="right" valign="top"><a id="a668d0aaa30100425afac63939c10d380"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getDisplayName</b> () const</td></tr>
-<tr class="separator:a668d0aaa30100425afac63939c10d380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae49fdc0e2852104d93d052654987140a"><td class="memItemLeft" align="right" valign="top"><a id="ae49fdc0e2852104d93d052654987140a"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getDisplayName</b> () const</td></tr>
+<tr class="separator:ae49fdc0e2852104d93d052654987140a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fbe1199b25187756b01f71879938d74"><td class="memItemLeft" align="right" valign="top"><a id="a3fbe1199b25187756b01f71879938d74"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>getAddress</b> () const</td></tr>
 <tr class="separator:a3fbe1199b25187756b01f71879938d74"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -833,7 +848,9 @@ std::shared_ptr&lt; <a class="el" href="classcursestone_1_1world_1_1World.html">
 <li>src/<a class="el" href="Player_8h_source.html">Player.h</a></li>
 <li>src/player/PlayerBlocks.cpp</li>
 <li>src/player/PlayerChunks.cpp</li>
+<li>src/player/PlayerCombat.cpp</li>
 <li>src/player/PlayerContainers.cpp</li>
+<li>src/player/PlayerIdentity.cpp</li>
 <li>src/player/PlayerInventory.cpp</li>
 <li>src/player/PlayerLogin.cpp</li>
 <li>src/player/PlayerNetwork.cpp</li>

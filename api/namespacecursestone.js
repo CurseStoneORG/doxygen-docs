@@ -528,7 +528,8 @@ var namespacecursestone =
           [ "DROWNING", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca040fdc9c062ec907d4a20a93f35ded5b", null ],
           [ "CACTUS", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca3c67654bfd9e9021128eb98cc5884450", null ],
           [ "STARVATION", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca402a77fc41920bd39b23d0b99cf14cb3", null ],
-          [ "VOID", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca6d0c9fc747131795e6e5d0c5119f12cb", null ]
+          [ "VOID", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca6d0c9fc747131795e6e5d0c5119f12cb", null ],
+          [ "PROJECTILE", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca46dccab75ce652352e52086601fdc294", null ]
         ] ]
       ] ],
       [ "inventory", null, [
@@ -899,6 +900,7 @@ var namespacecursestone =
         [ "SWORD", "ItemTool_8h.html#ad98170e4808c3723c83f90ec6e369d7ba15ecb8bbbc3be4ba8633de2ba37582aa", null ],
         [ "HOE", "ItemTool_8h.html#ad98170e4808c3723c83f90ec6e369d7ba30560390e03cfcdbd89c4b250e3a279d", null ]
       ] ],
+      [ "buildDisplayNbt", "ItemNbt_8cpp.html#a56d00d0738022e1cadac46e26f7d6ce7", null ],
       [ "enchantmentsFromNbt", "ItemNbt_8cpp.html#a439b68dfa1effc23c6e122e470d77fa5", null ],
       [ "itemStackFromNbt", "ItemNbt_8cpp.html#ab456d2b88449771666e70eee61fe8065", null ],
       [ "itemStackToNbt", "ItemNbt_8cpp.html#a7fe5406cd813065822ec6bb5783c70d7", null ],
@@ -1929,6 +1931,7 @@ var namespacecursestone =
       [ "MovingObjectPosition", "classcursestone_1_1world_1_1MovingObjectPosition.html", "classcursestone_1_1world_1_1MovingObjectPosition" ],
       [ "Position", "classcursestone_1_1world_1_1Position.html", "classcursestone_1_1world_1_1Position" ],
       [ "SimpleChunkManager", "classcursestone_1_1world_1_1SimpleChunkManager.html", "classcursestone_1_1world_1_1SimpleChunkManager" ],
+      [ "ArrowEntity", "structcursestone_1_1world_1_1ArrowEntity.html", "structcursestone_1_1world_1_1ArrowEntity" ],
       [ "DroppedItem", "structcursestone_1_1world_1_1DroppedItem.html", "structcursestone_1_1world_1_1DroppedItem" ],
       [ "WorldConfig", "structcursestone_1_1world_1_1WorldConfig.html", "structcursestone_1_1world_1_1WorldConfig" ],
       [ "World", "classcursestone_1_1world_1_1World.html", "classcursestone_1_1world_1_1World" ],
@@ -1976,7 +1979,7 @@ var namespacecursestone =
     [ "WorkbenchManager", "classcursestone_1_1WorkbenchManager.html", "classcursestone_1_1WorkbenchManager" ],
     [ "NbtPtr", "namespacecursestone.html#ac129827eaf5983f0cecbe4d22a127a15", null ],
     [ "World", "namespacecursestone.html#a8c184c5b29406134bd48d0f71345bb3e", null ],
-    [ "makePoseFlagEntry", "namespacecursestone.html#aa0b75cb257086a91ab2a2dbc3b0d0147", null ],
+    [ "makePoseFlagEntry", "namespacecursestone.html#a847a1eca3c52465a3103f0cee45ea69f", null ],
     [ "registerDefaultCommands", "namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223", null ],
     [ "kEyeHeight", "namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5", null ]
 ];

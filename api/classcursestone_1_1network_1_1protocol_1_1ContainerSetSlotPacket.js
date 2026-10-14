@@ -7,6 +7,7 @@ var classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket =
     [ "itemCount", "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a6cc543bd88423a23190605b7738e9c21", null ],
     [ "itemDamage", "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a88a4ae3cba773341a2c015409024df5a", null ],
     [ "itemId", "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#afd2c7207bdb2eadcd0a088bdc8720acf", null ],
+    [ "itemNbt", "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a6ca6b08bbe70b724b516fb7a21ce2acb", null ],
     [ "slot", "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a5766c97be28bcfa40e2f0ca77bcb230e", null ],
     [ "windowid", "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a79371f9f2c1e228c4d657f87fb53e800", null ]
 ];

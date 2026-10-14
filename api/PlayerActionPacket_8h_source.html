@@ -136,34 +136,40 @@ $(document).ready(function(){initNavTree('PlayerActionPacket_8h_source.html','')
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_START_BREAK = 0;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_ABORT_BREAK = 1;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_STOP_BREAK  = 2;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// El cliente manda esto cuando el jugador toca el boton de</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// &quot;Respawn&quot; en la pantalla de muerte (Infinity:</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// ACTION_SPAWN_SAME_DIMENSION = 7).</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_SPAWN_SAME_DIMENSION = 7;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Sprint toggle (protocol 84 — Infinity PlayerActionPacket.php:</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// ACTION_START_SPRINT = 9, ACTION_STOP_SPRINT = 10. Values 5/6 are</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// RELEASE_ITEM/STOP_SLEEPING in this protocol — using them here made</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// the server misread those actions and never see real sprints).</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_START_SPRINT = 9;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_STOP_SPRINT  = 10;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Crouch toggle (protocol 84 — Genisys 0.15.0 PlayerActionPacket.php:</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// ACTION_START_SNEAK = 11, ACTION_STOP_SNEAK = 12). This is what the</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// 0.15.10 client sends when the player taps the sneak button or holds</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// shift on a touch device; the server has to mirror the pose to every</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// other client or the crouch is invisible to everyone else.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_START_SNEAK = 11;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_STOP_SNEAK  = 12;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    int64_t eid = 0;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    int32_t action = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    int32_t x = 0, y = 0, z = 0;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    int32_t face = 0;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;};</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// ACTION_RELEASE_ITEM = 5 — releasing a drawn bow (Infinity</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// PlayerActionPacket.php:35 — protocol 84 value; the 22 that later</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// protocol versions use is WRONG here and the client never sends it).</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Infinity Player.php maps this action to the bow release → Arrow</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// spawn flow.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_RELEASE_ITEM = 5;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// El cliente manda esto cuando el jugador toca el boton de</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// &quot;Respawn&quot; en la pantalla de muerte (Infinity:</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// ACTION_SPAWN_SAME_DIMENSION = 7).</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_SPAWN_SAME_DIMENSION = 7;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Sprint toggle (protocol 84 — Infinity PlayerActionPacket.php:</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// ACTION_START_SPRINT = 9, ACTION_STOP_SPRINT = 10. Values 5/6 are</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// RELEASE_ITEM/STOP_SLEEPING in this protocol — using them here made</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// the server misread those actions and never see real sprints).</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_START_SPRINT = 9;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_STOP_SPRINT  = 10;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Crouch toggle (protocol 84 — Genisys 0.15.0 PlayerActionPacket.php:</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// ACTION_START_SNEAK = 11, ACTION_STOP_SNEAK = 12). This is what the</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// 0.15.10 client sends when the player taps the sneak button or holds</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// shift on a touch device; the server has to mirror the pose to every</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// other client or the crouch is invisible to everyone else.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_START_SNEAK = 11;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">static</span> constexpr int32_t ACTION_STOP_SNEAK  = 12;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    int64_t eid = 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    int32_t action = 0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    int32_t x = 0, y = 0, z = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    int32_t face = 0;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;};</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">cursestone::network::protocol::DataPacket</a></div><div class="ttdef"><b>Definition:</b> DataPacket.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1PlayerActionPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html">cursestone::network::protocol::PlayerActionPacket</a></div><div class="ttdef"><b>Definition:</b> PlayerActionPacket.h:42</div></div>
 </div><!-- fragment --></div><!-- contents -->
