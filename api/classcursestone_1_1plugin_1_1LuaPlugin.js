@@ -19,5 +19,6 @@ var classcursestone_1_1plugin_1_1LuaPlugin =
     [ "name", "classcursestone_1_1plugin_1_1LuaPlugin.html#a329ac4ec575b8a222d9dab21e388be05", null ],
     [ "pcall", "classcursestone_1_1plugin_1_1LuaPlugin.html#ad6c88730b66f71f0d5cdeba8954aac5a", null ],
     [ "releaseTask", "classcursestone_1_1plugin_1_1LuaPlugin.html#af2a9d3a77bb6235bbd9cf23c92b5bd89", null ],
+    [ "resourcesDir", "classcursestone_1_1plugin_1_1LuaPlugin.html#acac27af06111c7b0dfc8af12c0b26786", null ],
     [ "version", "classcursestone_1_1plugin_1_1LuaPlugin.html#ab6a1c65d61ddb766ddf51aa52570fd32", null ]
 ];
