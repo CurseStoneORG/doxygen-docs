@@ -606,8 +606,8 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    <span class="comment">// sleepOn: ports Infinity Player::sleepOn(). Occupancy check against</span></div>
 <div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="comment">// other sleeping players at the same bed, fires PlayerBedEnterEvent</span></div>
 <div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="comment">// (cancellable), turns on the sleeping entity metadata</span></div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="comment">// (PROP_PLAYER_FLAGS bit 0 + PROP_PLAYER_BED_POSITION) for the other</span></div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="comment">// clients, sets this bed as the player&#39;s personal spawn point and</span></div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="comment">// (PROP_PLAYER_FLAGS bit 1 + PROP_PLAYER_BED_POSITION) for the viewers</span></div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="comment">// and the player itself, sets this bed as the player&#39;s personal spawn point and</span></div>
 <div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="comment">// arms the world sleep countdown (World::sleepTicks = 60). Returns</span></div>
 <div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="comment">// false when the bed is occupied or a listener cancelled the event.</span></div>
 <div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    <span class="keywordtype">bool</span> sleepOn(<span class="keywordtype">int</span> bx, <span class="keywordtype">int</span> by, <span class="keywordtype">int</span> bz);</div>
