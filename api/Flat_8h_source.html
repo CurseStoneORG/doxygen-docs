@@ -117,25 +117,34 @@ $(document).ready(function(){initNavTree('Flat_8h_source.html',''); initResizabl
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator {</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1generator_1_1FlatLayer.html">   32</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1generator_1_1FlatLayer.html">FlatLayer</a> { uint8_t block_id; uint8_t count; };</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1Flat.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1Flat.html">Flat</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1Generator.html">Generator</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1Flat.html">Flat</a>(std::vector&lt;FlatLayer&gt; layers) : layers_(std::move(layers)) {}</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* name()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;flat&quot;</span>; }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> generate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> populate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp;)<span class="keyword"> override </span>{}  <span class="comment">// flat = no features</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// Mirrors Nukkit Flat.getSpawn(): (128, floorLevel, 128)</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// floorLevel = sum of all layer counts (y where grass is)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> getSpawn()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">int</span> floor = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; l : layers_) floor += l.count;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> mcp_v3(128.0, (<span class="keywordtype">double</span>)floor, 128.0);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::vector&lt;FlatLayer&gt; layers_;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1Flat_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1Flat.html">cursestone::world::generator::Flat</a></div><div class="ttdef"><b>Definition:</b> Flat.h:33</div></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1generator_1_1FlatLayer.html">   32</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1generator_1_1FlatLayer.html">FlatLayer</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    uint8_t block_id;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    uint8_t count;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1Flat.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1Flat.html">Flat</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1Generator.html">Generator</a> {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1Flat.html">Flat</a>(std::vector&lt;FlatLayer&gt; layers) : layers_(std::move(layers)) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* name()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;flat&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> generate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> populate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp;)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    } <span class="comment">// flat = no features</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Mirrors Nukkit Flat.getSpawn(): (128, floorLevel, 128)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// floorLevel = sum of all layer counts (y where grass is)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> getSpawn()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">int</span> floor = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; l : layers_)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            floor += l.count;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> mcp_v3(128.0, (<span class="keywordtype">double</span>)floor, 128.0);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::vector&lt;FlatLayer&gt; layers_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1Flat_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1Flat.html">cursestone::world::generator::Flat</a></div><div class="ttdef"><b>Definition:</b> Flat.h:36</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1Generator_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1Generator.html">cursestone::world::generator::Generator</a></div><div class="ttdef"><b>Definition:</b> Generator.h:67</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1FlatLayer_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1FlatLayer.html">cursestone::world::generator::FlatLayer</a></div><div class="ttdef"><b>Definition:</b> Flat.h:32</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1GenerationContext_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">cursestone::world::generator::GenerationContext</a></div><div class="ttdef"><b>Definition:</b> Generator.h:46</div></div>

@@ -114,21 +114,24 @@ $(document).ready(function(){initNavTree('ThreadManager_8h_source.html',''); ini
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classcursestone_1_1ThreadManager.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1ThreadManager.html">ThreadManager</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1ThreadManager.html">ThreadManager</a>&amp; <a class="code" href="classcursestone_1_1ThreadManager.html#a0e222959c29de7bd565e906e548f2298">get</a>();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classcursestone_1_1ThreadManager.html#a6a8556d4de4a19b482734c8bc97679e2">   43</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1ThreadManager.html#a6a8556d4de4a19b482734c8bc97679e2">registerThread</a>(std::shared_ptr&lt;std::thread&gt; t) { threads_.push_back(std::move(t)); }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1ThreadManager.html#a832f25990a6862710b22b378fc382c88">joinAll</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::vector&lt;std::shared_ptr&lt;std::thread&gt;&gt; threads_;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classcursestone_1_1ThreadManager.html#a6a8556d4de4a19b482734c8bc97679e2">   43</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1ThreadManager.html#a6a8556d4de4a19b482734c8bc97679e2">registerThread</a>(std::shared_ptr&lt;std::thread&gt; t) {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        threads_.push_back(std::move(t));</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1ThreadManager.html#a832f25990a6862710b22b378fc382c88">joinAll</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    std::vector&lt;std::shared_ptr&lt;std::thread&gt;&gt; threads_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;};</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1ThreadManager_html"><div class="ttname"><a href="classcursestone_1_1ThreadManager.html">cursestone::ThreadManager</a></div><div class="ttdoc">Holds the thread handles the server must join before exiting.</div><div class="ttdef"><b>Definition:</b> ThreadManager.h:37</div></div>
 <div class="ttc" id="aclasscursestone_1_1ThreadManager_html_a0e222959c29de7bd565e906e548f2298"><div class="ttname"><a href="classcursestone_1_1ThreadManager.html#a0e222959c29de7bd565e906e548f2298">cursestone::ThreadManager::get</a></div><div class="ttdeci">static ThreadManager &amp; get()</div><div class="ttdoc">Returns the process-wide instance.</div><div class="ttdef"><b>Definition:</b> ThreadManager.cpp:25</div></div>
 <div class="ttc" id="aclasscursestone_1_1ThreadManager_html_a6a8556d4de4a19b482734c8bc97679e2"><div class="ttname"><a href="classcursestone_1_1ThreadManager.html#a6a8556d4de4a19b482734c8bc97679e2">cursestone::ThreadManager::registerThread</a></div><div class="ttdeci">void registerThread(std::shared_ptr&lt; std::thread &gt; t)</div><div class="ttdoc">Hands a thread handle to the registry so joinAll() can join it later.</div><div class="ttdef"><b>Definition:</b> ThreadManager.h:43</div></div>
-<div class="ttc" id="aclasscursestone_1_1ThreadManager_html_a832f25990a6862710b22b378fc382c88"><div class="ttname"><a href="classcursestone_1_1ThreadManager.html#a832f25990a6862710b22b378fc382c88">cursestone::ThreadManager::joinAll</a></div><div class="ttdeci">void joinAll()</div><div class="ttdoc">Joins every registered, joinable thread and clears the registry.</div><div class="ttdef"><b>Definition:</b> ThreadManager.cpp:26</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="aclasscursestone_1_1ThreadManager_html_a832f25990a6862710b22b378fc382c88"><div class="ttname"><a href="classcursestone_1_1ThreadManager.html#a832f25990a6862710b22b378fc382c88">cursestone::ThreadManager::joinAll</a></div><div class="ttdeci">void joinAll()</div><div class="ttdoc">Joins every registered, joinable thread and clears the registry.</div><div class="ttdef"><b>Definition:</b> ThreadManager.cpp:29</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('PacketPool_8h_source.html',''); initRe
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>cursestone::network::protocol {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classcursestone_1_1network_1_1protocol_1_1PacketPool.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1network_1_1protocol_1_1PacketPool.html">PacketPool</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">using</span> Factory = std::function&lt;std::shared_ptr&lt;DataPacket&gt;()&gt;;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Singleton accessor.</span></div>
@@ -139,7 +139,7 @@ $(document).ready(function(){initNavTree('PacketPool_8h_source.html',''); initRe
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Returns nullptr for unknown IDs.</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::shared_ptr&lt;DataPacket&gt; create(uint8_t pid) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classcursestone_1_1network_1_1protocol_1_1PacketPool.html">PacketPool</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>

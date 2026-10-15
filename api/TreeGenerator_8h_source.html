@@ -120,15 +120,15 @@ $(document).ready(function(){initNavTree('TreeGenerator_8h_source.html',''); ini
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator::object {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1object_1_1TreeGenerator.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1object_1_1TreeGenerator.html">TreeGenerator</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// `x,z` are coordinates relative to the target chunk and MAY be outside</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// 0..15: a tree rooted in a neighbouring chunk writes only the blocks</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// that overlap this chunk (they are clipped), which is what lets trees</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// span chunk borders. `y` is the first trunk block (ground + 1) and</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// `soilId` the block directly below it. Returns true if a tree was</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// placed.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> place(<a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* c, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, TreeType t,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                      uint8_t soilId, <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a>&amp; rng);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> place(<a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* c, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, TreeType t, uint8_t soilId,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                      <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a>&amp; rng);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <span class="comment">// namespace cursestone::world::generator::object</span></div>

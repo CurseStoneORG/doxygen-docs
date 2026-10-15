@@ -116,49 +116,51 @@ $(document).ready(function(){initNavTree('MovingObjectPosition_8h_source.html','
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;math/Vector3.h&quot;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> { <span class="keyword">class </span>Entity; }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>cursestone::world {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">class </span>Entity;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1MovingObjectPosition.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// 0 = block, 1 = entity</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">int</span> typeOfHit = 0;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    int32_t blockX = 0, blockY = 0, blockZ = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>cursestone::world {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1MovingObjectPosition.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// 0 = block, 1 = entity</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> typeOfHit = 0;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Which side was hit. -1 = full length. 0=bottom, 1=top,</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// 2=east, 3=west, 4=north, 5=south.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> sideHit = -1;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="structmcp__vector3.html">math::Vector3</a> hitVector{0, 0, 0};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    int32_t blockX = 0, blockY = 0, blockZ = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Which side was hit. -1 = full length. 0=bottom, 1=top,</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// 2=east, 3=west, 4=north, 5=south.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> sideHit = -1;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Only valid when typeOfHit == 1.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    cursestone::Entity* entityHit = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> fromBlock(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, <span class="keywordtype">int</span> side,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                            <span class="keyword">const</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a>&amp; hit) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> r;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        r.typeOfHit = 0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        r.blockX = x; r.blockY = y; r.blockZ = z;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        r.sideHit = side;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        r.hitVector = hit;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> fromEntity(cursestone::Entity* e,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                            <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z) {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> r;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        r.typeOfHit = 1;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        r.entityHit = e;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        r.hitVector = <a class="code" href="structmcp__vector3.html">math::Vector3</a>{x, y, z};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> r;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace cursestone::world</span></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1MovingObjectPosition_html"><div class="ttname"><a href="classcursestone_1_1world_1_1MovingObjectPosition.html">cursestone::world::MovingObjectPosition</a></div><div class="ttdef"><b>Definition:</b> MovingObjectPosition.h:35</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="structmcp__vector3.html">math::Vector3</a> hitVector{0, 0, 0};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Only valid when typeOfHit == 1.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    cursestone::Entity* entityHit = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> fromBlock(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, <span class="keywordtype">int</span> side, <span class="keyword">const</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a>&amp; hit) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> r;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        r.typeOfHit = 0;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        r.blockX = x;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        r.blockY = y;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        r.blockZ = z;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        r.sideHit = side;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        r.hitVector = hit;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> fromEntity(cursestone::Entity* e, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z) {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <a class="code" href="classcursestone_1_1world_1_1MovingObjectPosition.html">MovingObjectPosition</a> r;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        r.typeOfHit = 1;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        r.entityHit = e;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        r.hitVector = <a class="code" href="structmcp__vector3.html">math::Vector3</a>{x, y, z};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span> r;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace cursestone::world</span></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1MovingObjectPosition_html"><div class="ttname"><a href="classcursestone_1_1world_1_1MovingObjectPosition.html">cursestone::world::MovingObjectPosition</a></div><div class="ttdef"><b>Definition:</b> MovingObjectPosition.h:37</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 <div class="ttc" id="astructmcp__vector3_html"><div class="ttname"><a href="structmcp__vector3.html">mcp_vector3</a></div><div class="ttdef"><b>Definition:</b> Vector3.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

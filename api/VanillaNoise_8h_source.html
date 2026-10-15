@@ -132,73 +132,74 @@ $(document).ready(function(){initNavTree('VanillaNoise_8h_source.html',''); init
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1VanillaNoise.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1VanillaNoise.html">VanillaNoise</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1VanillaNoise.html">VanillaNoise</a>(int64_t seed) : random((<span class="keywordtype">long</span>)seed),</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        lperlinNoise1(&amp;random, 16),</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        lperlinNoise2(&amp;random, 16),</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        perlinNoise1(&amp;random, 8),</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        perlinNoise2(&amp;random, 4),</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        perlinNoise3(&amp;random, 4),</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        scaleNoise(&amp;random, 10),</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        depthNoise(&amp;random, 16),</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        forestNoise(&amp;random, 8) {}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// Tiene que ir primero: todas las capas toman &amp;random.</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a> random;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> lperlinNoise1;  <span class="comment">// ruido &quot;bajo&quot; A (continentes/hondonadas)</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> lperlinNoise2;  <span class="comment">// ruido &quot;bajo&quot; B (relleno del medio)</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> perlinNoise1;   <span class="comment">// ruido selector principal (8 octavas)</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> perlinNoise2;   <span class="comment">// clima</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> perlinNoise3;   <span class="comment">// clima</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> scaleNoise;     <span class="comment">// escala del relieve</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> depthNoise;     <span class="comment">// profundidad vertical</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> forestNoise;    <span class="comment">// densidad de vegetacion</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// ============================================================</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// Puente del ruido vanilla a un valor [-1, 1]</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// ============================================================</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// El PerlinNoise vanilla suma las octavas AL REVES que un fbm normal:</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">//     vanilla(x, y) = sum(noise(x/2^i, y/2^i) * 2^i)      (pow /= 2)</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">//     fbm(x, y)     = sum(noise(x*2^i, y*2^i) * 0.5^i)</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// asi que su octava dominante (la ultima) cae 2^(levels-1) veces mas lejos</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// que la frecuencia que le pasan, y a la escala de bloque del generador el</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// campo sale casi constante. Estas funciones devuelven la octava dominante a</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// la frecuencia base (multiplicando la entrada por 2^(levels-1)) y dividen por</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// la amplitud total sum(2^i) = 2^levels - 1, dejando un valor acotado en</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// [-1, 1] comparable al del fbm que usaba el generador.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> layerAmplitudeSum(<span class="keywordtype">int</span> levels) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">double</span> s = 0.0, amp = 1.0;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; levels; ++i) { s += amp; amp *= 2.0; }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> layerDominantScale(<span class="keywordtype">int</span> levels) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">return</span> (levels &lt;= 0) ? 1.0 : (double)(1u &lt;&lt; (levels - 1));</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> noiseValue2d(PerlinNoise&amp; p, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Las dos constantes ya vienen precalculadas en la capa (init());</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// antes se recalculaban con un bucle en CADA evaluacion de campo, y</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// cada columna de terreno pide decenas de estas. Mismos valores,</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// mismos bits, sin el bucle.</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> sum = p.amplitudeSum();</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">if</span> (sum &lt;= 0.0) <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1VanillaNoise.html">VanillaNoise</a>(int64_t seed)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        : random((<span class="keywordtype">long</span>)seed), lperlinNoise1(&amp;random, 16), lperlinNoise2(&amp;random, 16),</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;          perlinNoise1(&amp;random, 8), perlinNoise2(&amp;random, 4), perlinNoise3(&amp;random, 4),</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;          scaleNoise(&amp;random, 10), depthNoise(&amp;random, 16), forestNoise(&amp;random, 8) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Tiene que ir primero: todas las capas toman &amp;random.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a> random;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> lperlinNoise1; <span class="comment">// ruido &quot;bajo&quot; A (continentes/hondonadas)</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> lperlinNoise2; <span class="comment">// ruido &quot;bajo&quot; B (relleno del medio)</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> perlinNoise1;  <span class="comment">// ruido selector principal (8 octavas)</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> perlinNoise2;  <span class="comment">// clima</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> perlinNoise3;  <span class="comment">// clima</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> scaleNoise;    <span class="comment">// escala del relieve</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> depthNoise;    <span class="comment">// profundidad vertical</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> forestNoise;   <span class="comment">// densidad de vegetacion</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// ============================================================</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// Puente del ruido vanilla a un valor [-1, 1]</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// ============================================================</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// El PerlinNoise vanilla suma las octavas AL REVES que un fbm normal:</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">//     vanilla(x, y) = sum(noise(x/2^i, y/2^i) * 2^i)      (pow /= 2)</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//     fbm(x, y)     = sum(noise(x*2^i, y*2^i) * 0.5^i)</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// asi que su octava dominante (la ultima) cae 2^(levels-1) veces mas lejos</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// que la frecuencia que le pasan, y a la escala de bloque del generador el</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// campo sale casi constante. Estas funciones devuelven la octava dominante a</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// la frecuencia base (multiplicando la entrada por 2^(levels-1)) y dividen por</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// la amplitud total sum(2^i) = 2^levels - 1, dejando un valor acotado en</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// [-1, 1] comparable al del fbm que usaba el generador.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> layerAmplitudeSum(<span class="keywordtype">int</span> levels) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">double</span> s = 0.0, amp = 1.0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; levels; ++i) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        s += amp;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        amp *= 2.0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> layerDominantScale(<span class="keywordtype">int</span> levels) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> (levels &lt;= 0) ? 1.0 : (double)(1u &lt;&lt; (levels - 1));</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> noiseValue2d(PerlinNoise&amp; p, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y) {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Las dos constantes ya vienen precalculadas en la capa (init());</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// antes se recalculaban con un bucle en CADA evaluacion de campo, y</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// cada columna de terreno pide decenas de estas. Mismos valores,</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// mismos bits, sin el bucle.</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> sum = p.amplitudeSum();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (sum &lt;= 0.0)</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> k = p.dominantScale();</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">double</span>)p.getValue((<span class="keywordtype">float</span>)(x * k), (<span class="keywordtype">float</span>)(y * k)) / sum;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">double</span> noiseValue3d(PerlinNoise&amp; p, <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z) {</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> sum = p.amplitudeSum();</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (sum &lt;= 0.0) <span class="keywordflow">return</span> 0.0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> k = p.dominantScale();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">double</span>)p.getValue((<span class="keywordtype">float</span>)(x * k), (<span class="keywordtype">float</span>)(y * k), (<span class="keywordtype">float</span>)(z * k)) / sum;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;} <span class="comment">// namespace cursestone::world::generator</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (sum &lt;= 0.0)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        <span class="keywordflow">return</span> 0.0;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> k = p.dominantScale();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordflow">return</span> (<span class="keywordtype">double</span>)p.getValue((<span class="keywordtype">float</span>)(x * k), (<span class="keywordtype">float</span>)(y * k), (<span class="keywordtype">float</span>)(z * k)) / sum;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <span class="comment">// namespace cursestone::world::generator</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1MersenneRandom_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">cursestone::world::generator::MersenneRandom</a></div><div class="ttdef"><b>Definition:</b> MersenneRandom.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1PerlinNoise_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">cursestone::world::generator::PerlinNoise</a></div><div class="ttdef"><b>Definition:</b> PerlinNoise.h:40</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1VanillaNoise_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1VanillaNoise.html">cursestone::world::generator::VanillaNoise</a></div><div class="ttdef"><b>Definition:</b> VanillaNoise.h:46</div></div>

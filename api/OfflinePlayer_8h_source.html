@@ -114,27 +114,33 @@ $(document).ready(function(){initNavTree('OfflinePlayer_8h_source.html',''); ini
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">class </span>Server;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classcursestone_1_1OfflinePlayer.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1OfflinePlayer.html">OfflinePlayer</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1IPlayer.html">IPlayer</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classcursestone_1_1OfflinePlayer.html">OfflinePlayer</a>(<span class="keyword">class</span> <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv, std::string name) : srv_(srv), name_(std::move(name)) {}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> sendMessage(<span class="keyword">const</span> std::string&amp; msg) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::string getName()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> name_; }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> hasPermission(<span class="keyword">const</span> std::string&amp;) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> isOnline()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">false</span>; }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> isOp() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> setOp(<span class="keywordtype">bool</span> v) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> isBanned() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> setBanned(<span class="keywordtype">bool</span> v) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> isWhitelisted() <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> setWhitelisted(<span class="keywordtype">bool</span> v) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string name_;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classcursestone_1_1OfflinePlayer.html">OfflinePlayer</a>(<span class="keyword">class</span> <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv, std::string name) : srv_(srv), name_(std::move(name)) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> sendMessage(<span class="keyword">const</span> std::string&amp; msg) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string getName()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> name_;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> hasPermission(<span class="keyword">const</span> std::string&amp;) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> isOnline()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> isOp() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> setOp(<span class="keywordtype">bool</span> v) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> isBanned() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> setBanned(<span class="keywordtype">bool</span> v) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> isWhitelisted() <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> setWhitelisted(<span class="keywordtype">bool</span> v) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::string name_;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1IPlayer_html"><div class="ttname"><a href="classcursestone_1_1IPlayer.html">cursestone::IPlayer</a></div><div class="ttdef"><b>Definition:</b> IPlayer.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1OfflinePlayer_html"><div class="ttname"><a href="classcursestone_1_1OfflinePlayer.html">cursestone::OfflinePlayer</a></div><div class="ttdef"><b>Definition:</b> OfflinePlayer.h:28</div></div>
-<div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">server singleton: boot, tick loop, and coordinated shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:79</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">server singleton: boot, tick loop, and coordinated shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:97</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

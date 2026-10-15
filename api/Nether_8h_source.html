@@ -127,23 +127,26 @@ $(document).ready(function(){initNavTree('Nether_8h_source.html',''); initResiza
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;world/generator/noise/VanillaNoise.h&quot;</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator {</div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1Nether.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1Nether.html">Nether</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1Generator.html">Generator</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1Nether.html">Nether</a>(int64_t seed);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ~<a class="code" href="classcursestone_1_1world_1_1generator_1_1Nether.html">Nether</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* name()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;nether&quot;</span>; }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> generate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> populate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// Mirrors Nukkit Nether.getSpawn(): (128, 64, 128)</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> getSpawn()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> mcp_v3(128.0, 64.0, 128.0);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Must be declared first: the noise layer holds a pointer to it.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a> random_;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> noise_;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    int64_t seed_;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* name()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;nether&quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> generate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> populate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// Mirrors Nukkit Nether.getSpawn(): (128, 64, 128)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> getSpawn()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> mcp_v3(128.0, 64.0, 128.0);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Must be declared first: the noise layer holds a pointer to it.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a> random_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> noise_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    int64_t seed_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1Generator_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1Generator.html">cursestone::world::generator::Generator</a></div><div class="ttdef"><b>Definition:</b> Generator.h:67</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1MersenneRandom_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">cursestone::world::generator::MersenneRandom</a></div><div class="ttdef"><b>Definition:</b> MersenneRandom.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1Nether_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1Nether.html">cursestone::world::generator::Nether</a></div><div class="ttdef"><b>Definition:</b> Nether.h:41</div></div>

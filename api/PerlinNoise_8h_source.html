@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('PerlinNoise_8h_source.html',''); initR
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">class </span>ImprovedNoise;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1Synth.html">Synth</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a>(<span class="keywordtype">int</span> levels);</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a>(<a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a>* random, <span class="keywordtype">int</span> levels);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ~<a class="code" href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">PerlinNoise</a>() <span class="keyword">override</span>;</div>
@@ -134,46 +134,51 @@ $(document).ready(function(){initNavTree('PerlinNoise_8h_source.html',''); initR
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">float</span> getValue(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">float</span> getValue(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z);</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span>* getRegion(<span class="keywordtype">float</span>* buffer, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">int</span> xSize,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                     <span class="keywordtype">int</span> ySize, <span class="keywordtype">int</span> zSize, <span class="keywordtype">float</span> xScale, <span class="keywordtype">float</span> yScale,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                     <span class="keywordtype">float</span> zScale);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">float</span>* getRegion(<span class="keywordtype">float</span>* sr, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z, <span class="keywordtype">int</span> xSize, <span class="keywordtype">int</span> zSize, <span class="keywordtype">float</span> xScale,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                     <span class="keywordtype">float</span> zScale, <span class="keywordtype">float</span> pow);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">int</span> hashCode();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Anadido (no esta en el original): cuantas octavas tiene esta capa. El</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// vanilla suma las octavas SIN dividir por la amplitud total, asi que su</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// salida crece con `levels`; nuestro generador espera campos en [-1, 1] y</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// usa esto para normalizar.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">int</span> levelCount()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> levels; }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Optimizacion (NO cambia ni un bit): el puente del ruido vanilla</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// (noise/VanillaNoise.h) necesita estas dos constantes en CADA</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// evaluacion de campo, y antes las recalculeaba con un bucle por</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// llamada. Son puros valores de la capa, asi que se guardan una vez</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// en init() y se leen aqui. Mismos numeros, mismo orden de</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// sumatoria: la salida de getValue() no se toca.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">double</span> amplitudeSum()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> amp_sum_; }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">double</span> dominantScale()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> dom_scale_; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html">ImprovedNoise</a>** noiseLevels;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> levels;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Constantes precalculadas (ver accessors arriba). Identicas a las</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// que calculaba el bucle de layerAmplitudeSum()/layerDominantScale()</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// en VanillaNoise.h, solo que sin repetirlas por muestra.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> amp_sum_ = 1.0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">double</span> dom_scale_ = 1.0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a> _random;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a>* _rndPtr;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> init(<span class="keywordtype">int</span> levels);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;} <span class="comment">// namespace cursestone::world::generator</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">float</span>* getRegion(<span class="keywordtype">float</span>* buffer, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y, <span class="keywordtype">float</span> z, <span class="keywordtype">int</span> xSize, <span class="keywordtype">int</span> ySize, <span class="keywordtype">int</span> zSize,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                     <span class="keywordtype">float</span> xScale, <span class="keywordtype">float</span> yScale, <span class="keywordtype">float</span> zScale);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">float</span>* getRegion(<span class="keywordtype">float</span>* sr, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z, <span class="keywordtype">int</span> xSize, <span class="keywordtype">int</span> zSize, <span class="keywordtype">float</span> xScale, <span class="keywordtype">float</span> zScale,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                     <span class="keywordtype">float</span> pow);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> hashCode();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Anadido (no esta en el original): cuantas octavas tiene esta capa. El</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// vanilla suma las octavas SIN dividir por la amplitud total, asi que su</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="comment">// salida crece con `levels`; nuestro generador espera campos en [-1, 1] y</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// usa esto para normalizar.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> levelCount()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> levels;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Optimizacion (NO cambia ni un bit): el puente del ruido vanilla</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// (noise/VanillaNoise.h) necesita estas dos constantes en CADA</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// evaluacion de campo, y antes las recalculeaba con un bucle por</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// llamada. Son puros valores de la capa, asi que se guardan una vez</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// en init() y se leen aqui. Mismos numeros, mismo orden de</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// sumatoria: la salida de getValue() no se toca.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">double</span> amplitudeSum()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> amp_sum_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">double</span> dominantScale()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> dom_scale_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html">ImprovedNoise</a>** noiseLevels;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">int</span> levels;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Constantes precalculadas (ver accessors arriba). Identicas a las</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// que calculaba el bucle de layerAmplitudeSum()/layerDominantScale()</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// en VanillaNoise.h, solo que sin repetirlas por muestra.</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">double</span> amp_sum_ = 1.0;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">double</span> dom_scale_ = 1.0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a> _random;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a>* _rndPtr;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> init(<span class="keywordtype">int</span> levels);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace cursestone::world::generator</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1ImprovedNoise_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html">cursestone::world::generator::ImprovedNoise</a></div><div class="ttdef"><b>Definition:</b> ImprovedNoise.h:39</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1MersenneRandom_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">cursestone::world::generator::MersenneRandom</a></div><div class="ttdef"><b>Definition:</b> MersenneRandom.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1PerlinNoise_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1PerlinNoise.html">cursestone::world::generator::PerlinNoise</a></div><div class="ttdef"><b>Definition:</b> PerlinNoise.h:40</div></div>

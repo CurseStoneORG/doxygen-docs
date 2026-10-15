@@ -129,18 +129,18 @@ $(document).ready(function(){initNavTree('Inventory_8h_source.html',''); initRes
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span>Player;  <span class="comment">// forward</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span>Player; <span class="comment">// forward</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>inventory {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classcursestone_1_1inventory_1_1Inventory.html">   48</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1inventory_1_1Inventory.html">Inventory</a> {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> MAX_STACK = 64;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1inventory_1_1Inventory.html">Inventory</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>  getSize() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>  getMaxStackSize() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> getSize() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> getMaxStackSize() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setMaxStackSize(<span class="keywordtype">int</span> size) = 0;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> std::string&amp; getName() <span class="keyword">const</span> = 0;</div>
@@ -168,8 +168,8 @@ $(document).ready(function(){initNavTree('Inventory_8h_source.html',''); initRes
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> contains(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a>&amp; item) = 0;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">virtual</span> std::unordered_map&lt;int, item::ItemStack&gt; all(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a>&amp; item) = 0;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>  first(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a>&amp; item) = 0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span>  firstEmpty(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a>&amp; item) = 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> first(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a>&amp; item) = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">int</span> firstEmpty(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a>&amp; item) = 0;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> remove(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a>&amp; item) = 0;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> clear(<span class="keywordtype">int</span> index) = 0;</div>
@@ -184,9 +184,9 @@ $(document).ready(function(){initNavTree('Inventory_8h_source.html',''); initRes
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <span class="comment">// namespace inventory</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;} <span class="comment">// namespace cursestone</span></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:101</div></div>
 <div class="ttc" id="aclasscursestone_1_1inventory_1_1Inventory_html"><div class="ttname"><a href="classcursestone_1_1inventory_1_1Inventory.html">cursestone::inventory::Inventory</a></div><div class="ttdef"><b>Definition:</b> Inventory.h:48</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 <div class="ttc" id="astructcursestone_1_1item_1_1ItemStack_html"><div class="ttname"><a href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a></div><div class="ttdef"><b>Definition:</b> ItemStack.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

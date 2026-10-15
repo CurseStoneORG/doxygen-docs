@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('SimpleCommandMap_8h_source.html',''); 
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classcursestone_1_1SimpleCommandMap.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1SimpleCommandMap.html">SimpleCommandMap</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1CommandMap.html">CommandMap</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> registerCommand(std::unique_ptr&lt;Command&gt; cmd) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Reemplaza un comando existente por este (o lo registra normal si</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// el nombre no existia). El comando desplazado queda guardado como</span></div>
@@ -133,20 +133,23 @@ $(document).ready(function(){initNavTree('SimpleCommandMap_8h_source.html',''); 
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// lua_State). Si un comando borrado habia pisado a otro (override),</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// el desplazado se restaura en su lugar. Devuelve cuántos borró.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">size_t</span> unregisterByOwner(<span class="keywordtype">void</span>* owner) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">size_t</span> size()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> commands_.size(); }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::unordered_map&lt;std::string, std::unique_ptr&lt;Command&gt;&gt; commands_;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// comandos desplazados por override: nombre -&gt; el comando original</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// (nucleo o de otro plugin) que vuelve cuando el que lo piso se va.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::unordered_map&lt;std::string, std::unique_ptr&lt;Command&gt;&gt; overridden_;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::vector&lt;std::string&gt; aliases_;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">size_t</span> size()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> commands_.size();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::unordered_map&lt;std::string, std::unique_ptr&lt;Command&gt;&gt; commands_;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// comandos desplazados por override: nombre -&gt; el comando original</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// (nucleo o de otro plugin) que vuelve cuando el que lo piso se va.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::unordered_map&lt;std::string, std::unique_ptr&lt;Command&gt;&gt; overridden_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::vector&lt;std::string&gt; aliases_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1CommandMap_html"><div class="ttname"><a href="classcursestone_1_1CommandMap.html">cursestone::CommandMap</a></div><div class="ttdef"><b>Definition:</b> CommandMap.h:28</div></div>
 <div class="ttc" id="aclasscursestone_1_1CommandSender_html"><div class="ttname"><a href="classcursestone_1_1CommandSender.html">cursestone::CommandSender</a></div><div class="ttdef"><b>Definition:</b> CommandSender.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1Command_html"><div class="ttname"><a href="classcursestone_1_1Command.html">cursestone::Command</a></div><div class="ttdef"><b>Definition:</b> Command.h:31</div></div>
 <div class="ttc" id="aclasscursestone_1_1SimpleCommandMap_html"><div class="ttname"><a href="classcursestone_1_1SimpleCommandMap.html">cursestone::SimpleCommandMap</a></div><div class="ttdef"><b>Definition:</b> SimpleCommandMap.h:30</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

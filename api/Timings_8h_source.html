@@ -119,32 +119,38 @@ $(document).ready(function(){initNavTree('Timings_8h_source.html',''); initResiz
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>cursestone::event {</div>
 <div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1Timings.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1Timings.html">Timings</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1event_1_1Timings.html">Timings</a>&amp; get();</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> record(<span class="keyword">const</span> std::string&amp; section, int64_t nanos) {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        totals_[section] += nanos;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> std::unordered_map&lt;std::string, int64_t&gt;&amp; totals()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> totals_; }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> reset() { totals_.clear(); }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::unordered_map&lt;std::string, int64_t&gt; totals_;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1TimingsSection.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1TimingsSection.html">TimingsSection</a> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1TimingsSection.html">TimingsSection</a>(std::string name) : name_(std::move(name)) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        start_ = std::chrono::steady_clock::now();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    ~<a class="code" href="classcursestone_1_1event_1_1TimingsSection.html">TimingsSection</a>() {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">auto</span> end = std::chrono::steady_clock::now();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">auto</span> ns = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(end - start_).count();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        Timings::get().record(name_, ns);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> std::unordered_map&lt;std::string, int64_t&gt;&amp; totals()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> totals_;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> reset() {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        totals_.clear();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    std::unordered_map&lt;std::string, int64_t&gt; totals_;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1TimingsSection.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1TimingsSection.html">TimingsSection</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1TimingsSection.html">TimingsSection</a>(std::string name) : name_(std::move(name)) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        start_ = std::chrono::steady_clock::now();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    std::string name_;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::chrono::steady_clock::time_point start_;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1TimingsSection_html"><div class="ttname"><a href="classcursestone_1_1event_1_1TimingsSection.html">cursestone::event::TimingsSection</a></div><div class="ttdef"><b>Definition:</b> Timings.h:44</div></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    ~<a class="code" href="classcursestone_1_1event_1_1TimingsSection.html">TimingsSection</a>() {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">auto</span> end = std::chrono::steady_clock::now();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">auto</span> ns = std::chrono::duration_cast&lt;std::chrono::nanoseconds&gt;(end - start_).count();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        Timings::get().record(name_, ns);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::string name_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::chrono::steady_clock::time_point start_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1TimingsSection_html"><div class="ttname"><a href="classcursestone_1_1event_1_1TimingsSection.html">cursestone::event::TimingsSection</a></div><div class="ttdef"><b>Definition:</b> Timings.h:49</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Timings_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Timings.html">cursestone::event::Timings</a></div><div class="ttdef"><b>Definition:</b> Timings.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

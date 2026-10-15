@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('Command_8h_source.html',''); initResiz
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classcursestone_1_1Command.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1Command.html">Command</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// `permission` es el nodo de permiso que el emisor debe tener para</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// poder ejecutar este comando. VACIO = cualquiera puede ejecutarlo</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// (help, list, version...). Un nodo como &quot;cursestone.command.stop&quot;</span></div>
@@ -127,35 +127,49 @@ $(document).ready(function(){initNavTree('Command_8h_source.html',''); initResiz
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classcursestone_1_1Command.html">Command</a>(std::string name, std::string description = <span class="stringliteral">&quot;&quot;</span>, std::string usage = <span class="stringliteral">&quot;&quot;</span>,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            std::string permission = <span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        : name_(std::move(name)), description_(std::move(description)), usage_(std::move(usage)),</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          permission_(std::move(permission)) {}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1Command.html">Command</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> execute(<a class="code" href="classcursestone_1_1CommandSender.html">CommandSender</a>* sender, <span class="keyword">const</span> std::string&amp; label,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                         <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) = 0;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">const</span> std::string&amp; name()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> name_; }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> std::string&amp; description()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> description_; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> std::string&amp; usage()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> usage_; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Nodo requerido, o &quot;&quot; si es público.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> std::string&amp; permission()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> permission_; }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> isPublic()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> permission_.empty(); }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// ¿Puede este emisor usar el comando? SimpleCommandMap::dispatch() lo</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// consulta ANTES de execute() y /help lo usa para filtrar la lista.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// Por defecto: público, o el emisor tiene el nodo de permiso pedido.</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// (LuaCommand lo sobreescribe: op / nodo custom con fallback a op.)</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> canUse(<a class="code" href="classcursestone_1_1CommandSender.html">CommandSender</a>* sender)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> isPublic() || sender-&gt;hasPermission(permission_);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Owner tag for commands registered at RUNTIME by plugins: LuaCommand</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// returns its LuaPlugin*, core commands return nullptr. Used by</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// /plugins reload to unregister a plugin&#39;s commands BEFORE its</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// lua_State is destroyed (the command holds Lua refs).</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* owner()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">nullptr</span>; }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string name_, description_, usage_, permission_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;          permission_(std::move(permission)) {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1Command.html">Command</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> execute(<a class="code" href="classcursestone_1_1CommandSender.html">CommandSender</a>* sender, <span class="keyword">const</span> std::string&amp; label,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                         <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">const</span> std::string&amp; name()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> name_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> std::string&amp; description()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> description_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> std::string&amp; usage()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> usage_;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Nodo requerido, o &quot;&quot; si es público.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> std::string&amp; permission()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> permission_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> isPublic()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> permission_.empty();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// ¿Puede este emisor usar el comando? SimpleCommandMap::dispatch() lo</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// consulta ANTES de execute() y /help lo usa para filtrar la lista.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Por defecto: público, o el emisor tiene el nodo de permiso pedido.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// (LuaCommand lo sobreescribe: op / nodo custom con fallback a op.)</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> canUse(<a class="code" href="classcursestone_1_1CommandSender.html">CommandSender</a>* sender)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> isPublic() || sender-&gt;hasPermission(permission_);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Owner tag for commands registered at RUNTIME by plugins: LuaCommand</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// returns its LuaPlugin*, core commands return nullptr. Used by</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// /plugins reload to unregister a plugin&#39;s commands BEFORE its</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// lua_State is destroyed (the command holds Lua refs).</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>* owner()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    std::string name_, description_, usage_, permission_;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1CommandSender_html"><div class="ttname"><a href="classcursestone_1_1CommandSender.html">cursestone::CommandSender</a></div><div class="ttdef"><b>Definition:</b> CommandSender.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1Command_html"><div class="ttname"><a href="classcursestone_1_1Command.html">cursestone::Command</a></div><div class="ttdef"><b>Definition:</b> Command.h:31</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

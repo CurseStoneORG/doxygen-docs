@@ -114,38 +114,41 @@ $(document).ready(function(){initNavTree('PlayerInteractEvent_8h_source.html',''
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;PlayerEvent.h&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../Cancellable.h&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;../../item/ItemStack.h&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> { <span class="keyword">class </span>Player; }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>cursestone::event::player {</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html">PlayerInteractEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">PlayerEvent</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> LEFT_CLICK_BLOCK  = 0;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> RIGHT_CLICK_BLOCK = 1;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> LEFT_CLICK_AIR    = 2;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> RIGHT_CLICK_AIR   = 3;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> PHYSICAL          = 4;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> action = 0;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> blockX = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> blockY = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> blockZ = 0;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> face = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> item;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html">PlayerInteractEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p, <span class="keywordtype">int</span> act, <span class="keywordtype">int</span> bx, <span class="keywordtype">int</span> by, <span class="keywordtype">int</span> bz,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        <span class="keywordtype">int</span> f, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; it)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        : <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">PlayerEvent</a>(p), action(act), blockX(bx), blockY(by), blockZ(bz),</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;          face(f), item(it) {}</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;PlayerInteractEvent&quot;</span>; <span class="keywordflow">return</span> n;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace cursestone::event::player</span></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span>Player;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;}</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">namespace </span>cursestone::event::player {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html">PlayerInteractEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">PlayerEvent</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> LEFT_CLICK_BLOCK = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> RIGHT_CLICK_BLOCK = 1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> LEFT_CLICK_AIR = 2;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> RIGHT_CLICK_AIR = 3;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> PHYSICAL = 4;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> action = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span> blockX = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> blockY = 0;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> blockZ = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">int</span> face = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> item;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html">PlayerInteractEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p, <span class="keywordtype">int</span> act, <span class="keywordtype">int</span> bx, <span class="keywordtype">int</span> by, <span class="keywordtype">int</span> bz, <span class="keywordtype">int</span> f,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                        <span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; it)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        : <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">PlayerEvent</a>(p), action(act), blockX(bx), blockY(by), blockZ(bz), face(f), item(it) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;PlayerInteractEvent&quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace cursestone::event::player</span></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:101</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Cancellable_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Cancellable.html">cursestone::event::Cancellable</a></div><div class="ttdef"><b>Definition:</b> Cancellable.h:26</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">cursestone::event::player::PlayerEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerEvent.h:34</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerInteractEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html">cursestone::event::player::PlayerInteractEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerInteractEvent.h:32</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">cursestone::event::player::PlayerEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerEvent.h:36</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerInteractEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html">cursestone::event::player::PlayerInteractEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerInteractEvent.h:34</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 <div class="ttc" id="astructcursestone_1_1item_1_1ItemStack_html"><div class="ttname"><a href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a></div><div class="ttdef"><b>Definition:</b> ItemStack.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

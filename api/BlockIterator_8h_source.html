@@ -120,32 +120,38 @@ $(document).ready(function(){initNavTree('BlockIterator_8h_source.html',''); ini
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone_1_1utils.html">cursestone::utils</a> {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classcursestone_1_1utils_1_1BlockIterator.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1utils_1_1BlockIterator.html">BlockIterator</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classcursestone_1_1utils_1_1BlockIterator.html">BlockIterator</a>(<span class="keyword">const</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a>&amp; start,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                  <span class="keyword">const</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a>&amp; direction,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                  <span class="keywordtype">double</span> maxDistance);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// Advance to the next voxel boundary. Returns false if maxDistance exceeded.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> next();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">int</span>   currentX()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> curX_; }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span>   currentY()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> curY_; }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span>   currentZ()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> curZ_; }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> traveled()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> traveled_; }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Amanatides &amp; Woo&#39;s fast voxel traversal.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">double</span> x_, y_, z_;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">double</span> dx_, dy_, dz_;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span>    curX_, curY_, curZ_;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">double</span> stepX_, stepY_, stepZ_;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">double</span> tMaxX_, tMaxY_, tMaxZ_;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">double</span> tDeltaX_, tDeltaY_, tDeltaZ_;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">double</span> maxDistance_;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span> traveled_;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace cursestone::utils</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classcursestone_1_1utils_1_1BlockIterator.html">BlockIterator</a>(<span class="keyword">const</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a>&amp; start, <span class="keyword">const</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a>&amp; direction, <span class="keywordtype">double</span> maxDistance);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Advance to the next voxel boundary. Returns false if maxDistance exceeded.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> next();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> currentX()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> curX_;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> currentY()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> curY_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> currentZ()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> curZ_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">double</span> traveled()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> traveled_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Amanatides &amp; Woo&#39;s fast voxel traversal.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">double</span> x_, y_, z_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span> dx_, dy_, dz_;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> curX_, curY_, curZ_;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">double</span> stepX_, stepY_, stepZ_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">double</span> tMaxX_, tMaxY_, tMaxZ_;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">double</span> tDeltaX_, tDeltaY_, tDeltaZ_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">double</span> maxDistance_;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">double</span> traveled_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;} <span class="comment">// namespace cursestone::utils</span></div>
 <div class="ttc" id="aclasscursestone_1_1utils_1_1BlockIterator_html"><div class="ttname"><a href="classcursestone_1_1utils_1_1BlockIterator.html">cursestone::utils::BlockIterator</a></div><div class="ttdef"><b>Definition:</b> BlockIterator.h:34</div></div>
 <div class="ttc" id="anamespacecursestone_1_1utils_html"><div class="ttname"><a href="namespacecursestone_1_1utils.html">cursestone::utils</a></div><div class="ttdoc">Loads the server config file (YAML / INI / JSON).</div><div class="ttdef"><b>Definition:</b> CurseStone.h:154</div></div>
 <div class="ttc" id="astructmcp__vector3_html"><div class="ttname"><a href="structmcp__vector3.html">mcp_vector3</a></div><div class="ttdef"><b>Definition:</b> Vector3.h:40</div></div>

@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('PluginManager_8h_source.html',''); ini
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span>cursestone::plugin {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classcursestone_1_1plugin_1_1PluginManager.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1plugin_1_1PluginManager.html">PluginManager</a> {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1plugin_1_1PluginManager.html">PluginManager</a>&amp; get();</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce">loadAll</a>(<span class="keyword">const</span> std::string&amp; pluginsDir, <span class="keyword">const</span> std::string&amp; dataRoot);</div>
@@ -145,27 +145,32 @@ $(document).ready(function(){initNavTree('PluginManager_8h_source.html',''); ini
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// disables all (is flame when shutting down the server).</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> disableAll();</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structcursestone_1_1plugin_1_1PluginManager_1_1Info.html">   69</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcursestone_1_1plugin_1_1PluginManager_1_1Info.html">Info</a> { std::string name; std::string author; std::string version; <span class="keywordtype">bool</span> enabled; };</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::vector&lt;Info&gt; list() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a>* <a class="code" href="classcursestone_1_1plugin_1_1PluginManager.html#acd34ab2cec27310116f4c2a0cb43c41c">find</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1PluginManager.html">PluginManager</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::string pluginsDir_;            <span class="comment">// stored by loadAll() for reloadAll()</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::string dataRoot_;              <span class="comment">// data_pl root, remembered for reloadAll()</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::vector&lt;std::unique_ptr&lt;LuaPlugin&gt;&gt; plugins_;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// without onDisable (already it hizo disableAll()): quita the commands of the</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// plugins of the CommandMap and destroys the lua_States.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> unloadAll();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structcursestone_1_1plugin_1_1PluginManager_1_1Info.html">   69</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcursestone_1_1plugin_1_1PluginManager_1_1Info.html">Info</a> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::string name;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        std::string author;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        std::string version;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordtype">bool</span> enabled;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    };</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::vector&lt;Info&gt; list() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a>* <a class="code" href="classcursestone_1_1plugin_1_1PluginManager.html#acd34ab2cec27310116f4c2a0cb43c41c">find</a>(<span class="keyword">const</span> std::string&amp; name) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1PluginManager.html">PluginManager</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::string pluginsDir_; <span class="comment">// stored by loadAll() for reloadAll()</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    std::string dataRoot_;   <span class="comment">// data_pl root, remembered for reloadAll()</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::vector&lt;std::unique_ptr&lt;LuaPlugin&gt;&gt; plugins_;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// without onDisable (already it hizo disableAll()): quita the commands of the</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// plugins of the CommandMap and destroys the lua_States.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> unloadAll();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="ttc" id="aclasscursestone_1_1plugin_1_1LuaPlugin_html"><div class="ttname"><a href="classcursestone_1_1plugin_1_1LuaPlugin.html">cursestone::plugin::LuaPlugin</a></div><div class="ttdef"><b>Definition:</b> LuaPlugin.h:80</div></div>
 <div class="ttc" id="aclasscursestone_1_1plugin_1_1PluginManager_html"><div class="ttname"><a href="classcursestone_1_1plugin_1_1PluginManager.html">cursestone::plugin::PluginManager</a></div><div class="ttdef"><b>Definition:</b> PluginManager.h:45</div></div>
-<div class="ttc" id="aclasscursestone_1_1plugin_1_1PluginManager_html_a7c668fcf9e431c4f31550720e8d6f5ce"><div class="ttname"><a href="classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce">cursestone::plugin::PluginManager::loadAll</a></div><div class="ttdeci">void loadAll(const std::string &amp;pluginsDir, const std::string &amp;dataRoot)</div><div class="ttdoc">Scans pluginsDir, then loads and enables every plugin.</div><div class="ttdef"><b>Definition:</b> PluginManager.cpp:80</div></div>
-<div class="ttc" id="aclasscursestone_1_1plugin_1_1PluginManager_html_acd34ab2cec27310116f4c2a0cb43c41c"><div class="ttname"><a href="classcursestone_1_1plugin_1_1PluginManager.html#acd34ab2cec27310116f4c2a0cb43c41c">cursestone::plugin::PluginManager::find</a></div><div class="ttdeci">LuaPlugin * find(const std::string &amp;name) const</div><div class="ttdoc">returns the plugin with that name, or nullptr if not exists.</div><div class="ttdef"><b>Definition:</b> PluginManager.cpp:243</div></div>
+<div class="ttc" id="aclasscursestone_1_1plugin_1_1PluginManager_html_a7c668fcf9e431c4f31550720e8d6f5ce"><div class="ttname"><a href="classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce">cursestone::plugin::PluginManager::loadAll</a></div><div class="ttdeci">void loadAll(const std::string &amp;pluginsDir, const std::string &amp;dataRoot)</div><div class="ttdoc">Scans pluginsDir, then loads and enables every plugin.</div><div class="ttdef"><b>Definition:</b> PluginManager.cpp:86</div></div>
+<div class="ttc" id="aclasscursestone_1_1plugin_1_1PluginManager_html_acd34ab2cec27310116f4c2a0cb43c41c"><div class="ttname"><a href="classcursestone_1_1plugin_1_1PluginManager.html#acd34ab2cec27310116f4c2a0cb43c41c">cursestone::plugin::PluginManager::find</a></div><div class="ttdeci">LuaPlugin * find(const std::string &amp;name) const</div><div class="ttdoc">returns the plugin with that name, or nullptr if not exists.</div><div class="ttdef"><b>Definition:</b> PluginManager.cpp:267</div></div>
 <div class="ttc" id="astructcursestone_1_1plugin_1_1PluginManager_1_1Info_html"><div class="ttname"><a href="structcursestone_1_1plugin_1_1PluginManager_1_1Info.html">cursestone::plugin::PluginManager::Info</a></div><div class="ttdef"><b>Definition:</b> PluginManager.h:69</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

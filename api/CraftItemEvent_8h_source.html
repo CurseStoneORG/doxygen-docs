@@ -123,28 +123,33 @@ $(document).ready(function(){initNavTree('CraftItemEvent_8h_source.html',''); in
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>cursestone::event::inventory {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html">CraftItemEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1inventory_1_1InventoryEvent.html">InventoryEvent</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* who;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcursestone_1_1inventory_1_1Recipe.html">cursestone::inventory::Recipe</a>* recipe;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html">CraftItemEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                   std::shared_ptr&lt;cursestone::inventory::Inventory&gt; inv,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                   <span class="keyword">const</span> <a class="code" href="classcursestone_1_1inventory_1_1Recipe.html">cursestone::inventory::Recipe</a>&amp; r)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        : <a class="code" href="classcursestone_1_1event_1_1inventory_1_1InventoryEvent.html">InventoryEvent</a>(std::move(inv)), who(p), recipe(&amp;r) {}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html">CraftItemEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p, std::shared_ptr&lt;cursestone::inventory::Inventory&gt; inv,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                   <span class="keyword">const</span> <a class="code" href="classcursestone_1_1inventory_1_1Recipe.html">cursestone::inventory::Recipe</a>&amp; r)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        : <a class="code" href="classcursestone_1_1event_1_1inventory_1_1InventoryEvent.html">InventoryEvent</a>(std::move(inv)), who(p), recipe(&amp;r) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* getPlayer() { <span class="keywordflow">return</span> who; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcursestone_1_1inventory_1_1Recipe.html">cursestone::inventory::Recipe</a>* getRecipe()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> recipe; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;CraftItemEvent&quot;</span>; <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* getPlayer() {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> who;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcursestone_1_1inventory_1_1Recipe.html">cursestone::inventory::Recipe</a>* getRecipe()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> recipe;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace cursestone::event::inventory</span></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;CraftItemEvent&quot;</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace cursestone::event::inventory</span></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:101</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Cancellable_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Cancellable.html">cursestone::event::Cancellable</a></div><div class="ttdef"><b>Definition:</b> Cancellable.h:26</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1inventory_1_1CraftItemEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html">cursestone::event::inventory::CraftItemEvent</a></div><div class="ttdef"><b>Definition:</b> CraftItemEvent.h:37</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1inventory_1_1InventoryEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1inventory_1_1InventoryEvent.html">cursestone::event::inventory::InventoryEvent</a></div><div class="ttdef"><b>Definition:</b> InventoryEvent.h:37</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1inventory_1_1InventoryEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1inventory_1_1InventoryEvent.html">cursestone::event::inventory::InventoryEvent</a></div><div class="ttdef"><b>Definition:</b> InventoryEvent.h:39</div></div>
 <div class="ttc" id="aclasscursestone_1_1inventory_1_1Recipe_html"><div class="ttname"><a href="classcursestone_1_1inventory_1_1Recipe.html">cursestone::inventory::Recipe</a></div><div class="ttdef"><b>Definition:</b> Recipe.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

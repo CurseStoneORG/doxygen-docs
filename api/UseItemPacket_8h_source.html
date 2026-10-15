@@ -141,24 +141,26 @@ $(document).ready(function(){initNavTree('UseItemPacket_8h_source.html',''); ini
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">namespace </span>cursestone::network::protocol {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classcursestone_1_1network_1_1protocol_1_1UseItemPacket.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1network_1_1protocol_1_1UseItemPacket.html">UseItemPacket</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">DataPacket</a> {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    uint8_t pid()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> USE_ITEM_PACKET; }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    int32_t  x = 0, y = 0, z = 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    uint8_t  face = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span>    fx = 0, fy = 0, fz = 0;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">float</span>    posX = 0, posY = 0, posZ = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    int32_t  slot = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Decoded item slot. id 0 = empty hand.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    int16_t  itemId = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint8_t  itemCount = 0;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    int16_t  itemDamage = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    uint8_t pid()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> USE_ITEM_PACKET;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    int32_t x = 0, y = 0, z = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    uint8_t face = 0;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">float</span> fx = 0, fy = 0, fz = 0;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">float</span> posX = 0, posY = 0, posZ = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    int32_t slot = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Decoded item slot. id 0 = empty hand.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    int16_t itemId = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint8_t itemCount = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    int16_t itemDamage = 0;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">cursestone::network::protocol::DataPacket</a></div><div class="ttdef"><b>Definition:</b> DataPacket.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1UseItemPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1UseItemPacket.html">cursestone::network::protocol::UseItemPacket</a></div><div class="ttdef"><b>Definition:</b> UseItemPacket.h:55</div></div>
 </div><!-- fragment --></div><!-- contents -->

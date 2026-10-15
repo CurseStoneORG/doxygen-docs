@@ -122,45 +122,48 @@ $(document).ready(function(){initNavTree('EntityDamageEvent_8h_source.html','');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;event/Event.h&quot;</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;event/Cancellable.h&quot;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>cursestone::entity { <span class="keyword">class </span>Entity; }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>cursestone::event::entity {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">enum class</span> DamageCause {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    CUSTOM = 0,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    ENTITY_ATTACK = 1,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    CONTACT = 2, <span class="comment">// p.ej. tocar fuego (BlockFire::onEntityCollide)</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// Causas ambientales (protocolo 84 / Infinity EntityDamageEvent):</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    FALL = 3,        <span class="comment">// dano de caida</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    LAVA = 4,        <span class="comment">// tocar lava</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    FIRE = 5,        <span class="comment">// estar en fuego</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    FIRE_TICK = 6,   <span class="comment">// dano de arder</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    DROWNING = 7,    <span class="comment">// quedarse sin aire bajo el agua</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    CACTUS = 8,      <span class="comment">// tocar cactus</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    STARVATION = 9,  <span class="comment">// hambre en 0 (mata salvo en dificultades bajas)</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    VOID = 10,       <span class="comment">// caer al vacio</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    PROJECTILE = 11, <span class="comment">// golpeado por un proyectil (flecha del arco) —</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                     <span class="comment">// Infinity EntityDamageEvent::CAUSE_PROJECTILE. Se usa</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                     <span class="comment">// como fallback cuando el tirador ya no está online.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html">   58</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html">EntityDamageEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a>* entity;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> amount = 0.0f;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    DamageCause cause = DamageCause::CUSTOM;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html">EntityDamageEvent</a>(<a class="code" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a>* e = <span class="keyword">nullptr</span>,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                      <span class="keywordtype">float</span> amt = 0.0f,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                      DamageCause c = DamageCause::CUSTOM)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        : entity(e), amount(amt), cause(c) {}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;EntityDamageEvent&quot;</span>; <span class="keywordflow">return</span> n;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>cursestone::entity {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">class </span>Entity;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span>cursestone::event::entity {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">enum class</span> DamageCause {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    CUSTOM = 0,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    ENTITY_ATTACK = 1,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    CONTACT = 2, <span class="comment">// p.ej. tocar fuego (BlockFire::onEntityCollide)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Causas ambientales (protocolo 84 / Infinity EntityDamageEvent):</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    FALL = 3,        <span class="comment">// dano de caida</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    LAVA = 4,        <span class="comment">// tocar lava</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    FIRE = 5,        <span class="comment">// estar en fuego</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    FIRE_TICK = 6,   <span class="comment">// dano de arder</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    DROWNING = 7,    <span class="comment">// quedarse sin aire bajo el agua</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    CACTUS = 8,      <span class="comment">// tocar cactus</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    STARVATION = 9,  <span class="comment">// hambre en 0 (mata salvo en dificultades bajas)</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    VOID = 10,       <span class="comment">// caer al vacio</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    PROJECTILE = 11, <span class="comment">// golpeado por un proyectil (flecha del arco) —</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                     <span class="comment">// Infinity EntityDamageEvent::CAUSE_PROJECTILE. Se usa</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                     <span class="comment">// como fallback cuando el tirador ya no está online.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html">   60</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html">EntityDamageEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a>* entity;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">float</span> amount = 0.0f;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    DamageCause cause = DamageCause::CUSTOM;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html">EntityDamageEvent</a>(<a class="code" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a>* e = <span class="keyword">nullptr</span>, <span class="keywordtype">float</span> amt = 0.0f,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                      DamageCause c = DamageCause::CUSTOM)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        : entity(e), amount(amt), cause(c) {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;EntityDamageEvent&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1entity_1_1Entity_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:35</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Cancellable_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Cancellable.html">cursestone::event::Cancellable</a></div><div class="ttdef"><b>Definition:</b> Cancellable.h:26</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Event_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Event.html">cursestone::event::Event</a></div><div class="ttdef"><b>Definition:</b> Event.h:29</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1entity_1_1EntityDamageEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html">cursestone::event::entity::EntityDamageEvent</a></div><div class="ttdef"><b>Definition:</b> EntityDamageEvent.h:58</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1entity_1_1EntityDamageEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html">cursestone::event::entity::EntityDamageEvent</a></div><div class="ttdef"><b>Definition:</b> EntityDamageEvent.h:60</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

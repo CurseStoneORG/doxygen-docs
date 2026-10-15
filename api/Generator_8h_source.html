@@ -126,17 +126,17 @@ $(document).ready(function(){initNavTree('Generator_8h_source.html',''); initRes
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">class </span>TerrainNoise;   <span class="comment">// definido en TerrainShape.h</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">class </span>TerrainNoise; <span class="comment">// definido en TerrainShape.h</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// NOTE: la generacion corre 1 chunk por tarea en el worker del AsyncPool,</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// asi que el ctx vive y muere en un solo hilo: un puntero plano sin</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// ownership es seguro.</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">   46</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    int64_t seed;          <span class="comment">// world seed</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    int64_t seed; <span class="comment">// world seed</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    int32_t chunk_x;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    int32_t chunk_z;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> uint8_t* biomes_in;   <span class="comment">// optional input biome map (256 bytes), NULL = generate</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk;        <span class="comment">// target chunk — generator fills sections + biomes + heightmap</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> uint8_t* biomes_in; <span class="comment">// optional input biome map (256 bytes), NULL = generate</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk;       <span class="comment">// target chunk — generator fills sections + biomes + heightmap</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// OPT (generacion lenta): ruido compartido entre Normal::generate y</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// los populators del MISMO chunk. Es un TerrainNoise construido con</span></div>
@@ -149,11 +149,11 @@ $(document).ready(function(){initNavTree('Generator_8h_source.html',''); initRes
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// PerlinNoise + la calibracion de 5 campos, 5 x 4096 muestras) y</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// antes CINCO populators lo construian cada uno por chunk: ~85 ms de</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// trabajo identico tirado por chunk.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span>* noise_cache = <span class="keyword">nullptr</span>;  <span class="comment">// TerrainNoise* opaco, evita depender del header</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span>* noise_cache = <span class="keyword">nullptr</span>; <span class="comment">// TerrainNoise* opaco, evita depender del header</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1Generator.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1Generator.html">Generator</a> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1generator_1_1Generator.html">Generator</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <span class="keywordtype">char</span>* name() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>

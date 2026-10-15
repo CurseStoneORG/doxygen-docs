@@ -117,15 +117,17 @@ $(document).ready(function(){initNavTree('BirchTree_8h_source.html',''); initRes
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator::object::trees {</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1BirchTree.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1BirchTree.html">BirchTree</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1GenericTree.html">GenericTree</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> init(<a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a>&amp; rng)<span class="keyword"> override </span>{</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        height_ = 5 + (int)rng.nextInt(3);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        logId_ = 17;  logData_ = 2;   <span class="comment">// LOG, birch</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        leafId_ = 18; leafData_ = 2;  <span class="comment">// LEAVES, birch</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;};</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <span class="comment">// namespace cursestone::world::generator::object::trees</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        logId_ = 17;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        logData_ = 2; <span class="comment">// LOG, birch</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        leafId_ = 18;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        leafData_ = 2; <span class="comment">// LEAVES, birch</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="comment">// namespace cursestone::world::generator::object::trees</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1MersenneRandom_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">cursestone::world::generator::MersenneRandom</a></div><div class="ttdef"><b>Definition:</b> MersenneRandom.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1object_1_1trees_1_1BirchTree_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1BirchTree.html">cursestone::world::generator::object::trees::BirchTree</a></div><div class="ttdef"><b>Definition:</b> BirchTree.h:31</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1object_1_1trees_1_1GenericTree_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1GenericTree.html">cursestone::world::generator::object::trees::GenericTree</a></div><div class="ttdef"><b>Definition:</b> GenericTree.h:43</div></div>

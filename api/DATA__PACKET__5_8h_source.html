@@ -123,12 +123,12 @@ $(document).ready(function(){initNavTree('DATA__PACKET__5_8h_source.html',''); i
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structmcp__pkt__data__packet__5.html">   36</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__pkt__data__packet__5.html">mcp_pkt_data_packet_5</a> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structmcp__packet.html">mcp_packet_t</a> header;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    uint32_t sequence;          <span class="comment">// 24-bit LEB128 sequence number</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span>     is_ordered;        <span class="comment">// packet reliability has ordering flag</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span>     needs_ack;        <span class="comment">// set when this datagram requires ACK</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    uint32_t sequence; <span class="comment">// 24-bit LEB128 sequence number</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> is_ordered;   <span class="comment">// packet reliability has ordering flag</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> needs_ack;    <span class="comment">// set when this datagram requires ACK</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    uint8_t* payload;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">size_t</span>   payload_len;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">size_t</span> payload_len;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <a class="code" href="structmcp__pkt__data__packet__5.html">mcp_pkt_data_packet_5_t</a>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>

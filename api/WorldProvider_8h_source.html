@@ -130,55 +130,55 @@ $(document).ready(function(){initNavTree('WorldProvider_8h_source.html',''); ini
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;../../CurseStone.h&quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;FullChunk.h&quot;</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator { <span class="keyword">class </span>Generator; }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>cursestone::world::format {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">class </span>Generator;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">WorldProvider</a> {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">WorldProvider</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Lifecycle — called by World on load/unload. `path` is the</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// absolute path to the world directory (e.g. `worlds/world/`).</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    init(<span class="keyword">const</span> std::string&amp; path) = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    shutdown() = 0;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">virtual</span> std::string getName() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Chunk I/O. Coordinates are absolute chunk coords (X, Z).</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// `loadChunk` returns `nullopt` if the chunk is not on disk and</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// must be generated; otherwise it returns a populated FullChunk</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// (which may or may not be terrain-populated yet — the generator</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// populator pipeline finishes those).</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> std::optional&lt;std::shared_ptr&lt;FullChunk&gt;&gt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                    loadChunk(int32_t x, int32_t z) = 0;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    saveChunk(<span class="keyword">const</span> std::shared_ptr&lt;FullChunk&gt;&amp; chunk) = 0;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    unloadChunk(int32_t x, int32_t z) = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Iterate every chunk coordinate that exists on disk. Used by</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// the save-all path and the chunk-stats command.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                    listChunks() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>cursestone::world::format {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">   51</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">WorldProvider</a> {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">WorldProvider</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Lifecycle — called by World on load/unload. `path` is the</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// absolute path to the world directory (e.g. `worlds/world/`).</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> init(<span class="keyword">const</span> std::string&amp; path) = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> shutdown() = 0;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">virtual</span> std::string getName() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Chunk I/O. Coordinates are absolute chunk coords (X, Z).</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// `loadChunk` returns `nullopt` if the chunk is not on disk and</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// must be generated; otherwise it returns a populated FullChunk</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// (which may or may not be terrain-populated yet — the generator</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// populator pipeline finishes those).</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">virtual</span> std::optional&lt;std::shared_ptr&lt;FullChunk&gt;&gt; loadChunk(int32_t x, int32_t z) = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> saveChunk(<span class="keyword">const</span> std::shared_ptr&lt;FullChunk&gt;&amp; chunk) = 0;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> unloadChunk(int32_t x, int32_t z) = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Iterate every chunk coordinate that exists on disk. Used by</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// the save-all path and the chunk-stats command.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; listChunks() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// World metadata.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">virtual</span> int64_t getSeed()      <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    setSeed(int64_t s) = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">virtual</span> int64_t getSeed() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setSeed(int64_t s) = 0;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">virtual</span> int64_t getCurrentTime() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    setCurrentTime(int64_t t) = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setCurrentTime(int64_t t) = 0;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a> getSpawn() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    setSpawn(<span class="keyword">const</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a>&amp; v) = 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setSpawn(<span class="keyword">const</span> <a class="code" href="structmcp__vector3.html">math::Vector3</a>&amp; v) = 0;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Generator plumbing — set by World::load() based on</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// cursestone.yml `world.generator`. The provider doesn&#39;t</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// generate by itself; it delegates to the generator when a chunk</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// is requested that isn&#39;t on disk.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    setGenerator(<a class="code" href="classcursestone_1_1world_1_1generator_1_1Generator.html">generator::Generator</a>* g) = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setGenerator(<a class="code" href="classcursestone_1_1world_1_1generator_1_1Generator.html">generator::Generator</a>* g) = 0;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1Generator.html">generator::Generator</a>* getGenerator() <span class="keyword">const</span> = 0;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Persist world metadata (level.dat) — called by World::save() so</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// that periodic auto-saves flush metadata to disk, not just chunks.</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// The provider may choose to no-op if it has no metadata (e.g.</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// a stub LevelDB provider).</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    saveLevelData() = 0;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> saveLevelData() = 0;</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Block until every chunk write accepted by saveChunk() has actually</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// reached disk. Providers that write synchronously (or don&#39;t write</span></div>
@@ -187,11 +187,12 @@ $(document).ready(function(){initNavTree('WorldProvider_8h_source.html',''); ini
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Called on the save-all / shutdown path (World::save) so a /save or</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// a graceful stop never returns before the data is durable, while</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// the per-tick autosave drain keeps running fully asynchronous.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span>    flushPendingSaves() {}</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;} <span class="comment">// namespace cursestone::world::format</span></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1format_1_1WorldProvider_html"><div class="ttname"><a href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">cursestone::world::format::WorldProvider</a></div><div class="ttdef"><b>Definition:</b> WorldProvider.h:49</div></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> flushPendingSaves() {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;} <span class="comment">// namespace cursestone::world::format</span></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1format_1_1WorldProvider_html"><div class="ttname"><a href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">cursestone::world::format::WorldProvider</a></div><div class="ttdef"><b>Definition:</b> WorldProvider.h:51</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1Generator_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1Generator.html">cursestone::world::generator::Generator</a></div><div class="ttdef"><b>Definition:</b> Generator.h:67</div></div>
 <div class="ttc" id="astructmcp__vector3_html"><div class="ttname"><a href="structmcp__vector3.html">mcp_vector3</a></div><div class="ttdef"><b>Definition:</b> Vector3.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->

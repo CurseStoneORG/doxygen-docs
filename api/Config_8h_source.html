@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('Config_8h_source.html',''); initResiza
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone_1_1utils.html">cursestone::utils</a> {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classcursestone_1_1utils_1_1Config.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1utils_1_1Config.html">Config</a> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classcursestone_1_1utils_1_1Config.html">Config</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    ~<a class="code" href="classcursestone_1_1utils_1_1Config.html">Config</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
@@ -133,8 +133,8 @@ $(document).ready(function(){initNavTree('Config_8h_source.html',''); initResiza
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">enum class</span> Type { Scalar, List, Map };</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        Type type = Type::Scalar;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        std::string scalar;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::vector&lt;NodePtr&gt;           list;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::vector&lt;std::pair&lt;std::string, NodePtr&gt;&gt; map;  <span class="comment">// insertion-ordered</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        std::vector&lt;NodePtr&gt; list;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        std::vector&lt;std::pair&lt;std::string, NodePtr&gt;&gt; map; <span class="comment">// insertion-ordered</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    };</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Load YAML from disk. Returns true on success.</span></div>
@@ -147,37 +147,30 @@ $(document).ready(function(){initNavTree('Config_8h_source.html',''); initResiza
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> saveIni(<span class="keyword">const</span> std::string&amp; path) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Generic getters with default fallback.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::string getString(<span class="keyword">const</span> std::string&amp; dottedKey,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                          <span class="keyword">const</span> std::string&amp; def = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    int64_t     getInt(<span class="keyword">const</span> std::string&amp; dottedKey,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                       int64_t def = 0) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">double</span>      getDouble(<span class="keyword">const</span> std::string&amp; dottedKey,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                          <span class="keywordtype">double</span> def = 0.0) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span>        getBool(<span class="keyword">const</span> std::string&amp; dottedKey,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                       <span class="keywordtype">bool</span> def = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::vector&lt;std::string&gt; getStringList(</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keyword">const</span> std::string&amp; dottedKey,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; def = {}) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> setString(<span class="keyword">const</span> std::string&amp; dottedKey, <span class="keyword">const</span> std::string&amp; v);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> setInt(<span class="keyword">const</span> std::string&amp; dottedKey, int64_t v);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> setBool(<span class="keyword">const</span> std::string&amp; dottedKey, <span class="keywordtype">bool</span> v);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    NodePtr root_;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Lookup by dotted key (e.g. &quot;server.port&quot;). Returns nullptr if missing.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">const</span> Node* lookup(<span class="keyword">const</span> std::string&amp; dottedKey) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    Node*       lookupOrCreate(<span class="keyword">const</span> std::string&amp; dottedKey);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::string getString(<span class="keyword">const</span> std::string&amp; dottedKey, <span class="keyword">const</span> std::string&amp; def = <span class="stringliteral">&quot;&quot;</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    int64_t getInt(<span class="keyword">const</span> std::string&amp; dottedKey, int64_t def = 0) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">double</span> getDouble(<span class="keyword">const</span> std::string&amp; dottedKey, <span class="keywordtype">double</span> def = 0.0) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> getBool(<span class="keyword">const</span> std::string&amp; dottedKey, <span class="keywordtype">bool</span> def = <span class="keyword">false</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::vector&lt;std::string&gt; getStringList(<span class="keyword">const</span> std::string&amp; dottedKey,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                           <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; def = {}) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> setString(<span class="keyword">const</span> std::string&amp; dottedKey, <span class="keyword">const</span> std::string&amp; v);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> setInt(<span class="keyword">const</span> std::string&amp; dottedKey, int64_t v);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> setBool(<span class="keyword">const</span> std::string&amp; dottedKey, <span class="keywordtype">bool</span> v);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    NodePtr root_;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Lookup by dotted key (e.g. &quot;server.port&quot;). Returns nullptr if missing.</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">const</span> Node* lookup(<span class="keyword">const</span> std::string&amp; dottedKey) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    Node* lookupOrCreate(<span class="keyword">const</span> std::string&amp; dottedKey);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Recursive YAML parser (minimal).</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> NodePtr parseYamlLines(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; lines, <span class="keywordtype">size_t</span>&amp; i, <span class="keywordtype">size_t</span> indent);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> writeYamlNode(<span class="keyword">const</span> Node&amp; n, std::string&amp; out, <span class="keywordtype">size_t</span> indent);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Recursive YAML parser (minimal).</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> NodePtr parseYamlLines(<span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; lines,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                   <span class="keywordtype">size_t</span>&amp; i, <span class="keywordtype">size_t</span> indent);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span>   writeYamlNode(<span class="keyword">const</span> Node&amp; n, std::string&amp; out,</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                                 <span class="keywordtype">size_t</span> indent);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace cursestone::utils</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;} <span class="comment">// namespace cursestone::utils</span></div>
 <div class="ttc" id="aclasscursestone_1_1utils_1_1Config_html"><div class="ttname"><a href="classcursestone_1_1utils_1_1Config.html">cursestone::utils::Config</a></div><div class="ttdef"><b>Definition:</b> Config.h:43</div></div>
 <div class="ttc" id="anamespacecursestone_1_1utils_html"><div class="ttname"><a href="namespacecursestone_1_1utils.html">cursestone::utils</a></div><div class="ttdoc">Loads the server config file (YAML / INI / JSON).</div><div class="ttdef"><b>Definition:</b> CurseStone.h:154</div></div>
 <div class="ttc" id="astructcursestone_1_1utils_1_1Config_1_1Node_html"><div class="ttname"><a href="structcursestone_1_1utils_1_1Config_1_1Node.html">cursestone::utils::Config::Node</a></div><div class="ttdef"><b>Definition:</b> Config.h:51</div></div>

@@ -115,15 +115,15 @@ $(document).ready(function(){initNavTree('ThreadPort_8h_source.html',''); initRe
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#  ifndef WIN32_LEAN_AND_MEAN</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#    define WIN32_LEAN_AND_MEAN  </span><span class="comment">/* keep winsock.h out; winsock2.h comes first elsewhere */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#  endif</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#  ifndef NOMINMAX</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#    define NOMINMAX            </span><span class="comment">/* windows.h must not define min()/max() macros for C++ */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#  endif</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#  include &lt;windows.h&gt;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifndef WIN32_LEAN_AND_MEAN</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define WIN32_LEAN_AND_MEAN </span><span class="comment">/* keep winsock.h out; winsock2.h comes first elsewhere */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#ifndef NOMINMAX</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define NOMINMAX </span><span class="comment">/* windows.h must not define min()/max() macros for C++ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;windows.h&gt;</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#  include &lt;pthread.h&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &lt;pthread.h&gt;</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
@@ -151,8 +151,8 @@ $(document).ready(function(){initNavTree('ThreadPort_8h_source.html',''); initRe
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="ThreadPort_8h.html#a98162d2250623bd5e8661aa40d7fa069">   80</a></span>&#160;} <a class="code" href="ThreadPort_8h.html#a98162d2250623bd5e8661aa40d7fa069">mcp_cond_t</a>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="structmcp__thread.html">   83</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__thread.html">mcp_thread</a> {</div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structmcp__thread.html#a01931db06c1817b2ede26a873b7b7e97">   84</a></span>&#160;    <a class="code" href="ThreadPort_8h.html#adc28e4867663fbe22b42d0d2ac6fb492">mcp_thread_fn</a> <a class="code" href="structmcp__thread.html#a01931db06c1817b2ede26a873b7b7e97">fn</a>;   </div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structmcp__thread.html#a6f848683a73f31bb2a8efb963aa708ab">   85</a></span>&#160;    <span class="keywordtype">void</span>*         <a class="code" href="structmcp__thread.html#a6f848683a73f31bb2a8efb963aa708ab">arg</a>;  </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structmcp__thread.html#a01931db06c1817b2ede26a873b7b7e97">   84</a></span>&#160;    <a class="code" href="ThreadPort_8h.html#adc28e4867663fbe22b42d0d2ac6fb492">mcp_thread_fn</a> <a class="code" href="structmcp__thread.html#a01931db06c1817b2ede26a873b7b7e97">fn</a>; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structmcp__thread.html#a6f848683a73f31bb2a8efb963aa708ab">   85</a></span>&#160;    <span class="keywordtype">void</span>* <a class="code" href="structmcp__thread.html#a6f848683a73f31bb2a8efb963aa708ab">arg</a>;        </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    HANDLE handle;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#else</span></div>

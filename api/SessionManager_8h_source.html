@@ -124,67 +124,61 @@ $(document).ready(function(){initNavTree('SessionManager_8h_source.html',''); in
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define MCP_SM_PACKET_LIMIT 250  </span><span class="comment">// max packets per IP per tick (anti-flood)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define MCP_SM_PACKET_LIMIT 250 </span><span class="comment">// max packets per IP per tick (anti-flood)</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define MCP_SM_PORT_CHECKING true</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structmcp__rak__session__manager.html">   42</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="structmcp__udp__socket.html">mcp_udp_socket_t</a>      socket;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structmcp__server__instance.html">mcp_server_instance_t</a>* instance;       <span class="comment">// not owned</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>**   sessions;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">size_t</span>                session_count;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">size_t</span>                session_capacity;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    int64_t               server_id;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    uint16_t              mtu;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    uint16_t              bind_port;       <span class="comment">// remembered for CLIENT_HANDSHAKE check</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="structmcp__udp__socket.html">mcp_udp_socket_t</a> socket;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="structmcp__server__instance.html">mcp_server_instance_t</a>* instance; <span class="comment">// not owned</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>** sessions;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">size_t</span> session_count;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">size_t</span> session_capacity;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    int64_t server_id;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    uint16_t mtu;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    uint16_t bind_port; <span class="comment">// remembered for CLIENT_HANDSHAKE check</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// MOTD / server name (UNCONNECTED_PONG)</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">char</span>     server_name[256];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">char</span> server_name[256];</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Anti-flood counters (per IP, cleared each tick)</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Simple implementation: just count total packets from ip</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    uint8_t  ip_sec_buf[64][4];   <span class="comment">// last 64 IPs seen this tick</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    uint8_t ip_sec_buf[64][4]; <span class="comment">// last 64 IPs seen this tick</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    uint32_t ip_sec_cnt[64];</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">size_t</span>   ip_sec_n;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">size_t</span> ip_sec_n;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_init(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                    int64_t server_id, uint16_t mtu,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                    <a class="code" href="structmcp__server__instance.html">mcp_server_instance_t</a>* instance);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_destroy(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">int</span>  mcp_rak_session_manager_bind(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                    <span class="keyword">const</span> <span class="keywordtype">char</span>* host, uint16_t port);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_init(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, int64_t server_id, uint16_t mtu,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                  <a class="code" href="structmcp__server__instance.html">mcp_server_instance_t</a>* instance);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_destroy(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keywordtype">int</span> mcp_rak_session_manager_bind(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> <span class="keywordtype">char</span>* host, uint16_t port);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_tick(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_tick(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// Set the MOTD string (embedded in UNCONNECTED_PONG).</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_set_name(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                       <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// Set the MOTD string (embedded in UNCONNECTED_PONG).</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_set_name(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* mcp_rak_session_manager_get_or_create(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                                                         <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* mcp_rak_session_manager_get_or_create(</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* mcp_rak_session_manager_find(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4],</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                                                uint16_t port);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* mcp_rak_session_manager_find(</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;ssize_t mcp_rak_session_manager_send(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                                     <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;ssize_t mcp_rak_session_manager_send(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                       <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                                       <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// Send an encapsulated MCPE packet through an established session.</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// order_channel is only meaningful when reliability is one of the</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// *_ORDERED variants; RakNet supports up to 32 independent ordering</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// channels (0-31) so ordered traffic on one channel never blocks</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// packets sent on a different channel.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_manager_send_encapsulated(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                                <span class="keyword">const</span> uint8_t ip[4], uint16_t port,</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> plen,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                                                uint8_t reliability,</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                uint8_t order_channel);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// Send an encapsulated MCPE packet through an established session.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// order_channel is only meaningful when reliability is one of the</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// *_ORDERED variants; RakNet supports up to 32 independent ordering</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// channels (0-31) so ordered traffic on one channel never blocks</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// packets sent on a different channel.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_manager_send_encapsulated(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4],</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                                               uint16_t port, <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> plen,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                                               uint8_t reliability, uint8_t order_channel);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructmcp__rak__session__manager_html"><div class="ttname"><a href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:42</div></div>
 <div class="ttc" id="astructmcp__rak__session_html"><div class="ttname"><a href="structmcp__rak__session.html">mcp_rak_session</a></div><div class="ttdef"><b>Definition:</b> Session.h:200</div></div>
 <div class="ttc" id="astructmcp__server__instance_html"><div class="ttname"><a href="structmcp__server__instance.html">mcp_server_instance</a></div><div class="ttdef"><b>Definition:</b> ServerInstance.h:36</div></div>

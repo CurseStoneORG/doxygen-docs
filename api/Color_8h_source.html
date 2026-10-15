@@ -121,17 +121,17 @@ $(document).ready(function(){initNavTree('Color_8h_source.html',''); initResizab
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    uint8_t r, g, b, a;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;} <a class="code" href="structmcp__color.html">mcp_color_t</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define MCP_COLOR_BLACK       ((mcp_color_t){  0,   0,   0, 255})</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define MCP_COLOR_WHITE       ((mcp_color_t){255, 255, 255, 255})</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define MCP_COLOR_RED         ((mcp_color_t){255,   0,   0, 255})</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define MCP_COLOR_GREEN       ((mcp_color_t){  0, 255,   0, 255})</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define MCP_COLOR_BLUE        ((mcp_color_t){  0,   0, 255, 255})</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define MCP_COLOR_YELLOW      ((mcp_color_t){255, 255,   0, 255})</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define MCP_COLOR_CYAN        ((mcp_color_t){  0, 255, 255, 255})</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define MCP_COLOR_MAGENTA     ((mcp_color_t){255,   0, 255, 255})</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define MCP_COLOR_DIRT_BROWN  ((mcp_color_t){134,  96,  67, 255})</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define MCP_COLOR_GRASS_GREEN ((mcp_color_t){120, 180,  80, 255})</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define MCP_COLOR_STONE_GRAY  ((mcp_color_t){128, 128, 128, 255})</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define MCP_COLOR_BLACK ((mcp_color_t){0, 0, 0, 255})</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define MCP_COLOR_WHITE ((mcp_color_t){255, 255, 255, 255})</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#define MCP_COLOR_RED ((mcp_color_t){255, 0, 0, 255})</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define MCP_COLOR_GREEN ((mcp_color_t){0, 255, 0, 255})</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#define MCP_COLOR_BLUE ((mcp_color_t){0, 0, 255, 255})</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define MCP_COLOR_YELLOW ((mcp_color_t){255, 255, 0, 255})</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define MCP_COLOR_CYAN ((mcp_color_t){0, 255, 255, 255})</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define MCP_COLOR_MAGENTA ((mcp_color_t){255, 0, 255, 255})</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define MCP_COLOR_DIRT_BROWN ((mcp_color_t){134, 96, 67, 255})</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define MCP_COLOR_GRASS_GREEN ((mcp_color_t){120, 180, 80, 255})</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define MCP_COLOR_STONE_GRAY ((mcp_color_t){128, 128, 128, 255})</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Pack to/from 0xAARRGGBB uint32.</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;uint32_t mcp_color_to_argb(<span class="keyword">const</span> <a class="code" href="structmcp__color.html">mcp_color_t</a>* c);</div>

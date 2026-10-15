@@ -121,57 +121,66 @@ $(document).ready(function(){initNavTree('Particle_8h_source.html',''); initResi
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// LevelEventPacket event field (0x4000 | type) and the client maps it to</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// its own particle renderer.</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">enum</span> ParticleId : int32_t {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    PARTICLE_BUBBLE            = 1,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    PARTICLE_CRITICAL          = 2,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    PARTICLE_SMOKE             = 3,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    PARTICLE_EXPLODE           = 4,</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    PARTICLE_WHITE_SMOKE       = 5,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    PARTICLE_FLAME             = 6,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    PARTICLE_LAVA              = 7,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    PARTICLE_LARGE_SMOKE       = 8,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    PARTICLE_REDSTONE          = 9,</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    PARTICLE_ITEM_BREAK        = 10,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    PARTICLE_SNOWBALL_POOF     = 11,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    PARTICLE_LARGE_EXPLODE     = 12,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    PARTICLE_HUGE_EXPLODE      = 13,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    PARTICLE_MOB_FLAME         = 14,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    PARTICLE_HEART             = 15,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    PARTICLE_TERRAIN           = 16,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    PARTICLE_TOWN_AURA         = 17,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    PARTICLE_PORTAL            = 18,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    PARTICLE_WATER_SPLASH      = 19,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    PARTICLE_WATER_WAKE        = 20,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    PARTICLE_DRIP_WATER        = 21,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    PARTICLE_DRIP_LAVA         = 22,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    PARTICLE_DUST              = 23,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    PARTICLE_MOB_SPELL         = 24,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    PARTICLE_BUBBLE = 1,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    PARTICLE_CRITICAL = 2,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    PARTICLE_SMOKE = 3,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    PARTICLE_EXPLODE = 4,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    PARTICLE_WHITE_SMOKE = 5,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    PARTICLE_FLAME = 6,</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    PARTICLE_LAVA = 7,</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    PARTICLE_LARGE_SMOKE = 8,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    PARTICLE_REDSTONE = 9,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    PARTICLE_ITEM_BREAK = 10,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    PARTICLE_SNOWBALL_POOF = 11,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    PARTICLE_LARGE_EXPLODE = 12,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    PARTICLE_HUGE_EXPLODE = 13,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    PARTICLE_MOB_FLAME = 14,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    PARTICLE_HEART = 15,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    PARTICLE_TERRAIN = 16,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    PARTICLE_TOWN_AURA = 17,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    PARTICLE_PORTAL = 18,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    PARTICLE_WATER_SPLASH = 19,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    PARTICLE_WATER_WAKE = 20,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    PARTICLE_DRIP_WATER = 21,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    PARTICLE_DRIP_LAVA = 22,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    PARTICLE_DUST = 23,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    PARTICLE_MOB_SPELL = 24,</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    PARTICLE_MOB_SPELL_AMBIENT = 25,</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    PARTICLE_MOB_SPELL_INSTANT = 26,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    PARTICLE_INK               = 27,</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    PARTICLE_SLIME             = 28,</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    PARTICLE_RAIN_SPLASH       = 29,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    PARTICLE_VILLAGER_ANGRY    = 30,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    PARTICLE_VILLAGER_HAPPY    = 31,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    PARTICLE_INK = 27,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    PARTICLE_SLIME = 28,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    PARTICLE_RAIN_SPLASH = 29,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    PARTICLE_VILLAGER_ANGRY = 30,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    PARTICLE_VILLAGER_HAPPY = 31,</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    PARTICLE_ENCHANTMENT_TABLE = 32,</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
 <div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1particle_1_1Particle.html">   69</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1particle_1_1Particle.html">Particle</a> {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// data = event payload (particle scale / color), protocol 84.</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1particle_1_1Particle.html">Particle</a>(ParticleId <span class="keywordtype">id</span>, <a class="code" href="classcursestone_1_1world_1_1Position.html">Position</a> pos, int32_t data = 0)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        : id_(<span class="keywordtype">id</span>), pos_(pos), data_(data) {}</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ParticleId id()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> id_; }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcursestone_1_1world_1_1Position.html">Position</a>&amp; position()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> pos_; }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Wire type id (low 12 bits of the LevelEventPacket event field).</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">virtual</span> int32_t networkId()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> (int32_t)id_; }</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Event payload carried in the LevelEventPacket data field.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> int32_t networkData()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> data_; }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1particle_1_1Particle.html">Particle</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    ParticleId id_;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1Position.html">Position</a> pos_;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    int32_t data_;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1particle_1_1Particle.html">Particle</a>(ParticleId <span class="keywordtype">id</span>, <a class="code" href="classcursestone_1_1world_1_1Position.html">Position</a> pos, int32_t data = 0) : id_(<span class="keywordtype">id</span>), pos_(pos), data_(data) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ParticleId id()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> id_;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcursestone_1_1world_1_1Position.html">Position</a>&amp; position()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> pos_;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Wire type id (low 12 bits of the LevelEventPacket event field).</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">virtual</span> int32_t networkId()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> (int32_t)id_;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Event payload carried in the LevelEventPacket data field.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> int32_t networkData()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> data_;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1particle_1_1Particle.html">Particle</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    ParticleId id_;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1Position.html">Position</a> pos_;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    int32_t data_;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1Position_html"><div class="ttname"><a href="classcursestone_1_1world_1_1Position.html">cursestone::world::Position</a></div><div class="ttdef"><b>Definition:</b> Position.h:35</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1particle_1_1Particle_html"><div class="ttname"><a href="classcursestone_1_1world_1_1particle_1_1Particle.html">cursestone::world::particle::Particle</a></div><div class="ttdef"><b>Definition:</b> Particle.h:69</div></div>
 </div><!-- fragment --></div><!-- contents -->

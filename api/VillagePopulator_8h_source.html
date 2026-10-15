@@ -166,8 +166,8 @@ $(document).ready(function(){initNavTree('VillagePopulator_8h_source.html',''); 
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// One placed piece of a village layout, in WORLD coordinates: the</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// top-left corner of the rotated footprint plus its extent.</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePiecePlacement.html">   80</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePiecePlacement.html">VillagePiecePlacement</a> {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">int</span> kind;   <span class="comment">// structure::village::PieceKind</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> rot;    <span class="comment">// total quarter turns (piece rotation + village rotation)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">int</span> kind; <span class="comment">// structure::village::PieceKind</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> rot;  <span class="comment">// total quarter turns (piece rotation + village rotation)</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">int</span> x, z;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">int</span> w, h;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
@@ -189,45 +189,46 @@ $(document).ready(function(){initNavTree('VillagePopulator_8h_source.html',''); 
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;};</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
 <div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html">  103</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html">VillagePlan</a> {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::vector&lt;VillagePiecePlacement&gt; pieces;     <span class="comment">// well first</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::vector&lt;VillagePathCell&gt; pathCells;        <span class="comment">// world road columns</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> minX = 0, minZ = 0, maxX = 0, maxZ = 0;    <span class="comment">// world bounding box (half-open)</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> wellCx = 0, wellCz = 0;                    <span class="comment">// well centre (biome gate)</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    std::vector&lt;VillagePiecePlacement&gt; pieces;  <span class="comment">// well first</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::vector&lt;VillagePathCell&gt; pathCells;     <span class="comment">// world road columns</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">int</span> minX = 0, minZ = 0, maxX = 0, maxZ = 0; <span class="comment">// world bounding box (half-open)</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">int</span> wellCx = 0, wellCz = 0;                 <span class="comment">// well centre (biome gate)</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html">  110</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html">VillagePopulator</a> final : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1populator_1_1Populator.html">Populator</a> {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html">VillagePopulator</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* name()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;Village&quot;</span>; }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> populate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Build the layout of the village anchored in region (regionX,</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// regionZ). Deterministic: same arguments, byte-identical plan.</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buildPlan(int64_t seed, <span class="keywordtype">int</span> regionX, <span class="keywordtype">int</span> regionZ,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;                          <a class="code" href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html">VillagePlan</a>&amp; out);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Does this village actually generate here? False when the well&#39;s</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// own footprint is unusable (lake, river, cliff, wrong biome) — the</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// case where the whole village is dropped instead of leaving orphan</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// roads. On true, outBiome/outWellH report the biome and ground</span></div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// level the village builds with (the biome decides its materials).</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> villageStands(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1generator_1_1TerrainNoise.html">TerrainNoise</a>&amp; noise, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html">VillagePlan</a>&amp; plan,</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                              uint8_t&amp; outBiome, <span class="keywordtype">int</span>&amp; outWellH);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="comment">// Nanoseconds this populator has spent on the calling thread. The</span></div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// verification tools read it to report the village&#39;s REAL marginal</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// cost per chunk: timing whole chunks only measures the rest of the</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// generator, which is an order of magnitude more expensive and</span></div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// differs from place to place (trees, caves, ore).</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keyword">static</span> uint64_t&amp; nanosAccumulator();</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;};</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;} <span class="comment">// namespace cursestone::world::generator::populator</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* name()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Village&quot;</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> populate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// Build the layout of the village anchored in region (regionX,</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// regionZ). Deterministic: same arguments, byte-identical plan.</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> buildPlan(int64_t seed, <span class="keywordtype">int</span> regionX, <span class="keywordtype">int</span> regionZ, <a class="code" href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html">VillagePlan</a>&amp; out);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// Does this village actually generate here? False when the well&#39;s</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// own footprint is unusable (lake, river, cliff, wrong biome) — the</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// case where the whole village is dropped instead of leaving orphan</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="comment">// roads. On true, outBiome/outWellH report the biome and ground</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// level the village builds with (the biome decides its materials).</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> villageStands(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1generator_1_1TerrainNoise.html">TerrainNoise</a>&amp; noise, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html">VillagePlan</a>&amp; plan, uint8_t&amp; outBiome,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                              <span class="keywordtype">int</span>&amp; outWellH);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">// Nanoseconds this populator has spent on the calling thread. The</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="comment">// verification tools read it to report the village&#39;s REAL marginal</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// cost per chunk: timing whole chunks only measures the rest of the</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="comment">// generator, which is an order of magnitude more expensive and</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="comment">// differs from place to place (trees, caves, ore).</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keyword">static</span> uint64_t&amp; nanosAccumulator();</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;};</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;} <span class="comment">// namespace cursestone::world::generator::populator</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1populator_1_1Populator_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1populator_1_1Populator.html">cursestone::world::generator::populator::Populator</a></div><div class="ttdef"><b>Definition:</b> Populator.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html">cursestone::world::generator::populator::VillagePopulator</a></div><div class="ttdef"><b>Definition:</b> VillagePopulator.h:110</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1GenerationContext_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">cursestone::world::generator::GenerationContext</a></div><div class="ttdef"><b>Definition:</b> Generator.h:46</div></div>
-<div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1TerrainNoise_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1TerrainNoise.html">cursestone::world::generator::TerrainNoise</a></div><div class="ttdef"><b>Definition:</b> TerrainShape.h:74</div></div>
+<div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1TerrainNoise_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1TerrainNoise.html">cursestone::world::generator::TerrainNoise</a></div><div class="ttdef"><b>Definition:</b> TerrainShape.h:76</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1populator_1_1VillagePathCell_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePathCell.html">cursestone::world::generator::populator::VillagePathCell</a></div><div class="ttdef"><b>Definition:</b> VillagePopulator.h:98</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1populator_1_1VillagePiecePlacement_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePiecePlacement.html">cursestone::world::generator::populator::VillagePiecePlacement</a></div><div class="ttdef"><b>Definition:</b> VillagePopulator.h:80</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html">cursestone::world::generator::populator::VillagePlan</a></div><div class="ttdef"><b>Definition:</b> VillagePopulator.h:103</div></div>

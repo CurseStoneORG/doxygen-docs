@@ -122,13 +122,13 @@ $(document).ready(function(){initNavTree('FurnaceInventory_8h_source.html',''); 
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span>cursestone::inventory {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classcursestone_1_1inventory_1_1FurnaceInventory.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1inventory_1_1FurnaceInventory.html">FurnaceInventory</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1inventory_1_1BaseInventory.html">BaseInventory</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classcursestone_1_1inventory_1_1FurnaceInventory.html">FurnaceInventory</a>()</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        : <a class="code" href="classcursestone_1_1inventory_1_1BaseInventory.html">BaseInventory</a>(<span class="keyword">nullptr</span>, InventoryType::get(InventoryType::FURNACE)) {}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classcursestone_1_1inventory_1_1FurnaceInventory.html">FurnaceInventory</a>() : <a class="code" href="classcursestone_1_1inventory_1_1BaseInventory.html">BaseInventory</a>(<span class="keyword">nullptr</span>, InventoryType::get(InventoryType::FURNACE)) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// Índices de slot (convención Nukkit).</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> INPUT  = 0;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> FUEL   = 1;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> INPUT = 0;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> FUEL = 1;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> RESULT = 2;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>

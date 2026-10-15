@@ -132,14 +132,14 @@ $(document).ready(function(){initNavTree('LuaCommand_8h_source.html',''); initRe
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>cursestone::plugin {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
 <div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classcursestone_1_1plugin_1_1LuaCommand.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1plugin_1_1LuaCommand.html">LuaCommand</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1Command.html">Command</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">enum class</span> PermMode { PUBLIC, OP, NODE };</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1LuaCommand.html">LuaCommand</a>(<a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a>* plugin, <span class="keywordtype">int</span> fnRef, std::string name,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;               std::string description, std::string usage,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;               PermMode mode, std::string node)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        : <a class="code" href="classcursestone_1_1Command.html">Command</a>(std::move(name), std::move(description), std::move(usage), <span class="stringliteral">&quot;&quot;</span>),</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          plugin_(plugin), fnRef_(fnRef), mode_(mode), node_(std::move(node)) {}</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1LuaCommand.html">LuaCommand</a>(<a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a>* plugin, <span class="keywordtype">int</span> fnRef, std::string name, std::string description,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;               std::string usage, PermMode mode, std::string node)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        : <a class="code" href="classcursestone_1_1Command.html">Command</a>(std::move(name), std::move(description), std::move(usage), <span class="stringliteral">&quot;&quot;</span>), plugin_(plugin),</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;          fnRef_(fnRef), mode_(mode), node_(std::move(node)) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Criterio de permiso de ESTE comando (ver doc de la clase).</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> canUse(<a class="code" href="classcursestone_1_1CommandSender.html">CommandSender</a>* sender) <span class="keyword">const override</span>;</div>
@@ -147,18 +147,21 @@ $(document).ready(function(){initNavTree('LuaCommand_8h_source.html',''); initRe
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// Owner para SimpleCommandMap::unregisterByOwner: /plugins reload</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// borra los comandos de este plugin ANTES de cerrar su lua_State</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// (los refs de fnRef_ apuntan al registry de ese state).</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span>* owner()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> plugin_; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">bool</span> execute(<a class="code" href="classcursestone_1_1CommandSender.html">CommandSender</a>* sender, <span class="keyword">const</span> std::string&amp; label,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a>* plugin_;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> fnRef_;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    PermMode mode_;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    std::string node_;                  <span class="comment">// solo en modo NODE</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span>* owner()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> plugin_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> execute(<a class="code" href="classcursestone_1_1CommandSender.html">CommandSender</a>* sender, <span class="keyword">const</span> std::string&amp; label,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                 <span class="keyword">const</span> std::vector&lt;std::string&gt;&amp; args) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a>* plugin_;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">int</span> fnRef_;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    PermMode mode_;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::string node_; <span class="comment">// solo en modo NODE</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
 <div class="ttc" id="aclasscursestone_1_1CommandSender_html"><div class="ttname"><a href="classcursestone_1_1CommandSender.html">cursestone::CommandSender</a></div><div class="ttdef"><b>Definition:</b> CommandSender.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1Command_html"><div class="ttname"><a href="classcursestone_1_1Command.html">cursestone::Command</a></div><div class="ttdef"><b>Definition:</b> Command.h:31</div></div>
 <div class="ttc" id="aclasscursestone_1_1plugin_1_1LuaCommand_html"><div class="ttname"><a href="classcursestone_1_1plugin_1_1LuaCommand.html">cursestone::plugin::LuaCommand</a></div><div class="ttdef"><b>Definition:</b> LuaCommand.h:46</div></div>

@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('AdvancedSourceInterface_8h_source.html
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>network {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">AdvancedSourceInterface</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1network_1_1SourceInterface.html">SourceInterface</a> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Send a packet (already-encoded bytes including the leading ID byte)</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// to the player identified by `ip`:`port`. ordered=true guarantees</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// this packet is processed by the client strictly after every other</span></div>
@@ -136,18 +136,17 @@ $(document).ready(function(){initNavTree('AdvancedSourceInterface_8h_source.html
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// appropriate for chunks/entity updates where inter-packet order</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// doesn&#39;t matter.</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> sendRawPacket(<span class="keyword">const</span> std::string&amp; ip, uint16_t port,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                                 <span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                 <span class="keywordtype">bool</span> ordered = <span class="keyword">false</span>) = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Close a session immediately, optionally sending a DisconnectPacket first.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> closeSession(<span class="keyword">const</span> std::string&amp; ip, uint16_t port,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                <span class="keyword">const</span> std::string&amp; reason = <span class="stringliteral">&quot;&quot;</span>) = 0;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace network</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace cursestone</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                               <span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data, <span class="keywordtype">bool</span> ordered = <span class="keyword">false</span>) = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Close a session immediately, optionally sending a DisconnectPacket first.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> closeSession(<span class="keyword">const</span> std::string&amp; ip, uint16_t port,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                              <span class="keyword">const</span> std::string&amp; reason = <span class="stringliteral">&quot;&quot;</span>) = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// namespace network</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace cursestone</span></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1AdvancedSourceInterface_html"><div class="ttname"><a href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">cursestone::network::AdvancedSourceInterface</a></div><div class="ttdef"><b>Definition:</b> AdvancedSourceInterface.h:40</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1SourceInterface_html"><div class="ttname"><a href="classcursestone_1_1network_1_1SourceInterface.html">cursestone::network::SourceInterface</a></div><div class="ttdef"><b>Definition:</b> SourceInterface.h:34</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

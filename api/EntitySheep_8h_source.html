@@ -113,12 +113,16 @@ $(document).ready(function(){initNavTree('EntitySheep_8h_source.html',''); initR
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>cursestone::entity {</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classcursestone_1_1entity_1_1EntitySheep.html">   27</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1entity_1_1EntitySheep.html">EntitySheep</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1entity_1_1Animal.html">Animal</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">using</span> Animal::Animal;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classcursestone_1_1entity_1_1EntitySheep.html">EntitySheep</a>(int64_t rid, std::shared_ptr&lt;World&gt; l) : <a class="code" href="classcursestone_1_1entity_1_1Animal.html">Animal</a>(rid, std::move(l)) { setNetworkId(13); }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::string name()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;Sheep&quot;</span>; }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classcursestone_1_1entity_1_1EntitySheep.html">EntitySheep</a>(int64_t rid, std::shared_ptr&lt;World&gt; l) : <a class="code" href="classcursestone_1_1entity_1_1Animal.html">Animal</a>(rid, std::move(l)) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        setNetworkId(13);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string name()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Sheep&quot;</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1entity_1_1Animal_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Animal.html">cursestone::entity::Animal</a></div><div class="ttdef"><b>Definition:</b> Animal.h:26</div></div>
 <div class="ttc" id="aclasscursestone_1_1entity_1_1EntitySheep_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1EntitySheep.html">cursestone::entity::EntitySheep</a></div><div class="ttdef"><b>Definition:</b> EntitySheep.h:27</div></div>
 </div><!-- fragment --></div><!-- contents -->

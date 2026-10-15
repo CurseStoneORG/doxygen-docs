@@ -140,49 +140,53 @@ $(document).ready(function(){initNavTree('VillagePieces_8h_source.html',''); ini
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// (the tower houses, the farms, the lamp and the well), and such a</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// piece is rotated freely.</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1structure_1_1village_1_1VillagePiece.html">   54</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1structure_1_1village_1_1VillagePiece.html">VillagePiece</a> final : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html">Structure</a> {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1structure_1_1village_1_1VillagePiece.html">VillagePiece</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">int</span> sizeX, <span class="keywordtype">int</span> sizeY, <span class="keywordtype">int</span> sizeZ,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                 <span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html">BlockSpec</a>* specs, <span class="keywordtype">size_t</span> specCount, <span class="keyword">const</span> <span class="keywordtype">char</span>* volume,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                 <span class="keywordtype">int</span> frontFacing)</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        : <a class="code" href="classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html">Structure</a>(name, sizeX, sizeY, sizeZ, specs, specCount, volume),</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;          frontFacing_(frontFacing) {}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1structure_1_1village_1_1VillagePiece.html">VillagePiece</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, <span class="keywordtype">int</span> sizeX, <span class="keywordtype">int</span> sizeY, <span class="keywordtype">int</span> sizeZ, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html">BlockSpec</a>* specs,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                 <span class="keywordtype">size_t</span> specCount, <span class="keyword">const</span> <span class="keywordtype">char</span>* volume, <span class="keywordtype">int</span> frontFacing)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        : <a class="code" href="classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html">Structure</a>(name, sizeX, sizeY, sizeZ, specs, specCount, volume),</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;          frontFacing_(frontFacing) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> frontFacing()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> frontFacing_; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> frontFacing_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// Alphabetical order matches the generated piece table in</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// VillagePieces.cpp — keep both in sync (the table is regenerated).</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">enum</span> PieceKind : uint8_t {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    PIECE_BLACKSMITH = 0,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    PIECE_BUTCHER,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    PIECE_CHURCH,</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    PIECE_LIBRARY,</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    PIECE_STREETLIGHT,</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    PIECE_T1_FARM,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    PIECE_T1_HOUSE,</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    PIECE_T2_FARM,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    PIECE_T2_HOUSE,</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    PIECE_T3_HOUSE,</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    PIECE_T4_HOUSE,</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    PIECE_T5_HOUSE,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    PIECE_WELL,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    PIECE_COUNT</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// The pieces live for the whole process (static storage), so this hands</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// out a raw pointer.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">const</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html">Structure</a>* piece(PieceKind k);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">// Java compass (1 east, 2 west, 3 south, 4 north) the piece&#39;s entrance</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// door opens toward once placed; 0 when the export has no outside door.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">int</span> pieceFrontFacing(PieceKind k);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> pieceCount() { <span class="keywordflow">return</span> PIECE_COUNT; }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">int</span> frontFacing()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> frontFacing_;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">int</span> frontFacing_;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// Alphabetical order matches the generated piece table in</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// VillagePieces.cpp — keep both in sync (the table is regenerated).</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">enum</span> PieceKind : uint8_t {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    PIECE_BLACKSMITH = 0,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    PIECE_BUTCHER,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    PIECE_CHURCH,</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    PIECE_LIBRARY,</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    PIECE_STREETLIGHT,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    PIECE_T1_FARM,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    PIECE_T1_HOUSE,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    PIECE_T2_FARM,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    PIECE_T2_HOUSE,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    PIECE_T3_HOUSE,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    PIECE_T4_HOUSE,</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    PIECE_T5_HOUSE,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    PIECE_WELL,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    PIECE_COUNT</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;};</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// The pieces live for the whole process (static storage), so this hands</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">// out a raw pointer.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">const</span> <a class="code" href="classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html">Structure</a>* piece(PieceKind k);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// Java compass (1 east, 2 west, 3 south, 4 north) the piece&#39;s entrance</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// door opens toward once placed; 0 when the export has no outside door.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">int</span> pieceFrontFacing(PieceKind k);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <span class="comment">// namespace cursestone::world::generator::structure::village</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">int</span> pieceCount() {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">return</span> PIECE_COUNT;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;} <span class="comment">// namespace cursestone::world::generator::structure::village</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1structure_1_1Structure_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html">cursestone::world::generator::structure::Structure</a></div><div class="ttdef"><b>Definition:</b> Structure.h:122</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1structure_1_1village_1_1VillagePiece_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1structure_1_1village_1_1VillagePiece.html">cursestone::world::generator::structure::village::VillagePiece</a></div><div class="ttdef"><b>Definition:</b> VillagePieces.h:54</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html">cursestone::world::generator::structure::BlockSpec</a></div><div class="ttdef"><b>Definition:</b> Structure.h:82</div></div>

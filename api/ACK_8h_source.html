@@ -123,11 +123,11 @@ $(document).ready(function(){initNavTree('ACK_8h_source.html',''); initResizable
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structmcp__pkt__ack.html">   36</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__pkt__ack.html">mcp_pkt_ack</a> {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="structmcp__packet.html">mcp_packet_t</a> header;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span>    is_nack;            <span class="comment">// false for ACK (0xc0), true for NACK (0xa0)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> is_nack; <span class="comment">// false for ACK (0xc0), true for NACK (0xa0)</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    uint32_t* records_min;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    uint32_t* records_max;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">size_t</span>   record_count;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">size_t</span> record_count;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <a class="code" href="structmcp__pkt__ack.html">mcp_pkt_ack_t</a>;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>

@@ -120,10 +120,10 @@ $(document).ready(function(){initNavTree('MainLogger_8h_source.html',''); initRe
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structmcp__main__logger.html">   41</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__main__logger.html">mcp_main_logger</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="structmcp__logger.html">mcp_logger_t</a> vtable;     <span class="comment">// must be first</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    FILE*        log_file;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span>         colored;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span>         shutdown_called;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="structmcp__logger.html">mcp_logger_t</a> vtable; <span class="comment">// must be first</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    FILE* log_file;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">bool</span> colored;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> shutdown_called;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// Implicit singleton: mcp_main_logger_get_instance() returns &amp;g_logger</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <a class="code" href="structmcp__main__logger.html">mcp_main_logger_t</a>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>

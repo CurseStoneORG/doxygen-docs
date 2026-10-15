@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('Physics_8h_source.html',''); initResiz
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// ============================================================</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;CurseStone.h&quot;</span>   <span class="comment">// cursestone::math aliases</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#include &quot;CurseStone.h&quot;</span> <span class="comment">// cursestone::math aliases</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#include &quot;math/AxisAlignedBB.h&quot;</span></div>
@@ -168,17 +168,15 @@ $(document).ready(function(){initNavTree('Physics_8h_source.html',''); initResiz
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// `on_ground` is Entity::checkGroundState(): true only when the DOWNWARD</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// motion was clipped, i.e. `clipped_y &amp;&amp; motion.y &lt; 0`.</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<a class="code" href="structcursestone_1_1physics_1_1MotionResult.html">MotionResult</a> sweep(<a class="code" href="structmcp__aabb.html">mcp_aabb_t</a> box, <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> motion,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                   <span class="keyword">const</span> std::vector&lt;BlockBox&gt;&amp; boxes);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// Nearest block hit along `from` -&gt; `to` (segment, not infinite ray),</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// with the block&#39;s coordinates and the face that was struck. Returns</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// MCP_HIT_NONE when the segment reaches nothing. Ties are resolved by</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">// distance from `from`; boxes are not sorted by the caller.</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<a class="code" href="structmcp__hit__result.html">mcp_hit_result_t</a> clipRay(<a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> from, <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> to,</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                         <span class="keyword">const</span> std::vector&lt;BlockBox&gt;&amp; boxes);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace cursestone::physics</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<a class="code" href="structcursestone_1_1physics_1_1MotionResult.html">MotionResult</a> sweep(<a class="code" href="structmcp__aabb.html">mcp_aabb_t</a> box, <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> motion, <span class="keyword">const</span> std::vector&lt;BlockBox&gt;&amp; boxes);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// Nearest block hit along `from` -&gt; `to` (segment, not infinite ray),</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// with the block&#39;s coordinates and the face that was struck. Returns</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// MCP_HIT_NONE when the segment reaches nothing. Ties are resolved by</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">// distance from `from`; boxes are not sorted by the caller.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<a class="code" href="structmcp__hit__result.html">mcp_hit_result_t</a> clipRay(<a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> from, <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> to, <span class="keyword">const</span> std::vector&lt;BlockBox&gt;&amp; boxes);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;} <span class="comment">// namespace cursestone::physics</span></div>
 <div class="ttc" id="astructcursestone_1_1physics_1_1BlockBox_html"><div class="ttname"><a href="structcursestone_1_1physics_1_1BlockBox.html">cursestone::physics::BlockBox</a></div><div class="ttdef"><b>Definition:</b> Physics.h:58</div></div>
 <div class="ttc" id="astructcursestone_1_1physics_1_1MotionResult_html"><div class="ttname"><a href="structcursestone_1_1physics_1_1MotionResult.html">cursestone::physics::MotionResult</a></div><div class="ttdef"><b>Definition:</b> Physics.h:67</div></div>
 <div class="ttc" id="astructmcp__aabb_html"><div class="ttname"><a href="structmcp__aabb.html">mcp_aabb</a></div><div class="ttdef"><b>Definition:</b> AxisAlignedBB.h:35</div></div>

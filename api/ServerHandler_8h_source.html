@@ -124,32 +124,28 @@ $(document).ready(function(){initNavTree('ServerHandler_8h_source.html',''); ini
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structmcp__server__handler.html">   38</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__server__handler.html">mcp_server_handler</a> {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* manager;  <span class="comment">// not owned</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* manager; <span class="comment">// not owned</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> mcp_server_handler_init(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h,</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                                <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* m);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keywordtype">void</span> mcp_server_handler_destroy(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// Send a raw datagram (already-encoded) to a remote client.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">bool</span> mcp_server_handler_send_raw(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                                   <span class="keyword">const</span> uint8_t ip[4], uint16_t port,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                   <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// Send an encapsulated packet to an established session. `payload` is</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// wrapped into a DATA_PACKET_0 datagram before sending.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">bool</span> mcp_server_handler_send_encapsulated(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                            <span class="keyword">const</span> uint8_t ip[4], uint16_t port,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                            <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> len,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                            uint8_t reliability);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keywordtype">void</span> mcp_server_handler_init(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h, <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* m);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> mcp_server_handler_destroy(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Send a raw datagram (already-encoded) to a remote client.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">bool</span> mcp_server_handler_send_raw(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h, <span class="keyword">const</span> uint8_t ip[4], uint16_t port,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                 <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Send an encapsulated packet to an established session. `payload` is</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// wrapped into a DATA_PACKET_0 datagram before sending.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">bool</span> mcp_server_handler_send_encapsulated(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h, <span class="keyword">const</span> uint8_t ip[4],</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                          uint16_t port, <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                                          uint8_t reliability);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// Close a session immediately (no goodbye packet).</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> mcp_server_handler_close_session(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h, <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// Close a session immediately (no goodbye packet).</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">void</span> mcp_server_handler_close_session(<a class="code" href="structmcp__server__handler.html">mcp_server_handler_t</a>* h,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                                        <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructmcp__rak__session__manager_html"><div class="ttname"><a href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:42</div></div>
 <div class="ttc" id="astructmcp__server__handler_html"><div class="ttname"><a href="structmcp__server__handler.html">mcp_server_handler</a></div><div class="ttdef"><b>Definition:</b> ServerHandler.h:38</div></div>
 </div><!-- fragment --></div><!-- contents -->

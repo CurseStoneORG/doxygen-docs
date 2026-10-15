@@ -163,53 +163,57 @@ $(document).ready(function(){initNavTree('CraftingDataPacket_8h_source.html','')
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">namespace </span>cursestone::inventory { <span class="keyword">class </span>CraftingManager; }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keyword">namespace </span>cursestone::network::protocol {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">namespace </span>cursestone::inventory {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">class </span>CraftingManager;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// Una entrada de receta lista para serializar — copia ligera de</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// inventory::Recipe (el manager puede recargarse mientras el packet</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// está en cola de salida, así que el packet tiene su propia copia).</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html">   85</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html">CraftingEntry</a> {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    inventory::RecipeType type = inventory::RECIPE_SHAPED;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> result;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::array&lt;uint16_t, 9&gt; grid{};</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::array&lt;int16_t, 9&gt; gridMeta{};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::vector&lt;uint16_t&gt; ingredients;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::vector&lt;int16_t&gt; ingredientMeta;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> width = 0, height = 0;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    int16_t furnaceInputMeta = -1;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::array&lt;uint8_t, 16&gt; uuid{};</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classcursestone_1_1network_1_1protocol_1_1CraftingDataPacket.html">   97</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1network_1_1protocol_1_1CraftingDataPacket.html">CraftingDataPacket</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">DataPacket</a> {</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    uint8_t pid()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> CRAFTING_DATA_PACKET; }</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_SHAPELESS = 0;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_SHAPED = 1;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_FURNACE = 2;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_FURNACE_DATA = 3;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_MULTI = 4;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Llena `entries` con TODAS las recetas del manager (llamar antes</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// de sendPacket).</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> addAllRecipes(<span class="keyword">const</span> <a class="code" href="classcursestone_1_1inventory_1_1CraftingManager.html">inventory::CraftingManager</a>&amp; mgr);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">namespace </span>cursestone::network::protocol {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// Una entrada de receta lista para serializar — copia ligera de</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// inventory::Recipe (el manager puede recargarse mientras el packet</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// está en cola de salida, así que el packet tiene su propia copia).</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html">   87</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html">CraftingEntry</a> {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    inventory::RecipeType type = inventory::RECIPE_SHAPED;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> result;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    std::array&lt;uint16_t, 9&gt; grid{};</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::array&lt;int16_t, 9&gt; gridMeta{};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::vector&lt;uint16_t&gt; ingredients;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    std::vector&lt;int16_t&gt; ingredientMeta;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> width = 0, height = 0;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    int16_t furnaceInputMeta = -1;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::array&lt;uint8_t, 16&gt; uuid{};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classcursestone_1_1network_1_1protocol_1_1CraftingDataPacket.html">   99</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1network_1_1protocol_1_1CraftingDataPacket.html">CraftingDataPacket</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">DataPacket</a> {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    uint8_t pid()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> CRAFTING_DATA_PACKET;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_SHAPELESS = 0;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_SHAPED = 1;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_FURNACE = 2;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_FURNACE_DATA = 3;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> ENTRY_MULTI = 4;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    std::vector&lt;CraftingEntry&gt; entries_;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">bool</span> cleanRecipes = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;};</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// Llena `entries` con TODAS las recetas del manager (llamar antes</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// de sendPacket).</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> addAllRecipes(<span class="keyword">const</span> <a class="code" href="classcursestone_1_1inventory_1_1CraftingManager.html">inventory::CraftingManager</a>&amp; mgr);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::vector&lt;CraftingEntry&gt; entries_;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">bool</span> cleanRecipes = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
 <div class="ttc" id="aclasscursestone_1_1inventory_1_1CraftingManager_html"><div class="ttname"><a href="classcursestone_1_1inventory_1_1CraftingManager.html">cursestone::inventory::CraftingManager</a></div><div class="ttdef"><b>Definition:</b> CraftingManager.h:38</div></div>
-<div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1CraftingDataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1CraftingDataPacket.html">cursestone::network::protocol::CraftingDataPacket</a></div><div class="ttdef"><b>Definition:</b> CraftingDataPacket.h:97</div></div>
+<div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1CraftingDataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1CraftingDataPacket.html">cursestone::network::protocol::CraftingDataPacket</a></div><div class="ttdef"><b>Definition:</b> CraftingDataPacket.h:99</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">cursestone::network::protocol::DataPacket</a></div><div class="ttdef"><b>Definition:</b> DataPacket.h:44</div></div>
 <div class="ttc" id="astructcursestone_1_1item_1_1ItemStack_html"><div class="ttname"><a href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a></div><div class="ttdef"><b>Definition:</b> ItemStack.h:32</div></div>
-<div class="ttc" id="astructcursestone_1_1network_1_1protocol_1_1CraftingEntry_html"><div class="ttname"><a href="structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html">cursestone::network::protocol::CraftingEntry</a></div><div class="ttdef"><b>Definition:</b> CraftingDataPacket.h:85</div></div>
+<div class="ttc" id="astructcursestone_1_1network_1_1protocol_1_1CraftingEntry_html"><div class="ttname"><a href="structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html">cursestone::network::protocol::CraftingEntry</a></div><div class="ttdef"><b>Definition:</b> CraftingDataPacket.h:87</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

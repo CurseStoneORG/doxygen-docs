@@ -115,13 +115,18 @@ $(document).ready(function(){initNavTree('CallbackTask_8h_source.html',''); init
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>cursestone::scheduler {</div>
 <div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classcursestone_1_1scheduler_1_1CallbackTask.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1scheduler_1_1CallbackTask.html">CallbackTask</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1scheduler_1_1Task.html">Task</a> {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcursestone_1_1scheduler_1_1CallbackTask.html">CallbackTask</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; fn) : fn_(std::move(fn)) {}</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> onRun()<span class="keyword"> override </span>{ <span class="keywordflow">if</span> (fn_) fn_(); }</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::function&lt;void()&gt; fn_;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;};</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classcursestone_1_1scheduler_1_1CallbackTask.html">CallbackTask</a>(std::function&lt;<span class="keywordtype">void</span>()&gt; fn) : fn_(std::move(fn)) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> onRun()<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">if</span> (fn_)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            fn_();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::function&lt;void()&gt; fn_;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1scheduler_1_1CallbackTask_html"><div class="ttname"><a href="classcursestone_1_1scheduler_1_1CallbackTask.html">cursestone::scheduler::CallbackTask</a></div><div class="ttdef"><b>Definition:</b> CallbackTask.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1scheduler_1_1Task_html"><div class="ttname"><a href="classcursestone_1_1scheduler_1_1Task.html">cursestone::scheduler::Task</a></div><div class="ttdef"><b>Definition:</b> Task.h:38</div></div>
 </div><!-- fragment --></div><!-- contents -->

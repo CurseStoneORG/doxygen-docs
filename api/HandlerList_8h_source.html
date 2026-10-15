@@ -152,39 +152,38 @@ $(document).ready(function(){initNavTree('HandlerList_8h_source.html',''); initR
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">namespace </span>cursestone::event {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1HandlerList.html">   66</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1HandlerList.html">HandlerList</a> {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Registra `callback` en la prioridad dada. Devuelve un id de</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// registro utilizable con unregister(). Devuelve 0 si callback</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// está vacío (nada que registrar).</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    uint64_t registerListener(<span class="keywordtype">void</span>* owner, EventPriority priority,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                               <span class="keywordtype">bool</span> ignoreCancelled,</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                               std::function&lt;<span class="keywordtype">void</span>(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp;)&gt; callback);</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Elimina un único registro por id. true si se encontró.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> unregister(uint64_t <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// Elimina todos los registros cuyo `owner` coincida. Devuelve</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// cuántos se eliminaron. Se usa cuando un Listener se destruye.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">size_t</span> unregisterOwner(<span class="keywordtype">void</span>* owner);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Elimina absolutamente todos los registros.</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> unregisterAll();</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Ejecuta cada listener registrado para `event`, en orden de</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// prioridad, saltando los ignoreCancelled una vez el evento está</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// cancelado. Segura de llamar mientras otros hilos registran o</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// desregistran listeners concurrentemente.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> dispatch(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp; event) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">size_t</span> size() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">mutable</span> std::mutex mtx_;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::array&lt;std::vector&lt;RegisteredListener&gt;, kEventPriorityCount&gt; slots_;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    uint64_t next_id_ = 1;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;};</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;} <span class="comment">// namespace cursestone::event</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    uint64_t registerListener(<span class="keywordtype">void</span>* owner, EventPriority priority, <span class="keywordtype">bool</span> ignoreCancelled,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                              std::function&lt;<span class="keywordtype">void</span>(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp;)&gt; callback);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Elimina un único registro por id. true si se encontró.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> unregister(uint64_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Elimina todos los registros cuyo `owner` coincida. Devuelve</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// cuántos se eliminaron. Se usa cuando un Listener se destruye.</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">size_t</span> unregisterOwner(<span class="keywordtype">void</span>* owner);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Elimina absolutamente todos los registros.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> unregisterAll();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Ejecuta cada listener registrado para `event`, en orden de</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// prioridad, saltando los ignoreCancelled una vez el evento está</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// cancelado. Segura de llamar mientras otros hilos registran o</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// desregistran listeners concurrentemente.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> dispatch(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp; event) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">size_t</span> size() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">mutable</span> std::mutex mtx_;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::array&lt;std::vector&lt;RegisteredListener&gt;, kEventPriorityCount&gt; slots_;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint64_t next_id_ = 1;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;} <span class="comment">// namespace cursestone::event</span></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Event_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Event.html">cursestone::event::Event</a></div><div class="ttdef"><b>Definition:</b> Event.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1HandlerList_html"><div class="ttname"><a href="classcursestone_1_1event_1_1HandlerList.html">cursestone::event::HandlerList</a></div><div class="ttdef"><b>Definition:</b> HandlerList.h:66</div></div>
 </div><!-- fragment --></div><!-- contents -->

@@ -151,33 +151,35 @@ $(document).ready(function(){initNavTree('UpdateBlockPacket_8h_source.html','');
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">namespace </span>cursestone::network::protocol {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 <div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="classcursestone_1_1network_1_1protocol_1_1UpdateBlockPacket.html">   65</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1network_1_1protocol_1_1UpdateBlockPacket.html">UpdateBlockPacket</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">DataPacket</a> {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    uint8_t pid()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> UPDATE_BLOCK_PACKET; }</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Flag bits (Genisys UpdateBlockPacket constants).</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_NONE      = 0b0000;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_NEIGHBORS = 0b0001;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_NETWORK   = 0b0010;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_NOGRAPHIC = 0b0100;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_PRIORITY  = 0b1000;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_ALL          = (FLAG_NEIGHBORS | FLAG_NETWORK);          <span class="comment">// 0x03</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_ALL_PRIORITY = (FLAG_ALL | FLAG_PRIORITY);              <span class="comment">// 0x0B</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    int32_t x = 0, z = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    uint8_t y = 0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint8_t blockId = 0;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Only the low 4 bits travel on the wire — MCPE block damage is 0..15.</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    uint8_t blockData = 0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Default matches Genisys&#39; break/place path (FLAG_ALL_PRIORITY) so a</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// call site that forgets to set it still produces a visible update.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    uint8_t flags = FLAG_ALL_PRIORITY;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    uint8_t pid()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> UPDATE_BLOCK_PACKET;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Flag bits (Genisys UpdateBlockPacket constants).</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_NONE = 0b0000;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_NEIGHBORS = 0b0001;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_NETWORK = 0b0010;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_NOGRAPHIC = 0b0100;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_PRIORITY = 0b1000;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_ALL = (FLAG_NEIGHBORS | FLAG_NETWORK);     <span class="comment">// 0x03</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_ALL_PRIORITY = (FLAG_ALL | FLAG_PRIORITY); <span class="comment">// 0x0B</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    int32_t x = 0, z = 0;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    uint8_t y = 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    uint8_t blockId = 0;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Only the low 4 bits travel on the wire — MCPE block damage is 0..15.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint8_t blockData = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Default matches Genisys&#39; break/place path (FLAG_ALL_PRIORITY) so a</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// call site that forgets to set it still produces a visible update.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    uint8_t flags = FLAG_ALL_PRIORITY;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">cursestone::network::protocol::DataPacket</a></div><div class="ttdef"><b>Definition:</b> DataPacket.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1UpdateBlockPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1UpdateBlockPacket.html">cursestone::network::protocol::UpdateBlockPacket</a></div><div class="ttdef"><b>Definition:</b> UpdateBlockPacket.h:65</div></div>
 </div><!-- fragment --></div><!-- contents -->

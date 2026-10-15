@@ -136,31 +136,26 @@ $(document).ready(function(){initNavTree('NBT_8h_source.html',''); initResizable
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Read just a payload of the given type (no leading type byte, no name).</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Used internally for list elements and compound children.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* mcp_nbt_read_payload(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, mcp_tag_type_t type,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                  <span class="keywordtype">bool</span> little_endian);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// Read the type+name header of a compound child. Sets `*out_name` (caller</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// frees) and `*out_type`. Returns 0 on success, -1 on EOF, +1 on EndTag.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">int</span> mcp_nbt_read_named_child_header(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, <span class="keywordtype">bool</span> little_endian,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                      mcp_tag_type_t* out_type,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                      <span class="keywordtype">char</span>** out_name);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// Serialize a full root tag into a BinaryStream.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> mcp_nbt_write_root(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, <span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* root,</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                         <span class="keywordtype">bool</span> little_endian);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* mcp_nbt_read_payload(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, mcp_tag_type_t type, <span class="keywordtype">bool</span> little_endian);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// Read the type+name header of a compound child. Sets `*out_name` (caller</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// frees) and `*out_type`. Returns 0 on success, -1 on EOF, +1 on EndTag.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keywordtype">int</span> mcp_nbt_read_named_child_header(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, <span class="keywordtype">bool</span> little_endian, mcp_tag_type_t* out_type,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                    <span class="keywordtype">char</span>** out_name);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// Serialize a full root tag into a BinaryStream.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">void</span> mcp_nbt_write_root(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, <span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* root, <span class="keywordtype">bool</span> little_endian);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// Convenience: read NBT from a raw byte buffer.</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* mcp_nbt_read_bytes(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len, <span class="keywordtype">bool</span> little_endian);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// Convenience: read NBT from a raw byte buffer.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* mcp_nbt_read_bytes(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len,</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                                <span class="keywordtype">bool</span> little_endian);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// Convenience: serialize NBT to a malloc&#39;d byte buffer.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Caller frees. *out_len receives the size.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;uint8_t* mcp_nbt_write_bytes(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* root, <span class="keywordtype">bool</span> little_endian, <span class="keywordtype">size_t</span>* out_len);</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// Convenience: serialize NBT to a malloc&#39;d byte buffer.</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// Caller frees. *out_len receives the size.</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;uint8_t* mcp_nbt_write_bytes(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* root, <span class="keywordtype">bool</span> little_endian,</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                              <span class="keywordtype">size_t</span>* out_len);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructmcp__bstream_html"><div class="ttname"><a href="structmcp__bstream.html">mcp_bstream</a></div><div class="ttdef"><b>Definition:</b> BinaryStream.h:37</div></div>
 <div class="ttc" id="astructmcp__nbt_html"><div class="ttname"><a href="structmcp__nbt.html">mcp_nbt</a></div><div class="ttdef"><b>Definition:</b> NBT.h:41</div></div>
 <div class="ttc" id="astructmcp__tag_html"><div class="ttname"><a href="structmcp__tag.html">mcp_tag</a></div><div class="ttdef"><b>Definition:</b> Tag.h:79</div></div>

@@ -129,59 +129,99 @@ $(document).ready(function(){initNavTree('Recipe_8h_source.html',''); initResiza
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>cursestone::inventory {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">enum</span> RecipeType { RECIPE_SHAPED = 0, RECIPE_SHAPELESS = 1, RECIPE_FURNACE = 2 };</div>
 <div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classcursestone_1_1inventory_1_1Recipe.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1inventory_1_1Recipe.html">Recipe</a> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classcursestone_1_1inventory_1_1Recipe.html">Recipe</a>(RecipeType type, <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> result)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        : type_(type), result_(result) {}</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    RecipeType type()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> type_; }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; result()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> result_; }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Shaped recipe: 3x3 grid of item ids (0 = no requirement),</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// zero-padded alrededor del patrón Width x Height real.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> setGrid(<span class="keyword">const</span> std::array&lt;uint16_t, 9&gt;&amp; g) { grid_ = g; }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">const</span> std::array&lt;uint16_t, 9&gt;&amp; grid()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> grid_; }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Meta/damage requerido por celda (-1 = cualquier damage). Índices</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// alineados 1:1 con grid().</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> setGridMeta(<span class="keyword">const</span> std::array&lt;int16_t, 9&gt;&amp; m) { grid_meta_ = m; }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> std::array&lt;int16_t, 9&gt;&amp; gridMeta()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> grid_meta_; }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">// Shapeless ingredients (list of item ids).</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> setIngredients(<span class="keyword">const</span> std::vector&lt;uint16_t&gt;&amp; is) { ingredients_ = is; }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">const</span> std::vector&lt;uint16_t&gt;&amp; ingredients()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ingredients_; }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// Meta por ingrediente shapeless (-1 = cualquier damage). Alineado</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// 1:1 con ingredients(); si viene corto se trata como -1.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> setIngredientMeta(<span class="keyword">const</span> std::vector&lt;int16_t&gt;&amp; ms) { ingredient_meta_ = ms; }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">const</span> std::vector&lt;int16_t&gt;&amp; ingredientMeta()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> ingredient_meta_; }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Bounding box del patrón shaped tal como se registro (1..3). Para</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// matchShaped basta grid(); width/height se guardan para el</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// CraftingDataPacket (que serializa el patrón SIN padding,</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Width x Height celdas exactas).</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> setSize(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h) { width_ = w; height_ = h; }</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> width()<span class="keyword">  const </span>{ <span class="keywordflow">return</span> width_;  }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">int</span> height()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> height_; }</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// Furnace input damage (-1 = cualquier damage, ENTRY_FURNACE en el</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// wire; 0..n = damage exacto, ENTRY_FURNACE_DATA).</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> setFurnaceInputMeta(int16_t m) { furnace_input_meta_ = m; }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    int16_t furnaceInputMeta()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> furnace_input_meta_; }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> setUuid(uint64_t u) { uuid_ = u; }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    uint64_t uuid()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> uuid_; }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Los 16 bytes crudos del UUID de receta que viaja en</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// CraftingDataPacket y vuelve en CraftingEventPacket (mismo orden</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// que PMMP UUID::toBinary). El cliente lo ecoa tal cual, así que el</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// match contra recetas se hace por estos bytes, no por uuid().</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> setUuidBytes(<span class="keyword">const</span> std::array&lt;uint8_t, 16&gt;&amp; b) { uuid_bytes_ = b; }</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">const</span> std::array&lt;uint8_t, 16&gt;&amp; uuidBytes()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> uuid_bytes_; }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    RecipeType type_;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> result_;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    std::array&lt;uint16_t, 9&gt; grid_{};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::array&lt;int16_t, 9&gt; grid_meta_{};</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::vector&lt;uint16_t&gt; ingredients_;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::vector&lt;int16_t&gt; ingredient_meta_;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> width_ = 0;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> height_ = 0;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    int16_t furnace_input_meta_ = -1;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    uint64_t uuid_ = 0;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::array&lt;uint8_t, 16&gt; uuid_bytes_{};</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classcursestone_1_1inventory_1_1Recipe.html">Recipe</a>(RecipeType type, <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> result) : type_(type), result_(result) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    RecipeType type()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> type_;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; result()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> result_;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Shaped recipe: 3x3 grid of item ids (0 = no requirement),</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// zero-padded alrededor del patrón Width x Height real.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> setGrid(<span class="keyword">const</span> std::array&lt;uint16_t, 9&gt;&amp; g) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        grid_ = g;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> std::array&lt;uint16_t, 9&gt;&amp; grid()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> grid_;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Meta/damage requerido por celda (-1 = cualquier damage). Índices</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// alineados 1:1 con grid().</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> setGridMeta(<span class="keyword">const</span> std::array&lt;int16_t, 9&gt;&amp; m) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        grid_meta_ = m;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">const</span> std::array&lt;int16_t, 9&gt;&amp; gridMeta()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span> grid_meta_;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Shapeless ingredients (list of item ids).</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> setIngredients(<span class="keyword">const</span> std::vector&lt;uint16_t&gt;&amp; is) {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        ingredients_ = is;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">const</span> std::vector&lt;uint16_t&gt;&amp; ingredients()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> ingredients_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Meta por ingrediente shapeless (-1 = cualquier damage). Alineado</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// 1:1 con ingredients(); si viene corto se trata como -1.</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> setIngredientMeta(<span class="keyword">const</span> std::vector&lt;int16_t&gt;&amp; ms) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        ingredient_meta_ = ms;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> std::vector&lt;int16_t&gt;&amp; ingredientMeta()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> ingredient_meta_;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Bounding box del patrón shaped tal como se registro (1..3). Para</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// matchShaped basta grid(); width/height se guardan para el</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// CraftingDataPacket (que serializa el patrón SIN padding,</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Width x Height celdas exactas).</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> setSize(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h) {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        width_ = w;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        height_ = h;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> width()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">return</span> width_;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">int</span> height()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="keywordflow">return</span> height_;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// Furnace input damage (-1 = cualquier damage, ENTRY_FURNACE en el</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// wire; 0..n = damage exacto, ENTRY_FURNACE_DATA).</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> setFurnaceInputMeta(int16_t m) {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        furnace_input_meta_ = m;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    int16_t furnaceInputMeta()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordflow">return</span> furnace_input_meta_;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> setUuid(uint64_t u) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        uuid_ = u;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    uint64_t uuid()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <span class="keywordflow">return</span> uuid_;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Los 16 bytes crudos del UUID de receta que viaja en</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// CraftingDataPacket y vuelve en CraftingEventPacket (mismo orden</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// que PMMP UUID::toBinary). El cliente lo ecoa tal cual, así que el</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// match contra recetas se hace por estos bytes, no por uuid().</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> setUuidBytes(<span class="keyword">const</span> std::array&lt;uint8_t, 16&gt;&amp; b) {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        uuid_bytes_ = b;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keyword">const</span> std::array&lt;uint8_t, 16&gt;&amp; uuidBytes()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        <span class="keywordflow">return</span> uuid_bytes_;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    }</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    RecipeType type_;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> result_;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    std::array&lt;uint16_t, 9&gt; grid_{};</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    std::array&lt;int16_t, 9&gt; grid_meta_{};</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    std::vector&lt;uint16_t&gt; ingredients_;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    std::vector&lt;int16_t&gt; ingredient_meta_;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> width_ = 0;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">int</span> height_ = 0;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    int16_t furnace_input_meta_ = -1;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    uint64_t uuid_ = 0;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    std::array&lt;uint8_t, 16&gt; uuid_bytes_{};</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;};</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1inventory_1_1Recipe_html"><div class="ttname"><a href="classcursestone_1_1inventory_1_1Recipe.html">cursestone::inventory::Recipe</a></div><div class="ttdef"><b>Definition:</b> Recipe.h:43</div></div>
 <div class="ttc" id="astructcursestone_1_1item_1_1ItemStack_html"><div class="ttname"><a href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a></div><div class="ttdef"><b>Definition:</b> ItemStack.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->

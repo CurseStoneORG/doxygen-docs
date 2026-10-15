@@ -117,16 +117,18 @@ $(document).ready(function(){initNavTree('FileWriteTask_8h_source.html',''); ini
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>cursestone::scheduler {</div>
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classcursestone_1_1scheduler_1_1FileWriteTask.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1scheduler_1_1FileWriteTask.html">FileWriteTask</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1scheduler_1_1AsyncTask.html">AsyncTask</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classcursestone_1_1scheduler_1_1FileWriteTask.html">FileWriteTask</a>(std::string path, std::vector&lt;uint8_t&gt; bytes)</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        : path_(std::move(path)), bytes_(std::move(bytes)) {}</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> onRun() <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string path_;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::vector&lt;uint8_t&gt; bytes_;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="ttc" id="aclasscursestone_1_1scheduler_1_1AsyncTask_html"><div class="ttname"><a href="classcursestone_1_1scheduler_1_1AsyncTask.html">cursestone::scheduler::AsyncTask</a></div><div class="ttdef"><b>Definition:</b> Task.h:59</div></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        : path_(std::move(path)), bytes_(std::move(bytes)) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> onRun() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string path_;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::vector&lt;uint8_t&gt; bytes_;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="ttc" id="aclasscursestone_1_1scheduler_1_1AsyncTask_html"><div class="ttname"><a href="classcursestone_1_1scheduler_1_1AsyncTask.html">cursestone::scheduler::AsyncTask</a></div><div class="ttdef"><b>Definition:</b> Task.h:78</div></div>
 <div class="ttc" id="aclasscursestone_1_1scheduler_1_1FileWriteTask_html"><div class="ttname"><a href="classcursestone_1_1scheduler_1_1FileWriteTask.html">cursestone::scheduler::FileWriteTask</a></div><div class="ttdef"><b>Definition:</b> FileWriteTask.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

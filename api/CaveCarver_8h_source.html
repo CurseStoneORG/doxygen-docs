@@ -127,36 +127,34 @@ $(document).ready(function(){initNavTree('CaveCarver_8h_source.html',''); initRe
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator::carver {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1carver_1_1CaveCarver.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1carver_1_1CaveCarver.html">CaveCarver</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Carve caves into `chunk` (which must already have raw stone terrain).</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> generate(int64_t seed, int32_t chunkX, int32_t chunkZ, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> recursiveGenerate(int32_t chunkX, int32_t chunkZ,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                           int32_t originChunkX, int32_t originChunkZ,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                           <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk, <span class="keywordtype">bool</span> addRooms);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> addRoom(int64_t seed, int32_t originChunkX, int32_t originChunkZ,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                 <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk, <span class="keywordtype">double</span> startX, <span class="keywordtype">double</span> startY, <span class="keywordtype">double</span> startZ);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> addTunnel(int64_t seed, int32_t originChunkX, int32_t originChunkZ,</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                   <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk, <span class="keywordtype">double</span> startX, <span class="keywordtype">double</span> startY, <span class="keywordtype">double</span> startZ,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                   <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> yaw, <span class="keywordtype">float</span> pitch,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                   int32_t startCounter, int32_t endCounter, <span class="keywordtype">double</span> heightModifier);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> digBlock(<a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk, int8_t x, int16_t y, int8_t z) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> canReplaceBlock(<span class="keyword">const</span> <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk, int8_t x, int16_t y, int8_t z) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span>  highestBlockAt(<span class="keyword">const</span> <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* c, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> isLiquid(uint8_t <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kChunkRadius = 8;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kDensity = 16;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kTopY = 128;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kBottomY = 8;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kLiquidAltitude = 10;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a> rand_{0};</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace cursestone::world::generator::carver</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> recursiveGenerate(int32_t chunkX, int32_t chunkZ, int32_t originChunkX,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                           int32_t originChunkZ, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk, <span class="keywordtype">bool</span> addRooms);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> addRoom(int64_t seed, int32_t originChunkX, int32_t originChunkZ, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                 <span class="keywordtype">double</span> startX, <span class="keywordtype">double</span> startY, <span class="keywordtype">double</span> startZ);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> addTunnel(int64_t seed, int32_t originChunkX, int32_t originChunkZ, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                   <span class="keywordtype">double</span> startX, <span class="keywordtype">double</span> startY, <span class="keywordtype">double</span> startZ, <span class="keywordtype">float</span> width, <span class="keywordtype">float</span> yaw, <span class="keywordtype">float</span> pitch,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                   int32_t startCounter, int32_t endCounter, <span class="keywordtype">double</span> heightModifier);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> digBlock(<a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk, int8_t x, int16_t y, int8_t z) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> canReplaceBlock(<span class="keyword">const</span> <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk, int8_t x, int16_t y, int8_t z) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> highestBlockAt(<span class="keyword">const</span> <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* c, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> isLiquid(uint8_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kChunkRadius = 8;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kDensity = 16;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kTopY = 128;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kBottomY = 8;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> int32_t kLiquidAltitude = 10;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">MersenneRandom</a> rand_{0};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;} <span class="comment">// namespace cursestone::world::generator::carver</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1MersenneRandom_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1MersenneRandom.html">cursestone::world::generator::MersenneRandom</a></div><div class="ttdef"><b>Definition:</b> MersenneRandom.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1carver_1_1CaveCarver_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1carver_1_1CaveCarver.html">cursestone::world::generator::carver::CaveCarver</a></div><div class="ttdef"><b>Definition:</b> CaveCarver.h:41</div></div>
 <div class="ttc" id="astructmcp__chunk_html"><div class="ttname"><a href="structmcp__chunk.html">mcp_chunk</a></div><div class="ttdef"><b>Definition:</b> Chunk.h:54</div></div>

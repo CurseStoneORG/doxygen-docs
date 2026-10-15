@@ -124,9 +124,9 @@ $(document).ready(function(){initNavTree('BinaryStream_8h_source.html',''); init
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="structmcp__bstream.html">   37</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__bstream.html">mcp_bstream</a> {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    uint8_t* data;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">size_t</span>   size;       <span class="comment">// bytes used</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">size_t</span>   capacity;  <span class="comment">// bytes allocated</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">size_t</span>   offset;     <span class="comment">// read cursor</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">size_t</span> size;     <span class="comment">// bytes used</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">size_t</span> capacity; <span class="comment">// bytes allocated</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">size_t</span> offset;   <span class="comment">// read cursor</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;} <a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// Lifecycle</span></div>
@@ -174,10 +174,10 @@ $(document).ready(function(){initNavTree('BinaryStream_8h_source.html',''); init
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keywordtype">int</span> mcp_bstream_read_f64_le(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, <span class="keywordtype">double</span>* v);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// Caller must free() the returned string.</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">char</span>* mcp_bstream_read_string(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">int</span>   mcp_bstream_read_var_u32(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, uint32_t* v);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">int</span>   mcp_bstream_read_var_u64(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, uint64_t* v);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">int</span>   mcp_bstream_read_var_i32(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, int32_t* v);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">int</span>   mcp_bstream_read_var_i64(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, int64_t* v);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keywordtype">int</span> mcp_bstream_read_var_u32(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, uint32_t* v);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keywordtype">int</span> mcp_bstream_read_var_u64(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, uint64_t* v);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">int</span> mcp_bstream_read_var_i32(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, int32_t* v);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="keywordtype">int</span> mcp_bstream_read_var_i64(<a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, int64_t* v);</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// Peek without advancing the cursor.</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="keywordtype">int</span> mcp_bstream_peek_u8(<span class="keyword">const</span> <a class="code" href="structmcp__bstream.html">mcp_bstream_t</a>* s, uint8_t* v);</div>

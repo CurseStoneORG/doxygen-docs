@@ -122,16 +122,16 @@ $(document).ready(function(){initNavTree('OreGenerator_8h_source.html',''); init
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator::object {</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1generator_1_1object_1_1OreVein.html">   36</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1generator_1_1object_1_1OreVein.html">OreVein</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    uint8_t block_id;       <span class="comment">// ore block id (e.g. 16 = coal ore)</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    uint8_t target_id;      <span class="comment">// block it replaces (1 = stone)</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span>     min_y;          <span class="comment">// lowest Y a vein center can spawn</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span>     max_y;          <span class="comment">// highest Y</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span>     amount;         <span class="comment">// ~blocks per vein (ellipsoid size)</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span>     total;          <span class="comment">// vein attempts per chunk</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    uint8_t block_id;  <span class="comment">// ore block id (e.g. 16 = coal ore)</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    uint8_t target_id; <span class="comment">// block it replaces (1 = stone)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">int</span> min_y;         <span class="comment">// lowest Y a vein center can spawn</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">int</span> max_y;         <span class="comment">// highest Y</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> amount;        <span class="comment">// ~blocks per vein (ellipsoid size)</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">int</span> total;         <span class="comment">// vein attempts per chunk</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1object_1_1OreGenerator.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1object_1_1OreGenerator.html">OreGenerator</a> {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Places veins based on a deterministic per-chunk random derived from</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// `seed`, the vein block id and the chunk coordinates. Returns the</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// number of ore blocks placed.</span></div>

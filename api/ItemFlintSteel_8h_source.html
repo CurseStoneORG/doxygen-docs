@@ -130,54 +130,63 @@ $(document).ready(function(){initNavTree('ItemFlintSteel_8h_source.html',''); in
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">class </span>Player;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">namespace </span>world { <span class="keyword">class </span>World; }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>cursestone::item {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">class </span>Player;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>world {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">class </span>World;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classcursestone_1_1item_1_1ItemFlintSteel.html">   51</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1item_1_1ItemFlintSteel.html">ItemFlintSteel</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1item_1_1Item.html">Item</a> {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classcursestone_1_1item_1_1ItemFlintSteel.html">ItemFlintSteel</a>() : <a class="code" href="classcursestone_1_1item_1_1Item.html">Item</a>(259) {}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::string name()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;Flint and Steel&quot;</span>; }</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// Flint &amp; Steel is a herramienta (toma durability).</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> isTool()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">int</span> maxStackSize()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> 1; }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// durability máxima: 65 usos (just like PMMP MCPE 0.15.x)</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">static</span> constexpr uint8_t MAX_DURABILITY = 64;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// point of entrada main — call from player::handleBlockPlace()</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// when heldItemId == 259.</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Mirrors: FlintSteel::onActivate($level, $player, $block, $target, $face, ...)</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Parámetros:</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">//   level         — world activo</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">//   player        — player that activó the ítem</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">//   bx,by,bz      — coordinates of the block AIR in the cara clicked</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">//   tx,ty,tz      — coordinates of the block TARGET (that which recibió the click)</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">//   face          — cara of the target (0=below, 1=above, 2-5=laterales)</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span>cursestone::item {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classcursestone_1_1item_1_1ItemFlintSteel.html">   53</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1item_1_1ItemFlintSteel.html">ItemFlintSteel</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1item_1_1Item.html">Item</a> {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classcursestone_1_1item_1_1ItemFlintSteel.html">ItemFlintSteel</a>() : <a class="code" href="classcursestone_1_1item_1_1Item.html">Item</a>(259) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::string name()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Flint and Steel&quot;</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Flint &amp; Steel is a herramienta (toma durability).</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> isTool()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> maxStackSize()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// durability máxima: 65 usos (just like PMMP MCPE 0.15.x)</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> constexpr uint8_t MAX_DURABILITY = 64;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// point of entrada main — call from player::handleBlockPlace()</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// when heldItemId == 259.</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// returns true if is realizó some action (propagando the respuesta to the client).</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> onActivate(<a class="code" href="classcursestone_1_1world_1_1World.html">world::World</a>* world, <a class="code" href="classcursestone_1_1Player.html">Player</a>* player,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                           int32_t bx, int32_t by, int32_t bz,   <span class="comment">// block AIR</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                           int32_t tx, int32_t ty, int32_t tz,   <span class="comment">// block target</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                           uint8_t face);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// applies 2 points of damage to the ítem in mano of the player (survival only).</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// mirrors: $this-&gt;useOn($block, 2)</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> applyDurability(<a class="code" href="classcursestone_1_1Player.html">Player</a>* player);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
-<div class="ttc" id="aclasscursestone_1_1item_1_1ItemFlintSteel_html"><div class="ttname"><a href="classcursestone_1_1item_1_1ItemFlintSteel.html">cursestone::item::ItemFlintSteel</a></div><div class="ttdef"><b>Definition:</b> ItemFlintSteel.h:51</div></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Mirrors: FlintSteel::onActivate($level, $player, $block, $target, $face, ...)</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Parámetros:</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//   level         — world activo</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//   player        — player that activó the ítem</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//   bx,by,bz      — coordinates of the block AIR in the cara clicked</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//   tx,ty,tz      — coordinates of the block TARGET (that which recibió the click)</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//   face          — cara of the target (0=below, 1=above, 2-5=laterales)</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// returns true if is realizó some action (propagando the respuesta to the client).</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> onActivate(<a class="code" href="classcursestone_1_1world_1_1World.html">world::World</a>* world, <a class="code" href="classcursestone_1_1Player.html">Player</a>* player, int32_t bx, int32_t by,</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                           int32_t bz,                         <span class="comment">// block AIR</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                           int32_t tx, int32_t ty, int32_t tz, <span class="comment">// block target</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                           uint8_t face);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// applies 2 points of damage to the ítem in mano of the player (survival only).</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// mirrors: $this-&gt;useOn($block, 2)</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> applyDurability(<a class="code" href="classcursestone_1_1Player.html">Player</a>* player);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:101</div></div>
+<div class="ttc" id="aclasscursestone_1_1item_1_1ItemFlintSteel_html"><div class="ttname"><a href="classcursestone_1_1item_1_1ItemFlintSteel.html">cursestone::item::ItemFlintSteel</a></div><div class="ttdef"><b>Definition:</b> ItemFlintSteel.h:53</div></div>
 <div class="ttc" id="aclasscursestone_1_1item_1_1Item_html"><div class="ttname"><a href="classcursestone_1_1item_1_1Item.html">cursestone::item::Item</a></div><div class="ttdef"><b>Definition:</b> Item.h:32</div></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:199</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:205</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

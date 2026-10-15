@@ -114,7 +114,7 @@ $(document).ready(function(){initNavTree('BlockRedstoneTorch_8h_source.html','')
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;BlockIds.h&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>cursestone::block {</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classcursestone_1_1block_1_1BlockRedstoneTorch.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1block_1_1BlockRedstoneTorch.html">BlockRedstoneTorch</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1block_1_1BlockTorch.html">BlockTorch</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">// FIX: &quot;REDSTONE_TORCH&quot; (sin sufijo) no existe en BlockIds.h — solo</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// REDSTONE_TORCH_OFF (75) y REDSTONE_TORCH_ON (76), que son dos</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// bloques con id distinto (igual que MCPE/vanilla los modelan:</span></div>
@@ -125,10 +125,14 @@ $(document).ready(function(){initNavTree('BlockRedstoneTorch_8h_source.html','')
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// RedstoneManager operando directamente sobre el id del mundo, no</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// esta jerarquía (que actualmente no está conectada al flujo de</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// juego — ver BlockRegistry.cpp, donde nada llama a Block::get()).</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    uint8_t id()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> REDSTONE_TORCH_OFF; }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string name()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;Redstone Torch&quot;</span>; }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    uint8_t id()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> REDSTONE_TORCH_OFF;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string name()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Redstone Torch&quot;</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1block_1_1BlockRedstoneTorch_html"><div class="ttname"><a href="classcursestone_1_1block_1_1BlockRedstoneTorch.html">cursestone::block::BlockRedstoneTorch</a></div><div class="ttdef"><b>Definition:</b> BlockRedstoneTorch.h:28</div></div>
 <div class="ttc" id="aclasscursestone_1_1block_1_1BlockTorch_html"><div class="ttname"><a href="classcursestone_1_1block_1_1BlockTorch.html">cursestone::block::BlockTorch</a></div><div class="ttdef"><b>Definition:</b> BlockTorch.h:28</div></div>
 </div><!-- fragment --></div><!-- contents -->

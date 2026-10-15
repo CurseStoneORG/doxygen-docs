@@ -116,13 +116,17 @@ $(document).ready(function(){initNavTree('ChunkLoader_8h_source.html',''); initR
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;world/format/Chunk.h&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>cursestone::world {</div>
 <div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1ChunkLoader.html">   30</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1ChunkLoader.html">ChunkLoader</a> {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1ChunkLoader.html">ChunkLoader</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> onChunkLoaded(int32_t x, int32_t z, <span class="keyword">const</span> <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* c) = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> int32_t viewDistance()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> 8; }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> isAlive()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> int32_t viewDistance()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">return</span> 8;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> isAlive()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1ChunkLoader_html"><div class="ttname"><a href="classcursestone_1_1world_1_1ChunkLoader.html">cursestone::world::ChunkLoader</a></div><div class="ttdef"><b>Definition:</b> ChunkLoader.h:30</div></div>
 <div class="ttc" id="astructmcp__chunk_html"><div class="ttname"><a href="structmcp__chunk.html">mcp_chunk</a></div><div class="ttdef"><b>Definition:</b> Chunk.h:54</div></div>
 </div><!-- fragment --></div><!-- contents -->

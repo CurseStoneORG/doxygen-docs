@@ -127,22 +127,22 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a> <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// ---- Session states (mirrors PMMP Session.php) ----</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define MCP_SESSION_STATE_UNCONNECTED  0</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define MCP_SESSION_STATE_CONNECTING_1 1   </span><span class="comment">// after OCR1 → waiting OCR2</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define MCP_SESSION_STATE_CONNECTING_2 2   </span><span class="comment">// after OCR2 → waiting CLIENT_CONNECT (0x09)</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define MCP_SESSION_STATE_CONNECTED    3   </span><span class="comment">// fully established</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#define MCP_SESSION_STATE_UNCONNECTED 0</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define MCP_SESSION_STATE_CONNECTING_1 1 </span><span class="comment">// after OCR1 → waiting OCR2</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define MCP_SESSION_STATE_CONNECTING_2 2 </span><span class="comment">// after OCR2 → waiting CLIENT_CONNECT (0x09)</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define MCP_SESSION_STATE_CONNECTED 3    </span><span class="comment">// fully established</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// Maximum encapsulated packet size inside one DataPacket datagram (per PMMP).</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define MCP_SESSION_MAX_SPLIT_SIZE   128</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define MCP_SESSION_MAX_SPLIT_COUNT    4</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define MCP_SESSION_WINDOW_SIZE     2048</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define MCP_SESSION_MAX_SPLIT_SIZE 128</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define MCP_SESSION_MAX_SPLIT_COUNT 4</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define MCP_SESSION_WINDOW_SIZE 2048</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// Connection timeout for the session sweep, in milliseconds (30s — the</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// RakLib/PMMP default). The timeout clock means &quot;no datagram received at</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// all&quot;: keepalive PINGs and ACK/NACK traffic both count as activity, so</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// a player who stays idle (AFK) with the game open is never kicked; only</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// a genuinely dead connection (app closed, network lost) is reaped.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define MCP_SESSION_TIMEOUT_MS      30000</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define MCP_SESSION_TIMEOUT_MS 30000</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// FIX (audit priority 4/12): RakNet&#39;s 24-bit index spaces (datagram</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// sequence number, reliable message index, ordering index) all wrap at</span></div>
@@ -161,16 +161,16 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// ACK&#39;s seq value (always 24-bit) for any datagram sent after that</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// point — retransmission bookkeeping would silently stop being able to</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// recognize its own acknowledgments.</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define MCP_SEQ24_MASK   0x00FFFFFFu</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#define MCP_SEQ24_MASK 0x00FFFFFFu</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// RakNet encapsulated packet: the header inside a Data datagram.</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// Simplified: only tracks fields needed for Proto 84 / MCPE 0.15.10.</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structmcp__encapsulated__header.html">   80</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__encapsulated__header.html">mcp_encapsulated_header</a> {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint8_t  reliability;       <span class="comment">// PacketReliability value</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span>     has_split;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    uint32_t message_index;     <span class="comment">// present if RELIABLE</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    uint32_t order_index;       <span class="comment">// present if ORDERED</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint8_t  order_channel;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    uint8_t reliability; <span class="comment">// PacketReliability value</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> has_split;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    uint32_t message_index; <span class="comment">// present if RELIABLE</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    uint32_t order_index;   <span class="comment">// present if ORDERED</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint8_t order_channel;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    uint16_t split_id;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    uint32_t split_index;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    uint32_t split_count;</div>
@@ -191,13 +191,13 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    uint32_t count;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    uint32_t received;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    uint8_t* segments[MCP_MAX_SPLIT_SEGMENTS]; <span class="comment">// heap-allocated</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">size_t</span>   seg_sizes[MCP_MAX_SPLIT_SEGMENTS];</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">bool</span>     in_use;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">size_t</span> seg_sizes[MCP_MAX_SPLIT_SEGMENTS];</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">bool</span> in_use;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// FIX: ordering info from the first fragment, applied once to the</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// reassembled packet (see deliver_ordered() in SessionManager.c).</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">bool</span>     is_ordered;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">bool</span> is_ordered;</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    uint32_t order_index;</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    uint8_t  order_channel;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    uint8_t order_channel;</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// FIX (critical, confirmed by server.log): reliability + message_index</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// from the first fragment. RakNet&#39;s real reference implementation</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// assigns a single reliableMessageNumber to a fragmented message</span></div>
@@ -207,7 +207,7 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="comment">// against the REASSEMBLED message — never per-fragment, which would</span></div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="comment">// reject every fragment after the first as &quot;already seen&quot; the moment</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// the first one set that index&#39;s bit in the receive window.</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">bool</span>     is_reliable;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">bool</span> is_reliable;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    uint32_t message_index;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// FIX: if a fragment never arrives, this store used to sit &quot;in_use&quot;</span></div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// forever — not a disconnect by itself, but unbounded per-session</span></div>
@@ -221,8 +221,8 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    uint64_t last_fragment_ms;</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;} <a class="code" href="structmcp__split__store.html">mcp_split_store_t</a>;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#define MCP_MAX_ACK_QUEUE    256</span></div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#define MCP_MAX_NACK_QUEUE   256</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#define MCP_MAX_ACK_QUEUE 256</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#define MCP_MAX_NACK_QUEUE 256</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="comment">// FIX: raised from 512 → 4096. With chunk bursts of 60+ reliable</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">// fragments per tick (documented elsewhere in this codebase), 512</span></div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="comment">// in-flight slots could be exhausted before the corresponding ACKs</span></div>
@@ -234,7 +234,7 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="comment">// 4096 slots (~32KB of pointers/metadata per session, negligible)</span></div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="comment">// gives enough headroom for several ticks worth of chunk bursts</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment">// even under real-world latency before wraparound can occur.</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#define MCP_RECOVERY_CAP     4096</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#define MCP_RECOVERY_CAP 4096</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="comment">// ---------------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">// Flow control + liveness instrumentation (multiplayer hardening).</span></div>
@@ -264,64 +264,64 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="comment">//     entry: a datagram that has already been resent is retried less and</span></div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="comment">//     less often instead of every 5s forever.</span></div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="comment">// ---------------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#define MCP_MAX_INFLIGHT_RELIABLE   512</span></div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#define MCP_RETRANSMIT_BASE_MS      5000</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#define MCP_RETRANSMIT_MAX_MS      40000</span></div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#define MCP_RETRANSMIT_MAX_PER_SESSION  8</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#define MCP_RETRANSMIT_MAX_PER_TICK     24</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#define MCP_MAX_INFLIGHT_RELIABLE 512</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor">#define MCP_RETRANSMIT_BASE_MS 5000</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#define MCP_RETRANSMIT_MAX_MS 40000</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#define MCP_RETRANSMIT_MAX_PER_SESSION 8</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#define MCP_RETRANSMIT_MAX_PER_TICK 24</span></div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">// Server-side keepalive: if the server has had nothing to send to a</span></div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">// session for this long it pings it and measures the round trip. That</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">// RTT is what tells &quot;the client is gone&quot; apart from &quot;the client is alive</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">// but its uplink is drowning in our chunk data&quot;.</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#define MCP_KEEPALIVE_PING_MS        5000</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#define MCP_KEEPALIVE_PING_ID_BASE   0x4353000000000000LL</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#define MCP_KEEPALIVE_PING_MS 5000</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#define MCP_KEEPALIVE_PING_ID_BASE 0x4353000000000000LL</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">// Per-session send queue slot.</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno"><a class="line" href="structmcp__send__slot.html">  192</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__send__slot.html">mcp_send_slot</a> {</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    uint8_t* data;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">size_t</span>   len;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">size_t</span> len;</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    uint64_t send_time_ms;</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    uint32_t seq;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    uint8_t  retries;   <span class="comment">// consecutive resends; drives the backoff above</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    uint8_t retries; <span class="comment">// consecutive resends; drives the backoff above</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;} <a class="code" href="structmcp__send__slot.html">mcp_send_slot_t</a>;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
 <div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="structmcp__rak__session.html">  200</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__rak__session.html">mcp_rak_session</a> {</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="comment">// Identity</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    uint8_t   ip[4];</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    uint16_t  port;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    int64_t   client_id;</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    int64_t   server_id;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    uint8_t ip[4];</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    uint16_t port;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    int64_t client_id;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    int64_t server_id;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="comment">// State machine</span></div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    uint8_t   state;            <span class="comment">// MCP_SESSION_STATE_*</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    uint8_t state; <span class="comment">// MCP_SESSION_STATE_*</span></div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="comment">// Sequence numbers</span></div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    uint32_t  send_seq;</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    int32_t   last_recv_seq;    <span class="comment">// -1 = nothing received yet</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    uint32_t send_seq;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    int32_t last_recv_seq; <span class="comment">// -1 = nothing received yet</span></div>
 <div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="comment">// Sliding window</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    uint32_t  window_start;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    uint32_t  window_end;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">bool</span>      recv_window[MCP_SESSION_WINDOW_SIZE];</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    uint32_t window_start;</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    uint32_t window_end;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordtype">bool</span> recv_window[MCP_SESSION_WINDOW_SIZE];</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="comment">// ACK / NACK queues (sequence numbers pending transmission)</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    uint32_t  ack_queue[MCP_MAX_ACK_QUEUE];</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">size_t</span>    ack_queue_len;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    uint32_t  nack_queue[MCP_MAX_NACK_QUEUE];</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">size_t</span>    nack_queue_len;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    uint32_t ack_queue[MCP_MAX_ACK_QUEUE];</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keywordtype">size_t</span> ack_queue_len;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    uint32_t nack_queue[MCP_MAX_NACK_QUEUE];</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">size_t</span> nack_queue_len;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="comment">// Send queue (DataPacket 0x84 datagrams awaiting flush)</span></div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    uint8_t** send_queue_bufs;</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">size_t</span>*   send_queue_lens;</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">size_t</span>    send_queue_count;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">size_t</span>    send_queue_cap;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordtype">size_t</span>* send_queue_lens;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">size_t</span> send_queue_count;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">size_t</span> send_queue_cap;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="comment">// Recovery queue (for retransmit): indexed by seq % MCP_RECOVERY_CAP</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <a class="code" href="structmcp__send__slot.html">mcp_send_slot_t</a> recovery[MCP_RECOVERY_CAP];</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="comment">// Reliability counters</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    uint32_t  message_index;    <span class="comment">// monotonically increasing per RELIABLE pkt</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    uint32_t  channel_index[32];<span class="comment">// per ordered-channel index (SEND side)</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    uint32_t message_index;     <span class="comment">// monotonically increasing per RELIABLE pkt</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    uint32_t channel_index[32]; <span class="comment">// per ordered-channel index (SEND side)</span></div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// FIX: RELIABLE_ORDERED receive-side reordering. RakNet guarantees</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="comment">// packets on an ordered channel are delivered to the application in</span></div>
@@ -333,7 +333,7 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    <span class="comment">// jitter (no packet loss required, just reordering) breaks it, and</span></div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// MCPE clients that send anything on an ordered channel would have</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="comment">// it processed out of sequence server-side.</span></div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    uint32_t  recv_order_index[32];  <span class="comment">// next index expected, per channel</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    uint32_t recv_order_index[32]; <span class="comment">// next index expected, per channel</span></div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="comment">// FIX: last time recv_order_index[chan] actually advanced. Needed to</span></div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">// detect a channel stalled on a gap where the missing packet AND</span></div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// every one of its retransmits were lost — expire_order_holds() only</span></div>
@@ -343,17 +343,17 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="comment">// forever (every later ordered packet held indefinitely, itself</span></div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">// never expiring because deliver_ordered() only holds packets that</span></div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// arrived — a hole with nothing behind it isn&#39;t &quot;held&quot; by anything).</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    uint64_t  recv_order_advanced_ms[32];</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    uint64_t recv_order_advanced_ms[32];</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">// Packets that arrived ahead of the expected index, held until the</span></div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// gap is filled. Small ring buffer per channel is enough — MCPE&#39;s</span></div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">// own traffic patterns never realistically get more than a handful</span></div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// of ordered packets in flight out of order at once.</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#define MCP_ORDER_HOLD_CAP 32</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordtype">bool</span>     used;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keywordtype">bool</span> used;</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        uint32_t order_index;</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        uint8_t* data;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordtype">size_t</span>   len;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordtype">size_t</span> len;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="comment">// FIX #3-C: when this slot was populated, so a stale held packet</span></div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        <span class="comment">// (the gap it&#39;s waiting on will never be filled — e.g. the</span></div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="comment">// missing packet&#39;s own retransmit was also lost) can be evicted</span></div>
@@ -375,9 +375,9 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// message can&#39;t be told apart from a genuinely new one, and reordered</span></div>
 <div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="comment">// reliable messages have no duplicate/staleness check of their own.</span></div>
 <div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#define MCP_RELIABLE_WINDOW_SIZE 2048</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    uint32_t  reliable_window_start;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">bool</span>      reliable_recv_window[MCP_RELIABLE_WINDOW_SIZE];</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    int32_t   last_reliable_index; <span class="comment">// -1 = nothing received yet</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    uint32_t reliable_window_start;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">bool</span> reliable_recv_window[MCP_RELIABLE_WINDOW_SIZE];</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    int32_t last_reliable_index; <span class="comment">// -1 = nothing received yet</span></div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
 <div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="comment">// Payload-aware duplicate detection for reliable messages.</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">//</span></div>
@@ -410,7 +410,7 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        uint32_t index;</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        uint32_t hash;</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        uint32_t len;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">bool</span>     used;</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordtype">bool</span> used;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    } reliable_seen[MCP_RELIABLE_WINDOW_SIZE];</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160; </div>
 <div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="comment">// Same idea for RELIABLE_ORDERED channels. A stale order_index is</span></div>
@@ -420,81 +420,81 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="comment">// discarded silently, stranding the session before login.</span></div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;<span class="preprocessor">#define MCP_ORDER_DELIVERED_SLOTS 64</span></div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    <span class="keyword">struct </span>{</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        uint8_t  chan;</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        uint8_t chan;</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        uint32_t index;</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        uint32_t hash;</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        uint32_t len;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordtype">bool</span>     used;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="keywordtype">bool</span> used;</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    } order_delivered[MCP_ORDER_DELIVERED_SLOTS];</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    uint32_t  order_delivered_next;</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordtype">bool</span>      diag_order_index_reuse_logged;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    uint32_t order_delivered_next;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keywordtype">bool</span> diag_order_index_reuse_logged;</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    <span class="comment">// ---- Diagnostics (point #12/#13 in the audit): counters surfaced in</span></div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">// the disconnect log so a timeout/kick can be correlated with what</span></div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    <span class="comment">// was actually happening in the reliability layer at the time. ----</span></div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    uint64_t  diag_recv_packets;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    uint64_t  diag_sent_packets;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    uint64_t diag_recv_packets;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    uint64_t diag_sent_packets;</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    <span class="comment">// FIX: one-shot flag so a hard UDP sendto() failure (e.g. outbound UDP</span></div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    <span class="comment">// blocked by a hosting panel&#39;s firewall) is logged exactly once per</span></div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    <span class="comment">// session instead of spamming the console on every retransmit.</span></div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">bool</span>      diag_send_fail_logged;</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    uint64_t  diag_ack_received;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    uint64_t  diag_nack_received;</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    uint64_t  diag_retransmits;</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    uint32_t  diag_recovery_occupied; <span class="comment">// current count — kept incrementally,</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                       <span class="comment">// never scanned, so it&#39;s cheap to</span></div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                       <span class="comment">// update on every send/ack</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    uint32_t  diag_recovery_peak;</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    uint32_t  diag_recovery_overwrites;</div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    uint32_t  diag_split_active;</div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    uint32_t  diag_split_completed;</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    uint32_t  diag_split_expired;</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    uint32_t  diag_split_evicted;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    uint32_t  diag_order_hold_peak;</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    uint32_t  diag_order_hold_full;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    uint32_t  diag_order_duplicate;</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">bool</span> diag_send_fail_logged;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    uint64_t diag_ack_received;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    uint64_t diag_nack_received;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    uint64_t diag_retransmits;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    uint32_t diag_recovery_occupied; <span class="comment">// current count — kept incrementally,</span></div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;                                     <span class="comment">// never scanned, so it&#39;s cheap to</span></div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;                                     <span class="comment">// update on every send/ack</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    uint32_t diag_recovery_peak;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    uint32_t diag_recovery_overwrites;</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    uint32_t diag_split_active;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    uint32_t diag_split_completed;</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    uint32_t diag_split_expired;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    uint32_t diag_split_evicted;</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    uint32_t diag_order_hold_peak;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    uint32_t diag_order_hold_full;</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    uint32_t diag_order_duplicate;</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment">// FIX: separate counter for the forced-skip case above — a channel</span></div>
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="comment">// that was stuck long enough to have its gap declared permanently</span></div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="comment">// lost and skipped. Kept distinct from diag_order_duplicate (an</span></div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="comment">// unrelated event: an order_index arriving that&#39;s already held)</span></div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="comment">// so the disconnect log can tell the two apart instead of one</span></div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="comment">// number silently meaning either thing.</span></div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    uint32_t  diag_order_forced_skip;</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    uint32_t diag_order_forced_skip;</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="comment">// Packets accepted despite arriving on an already-used order index,</span></div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">// i.e. a client that reuses one order index for the whole session.</span></div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    uint32_t  diag_order_index_reuse;</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    uint32_t diag_order_index_reuse;</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="comment">// ---- Flow control + liveness (see the constants above) ----</span></div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">// Every datagram of ANY kind received (the old diag_recv_packets only</span></div>
 <div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="comment">// counted encapsulated game packets, which made a session that was</span></div>
 <div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="comment">// quietly answering ACK/NACK/PING look like it had stopped talking —</span></div>
 <div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// exactly the confusion this block exists to remove).</span></div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    uint64_t  diag_datagrams_received;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    uint64_t  last_ack_received_ms;</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    uint64_t  diag_bytes_sent;</div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    uint32_t  diag_inflight_peak;</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    uint64_t diag_datagrams_received;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    uint64_t last_ack_received_ms;</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    uint64_t diag_bytes_sent;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    uint32_t diag_inflight_peak;</div>
 <div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="comment">// Reliable datagrams REFUSED because the session already had</span></div>
 <div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="comment">// MCP_MAX_INFLIGHT_RELIABLE un-ACKed ones (stalled client).</span></div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    uint32_t  diag_backpressure_drops;</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordtype">bool</span>      diag_backpressure_logged;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    uint32_t diag_backpressure_drops;</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordtype">bool</span> diag_backpressure_logged;</div>
 <div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="comment">// Server keepalive: last ping we sent, its id, the RTT it got back</span></div>
 <div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="comment">// (0 = never answered) and how many were sent/answered.</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    uint64_t  keepalive_ping_sent_ms;</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    int64_t   keepalive_ping_id;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    uint32_t  rtt_ms;</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    uint32_t  diag_keepalive_pings;</div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    uint32_t  diag_keepalive_pongs;</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    uint64_t  last_health_log_ms;</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    uint64_t keepalive_ping_sent_ms;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    int64_t keepalive_ping_id;</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    uint32_t rtt_ms;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    uint32_t diag_keepalive_pings;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    uint32_t diag_keepalive_pongs;</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    uint64_t last_health_log_ms;</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;    <span class="comment">// Reliable messages dropped as genuine retransmits (same message index</span></div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="comment">// AND same bytes). Surfaced in the disconnect dump so a network that</span></div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <span class="comment">// keeps retransmitting is visible, while only the FIRST one per session</span></div>
 <div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">// is printed to the console — otherwise a retransmit-happy link floods</span></div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="comment">// stderr with one line per duplicate and buries the real log.</span></div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    uint32_t  diag_duplicate_dropped;</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordtype">bool</span>      diag_duplicate_logged;</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    uint32_t diag_duplicate_dropped;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordtype">bool</span> diag_duplicate_logged;</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
 <div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="comment">// MTU negotiated during handshake</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    uint16_t  mtu;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    uint16_t mtu;</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="comment">// Timing</span></div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="comment">// last_activity_ms is the canonical &quot;does this session keep its</span></div>
@@ -505,96 +505,89 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="comment">// dropped for it. The fields below are purely diagnostic breakdowns</span></div>
 <div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="comment">// (last_game_packet_received_ms distinguishes a truly silent session</span></div>
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="comment">// from an idle-but-alive one in disconnect logs).</span></div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    uint64_t  last_activity_ms;</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    uint64_t  last_packet_received_ms;      <span class="comment">// any RakNet datagram at all</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    uint64_t  last_game_packet_received_ms; <span class="comment">// non-PING encapsulated packet</span></div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    uint64_t  last_ping_received_ms;</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    uint64_t  last_packet_sent_ms;</div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    uint64_t  start_time_ms;</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordtype">bool</span>      is_active;        <span class="comment">// received at least one packet this tick</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    uint64_t last_activity_ms;</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    uint64_t last_packet_received_ms;      <span class="comment">// any RakNet datagram at all</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    uint64_t last_game_packet_received_ms; <span class="comment">// non-PING encapsulated packet</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    uint64_t last_ping_received_ms;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    uint64_t last_packet_sent_ms;</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    uint64_t start_time_ms;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordtype">bool</span> is_active; <span class="comment">// received at least one packet this tick</span></div>
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="comment">// splitID counter for outbound fragmented packets</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    uint16_t  split_id_counter;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    uint16_t split_id_counter;</div>
 <div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160; </div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="comment">// Bug 2 fix: set when CLIENT_DISCONNECT (0x15) is received.</span></div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="comment">// The session is cleaned up on the next tick sweep — no double-close.</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordtype">bool</span>      is_disconnecting;</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordtype">bool</span> is_disconnecting;</div>
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;} <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>;</div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160; </div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;<span class="comment">// Init / destroy</span></div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_init(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, <span class="keyword">const</span> uint8_t ip[4],</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                           uint16_t port, int64_t client_id, int64_t server_id);</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_init(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, <span class="keyword">const</span> uint8_t ip[4], uint16_t port,</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;                          int64_t client_id, int64_t server_id);</div>
 <div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_destroy(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s);</div>
 <div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
 <div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;<span class="comment">// ACK handling</span></div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="keywordtype">void</span>   mcp_rak_session_queue_ack(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, uint32_t seq);</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keywordtype">void</span>   mcp_rak_session_queue_nack(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, uint32_t seq);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="keywordtype">size_t</span> mcp_rak_session_drain_ack_queue(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s,</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                                        uint32_t* out_mins, uint32_t* out_maxs,</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;                                        <span class="keywordtype">size_t</span> out_cap);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;<span class="keywordtype">size_t</span> mcp_rak_session_drain_nack_queue(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s,</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;                                         uint32_t* out_mins, uint32_t* out_maxs,</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;                                         <span class="keywordtype">size_t</span> out_cap);</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment">// Overhead constants (bytes) for computing fragment sizes.</span></div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="comment">// Datagram header:  1 (type 0x84) + 3 (seq LE24) = 4</span></div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="comment">// Encap no-split:   1 (flags) + 2 (bit-len BE16) + 3 (msgIdx LE24)</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="comment">//                 + 3 (ordIdx LE24) + 1 (ordChan) = 10</span></div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="comment">// Split fields:     2 (splitID BE16) + 4 (splitIdx BE32) + 4 (splitCount BE32) = 10</span></div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="preprocessor">#define MCP_DATAGRAM_HEADER_BYTES  4</span></div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="preprocessor">#define MCP_ENCAP_BASE_BYTES      10   </span><span class="comment">// flags+bitlen+msgIdx+ordIdx+ordChan</span></div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="preprocessor">#define MCP_ENCAP_SPLIT_BYTES     10   </span><span class="comment">// splitID+splitIndex+splitCount</span></div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="comment">// Per-datagram transport overhead that is NOT part of s-&gt;mtu.</span></div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="comment">// s-&gt;mtu is the maximum IP PACKET size (that is what SessionManager.c</span></div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="comment">// advertises in UnconnectedPing: `mtu = len + 28`, i.e. the bytes we sent</span></div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="comment">// plus exactly one IPv4 + one UDP header). The send path has to subtract</span></div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="comment">// both headers before it fits any RakNet payload into it.</span></div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="comment">// BUG THIS FIXES (&quot;stuck on Sincronizando paquetes&quot;, Linux host only):</span></div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="comment">// the send path treated s-&gt;mtu as if it were the UDP payload budget, so a</span></div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="comment">// full-size fragment was emitted as 1488 bytes of UDP payload = 1516 bytes</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="comment">// on the wire (1488 + 8 UDP + 20 IPv4). That is 16 bytes OVER the 1500-byte</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="comment">// Ethernet/IPv4 MTU. Linux sets the don&#39;t-fragment bit on UDP datagrams by</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;<span class="comment">// default (net.ipv4.ip_no_pmtu_disc=0) and DROPS an oversized datagram</span></div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="comment">// silently instead of fragmenting it, so every split fragment was lost and</span></div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="comment">// no chunk ever arrived — the client sat on the loading screen forever</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="comment">// while small packets (chat, keepalive, container updates) kept working.</span></div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="comment">// Android survived because its UDP/PMTUD path copes differently on a plain</span></div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="comment">// 1500-MTU Wi-Fi link.</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;<span class="preprocessor">#define MCP_IPV4_HEADER_BYTES     20</span></div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="preprocessor">#define MCP_UDP_HEADER_BYTES       8</span></div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160; </div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;<span class="comment">// Encapsulation: wrap a MCPE payload inside a RakNet encapsulated record</span></div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;<span class="comment">// inside a DataPacket_4 (0x84) datagram. Returns bytes written, or 0 on error.</span></div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="comment">// INTERNAL — builds exactly one datagram for the given payload slice.</span></div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;<span class="comment">// For payloads that may exceed MTU, call mcp_rak_session_send_payload instead.</span></div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;<span class="keywordtype">size_t</span> mcp_rak_session_build_datagram(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s,</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                                       uint8_t* out, <span class="keywordtype">size_t</span> out_cap,</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;                                       <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> plen,</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;                                       uint8_t reliability, uint8_t order_channel,</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;                                       <span class="keywordtype">bool</span> has_split, uint16_t split_id,</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;                                       uint32_t split_index, uint32_t split_count);</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="comment">// High-level send: splits payload into MTU-sized fragments if needed,</span></div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="comment">// builds a datagram per fragment, and sends each via the socket.</span></div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="comment">// This is the correct function to call for all game-level packet sends.</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;<span class="comment">// Returns true if all fragments were sent successfully.</span></div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_send_payload(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s,</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;                                   <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;                                   <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> plen,</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;                                   uint8_t reliability, uint8_t order_channel);</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="comment">// Enqueue a datagram for sending; flushed by tick.</span></div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_enqueue(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s,</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;                              <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="comment">// Timeout check</span></div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_is_timed_out(<span class="keyword">const</span> <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s,</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;                                    uint64_t now_ms, uint64_t timeout_ms);</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_queue_ack(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, uint32_t seq);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_queue_nack(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, uint32_t seq);</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;<span class="keywordtype">size_t</span> mcp_rak_session_drain_ack_queue(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, uint32_t* out_mins, uint32_t* out_maxs,</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;                                       <span class="keywordtype">size_t</span> out_cap);</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;<span class="keywordtype">size_t</span> mcp_rak_session_drain_nack_queue(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, uint32_t* out_mins,</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;                                        uint32_t* out_maxs, <span class="keywordtype">size_t</span> out_cap);</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;<span class="comment">// Overhead constants (bytes) for computing fragment sizes.</span></div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;<span class="comment">// Datagram header:  1 (type 0x84) + 3 (seq LE24) = 4</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;<span class="comment">// Encap no-split:   1 (flags) + 2 (bit-len BE16) + 3 (msgIdx LE24)</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;<span class="comment">//                 + 3 (ordIdx LE24) + 1 (ordChan) = 10</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;<span class="comment">// Split fields:     2 (splitID BE16) + 4 (splitIdx BE32) + 4 (splitCount BE32) = 10</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;<span class="preprocessor">#define MCP_DATAGRAM_HEADER_BYTES 4</span></div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;<span class="preprocessor">#define MCP_ENCAP_BASE_BYTES 10  </span><span class="comment">// flags+bitlen+msgIdx+ordIdx+ordChan</span></div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;<span class="preprocessor">#define MCP_ENCAP_SPLIT_BYTES 10 </span><span class="comment">// splitID+splitIndex+splitCount</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="comment">// Per-datagram transport overhead that is NOT part of s-&gt;mtu.</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;<span class="comment">// s-&gt;mtu is the maximum IP PACKET size (that is what SessionManager.c</span></div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;<span class="comment">// advertises in UnconnectedPing: `mtu = len + 28`, i.e. the bytes we sent</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;<span class="comment">// plus exactly one IPv4 + one UDP header). The send path has to subtract</span></div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;<span class="comment">// both headers before it fits any RakNet payload into it.</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;<span class="comment">// BUG THIS FIXES (&quot;stuck on Sincronizando paquetes&quot;, Linux host only):</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;<span class="comment">// the send path treated s-&gt;mtu as if it were the UDP payload budget, so a</span></div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;<span class="comment">// full-size fragment was emitted as 1488 bytes of UDP payload = 1516 bytes</span></div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;<span class="comment">// on the wire (1488 + 8 UDP + 20 IPv4). That is 16 bytes OVER the 1500-byte</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;<span class="comment">// Ethernet/IPv4 MTU. Linux sets the don&#39;t-fragment bit on UDP datagrams by</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;<span class="comment">// default (net.ipv4.ip_no_pmtu_disc=0) and DROPS an oversized datagram</span></div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;<span class="comment">// silently instead of fragmenting it, so every split fragment was lost and</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;<span class="comment">// no chunk ever arrived — the client sat on the loading screen forever</span></div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;<span class="comment">// while small packets (chat, keepalive, container updates) kept working.</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;<span class="comment">// Android survived because its UDP/PMTUD path copes differently on a plain</span></div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;<span class="comment">// 1500-MTU Wi-Fi link.</span></div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;<span class="preprocessor">#define MCP_IPV4_HEADER_BYTES 20</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;<span class="preprocessor">#define MCP_UDP_HEADER_BYTES 8</span></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160; </div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;<span class="comment">// Encapsulation: wrap a MCPE payload inside a RakNet encapsulated record</span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;<span class="comment">// inside a DataPacket_4 (0x84) datagram. Returns bytes written, or 0 on error.</span></div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;<span class="comment">// INTERNAL — builds exactly one datagram for the given payload slice.</span></div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;<span class="comment">// For payloads that may exceed MTU, call mcp_rak_session_send_payload instead.</span></div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="keywordtype">size_t</span> mcp_rak_session_build_datagram(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, uint8_t* out, <span class="keywordtype">size_t</span> out_cap,</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;                                      <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> plen, uint8_t reliability,</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;                                      uint8_t order_channel, <span class="keywordtype">bool</span> has_split, uint16_t split_id,</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;                                      uint32_t split_index, uint32_t split_count);</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160; </div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;<span class="comment">// High-level send: splits payload into MTU-sized fragments if needed,</span></div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;<span class="comment">// builds a datagram per fragment, and sends each via the socket.</span></div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;<span class="comment">// This is the correct function to call for all game-level packet sends.</span></div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;<span class="comment">// Returns true if all fragments were sent successfully.</span></div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_send_payload(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;                                  <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> plen, uint8_t reliability,</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;                                  uint8_t order_channel);</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160; </div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;<span class="comment">// Enqueue a datagram for sending; flushed by tick.</span></div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_enqueue(<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;<span class="comment">// Timeout check</span></div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_is_timed_out(<span class="keyword">const</span> <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* s, uint64_t now_ms, uint64_t timeout_ms);</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructmcp__encapsulated__header_html"><div class="ttname"><a href="structmcp__encapsulated__header.html">mcp_encapsulated_header</a></div><div class="ttdef"><b>Definition:</b> Session.h:80</div></div>
 <div class="ttc" id="astructmcp__rak__session__manager_html"><div class="ttname"><a href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:42</div></div>
 <div class="ttc" id="astructmcp__rak__session_html"><div class="ttname"><a href="structmcp__rak__session.html">mcp_rak_session</a></div><div class="ttdef"><b>Definition:</b> Session.h:200</div></div>

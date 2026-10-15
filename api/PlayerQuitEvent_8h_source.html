@@ -119,24 +119,28 @@ $(document).ready(function(){initNavTree('PlayerQuitEvent_8h_source.html',''); i
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;event/Event.h&quot;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;event/Cancellable.h&quot;</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> { <span class="keyword">class </span>Player; }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>cursestone::event::player {</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html">   36</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html">PlayerQuitEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* player;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string message;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html">PlayerQuitEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p = <span class="keyword">nullptr</span>, std::string msg = <span class="stringliteral">&quot;&quot;</span>)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        : player(p), message(std::move(msg)) {}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;PlayerQuitEvent&quot;</span>; <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">class </span>Player;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>cursestone::event::player {</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html">PlayerQuitEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* player;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::string message;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html">PlayerQuitEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p = <span class="keyword">nullptr</span>, std::string msg = <span class="stringliteral">&quot;&quot;</span>)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        : player(p), message(std::move(msg)) {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;} <span class="comment">// namespace</span></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;PlayerQuitEvent&quot;</span>;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:101</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Cancellable_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Cancellable.html">cursestone::event::Cancellable</a></div><div class="ttdef"><b>Definition:</b> Cancellable.h:26</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Event_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Event.html">cursestone::event::Event</a></div><div class="ttdef"><b>Definition:</b> Event.h:29</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerQuitEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html">cursestone::event::player::PlayerQuitEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerQuitEvent.h:36</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:49</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerQuitEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html">cursestone::event::player::PlayerQuitEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerQuitEvent.h:38</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

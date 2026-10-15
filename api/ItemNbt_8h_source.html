@@ -144,21 +144,21 @@ $(document).ready(function(){initNavTree('ItemNbt_8h_source.html',''); initResiz
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">namespace </span>cursestone::item {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// NBT keys of an item entry (see the header comment).</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtId     = <span class="stringliteral">&quot;id&quot;</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtCount  = <span class="stringliteral">&quot;Count&quot;</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtId = <span class="stringliteral">&quot;id&quot;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtCount = <span class="stringliteral">&quot;Count&quot;</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtDamage = <span class="stringliteral">&quot;Damage&quot;</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnch   = <span class="stringliteral">&quot;ench&quot;</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnch = <span class="stringliteral">&quot;ench&quot;</span>;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// Bedrock/Genisys write the enchantment level as &quot;lvl&quot;; a few Nukkit-era</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// writers spell it out as &quot;level&quot;. The reader accepts both, the writer</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// always emits &quot;lvl&quot;.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnchLvl      = <span class="stringliteral">&quot;lvl&quot;</span>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnchLvlAlt   = <span class="stringliteral">&quot;level&quot;</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnchLvl = <span class="stringliteral">&quot;lvl&quot;</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnchLvlAlt = <span class="stringliteral">&quot;level&quot;</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// Vanilla item-extra-data key. Java saves the client&#39;s {display:{Name}},</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// {ench}, etc. compound under &quot;tag&quot;; CurseStone persists the stack&#39;s raw</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// little-endian network NBT blob (ItemStack::nbt) the same way so a</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">// custom-named item survives player/chest/furnace save + load round</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// trips. See itemStackToNbt()/itemStackFromNbt().</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtTag          = <span class="stringliteral">&quot;tag&quot;</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtTag = <span class="stringliteral">&quot;tag&quot;</span>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// Serialize `stack` into the compound `entry`, replacing any previous</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// id/Count/Damage/ench it held. A stack with no enchantments has its</span></div>
