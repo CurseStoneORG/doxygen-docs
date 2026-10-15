@@ -2,6 +2,7 @@ var classcursestone_1_1Player =
 [
     [ "Player", "classcursestone_1_1Player.html#a03eec470f6fbd1fc503c6bb4242d9895", null ],
     [ "~Player", "classcursestone_1_1Player.html#ab6d78072a92c548fd7d9130c43573198", null ],
+    [ "addExhaustion", "classcursestone_1_1Player.html#ad4a08f7284c8ba6d739c67d4ef0e5f4e", null ],
     [ "addWindow", "classcursestone_1_1Player.html#af53dadaf2c91e2a5f340ffa617a37458", null ],
     [ "announceSelfToOthers", "classcursestone_1_1Player.html#a58389f5d03050e22a3b8fa4092395966", null ],
     [ "announceTo", "classcursestone_1_1Player.html#ab6779acd55f8afe68d7131463d49e662", null ],
@@ -28,6 +29,8 @@ var classcursestone_1_1Player =
     [ "dropItem", "classcursestone_1_1Player.html#ae6304feeabb9bb1333156c7c3b984a75", null ],
     [ "finishDimensionSwitch", "classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89", null ],
     [ "flushPendingPackets", "classcursestone_1_1Player.html#a45fd0a96856b22794b758f5287b338b3", null ],
+    [ "foodExhaustion", "classcursestone_1_1Player.html#a38a364fe999df5280c70fc5a3b227112", null ],
+    [ "foodSaturation", "classcursestone_1_1Player.html#adfb606d7b156484e9045446dbe5754c0", null ],
     [ "gamemode", "classcursestone_1_1Player.html#a2a5cea64feaebb5ec3309fca61bcbf0f", null ],
     [ "getAddress", "classcursestone_1_1Player.html#a3fbe1199b25187756b01f71879938d74", null ],
     [ "getAllowFlight", "classcursestone_1_1Player.html#aadb7b1114e2ee14d71237fecc09ac71c", null ],
