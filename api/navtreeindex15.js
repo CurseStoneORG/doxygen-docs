@@ -1,5 +1,9 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a716156da51526e1a7573f9ec473c9417":[4,0,0,4,8,8],
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a755b0b7d998ab384d567b4d86951a332":[4,0,0,4,8,27],
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a79472f92bfe0636f83e63535ac67cac2":[4,0,0,4,8,7],
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a7ecf3ea80d9bc1e57c566604b821b520":[4,0,0,4,8,22],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a89c4131376221a24d56c91a81490aa3e":[4,0,0,4,8,1],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a8bdd025240de527b6d98cc7ca5b133e5":[4,0,0,4,8,23],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a94b2a1f538f86cdac2535fc653faab20":[4,0,0,4,8,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1item_1_1ItemShovelDiamond.html":[4,0,0,5,62],
 "classcursestone_1_1item_1_1ItemShovelDiamond.html#a171a5c5697cc255aca7fa1b4c92487f9":[4,0,0,5,62,1],
 "classcursestone_1_1item_1_1ItemShovelDiamond.html#a69af634d3b524859f0edf4bcffd0a007":[4,0,0,5,62,0],
-"classcursestone_1_1item_1_1ItemShovelGolden.html":[4,0,0,5,63],
-"classcursestone_1_1item_1_1ItemShovelGolden.html#a6db4d2e39e28f5d545cc6d58781c4cd4":[4,0,0,5,63,0],
-"classcursestone_1_1item_1_1ItemShovelGolden.html#aa7a246072e9e564204bcf65e18a9b0eb":[4,0,0,5,63,1],
-"classcursestone_1_1item_1_1ItemShovelIron.html":[4,0,0,5,64],
-"classcursestone_1_1item_1_1ItemShovelIron.html#a0e69a722bfae5a1f3346497cabc059fa":[4,0,0,5,64,1]
+"classcursestone_1_1item_1_1ItemShovelGolden.html":[4,0,0,5,63]
 };

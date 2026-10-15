@@ -339,6 +339,7 @@ var hierarchy =
       [ "cursestone::GiveCommand", "classcursestone_1_1GiveCommand.html", null ],
       [ "cursestone::HelpCommand", "classcursestone_1_1HelpCommand.html", null ],
       [ "cursestone::KickCommand", "classcursestone_1_1KickCommand.html", null ],
+      [ "cursestone::KillCommand", "classcursestone_1_1KillCommand.html", null ],
       [ "cursestone::ListCommand", "classcursestone_1_1ListCommand.html", null ],
       [ "cursestone::OpCommand", "classcursestone_1_1OpCommand.html", null ],
       [ "cursestone::PluginsCommand", "classcursestone_1_1PluginsCommand.html", null ],

@@ -5,6 +5,7 @@ var dir_3bb61118b712c682ac18a1a005592738 =
     [ "GiveCommand.h", "GiveCommand_8h_source.html", null ],
     [ "HelpCommand.h", "HelpCommand_8h_source.html", null ],
     [ "KickCommand.h", "KickCommand_8h_source.html", null ],
+    [ "KillCommand.h", "KillCommand_8h_source.html", null ],
     [ "ListCommand.h", "ListCommand_8h_source.html", null ],
     [ "OpCommand.h", "OpCommand_8h_source.html", null ],
     [ "PluginsCommand.h", "PluginsCommand_8h_source.html", null ],

@@ -1,5 +1,9 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1entity_1_1EntityShootBowEvent.html#af62500743cfcaff4cb703899813d5c93":[4,0,0,3,1,19,2],
+"classcursestone_1_1event_1_1entity_1_1EntitySpawnEvent.html":[4,0,0,3,1,20],
+"classcursestone_1_1event_1_1entity_1_1EntitySpawnEvent.html#a4af0e7f796c1ee046e2acf0b93605636":[4,0,0,3,1,20,0],
+"classcursestone_1_1event_1_1entity_1_1EntitySpawnEvent.html#abb9f68801ce33eda0858a4a8490d5bea":[4,0,0,3,1,20,3],
 "classcursestone_1_1event_1_1entity_1_1EntitySpawnEvent.html#ac80ba106091dd9bbf0589eea8654f8d0":[4,0,0,3,1,20,2],
 "classcursestone_1_1event_1_1entity_1_1EntitySpawnEvent.html#afcbef5cd9ddec6644b84db33b42b16c1":[4,0,0,3,1,20,1],
 "classcursestone_1_1event_1_1entity_1_1EntityTeleportEvent.html":[4,0,0,3,1,21],
@@ -245,9 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html#a8a8eca91dcc9e6ff12202ac26771494f":[4,0,0,3,3,27,3],
 "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html#a92256e5ca38e36315fb3d40582e45acc":[4,0,0,3,3,27,0],
 "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html#ae8af51c4e6ebb87518f18fc47db71668":[4,0,0,3,3,27,1],
-"classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html":[4,0,0,3,3,28],
-"classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html#a1569c6dcf834a18a081785bcbe6c231d":[4,0,0,3,3,28,2],
-"classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html#a35fba248e090f11023ae1bc56e36cf44":[4,0,0,3,3,28,5],
-"classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html#a537a8627a131b24a9aada917617573f0":[4,0,0,3,3,28,0],
-"classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html#a69e2ec80f0efaf5ea1db7241ece8e9c0":[4,0,0,3,3,28,4]
+"classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html":[4,0,0,3,3,28]
 };

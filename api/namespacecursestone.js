@@ -1963,6 +1963,7 @@ var namespacecursestone =
     [ "GiveCommand", "classcursestone_1_1GiveCommand.html", "classcursestone_1_1GiveCommand" ],
     [ "HelpCommand", "classcursestone_1_1HelpCommand.html", "classcursestone_1_1HelpCommand" ],
     [ "KickCommand", "classcursestone_1_1KickCommand.html", "classcursestone_1_1KickCommand" ],
+    [ "KillCommand", "classcursestone_1_1KillCommand.html", "classcursestone_1_1KillCommand" ],
     [ "ListCommand", "classcursestone_1_1ListCommand.html", "classcursestone_1_1ListCommand" ],
     [ "OpCommand", "classcursestone_1_1OpCommand.html", "classcursestone_1_1OpCommand" ],
     [ "PluginsCommand", "classcursestone_1_1PluginsCommand.html", "classcursestone_1_1PluginsCommand" ],

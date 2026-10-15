@@ -1,5 +1,9 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockSign.html#a75ee849d92b6fc5f71ecedcd48651a52":[4,0,0,0,128,1],
+"classcursestone_1_1block_1_1BlockSign.html#ad0c09d7b2fb22a9199f9e6ff38d1d77c":[4,0,0,0,128,0],
+"classcursestone_1_1block_1_1BlockSignPost.html":[4,0,0,0,129],
+"classcursestone_1_1block_1_1BlockSignPost.html#a5bc8f9af94295fd9492df472f587658c":[4,0,0,0,129,0],
 "classcursestone_1_1block_1_1BlockSignPost.html#a89f95c3a62365042e2712b00ab82ab82":[4,0,0,0,129,1],
 "classcursestone_1_1block_1_1BlockSkull.html":[4,0,0,0,130],
 "classcursestone_1_1block_1_1BlockSkull.html#a84796c33ca7d06eafa102ec8aefe542a":[4,0,0,0,130,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1EntityPrimedTNT.html#aa67c48f85ba5dcddd7fc2b99d1a64285":[4,0,0,2,13,0],
 "classcursestone_1_1entity_1_1EntitySheep.html":[4,0,0,2,14],
 "classcursestone_1_1entity_1_1EntitySheep.html#a2ddf7fefb347bc7922686d4d5e8090f4":[4,0,0,2,14,1],
-"classcursestone_1_1entity_1_1EntitySheep.html#ae7313fb8459c5cf7a3eaef7103b60587":[4,0,0,2,14,0],
-"classcursestone_1_1entity_1_1EntitySkeleton.html":[4,0,0,2,15],
-"classcursestone_1_1entity_1_1EntitySkeleton.html#a4c1c1fc948f22de05ff2c0181ccab7dc":[4,0,0,2,15,1],
-"classcursestone_1_1entity_1_1EntitySkeleton.html#a983603b926eb0d0ecfcc4304e089efc0":[4,0,0,2,15,0],
-"classcursestone_1_1entity_1_1EntityWolf.html":[4,0,0,2,16]
+"classcursestone_1_1entity_1_1EntitySheep.html#ae7313fb8459c5cf7a3eaef7103b60587":[4,0,0,2,14,0]
 };

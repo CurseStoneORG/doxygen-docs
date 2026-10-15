@@ -1,5 +1,9 @@
 var NAVTREEINDEX23 =
 {
+"structcursestone_1_1math_1_1Vec3.html#ae1147593d28728e8ff9686b95bd9d3f2":[4,0,0,6,0,17],
+"structcursestone_1_1math_1_1Vec3.html#ae71406bfe1415f5be7d1a6b7fa094f66":[4,0,0,6,0,12],
+"structcursestone_1_1math_1_1Vec3.html#aea34094108c3602a0e4d5e3219f0a770":[4,0,0,6,0,9],
+"structcursestone_1_1math_1_1Vec3.html#aed98ae70b82335899e48123b7f69b6fc":[4,0,0,6,0,3],
 "structcursestone_1_1math_1_1Vec3.html#afaa1a6d5e3c82471c93c4d5ccf6f8129":[4,0,0,6,0,10],
 "structcursestone_1_1network_1_1RakLibAction.html":[4,0,0,7,6],
 "structcursestone_1_1network_1_1RakLibAction.html#a5ff3853f3b9dd347010457729b880497":[4,0,0,7,6,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX23 =
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#ac8a49235af50c13789ece3e2470bdaf8":[4,0,0,15,1,3,19,3],
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#ae80c21d6d672d237e64a1867ab19528d":[4,0,0,15,1,3,19,0],
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#aec1dafd0dbfdc9314fe8e528d28ce9e8":[4,0,0,15,1,3,19,2],
-"structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html":[4,0,0,15,1,4,3],
-"structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html#a33d32babecc4cd43df1da33985df1b1d":[4,0,0,15,1,4,3,3],
-"structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html#a655ca71699cf3f95811f3b823046ea69":[4,0,0,15,1,4,3,0],
-"structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html#a95423bd37eca3a754e74197b8ef40677":[4,0,0,15,1,4,3,1],
-"structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html#af3d295263faaa1d0bd61cc2a14b394d0":[4,0,0,15,1,4,3,2]
+"structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html":[4,0,0,15,1,4,3]
 };

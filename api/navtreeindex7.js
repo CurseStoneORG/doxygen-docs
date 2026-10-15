@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"TerrainShape_8cpp.html#a64b394da170708d62cffe1224711f319":[3,0,0,17,1,36],
 "TerrainShape_8cpp.html#a68fcebec47ccd78a8b8b39568ebca02b":[3,0,0,17,1,35],
 "TerrainShape_8cpp.html#a7ff142f3ba84f912d16e11d6537a65ec":[3,0,0,17,1,23],
 "TerrainShape_8cpp.html#a868b0aca93fb2ebd65d2963179e557a3":[3,0,0,17,1,27],
@@ -87,7 +88,7 @@ var NAVTREEINDEX7 =
 "TileSign_8h_source.html":[5,0,0,17,7],
 "TileSpawner_8h_source.html":[5,0,0,17,8],
 "Tile_8h_source.html":[5,0,0,17,3],
-"TimeCommand_8h_source.html":[5,0,0,1,0,12],
+"TimeCommand_8h_source.html":[5,0,0,1,0,13],
 "Timings_8h_source.html":[5,0,0,4,18],
 "TreeGenerator_8h_source.html":[5,0,0,21,1,3,4],
 "TreeType_8h.html#ae3d5abab78cc888d99a6a33c7d43443c":[3,0,0,17,1,2,6],
@@ -120,7 +121,7 @@ var NAVTREEINDEX7 =
 "Vector3_8h_source.html":[5,0,0,8,4],
 "Vector3_8hpp_source.html":[5,0,0,8,5],
 "VectorMath_8h_source.html":[5,0,0,8,6],
-"VersionCommand_8h_source.html":[5,0,0,1,0,13],
+"VersionCommand_8h_source.html":[5,0,0,1,0,14],
 "VersionString_8h_source.html":[5,0,0,18,18],
 "VillagePalette_8h.html#a20b39426ad23c58510d4346b3b3f31c5":[3,0,0,17,1,4,0,10],
 "VillagePalette_8h.html#a37f155edc02948e497abfb131c5b1c1a":[3,0,0,17,1,4,0,2],
@@ -180,8 +181,8 @@ var NAVTREEINDEX7 =
 "VillagePieces_8h.html#a255138dbb55acb7595edc209698dd6e7":[3,0,0,17,1,4,0,6],
 "VillagePieces_8h_source.html":[5,0,0,21,1,5,0,1],
 "VillagePopulator_8h_source.html":[5,0,0,21,1,4,9],
-"WeatherCommand_8h_source.html":[5,0,0,1,0,14],
-"WorkbenchCommand_8h_source.html":[5,0,0,1,0,15],
+"WeatherCommand_8h_source.html":[5,0,0,1,0,15],
+"WorkbenchCommand_8h_source.html":[5,0,0,1,0,16],
 "WorkbenchManager_8h_source.html":[5,0,0,20,0],
 "WorldEvent_8h_source.html":[5,0,0,4,9,8],
 "WorldInitEvent_8h_source.html":[5,0,0,4,9,9],
@@ -236,9 +237,9 @@ var NAVTREEINDEX7 =
 "classcursestone_1_1ConsoleCommandSender.html#a21ef3f7f59965966afd093c0a16f93cb":[4,0,0,20,2],
 "classcursestone_1_1ConsoleCommandSender.html#a2d26bb3896422460ee08d0ccb0a7dcea":[4,0,0,20,1],
 "classcursestone_1_1ConsoleCommandSender.html#a60e1156b1f32236a580bb9cae6f4371c":[4,0,0,20,0],
-"classcursestone_1_1CrashDump.html":[4,0,0,38],
-"classcursestone_1_1CrashDump.html#a32ccf26c27501ff4546b5078b059928f":[4,0,0,38,0],
-"classcursestone_1_1CrashDump.html#aeb01e8070fbf83e59e9a17ab14c3eb24":[4,0,0,38,1],
+"classcursestone_1_1CrashDump.html":[4,0,0,39],
+"classcursestone_1_1CrashDump.html#a32ccf26c27501ff4546b5078b059928f":[4,0,0,39,0],
+"classcursestone_1_1CrashDump.html#aeb01e8070fbf83e59e9a17ab14c3eb24":[4,0,0,39,1],
 "classcursestone_1_1DeopCommand.html":[4,0,0,21],
 "classcursestone_1_1DeopCommand.html#a9d5784c57e8f7cccbdbd831d6ed1a429":[4,0,0,21,0],
 "classcursestone_1_1DeopCommand.html#afa5c33350ab5ec418f74ac521122874d":[4,0,0,21,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classcursestone_1_1GiveCommand.html":[4,0,0,23],
 "classcursestone_1_1GiveCommand.html#a62e5218b584951fe12eef657ba02b0ea":[4,0,0,23,0],
 "classcursestone_1_1GiveCommand.html#a9dbe68a35506f0e70769c39e8404cf0b":[4,0,0,23,1],
-"classcursestone_1_1HelpCommand.html":[4,0,0,24],
-"classcursestone_1_1HelpCommand.html#a15ada2cbb8eb0eeaab1117b1a827e09a":[4,0,0,24,0]
+"classcursestone_1_1HelpCommand.html":[4,0,0,24]
 };

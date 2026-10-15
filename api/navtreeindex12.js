@@ -1,5 +1,9 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1entity_1_1EntitySkeleton.html":[4,0,0,2,15],
+"classcursestone_1_1entity_1_1EntitySkeleton.html#a4c1c1fc948f22de05ff2c0181ccab7dc":[4,0,0,2,15,1],
+"classcursestone_1_1entity_1_1EntitySkeleton.html#a983603b926eb0d0ecfcc4304e089efc0":[4,0,0,2,15,0],
+"classcursestone_1_1entity_1_1EntityWolf.html":[4,0,0,2,16],
 "classcursestone_1_1entity_1_1EntityWolf.html#a50eba9fc908bdc669d9cceea4086465e":[4,0,0,2,16,0],
 "classcursestone_1_1entity_1_1EntityWolf.html#aee451c50607e90e0e482282c1af84ad1":[4,0,0,2,16,1],
 "classcursestone_1_1entity_1_1EntityXPOrb.html":[4,0,0,2,17],
@@ -245,9 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1event_1_1entity_1_1EntityShootBowEvent.html#a06f560ca039bc54df82a2bcaf371f270":[4,0,0,3,1,19,1],
 "classcursestone_1_1event_1_1entity_1_1EntityShootBowEvent.html#a0a009547f70f8dcd554e79ebb3fd3d4d":[4,0,0,3,1,19,3],
 "classcursestone_1_1event_1_1entity_1_1EntityShootBowEvent.html#a3e2be11d50c29fd779f8fe2690334bd8":[4,0,0,3,1,19,0],
-"classcursestone_1_1event_1_1entity_1_1EntityShootBowEvent.html#adaa56c68e6b0b80e6869b8276883d2ad":[4,0,0,3,1,19,4],
-"classcursestone_1_1event_1_1entity_1_1EntityShootBowEvent.html#af62500743cfcaff4cb703899813d5c93":[4,0,0,3,1,19,2],
-"classcursestone_1_1event_1_1entity_1_1EntitySpawnEvent.html":[4,0,0,3,1,20],
-"classcursestone_1_1event_1_1entity_1_1EntitySpawnEvent.html#a4af0e7f796c1ee046e2acf0b93605636":[4,0,0,3,1,20,0],
-"classcursestone_1_1event_1_1entity_1_1EntitySpawnEvent.html#abb9f68801ce33eda0858a4a8490d5bea":[4,0,0,3,1,20,3]
+"classcursestone_1_1event_1_1entity_1_1EntityShootBowEvent.html#adaa56c68e6b0b80e6869b8276883d2ad":[4,0,0,3,1,19,4]
 };
