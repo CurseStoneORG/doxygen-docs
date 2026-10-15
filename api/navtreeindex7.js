@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26abddecf4e84ed219de7fa89fc4f09613a":[3,0,0,17,3,2,2],
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26ac46abd2f38bfc22582216c07bc9a4cac":[3,0,0,17,3,2,14],
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26ace40d1568e7503f781a4a3468dc94364":[3,0,0,17,3,2,4],
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26adc2c020b932912403ef2de88c4037ae9":[3,0,0,17,3,2,5],
@@ -233,14 +234,14 @@ var NAVTREEINDEX7 =
 "WorldProvider_8h_source.html":[5,0,0,21,0,6],
 "WorldSaveEvent_8h_source.html":[5,0,0,4,9,11],
 "WorldUnloadEvent_8h_source.html":[5,0,0,4,9,12],
-"World_8h.html#a09f84e27bb53de2a8af12fd0db87bbee":[3,0,0,17,23],
-"World_8h.html#a271a80db83df226fc4d66a24a65ab98f":[3,0,0,17,20],
-"World_8h.html#a55e11e04a6f986e214645a0651f6126c":[3,0,0,17,17],
-"World_8h.html#a8d69047032d095c6cfc45e36f4a10c6a":[3,0,0,17,18],
-"World_8h.html#ab07c4398f0b322842edb7af5fda1cb86":[3,0,0,17,21],
-"World_8h.html#ac63f610c4b47dbb78b0ba331c47d633d":[3,0,0,17,22],
-"World_8h.html#af4e88e25975b1bdabaf9c25301af0a13":[3,0,0,17,19],
-"World_8h_source.html":[5,0,0,21,12],
+"World_8h.html#a09f84e27bb53de2a8af12fd0db87bbee":[3,0,0,17,24],
+"World_8h.html#a271a80db83df226fc4d66a24a65ab98f":[3,0,0,17,21],
+"World_8h.html#a55e11e04a6f986e214645a0651f6126c":[3,0,0,17,18],
+"World_8h.html#a8d69047032d095c6cfc45e36f4a10c6a":[3,0,0,17,19],
+"World_8h.html#ab07c4398f0b322842edb7af5fda1cb86":[3,0,0,17,22],
+"World_8h.html#ac63f610c4b47dbb78b0ba331c47d633d":[3,0,0,17,23],
+"World_8h.html#af4e88e25975b1bdabaf9c25301af0a13":[3,0,0,17,20],
+"World_8h_source.html":[5,0,0,21,13],
 "annotated.html":[4,0],
 "classcursestone_1_1Command.html":[4,0,0,16],
 "classcursestone_1_1Command.html#a02f81d89d2c041590cc598bd0c288652":[4,0,0,16,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classcursestone_1_1Command.html#a32ee6ec86b5146eed7db2b4369b35462":[4,0,0,16,5],
 "classcursestone_1_1Command.html#a4fb5e343de3594a994d3873e16b32250":[4,0,0,16,8],
 "classcursestone_1_1Command.html#a57b1eb4ad2f4b8d626396da9c9bc4531":[4,0,0,16,3],
-"classcursestone_1_1Command.html#aa2a02b56ed9f2164101c355793bffa0e":[4,0,0,16,4],
-"classcursestone_1_1Command.html#ab683b45dcdab70f99ce8b7ab350bdbf1":[4,0,0,16,0]
+"classcursestone_1_1Command.html#aa2a02b56ed9f2164101c355793bffa0e":[4,0,0,16,4]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"classcursestone_1_1plugin_1_1LuaCommand.html":[4,0,0,10,0],
 "classcursestone_1_1plugin_1_1LuaCommand.html#a051342c659bb8d6253bceaddd07c5f21":[4,0,0,10,0,4],
 "classcursestone_1_1plugin_1_1LuaCommand.html#a3f60dd4b2f7c04362988d007b6a06b35":[4,0,0,10,0,0],
 "classcursestone_1_1plugin_1_1LuaCommand.html#a3f60dd4b2f7c04362988d007b6a06b35a0cc25b606fe928a0c9a58f7f209c4495":[4,0,0,10,0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "classcursestone_1_1world_1_1Location.html":[4,0,0,15,8],
 "classcursestone_1_1world_1_1Location.html#a0e43bb2fdfe93aa556cd130905e868a2":[4,0,0,15,8,1],
 "classcursestone_1_1world_1_1Location.html#a7c6bc818810ca955e957cebb2ff18ed4":[4,0,0,15,8,0],
-"classcursestone_1_1world_1_1Location.html#aa9c3c79f3a734a3a0d0d681a8d7843f7":[4,0,0,15,8,5],
-"classcursestone_1_1world_1_1Location.html#ac0e4c6fe4c3916d911877ea0581554e3":[4,0,0,15,8,3]
+"classcursestone_1_1world_1_1Location.html#aa9c3c79f3a734a3a0d0d681a8d7843f7":[4,0,0,15,8,5]
 };

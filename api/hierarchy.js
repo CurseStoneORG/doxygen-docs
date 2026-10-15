@@ -850,6 +850,9 @@ var hierarchy =
       [ "cursestone::world::generator::populator::StructurePopulator", "classcursestone_1_1world_1_1generator_1_1populator_1_1StructurePopulator.html", null ],
       [ "cursestone::world::generator::populator::VillagePopulator", "classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html", null ]
     ] ],
+    [ "cursestone::world::PortalRegistry::Portal", "structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html", null ],
+    [ "cursestone::PortalArrival", "structcursestone_1_1PortalArrival.html", null ],
+    [ "cursestone::world::PortalRegistry", "classcursestone_1_1world_1_1PortalRegistry.html", null ],
     [ "cursestone::world::Position", "classcursestone_1_1world_1_1Position.html", [
       [ "cursestone::world::Location", "classcursestone_1_1world_1_1Location.html", null ]
     ] ],

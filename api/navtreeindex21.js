@@ -1,5 +1,16 @@
 var NAVTREEINDEX21 =
 {
+"classcursestone_1_1world_1_1generator_1_1GenerationTask.html":[4,0,0,15,1,8],
+"classcursestone_1_1world_1_1generator_1_1GenerationTask.html#a2dbb251f9ea1f9e4eff9ed7672efda73":[4,0,0,15,1,8,0],
+"classcursestone_1_1world_1_1generator_1_1GenerationTask.html#a40e16548cafde53763a17fc4e757e9aa":[4,0,0,15,1,8,2],
+"classcursestone_1_1world_1_1generator_1_1GenerationTask.html#ac222e12d40b08e8cde6ae3027d3fd356":[4,0,0,15,1,8,1],
+"classcursestone_1_1world_1_1generator_1_1Generator.html":[4,0,0,15,1,10],
+"classcursestone_1_1world_1_1generator_1_1Generator.html#a9840c4f652d41997885ce473e8d8eb8e":[4,0,0,15,1,10,4],
+"classcursestone_1_1world_1_1generator_1_1Generator.html#a987c5f89d2cb215685b9e9f9d86b2a50":[4,0,0,15,1,10,0],
+"classcursestone_1_1world_1_1generator_1_1Generator.html#aba3d4661e0fc34f7104ba352a060b176":[4,0,0,15,1,10,1],
+"classcursestone_1_1world_1_1generator_1_1Generator.html#ad4cef21ba38642c7a4bd88e43d5b3025":[4,0,0,15,1,10,2],
+"classcursestone_1_1world_1_1generator_1_1Generator.html#ad596a40e6afd8ca1feef48ee127bf68d":[4,0,0,15,1,10,3],
+"classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html":[4,0,0,15,1,12],
 "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html#a006231e689983f1c333373fee0e3416a":[4,0,0,15,1,12,10],
 "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html#a063849ab1c7a1c798694bdf57ca5da68":[4,0,0,15,1,12,0],
 "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html#a06df67c79630c1138a0ca5c624af1899":[4,0,0,15,1,12,13],
@@ -238,16 +249,5 @@ var NAVTREEINDEX21 =
 "classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html":[4,0,0,15,1,3,20],
 "classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html#a0d14434e1958859fa7536e6f5347b8d7":[4,0,0,15,1,3,20,2],
 "classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html#a89dc0b94c3b0f622ffa6b3ca0fadce9b":[4,0,0,15,1,3,20,1],
-"classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html#aa2a4348499f3f37b28fe5222d529b09f":[4,0,0,15,1,3,20,0],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1DesertTemple.html":[4,0,0,15,1,4,1],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1DesertTemple.html#a186cf968472bda65b9a385363272d67b":[4,0,0,15,1,4,1,0],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1DesertTemple.html#af5e84fa817440f33232fcb3a7aab126b":[4,0,0,15,1,4,1,1],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html":[4,0,0,15,1,4,4],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html#a13fc544a692c821b41824e9d74ff11a7":[4,0,0,15,1,4,4,12],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html#a46cfddb2c6a8f121cd6bc7526e979438":[4,0,0,15,1,4,4,3],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html#a48bd97b706e7e6df8bd8006a8c1a2261":[4,0,0,15,1,4,4,4],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html#a4c63fa13e1209e3da656640639760621":[4,0,0,15,1,4,4,10],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html#a579c84fbec0cd15d384d1e69bb02a9ef":[4,0,0,15,1,4,4,9],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html#a592f112e661d5b43f79a71dbfed0c43f":[4,0,0,15,1,4,4,2],
-"classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html#a7dc998e11e1c4e645a70a1ae18ca31c1":[4,0,0,15,1,4,4,5]
+"classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html#aa2a4348499f3f37b28fe5222d529b09f":[4,0,0,15,1,3,20,0]
 };

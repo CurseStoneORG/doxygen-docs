@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1entity_1_1EntityExplodeEvent.html#a0c0470fe6c2ba148c1183c6a6dd09b78":[4,0,0,3,1,13,5],
 "classcursestone_1_1event_1_1entity_1_1EntityExplodeEvent.html#a150820b0d9b30eb092a9c5288088614d":[4,0,0,3,1,13,6],
 "classcursestone_1_1event_1_1entity_1_1EntityExplodeEvent.html#a52e28c6c30d1a8018e0c9aafcdcabd83":[4,0,0,3,1,13,2],
 "classcursestone_1_1event_1_1entity_1_1EntityExplodeEvent.html#a7dc69e421a2dc4d637b46c75348edd77":[4,0,0,3,1,13,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent.html#a386c70186456529c0914e56dd5700b68":[4,0,0,3,3,20,2],
 "classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent.html#a93111b30f4eff5eae8043de30d7a2f2b":[4,0,0,3,3,20,4],
 "classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent.html#ac74685d455044e3877f57c4f3aa08571":[4,0,0,3,3,20,1],
-"classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent.html#ae1148d36b0663ddadd492e4c2733a804":[4,0,0,3,3,20,3],
-"classcursestone_1_1event_1_1player_1_1PlayerJoinEvent.html":[4,0,0,3,3,21]
+"classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent.html#ae1148d36b0663ddadd492e4c2733a804":[4,0,0,3,3,20,3]
 };
