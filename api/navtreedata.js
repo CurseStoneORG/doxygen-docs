@@ -129,8 +129,8 @@ var NAVTREEINDEX =
 "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html#acb28c4a59a13948d21d814f452b68eb8",
 "dir_6826d79532171ff2338799cfd298b875.html",
 "structcursestone_1_1network_1_1protocol_1_1PlayerListPacket_1_1Entry.html#ad3035d16887fcf71460ba963d73996af",
-"structmcp__chunk.html#ad7ee0e0345590f84b207672a87c54dea",
-"structmcp__pkt__open__connection__reply__2.html#ae8401c7ad1d29d8126ecf104de0b5c8d",
+"structmcp__chunk.html#ab0e5e9b03a6842694f753ccf437961e2",
+"structmcp__pkt__open__connection__reply__2.html#a901f3898e7ba6432db45eb8d17608a16",
 ""
 ];
 
