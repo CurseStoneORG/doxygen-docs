@@ -337,6 +337,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSurvival</b> () con
 <tr class="memitem:aff39b3fa70485b9d1e4aadf763277405"><td class="memItemLeft" align="right" valign="top"><a id="aff39b3fa70485b9d1e4aadf763277405"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCreative</b> () const</td></tr>
 <tr class="separator:aff39b3fa70485b9d1e4aadf763277405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dca1d49003ab1bea5b6f0429bb39816"><td class="memItemLeft" align="right" valign="top"><a id="a1dca1d49003ab1bea5b6f0429bb39816"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isOnFire</b> () const</td></tr>
+<tr class="separator:a1dca1d49003ab1bea5b6f0429bb39816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa7f7c054d27d75e957ab110188889dcb"><td class="memItemLeft" align="right" valign="top"><a id="aa7f7c054d27d75e957ab110188889dcb"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isAdventure</b> () const</td></tr>
 <tr class="separator:aa7f7c054d27d75e957ab110188889dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -543,6 +546,9 @@ entity::DamageApply&#160;</td><td class="memItemRight" valign="bottom"><b>damage
 <tr class="memitem:a94f44b504fbc7310b837b6045d0af85a"><td class="memItemLeft" align="right" valign="top"><a id="a94f44b504fbc7310b837b6045d0af85a"></a>
 entity::DamageApply&#160;</td><td class="memItemRight" valign="bottom"><b>damageByEntity</b> (float amount, <a class="el" href="classcursestone_1_1entity_1_1Entity.html">entity::Entity</a> *damager, event::entity::DamageCause cause=event::entity::DamageCause::ENTITY_ATTACK) override</td></tr>
 <tr class="separator:a94f44b504fbc7310b837b6045d0af85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b7ff04ca34157645e4809f1fc2729a"><td class="memItemLeft" align="right" valign="top"><a id="a65b7ff04ca34157645e4809f1fc2729a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setOnFire</b> (int seconds) override</td></tr>
+<tr class="separator:a65b7ff04ca34157645e4809f1fc2729a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a940e11d1053a8b3a01154fe30a810179"><td class="memItemLeft" align="right" valign="top"><a id="a940e11d1053a8b3a01154fe30a810179"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPendingRemoval</b> () const</td></tr>
 <tr class="separator:a940e11d1053a8b3a01154fe30a810179"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -654,9 +660,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isClosed</b> () const
 <tr class="memitem:a7901a18ca0601d0bd5dcec6fc69fefab inherit pub_methods_classcursestone_1_1entity_1_1Entity"><td class="memItemLeft" align="right" valign="top"><a id="a7901a18ca0601d0bd5dcec6fc69fefab"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()</td></tr>
 <tr class="separator:a7901a18ca0601d0bd5dcec6fc69fefab inherit pub_methods_classcursestone_1_1entity_1_1Entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae485693a350f275b8a80b69229212b29 inherit pub_methods_classcursestone_1_1entity_1_1Entity"><td class="memItemLeft" align="right" valign="top"><a id="ae485693a350f275b8a80b69229212b29"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setOnFire</b> (int)</td></tr>
-<tr class="separator:ae485693a350f275b8a80b69229212b29 inherit pub_methods_classcursestone_1_1entity_1_1Entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classcursestone_1_1permission_1_1PermissibleBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcursestone_1_1permission_1_1PermissibleBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcursestone_1_1permission_1_1PermissibleBase.html">cursestone::permission::PermissibleBase</a></td></tr>
 <tr class="memitem:a1202487d1a6682c89d40f21b6e08dae4 inherit pub_methods_classcursestone_1_1permission_1_1PermissibleBase"><td class="memItemLeft" align="right" valign="top"><a id="a1202487d1a6682c89d40f21b6e08dae4"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setPermission</b> (const std::string &amp;name, bool value)</td></tr>

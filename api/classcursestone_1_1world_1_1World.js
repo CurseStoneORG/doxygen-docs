@@ -11,6 +11,7 @@ var classcursestone_1_1world_1_1World =
     [ "~World", "classcursestone_1_1world_1_1World.html#a597652761241099a66a02dfce26133a6", null ],
     [ "addArrow", "classcursestone_1_1world_1_1World.html#a19f353d34c18c94100cdad3206376625", null ],
     [ "addDroppedItem", "classcursestone_1_1world_1_1World.html#a41a6095118e0e5f15c5ad308e72ec686", null ],
+    [ "addParticle", "classcursestone_1_1world_1_1World.html#a847a82060e86acde97ad81719c1d2ce9", null ],
     [ "advanceTime", "classcursestone_1_1world_1_1World.html#a017f1ec41619bdbe5dba2ec6f897d83f", null ],
     [ "arrows", "classcursestone_1_1world_1_1World.html#a42b9e76a18a45184883b0293ba4f36e1", null ],
     [ "checkFallingSupport", "classcursestone_1_1world_1_1World.html#ab31f2681d75632e0ed0af2b8299709d8", null ],
