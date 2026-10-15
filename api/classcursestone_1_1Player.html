@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1Player.html',''); i
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classcursestone_1_1Player-members.html">List of all members</a>  </div>
@@ -360,6 +361,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasPlayedBefore</b> (
 <tr class="memitem:a5880ed57f445b1529ec413f9effc19df"><td class="memItemLeft" align="right" valign="top"><a id="a5880ed57f445b1529ec413f9effc19df"></a>
 <a class="el" href="structmcp__vector3.html">math::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getSpawn</b> () const</td></tr>
 <tr class="separator:a5880ed57f445b1529ec413f9effc19df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597ab12eac0945c5c2118a118d9fbc90"><td class="memItemLeft" align="right" valign="top"><a id="a597ab12eac0945c5c2118a118d9fbc90"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSpawn</b> (int x, int y, int z, bool save)</td></tr>
+<tr class="separator:a597ab12eac0945c5c2118a118d9fbc90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad60dd3e69f8ff7094103960ea0eb23ec"><td class="memItemLeft" align="right" valign="top"><a id="ad60dd3e69f8ff7094103960ea0eb23ec"></a>
 <a class="el" href="structmcp__vector3.html">math::Vector3</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getServerSpawnSafe</b> () const</td></tr>
 <tr class="separator:ad60dd3e69f8ff7094103960ea0eb23ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -432,12 +436,18 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSneaking</b> () con
 <tr class="memitem:ab61dc01439eebd4b54ca451aee7057d2"><td class="memItemLeft" align="right" valign="top"><a id="ab61dc01439eebd4b54ca451aee7057d2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setSneaking</b> (bool v)</td></tr>
 <tr class="separator:ab61dc01439eebd4b54ca451aee7057d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8935ae821b6271af5d5a673682bb124"><td class="memItemLeft" align="right" valign="top"><a id="ae8935ae821b6271af5d5a673682bb124"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>sleepOn</b> (int bx, int by, int bz)</td></tr>
+<tr class="separator:ae8935ae821b6271af5d5a673682bb124"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8b996898022af7bf9754104bea8c33e"><td class="memItemLeft" align="right" valign="top"><a id="aa8b996898022af7bf9754104bea8c33e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isSleeping</b> () const</td></tr>
 <tr class="separator:aa8b996898022af7bf9754104bea8c33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2460ea67b13b6b9c139d7b622d8f836f"><td class="memItemLeft" align="right" valign="top"><a id="a2460ea67b13b6b9c139d7b622d8f836f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>stopSleep</b> ()</td></tr>
 <tr class="separator:a2460ea67b13b6b9c139d7b622d8f836f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab13205292b02d4641fe40e7a69e4ce35"><td class="memItemLeft" align="right" valign="top"><a id="ab13205292b02d4641fe40e7a69e4ce35"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sleepPos</b> (int &amp;bx, int &amp;by, int &amp;bz) const</td></tr>
+<tr class="separator:ab13205292b02d4641fe40e7a69e4ce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2865ad5125ca9b52ed6b2764bfdaf126"><td class="memItemLeft" align="right" valign="top"><a id="a2865ad5125ca9b52ed6b2764bfdaf126"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>canInteract</b> (<a class="el" href="structmcp__vector3.html">math::Vector3</a> pos, double maxDistance) const</td></tr>
 <tr class="separator:a2865ad5125ca9b52ed6b2764bfdaf126"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -658,6 +668,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>removePermission</b> 
 <a class="el" href="classcursestone_1_1permission_1_1PermissionAttachment.html">PermissionAttachment</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>attach</b> (std::shared_ptr&lt; <a class="el" href="classcursestone_1_1permission_1_1PermissionAttachment.html">PermissionAttachment</a> &gt; a)</td></tr>
 <tr class="separator:a67bd2f5d43737daaf6b352e7606a6500 inherit pub_methods_classcursestone_1_1permission_1_1PermissibleBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a542d8c8be7c3d0248d8a6fb6afac607f"><td class="memItemLeft" align="right" valign="top"><a id="a542d8c8be7c3d0248d8a6fb6afac607f"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>wakeSleepersOnBed</b> (<a class="el" href="classcursestone_1_1Server.html">Server</a> *srv, <a class="el" href="classcursestone_1_1world_1_1World.html">world::World</a> *lvl, int bx, int by, int bz)</td></tr>
+<tr class="separator:a542d8c8be7c3d0248d8a6fb6afac607f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a276d74b8d6ba932371a0e00f16cb220b"><td class="memItemLeft" align="right" valign="top"><a id="a276d74b8d6ba932371a0e00f16cb220b"></a>
@@ -854,6 +870,7 @@ std::shared_ptr&lt; <a class="el" href="classcursestone_1_1world_1_1World.html">
 <li>src/player/PlayerInventory.cpp</li>
 <li>src/player/PlayerLogin.cpp</li>
 <li>src/player/PlayerNetwork.cpp</li>
+<li>src/player/PlayerSleep.cpp</li>
 <li>src/player/PlayerStats.cpp</li>
 <li>src/player/PlayerTick.cpp</li>
 <li>src/player/PlayerWorld.cpp</li>

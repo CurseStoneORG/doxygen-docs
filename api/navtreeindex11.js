@@ -1,5 +1,9 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockRailActivator.html#a18a17b2c3c431f7ecdf7752bcef9dbce":[4,0,0,0,116,1],
+"classcursestone_1_1block_1_1BlockRailActivator.html#a6e697ab8039563951645730aa2c58777":[4,0,0,0,116,0],
+"classcursestone_1_1block_1_1BlockRailDetector.html":[4,0,0,0,117],
+"classcursestone_1_1block_1_1BlockRailDetector.html#a53137e2f28ed7d9dfba152f162e00d0b":[4,0,0,0,117,0],
 "classcursestone_1_1block_1_1BlockRailDetector.html#aec76d4d94d18d6e5adc8acde5f93fdf9":[4,0,0,0,117,1],
 "classcursestone_1_1block_1_1BlockRailPowered.html":[4,0,0,0,118],
 "classcursestone_1_1block_1_1BlockRailPowered.html#a96ded4eb5ff70b62a807879c8ae82eb4":[4,0,0,0,118,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1Entity.html#a93949d04347c145dd6a786b76f6bc380":[4,0,0,2,5,1],
 "classcursestone_1_1entity_1_1Entity.html#ab57dd57f0430ee113c30f1663a9d8c95":[4,0,0,2,5,8],
 "classcursestone_1_1entity_1_1Entity.html#ac2622abbd99f6e6906a465521cffaeac":[4,0,0,2,5,27],
-"classcursestone_1_1entity_1_1Entity.html#acd7029234114c3dddd8f3aabbee257b2":[4,0,0,2,5,18],
-"classcursestone_1_1entity_1_1Entity.html#ad891e2978a758c5e01470383df858c98":[4,0,0,2,5,9],
-"classcursestone_1_1entity_1_1Entity.html#adb3d63926a91866221c478061bccb3b1":[4,0,0,2,5,0],
-"classcursestone_1_1entity_1_1Entity.html#ae485693a350f275b8a80b69229212b29":[4,0,0,2,5,14],
-"classcursestone_1_1entity_1_1Entity.html#ae57d8093a8d341b8cc477377cffc7663":[4,0,0,2,5,7]
+"classcursestone_1_1entity_1_1Entity.html#acd7029234114c3dddd8f3aabbee257b2":[4,0,0,2,5,18]
 };

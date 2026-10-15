@@ -211,8 +211,8 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>kEyeHeigh
 <p>Why one global GC: the codebase used to have several scattered reclaimers (<a class="el" href="classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1" title="Advances one tick.">Server::tick</a>'s chunk-unload sweep, World::tick's dropped-item sweep, Player::onUpdate's used_chunks_ cleanup, tile eviction) running on their own schedules. Independent schedules mean the world state players interact with (dropped items, open chests, loaded chunks) can disappear in the middle of a player action - the classic cause of pickup/inventory desyncs. Everything now funnels through collect(): the per-subsystem sweeps keep their cheap local bookkeeping, but any SWEEP THAT TOUCHES SHARED WORLD STATE only runs when the global GC authorizes it, on a single coordinated schedule.</p>
 <p>Stores shared thread handles and joins every joinable one in joinAll(), clearing the registry afterwards.</p>
 <p>Mirrors PMMP TextFormat + Terminal in a single C++ header.</p>
-<p>Agrupa the ChunkManager, the generador, the entities, the tiles and the ajustes own of the world (time, weather and spawn). several objetos World can convivir in the same server; the mapa of worlds activos it gestiona server.</p>
-<p>in the construcción is instancia the WorldProvider (via WorldProviderManager) according to the format configurado and is conecta to the ChunkManager so that flushDirty() escriba to disk; without ello the world sería only of memoria and the changes is perderían when shutting down. </p>
+<p>Owns the world's settings (time, weather, and spawn). Multiple World instances can coexist on the same server; the server manages the map of active worlds.</p>
+<p>The constructor instantiates the WorldProvider via WorldProviderManager according to the configured format and connects it to the ChunkManager so flushDirty() writes changes to disk; otherwise, the world would exist only in memory and changes would be lost on shutdown. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -158,6 +158,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setTime</b> (int32_t 
 <tr class="memitem:a017f1ec41619bdbe5dba2ec6f897d83f"><td class="memItemLeft" align="right" valign="top"><a id="a017f1ec41619bdbe5dba2ec6f897d83f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>advanceTime</b> (int dt_ticks)</td></tr>
 <tr class="separator:a017f1ec41619bdbe5dba2ec6f897d83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed2cddff1ea689d8e367a43183f50ac3"><td class="memItemLeft" align="right" valign="top"><a id="aed2cddff1ea689d8e367a43183f50ac3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setSleepTicks</b> (int32_t t)</td></tr>
+<tr class="separator:aed2cddff1ea689d8e367a43183f50ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee6c44296e1600c88096cf9bb1b70b8"><td class="memItemLeft" align="right" valign="top"><a id="a9ee6c44296e1600c88096cf9bb1b70b8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>checkSleep</b> ()</td></tr>
+<tr class="separator:a9ee6c44296e1600c88096cf9bb1b70b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57aa59903ab044e122c747b9dde6301e"><td class="memItemLeft" align="right" valign="top"><a id="a57aa59903ab044e122c747b9dde6301e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>weatherState</b> () const</td></tr>
 <tr class="separator:a57aa59903ab044e122c747b9dde6301e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,6 +272,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>unloadDistantChunks</b
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
+<tr class="memitem:a4344a00af0ee39926d1c74b94f3fb693"><td class="memItemLeft" align="right" valign="top"><a id="a4344a00af0ee39926d1c74b94f3fb693"></a>
+static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TIME_SUNSET</b> = 12000</td></tr>
+<tr class="separator:a4344a00af0ee39926d1c74b94f3fb693"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199e4143d64844f98fc2b3fc1df8fb36"><td class="memItemLeft" align="right" valign="top"><a id="a199e4143d64844f98fc2b3fc1df8fb36"></a>
+static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TIME_NIGHT</b> = 14000</td></tr>
+<tr class="separator:a199e4143d64844f98fc2b3fc1df8fb36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2643112280d3d6be8f77a8c61ba40f"><td class="memItemLeft" align="right" valign="top"><a id="aac2643112280d3d6be8f77a8c61ba40f"></a>
+static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TIME_SUNRISE</b> = 23000</td></tr>
+<tr class="separator:aac2643112280d3d6be8f77a8c61ba40f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a021b332c524882f3b99672b46235aa5b"><td class="memItemLeft" align="right" valign="top"><a id="a021b332c524882f3b99672b46235aa5b"></a>
+static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>TIME_FULL</b> = 24000</td></tr>
+<tr class="separator:a021b332c524882f3b99672b46235aa5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9143df3ed424dc08347ff848824c0ee0"><td class="memItemLeft" align="right" valign="top"><a id="a9143df3ed424dc08347ff848824c0ee0"></a>
 static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>WEATHER_CHUNKS_PER_TICK</b> = 8</td></tr>
 <tr class="separator:a9143df3ed424dc08347ff848824c0ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>

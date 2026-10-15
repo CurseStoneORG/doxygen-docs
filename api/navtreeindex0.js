@@ -3,6 +3,7 @@ var NAVTREEINDEX0 =
 "":[3,0,0,0],
 "":[3,0,0,3],
 "":[3,0,0,3,0],
+"":[3,0,0,13],
 "":[3,0,0,13,0],
 "":[3,0,0,14],
 "":[3,0,0,16],
@@ -44,7 +45,6 @@ var NAVTREEINDEX0 =
 "":[3,0,0,10,1],
 "":[3,0,0,11],
 "":[3,0,0,12],
-"":[3,0,0,13],
 "ACK_8h_source.html":[5,0,0,10,2,0,0],
 "AcaciaTree_8h_source.html":[5,0,0,21,1,3,0,0],
 "AddEntityPacket_8h_source.html":[5,0,0,10,0,0],
@@ -55,6 +55,7 @@ var NAVTREEINDEX0 =
 "AdvancedSourceInterface_8h_source.html":[5,0,0,10,4],
 "AdventureSettingsPacket_8h_source.html":[5,0,0,10,0,5],
 "Animal_8h_source.html":[5,0,0,3,0],
+"AnimatePacket_8h.html#a2972e99e3e5259d257d221b42addffdd":[3,0,0,7,0,74],
 "AnimatePacket_8h.html#abaadb7f5f8b8d7c8e19894565fdfa6a3":[3,0,0,7,0,73],
 "AnimatePacket_8h_source.html":[5,0,0,10,0,6],
 "AnvilChunkCodec_8h_source.html":[5,0,0,21,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a2e622b3eb6612213d5884d8c6969b8c8":[3,0,0,0,181,150],
 "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a326169c99234b33004782a7969ce890d":[3,0,0,0,181,187],
 "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a38f5eaaf963eb8f78b22864d8271c170":[3,0,0,0,181,2],
-"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a3a2f7ba0eb52ac093568deeacd0fbd50":[3,0,0,0,181,125],
-"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a3a545d8873f87ca05e1c9db4f16cd5a9":[3,0,0,0,181,26]
+"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a3a2f7ba0eb52ac093568deeacd0fbd50":[3,0,0,0,181,125]
 };

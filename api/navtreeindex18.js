@@ -1,5 +1,9 @@
 var NAVTREEINDEX18 =
 {
+"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a6a4b416f87256f910cfc466946fccafc":[4,0,0,7,0,22,24],
+"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a720c210200c981520a5a654e894078c1":[4,0,0,7,0,22,3],
+"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a7511460fc8388c5621eb205fc7827ea0":[4,0,0,7,0,22,0],
+"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a79702fe4462be57a3cae65de2a752b0f":[4,0,0,7,0,22,10],
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a850bf8e11675ac7ae4875980618e2fc5":[4,0,0,7,0,22,14],
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a856cfd1bf2208e4083c2b4fcb7979334":[4,0,0,7,0,22,11],
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a944334cf4aef2a0b8d03e95dff3a6216":[4,0,0,7,0,22,5],
@@ -245,9 +249,5 @@ var NAVTREEINDEX18 =
 "classcursestone_1_1permission_1_1PermissionAttachment.html#a8cd4a8a5611f5da63a1c9472bb4a37c4":[4,0,0,8,6,1],
 "classcursestone_1_1permission_1_1PermissionAttachment.html#a951cb737fe1567e992bfc94db4927a65":[4,0,0,8,6,0],
 "classcursestone_1_1plugin_1_1LuaCommand.html":[4,0,0,10,0],
-"classcursestone_1_1plugin_1_1LuaCommand.html#a051342c659bb8d6253bceaddd07c5f21":[4,0,0,10,0,4],
-"classcursestone_1_1plugin_1_1LuaCommand.html#a3f60dd4b2f7c04362988d007b6a06b35":[4,0,0,10,0,0],
-"classcursestone_1_1plugin_1_1LuaCommand.html#a3f60dd4b2f7c04362988d007b6a06b35a0cc25b606fe928a0c9a58f7f209c4495":[4,0,0,10,0,0,2],
-"classcursestone_1_1plugin_1_1LuaCommand.html#a3f60dd4b2f7c04362988d007b6a06b35a7457cdd15d09bfc6c4dbb5d2b6f87390":[4,0,0,10,0,0,1],
-"classcursestone_1_1plugin_1_1LuaCommand.html#a3f60dd4b2f7c04362988d007b6a06b35acd0c6092d6a6874f379fe4827ed1db8b":[4,0,0,10,0,0,0]
+"classcursestone_1_1plugin_1_1LuaCommand.html#a051342c659bb8d6253bceaddd07c5f21":[4,0,0,10,0,4]
 };

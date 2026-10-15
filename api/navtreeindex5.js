@@ -1,5 +1,6 @@
 var NAVTREEINDEX5 =
 {
+"ItemConstants_8h.html#adf3f250c664994ca3b42c0e594bfbae8":[3,0,0,5,273],
 "ItemConstants_8h.html#adf78452d3cbdea33ca0b55370ba35740":[3,0,0,5,452],
 "ItemConstants_8h.html#ae100701884095fe1dc96d84204347d36":[3,0,0,5,196],
 "ItemConstants_8h.html#ae237024e8869ace295b8329990a741f9":[3,0,0,5,126],
@@ -248,6 +249,5 @@ var NAVTREEINDEX5 =
 "ItemTool_8h_source.html":[5,0,0,6,82],
 "ItemWheatSeeds_8h_source.html":[5,0,0,6,84],
 "ItemWheat_8h_source.html":[5,0,0,6,83],
-"Item_8h_source.html":[5,0,0,6,1],
-"JungleTree_8h_source.html":[5,0,0,21,1,3,0,6]
+"Item_8h_source.html":[5,0,0,6,1]
 };

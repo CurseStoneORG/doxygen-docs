@@ -1,5 +1,9 @@
 var NAVTREEINDEX10 =
 {
+"classcursestone_1_1block_1_1BlockDoorSpruce.html#ac9dbd88bc3c6555a1ac914768389b819":[4,0,0,0,36,1],
+"classcursestone_1_1block_1_1BlockDoorWood.html":[4,0,0,0,37],
+"classcursestone_1_1block_1_1BlockDoorWood.html#a15addbf2f76ff8d8e563ae67e127ca91":[4,0,0,0,37,1],
+"classcursestone_1_1block_1_1BlockDoorWood.html#af0f8d3f115920723d6b74015c0981e43":[4,0,0,0,37,0],
 "classcursestone_1_1block_1_1BlockDoublePlant.html":[4,0,0,0,38],
 "classcursestone_1_1block_1_1BlockDoublePlant.html#a39d57fc510e3579fd647e342e1e07393":[4,0,0,0,38,0],
 "classcursestone_1_1block_1_1BlockDoublePlant.html#aadeb8bd0a61d74f081a8104ded20628a":[4,0,0,0,38,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1block_1_1BlockRail.html":[4,0,0,0,115],
 "classcursestone_1_1block_1_1BlockRail.html#a620edada286f14609b87d247502a0743":[4,0,0,0,115,1],
 "classcursestone_1_1block_1_1BlockRail.html#abda9e7f643d290e3a200ef5835502a30":[4,0,0,0,115,0],
-"classcursestone_1_1block_1_1BlockRailActivator.html":[4,0,0,0,116],
-"classcursestone_1_1block_1_1BlockRailActivator.html#a18a17b2c3c431f7ecdf7752bcef9dbce":[4,0,0,0,116,1],
-"classcursestone_1_1block_1_1BlockRailActivator.html#a6e697ab8039563951645730aa2c58777":[4,0,0,0,116,0],
-"classcursestone_1_1block_1_1BlockRailDetector.html":[4,0,0,0,117],
-"classcursestone_1_1block_1_1BlockRailDetector.html#a53137e2f28ed7d9dfba152f162e00d0b":[4,0,0,0,117,0]
+"classcursestone_1_1block_1_1BlockRailActivator.html":[4,0,0,0,116]
 };
