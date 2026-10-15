@@ -4,6 +4,7 @@ var classcursestone_1_1network_1_1protocol_1_1AddEntityPacket =
     [ "encode", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html#a8fb64313af338f9135f85704e6bef7b7", null ],
     [ "pid", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html#a6a2df0b6679e522bb80990b753d3ca2f", null ],
     [ "eid", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html#a97a36b4cc6f7ab6b445c5eaeebd5d5d5", null ],
+    [ "metadata", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html#a727ce7a392b204467e3a3bd1e9979556", null ],
     [ "modifiers", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html#af6cd261f430df538ab69978eac6f94b0", null ],
     [ "pitch", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html#ae3ec53b8d1518b1464fb9e051a0ba392", null ],
     [ "speedX", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html#ad4899e74602177827574b1d706efb4c7", null ],

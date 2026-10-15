@@ -708,6 +708,7 @@ var annotated_dup =
         [ "SimpleChunkManager", "classcursestone_1_1world_1_1SimpleChunkManager.html", "classcursestone_1_1world_1_1SimpleChunkManager" ],
         [ "ArrowEntity", "structcursestone_1_1world_1_1ArrowEntity.html", "structcursestone_1_1world_1_1ArrowEntity" ],
         [ "DroppedItem", "structcursestone_1_1world_1_1DroppedItem.html", "structcursestone_1_1world_1_1DroppedItem" ],
+        [ "FallingBlockEntity", "structcursestone_1_1world_1_1FallingBlockEntity.html", "structcursestone_1_1world_1_1FallingBlockEntity" ],
         [ "WorldConfig", "structcursestone_1_1world_1_1WorldConfig.html", "structcursestone_1_1world_1_1WorldConfig" ],
         [ "World", "classcursestone_1_1world_1_1World.html", "classcursestone_1_1world_1_1World" ]
       ] ],

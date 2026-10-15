@@ -595,6 +595,7 @@ var hierarchy =
     [ "cursestone::event::EventHandler", "structcursestone_1_1event_1_1EventHandler.html", null ],
     [ "cursestone::event::EventManager", "classcursestone_1_1event_1_1EventManager.html", null ],
     [ "cursestone::world::Explosion", "classcursestone_1_1world_1_1Explosion.html", null ],
+    [ "cursestone::world::FallingBlockEntity", "structcursestone_1_1world_1_1FallingBlockEntity.html", null ],
     [ "cursestone::world::generator::FieldNoise", "structcursestone_1_1world_1_1generator_1_1FieldNoise.html", null ],
     [ "cursestone::world::generator::FlatLayer", "structcursestone_1_1world_1_1generator_1_1FlatLayer.html", null ],
     [ "cursestone::world::format::FullChunk", "classcursestone_1_1world_1_1format_1_1FullChunk.html", [

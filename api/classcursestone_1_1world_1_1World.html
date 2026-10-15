@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1world_1_1World.html
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classcursestone_1_1world_1_1World-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -221,6 +222,18 @@ std::vector&lt; <a class="el" href="structcursestone_1_1world_1_1ArrowEntity.htm
 <tr class="memitem:aa75ab2c0fa1c73ed23538d72896553c8"><td class="memItemLeft" align="right" valign="top"><a id="aa75ab2c0fa1c73ed23538d72896553c8"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>tryClaimArrow</b> (int64_t eid)</td></tr>
 <tr class="separator:aa75ab2c0fa1c73ed23538d72896553c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28b4bbda54d03f34c9ddd74a09af655e"><td class="memItemLeft" align="right" valign="top"><a id="a28b4bbda54d03f34c9ddd74a09af655e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>spawnFallingBlock</b> (int32_t bx, int32_t by, int32_t bz)</td></tr>
+<tr class="separator:a28b4bbda54d03f34c9ddd74a09af655e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeb37b776e72f68f27f84814af0ec05b"><td class="memItemLeft" align="right" valign="top"><a id="aaeb37b776e72f68f27f84814af0ec05b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>tickFallingBlocks</b> (uint64_t current_tick)</td></tr>
+<tr class="separator:aaeb37b776e72f68f27f84814af0ec05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab31f2681d75632e0ed0af2b8299709d8"><td class="memItemLeft" align="right" valign="top"><a id="ab31f2681d75632e0ed0af2b8299709d8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>checkFallingSupport</b> (int32_t x, int32_t y, int32_t z)</td></tr>
+<tr class="separator:ab31f2681d75632e0ed0af2b8299709d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa226b6e7a5d1409109c1dba1b0c4c9ac"><td class="memItemLeft" align="right" valign="top"><a id="aa226b6e7a5d1409109c1dba1b0c4c9ac"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>dropItemAt</b> (double x, double y, double z, uint16_t itemId, uint8_t count, uint16_t damage)</td></tr>
+<tr class="separator:aa226b6e7a5d1409109c1dba1b0c4c9ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9443380e0e3fb5a1c20825f075409343"><td class="memItemLeft" align="right" valign="top"><a id="a9443380e0e3fb5a1c20825f075409343"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>tickTiles</b> (uint64_t current_tick)</td></tr>
 <tr class="separator:a9443380e0e3fb5a1c20825f075409343"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -269,6 +282,12 @@ std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1tile_
 <tr class="memitem:a228ca692a04d7c3f8c83e62267b8556e"><td class="memItemLeft" align="right" valign="top"><a id="a228ca692a04d7c3f8c83e62267b8556e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>unloadDistantChunks</b> (const std::vector&lt; <a class="el" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">ChunkViewer</a> &gt; &amp;viewers, int32_t margin=4)</td></tr>
 <tr class="separator:a228ca692a04d7c3f8c83e62267b8556e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a71264de6d19b5a3718394354ae5cc66f"><td class="memItemLeft" align="right" valign="top"><a id="a71264de6d19b5a3718394354ae5cc66f"></a>
+static bool&#160;</td><td class="memItemRight" valign="bottom"><b>isFallableBlockId</b> (uint8_t id)</td></tr>
+<tr class="separator:a71264de6d19b5a3718394354ae5cc66f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
