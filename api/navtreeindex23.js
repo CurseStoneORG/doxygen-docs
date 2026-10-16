@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"md_CONTRIBUTING.html#autotoc_md33":[0,16],
 "md_CONTRIBUTING.html#autotoc_md35":[0,17],
 "md_CONTRIBUTING.html#autotoc_md37":[0,18],
 "md_docs_STYLE_COMMENTS.html":[2],
@@ -213,11 +214,15 @@ var NAVTREEINDEX23 =
 "structcursestone_1_1physics_1_1MotionResult.html#a2841b8b5f8f5bb996d5bbdec103a290b":[4,0,0,9,1,1],
 "structcursestone_1_1physics_1_1MotionResult.html#aab775ffae57312f976fc93dd0b99071c":[4,0,0,9,1,2],
 "structcursestone_1_1physics_1_1MotionResult.html#ab2c4f0390b46118f0516ca8ee5859b66":[4,0,0,9,1,3],
-"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html":[4,0,0,10,2,0],
-"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a0ca23a57ee0ad30b6eee82baad86bc91":[4,0,0,10,2,0,2],
-"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a29cf5bef9d7282bcd01bf3287673d835":[4,0,0,10,2,0,3],
-"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a86f4082a70998f5f0af7784b03c72b1a":[4,0,0,10,2,0,1],
-"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#aeae39e41227323c186a8ec6805055b16":[4,0,0,10,2,0,0],
+"structcursestone_1_1plugin_1_1PluginLimits.html":[4,0,0,10,1],
+"structcursestone_1_1plugin_1_1PluginLimits.html#a76eacc3bc2bb982eee9e073221c70759":[4,0,0,10,1,1],
+"structcursestone_1_1plugin_1_1PluginLimits.html#aa2dca583ca622c261d42da0e500be002":[4,0,0,10,1,2],
+"structcursestone_1_1plugin_1_1PluginLimits.html#aae518f202e3e38e6de81d6f7f51d6abb":[4,0,0,10,1,0],
+"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html":[4,0,0,10,3,0],
+"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a0ca23a57ee0ad30b6eee82baad86bc91":[4,0,0,10,3,0,2],
+"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a29cf5bef9d7282bcd01bf3287673d835":[4,0,0,10,3,0,3],
+"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a86f4082a70998f5f0af7784b03c72b1a":[4,0,0,10,3,0,1],
+"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#aeae39e41227323c186a8ec6805055b16":[4,0,0,10,3,0,0],
 "structcursestone_1_1utils_1_1Config_1_1Node.html":[4,0,0,13,1,0],
 "structcursestone_1_1utils_1_1Config_1_1Node.html#a4d9b1c3dfa6e1935ec6b082902a540db":[4,0,0,13,1,0,0],
 "structcursestone_1_1utils_1_1Config_1_1Node.html#a4d9b1c3dfa6e1935ec6b082902a540dba46f3ea056caa3126b91f3f70beea068c":[4,0,0,13,1,0,0,2],
@@ -244,10 +249,5 @@ var NAVTREEINDEX23 =
 "structcursestone_1_1world_1_1ArrowEntity.html#a922e4cbcdd9d7a57e014509caeafc0fb":[4,0,0,15,13,9],
 "structcursestone_1_1world_1_1ArrowEntity.html#a94cf9824de9d94f1c5a95a8f2a4e686f":[4,0,0,15,13,11],
 "structcursestone_1_1world_1_1ArrowEntity.html#a9823a88fe5e92e911a6035223021c664":[4,0,0,15,13,8],
-"structcursestone_1_1world_1_1ArrowEntity.html#aa04b099d3fcdf3b8bd9bc4502ac5690a":[4,0,0,15,13,21],
-"structcursestone_1_1world_1_1ArrowEntity.html#aa87f136a3fc3d7cc5d84fcc7b9b52491":[4,0,0,15,13,16],
-"structcursestone_1_1world_1_1ArrowEntity.html#ac36a2b9f92b629bb2e36eca71ecf3708":[4,0,0,15,13,3],
-"structcursestone_1_1world_1_1ArrowEntity.html#ad3fc12e2c13914bb6beac38be35f0953":[4,0,0,15,13,14],
-"structcursestone_1_1world_1_1ArrowEntity.html#aded4064957be93ad24cbdce838600b28":[4,0,0,15,13,6],
-"structcursestone_1_1world_1_1ArrowEntity.html#aef3938edcb2cb25334dd11ecd3215948":[4,0,0,15,13,4]
+"structcursestone_1_1world_1_1ArrowEntity.html#aa04b099d3fcdf3b8bd9bc4502ac5690a":[4,0,0,15,13,21]
 };

@@ -114,6 +114,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>include</b> (lua_State
 <tr class="memitem:a56f00854bb9bb28c55855583cbf7a44e"><td class="memItemLeft" align="right" valign="top"><a id="a56f00854bb9bb28c55855583cbf7a44e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>import</b> (lua_State *L)</td></tr>
 <tr class="separator:a56f00854bb9bb28c55855583cbf7a44e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af078951c600e998bb2eeb20760378e98"><td class="memItemLeft" align="right" valign="top"><a id="af078951c600e998bb2eeb20760378e98"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#af078951c600e998bb2eeb20760378e98">checkLimits</a> (lua_State *L)</td></tr>
+<tr class="memdesc:af078951c600e998bb2eeb20760378e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises a Lua error when a VM execution limit is exceeded. <br /></td></tr>
+<tr class="separator:af078951c600e998bb2eeb20760378e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35f62e7bb57b7e254ff6b9d915e488a2"><td class="memItemLeft" align="right" valign="top"><a id="a35f62e7bb57b7e254ff6b9d915e488a2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addTask</b> (uint64_t id, int ref)</td></tr>
 <tr class="separator:a35f62e7bb57b7e254ff6b9d915e488a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,10 +160,47 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> () cons
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:acd7e790eab04ce59300ecbb62505150d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#acd7e790eab04ce59300ecbb62505150d">setLimits</a> (const <a class="el" href="structcursestone_1_1plugin_1_1PluginLimits.html">PluginLimits</a> &amp;<a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#a0284c33fd2fdb0f60ac0f02c7b08dabb">limits</a>)</td></tr>
+<tr class="memdesc:acd7e790eab04ce59300ecbb62505150d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets limits for subsequently loaded plugins.  <a href="classcursestone_1_1plugin_1_1LuaPlugin.html#acd7e790eab04ce59300ecbb62505150d">More...</a><br /></td></tr>
+<tr class="separator:acd7e790eab04ce59300ecbb62505150d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0284c33fd2fdb0f60ac0f02c7b08dabb"><td class="memItemLeft" align="right" valign="top"><a id="a0284c33fd2fdb0f60ac0f02c7b08dabb"></a>
+static const <a class="el" href="structcursestone_1_1plugin_1_1PluginLimits.html">PluginLimits</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#a0284c33fd2fdb0f60ac0f02c7b08dabb">limits</a> ()</td></tr>
+<tr class="memdesc:a0284c33fd2fdb0f60ac0f02c7b08dabb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the active execution limits. <br /></td></tr>
+<tr class="separator:a0284c33fd2fdb0f60ac0f02c7b08dabb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1a7a6e49bdec842551979cdd5628f45"><td class="memItemLeft" align="right" valign="top"><a id="ae1a7a6e49bdec842551979cdd5628f45"></a>
 static <a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html">LuaPlugin</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>from</b> (lua_State *L)</td></tr>
 <tr class="separator:ae1a7a6e49bdec842551979cdd5628f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acd7e790eab04ce59300ecbb62505150d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd7e790eab04ce59300ecbb62505150d">&#9670;&nbsp;</a></span>setLimits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cursestone::plugin::LuaPlugin::setLimits </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structcursestone_1_1plugin_1_1PluginLimits.html">PluginLimits</a> &amp;&#160;</td>
+          <td class="paramname"><em>limits</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets limits for subsequently loaded plugins. </p>
+<dl class="section note"><dt>Note</dt><dd>Main-thread only; call before <a class="el" href="classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce" title="Scans pluginsDir, then loads and enables every plugin.">PluginManager::loadAll()</a>. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/plugin/<a class="el" href="LuaPlugin_8h_source.html">LuaPlugin.h</a></li>
 <li>src/plugin/LuaPlugin.cpp</li>

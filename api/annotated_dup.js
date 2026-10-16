@@ -574,6 +574,7 @@ var annotated_dup =
       ] ],
       [ "plugin", null, [
         [ "LuaCommand", "classcursestone_1_1plugin_1_1LuaCommand.html", "classcursestone_1_1plugin_1_1LuaCommand" ],
+        [ "PluginLimits", "structcursestone_1_1plugin_1_1PluginLimits.html", "structcursestone_1_1plugin_1_1PluginLimits" ],
         [ "LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", "classcursestone_1_1plugin_1_1LuaPlugin" ],
         [ "PluginManager", "classcursestone_1_1plugin_1_1PluginManager.html", "classcursestone_1_1plugin_1_1PluginManager" ]
       ] ],

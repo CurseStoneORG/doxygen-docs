@@ -120,6 +120,7 @@ Getting Started</h2>
 <h2><a class="anchor" id="autotoc_md3"></a>
 Configuration</h2>
 <p>CurseStone reads <code>server.properties</code> and <code>cursestone.yml</code> from the working directory. Both are created with built-in defaults on first run. <code>server.properties</code> holds the basic settings; <code>cursestone.yml</code> holds the advanced ones. Plugin data is stored in <code>data_pl/</code> at the server root.</p>
+<p>Lua plugins are guarded against infinite loops and heavy code by three <code>cursestone.yml</code> keys under <code>settings</code> (<code>0</code> disables each one): <code>plugin-instruction-limit</code> (VM instructions per plugin call, default 1000000), <code>plugin-time-limit-ms</code> (milliseconds per plugin call, default 100) and <code>plugin-max-errors</code> (consecutive failed calls before a plugin is disabled automatically, default 10). Existing <code>cursestone.yml</code> files without these keys use the defaults.</p>
 <p>The most common settings are <code>server-port</code>, <code>max-players</code>, <code>view-distance</code>, <code>gamemode</code>, <code>difficulty</code>, <code>world-format</code> and <code>autosave-ticks</code>. The auto-generated files document every option.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
 Developing Plugins</h2>

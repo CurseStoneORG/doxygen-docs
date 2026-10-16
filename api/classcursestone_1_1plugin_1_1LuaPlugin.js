@@ -7,6 +7,7 @@ var classcursestone_1_1plugin_1_1LuaPlugin =
     [ "author", "classcursestone_1_1plugin_1_1LuaPlugin.html#a57103f58bb8110e661ea7a0dfaa79931", null ],
     [ "cancelAllTasks", "classcursestone_1_1plugin_1_1LuaPlugin.html#aeb4815b06880951439654ea34607afb0", null ],
     [ "cancelTask", "classcursestone_1_1plugin_1_1LuaPlugin.html#a6afb155ad4a58e02dc89329c0fb52ff5", null ],
+    [ "checkLimits", "classcursestone_1_1plugin_1_1LuaPlugin.html#af078951c600e998bb2eeb20760378e98", null ],
     [ "dataDir", "classcursestone_1_1plugin_1_1LuaPlugin.html#a81d0bde1397e4f717ee967790cdc1c9c", null ],
     [ "disable", "classcursestone_1_1plugin_1_1LuaPlugin.html#a0dabd057c2878014cec58c77e8bf4d47", null ],
     [ "enable", "classcursestone_1_1plugin_1_1LuaPlugin.html#a192e17c2da88528152fb076c736ee924", null ],

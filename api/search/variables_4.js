@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['kdefaultcursestoneyml_1623',['kDefaultCursestoneYml',['../namespacecursestone_1_1utils.html#ad226ae8dd23b9117aaa285c7ad6acf50',1,'cursestone::utils']]],
-  ['kdefaultserverproperties_1624',['kDefaultServerProperties',['../namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0',1,'cursestone::utils']]]
+  ['instructions_1634',['instructions',['../structcursestone_1_1plugin_1_1PluginLimits.html#aae518f202e3e38e6de81d6f7f51d6abb',1,'cursestone::plugin::PluginLimits']]]
 ];

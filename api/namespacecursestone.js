@@ -1524,6 +1524,7 @@ var namespacecursestone =
         [ "parseToLua", "MiniYaml_8cpp.html#a8927f1950374682f3d9e12c35c336f2a", null ]
       ] ],
       [ "LuaCommand", "classcursestone_1_1plugin_1_1LuaCommand.html", "classcursestone_1_1plugin_1_1LuaCommand" ],
+      [ "PluginLimits", "structcursestone_1_1plugin_1_1PluginLimits.html", "structcursestone_1_1plugin_1_1PluginLimits" ],
       [ "LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", "classcursestone_1_1plugin_1_1LuaPlugin" ],
       [ "PluginManager", "classcursestone_1_1plugin_1_1PluginManager.html", "classcursestone_1_1plugin_1_1PluginManager" ],
       [ "apiCompatible", "LuaBindings_8cpp.html#a3adcabcbb2f602c64c05c44a9efa2e05", null ],

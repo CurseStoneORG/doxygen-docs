@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_1626',['x',['../classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a804bab03d83e35b2062ca875f1200335',1,'cursestone::network::protocol::ChangeDimensionPacket']]]
+  ['maxerrors_1637',['maxErrors',['../structcursestone_1_1plugin_1_1PluginLimits.html#a76eacc3bc2bb982eee9e073221c70759',1,'cursestone::plugin::PluginLimits']]]
 ];

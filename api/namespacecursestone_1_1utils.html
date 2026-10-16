@@ -195,20 +195,23 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
 <div class="line">    <span class="stringliteral">&quot;# CurseStone advanced configuration.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;# Basic settings (port, MOTD, players, world name) live in server.properties.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;# Basic settings are defined in server.properties.\n&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;settings:\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  async-workers: 4       # threads in the async task pool\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  autosave-ticks: 6000   # 6000 ticks = 5 min at 20 TPS\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  advanced-log: true     # verbose session/packet logging\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  async-workers: 4       # Async task pool threads.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  autosave-ticks: 6000   # 6000 ticks = 5 minutes at 20 TPS.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  advanced-log: true     # Enable verbose session and packet logging.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  plugin-instruction-limit: 1000000 # Lua instructions per call (0 = unlimited).\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  plugin-time-limit-ms: 100         # Milliseconds per call (0 = unlimited).\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  plugin-max-errors: 10             # Consecutive errors before disabling (0 = never).\n&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;world:\n&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;  format: \&quot;anvil\&quot;        # anvil | leveldb\n&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;  generator: \&quot;normal\&quot;    # normal | flat | nether | void\n&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
 <div class="line">    <span class="stringliteral">&quot;memory:\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  max-mb: 512            # RSS budget (MB) for the garbage collector\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  gc-interval-ticks: 200 # ticks between GC passes (200 = 10 s at 20 TPS)\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  max-mb: 512            # Garbage collector memory budget in MB.\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;  gc-interval-ticks: 200 # GC interval in ticks (200 = 10 seconds at 20 TPS).\n&quot;</span></div>
 </div><!-- fragment -->
 <p>Advanced settings (workers, autosave, memory, world format/generator). </p>
 
@@ -238,7 +241,7 @@ Variables</h2></td></tr>
 <div class="line">                                             <span class="stringliteral">&quot;online-mode=false\n&quot;</span></div>
 <div class="line">                                             <span class="stringliteral">&quot;view-distance=8\n&quot;</span></div>
 <div class="line">                                             <span class="stringliteral">&quot;world-name=world\n&quot;</span></div>
-<div class="line">                                             <span class="stringliteral">&quot;# Empty or 0 picks a random seed.\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;# Empty or 0 selects a random seed.\n&quot;</span></div>
 <div class="line">                                             <span class="stringliteral">&quot;world-seed=\n&quot;</span></div>
 </div><!-- fragment -->
 <p>Basic settings (network, players, gameplay, world name and seed). </p>

@@ -848,6 +848,7 @@ var hierarchy =
     [ "cursestone::permission::PermissionAttachment", "classcursestone_1_1permission_1_1PermissionAttachment.html", null ],
     [ "cursestone::PlayerConfig", "structcursestone_1_1PlayerConfig.html", null ],
     [ "cursestone::diagnostics::PlayerSnapshot", "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html", null ],
+    [ "cursestone::plugin::PluginLimits", "structcursestone_1_1plugin_1_1PluginLimits.html", null ],
     [ "cursestone::plugin::PluginManager", "classcursestone_1_1plugin_1_1PluginManager.html", null ],
     [ "cursestone::world::generator::populator::Populator", "classcursestone_1_1world_1_1generator_1_1populator_1_1Populator.html", [
       [ "cursestone::world::generator::populator::PopulatorCactus", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorCactus.html", null ],
