@@ -111,11 +111,11 @@ $(document).ready(function(){initNavTree('RemoveBlockPacket_8h_source.html','');
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// RemoveBlockPacket.h — client→server block break confirmation.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format (protocol 84) — PMMP RemoveBlockPacket::decode:</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format (protocol 84) — the reference server RemoveBlockPacket::decode:</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   [1 byte ID 0x12]</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [Int64 BE] eid</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Int32 BE] x</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   [Int32 BE] z         (note: z, not y — see PMMP order)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   [Int32 BE] z         (note: z, not y — see the reference server order)</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [Uint8]    y</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Yes, MCPE protocol 84 quirks: x and z are Int32 BE, y is a single byte.</span></div>

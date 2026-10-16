@@ -534,7 +534,8 @@ var namespacecursestone =
           [ "CACTUS", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca3c67654bfd9e9021128eb98cc5884450", null ],
           [ "STARVATION", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca402a77fc41920bd39b23d0b99cf14cb3", null ],
           [ "VOID", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca6d0c9fc747131795e6e5d0c5119f12cb", null ],
-          [ "PROJECTILE", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca46dccab75ce652352e52086601fdc294", null ]
+          [ "PROJECTILE", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bca46dccab75ce652352e52086601fdc294", null ],
+          [ "MAGIC", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bcacff42d769fc6a027224a1a20c4ab567a", null ]
         ] ]
       ] ],
       [ "inventory", null, [
@@ -762,6 +763,7 @@ var namespacecursestone =
       [ "ItemPickaxeIron", "classcursestone_1_1item_1_1ItemPickaxeIron.html", "classcursestone_1_1item_1_1ItemPickaxeIron" ],
       [ "ItemPickaxeStone", "classcursestone_1_1item_1_1ItemPickaxeStone.html", "classcursestone_1_1item_1_1ItemPickaxeStone" ],
       [ "ItemPickaxeWooden", "classcursestone_1_1item_1_1ItemPickaxeWooden.html", "classcursestone_1_1item_1_1ItemPickaxeWooden" ],
+      [ "ItemPotion", "classcursestone_1_1item_1_1ItemPotion.html", "classcursestone_1_1item_1_1ItemPotion" ],
       [ "ItemPumpkinPie", "classcursestone_1_1item_1_1ItemPumpkinPie.html", "classcursestone_1_1item_1_1ItemPumpkinPie" ],
       [ "ItemRabbitStew", "classcursestone_1_1item_1_1ItemRabbitStew.html", "classcursestone_1_1item_1_1ItemRabbitStew" ],
       [ "ItemRawBeef", "classcursestone_1_1item_1_1ItemRawBeef.html", "classcursestone_1_1item_1_1ItemRawBeef" ],
@@ -780,6 +782,7 @@ var namespacecursestone =
       [ "ItemSign", "classcursestone_1_1item_1_1ItemSign.html", "classcursestone_1_1item_1_1ItemSign" ],
       [ "ItemSnowball", "classcursestone_1_1item_1_1ItemSnowball.html", "classcursestone_1_1item_1_1ItemSnowball" ],
       [ "ItemSpiderEye", "classcursestone_1_1item_1_1ItemSpiderEye.html", "classcursestone_1_1item_1_1ItemSpiderEye" ],
+      [ "ItemSplashPotion", "classcursestone_1_1item_1_1ItemSplashPotion.html", "classcursestone_1_1item_1_1ItemSplashPotion" ],
       [ "ItemStack", "structcursestone_1_1item_1_1ItemStack.html", "structcursestone_1_1item_1_1ItemStack" ],
       [ "ItemSteak", "classcursestone_1_1item_1_1ItemSteak.html", "classcursestone_1_1item_1_1ItemSteak" ],
       [ "ItemStick", "classcursestone_1_1item_1_1ItemStick.html", "classcursestone_1_1item_1_1ItemStick" ],
@@ -829,6 +832,9 @@ var namespacecursestone =
         [ "ITEM_GOLD_SWORD", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223af19aa9030821ff3684d909d39f7ca291", null ],
         [ "ITEM_DIAMOND_SWORD", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223ac56a358f66a4494c671e459c252dd3b0", null ],
         [ "ITEM_BOW", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223ae93afe973aa9d8c17eb6ec8a7a964f63", null ],
+        [ "ITEM_POTION", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223ab1991dd5c53e139000eddf8f1cac9fd9", null ],
+        [ "ITEM_GLASS_BOTTLE", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223af5f1963c78e8384c9e884ecfc1127da2", null ],
+        [ "ITEM_SPLASH_POTION", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a7a6c745702d83c22057b1c7efdcd55e9", null ],
         [ "ITEM_SHEARS", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223af33549829f13929eeb46600426fd40a6", null ],
         [ "ITEM_FLINT_STEEL", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223ae23534fcbde425168dfd076441653bbd", null ],
         [ "ITEM_WOOD_HOE", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a21ca47533c1d4e3d5b6252cd5d3ef9f1", null ],
@@ -1960,6 +1966,7 @@ var namespacecursestone =
       [ "Position", "classcursestone_1_1world_1_1Position.html", "classcursestone_1_1world_1_1Position" ],
       [ "SimpleChunkManager", "classcursestone_1_1world_1_1SimpleChunkManager.html", "classcursestone_1_1world_1_1SimpleChunkManager" ],
       [ "ArrowEntity", "structcursestone_1_1world_1_1ArrowEntity.html", "structcursestone_1_1world_1_1ArrowEntity" ],
+      [ "SplashPotionEntity", "structcursestone_1_1world_1_1SplashPotionEntity.html", "structcursestone_1_1world_1_1SplashPotionEntity" ],
       [ "DroppedItem", "structcursestone_1_1world_1_1DroppedItem.html", "structcursestone_1_1world_1_1DroppedItem" ],
       [ "FallingBlockEntity", "structcursestone_1_1world_1_1FallingBlockEntity.html", "structcursestone_1_1world_1_1FallingBlockEntity" ],
       [ "WorldConfig", "structcursestone_1_1world_1_1WorldConfig.html", "structcursestone_1_1world_1_1WorldConfig" ],
@@ -2011,7 +2018,7 @@ var namespacecursestone =
     [ "WorkbenchManager", "classcursestone_1_1WorkbenchManager.html", "classcursestone_1_1WorkbenchManager" ],
     [ "NbtPtr", "namespacecursestone.html#ac129827eaf5983f0cecbe4d22a127a15", null ],
     [ "World", "namespacecursestone.html#a8c184c5b29406134bd48d0f71345bb3e", null ],
-    [ "makePoseFlagEntry", "namespacecursestone.html#a93d3834b72c1cd4b2f2a871155e4db97", null ],
+    [ "makePoseFlagEntry", "namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa", null ],
     [ "registerDefaultCommands", "namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223", null ],
     [ "kEyeHeight", "namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5", null ]
 ];

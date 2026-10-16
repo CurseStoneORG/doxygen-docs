@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('AxisAlignedBB_8h_source.html',''); ini
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> mcp_aabb_make(x0, y0, z0, x1, y1, z1);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">// `cloneMove` (the client&#39;s AABB::cloneMove / PHP&#39;s offset()): plain</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">// `cloneMove` (the client&#39;s AABB::cloneMove / the original&#39;s offset()): plain</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">// translation of the whole box. This — not expand() — is what the</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">// collision-cube lookup is fed today, matching the existing item</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// physics exactly; expand() is kept for callers that want the full</span></div>
@@ -216,7 +216,7 @@ $(document).ready(function(){initNavTree('AxisAlignedBB_8h_source.html',''); ini
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                         b.maxZ + dz);</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;}</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">// `move` — same thing, as an in-place mutation (the PHP original</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">// `move` — same thing, as an in-place mutation (the original</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">// mutates the receiver and returns it, which is why the caller&#39;s Y</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">// offset is already visible to the X pass).</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="structmcp__aabb.html">mcp_aabb_t</a> mcp_aabb_move(<a class="code" href="structmcp__aabb.html">mcp_aabb_t</a> b, <span class="keywordtype">double</span> dx, <span class="keywordtype">double</span> dy, <span class="keywordtype">double</span> dz) {</div>

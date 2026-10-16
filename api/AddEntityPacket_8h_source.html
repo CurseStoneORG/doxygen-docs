@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('AddEntityPacket_8h_source.html',''); i
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/  __ \                   /  ___| |</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">| /  \/_   _ _ __ ___  ___\ `--.| |_ ___  _ __   ___</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">| |   | | | | &#39;__/ __|/ _ \`--. \ __/ _ \| &#39;_ \ / _ \</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">| \__/\ |_| | |  \__ \  __/\__/ / || (_) | | | |  __/</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">| \__/\ |_| | |  |  \__ \  __/\__/ / || (_) | | | |  __/</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> \____/\__,_|_|  |___/\___\____/ \__\___/|_| |_|\___|</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * CurseStone | Open Source Server Software</span></div>
@@ -109,38 +109,38 @@ $(document).ready(function(){initNavTree('AddEntityPacket_8h_source.html',''); i
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// AddEntityPacket.h — spawn a non-player entity on the client.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Sends a non-player entity spawn packet to the client.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format (protocol 84, verified against Dr1xyDev/Infinity</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// AddEntityPacket.php — the MCPE 0.15.10 reference):</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [Long  BE] eid</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Int   BE] type        (entity network id, e.g. 93 = Lightning)</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   [Float BE] x, y, z</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [Float BE] speedX, speedY, speedZ</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   [Float BE] yaw         (Infinity writes yaw * 0.71111)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   [Float BE] pitch       (Infinity writes pitch * 0.71111)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   [Int   BE] modifiers</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//   [metadata blob]        (empty = single 0 byte)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//   [Short BE] links count + links (we never send links)</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;DataPacket.h&quot;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;SetEntityDataPacket.h&quot;</span> <span class="comment">// metadata Entry (same wire encoding)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>cursestone::network::protocol {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html">AddEntityPacket</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">DataPacket</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint8_t pid()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> ADD_ENTITY_PACKET;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Entity type network ids (protocol 84 / Infinity).</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_LIGHTNING = 93;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_ARROW = 80;         <span class="comment">// Infinity Arrow::NETWORK_ID</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_FALLING_BLOCK = 66; <span class="comment">// Infinity FallingSand::NETWORK_ID</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Protocol 84 wire format:</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   [Long  BE] Entity ID</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [Int   BE] Entity type</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Float BE] Position (x, y, z)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   [Float BE] Velocity (x, y, z)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [Float BE] Yaw</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   [Float BE] Pitch</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   [Int   BE] Modifiers</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   [Metadata] Entity metadata</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//   [Short BE] Link count and links</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;DataPacket.h&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;SetEntityDataPacket.h&quot;</span> <span class="comment">// Entity metadata entries.</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span>cursestone::network::protocol {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html">   45</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html">AddEntityPacket</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">DataPacket</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    uint8_t pid()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> ADD_ENTITY_PACKET;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Entity network IDs for protocol 84.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_LIGHTNING = 93;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_ARROW = 80;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_THROWN_POTION = 86;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">static</span> constexpr int32_t TYPE_FALLING_BLOCK = 66;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    int64_t eid = 0;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    int32_t type = 0;</div>
@@ -148,22 +148,18 @@ $(document).ready(function(){initNavTree('AddEntityPacket_8h_source.html',''); i
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">float</span> speedX = 0, speedY = 0, speedZ = 0;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">float</span> yaw = 0, pitch = 0;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    int32_t modifiers = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> yawPitchScaled = <span class="keyword">true</span>; <span class="comment">// Infinity multiplies both by 0.71111</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Optional entity metadata (Infinity: `$pk-&gt;metadata =</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// $this-&gt;dataProperties`, Binary::writeMetadata wire format: one</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// key byte `(type &lt;&lt; 5) | index`, the value, then the 0x7F</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// terminator). Falling blocks ship DATA_BLOCK_INFO (20) here so the</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// 0.15.10 client knows which block to render. EMPTY keeps the</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// historical single-0x00 body this server always sent (arrows,</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// lightning and players are spawned with it and render fine).</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    std::vector&lt;SetEntityDataPacket::Entry&gt; metadata;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> yawPitchScaled = <span class="keyword">true</span>; <span class="comment">// Scale yaw and pitch by 0.71111.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// Optional metadata encoded as a type/index key, value, and 0x7F terminator.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Falling blocks include DATA_BLOCK_INFO (20) to identify the rendered block.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// Empty metadata preserves the single-byte 0x00 payload used by other entities.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::vector&lt;SetEntityDataPacket::Entry&gt; metadata;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
-<div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1AddEntityPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html">cursestone::network::protocol::AddEntityPacket</a></div><div class="ttdef"><b>Definition:</b> AddEntityPacket.h:46</div></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace cursestone::network::protocol</span></div>
+<div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1AddEntityPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html">cursestone::network::protocol::AddEntityPacket</a></div><div class="ttdef"><b>Definition:</b> AddEntityPacket.h:45</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">cursestone::network::protocol::DataPacket</a></div><div class="ttdef"><b>Definition:</b> DataPacket.h:44</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

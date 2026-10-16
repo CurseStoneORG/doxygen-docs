@@ -111,15 +111,15 @@ $(document).ready(function(){initNavTree('MobArmorEquipmentPacket_8h_source.html
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// MobArmorEquipmentPacket.h — client→server armor equip notification.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// PMMP wire format (protocol 84) — MobArmorEquipmentPacket::decode:</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// The reference server wire format (protocol 84) — MobArmorEquipmentPacket::decode:</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   [1 byte ID 0x1c]</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [Int64 BE] eid       entity ID (player&#39;s runtime ID)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Slot]     helmet     PMMP Slot format</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Slot]     helmet     the reference server Slot format</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   [Slot]     chestplate</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [Slot]     leggings</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   [Slot]     boots</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// PMMP ignores this packet server-side (the actual armor slot change is</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// The reference server ignores this packet server-side (the actual armor slot change is</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// sent via ContainerSetSlotPacket with windowid=0x78); we register it</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// just so PacketPool returns a non-null pointer and the network logger</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// stops warning &quot;unknown packet&quot;.</span></div>

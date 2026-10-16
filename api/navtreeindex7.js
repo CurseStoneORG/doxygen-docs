@@ -1,5 +1,11 @@
 var NAVTREEINDEX7 =
 {
+"SetDifficultyPacket_8h_source.html":[5,0,0,10,0,49],
+"SetEntityDataPacket_8h_source.html":[5,0,0,10,0,50],
+"SetEntityLinkPacket_8h_source.html":[5,0,0,10,0,51],
+"SetEntityMotionPacket_8h_source.html":[5,0,0,10,0,52],
+"SetHealthPacket_8h_source.html":[5,0,0,10,0,53],
+"SetPlayerGameTypePacket_8h_source.html":[5,0,0,10,0,54],
 "SetSpawnPositionPacket_8h_source.html":[5,0,0,10,0,55],
 "SetTimePacket_8h_source.html":[5,0,0,10,0,56],
 "ShortTag_8h_source.html":[5,0,0,9,0,10],
@@ -243,11 +249,5 @@ var NAVTREEINDEX7 =
 "VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eac0bdf8dc269fe79a5102f20382c10663":[3,0,0,17,1,4,0,1,10],
 "VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eae06b2600f317961c21a748e8c460c38f":[3,0,0,17,1,4,0,1,12],
 "VillagePieces_8h.html#a255138dbb55acb7595edc209698dd6e7":[3,0,0,17,1,4,0,6],
-"VillagePieces_8h_source.html":[5,0,0,21,1,5,0,1],
-"VillagePopulator_8h_source.html":[5,0,0,21,1,4,9],
-"WeatherCommand_8h_source.html":[5,0,0,1,0,16],
-"WorkbenchCommand_8h_source.html":[5,0,0,1,0,17],
-"WorkbenchManager_8h_source.html":[5,0,0,20,0],
-"WorldEvent_8h_source.html":[5,0,0,4,9,8],
-"WorldInitEvent_8h_source.html":[5,0,0,4,9,9]
+"VillagePieces_8h_source.html":[5,0,0,21,1,5,0,1]
 };

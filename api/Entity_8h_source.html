@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('Entity_8h_source.html',''); initResiza
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Entity — base class for any world entity (player, item-drop, mob,</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// projectile). Holds the unique runtime id, position, motion, AABB</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// and the level reference. Mirrors pocketmine/entity/Entity.php.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// and the level reference. Mirrors entity/Entity.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;CurseStone.h&quot;</span> <span class="comment">// brings in the `using World = world::World;` alias</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
@@ -179,10 +179,10 @@ $(document).ready(function(){initNavTree('Entity_8h_source.html',''); initResiza
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// fully-formed Entity API. The damage / fire-on-entity systems are</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// not implemented yet in CurseStone — the bodies are intentional no-ops</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// and marked with TODO so they&#39;re easy to find later.</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// mirrors PMMP Entity::attack(EntityDamageEvent)</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// mirrors the reference server Entity::attack(EntityDamageEvent)</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> attack(<span class="keywordtype">float</span> <span class="comment">/*damage*/</span>) { <span class="comment">/* TODO: damage event pipeline */</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// mirrors PMMP Entity::setOnFire(int $seconds)</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// mirrors the reference server Entity::setOnFire(int seconds)</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setOnFire(<span class="keywordtype">int</span> <span class="comment">/*seconds*/</span>) { <span class="comment">/* TODO: fire tick tracking */</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>

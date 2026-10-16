@@ -197,9 +197,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ad95da57fc03b5aca9e60e25013fd7223"><td class="memItemLeft" align="right" valign="top"><a id="ad95da57fc03b5aca9e60e25013fd7223"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>registerDefaultCommands</b> (<a class="el" href="classcursestone_1_1CommandMap.html">CommandMap</a> &amp;map)</td></tr>
 <tr class="separator:ad95da57fc03b5aca9e60e25013fd7223"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93d3834b72c1cd4b2f2a871155e4db97"><td class="memItemLeft" align="right" valign="top"><a id="a93d3834b72c1cd4b2f2a871155e4db97"></a>
-<a class="el" href="structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html">network::protocol::SetEntityDataPacket::Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><b>makePoseFlagEntry</b> (bool sneaking, bool sprinting, bool action=false, bool onFire=false)</td></tr>
-<tr class="separator:a93d3834b72c1cd4b2f2a871155e4db97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a754f903e8c9fc1e27eb09492df12a5fa"><td class="memItemLeft" align="right" valign="top"><a id="a754f903e8c9fc1e27eb09492df12a5fa"></a>
+<a class="el" href="structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html">network::protocol::SetEntityDataPacket::Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><b>makePoseFlagEntry</b> (bool sneaking, bool sprinting, bool action=false, bool onFire=false, bool invisible=false)</td></tr>
+<tr class="separator:a754f903e8c9fc1e27eb09492df12a5fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -216,7 +216,7 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>kEyeHeigh
 <p>THE single global GarbageCollector for the whole server. There must be exactly ONE instance (Meyers singleton) and it is the only place that decides when memory is reclaimed.</p>
 <p>Why one global GC: the codebase used to have several scattered reclaimers (<a class="el" href="classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1" title="Advances one tick.">Server::tick</a>'s chunk-unload sweep, World::tick's dropped-item sweep, Player::onUpdate's used_chunks_ cleanup, tile eviction) running on their own schedules. Independent schedules mean the world state players interact with (dropped items, open chests, loaded chunks) can disappear in the middle of a player action - the classic cause of pickup/inventory desyncs. Everything now funnels through collect(): the per-subsystem sweeps keep their cheap local bookkeeping, but any SWEEP THAT TOUCHES SHARED WORLD STATE only runs when the global GC authorizes it, on a single coordinated schedule.</p>
 <p>Stores shared thread handles and joins every joinable one in joinAll(), clearing the registry afterwards.</p>
-<p>Mirrors PMMP TextFormat + Terminal in a single C++ header. </p>
+<p>Mirrors the reference server TextFormat + Terminal in a single C++ header. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

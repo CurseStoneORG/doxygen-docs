@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('UpdateAttributesPacket_8h_source.html'
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// entidad (salud, hambre...) para que el cliente renderice la barra de</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// hambre del HUD.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Wire format (protocol 84 — mirrors Infinity/PMMP 0.15.10</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Wire format (protocol 84 — mirrors the reference server 0.15.10</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// UpdateAttributesPacket BYTE-FOR-BYTE; NO varints in this protocol):</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   [Long BE]  eid (8 bytes, Binary::writeLong)</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [Short BE] count (2 bytes)</span></div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('UpdateAttributesPacket_8h_source.html'
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        std::string name;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    };</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// Infinity: putLong($this-&gt;entityId) — 8-byte big-endian, NOT varint.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// The reference server: entityId as Int64 — 8-byte big-endian, NOT varint.</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint64_t eid = 0;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::vector&lt;Entry&gt; entries;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>

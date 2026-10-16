@@ -412,6 +412,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendExperienceLevel</
 <tr class="memitem:a37bcd61ab614acd2dec1ee8e2cb9e2e3"><td class="memItemLeft" align="right" valign="top"><a id="a37bcd61ab614acd2dec1ee8e2cb9e2e3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealth</b> (int h)</td></tr>
 <tr class="separator:a37bcd61ab614acd2dec1ee8e2cb9e2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefce57eda2fd291cdcb5080516f8a513"><td class="memItemLeft" align="right" valign="top"><a id="aefce57eda2fd291cdcb5080516f8a513"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>heal</b> (float amount) override</td></tr>
+<tr class="separator:aefce57eda2fd291cdcb5080516f8a513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8aafe690813d31c9b5153f409601a024"><td class="memItemLeft" align="right" valign="top"><a id="a8aafe690813d31c9b5153f409601a024"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendFoodLevel</b> ()</td></tr>
 <tr class="separator:a8aafe690813d31c9b5153f409601a024"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -544,6 +547,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setAttribute</b> (int
 <tr class="memitem:a309e767e6f7e0141b6eeca200ce25838"><td class="memItemLeft" align="right" valign="top"><a id="a309e767e6f7e0141b6eeca200ce25838"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendSettings</b> ()</td></tr>
 <tr class="separator:a309e767e6f7e0141b6eeca200ce25838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af647e8315cc38c8e95ed009c2cb1e8fc"><td class="memItemLeft" align="right" valign="top"><a id="af647e8315cc38c8e95ed009c2cb1e8fc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sendMovementSpeedAttribute</b> ()</td></tr>
+<tr class="separator:af647e8315cc38c8e95ed009c2cb1e8fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd9f855acd5699c13b813cfc5a4226c"><td class="memItemLeft" align="right" valign="top"><a id="afbd9f855acd5699c13b813cfc5a4226c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sendActiveEffects</b> ()</td></tr>
+<tr class="separator:afbd9f855acd5699c13b813cfc5a4226c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa677cab3d5e46cee9829ead8b43ef87b"><td class="memItemLeft" align="right" valign="top"><a id="aa677cab3d5e46cee9829ead8b43ef87b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>throwSplashPotion</b> ()</td></tr>
+<tr class="separator:aa677cab3d5e46cee9829ead8b43ef87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a445edac82e7ddd8d750447dfa19c7a59"><td class="memItemLeft" align="right" valign="top"><a id="a445edac82e7ddd8d750447dfa19c7a59"></a>
 Entity *&#160;</td><td class="memItemRight" valign="bottom"><b>getKiller</b> () const</td></tr>
 <tr class="separator:a445edac82e7ddd8d750447dfa19c7a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -618,18 +630,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setMaxHealth</b> (flo
 <tr class="memitem:accbba971b4a76afb26f9f8a9076e5472 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="accbba971b4a76afb26f9f8a9076e5472"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>attack</b> (float amount) override</td></tr>
 <tr class="separator:accbba971b4a76afb26f9f8a9076e5472 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fd91be9f4d5e3ea1139956042ad4e27 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a2fd91be9f4d5e3ea1139956042ad4e27"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>heal</b> (float amount)</td></tr>
-<tr class="separator:a2fd91be9f4d5e3ea1139956042ad4e27 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5f3b0f7a781c7779334da5206e3cf6d6 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a5f3b0f7a781c7779334da5206e3cf6d6"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDead</b> () const</td></tr>
 <tr class="separator:a5f3b0f7a781c7779334da5206e3cf6d6 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae7222436a4b7792fb045e813e42dc178 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="ae7222436a4b7792fb045e813e42dc178"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addEffect</b> (std::shared_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &gt; e)</td></tr>
 <tr class="separator:ae7222436a4b7792fb045e813e42dc178 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a980c4d9a74b0b77c2d165cdef8ca0f6c inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a980c4d9a74b0b77c2d165cdef8ca0f6c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeEffect</b> (uint8_t id)</td></tr>
+<tr class="separator:a980c4d9a74b0b77c2d165cdef8ca0f6c inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b043f70f6476649ed9fe42fcb0542a5 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a0b043f70f6476649ed9fe42fcb0542a5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeAllEffects</b> ()</td></tr>
+<tr class="separator:a0b043f70f6476649ed9fe42fcb0542a5 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69938b83bc708f871f5e08421f3cab60 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a69938b83bc708f871f5e08421f3cab60"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasEffect</b> (uint8_t id) const</td></tr>
+<tr class="separator:a69938b83bc708f871f5e08421f3cab60 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8117dad5609828d8af0ec88063b30c71 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a8117dad5609828d8af0ec88063b30c71"></a>
+const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getEffect</b> (uint8_t id) const</td></tr>
+<tr class="separator:a8117dad5609828d8af0ec88063b30c71 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f2cb82d18cb84e664a6b13b73b1e065 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a1f2cb82d18cb84e664a6b13b73b1e065"></a>
 const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>effects</b> () const</td></tr>
 <tr class="separator:a1f2cb82d18cb84e664a6b13b73b1e065 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f3dc21c5a5a766ae456649a3a8dbfe4 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a4f3dc21c5a5a766ae456649a3a8dbfe4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>tickEffects</b> ()</td></tr>
+<tr class="separator:a4f3dc21c5a5a766ae456649a3a8dbfe4 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0c2a0b49074e4ed83df48ceca9600c0 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="ac0c2a0b49074e4ed83df48ceca9600c0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>tick</b> (uint64_t current_tick) override</td></tr>
 <tr class="separator:ac0c2a0b49074e4ed83df48ceca9600c0 inherit pub_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -719,10 +743,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>onDeath</b> () overri
 <tr class="memitem:a4f92c354cbdfa9439fe2d4ae1fa8b199"><td class="memItemLeft" align="right" valign="top"><a id="a4f92c354cbdfa9439fe2d4ae1fa8b199"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>onHealthChanged</b> () override</td></tr>
 <tr class="separator:a4f92c354cbdfa9439fe2d4ae1fa8b199"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2ad459ee7c239ab3d69dc453ce6eb7"><td class="memItemLeft" align="right" valign="top"><a id="a0c2ad459ee7c239ab3d69dc453ce6eb7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onEffectAdded</b> (const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">entity::Effect</a> &amp;e) override</td></tr>
+<tr class="separator:a0c2ad459ee7c239ab3d69dc453ce6eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeaa0e43adf7b20a6ad514dbc65dca2c9"><td class="memItemLeft" align="right" valign="top"><a id="aeaa0e43adf7b20a6ad514dbc65dca2c9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onEffectModified</b> (const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">entity::Effect</a> &amp;e) override</td></tr>
+<tr class="separator:aeaa0e43adf7b20a6ad514dbc65dca2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aada16801cea447de7e6ed9ec4e9f5a"><td class="memItemLeft" align="right" valign="top"><a id="a4aada16801cea447de7e6ed9ec4e9f5a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onEffectRemoved</b> (const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">entity::Effect</a> &amp;e) override</td></tr>
+<tr class="separator:a4aada16801cea447de7e6ed9ec4e9f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2113ef400c66cc5fc36197dd5d58dfa2"><td class="memItemLeft" align="right" valign="top"><a id="a2113ef400c66cc5fc36197dd5d58dfa2"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onHungerEffectTick</b> (int amplifier) override</td></tr>
+<tr class="separator:a2113ef400c66cc5fc36197dd5d58dfa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af64c4f571310ca183a79307f6554fa1f"><td class="memItemLeft" align="right" valign="top"><a id="af64c4f571310ca183a79307f6554fa1f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onSaturationEffectTick</b> (int amplifier) override</td></tr>
+<tr class="separator:af64c4f571310ca183a79307f6554fa1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classcursestone_1_1entity_1_1Living"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classcursestone_1_1entity_1_1Living')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classcursestone_1_1entity_1_1Living.html">cursestone::entity::Living</a></td></tr>
 <tr class="memitem:a7347bb149aad5a171a74e0b94642db2d inherit pro_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="a7347bb149aad5a171a74e0b94642db2d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>applyDamage</b> (float amount)</td></tr>
 <tr class="separator:a7347bb149aad5a171a74e0b94642db2d inherit pro_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7efd2c533105571e7d1ea147f0ca990 inherit pro_methods_classcursestone_1_1entity_1_1Living"><td class="memItemLeft" align="right" valign="top"><a id="ab7efd2c533105571e7d1ea147f0ca990"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>applyEffectBehavior</b> (const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &amp;e)</td></tr>
+<tr class="separator:ab7efd2c533105571e7d1ea147f0ca990 inherit pro_methods_classcursestone_1_1entity_1_1Living"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>

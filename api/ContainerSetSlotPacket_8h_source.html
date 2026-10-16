@@ -111,12 +111,12 @@ $(document).ready(function(){initNavTree('ContainerSetSlotPacket_8h_source.html'
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ContainerSetSlotPacket — client→server item move in an inventory.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// PMMP wire format (protocol 84) — ContainerSetSlotPacket::decode:</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// The reference server wire format (protocol 84) — ContainerSetSlotPacket::decode:</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   [1 byte ID 0x2c]</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [Uint8]    windowid     0=main, 0x78=armor, 0x79=creative, 0x7a=hotbar</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Int16 BE] slot         slot index in the inventory</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   [Int16 BE] hotbarSlot   destination hotbar slot (creative only)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [Slot]     item         PMMP Slot: id BE + count + damage BE + nbtLen LE + nbt</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [Slot]     item         the reference server Slot: id BE + count + damage BE + nbtLen LE + nbt</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;DataPacket.h&quot;</span></div>

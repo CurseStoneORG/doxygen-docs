@@ -111,11 +111,11 @@ $(document).ready(function(){initNavTree('CraftingDataPacket_8h_source.html','')
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// CraftingDataPacket — server→client recipe list (MCPE protocol 84).</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format verificado BYTE A BYTE contra Dr1xyDev/Infinity</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// (pocketmine/network/protocol/CraftingDataPacket.php, protocolo 84 /</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format verificado BYTE A BYTE contra the reference implementation</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// (network/protocol/CraftingDataPacket, protocolo 84 /</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// MCPE 0.15.10) y cross-checkeado con Nukkit 2016 (mismo formato):</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   putInt(BE)   count(entries)          &lt;- Binary::writeInt = pack(&quot;N&quot;)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   putInt(BE)   count(entries)          &lt;- 32-bit big-endian</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   foreach entry:</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//     putInt(BE)   entryType</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//     putInt(BE)   strlen(body)          &lt;- LENGTH-PREFIX por entrada</span></div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('CraftingDataPacket_8h_source.html','')
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//   ENTRY_SHAPED (1):</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//     putInt(BE) width; putInt(BE) height;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//     putSlot(width*height celdas, fila-por-fila: z&lt;Height exterior,</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//             x&lt;Width interior — idéntico a Genisys/Infinity, y el</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//             x&lt;Width interior — idéntico a Genisys/the reference server, y el</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//             patrón es fila-major anclado arriba-izquierda, como</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//             Recipe::grid)</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//     putInt(BE) 1; putSlot(result);</span></div>
@@ -151,8 +151,8 @@ $(document).ready(function(){initNavTree('CraftingDataPacket_8h_source.html','')
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//            + putLShort(nbtLen) + nbt   (nbtLen=0 acá; LShort sí es LE)</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//   damage -1 (&quot;any damage&quot;) viaja como 0xFFFF en el short BE.</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// cleanRecipes: Infinity/Genisys lo mandan en true (generateRecipeList</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// hace $pk-&gt;cleanRecipes = true). El cliente borra sus recetas por</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// cleanRecipes: The reference server/Genisys lo mandan en true (generateRecipeList</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// pone cleanRecipes = true). El cliente borra sus recetas por</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// defecto y usa SOLO las nuestras — con la lista completa que manda el</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// CraftingManager es lo correcto.</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#pragma once</span></div>

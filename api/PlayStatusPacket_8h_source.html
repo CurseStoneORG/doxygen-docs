@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('PlayStatusPacket_8h_source.html',''); 
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   [1 byte ID 0x02]</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [Int32 BE] status</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Status constants (mirror PMMP):</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// Status constants (mirror the reference server):</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   LOGIN_SUCCESS        = 0</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   LOGIN_FAILED_CLIENT  = 1  (client outdated)</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   LOGIN_FAILED_SERVER  = 2  (server outdated)</span></div>
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('PlayStatusPacket_8h_source.html',''); 
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> PLAY_STATUS_PACKET;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Status enum (PMMP constants).</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// Status enum (the reference server constants).</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">static</span> constexpr int32_t LOGIN_SUCCESS = 0;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">static</span> constexpr int32_t LOGIN_FAILED_CLIENT = 1;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">static</span> constexpr int32_t LOGIN_FAILED_SERVER = 2;</div>

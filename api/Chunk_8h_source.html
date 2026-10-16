@@ -210,12 +210,12 @@ $(document).ready(function(){initNavTree('Chunk_8h_source.html',''); initResizab
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="comment">// down to the heightmap surface, then decrements by each opaque</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">// block&#39;s light filter going down, and finally flood-fills sideways</span></div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// so light also wraps under overhangs / around leaves — same</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// algorithm PMMP&#39;s SimpleChunkManager::populateSkyLight +</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// algorithm the reference server&#39;s SimpleChunkManager::populateSkyLight +</span></div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">// updateBlockSkyLight uses (per-column bright-to-heightmap plus a</span></div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">// horizontal BFS spread for occluded neighbours). Single-chunk only:</span></div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">// does not read neighbouring chunks, so light right at a chunk edge</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="comment">// under an overhang from the next chunk over may need a follow-up</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">// pass once neighbours are loaded (same limitation PMMP has before</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">// pass once neighbours are loaded (same limitation the reference server has before</span></div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">// its cross-chunk light-populator queue runs).</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="keywordtype">void</span> mcp_chunk_propagate_sky_light(<a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* c);</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>

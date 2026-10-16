@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('LevelEventPacket_8h_source.html',''); 
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// LevelEventPacket — broadcast particles + sounds to nearby players.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// PMMP wire format (protocol 84) — LevelEventPacket::encode:</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// The reference server wire format (protocol 84) — LevelEventPacket::encode:</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   [1 byte ID 0x16]</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [Int16 BE] evid   event code (sound id or particle id, see below)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Float BE] x      position</span></div>
@@ -119,22 +119,22 @@ $(document).ready(function(){initNavTree('LevelEventPacket_8h_source.html',''); 
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [Float BE] z</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   [Int32 BE] data   event-specific payload</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// NOTE: PMMP `putShort` is big-endian (pack &quot;n&quot;), so `evid` is a 2-byte</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// NOTE: The reference server `putShort` is big-endian (pack &quot;n&quot;), so `evid` is a 2-byte</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// BE signed short — NOT a 4-byte int. This is critical: encoding evid as</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// int32 BE shifts every subsequent field by 2 bytes and the client sees</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// a garbage evid, which causes particles/sounds to not show up.</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// IMPORTANT (from PMMP source comment in DestroyBlockParticle.php):</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// IMPORTANT (from the reference server source comment in DestroyBlockParticle):</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//   &quot;NOTE: This is also the destroy block SOUND.&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// On protocol 84 there is NO separate break-sound packet — sending a single</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// LevelEventPacket with evid=EVENT_PARTICLE_DESTROY (2001) plays BOTH the</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// particle effect AND the dig sound at the client.</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Data encoding (verbatim from PMMP):</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Data encoding (verbatim from the reference server):</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//   - For EVENT_PARTICLE_DESTROY: data = blockId | (blockMeta &lt;&lt; 12)</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//   - For EVENT_SOUND_BLOCK_PLACE: data = blockId  (no meta bits)</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Position encoding (verbatim from PMMP):</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Position encoding (verbatim from the reference server):</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//   - For break particle: BLOCK CENTER  = x+0.5, y+0.5, z+0.5</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//   - For place sound:    BLOCK CORNER  = x, y, z  (no +0.5)</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#pragma once</span></div>
@@ -151,27 +151,27 @@ $(document).ready(function(){initNavTree('LevelEventPacket_8h_source.html',''); 
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> LEVEL_EVENT_PACKET;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// ---- Sound event ids (PMMP LevelEventPacket::EVENT_SOUND_*) ----</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="comment">// ---- Sound event ids (the reference server LevelEventPacket::EVENT_SOUND_*) ----</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">static</span> constexpr int16_t EVENT_SOUND_BLOCK_PLACE = 1052;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">static</span> constexpr int16_t EVENT_SOUND_SHOOT = 1002; <span class="comment">// bow release (Infinity LaunchSound)</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Door open/close (Infinity level/sound/DoorSound.php: EVENT_SOUND_DOOR).</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">static</span> constexpr int16_t EVENT_SOUND_SHOOT = 1002; <span class="comment">// bow release (the reference server LaunchSound)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Door open/close (the reference server level/sound/DoorSound: EVENT_SOUND_DOOR).</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Sent as a LevelEventPacket at the door block position; data = pitch*1000</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// (Infinity always passes pitch 0 for doors). This is the sound the</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// (the reference server always passes pitch 0 for doors). This is the sound the</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// wooden door makes when it is toggled open/closed — by hand or by</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// redstone — and the only &quot;door sound&quot; of protocol 84.</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> constexpr int16_t EVENT_SOUND_DOOR = 1003;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// ---- Particle event ids (PMMP LevelEventPacket::EVENT_PARTICLE_*) ----</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// ---- Particle event ids (the reference server LevelEventPacket::EVENT_PARTICLE_*) ----</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">static</span> constexpr int16_t EVENT_PARTICLE_DESTROY = 2001; <span class="comment">// break particle + sound</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Generic particle events: evid = EVENT_ADD_PARTICLE_MASK | type, with</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// the type in the low 12 bits (protocol 84 — e.g. critical particles</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// are 0x4000 | 2). data carries the particle payload (scale / color).</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">static</span> constexpr int16_t EVENT_ADD_PARTICLE_MASK = 0x4000;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// ---- Weather event ids (Dr1xyDev/Infinity LevelEventPacket, MCPE 0.15.10) ----</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// ---- Weather event ids (the reference implementation LevelEventPacket, MCPE 0.15.10) ----</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// NOTE: on protocol 84 START_THUNDER is 3002 and STOP_RAIN is 3003 —</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// the intuitive order (start=odd, stop=even) is WRONG here and the</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// client silently ignores mis-numbered events.</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// CRITICAL: the client renders NOTHING unless `data` carries a</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// non-zero strength. Infinity always sends</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// non-zero strength. The reference server always sends</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">//   rain:    mt_rand(90000, 110000)</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">//   thunder: mt_rand(30000, 40000)</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// A LevelEventPacket with evid=3001 and data=0 is a no-op on the</span></div>

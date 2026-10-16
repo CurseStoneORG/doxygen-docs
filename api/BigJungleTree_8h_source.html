@@ -114,8 +114,8 @@ $(document).ready(function(){initNavTree('BigJungleTree_8h_source.html',''); ini
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// layered crown, and vines hanging off the wood.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Ported 1:1 from Aquamarine-Team/Aquamarine</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// (src/world/generator/normal/object/BigJungleTree.php, by MaruselPlay),</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// which is itself the PocketMine-MP HugeTree algorithm. The PHP hierarchy is</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// (src/world/generator/normal/object/BigJungleTree, by MaruselPlay),</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// which is itself the reference server HugeTree algorithm. The original hierarchy is</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// flattened into this one class because CurseStone&#39;s tree base</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// (GenericTree) is not a HugeTree:</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//</span></div>
@@ -130,13 +130,13 @@ $(document).ready(function(){initNavTree('BigJungleTree_8h_source.html',''); ini
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//                                unconditionally, clipped to the chunk)</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//   * placeVine()             -&gt; placeVine()</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Two deliberate, documented deviations from the PHP:</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// Two deliberate, documented deviations from the original:</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//   1. The reference passes plain Block::LOG / Block::LEAVES with no</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//      metadata. CurseStone&#39;s protocol stores the wood/leaf VARIANT in the</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//      block data byte, so this uses data 3 (jungle) — the same pair</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//      JungleTree uses — otherwise the client would draw an oak tree.</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//   2. The reference&#39;s first pair of assignments inside the branch loop</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//      (0.5 + cos*f*4.0) is dead: the inner i1 loop overwrites $k/$l before</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//      (0.5 + cos*f*4.0) is dead: the inner i1 loop overwrites k/l before</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//      anything reads them. It is dropped here; the value it computed is</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//      unchanged.</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#pragma once</span></div>

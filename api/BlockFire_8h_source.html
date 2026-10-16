@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('BlockFire_8h_source.html',''); initRes
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// BlockFire.h — Portado de pocketmine/block/Fire.php (PMMP)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// BlockFire.h — Portado de block/Fire (the reference server)</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Implementa:</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//   - Luz nivel 15</span></div>
@@ -118,9 +118,9 @@ $(document).ready(function(){initNavTree('BlockFire_8h_source.html',''); initRes
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   - Fuego eterno sobre Netherrack</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   - Extinción por lluvia, edad &gt; 3 sin suelo sólido, etc.</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Diferencias con el PHP original (adaptadas a la arquitectura C++ de CurseStone):</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Diferencias con el original (adaptadas a la arquitectura C++ de CurseStone):</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   - scheduleUpdate() usa ServerScheduler::scheduleSync() en vez de</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     la cola interna de PMMP.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     la cola interna del servidor de referencia.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//   - World no expone getBlockData() todavía; se accede via chunks() directamente.</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//     Agrega `uint8_t getBlockData(int32_t x, int32_t y, int32_t z)` a World.h</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     (ver parche incluido abajo en Level_patch.h).</span></div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('BlockFire_8h_source.html',''); initRes
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">bool</span> canBeReplaced()<span class="keyword"> const override </span>{</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    } <span class="comment">// PMMP: return true</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    } <span class="comment">// The reference server: return true</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> canWalkThrough()<span class="keyword"> const override </span>{</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }</div>
@@ -172,26 +172,26 @@ $(document).ready(function(){initNavTree('BlockFire_8h_source.html',''); initRes
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint8_t getLightLevel()<span class="keyword"> const override </span>{</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> 15;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="comment">// PMMP: return 15</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    } <span class="comment">// The reference server: return 15</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// ---- Interacción con entidades ----</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Llama el entity-tick loop por cada entidad que se superpone con este bloque.</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Mirrors PMMP Fire::onEntityCollide($entity)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Mirrors the reference server Fire::onEntityCollide(entity)</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> onEntityCollide(<a class="code" href="classcursestone_1_1world_1_1World.html">world::World</a>* world, int32_t bx, int32_t by, int32_t bz,</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                <a class="code" href="classcursestone_1_1entity_1_1Entity.html">entity::Entity</a>* entity);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// ---- Tick programado ----</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Encola el siguiente update de propagación/extinción para (x,y,z).</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// delay = TICK_RATE + rand(0..10)  — idéntico a PMMP scheduleUpdate.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// delay = TICK_RATE + rand(0..10)  — idéntico a the reference server scheduleUpdate.</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> scheduleUpdate(<a class="code" href="classcursestone_1_1world_1_1World.html">world::World</a>* world, int32_t x, int32_t y, int32_t z);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// Lógica de propagación + extinción, llamada por FireUpdateTask::onRun().</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Mirrors PMMP Fire::onUpdate(BLOCK_UPDATE_SCHEDULED)</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Mirrors the reference server Fire::onUpdate(BLOCK_UPDATE_SCHEDULED)</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> onScheduledUpdate(<a class="code" href="classcursestone_1_1world_1_1World.html">world::World</a>* world, int32_t x, int32_t y, int32_t z);</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> TICK_RATE = 30; <span class="comment">// ticks (= 1.5 s a 20 TPS)</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// ---- Tablas de flamabilidad (PMMP verbatim) ----</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// ---- Tablas de flamabilidad (the reference server verbatim) ----</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// Retornan 0 si el bloque no es inflamable.</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> getBurnAbility(uint8_t blockId); <span class="comment">// probabilidad de consumirse</span></div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> getBurnChance(uint8_t blockId);  <span class="comment">// probabilidad de propagarse</span></div>
@@ -212,7 +212,7 @@ $(document).ready(function(){initNavTree('BlockFire_8h_source.html',''); initRes
 <div class="ttc" id="aclasscursestone_1_1block_1_1BlockFire_html"><div class="ttname"><a href="classcursestone_1_1block_1_1BlockFire.html">cursestone::block::BlockFire</a></div><div class="ttdef"><b>Definition:</b> BlockFire.h:59</div></div>
 <div class="ttc" id="aclasscursestone_1_1block_1_1BlockTransparent_html"><div class="ttname"><a href="classcursestone_1_1block_1_1BlockTransparent.html">cursestone::block::BlockTransparent</a></div><div class="ttdef"><b>Definition:</b> BlockTransparent.h:26</div></div>
 <div class="ttc" id="aclasscursestone_1_1entity_1_1Entity_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:35</div></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:153</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:165</div></div>
 <div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

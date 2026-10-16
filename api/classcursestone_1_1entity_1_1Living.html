@@ -131,9 +131,24 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDead</b> () const</
 <tr class="memitem:ae7222436a4b7792fb045e813e42dc178"><td class="memItemLeft" align="right" valign="top"><a id="ae7222436a4b7792fb045e813e42dc178"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addEffect</b> (std::shared_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &gt; e)</td></tr>
 <tr class="separator:ae7222436a4b7792fb045e813e42dc178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a980c4d9a74b0b77c2d165cdef8ca0f6c"><td class="memItemLeft" align="right" valign="top"><a id="a980c4d9a74b0b77c2d165cdef8ca0f6c"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeEffect</b> (uint8_t id)</td></tr>
+<tr class="separator:a980c4d9a74b0b77c2d165cdef8ca0f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b043f70f6476649ed9fe42fcb0542a5"><td class="memItemLeft" align="right" valign="top"><a id="a0b043f70f6476649ed9fe42fcb0542a5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>removeAllEffects</b> ()</td></tr>
+<tr class="separator:a0b043f70f6476649ed9fe42fcb0542a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69938b83bc708f871f5e08421f3cab60"><td class="memItemLeft" align="right" valign="top"><a id="a69938b83bc708f871f5e08421f3cab60"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasEffect</b> (uint8_t id) const</td></tr>
+<tr class="separator:a69938b83bc708f871f5e08421f3cab60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8117dad5609828d8af0ec88063b30c71"><td class="memItemLeft" align="right" valign="top"><a id="a8117dad5609828d8af0ec88063b30c71"></a>
+const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getEffect</b> (uint8_t id) const</td></tr>
+<tr class="separator:a8117dad5609828d8af0ec88063b30c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f2cb82d18cb84e664a6b13b73b1e065"><td class="memItemLeft" align="right" valign="top"><a id="a1f2cb82d18cb84e664a6b13b73b1e065"></a>
 const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>effects</b> () const</td></tr>
 <tr class="separator:a1f2cb82d18cb84e664a6b13b73b1e065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f3dc21c5a5a766ae456649a3a8dbfe4"><td class="memItemLeft" align="right" valign="top"><a id="a4f3dc21c5a5a766ae456649a3a8dbfe4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>tickEffects</b> ()</td></tr>
+<tr class="separator:a4f3dc21c5a5a766ae456649a3a8dbfe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0c2a0b49074e4ed83df48ceca9600c0"><td class="memItemLeft" align="right" valign="top"><a id="ac0c2a0b49074e4ed83df48ceca9600c0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>tick</b> (uint64_t current_tick) override</td></tr>
 <tr class="separator:ac0c2a0b49074e4ed83df48ceca9600c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -204,6 +219,24 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onDeath</b> (
 <tr class="memitem:a7347bb149aad5a171a74e0b94642db2d"><td class="memItemLeft" align="right" valign="top"><a id="a7347bb149aad5a171a74e0b94642db2d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>applyDamage</b> (float amount)</td></tr>
 <tr class="separator:a7347bb149aad5a171a74e0b94642db2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8eb7696f8c4731673e455d990b80d3e"><td class="memItemLeft" align="right" valign="top"><a id="ab8eb7696f8c4731673e455d990b80d3e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onEffectAdded</b> (const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &amp;e)</td></tr>
+<tr class="separator:ab8eb7696f8c4731673e455d990b80d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a425abb3c060e11900230269722f037e7"><td class="memItemLeft" align="right" valign="top"><a id="a425abb3c060e11900230269722f037e7"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onEffectModified</b> (const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &amp;e)</td></tr>
+<tr class="separator:a425abb3c060e11900230269722f037e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af752b41fd102338a16c7c033a3584768"><td class="memItemLeft" align="right" valign="top"><a id="af752b41fd102338a16c7c033a3584768"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onEffectRemoved</b> (const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &amp;e)</td></tr>
+<tr class="separator:af752b41fd102338a16c7c033a3584768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dadb7e244f03907994187c265c4cf07"><td class="memItemLeft" align="right" valign="top"><a id="a6dadb7e244f03907994187c265c4cf07"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onHungerEffectTick</b> (int amplifier)</td></tr>
+<tr class="separator:a6dadb7e244f03907994187c265c4cf07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab801cb8ea3b5c654dbf050c1739f4a11"><td class="memItemLeft" align="right" valign="top"><a id="ab801cb8ea3b5c654dbf050c1739f4a11"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onSaturationEffectTick</b> (int amplifier)</td></tr>
+<tr class="separator:ab801cb8ea3b5c654dbf050c1739f4a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7efd2c533105571e7d1ea147f0ca990"><td class="memItemLeft" align="right" valign="top"><a id="ab7efd2c533105571e7d1ea147f0ca990"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>applyEffectBehavior</b> (const <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &amp;e)</td></tr>
+<tr class="separator:ab7efd2c533105571e7d1ea147f0ca990"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>

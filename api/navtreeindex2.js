@@ -200,6 +200,7 @@ var NAVTREEINDEX2 =
 "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bcaa620a361e9c7602698b91e34b416c08b":[3,0,0,3,1,28,4],
 "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bcab7426fb9c3932995306fceba2874d057":[3,0,0,3,1,28,5],
 "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bcac0241eae411627c19ba9835b6d194b1c":[3,0,0,3,1,28,2],
+"EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bcacff42d769fc6a027224a1a20c4ab567a":[3,0,0,3,1,28,12],
 "EntityDamageEvent_8h_source.html":[5,0,0,4,1,9],
 "EntityDeathEvent_8h_source.html":[5,0,0,4,1,10],
 "EntityDespawnEvent_8h_source.html":[5,0,0,4,1,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "EntityPortalEnterEvent_8h_source.html":[5,0,0,4,1,17],
 "EntityPrimedTNT_8h_source.html":[5,0,0,3,14],
 "EntityRegainHealthEvent_8h_source.html":[5,0,0,4,1,18],
-"EntitySheep_8h_source.html":[5,0,0,3,15],
-"EntityShootBowEvent_8h_source.html":[5,0,0,4,1,19]
+"EntitySheep_8h_source.html":[5,0,0,3,15]
 };

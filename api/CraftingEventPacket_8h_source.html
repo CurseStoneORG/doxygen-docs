@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('CraftingEventPacket_8h_source.html',''
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// CraftingEventPacket — client→server &quot;el jugador crafteó esto&quot; (MCPE</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// protocol 84).</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Formato p84 verificado contra Dr1xyDev/Infinity + Nukkit 2016 —</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Formato p84 verificado contra the reference implementation + Nukkit 2016 —</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// getInt BE y slots de shorts BE (NO varints, NO putString):</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   getByte()      windowId</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   getInt(BE)     type</span></div>
@@ -150,7 +150,7 @@ $(document).ready(function(){initNavTree('CraftingEventPacket_8h_source.html',''
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::vector&lt;cursestone::item::ItemStack&gt; input;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::vector&lt;cursestone::item::ItemStack&gt; output;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>; <span class="comment">// no-op (PMMP)</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> encode(std::vector&lt;uint8_t&gt;&amp; out) <span class="keyword">const override</span>; <span class="comment">// no-op (the reference server)</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">bool</span> decode(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>

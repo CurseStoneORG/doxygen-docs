@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('UseItemPacket_8h_source.html',''); ini
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// UseItemPacket.h — client→server block placement / item use.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// PMMP wire format (protocol 84) — UseItemPacket::decode:</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// The reference server wire format (protocol 84) — UseItemPacket::decode:</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   [1 byte ID 0x1f]</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [Int32 BE] x         block being clicked</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Int32 BE] y</span></div>
@@ -124,9 +124,9 @@ $(document).ready(function(){initNavTree('UseItemPacket_8h_source.html',''); ini
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//   [Float BE] posY</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   [Float BE] posZ</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//   [Int32 BE] slot       inventory slot index of the used item</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//   [Slot]     item       PMMP Slot (see below)</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//   [Slot]     item       the reference server Slot (see below)</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// PMMP Slot (BinaryStream::getSlot):</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// The reference server Slot (BinaryStream::getSlot):</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//   [Int16 BE] id       — if id &lt;= 0, slot is EMPTY and the field ends here.</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//   [Uint8]    count    — only present if id != 0.</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   [Int16 BE] damage   — only present if id != 0.</span></div>

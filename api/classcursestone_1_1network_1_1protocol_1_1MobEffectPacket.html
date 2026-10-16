@@ -84,6 +84,8 @@ $(document).ready(function(){initNavTree('classcursestone_1_1network_1_1protocol
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classcursestone_1_1network_1_1protocol_1_1MobEffectPacket-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::network::protocol::MobEffectPacket Class Reference</div>  </div>
@@ -113,6 +115,39 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isReliableOrd
 <tr class="memitem:a25dad915be06918ae8afbe5e8dc583cb inherit pub_methods_classcursestone_1_1network_1_1protocol_1_1DataPacket"><td class="memItemLeft" align="right" valign="top"><a id="a25dad915be06918ae8afbe5e8dc583cb"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>writePacket</b> (std::vector&lt; uint8_t &gt; &amp;out) const</td></tr>
 <tr class="separator:a25dad915be06918ae8afbe5e8dc583cb inherit pub_methods_classcursestone_1_1network_1_1protocol_1_1DataPacket"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a0bf8e84557edcbd9981c605e52178494"><td class="memItemLeft" align="right" valign="top"><a id="a0bf8e84557edcbd9981c605e52178494"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>eid</b> = 0</td></tr>
+<tr class="separator:a0bf8e84557edcbd9981c605e52178494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9633c82ce852920b095c1a398cc1b776"><td class="memItemLeft" align="right" valign="top"><a id="a9633c82ce852920b095c1a398cc1b776"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>eventId</b> = EVENT_ADD</td></tr>
+<tr class="separator:a9633c82ce852920b095c1a398cc1b776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4ee9bebc43b602f56c4e0388866e9d8"><td class="memItemLeft" align="right" valign="top"><a id="ad4ee9bebc43b602f56c4e0388866e9d8"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>effectId</b> = 0</td></tr>
+<tr class="separator:ad4ee9bebc43b602f56c4e0388866e9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e062f8eb3daddaf946d381f5585767d"><td class="memItemLeft" align="right" valign="top"><a id="a7e062f8eb3daddaf946d381f5585767d"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>amplifier</b> = 0</td></tr>
+<tr class="separator:a7e062f8eb3daddaf946d381f5585767d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a712de94707530939240925512f460f7c"><td class="memItemLeft" align="right" valign="top"><a id="a712de94707530939240925512f460f7c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>particles</b> = true</td></tr>
+<tr class="separator:a712de94707530939240925512f460f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb4d74aef0459f66aac230b2c468699a"><td class="memItemLeft" align="right" valign="top"><a id="afb4d74aef0459f66aac230b2c468699a"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>duration</b> = 0</td></tr>
+<tr class="separator:afb4d74aef0459f66aac230b2c468699a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a25eb5e08f88113b39e6d7e18db975eac"><td class="memItemLeft" align="right" valign="top"><a id="a25eb5e08f88113b39e6d7e18db975eac"></a>
+static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_ADD</b> = 1</td></tr>
+<tr class="separator:a25eb5e08f88113b39e6d7e18db975eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f88383648040e7e50533bb333546ded"><td class="memItemLeft" align="right" valign="top"><a id="a1f88383648040e7e50533bb333546ded"></a>
+static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_MODIFY</b> = 2</td></tr>
+<tr class="separator:a1f88383648040e7e50533bb333546ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d1d0db433cbd2d31e5861f7a85bf28e"><td class="memItemLeft" align="right" valign="top"><a id="a1d1d0db433cbd2d31e5861f7a85bf28e"></a>
+static constexpr uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_REMOVE</b> = 3</td></tr>
+<tr class="separator:a1d1d0db433cbd2d31e5861f7a85bf28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/network/protocol/<a class="el" href="MobEffectPacket_8h_source.html">MobEffectPacket.h</a></li>

@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('Server_8h_source.html',''); initResiza
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// server — singleton. Mirrors pocketmine/server.php.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// server — singleton. Mirrors server.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Responsibilities:</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   1. Boot: load cursestone.yml, init logger, register blocks/items,</span></div>
@@ -287,10 +287,10 @@ $(document).ready(function(){initNavTree('Server_8h_source.html',''); initResiza
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160; </div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// ---- World behaviour flags (used by BlockFire propagation) ----</span></div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="comment">// Both default to TRUE so the fire-spread + Nether portal logic in</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// BlockFire.cpp / ItemFlintSteel.cpp behaves like vanilla PMMP. They</span></div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="comment">// BlockFire.cpp / ItemFlintSteel.cpp behaves like vanilla reference server. They</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">// are exposed as getters so to future server.properties can override</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="comment">// them without touching call sites.</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">// mirrors PMMP server::isFireSpreadEnabled() / isNetherEnabled()</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="comment">// mirrors the reference isFireSpreadEnabled() / isNetherEnabled()</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keywordtype">bool</span> fireSpreadEnabled()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keywordflow">return</span> fire_spread_enabled_;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    }</div>
@@ -438,7 +438,7 @@ $(document).ready(function(){initNavTree('Server_8h_source.html',''); initResiza
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordtype">bool</span> fire_spread_enabled_ = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="keywordtype">bool</span> nether_enabled_ = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordtype">int</span> async_workers_ = 4;</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordtype">int</span> autosave_ticks_ = 6000; <span class="comment">// 5 minutes at 20 TPS (PMMP default)</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="keywordtype">int</span> autosave_ticks_ = 6000; <span class="comment">// 5 minutes at 20 TPS (the reference server default)</span></div>
 <div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160; </div>
 <div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="comment">// state of the autosave incremental (ver beginAutosaveDrain).</span></div>
 <div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordtype">bool</span> autosave_draining_ = <span class="keyword">false</span>;</div>

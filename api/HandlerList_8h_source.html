@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('HandlerList_8h_source.html',''); initR
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//     de las bajas, y los listeners MONITOR siempre ven el estado final.</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//   - Un listener registrado con ignoreCancelled=true se salta en</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//     cuanto el evento ya fue cancelado por un listener anterior —</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//     replica RegisteredListener::callEvent() de PMMP.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//     replica RegisteredListener::callEvent() del servidor de referencia.</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   - Un listener que lanza una excepción se captura, se loguea y se</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//     salta: un handler roto jamás puede tumbar el tick loop ni</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//     bloquear al resto de los handlers (misma doctrina de estabilidad</span></div>

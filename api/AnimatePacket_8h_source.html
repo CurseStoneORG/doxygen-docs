@@ -112,8 +112,8 @@ $(document).ready(function(){initNavTree('AnimatePacket_8h_source.html',''); ini
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// AnimatePacket.h — client→server arm swing / animation trigger.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// MCPE protocol 84 (MCPE 0.15.10) wire format — Genisys</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// AnimatePacket::decode (iTXTech/Genisys, src/pocketmine/network/</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// protocol/AnimatePacket.php):</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// AnimatePacket::decode (iTXTech/Genisys, network/</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// protocol/AnimatePacket):</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   [1 byte   ID 0x27]</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   [VarInt]  action — getVarInt() (1 = swing arm)</span></div>
@@ -131,9 +131,9 @@ $(document).ready(function(){initNavTree('AnimatePacket_8h_source.html',''); ini
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>cursestone::network::protocol {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// PMMP AnimatePacket action constants.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// The reference server AnimatePacket action constants.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;constexpr uint32_t ANIMATE_ACTION_SWING_ARM = 1;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// WAKE_UP = 3 (Infinity event/player/PlayerAnimationEvent.php) — sent to</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// WAKE_UP = 3 (the reference server event/player/PlayerAnimationEvent) — sent to</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// the player itself by Player::stopSleep() so the 0.15.10 client leaves</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// the bed view.</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;constexpr uint32_t ANIMATE_ACTION_WAKE_UP = 3;</div>

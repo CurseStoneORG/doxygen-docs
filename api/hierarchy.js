@@ -684,6 +684,7 @@ var hierarchy =
         [ "cursestone::item::ItemGoldenCarrot", "classcursestone_1_1item_1_1ItemGoldenCarrot.html", null ],
         [ "cursestone::item::ItemMelon", "classcursestone_1_1item_1_1ItemMelon.html", null ],
         [ "cursestone::item::ItemMushroomStew", "classcursestone_1_1item_1_1ItemMushroomStew.html", null ],
+        [ "cursestone::item::ItemPotion", "classcursestone_1_1item_1_1ItemPotion.html", null ],
         [ "cursestone::item::ItemPumpkinPie", "classcursestone_1_1item_1_1ItemPumpkinPie.html", null ],
         [ "cursestone::item::ItemRabbitStew", "classcursestone_1_1item_1_1ItemRabbitStew.html", null ],
         [ "cursestone::item::ItemRawBeef", "classcursestone_1_1item_1_1ItemRawBeef.html", null ],
@@ -703,6 +704,7 @@ var hierarchy =
       [ "cursestone::item::ItemShears", "classcursestone_1_1item_1_1ItemShears.html", null ],
       [ "cursestone::item::ItemSign", "classcursestone_1_1item_1_1ItemSign.html", null ],
       [ "cursestone::item::ItemSnowball", "classcursestone_1_1item_1_1ItemSnowball.html", null ],
+      [ "cursestone::item::ItemSplashPotion", "classcursestone_1_1item_1_1ItemSplashPotion.html", null ],
       [ "cursestone::item::ItemStick", "classcursestone_1_1item_1_1ItemStick.html", null ],
       [ "cursestone::item::ItemSugar", "classcursestone_1_1item_1_1ItemSugar.html", null ],
       [ "cursestone::item::ItemSugarcane", "classcursestone_1_1item_1_1ItemSugarcane.html", null ],
@@ -899,6 +901,7 @@ var hierarchy =
       [ "cursestone::tile::TileSign", "classcursestone_1_1tile_1_1TileSign.html", null ],
       [ "cursestone::tile::TileSpawner", "classcursestone_1_1tile_1_1TileSpawner.html", null ]
     ] ],
+    [ "cursestone::world::SplashPotionEntity", "structcursestone_1_1world_1_1SplashPotionEntity.html", null ],
     [ "cursestone::world::generator::structure::Structure", "classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html", [
       [ "cursestone::world::generator::structure::DesertTemple", "classcursestone_1_1world_1_1generator_1_1structure_1_1DesertTemple.html", null ],
       [ "cursestone::world::generator::structure::village::VillagePiece", "classcursestone_1_1world_1_1generator_1_1structure_1_1village_1_1VillagePiece.html", null ]

@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('DataPacket_8h_source.html',''); initRe
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> readU64LE(uint64_t&amp; v);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> readF32LE(<span class="keywordtype">float</span>&amp; v);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">bool</span> readF64LE(<span class="keywordtype">double</span>&amp; v);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Big-endian readers (PMMP uses putInt/putLong which are BE).</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Big-endian readers (the reference server uses putInt/putLong which are BE).</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">bool</span> readU16BE(uint16_t&amp; v);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">bool</span> readI16BE(int16_t&amp; v);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">bool</span> readU32BE(uint32_t&amp; v);</div>
@@ -245,8 +245,8 @@ $(document).ready(function(){initNavTree('DataPacket_8h_source.html',''); initRe
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// ---- Big-endian primitives ----</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// PMMP uses putInt/putLong/putShort/putFloat which are big-endian</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// (see pocketmine/utils/Binary.php::writeInt -&gt; pack(&quot;N&quot;, ...) = BE32).</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">// The reference server uses putInt/putLong/putShort/putFloat which are big-endian</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// (32-bit big-endian write).</span></div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// MCPE protocol 84 wire format expects BE for almost all numeric fields.</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">void</span> writeU16BE(uint16_t v) {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        out_.push_back((uint8_t)(v &gt;&gt; 8));</div>
@@ -282,7 +282,7 @@ $(document).ready(function(){initNavTree('DataPacket_8h_source.html',''); initRe
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        writeU64BE(u);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">// BE-prefixed string: 2-byte BE length + bytes. Mirrors PMMP putString.</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="comment">// BE-prefixed string: 2-byte BE length + bytes. Mirrors the reference server putString.</span></div>
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">void</span> writeBEString(<span class="keyword">const</span> std::string&amp; s) {</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        writeU16BE(<span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(s.size()));</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;        out_.insert(out_.end(), s.data(), s.data() + s.size());</div>

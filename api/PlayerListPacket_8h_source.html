@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('PlayerListPacket_8h_source.html',''); 
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// isSlim, skin&quot;, but the code that actually writes it — and every server</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// built on it — puts the skin ID and the skin data there:</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//     Server::updatePlayerListData() builds</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//       [$uuid, $entityId, $name, $skinId, $skinData]</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//       [uuid, entityId, name, skinId, skinData]</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// and Human::spawnTo() refuses to spawn an entity whose skin is shorter</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// than 64*32*4 bytes. Sending &quot;false&quot; + &quot;&quot; here makes the 0.15.10 client</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// try to load a skin from an empty blob and DIE on it, which is exactly</span></div>

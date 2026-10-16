@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('Anvil_8h_source.html',''); initResizab
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Anvil.h — Nukkit Anvil WorldProvider, ported to CurseStone&#39;s C++ core.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// This is the on-disk world format used by Nukkit InfinityEdition:</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// This is the on-disk world format used by Nukkit:</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   worlds/&lt;name&gt;/level.dat      (GZIP-compressed big-endian NBT, root → &quot;Data&quot;)</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   worlds/&lt;name&gt;/region/r.X.Z.mca  (region files, 32x32 chunks each)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
@@ -232,7 +232,7 @@ $(document).ready(function(){initNavTree('Anvil_8h_source.html',''); initResizab
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="keywordtype">void</span> evictOldestRegion();</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="comment">// ------------------------------------------------------------------</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// Async chunk writer — the PocketMine-style autosave pipeline.</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="comment">// Async chunk writer — the reference-style autosave pipeline.</span></div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="comment">// saveChunk() runs on the MAIN thread but only does the part that</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="comment">// must be there: anvil_chunk_encode() reads the live mcp_chunk_t</span></div>

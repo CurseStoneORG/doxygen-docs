@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('ItemFlintSteel_8h_source.html',''); in
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// ItemFlintSteel.h — portado of pocketmine/item/FlintSteel.php (PMMP)</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// ItemFlintSteel.h — portado of item/FlintSteel (the reference server)</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Implementa:</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//   - Colocación of fire in blocks solids (onActivate)</span></div>
@@ -116,14 +116,14 @@ $(document).ready(function(){initNavTree('ItemFlintSteel_8h_source.html',''); in
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//     (interior of 2x3 until 21x21, in the axis X or in the axis Z)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   - Degradación of durability (2 points by use in survival)</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Diferencias with the PHP original:</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Diferencias with the original:</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   - onActivate() receives World* + player* + coordinates enteras instead of</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//     objetos Block with position embebida.</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   - the inserción of blocks portal uses World::setBlock(x,and,z, portal, meta).</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     BlockPortal (id=90 in MCPE 0.15.x) must estar registrado in</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//     Block::registry().</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   - the durability is saves in the field `meta` of the ItemStack (mirrors PMMP</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     Tool::useOn($block, $damage=2)).</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   - the durability is saves in the field `meta` of the ItemStack (mirrors the reference server</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     Tool::useOn(block, damage=2)).</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;Item.h&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -154,13 +154,13 @@ $(document).ready(function(){initNavTree('ItemFlintSteel_8h_source.html',''); in
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// durability máxima: 65 usos (just like PMMP MCPE 0.15.x)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// durability máxima: 65 usos (just like the reference server MCPE 0.15.x)</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> constexpr uint8_t MAX_DURABILITY = 64;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// point of entrada main — call from player::handleBlockPlace()</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// when heldItemId == 259.</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Mirrors: FlintSteel::onActivate($level, $player, $block, $target, $face, ...)</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Mirrors: FlintSteel::onActivate(level, player, block, target, face, ...)</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Parámetros:</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//   level         — world activo</span></div>
@@ -177,15 +177,15 @@ $(document).ready(function(){initNavTree('ItemFlintSteel_8h_source.html',''); in
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// applies 2 points of damage to the ítem in mano of the player (survival only).</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// mirrors: $this-&gt;useOn($block, 2)</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// mirrors: useOn(block, 2)</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> applyDurability(<a class="code" href="classcursestone_1_1Player.html">Player</a>* player);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
 <div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:85</div></div>
 <div class="ttc" id="aclasscursestone_1_1item_1_1ItemFlintSteel_html"><div class="ttname"><a href="classcursestone_1_1item_1_1ItemFlintSteel.html">cursestone::item::ItemFlintSteel</a></div><div class="ttdef"><b>Definition:</b> ItemFlintSteel.h:53</div></div>
-<div class="ttc" id="aclasscursestone_1_1item_1_1Item_html"><div class="ttname"><a href="classcursestone_1_1item_1_1Item.html">cursestone::item::Item</a></div><div class="ttdef"><b>Definition:</b> Item.h:37</div></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:153</div></div>
+<div class="ttc" id="aclasscursestone_1_1item_1_1Item_html"><div class="ttname"><a href="classcursestone_1_1item_1_1Item.html">cursestone::item::Item</a></div><div class="ttdef"><b>Definition:</b> Item.h:52</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:165</div></div>
 <div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

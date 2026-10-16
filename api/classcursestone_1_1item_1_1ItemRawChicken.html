@@ -97,9 +97,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adadf5355fdb9ba72b9a4fa59317b41b1"><td class="memItemLeft" align="right" valign="top"><a id="adadf5355fdb9ba72b9a4fa59317b41b1"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> () const override</td></tr>
 <tr class="separator:adadf5355fdb9ba72b9a4fa59317b41b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6d82c4712d9467c37b5f076a25c2b58"><td class="memItemLeft" align="right" valign="top"><a id="ab6d82c4712d9467c37b5f076a25c2b58"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>applyEatEffects</b> (<a class="el" href="classcursestone_1_1Player.html">Player</a> &amp;eater) const override</td></tr>
-<tr class="separator:ab6d82c4712d9467c37b5f076a25c2b58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11060d87c8354731b73f841978981513"><td class="memItemLeft" align="right" valign="top"><a id="a11060d87c8354731b73f841978981513"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>applyEatEffects</b> (<a class="el" href="classcursestone_1_1Player.html">Player</a> &amp;eater, uint8_t meta) const override</td></tr>
+<tr class="separator:a11060d87c8354731b73f841978981513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classcursestone_1_1item_1_1ItemFood"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcursestone_1_1item_1_1ItemFood')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcursestone_1_1item_1_1ItemFood.html">cursestone::item::ItemFood</a></td></tr>
 <tr class="memitem:aa5c67952adc54fdb62495ec813560663 inherit pub_methods_classcursestone_1_1item_1_1ItemFood"><td class="memItemLeft" align="right" valign="top"><a id="aa5c67952adc54fdb62495ec813560663"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ItemFood</b> (uint16_t id, int food, float saturation=0.6f, bool always_edible=false, uint16_t residue_id=0)</td></tr>
@@ -156,6 +156,9 @@ virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTool</b> ()
 <tr class="memitem:a11c9e7afdf67192c739605d6dc754a8c inherit pub_methods_classcursestone_1_1item_1_1Item"><td class="memItemLeft" align="right" valign="top"><a id="a11c9e7afdf67192c739605d6dc754a8c"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>isArmor</b> () const</td></tr>
 <tr class="separator:a11c9e7afdf67192c739605d6dc754a8c inherit pub_methods_classcursestone_1_1item_1_1Item"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12376047d2e923fe5fb18491cabf8b82 inherit pub_methods_classcursestone_1_1item_1_1Item"><td class="memItemLeft" align="right" valign="top"><a id="a12376047d2e923fe5fb18491cabf8b82"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>alwaysEdible</b> (uint8_t) const</td></tr>
+<tr class="separator:a12376047d2e923fe5fb18491cabf8b82 inherit pub_methods_classcursestone_1_1item_1_1Item"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
