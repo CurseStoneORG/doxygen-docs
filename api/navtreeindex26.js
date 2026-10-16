@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"structmcp__rak__session.html#a0afceb1acff5949adad37324858212fb":[4,0,58,42],
 "structmcp__rak__session.html#a16032bddcfe7a9a92103c391f81bbc45":[4,0,58,0],
 "structmcp__rak__session.html#a1790b94837cee0949ae040d80fe14dd6":[4,0,58,53],
 "structmcp__rak__session.html#a1cbba52a5b37cb5ef9dc86beae40bbcc":[4,0,58,76],

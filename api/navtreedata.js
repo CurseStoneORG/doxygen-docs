@@ -32,46 +32,47 @@ var NAVTREE =
       [ "Configuration", "index.html#autotoc_md3", null ],
       [ "Developing Plugins", "index.html#autotoc_md4", null ],
       [ "Contributing to CurseStone", "index.html#autotoc_md5", null ],
-      [ "Licensing information", "index.html#autotoc_md6", null ],
-      [ "1. Ways to contribute", "md_CONTRIBUTING.html#autotoc_md9", null ],
-      [ "2. Setting up", "md_CONTRIBUTING.html#autotoc_md11", null ],
-      [ "3. Architecture rules: the C / C++ split", "md_CONTRIBUTING.html#autotoc_md13", [
-        [ "Rule 1: C files never depend on C++", "md_CONTRIBUTING.html#autotoc_md14", null ],
-        [ "Rule 2: C headers are C++-safe, so C++ includes them directly", "md_CONTRIBUTING.html#autotoc_md15", null ],
-        [ "Rule 3: never inherit from a C struct", "md_CONTRIBUTING.html#autotoc_md16", null ],
-        [ "C++ wrappers for C headers", "md_CONTRIBUTING.html#autotoc_md17", null ]
+      [ "AI development tools", "index.html#autotoc_md6", null ],
+      [ "Licensing information", "index.html#autotoc_md7", null ],
+      [ "1. Ways to contribute", "md_CONTRIBUTING.html#autotoc_md10", null ],
+      [ "2. Setting up", "md_CONTRIBUTING.html#autotoc_md12", null ],
+      [ "3. Architecture rules: the C / C++ split", "md_CONTRIBUTING.html#autotoc_md14", [
+        [ "Rule 1: C files never depend on C++", "md_CONTRIBUTING.html#autotoc_md15", null ],
+        [ "Rule 2: C headers are C++-safe, so C++ includes them directly", "md_CONTRIBUTING.html#autotoc_md16", null ],
+        [ "Rule 3: never inherit from a C struct", "md_CONTRIBUTING.html#autotoc_md17", null ],
+        [ "C++ wrappers for C headers", "md_CONTRIBUTING.html#autotoc_md18", null ]
       ] ],
-      [ "4. Naming and style", "md_CONTRIBUTING.html#autotoc_md19", [
-        [ "Items and blocks", "md_CONTRIBUTING.html#autotoc_md20", null ],
-        [ "General", "md_CONTRIBUTING.html#autotoc_md21", null ],
-        [ "Comments and documentation", "md_CONTRIBUTING.html#autotoc_md22", null ]
+      [ "4. Naming and style", "md_CONTRIBUTING.html#autotoc_md20", [
+        [ "Items and blocks", "md_CONTRIBUTING.html#autotoc_md21", null ],
+        [ "General", "md_CONTRIBUTING.html#autotoc_md22", null ],
+        [ "Comments and documentation", "md_CONTRIBUTING.html#autotoc_md23", null ]
       ] ],
-      [ "5. Protocol 84 notes", "md_CONTRIBUTING.html#autotoc_md24", null ],
-      [ "6. Where things go", "md_CONTRIBUTING.html#autotoc_md26", null ],
-      [ "7. Testing your change", "md_CONTRIBUTING.html#autotoc_md28", null ],
-      [ "8. Commits and pull requests", "md_CONTRIBUTING.html#autotoc_md30", null ],
-      [ "9. Reporting bugs", "md_CONTRIBUTING.html#autotoc_md32", null ],
-      [ "10. Plugins", "md_CONTRIBUTING.html#autotoc_md34", null ],
-      [ "11. License", "md_CONTRIBUTING.html#autotoc_md36", null ]
+      [ "5. Protocol 84 notes", "md_CONTRIBUTING.html#autotoc_md25", null ],
+      [ "6. Where things go", "md_CONTRIBUTING.html#autotoc_md27", null ],
+      [ "7. Testing your change", "md_CONTRIBUTING.html#autotoc_md29", null ],
+      [ "8. Commits and pull requests", "md_CONTRIBUTING.html#autotoc_md31", null ],
+      [ "9. Reporting bugs", "md_CONTRIBUTING.html#autotoc_md33", null ],
+      [ "10. Plugins", "md_CONTRIBUTING.html#autotoc_md35", null ],
+      [ "11. License", "md_CONTRIBUTING.html#autotoc_md37", null ]
     ] ],
     [ "Cómo compilar CurseStone", "md_BUILDING.html", [
-      [ "Opción 1 — GitHub Actions (recomendado)", "md_BUILDING.html#autotoc_md38", null ],
-      [ "Opción 1.5 — Release personalizado (versión y descripción custom)", "md_BUILDING.html#autotoc_md40", null ],
-      [ "</blockquote>", "md_BUILDING.html#autotoc_md41", null ],
-      [ "Opción 2 — Linux x86_64 (VPS / PC)", "md_BUILDING.html#autotoc_md42", null ],
-      [ "Opción 3 — Android ARM64 desde Termux (en tu celular)", "md_BUILDING.html#autotoc_md44", null ],
-      [ "</blockquote>", "md_BUILDING.html#autotoc_md45", null ],
-      [ "Opción 4 — Cross-compile ARM64 desde Linux (con NDK)", "md_BUILDING.html#autotoc_md46", null ],
-      [ "Variables CMake útiles", "md_BUILDING.html#autotoc_md48", null ]
+      [ "Opción 1 — GitHub Actions (recomendado)", "md_BUILDING.html#autotoc_md39", null ],
+      [ "Opción 1.5 — Release personalizado (versión y descripción custom)", "md_BUILDING.html#autotoc_md41", null ],
+      [ "</blockquote>", "md_BUILDING.html#autotoc_md42", null ],
+      [ "Opción 2 — Linux x86_64 (VPS / PC)", "md_BUILDING.html#autotoc_md43", null ],
+      [ "Opción 3 — Android ARM64 desde Termux (en tu celular)", "md_BUILDING.html#autotoc_md45", null ],
+      [ "</blockquote>", "md_BUILDING.html#autotoc_md46", null ],
+      [ "Opción 4 — Cross-compile ARM64 desde Linux (con NDK)", "md_BUILDING.html#autotoc_md47", null ],
+      [ "Variables CMake útiles", "md_BUILDING.html#autotoc_md49", null ]
     ] ],
     [ "CurseStone Comment and Documentation Style Guide", "md_docs_STYLE_COMMENTS.html", [
-      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md50", null ],
-      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md51", null ],
-      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md52", null ],
-      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md53", null ],
-      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md54", null ],
-      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md55", null ],
-      [ "7. Tooling workflow (per migration batch)", "md_docs_STYLE_COMMENTS.html#autotoc_md56", null ]
+      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md51", null ],
+      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md52", null ],
+      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md53", null ],
+      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md54", null ],
+      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md55", null ],
+      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md56", null ],
+      [ "7. Tooling workflow (per migration batch)", "md_docs_STYLE_COMMENTS.html#autotoc_md57", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -128,10 +129,10 @@ var NAVTREEINDEX =
 "classcursestone_1_1tile_1_1TileFurnace.html#ac9df56fb809f2e5a12a75cf5c55ca440",
 "classcursestone_1_1world_1_1format_1_1ChunkAdapter.html#afb86afc82fa42f721bdb0a5d37f8a5d7",
 "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1BigOakTree.html#a567a530d182e69fbd6f5760871776706",
-"md_CONTRIBUTING.html#autotoc_md9",
-"structcursestone_1_1world_1_1ArrowEntity.html#afc45a4784c1d42f42c5eba7a54c38360",
-"structmcp__hit__result.html#ac02f9934db7cffe26065a18e15be8cd0",
-"structmcp__rak__session.html#a16032bddcfe7a9a92103c391f81bbc45"
+"md_CONTRIBUTING.html#autotoc_md35",
+"structcursestone_1_1world_1_1ArrowEntity.html#af19692fda8fc324dcf2071386e9b54d2",
+"structmcp__hit__result.html#aaa778635e894b72c4c257b40cd8b08a5",
+"structmcp__rak__session.html#a0afceb1acff5949adad37324858212fb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

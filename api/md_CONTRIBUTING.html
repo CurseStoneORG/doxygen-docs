@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('md_CONTRIBUTING.html',''); initResizab
 <li><a href="#11-license">License</a></li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md10"></a>
 1. Ways to contribute</h1>
 <ul>
 <li><b>Report a bug</b> with a clear way to reproduce it.</li>
@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('md_CONTRIBUTING.html',''); initResizab
 </ul>
 <p>For anything larger than a small fix, open an issue first so the approach can be agreed before you invest time.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md11"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 2. Setting up</h1>
 <ol type="1">
 <li>Fork the repository and clone your fork.</li>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('md_CONTRIBUTING.html',''); initResizab
 </ol>
 <div class="fragment"><div class="line">git checkout -b fix/short-description</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md14"></a>
 3. Architecture rules: the C / C++ split</h1>
 <p>CurseStone is a strict <b>C core plus a C++ layer</b>, modeled on PocketMine 0.15.10 / protocol 84.</p>
 <table class="markdownTable">
@@ -140,10 +140,10 @@ $(document).ready(function(){initNavTree('md_CONTRIBUTING.html',''); initResizab
 <td class="markdownTableBodyNone">Game   </td><td class="markdownTableBodyNone">C++20   </td><td class="markdownTableBodyNone">Server, Player, World, Block, Item, Entity, Event, Command, Scheduler, Inventory   </td></tr>
 </table>
 <p>The two layers talk through plain C structs and <code>extern "C"</code> boundaries. These three rules keep that boundary clean, and a pull request that breaks them will not be merged.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Rule 1: C files never depend on C++</h2>
 <p>A <code>*.c</code> file may only include headers that compile cleanly under <code>gcc -std=c2x</code>. That means no STL, no <code>new</code>, no templates, no exceptions, no <code>class</code>.</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Rule 2: C headers are C++-safe, so C++ includes them directly</h2>
 <p>Every public C header wraps its declarations like this:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#ifdef __cplusplus</span></div>
@@ -156,7 +156,7 @@ Rule 2: C headers are C++-safe, so C++ includes them directly</h2>
 <div class="line">}</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --><p>Because of that, <code>*.cpp</code> files include C headers (<code><a class="el" href="Vector3_8h_source.html">math/Vector3.h</a></code>, <code><a class="el" href="Utils_8h_source.html">utils/Utils.h</a></code>, <code><a class="el" href="Logger_8h_source.html">utils/Logger.h</a></code>, ...) with a plain <code>#include</code>. Do not add extra <code>extern "C"</code> wrapping at the include site.</p>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Rule 3: never inherit from a C struct</h2>
 <p>Use <b>composition</b>. The canonical example is <code>Position</code>: it stores <code>double x, y, z</code> itself and converts to and from the C type <code>mcp_vector3_t</code> through <code>toV3()</code> and an explicit constructor.</p>
 <div class="fragment"><div class="line"><span class="comment">// Good: composition, explicit conversion</span></div>
@@ -165,7 +165,7 @@ Rule 3: never inherit from a C struct</h2>
 <div class="line"> </div>
 <div class="line"><span class="comment">// Bad: struct Position : mcp_vector3_t { ... };</span></div>
 <div class="ttc" id="astructmcp__vector3_html"><div class="ttname"><a href="structmcp__vector3.html">mcp_vector3</a></div><div class="ttdef"><b>Definition:</b> Vector3.h:40</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md17"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md18"></a>
 C++ wrappers for C headers</h2>
 <p>When a C header needs C++ conveniences (operators, RAII, namespaced helpers), add a parallel <code>.hpp</code> file. Do not change the <code>.h</code>.</p>
 <table class="markdownTable">
@@ -179,9 +179,9 @@ C++ wrappers for C headers</h2>
 <td class="markdownTableBodyNone"><code><a class="el" href="MainLogger_8h_source.html">utils/MainLogger.h</a></code>   </td><td class="markdownTableBodyNone"><code><a class="el" href="MainLogger_8hpp_source.html">utils/MainLogger.hpp</a></code>: <code><a class="el" href="classcursestone_1_1utils_1_1MainLogger.html">cursestone::utils::MainLogger</a></code>   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 4. Naming and style</h1>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md21"></a>
 Items and blocks</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -193,7 +193,7 @@ Items and blocks</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>Block</code> + Adjective + Noun   </td><td class="markdownTableBodyNone"><code>BlockRedstoneOre</code>   </td><td class="markdownTableBodyNone">✅   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md21"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 General</h2>
 <ul>
 <li>C++ code lives in the <code>cursestone</code> namespace.</li>
@@ -203,7 +203,7 @@ General</h2>
 <li>Code must build on Linux, macOS, Windows and Android. Keep platform-specific code in <code>cmake/</code> or inside clearly guarded blocks.</li>
 <li>Do not leave debugging output, commented-out code or unrelated changes in your pull request.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md23"></a>
 Comments and documentation</h2>
 <ul>
 <li>Comments and Doxygen documentation follow <a class="el" href="md_docs_STYLE_COMMENTS.html">docs/STYLE_COMMENTS.md</a>: American English, concise and technically accurate, Doxygen for public/protected declarations, no debugging diaries or decorative separators, and no invented behavior.</li>
@@ -218,7 +218,7 @@ Comments and documentation</h2>
 <li>When touching formatting, keep formatting-only commits separate from comment/documentation commits.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md25"></a>
 5. Protocol 84 notes</h1>
 <ul>
 <li>Block positions in packets are <code>int32_t</code> (<b>signed</b>), not unsigned.</li>
@@ -226,7 +226,7 @@ Comments and documentation</h2>
 <li>Chunk sections are 16×16×16 blocks. Create them with <code>mcp_section_new(y)</code>, not <code>mcp_chunk_section_new</code>.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md26"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 6. Where things go</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -251,7 +251,7 @@ Comments and documentation</h2>
 <td class="markdownTableBodyNone">A standalone check or benchmark   </td><td class="markdownTableBodyNone"><code>tools/</code>   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md28"></a>
+<h1><a class="anchor" id="autotoc_md29"></a>
 7. Testing your change</h1>
 <p><code>tools/</code> contains standalone check programs (<code>*_check.cpp</code>), smoke tests, benchmarks and a few shell runners such as <code>tools/run_nbt_test.sh</code>. If a check exists for the area you changed, run it. If none exists, consider adding one.</p>
 <p>Before you open a pull request, make sure that:</p>
@@ -263,7 +263,7 @@ Comments and documentation</h2>
 </ul>
 <p>For performance problems or disconnects, <code>/workbench start</code> followed by <code>/workbench report</code> gives you TPS, tick timing, packet logs and RakNet counters to attach to your pull request.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md31"></a>
 8. Commits and pull requests</h1>
 <p><b>Commits</b></p>
 <ul>
@@ -280,7 +280,7 @@ Comments and documentation</h2>
 <li>Respond to review comments by pushing new commits; the maintainers may ask you to squash at the end.</li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md32"></a>
+<h1><a class="anchor" id="autotoc_md33"></a>
 9. Reporting bugs</h1>
 <p>Open an issue and include:</p>
 <ul>
@@ -293,11 +293,11 @@ Comments and documentation</h2>
 </ul>
 <p>If you find a security problem, do not post it publicly: contact the maintainers privately instead.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md35"></a>
 10. Plugins</h1>
 <p>Documentation for the Lua plugin system lives in its own repository: <a href="https://github.com/CurseStoneTeam/cursestone-docs">https://github.com/CurseStoneTeam/cursestone-docs</a>.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md37"></a>
 11. License</h1>
 <p>CurseStone is licensed under <b>LGPL-3.0-or-later</b>. By submitting a contribution you agree that it is released under the same license. </p>
 </div></div><!-- contents -->

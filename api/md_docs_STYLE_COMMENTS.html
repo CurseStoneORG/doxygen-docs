@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('md_docs_STYLE_COMMENTS.html',''); init
 <li><code>tools/lint_comments.py</code> — reports suspicious comment patterns; it never edits files.</li>
 </ul>
 <p>The rules below apply to <b>comment text only</b>. Comment cleanup must never change executable code, algorithms, public APIs, network protocols, or runtime behavior. Comment edits and formatting-only edits are kept in separate commits.</p>
-<h1><a class="anchor" id="autotoc_md50"></a>
+<h1><a class="anchor" id="autotoc_md51"></a>
 1. Language</h1>
 <ul>
 <li>Technical comments are written in <b>American English</b>.</li>
@@ -100,7 +100,7 @@ $(document).ready(function(){initNavTree('md_docs_STYLE_COMMENTS.html',''); init
 <li>Comments still in Spanish are translated <b>by a human reviewer</b> who verifies the current implementation first. Automated translation or AI rewriting of comments is not allowed.</li>
 <li>Do not invent behavior. Every statement in a comment must be supported by the code it describes, by the protocol specification, or by a documented invariant.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md51"></a>
+<h1><a class="anchor" id="autotoc_md52"></a>
 2. What deserves a comment</h1>
 <p>Document with Doxygen:</p>
 <ul>
@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('md_docs_STYLE_COMMENTS.html',''); init
 </ul>
 <p>Use ordinary (<code>//</code> or <code>/* */</code>) comments only when they explain <b>non-obvious</b> behavior: a workaround, a compatibility rule, a protocol quirk, a threading or ownership requirement, a performance rationale, or an invariant the reader cannot infer from the code.</p>
 <p>Do <b>not</b> add comments that merely restate the code or the identifier name.</p>
-<h1><a class="anchor" id="autotoc_md52"></a>
+<h1><a class="anchor" id="autotoc_md53"></a>
 3. Doxygen conventions</h1>
 <ul>
 <li>Use the <code>@</code> form: <code>@brief</code>, <code>@param</code>, <code>@return</code>, <code>@note</code>, <code>@warning</code>, <code>@todo</code>.</li>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('md_docs_STYLE_COMMENTS.html',''); init
 <p>Example:</p>
 <div class="fragment"><div class="line"> </div>
 <div class="line">int16_t mcp_binary_read_i16_le(<span class="keyword">const</span> <span class="keywordtype">void</span>* p);</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md53"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md54"></a>
 4. What to remove or rewrite</h1>
 <ul>
 <li><b>Debugging diaries</b>: narratives about past crashes, bisects, or "this used
@@ -145,7 +145,7 @@ $(document).ready(function(){initNavTree('md_docs_STYLE_COMMENTS.html',''); init
 <li>Protocol details, field layouts, magic values, and wire-format constraints.</li>
 <li>Attribution and third-party references.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md54"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 5. Prohibited or restricted changes</h1>
 <ul>
 <li>No AI-generated or automatically translated comment rewrites.</li>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('md_docs_STYLE_COMMENTS.html',''); init
 <li>No license banner or copyright header changes without the legal/attribution review described in <code>CONTRIBUTING.md</code>.</li>
 <li>No changes to <code>#line</code>-sensitive constructs or code layout that could affect <code>__LINE__</code>-based diagnostics (macros, logging, assertions).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md55"></a>
+<h1><a class="anchor" id="autotoc_md56"></a>
 6. File headers</h1>
 <p>Every project-owned <code>.h</code> / <code>.c</code> / <code>.cpp</code> file keeps exactly one header block:</p>
 <ol type="1">
@@ -162,7 +162,7 @@ $(document).ready(function(){initNavTree('md_docs_STYLE_COMMENTS.html',''); init
 <li>A one- or two-sentence American English summary of the file's role (this is the Doxygen file comment; <code>tools/lint_comments.py</code> flags headers that lack it).</li>
 </ol>
 <p><code>third_party/</code> files are exempt: their headers, licenses, and comments are never rewritten.</p>
-<h1><a class="anchor" id="autotoc_md56"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 7. Tooling workflow (per migration batch)</h1>
 <div class="fragment"><div class="line"># 1. Inventory (read-only)</div>
 <div class="line">python3 tools/comment_inventory.py src/network --csv build/comment_inventory.csv</div>

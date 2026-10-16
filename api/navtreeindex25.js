@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"structmcp__hit__result.html#aaa778635e894b72c4c257b40cd8b08a5":[4,0,16,4],
 "structmcp__hit__result.html#ac02f9934db7cffe26065a18e15be8cd0":[4,0,16,5],
 "structmcp__int__array__tag.html":[4,0,17],
 "structmcp__int__array__tag.html#a7f12b83253bf83addd5a3b3c6c9c984e":[4,0,17,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "structmcp__pkt__unconnected__pong.html#ad3ad4b86b742de72749a9584e0c997d4":[4,0,57,0],
 "structmcp__pkt__unconnected__pong.html#af1cc7e4d93a2ce07f43e7b4a9cf074a4":[4,0,57,6],
 "structmcp__rak__session.html":[4,0,58],
-"structmcp__rak__session.html#a0276793c42093c62b5ee8eea098263a1":[4,0,58,81],
-"structmcp__rak__session.html#a0afceb1acff5949adad37324858212fb":[4,0,58,42]
+"structmcp__rak__session.html#a0276793c42093c62b5ee8eea098263a1":[4,0,58,81]
 };
