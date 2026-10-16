@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['queryhandler_1492',['QueryHandler',['../classcursestone_1_1network_1_1QueryHandler.html',1,'cursestone::network']]],
-  ['queryregenerateevent_1493',['QueryRegenerateEvent',['../classcursestone_1_1event_1_1server_1_1QueryRegenerateEvent.html',1,'cursestone::event::server']]]
+  ['queryhandler_1486',['QueryHandler',['../classcursestone_1_1network_1_1QueryHandler.html',1,'cursestone::network']]],
+  ['queryregenerateevent_1487',['QueryRegenerateEvent',['../classcursestone_1_1event_1_1server_1_1QueryRegenerateEvent.html',1,'cursestone::event::server']]]
 ];

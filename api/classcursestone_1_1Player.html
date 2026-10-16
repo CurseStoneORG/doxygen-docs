@@ -217,6 +217,24 @@ int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>dropItem</b> (doub
 <tr class="memitem:a70b8b7e9ed282e42cd051e4d1f11310f"><td class="memItemLeft" align="right" valign="top"><a id="a70b8b7e9ed282e42cd051e4d1f11310f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>handleDropItem</b> (<a class="el" href="classcursestone_1_1network_1_1protocol_1_1DropItemPacket.html">network::protocol::DropItemPacket</a> &amp;pk)</td></tr>
 <tr class="separator:a70b8b7e9ed282e42cd051e4d1f11310f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8440c19e7d53d0662bf7f8c038f845b"><td class="memItemLeft" align="right" valign="top"><a id="af8440c19e7d53d0662bf7f8c038f845b"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>floatingAdd</b> (const <a class="el" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a> &amp;it)</td></tr>
+<tr class="separator:af8440c19e7d53d0662bf7f8c038f845b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32070d52b8aa9a4cfe7f5e67a51c049c"><td class="memItemLeft" align="right" valign="top"><a id="a32070d52b8aa9a4cfe7f5e67a51c049c"></a>
+<a class="el" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a>&#160;</td><td class="memItemRight" valign="bottom"><b>floatingTake</b> (const <a class="el" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a> &amp;want)</td></tr>
+<tr class="separator:a32070d52b8aa9a4cfe7f5e67a51c049c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef7851b97300553615419978656dd2c"><td class="memItemLeft" align="right" valign="top"><a id="a6ef7851b97300553615419978656dd2c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>floatingContains</b> (const <a class="el" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a> &amp;want) const</td></tr>
+<tr class="separator:a6ef7851b97300553615419978656dd2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a048a75146b44888eb644d7f9f5c47d"><td class="memItemLeft" align="right" valign="top"><a id="a7a048a75146b44888eb644d7f9f5c47d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>floatingRemove</b> (const <a class="el" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a> &amp;want)</td></tr>
+<tr class="separator:a7a048a75146b44888eb644d7f9f5c47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64362ecf60468f8ca3e080d6afaf7b4b"><td class="memItemLeft" align="right" valign="top"><a id="a64362ecf60468f8ca3e080d6afaf7b4b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>beginSurvivalSlotWrite</b> (<a class="el" href="classcursestone_1_1inventory_1_1Inventory.html">inventory::Inventory</a> *inv, int absSlot, const <a class="el" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a> &amp;target)</td></tr>
+<tr class="separator:a64362ecf60468f8ca3e080d6afaf7b4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ec9dd7d1a2f6b36c0065857c8408a60"><td class="memItemLeft" align="right" valign="top"><a id="a3ec9dd7d1a2f6b36c0065857c8408a60"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>returnFloatingItems</b> ()</td></tr>
+<tr class="separator:a3ec9dd7d1a2f6b36c0065857c8408a60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ad97f104354df0284156b267fc0d86e"><td class="memItemLeft" align="right" valign="top"><a id="a0ad97f104354df0284156b267fc0d86e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>handleSignEdit</b> (<a class="el" href="classcursestone_1_1network_1_1protocol_1_1BlockEntityDataPacket.html">network::protocol::BlockEntityDataPacket</a> &amp;pk)</td></tr>
 <tr class="separator:a0ad97f104354df0284156b267fc0d86e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -500,24 +518,22 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>handleCraftingEvent</
 void&#160;</td><td class="memItemRight" valign="bottom"><b>handleInventoryCraft</b> ()</td></tr>
 <tr class="separator:a546030b8e98ba70eb0e8132ed11b7ad8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a751b2798547e26bba801ea6acbf1c61a"><td class="memItemLeft" align="right" valign="top"><a id="a751b2798547e26bba801ea6acbf1c61a"></a>
-<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Player.html#a751b2798547e26bba801ea6acbf1c61a">getWorld</a> () const</td></tr>
-<tr class="memdesc:a751b2798547e26bba801ea6acbf1c61a"><td class="mdescLeft">&#160;</td><td class="mdescRight">world in that which is this player now (never null tras login). <br /></td></tr>
+<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getWorld</b> () const</td></tr>
 <tr class="separator:a751b2798547e26bba801ea6acbf1c61a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57a1ce0ede813a86e6df3ea1b5388679"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Player.html#a57a1ce0ede813a86e6df3ea1b5388679">switchWorld</a> (<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *target, double x, double y, double z, bool throughPortal)</td></tr>
-<tr class="memdesc:a57a1ce0ede813a86e6df3ea1b5388679"><td class="mdescLeft">&#160;</td><td class="mdescRight">moves to the player to <code>target</code> in (x,and,z).  <a href="classcursestone_1_1Player.html#a57a1ce0ede813a86e6df3ea1b5388679">More...</a><br /></td></tr>
+<tr class="memitem:a57a1ce0ede813a86e6df3ea1b5388679"><td class="memItemLeft" align="right" valign="top"><a id="a57a1ce0ede813a86e6df3ea1b5388679"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>switchWorld</b> (<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *target, double x, double y, double z, bool throughPortal)</td></tr>
 <tr class="separator:a57a1ce0ede813a86e6df3ea1b5388679"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae64c96959f40bbbea0939114f85ba07a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a">teleportToNether</a> ()</td></tr>
-<tr class="memdesc:ae64c96959f40bbbea0939114f85ba07a"><td class="mdescLeft">&#160;</td><td class="mdescRight">travels to the Nether escalando the coordinates 1:8 and buscando (or construyendo) a portal in the target.  <a href="classcursestone_1_1Player.html#ae64c96959f40bbbea0939114f85ba07a">More...</a><br /></td></tr>
+<tr class="memitem:ae64c96959f40bbbea0939114f85ba07a"><td class="memItemLeft" align="right" valign="top"><a id="ae64c96959f40bbbea0939114f85ba07a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>teleportToNether</b> ()</td></tr>
 <tr class="separator:ae64c96959f40bbbea0939114f85ba07a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4bb647650803d85e1b49ac7227898b38"><td class="memItemLeft" align="right" valign="top"><a id="a4bb647650803d85e1b49ac7227898b38"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38">teleportToOverworld</a> ()</td></tr>
-<tr class="memdesc:a4bb647650803d85e1b49ac7227898b38"><td class="mdescLeft">&#160;</td><td class="mdescRight">scans again to the surface escalando the coordinates 8:1. <br /></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>teleportToOverworld</b> ()</td></tr>
 <tr class="separator:a4bb647650803d85e1b49ac7227898b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94da833438a5645887eddc9b3b9bae29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">checkPortal</a> ()</td></tr>
-<tr class="memdesc:a94da833438a5645887eddc9b3b9bae29"><td class="mdescLeft">&#160;</td><td class="mdescRight">checks if the player is inside of a block of portal and, with the cooldown cumplido, dispara the travel dimensional.  <a href="classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29">More...</a><br /></td></tr>
+<tr class="memitem:a94da833438a5645887eddc9b3b9bae29"><td class="memItemLeft" align="right" valign="top"><a id="a94da833438a5645887eddc9b3b9bae29"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>checkPortal</b> ()</td></tr>
 <tr class="separator:a94da833438a5645887eddc9b3b9bae29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a164a53abf2e5608cae4457a023678b89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89">finishDimensionSwitch</a> ()</td></tr>
-<tr class="memdesc:a164a53abf2e5608cae4457a023678b89"><td class="mdescLeft">&#160;</td><td class="mdescRight">closes a cross-dimension switch: PlayStatus(PLAYER_SPAWN) plus the position reset.  <a href="classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89">More...</a><br /></td></tr>
+<tr class="memitem:a164a53abf2e5608cae4457a023678b89"><td class="memItemLeft" align="right" valign="top"><a id="a164a53abf2e5608cae4457a023678b89"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>finishDimensionSwitch</b> ()</td></tr>
 <tr class="separator:a164a53abf2e5608cae4457a023678b89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f952e8be535f3e75d2e6b4b1acda2e"><td class="memItemLeft" align="right" valign="top"><a id="a23f952e8be535f3e75d2e6b4b1acda2e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setMovementSpeed</b> (float speed)</td></tr>
@@ -762,116 +778,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>closed_</b> = false</
 std::shared_ptr&lt; <a class="el" href="classcursestone_1_1world_1_1World.html">World</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>world_</b></td></tr>
 <tr class="separator:ac2622abbd99f6e6906a465521cffaeac inherit pro_attribs_classcursestone_1_1entity_1_1Entity"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="a94da833438a5645887eddc9b3b9bae29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94da833438a5645887eddc9b3b9bae29">&#9670;&nbsp;</a></span>checkPortal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cursestone::Player::checkPortal </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>checks if the player is inside of a block of portal and, with the cooldown cumplido, dispara the travel dimensional. </p>
-<p>Llamado a time per tick from onUpdate(). </p>
-
-</div>
-</div>
-<a id="a164a53abf2e5608cae4457a023678b89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a164a53abf2e5608cae4457a023678b89">&#9670;&nbsp;</a></span>finishDimensionSwitch()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cursestone::Player::finishDimensionSwitch </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>closes a cross-dimension switch: PlayStatus(PLAYER_SPAWN) plus the position reset. </p>
-<p>Called from onUpdate() once every chunk of the new view has been streamed (never before — sending it earlier leaves the client stuck on the loading screen). </p>
-
-</div>
-</div>
-<a id="a57a1ce0ede813a86e6df3ea1b5388679"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57a1ce0ede813a86e6df3ea1b5388679">&#9670;&nbsp;</a></span>switchWorld()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cursestone::Player::switchWorld </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *&#160;</td>
-          <td class="paramname"><em>target</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>z</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>throughPortal</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>moves to the player to <code>target</code> in (x,and,z). </p>
-<p>if the dimension changes sends ChangeDimensionPacket before the chunks. Dispara PlayerTeleportEvent (cancelable). <code>throughPortal</code> marks the travel as trayecto of portal (affects the target by default if the evento it consulta). </p><dl class="section return"><dt>Returns</dt><dd>false if the evento is canceló or the world is invalid. </dd></dl>
-
-</div>
-</div>
-<a id="ae64c96959f40bbbea0939114f85ba07a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae64c96959f40bbbea0939114f85ba07a">&#9670;&nbsp;</a></span>teleportToNether()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cursestone::Player::teleportToNether </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>travels to the Nether escalando the coordinates 1:8 and buscando (or construyendo) a portal in the target. </p>
-<p>load the world "Nether" the first time if server::netherEnabled(). </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="Player_8h_source.html">Player.h</a></li>
 <li>src/player/PlayerBlocks.cpp</li>
