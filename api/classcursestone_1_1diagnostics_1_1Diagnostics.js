@@ -13,5 +13,6 @@ var classcursestone_1_1diagnostics_1_1Diagnostics =
     [ "setTick", "classcursestone_1_1diagnostics_1_1Diagnostics.html#a1d77666b16faf3c30156d3146ba13a20", null ],
     [ "setUptimeStart", "classcursestone_1_1diagnostics_1_1Diagnostics.html#ac04f0dbfa8d55f9c832cdfb533525423", null ],
     [ "updatePlayers", "classcursestone_1_1diagnostics_1_1Diagnostics.html#a4db3f44c49419d346008f43f20a068c6", null ],
+    [ "uptimeSeconds", "classcursestone_1_1diagnostics_1_1Diagnostics.html#accfdc792e34e30754118862e7ce79df4", null ],
     [ "writeReport", "classcursestone_1_1diagnostics_1_1Diagnostics.html#a07478b18730369939e87f07ef5c4e15f", null ]
 ];

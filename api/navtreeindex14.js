@@ -1,5 +1,10 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1event_1_1player_1_1PlayerEatFoodEvent.html#a68abd651c35be7826f6f3254565a5d77":[4,0,0,3,3,13,1],
+"classcursestone_1_1event_1_1player_1_1PlayerEatFoodEvent.html#ab8907e54a84133db224e7d6b1334864c":[4,0,0,3,3,13,0],
+"classcursestone_1_1event_1_1player_1_1PlayerEvent.html":[4,0,0,3,3,14],
+"classcursestone_1_1event_1_1player_1_1PlayerEvent.html#a350093facb6a8f66927a59f4836eeba0":[4,0,0,3,3,14,1],
+"classcursestone_1_1event_1_1player_1_1PlayerEvent.html#aa143b0e1aa169e73b2bf02f8d72e7c04":[4,0,0,3,3,14,0],
 "classcursestone_1_1event_1_1player_1_1PlayerEvent.html#aae14b806d70efc27679da1ad04a3350d":[4,0,0,3,3,14,2],
 "classcursestone_1_1event_1_1player_1_1PlayerEvent.html#af5d41d4b13b91603025e9d3540054c96":[4,0,0,3,3,14,3],
 "classcursestone_1_1event_1_1player_1_1PlayerFoodLevelChangeEvent.html":[4,0,0,3,3,15],
@@ -244,10 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1inventory_1_1BaseInventory.html#a9a63d105b46690be296a9e542c67955f":[4,0,0,4,0,14],
 "classcursestone_1_1inventory_1_1BaseInventory.html#aa4506920797ce953b067b3f5f4cdd2e7":[4,0,0,4,0,30],
 "classcursestone_1_1inventory_1_1BaseInventory.html#aa622af8e95c6127eb236cbf534ea9c11":[4,0,0,4,0,10],
-"classcursestone_1_1inventory_1_1BaseInventory.html#aa69fa4bbd1c852cd6ced4e07b1d0811c":[4,0,0,4,0,15],
-"classcursestone_1_1inventory_1_1BaseInventory.html#aafdf1255e90903a8afd4f7a3c88c33a1":[4,0,0,4,0,22],
-"classcursestone_1_1inventory_1_1BaseInventory.html#ab6dc83af4fd5e1dc329757d44df23059":[4,0,0,4,0,4],
-"classcursestone_1_1inventory_1_1BaseInventory.html#ab8f64aa31fc7de1f5114bc78f98df1a9":[4,0,0,4,0,29],
-"classcursestone_1_1inventory_1_1BaseInventory.html#ac57c3a6ab02f5ce7527caecce2527a82":[4,0,0,4,0,5],
-"classcursestone_1_1inventory_1_1BaseInventory.html#acc19564ff7c63641588d91b4c1ac0362":[4,0,0,4,0,13]
+"classcursestone_1_1inventory_1_1BaseInventory.html#aa69fa4bbd1c852cd6ced4e07b1d0811c":[4,0,0,4,0,15]
 };

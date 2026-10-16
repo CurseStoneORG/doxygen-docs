@@ -124,7 +124,7 @@ const <a class="el" href="structcursestone_1_1world_1_1WorldConfig.html">WorldCo
 <tr class="separator:aa963b6ff4068185c8a03ca98db191036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4b2e3241f8fa81d91580925b3399a8f"><td class="memItemLeft" align="right" valign="top"><a id="ae4b2e3241f8fa81d91580925b3399a8f"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#ae4b2e3241f8fa81d91580925b3399a8f">dimension</a> () const</td></tr>
-<tr class="memdesc:ae4b2e3241f8fa81d91580925b3399a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">dimension of this world: 0 surface, 1 Nether. <br /></td></tr>
+<tr class="memdesc:ae4b2e3241f8fa81d91580925b3399a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the world dimension: 0 for surface, 1 for Nether. <br /></td></tr>
 <tr class="separator:ae4b2e3241f8fa81d91580925b3399a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f67dbbc61d836a9ffc36626f28d86fc"><td class="memItemLeft" align="right" valign="top"><a id="a9f67dbbc61d836a9ffc36626f28d86fc"></a>
 <a class="el" href="classcursestone_1_1world_1_1ChunkManager.html">ChunkManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>chunks</b> ()</td></tr>
@@ -135,8 +135,9 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="c
 <tr class="memitem:a29500e53e8677e83596233b389250052"><td class="memItemLeft" align="right" valign="top"><a id="a29500e53e8677e83596233b389250052"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>savePortals</b> ()</td></tr>
 <tr class="separator:a29500e53e8677e83596233b389250052"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ce9afacee86234fadde0927f9eca672"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672">getBlockId</a> (int32_t x, int32_t y, int32_t z)</td></tr>
-<tr class="memdesc:a2ce9afacee86234fadde0927f9eca672"><td class="mdescLeft">&#160;</td><td class="mdescRight">id of the block in coordinates of world.  <a href="classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672">More...</a><br /></td></tr>
+<tr class="memitem:a2ce9afacee86234fadde0927f9eca672"><td class="memItemLeft" align="right" valign="top"><a id="a2ce9afacee86234fadde0927f9eca672"></a>
+uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672">getBlockId</a> (int32_t x, int32_t y, int32_t z)</td></tr>
+<tr class="memdesc:a2ce9afacee86234fadde0927f9eca672"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the block ID; unloaded chunks are not generated. <br /></td></tr>
 <tr class="separator:a2ce9afacee86234fadde0927f9eca672"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ecbceacc98d77768c3809655b6324ab"><td class="memItemLeft" align="right" valign="top"><a id="a1ecbceacc98d77768c3809655b6324ab"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>getBlockData</b> (int32_t x, int32_t y, int32_t z)</td></tr>
@@ -213,6 +214,20 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>unsavedChunkCount</
 <tr class="memitem:a82ac624c8ed12452eb01288ce1383d56"><td class="memItemLeft" align="right" valign="top"><a id="a82ac624c8ed12452eb01288ce1383d56"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>tick</b> (uint64_t current_tick)</td></tr>
 <tr class="separator:a82ac624c8ed12452eb01288ce1383d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c027f0ca22fb450cc1a0ee5c2ba2c90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90">beginTickSample</a> (double ms)</td></tr>
+<tr class="memdesc:a9c027f0ca22fb450cc1a0ee5c2ba2c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts a new tick sample and updates the moving average.  <a href="classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90">More...</a><br /></td></tr>
+<tr class="separator:a9c027f0ca22fb450cc1a0ee5c2ba2c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44926cccb7ee40bdda14aae6bc179e67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67">addTickSample</a> (double ms)</td></tr>
+<tr class="memdesc:a44926cccb7ee40bdda14aae6bc179e67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds time spent in a later tick phase.  <a href="classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67">More...</a><br /></td></tr>
+<tr class="separator:a44926cccb7ee40bdda14aae6bc179e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff52b965d8ab03977f1c8debaf8d7a7c"><td class="memItemLeft" align="right" valign="top"><a id="aff52b965d8ab03977f1c8debaf8d7a7c"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#aff52b965d8ab03977f1c8debaf8d7a7c">lastTickMs</a> () const</td></tr>
+<tr class="memdesc:aff52b965d8ab03977f1c8debaf8d7a7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the duration of the last completed world tick. <br /></td></tr>
+<tr class="separator:aff52b965d8ab03977f1c8debaf8d7a7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0810e93b211e5192728dfeac053e67b"><td class="memItemLeft" align="right" valign="top"><a id="af0810e93b211e5192728dfeac053e67b"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b">avgTickMs</a> () const</td></tr>
+<tr class="memdesc:af0810e93b211e5192728dfeac053e67b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the moving average of world tick duration. <br /></td></tr>
+<tr class="separator:af0810e93b211e5192728dfeac053e67b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a85c5023a23dacd0369dc9f410155d3a7"><td class="memItemLeft" align="right" valign="top"><a id="a85c5023a23dacd0369dc9f410155d3a7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>tickDroppedItems</b> (uint64_t current_tick)</td></tr>
 <tr class="separator:a85c5023a23dacd0369dc9f410155d3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -326,40 +341,61 @@ static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>
 <tr class="separator:acb836d37034a6161b7b1d7aac1912c79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2ce9afacee86234fadde0927f9eca672"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ce9afacee86234fadde0927f9eca672">&#9670;&nbsp;</a></span>getBlockId()</h2>
+<a id="a44926cccb7ee40bdda14aae6bc179e67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44926cccb7ee40bdda14aae6bc179e67">&#9670;&nbsp;</a></span>addTickSample()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t cursestone::world::World::getBlockId </td>
+          <td class="memname">void cursestone::world::World::addTickSample </td>
           <td>(</td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>x</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t&#160;</td>
-          <td class="paramname"><em>z</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>id of the block in coordinates of world. </p>
-<p>returns 0 if the chunk not is loaded (not forces generation; for that is chunks().getChunk()). </p>
+<p>Adds time spent in a later tick phase. </p>
+<dl class="section note"><dt>Note</dt><dd>Main thread only. </dd></dl>
+
+</div>
+</div>
+<a id="a9c027f0ca22fb450cc1a0ee5c2ba2c90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c027f0ca22fb450cc1a0ee5c2ba2c90">&#9670;&nbsp;</a></span>beginTickSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cursestone::world::World::beginTickSample </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Starts a new tick sample and updates the moving average. </p>
+<dl class="section note"><dt>Note</dt><dd>Main thread only. </dd></dl>
 
 </div>
 </div>

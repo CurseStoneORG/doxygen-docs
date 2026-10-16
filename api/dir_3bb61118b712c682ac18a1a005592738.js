@@ -11,6 +11,7 @@ var dir_3bb61118b712c682ac18a1a005592738 =
     [ "PluginsCommand.h", "PluginsCommand_8h_source.html", null ],
     [ "SaveCommand.h", "SaveCommand_8h_source.html", null ],
     [ "SayCommand.h", "SayCommand_8h_source.html", null ],
+    [ "StatusCommand.h", "StatusCommand_8h_source.html", null ],
     [ "StopCommand.h", "StopCommand_8h_source.html", null ],
     [ "TeleportCommand.h", "TeleportCommand_8h_source.html", null ],
     [ "TimeCommand.h", "TimeCommand_8h_source.html", null ],

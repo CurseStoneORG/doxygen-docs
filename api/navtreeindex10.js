@@ -1,5 +1,9 @@
 var NAVTREEINDEX10 =
 {
+"classcursestone_1_1block_1_1BlockDandelion.html#a14b7d6a22f909f9e6332e5e6cb1e255d":[4,0,0,0,23,1],
+"classcursestone_1_1block_1_1BlockDandelion.html#a36bc6dd94a5e4b369167f425d36a2a12":[4,0,0,0,23,0],
+"classcursestone_1_1block_1_1BlockDaylightDetector.html":[4,0,0,0,24],
+"classcursestone_1_1block_1_1BlockDaylightDetector.html#a324e8bd5131f20da3b5dd056ec198977":[4,0,0,0,24,1],
 "classcursestone_1_1block_1_1BlockDaylightDetector.html#a99b1b8cfe4cb6c9d8c876aee98da09aa":[4,0,0,0,24,0],
 "classcursestone_1_1block_1_1BlockDaylightDetectorInverted.html":[4,0,0,0,25],
 "classcursestone_1_1block_1_1BlockDaylightDetectorInverted.html#a15d1dd63e220de36737ddf9393d078d2":[4,0,0,0,25,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1block_1_1BlockObsidianGlowing.html#aa68a7c3429c2b0c969da7db4693b09d9":[4,0,0,0,101,0],
 "classcursestone_1_1block_1_1BlockObsidianGlowing.html#ab264a6c03df74d9b01c9201aef1ecbce":[4,0,0,0,101,1],
 "classcursestone_1_1block_1_1BlockPiston.html":[4,0,0,0,103],
-"classcursestone_1_1block_1_1BlockPiston.html#a708434cf3b75aa1ed539c3f43c14009a":[4,0,0,0,103,0],
-"classcursestone_1_1block_1_1BlockPiston.html#a7aeac30d620390daf1ff9aac76e2d1bd":[4,0,0,0,103,1],
-"classcursestone_1_1block_1_1BlockPistonSticky.html":[4,0,0,0,104],
-"classcursestone_1_1block_1_1BlockPistonSticky.html#ac7b7096b5cceec2bc78acba8675ef9ae":[4,0,0,0,104,0],
-"classcursestone_1_1block_1_1BlockPistonSticky.html#ada6a9e35b2207cbfa32fe3fe8dec4fcf":[4,0,0,0,104,1]
+"classcursestone_1_1block_1_1BlockPiston.html#a708434cf3b75aa1ed539c3f43c14009a":[4,0,0,0,103,0]
 };

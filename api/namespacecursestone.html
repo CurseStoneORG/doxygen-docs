@@ -136,6 +136,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1SayCommand.html">SayCommand</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1StatusCommand.html">StatusCommand</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints a server health summary.  <a href="classcursestone_1_1StatusCommand.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1StopCommand.html">StopCommand</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1TeleportCommand.html">TeleportCommand</a></td></tr>
@@ -206,7 +209,6 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>kEyeHeigh
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Writes a crash dump when the server hits a fatal error. </p>
-<p>a world of the server (surface or Nether).</p>
 <p>Defines Minecraft §-color/format codes and ANSI terminal colors.</p>
 <p>Registry of server threads that are joined at shutdown.</p>
 <p>Coordinates every memory-reclamation sweep in the server.</p>
@@ -214,9 +216,7 @@ constexpr double&#160;</td><td class="memItemRight" valign="bottom"><b>kEyeHeigh
 <p>THE single global GarbageCollector for the whole server. There must be exactly ONE instance (Meyers singleton) and it is the only place that decides when memory is reclaimed.</p>
 <p>Why one global GC: the codebase used to have several scattered reclaimers (<a class="el" href="classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1" title="Advances one tick.">Server::tick</a>'s chunk-unload sweep, World::tick's dropped-item sweep, Player::onUpdate's used_chunks_ cleanup, tile eviction) running on their own schedules. Independent schedules mean the world state players interact with (dropped items, open chests, loaded chunks) can disappear in the middle of a player action - the classic cause of pickup/inventory desyncs. Everything now funnels through collect(): the per-subsystem sweeps keep their cheap local bookkeeping, but any SWEEP THAT TOUCHES SHARED WORLD STATE only runs when the global GC authorizes it, on a single coordinated schedule.</p>
 <p>Stores shared thread handles and joins every joinable one in joinAll(), clearing the registry afterwards.</p>
-<p>Mirrors PMMP TextFormat + Terminal in a single C++ header.</p>
-<p>Owns the world's settings (time, weather, and spawn). Multiple World instances can coexist on the same server; the server manages the map of active worlds.</p>
-<p>The constructor instantiates the WorldProvider via WorldProviderManager according to the configured format and connects it to the ChunkManager so flushDirty() writes changes to disk; otherwise, the world would exist only in memory and changes would be lost on shutdown. </p>
+<p>Mirrors PMMP TextFormat + Terminal in a single C++ header. </p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

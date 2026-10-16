@@ -747,6 +747,7 @@ var annotated_dup =
       [ "PluginsCommand", "classcursestone_1_1PluginsCommand.html", "classcursestone_1_1PluginsCommand" ],
       [ "SaveCommand", "classcursestone_1_1SaveCommand.html", "classcursestone_1_1SaveCommand" ],
       [ "SayCommand", "classcursestone_1_1SayCommand.html", "classcursestone_1_1SayCommand" ],
+      [ "StatusCommand", "classcursestone_1_1StatusCommand.html", "classcursestone_1_1StatusCommand" ],
       [ "StopCommand", "classcursestone_1_1StopCommand.html", "classcursestone_1_1StopCommand" ],
       [ "TeleportCommand", "classcursestone_1_1TeleportCommand.html", "classcursestone_1_1TeleportCommand" ],
       [ "TimeCommand", "classcursestone_1_1TimeCommand.html", "classcursestone_1_1TimeCommand" ],
