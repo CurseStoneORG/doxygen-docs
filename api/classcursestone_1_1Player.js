@@ -8,6 +8,8 @@ var classcursestone_1_1Player =
     [ "announceTo", "classcursestone_1_1Player.html#ab6779acd55f8afe68d7131463d49e662", null ],
     [ "batchDataPacket", "classcursestone_1_1Player.html#a92f18b1088b25f75eace6569cf08d603", null ],
     [ "beginSurvivalSlotWrite", "classcursestone_1_1Player.html#a64362ecf60468f8ca3e080d6afaf7b4b", null ],
+    [ "broadcastBowPose", "classcursestone_1_1Player.html#a2bd529c6423d1ce21fd09ab290db8303", null ],
+    [ "broadcastHeldItemToViewers", "classcursestone_1_1Player.html#a28e8a1a5cdc729f26c72f284d3ce7f79", null ],
     [ "broadcastPoseFlags", "classcursestone_1_1Player.html#a60c81966b5a5a6b3ab148f4a2a8a54e4", null ],
     [ "canCollideWith", "classcursestone_1_1Player.html#ad34b0a99886df6aff2c3340ad4fe6507", null ],
     [ "canInteract", "classcursestone_1_1Player.html#a2865ad5125ca9b52ed6b2764bfdaf126", null ],
