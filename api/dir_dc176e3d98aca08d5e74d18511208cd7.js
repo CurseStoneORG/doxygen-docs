@@ -64,6 +64,7 @@ var dir_dc176e3d98aca08d5e74d18511208cd7 =
     [ "ItemLeatherHelmet.h", "ItemLeatherHelmet_8h_source.html", null ],
     [ "ItemLeatherLeggings.h", "ItemLeatherLeggings_8h_source.html", null ],
     [ "ItemMelon.h", "ItemMelon_8h_source.html", null ],
+    [ "ItemMilkBucket.h", "ItemMilkBucket_8h_source.html", null ],
     [ "ItemMushroomStew.h", "ItemMushroomStew_8h_source.html", null ],
     [ "ItemNbt.h", "ItemNbt_8h_source.html", null ],
     [ "ItemPickaxeDiamond.h", "ItemPickaxeDiamond_8h_source.html", null ],

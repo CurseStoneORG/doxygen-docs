@@ -1,5 +1,12 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1block_1_1BlockWool.html#af742ffc4999705829c1ad8ae94eb4de2":[4,0,0,0,179,1],
+"classcursestone_1_1block_1_1BlockWorkbench.html":[4,0,0,0,180],
+"classcursestone_1_1block_1_1BlockWorkbench.html#a086ada3285a7ca6a24ed8f1f861a2b1e":[4,0,0,0,180,0],
+"classcursestone_1_1block_1_1BlockWorkbench.html#a668a163b137a20cf0320a03eef967015":[4,0,0,0,180,1],
+"classcursestone_1_1diagnostics_1_1Diagnostics.html":[4,0,0,1,3],
+"classcursestone_1_1diagnostics_1_1Diagnostics.html#a07478b18730369939e87f07ef5c4e15f":[4,0,0,1,3,14],
+"classcursestone_1_1diagnostics_1_1Diagnostics.html#a1d77666b16faf3c30156d3146ba13a20":[4,0,0,1,3,10],
 "classcursestone_1_1diagnostics_1_1Diagnostics.html#a27800ebc7bae68bd960528e3de509656":[4,0,0,1,3,7],
 "classcursestone_1_1diagnostics_1_1Diagnostics.html#a2ec4c6fc895978b9649b93d98f4fd0c7":[4,0,0,1,3,5],
 "classcursestone_1_1diagnostics_1_1Diagnostics.html#a425541846dd3056a709b4794ea282bad":[4,0,0,1,3,9],
@@ -242,12 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1event_1_1block_1_1ItemFrameDropItemEvent.html#aedac1b44aa2e05bca5f782c4b91e1353":[4,0,0,3,0,9,1],
 "classcursestone_1_1event_1_1block_1_1LeavesDecayEvent.html":[4,0,0,3,0,10],
 "classcursestone_1_1event_1_1block_1_1LeavesDecayEvent.html#a825ef4cd205e1fb7855f4fcbae470994":[4,0,0,3,0,10,0],
-"classcursestone_1_1event_1_1block_1_1LeavesDecayEvent.html#ad1ad6ad642ec7691b7c9078aa1ff5c5c":[4,0,0,3,0,10,1],
-"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html":[4,0,0,3,0,11],
-"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#a176f1848b7ace157eecc61415b48075d":[4,0,0,3,0,11,2],
-"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#a1a77fe5bfd44a4b9f8fda44c6322394e":[4,0,0,3,0,11,3],
-"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#a2b52a9deb648bfd48bac9de79f5c1251":[4,0,0,3,0,11,4],
-"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#ab483dd5c1272ba45946160b0adeceec4":[4,0,0,3,0,11,1],
-"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#adf0b22b62814bf22c095e2b24fe526e8":[4,0,0,3,0,11,5],
-"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#ae8b143e346972eb0647f44e8f94af2cc":[4,0,0,3,0,11,0]
+"classcursestone_1_1event_1_1block_1_1LeavesDecayEvent.html#ad1ad6ad642ec7691b7c9078aa1ff5c5c":[4,0,0,3,0,10,1]
 };

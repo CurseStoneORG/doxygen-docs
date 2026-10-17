@@ -1,5 +1,12 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html#a9cd464a7f98b65f324efac34f09a304a":[4,0,0,3,9,10,3],
+"classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html#af672c1316051513e249e967c43dda992":[4,0,0,3,9,10,4],
+"classcursestone_1_1event_1_1world_1_1WorldSaveEvent.html":[4,0,0,3,9,11],
+"classcursestone_1_1event_1_1world_1_1WorldSaveEvent.html#a38824642b0b56a3c069f2a29c11c30fc":[4,0,0,3,9,11,1],
+"classcursestone_1_1event_1_1world_1_1WorldSaveEvent.html#a6dca431c78d72797b6598b0df26e1388":[4,0,0,3,9,11,0],
+"classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html":[4,0,0,3,9,12],
+"classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html#a360346623975173283a07e807f8bbba5":[4,0,0,3,9,12,0],
 "classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html#acfe9212e78556439c1b1127a04c724cd":[4,0,0,3,9,12,1],
 "classcursestone_1_1inventory_1_1BaseInventory.html":[4,0,0,4,0],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a0304371ac04671e327634e2d21463ec8":[4,0,0,4,0,19],
@@ -242,12 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1item_1_1ItemCookedRabbit.html#a3ee976115fab57d823ea7e6d7ea484e6":[4,0,0,5,23,1],
 "classcursestone_1_1item_1_1ItemCookie.html":[4,0,0,5,24],
 "classcursestone_1_1item_1_1ItemCookie.html#a1403adeb7d1c4454d214d621b081f413":[4,0,0,5,24,0],
-"classcursestone_1_1item_1_1ItemCookie.html#a911352fab9f0411b555e7b3062ef9087":[4,0,0,5,24,1],
-"classcursestone_1_1item_1_1ItemDiamond.html":[4,0,0,5,25],
-"classcursestone_1_1item_1_1ItemDiamond.html#a4fd6589a4cd5e5cd48cbc8b59c3d576d":[4,0,0,5,25,1],
-"classcursestone_1_1item_1_1ItemDiamond.html#ad40157961879898dc9642e5fdd2c1ce1":[4,0,0,5,25,0],
-"classcursestone_1_1item_1_1ItemDiamondBoots.html":[4,0,0,5,26],
-"classcursestone_1_1item_1_1ItemDiamondBoots.html#a0cbff5b1e6a42e3c7e03f95cf5cc3edd":[4,0,0,5,26,1],
-"classcursestone_1_1item_1_1ItemDiamondBoots.html#aec51e3f5f8eb76a9c999710ca6f36d41":[4,0,0,5,26,0],
-"classcursestone_1_1item_1_1ItemDiamondChestplate.html":[4,0,0,5,27]
+"classcursestone_1_1item_1_1ItemCookie.html#a911352fab9f0411b555e7b3062ef9087":[4,0,0,5,24,1]
 };

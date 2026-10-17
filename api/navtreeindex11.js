@@ -1,5 +1,12 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockNetherBrickFence.html#a09ec100545c098e46887cc3c4b59ee79":[4,0,0,0,95,0],
+"classcursestone_1_1block_1_1BlockNetherBrickFence.html#acc2b6bebdb931e2cf2cdebddb974aee8":[4,0,0,0,95,1],
+"classcursestone_1_1block_1_1BlockNetherBrickStairs.html":[4,0,0,0,96],
+"classcursestone_1_1block_1_1BlockNetherBrickStairs.html#a8a6f0692e41be85b893a09b546de9b79":[4,0,0,0,96,0],
+"classcursestone_1_1block_1_1BlockNetherBrickStairs.html#ad870d7d3a58940761a1220530cd051f0":[4,0,0,0,96,1],
+"classcursestone_1_1block_1_1BlockNetherQuartzOre.html":[4,0,0,0,97],
+"classcursestone_1_1block_1_1BlockNetherQuartzOre.html#a300af09ecf465f129982b9fa80234ef6":[4,0,0,0,97,1],
 "classcursestone_1_1block_1_1BlockNetherQuartzOre.html#a7bffc355ed173524995c5fc8e967959c":[4,0,0,0,97,0],
 "classcursestone_1_1block_1_1BlockNetherrack.html":[4,0,0,0,98],
 "classcursestone_1_1block_1_1BlockNetherrack.html#a75b3adb8f062193c6a66237a7c31c3c4":[4,0,0,0,98,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1block_1_1BlockWoodStairs.html#ac608ae87ed70879eb45e89bc5caac3c6":[4,0,0,0,178,1],
 "classcursestone_1_1block_1_1BlockWoodStairs.html#af6ea142599ee577775ff7a3573633753":[4,0,0,0,178,0],
 "classcursestone_1_1block_1_1BlockWool.html":[4,0,0,0,179],
-"classcursestone_1_1block_1_1BlockWool.html#a5a8b23d30248ed8facb1cb79f3ab9e0c":[4,0,0,0,179,0],
-"classcursestone_1_1block_1_1BlockWool.html#af742ffc4999705829c1ad8ae94eb4de2":[4,0,0,0,179,1],
-"classcursestone_1_1block_1_1BlockWorkbench.html":[4,0,0,0,180],
-"classcursestone_1_1block_1_1BlockWorkbench.html#a086ada3285a7ca6a24ed8f1f861a2b1e":[4,0,0,0,180,0],
-"classcursestone_1_1block_1_1BlockWorkbench.html#a668a163b137a20cf0320a03eef967015":[4,0,0,0,180,1],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html":[4,0,0,1,3],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a07478b18730369939e87f07ef5c4e15f":[4,0,0,1,3,14],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a1d77666b16faf3c30156d3146ba13a20":[4,0,0,1,3,10]
+"classcursestone_1_1block_1_1BlockWool.html#a5a8b23d30248ed8facb1cb79f3ab9e0c":[4,0,0,0,179,0]
 };

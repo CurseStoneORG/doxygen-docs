@@ -1,5 +1,12 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html":[4,0,0,3,0,11],
+"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#a176f1848b7ace157eecc61415b48075d":[4,0,0,3,0,11,2],
+"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#a1a77fe5bfd44a4b9f8fda44c6322394e":[4,0,0,3,0,11,3],
+"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#a2b52a9deb648bfd48bac9de79f5c1251":[4,0,0,3,0,11,4],
+"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#ab483dd5c1272ba45946160b0adeceec4":[4,0,0,3,0,11,1],
+"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#adf0b22b62814bf22c095e2b24fe526e8":[4,0,0,3,0,11,5],
+"classcursestone_1_1event_1_1block_1_1SignChangeEvent.html#ae8b143e346972eb0647f44e8f94af2cc":[4,0,0,3,0,11,0],
 "classcursestone_1_1event_1_1entity_1_1CreeperPowerEvent.html":[4,0,0,3,1,0],
 "classcursestone_1_1event_1_1entity_1_1CreeperPowerEvent.html#a5fa9346fdbcdb6f98dc35851b45fb475":[4,0,0,3,1,0,1],
 "classcursestone_1_1event_1_1entity_1_1CreeperPowerEvent.html#a91b363bbe11cd742593421b26c07e02a":[4,0,0,3,1,0,2],
@@ -242,12 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html#a45593968ca0416990ee69c4a229273be":[4,0,0,3,3,5,6],
 "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html#a52a5855afdae94353bec4c9ddecf24f2":[4,0,0,3,3,5,0],
 "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html#a729d12aa85ba3a8ff716fc7b8a1089bf":[4,0,0,3,3,5,2],
-"classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html#aade007fa05fdf06dedde2216197549db":[4,0,0,3,3,5,1],
-"classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html#ab66c42e157b1570caf1a85c12202a118":[4,0,0,3,3,5,5],
-"classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html#ad768f4a3e616ee8b18f2e3623f7adbc2":[4,0,0,3,3,5,3],
-"classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html":[4,0,0,3,3,6],
-"classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html#a4dcbff2f3f4ad4ad77ad0a2efce08a7d":[4,0,0,3,3,6,1],
-"classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html#a57b9504bef7fef49c024018b259ad469":[4,0,0,3,3,6,0],
-"classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html":[4,0,0,3,3,7],
-"classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html#a3bd085c8de05b90defe3b630ee74873d":[4,0,0,3,3,7,3]
+"classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html#aade007fa05fdf06dedde2216197549db":[4,0,0,3,3,5,1]
 };

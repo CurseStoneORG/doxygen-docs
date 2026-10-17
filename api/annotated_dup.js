@@ -437,6 +437,7 @@ var annotated_dup =
         [ "ItemLeatherHelmet", "classcursestone_1_1item_1_1ItemLeatherHelmet.html", "classcursestone_1_1item_1_1ItemLeatherHelmet" ],
         [ "ItemLeatherLeggings", "classcursestone_1_1item_1_1ItemLeatherLeggings.html", "classcursestone_1_1item_1_1ItemLeatherLeggings" ],
         [ "ItemMelon", "classcursestone_1_1item_1_1ItemMelon.html", "classcursestone_1_1item_1_1ItemMelon" ],
+        [ "ItemMilkBucket", "classcursestone_1_1item_1_1ItemMilkBucket.html", "classcursestone_1_1item_1_1ItemMilkBucket" ],
         [ "ItemMushroomStew", "classcursestone_1_1item_1_1ItemMushroomStew.html", "classcursestone_1_1item_1_1ItemMushroomStew" ],
         [ "ItemPickaxeDiamond", "classcursestone_1_1item_1_1ItemPickaxeDiamond.html", "classcursestone_1_1item_1_1ItemPickaxeDiamond" ],
         [ "ItemPickaxeGolden", "classcursestone_1_1item_1_1ItemPickaxeGolden.html", "classcursestone_1_1item_1_1ItemPickaxeGolden" ],

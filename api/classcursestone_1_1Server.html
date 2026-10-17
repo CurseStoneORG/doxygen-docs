@@ -91,7 +91,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1Server.html',''); i
 </div><!--header-->
 <div class="contents">
 
-<p>server singleton: boot, tick loop, and coordinated shutdown.  
+<p><a class="el" href="classcursestone_1_1Server.html" title="Server singleton for startup, ticking, and shutdown.">Server</a> singleton for startup, ticking, and shutdown.  
  <a href="classcursestone_1_1Server.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Server_8h_source.html">Server.h</a>&gt;</code></p>
@@ -99,21 +99,22 @@ $(document).ready(function(){initNavTree('classcursestone_1_1Server.html',''); i
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa146861aee07ae4819af202d0f37ac80"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#aa146861aee07ae4819af202d0f37ac80">start</a> (const std::string &amp;dataPath)</td></tr>
-<tr class="memdesc:aa146861aee07ae4819af202d0f37ac80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boots the server.  <a href="classcursestone_1_1Server.html#aa146861aee07ae4819af202d0f37ac80">More...</a><br /></td></tr>
+<tr class="memdesc:aa146861aee07ae4819af202d0f37ac80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the server.  <a href="classcursestone_1_1Server.html#aa146861aee07ae4819af202d0f37ac80">More...</a><br /></td></tr>
 <tr class="separator:aa146861aee07ae4819af202d0f37ac80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab680d3e8e197fb5d19b48983b539131"><td class="memItemLeft" align="right" valign="top"><a id="aab680d3e8e197fb5d19b48983b539131"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131">runTickLoop</a> ()</td></tr>
-<tr class="memdesc:aab680d3e8e197fb5d19b48983b539131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the main tick loop (blocks until <a class="el" href="classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31" title="Shuts down cleanly: disconnects players, saves world, closes sockets.">shutdown()</a>). <br /></td></tr>
+<tr class="memdesc:aab680d3e8e197fb5d19b48983b539131"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the main tick loop until shutdown. <br /></td></tr>
 <tr class="separator:aab680d3e8e197fb5d19b48983b539131"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bb3120c95644d6bbf29a583f6e433a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1">tick</a> ()</td></tr>
-<tr class="memdesc:a6bb3120c95644d6bbf29a583f6e433a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances one tick.  <a href="classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1">More...</a><br /></td></tr>
+<tr class="memitem:a6bb3120c95644d6bbf29a583f6e433a1"><td class="memItemLeft" align="right" valign="top"><a id="a6bb3120c95644d6bbf29a583f6e433a1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1">tick</a> ()</td></tr>
+<tr class="memdesc:a6bb3120c95644d6bbf29a583f6e433a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances one tick across the scheduler, network, world, and players. <br /></td></tr>
 <tr class="separator:a6bb3120c95644d6bbf29a583f6e433a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0700c0a481cbd3fabcbe426445bf8d31"><td class="memItemLeft" align="right" valign="top"><a id="a0700c0a481cbd3fabcbe426445bf8d31"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31">shutdown</a> ()</td></tr>
-<tr class="memdesc:a0700c0a481cbd3fabcbe426445bf8d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuts down cleanly: disconnects players, saves world, closes sockets. <br /></td></tr>
+<tr class="memdesc:a0700c0a481cbd3fabcbe426445bf8d31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disconnects players, saves worlds, and closes networking. <br /></td></tr>
 <tr class="separator:a0700c0a481cbd3fabcbe426445bf8d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9dd0c36ea68bb26e14f341cc9375807"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#aa9dd0c36ea68bb26e14f341cc9375807">setExternalStopFlag</a> (const volatile std::sig_atomic_t *flag)</td></tr>
-<tr class="memdesc:aa9dd0c36ea68bb26e14f341cc9375807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an external "stop requested" flag for <a class="el" href="classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131" title="Runs the main tick loop (blocks until shutdown()).">runTickLoop()</a> to poll once per iteration on the main thread.  <a href="classcursestone_1_1Server.html#aa9dd0c36ea68bb26e14f341cc9375807">More...</a><br /></td></tr>
+<tr class="memdesc:aa9dd0c36ea68bb26e14f341cc9375807"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a stop flag for <a class="el" href="classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131" title="Runs the main tick loop until shutdown.">runTickLoop()</a> to poll on the main thread.  <a href="classcursestone_1_1Server.html#aa9dd0c36ea68bb26e14f341cc9375807">More...</a><br /></td></tr>
 <tr class="separator:aa9dd0c36ea68bb26e14f341cc9375807"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aab46dceda4b23078969d5dd9f6b54130"><td class="memItemLeft" align="right" valign="top"><a id="aab46dceda4b23078969d5dd9f6b54130"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>isRunning</b> () const</td></tr>
@@ -133,8 +134,9 @@ std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Playe
 <tr class="memitem:ac5d33db09d6749c79718dae20c91f24c"><td class="memItemLeft" align="right" valign="top"><a id="ac5d33db09d6749c79718dae20c91f24c"></a>
 const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Player.html">Player</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>players</b> () const</td></tr>
 <tr class="separator:ac5d33db09d6749c79718dae20c91f24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2c7def5cd17b59ef4a26b4906c5aa3b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Player.html">Player</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b">playersSnapshot</a> () const</td></tr>
-<tr class="memdesc:ae2c7def5cd17b59ef4a26b4906c5aa3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns to thread-safe copy of the player list.  <a href="classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b">More...</a><br /></td></tr>
+<tr class="memitem:ae2c7def5cd17b59ef4a26b4906c5aa3b"><td class="memItemLeft" align="right" valign="top"><a id="ae2c7def5cd17b59ef4a26b4906c5aa3b"></a>
+std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Player.html">Player</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b">playersSnapshot</a> () const</td></tr>
+<tr class="memdesc:ae2c7def5cd17b59ef4a26b4906c5aa3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a thread-safe snapshot of the online player list. <br /></td></tr>
 <tr class="separator:ae2c7def5cd17b59ef4a26b4906c5aa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb150d02a809b387e028745a26d7273a"><td class="memItemLeft" align="right" valign="top"><a id="adb150d02a809b387e028745a26d7273a"></a>
 <a class="el" href="classcursestone_1_1Player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayer</b> (const std::string &amp;name) const</td></tr>
@@ -145,11 +147,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>addPlayer</b> (std::s
 <tr class="memitem:a537feba3b5047aaa85f783c6af0b721f"><td class="memItemLeft" align="right" valign="top"><a id="a537feba3b5047aaa85f783c6af0b721f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>removePlayer</b> (<a class="el" href="classcursestone_1_1Player.html">Player</a> *p)</td></tr>
 <tr class="separator:a537feba3b5047aaa85f783c6af0b721f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a522e43ad1c94a4c99fe946c4ae5ceefb"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a522e43ad1c94a4c99fe946c4ae5ceefb">allocateEid</a> ()</td></tr>
-<tr class="memdesc:a522e43ad1c94a4c99fe946c4ae5ceefb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates to fresh unique runtime entity id.  <a href="classcursestone_1_1Server.html#a522e43ad1c94a4c99fe946c4ae5ceefb">More...</a><br /></td></tr>
+<tr class="memitem:a522e43ad1c94a4c99fe946c4ae5ceefb"><td class="memItemLeft" align="right" valign="top"><a id="a522e43ad1c94a4c99fe946c4ae5ceefb"></a>
+int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a522e43ad1c94a4c99fe946c4ae5ceefb">allocateEid</a> ()</td></tr>
+<tr class="memdesc:a522e43ad1c94a4c99fe946c4ae5ceefb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates a unique runtime entity ID. <br /></td></tr>
 <tr class="separator:a522e43ad1c94a4c99fe946c4ae5ceefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ef3c80a186b12163c835a40faa80ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a6ef3c80a186b12163c835a40faa80ce8">saveAll</a> ()</td></tr>
-<tr class="memdesc:a6ef3c80a186b12163c835a40faa80ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves ALL players plus every loaded world.  <a href="classcursestone_1_1Server.html#a6ef3c80a186b12163c835a40faa80ce8">More...</a><br /></td></tr>
+<tr class="memitem:a6ef3c80a186b12163c835a40faa80ce8"><td class="memItemLeft" align="right" valign="top"><a id="a6ef3c80a186b12163c835a40faa80ce8"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a6ef3c80a186b12163c835a40faa80ce8">saveAll</a> ()</td></tr>
+<tr class="memdesc:a6ef3c80a186b12163c835a40faa80ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Saves all players and loaded worlds. <br /></td></tr>
 <tr class="separator:a6ef3c80a186b12163c835a40faa80ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5e2fa7a1e85024d95b2c5ee0b5db9c3"><td class="memItemLeft" align="right" valign="top"><a id="ad5e2fa7a1e85024d95b2c5ee0b5db9c3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>broadcastMessage</b> (const std::string &amp;msg)</td></tr>
@@ -170,18 +174,19 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>broadcastPacket</b> (
 <a class="el" href="classcursestone_1_1network_1_1Network.html">network::Network</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getNetwork</b> () const</td></tr>
 <tr class="separator:ad7f9ca7cae0ef787fd0a094d0e6bdd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b261a0ca53391d20529f4a03a265b76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a5b261a0ca53391d20529f4a03a265b76">loadWorld</a> (const std::string &amp;name, const std::string &amp;generator)</td></tr>
-<tr class="memdesc:a5b261a0ca53391d20529f4a03a265b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">load (or returns if already existed) the world <code>name</code> with the generador indicado: "normal", "flat", "Nether" or "void".  <a href="classcursestone_1_1Server.html#a5b261a0ca53391d20529f4a03a265b76">More...</a><br /></td></tr>
+<tr class="memdesc:a5b261a0ca53391d20529f4a03a265b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a world or returns the existing world with the given name.  <a href="classcursestone_1_1Server.html#a5b261a0ca53391d20529f4a03a265b76">More...</a><br /></td></tr>
 <tr class="separator:a5b261a0ca53391d20529f4a03a265b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60a5feed3025345459780e4f1ced978c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c">unloadWorld</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a60a5feed3025345459780e4f1ced978c"><td class="mdescLeft">&#160;</td><td class="mdescRight">unloads the world <code>name</code>: moves to its players in the world by default, saves its chunks and it removes of the list.  <a href="classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c">More...</a><br /></td></tr>
+<tr class="memitem:a60a5feed3025345459780e4f1ced978c"><td class="memItemLeft" align="right" valign="top"><a id="a60a5feed3025345459780e4f1ced978c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c">unloadWorld</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a60a5feed3025345459780e4f1ced978c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads a world after moving its players to the default world and saving its chunks. <br /></td></tr>
 <tr class="separator:a60a5feed3025345459780e4f1ced978c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1794d2af7c3c7724c5c16892ee6360fa"><td class="memItemLeft" align="right" valign="top"><a id="a1794d2af7c3c7724c5c16892ee6360fa"></a>
 std::vector&lt; <a class="el" href="classcursestone_1_1world_1_1World.html">World</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a1794d2af7c3c7724c5c16892ee6360fa">getWorlds</a> () const</td></tr>
-<tr class="memdesc:a1794d2af7c3c7724c5c16892ee6360fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">list of pointers borrowed to all the worlds loaded. <br /></td></tr>
+<tr class="memdesc:a1794d2af7c3c7724c5c16892ee6360fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns borrowed pointers to all loaded worlds. <br /></td></tr>
 <tr class="separator:a1794d2af7c3c7724c5c16892ee6360fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06573a1b487acbd04e39356c9847278c"><td class="memItemLeft" align="right" valign="top"><a id="a06573a1b487acbd04e39356c9847278c"></a>
 std::shared_ptr&lt; <a class="el" href="classcursestone_1_1world_1_1World.html">World</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a06573a1b487acbd04e39356c9847278c">getWorldShared</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:a06573a1b487acbd04e39356c9847278c"><td class="mdescLeft">&#160;</td><td class="mdescRight">copy of the shared_ptr of the world <code>name</code> (so that a player can retain the world while changes of dimension). <br /></td></tr>
+<tr class="memdesc:a06573a1b487acbd04e39356c9847278c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns shared ownership of the named world. <br /></td></tr>
 <tr class="separator:a06573a1b487acbd04e39356c9847278c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3e9f2be0ae337f9109f7847a8508c9e"><td class="memItemLeft" align="right" valign="top"><a id="ad3e9f2be0ae337f9109f7847a8508c9e"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>maxPlayers</b> () const</td></tr>
@@ -219,6 +224,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>fireSpreadEnabled</b>
 <tr class="memitem:ae494121ba6503d753feef574aa266b41"><td class="memItemLeft" align="right" valign="top"><a id="ae494121ba6503d753feef574aa266b41"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>netherEnabled</b> () const</td></tr>
 <tr class="separator:ae494121ba6503d753feef574aa266b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19946472a671ad3c619a5da242506202"><td class="memItemLeft" align="right" valign="top"><a id="a19946472a671ad3c619a5da242506202"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>keepInventory</b> () const</td></tr>
+<tr class="separator:a19946472a671ad3c619a5da242506202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f5cface9c42e4bc0e2de70a73621b8"><td class="memItemLeft" align="right" valign="top"><a id="a44f5cface9c42e4bc0e2de70a73621b8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>bedSpawnEnabled</b> () const</td></tr>
+<tr class="separator:a44f5cface9c42e4bc0e2de70a73621b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af32e312fbfceb5b231fa6cb9ad507908"><td class="memItemLeft" align="right" valign="top"><a id="af32e312fbfceb5b231fa6cb9ad507908"></a>
 <a class="el" href="classcursestone_1_1permission_1_1BanList.html">permission::BanList</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getNameBans</b> ()</td></tr>
 <tr class="separator:af32e312fbfceb5b231fa6cb9ad507908"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -338,29 +349,8 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
 <tr class="separator:a93cf62bb432b74b29fff1e96bfefd7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>server singleton: boot, tick loop, and coordinated shutdown. </p>
-<p>Mirrors server. The file comment above lists the full responsibilities (boot sequence, tick phases, shutdown, roster and broadcast handling, command processing). </p>
+<div class="textblock"><p><a class="el" href="classcursestone_1_1Server.html" title="Server singleton for startup, ticking, and shutdown.">Server</a> singleton for startup, ticking, and shutdown. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a522e43ad1c94a4c99fe946c4ae5ceefb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a522e43ad1c94a4c99fe946c4ae5ceefb">&#9670;&nbsp;</a></span>allocateEid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int64_t cursestone::Server::allocateEid </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Allocates to fresh unique runtime entity id. </p>
-<p>Used for spawning item drops and other world entities (mirrors The reference server the entity counter). </p>
-
-</div>
-</div>
 <a id="a5b261a0ca53391d20529f4a03a265b76"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5b261a0ca53391d20529f4a03a265b76">&#9670;&nbsp;</a></span>loadWorld()</h2>
 
@@ -387,48 +377,8 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
       </table>
 </div><div class="memdoc">
 
-<p>load (or returns if already existed) the world <code>name</code> with the generador indicado: "normal", "flat", "Nether" or "void". </p>
-<p>creates the folder worlds/&lt;name&gt; if needed. </p><dl class="section return"><dt>Returns</dt><dd>pointer borrowed to the world, or nullptr if fails. </dd></dl>
-
-</div>
-</div>
-<a id="ae2c7def5cd17b59ef4a26b4906c5aa3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2c7def5cd17b59ef4a26b4906c5aa3b">&#9670;&nbsp;</a></span>playersSnapshot()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Player.html">Player</a> &gt; &gt; cursestone::Server::playersSnapshot </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns to thread-safe copy of the player list. </p>
-<p>Callers iterate this copy WITHOUT holding the mutex, so add/remove from other threads does not invalidate iterators (fixes the segfault on concurrent broadcasts). </p>
-
-</div>
-</div>
-<a id="a6ef3c80a186b12163c835a40faa80ce8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ef3c80a186b12163c835a40faa80ce8">&#9670;&nbsp;</a></span>saveAll()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cursestone::Server::saveAll </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Saves ALL players plus every loaded world. </p>
-<p>Called periodically from the tick loop (auto-save) and on shutdown. </p>
+<p>Loads a world or returns the existing world with the given name. </p>
+<dl class="section return"><dt>Returns</dt><dd>A borrowed world pointer, or nullptr on failure. </dd></dl>
 
 </div>
 </div>
@@ -456,12 +406,12 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
 </table>
 </div><div class="memdoc">
 
-<p>Registers an external "stop requested" flag for <a class="el" href="classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131" title="Runs the main tick loop (blocks until shutdown()).">runTickLoop()</a> to poll once per iteration on the main thread. </p>
-<p>CurseStone.cpp points this at to volatile sig_atomic_t that its SIGINT/SIGTERM handler sets.</p>
-<p>This indirection exists because the signal handler itself must never call <a class="el" href="classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31" title="Shuts down cleanly: disconnects players, saves world, closes sockets.">shutdown()</a> directly - <a class="el" href="classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31" title="Shuts down cleanly: disconnects players, saves world, closes sockets.">shutdown()</a> logs (malloc + mutex via the async logger) and spawns to watchdog std::thread (pthread_create), neither of which is async-signal-safe. Doing that inside the handler can deadlock the process if the signal interrupts to thread already holding an internal libc lock (e.g. mid-malloc) - deterministic on Linux/glibc, which is why this only ever showed up there: the server would appear to never finish starting, or /stop would hang forever with the process still alive. Polling to plain flag from ordinary (non-signal) code on the main thread keeps <a class="el" href="classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31" title="Shuts down cleanly: disconnects players, saves world, closes sockets.">shutdown()</a> itself unchanged and safe to call from here.</p>
+<p>Registers a stop flag for <a class="el" href="classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131" title="Runs the main tick loop until shutdown.">runTickLoop()</a> to poll on the main thread. </p>
+<p>The caller must keep the flag alive until the tick loop exits.</p>
+<p>Signal handlers must not call <a class="el" href="classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31" title="Disconnects players, saves worlds, and closes networking.">shutdown()</a> directly because logging, allocation, mutexes, and thread creation are not async-signal-safe.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">flag</td><td>address of to volatile sig_atomic_t owned by the caller; must outlive <a class="el" href="classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131" title="Runs the main tick loop (blocks until shutdown()).">runTickLoop()</a>. </td></tr>
+    <tr><td class="paramname">flag</td><td>Pointer to a volatile sig_atomic_t owned by the caller. </td></tr>
   </table>
   </dd>
 </dl>
@@ -484,49 +434,8 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
       </table>
 </div><div class="memdoc">
 
-<p>Boots the server. </p>
+<p>Starts the server. </p>
 <p>Called from CurseStone.cpp. </p>
-
-</div>
-</div>
-<a id="a6bb3120c95644d6bbf29a583f6e433a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bb3120c95644d6bbf29a583f6e433a1">&#9670;&nbsp;</a></span>tick()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void cursestone::Server::tick </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Advances one tick. </p>
-<p>Dispatches to scheduler, network, world, players. </p>
-
-</div>
-</div>
-<a id="a60a5feed3025345459780e4f1ced978c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60a5feed3025345459780e4f1ced978c">&#9670;&nbsp;</a></span>unloadWorld()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool cursestone::Server::unloadWorld </td>
-          <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>name</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>unloads the world <code>name</code>: moves to its players in the world by default, saves its chunks and it removes of the list. </p>
-<p>the world by default not is can unload. </p>
 
 </div>
 </div>

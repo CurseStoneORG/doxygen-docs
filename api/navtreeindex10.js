@@ -1,5 +1,12 @@
 var NAVTREEINDEX10 =
 {
+"classcursestone_1_1block_1_1BlockClayHardened.html":[4,0,0,0,16],
+"classcursestone_1_1block_1_1BlockClayHardened.html#a1df936d1097771ed260c9bdea21655ab":[4,0,0,0,16,1],
+"classcursestone_1_1block_1_1BlockClayHardened.html#a3c14858bfff6babbac374c5dc02cb6e7":[4,0,0,0,16,0],
+"classcursestone_1_1block_1_1BlockClayStained.html":[4,0,0,0,17],
+"classcursestone_1_1block_1_1BlockClayStained.html#a5a7330037ebdac65d6dd4ccfd71e2f05":[4,0,0,0,17,0],
+"classcursestone_1_1block_1_1BlockClayStained.html#aa294f09db6635fa95e8083da6313df91":[4,0,0,0,17,1],
+"classcursestone_1_1block_1_1BlockCoal.html":[4,0,0,0,18],
 "classcursestone_1_1block_1_1BlockCoal.html#ab0419e2bf33d3a12ed7ac5bac4beaea8":[4,0,0,0,18,0],
 "classcursestone_1_1block_1_1BlockCoal.html#ae4483dbc3867d02d55ab9094581c364c":[4,0,0,0,18,1],
 "classcursestone_1_1block_1_1BlockCoalOre.html":[4,0,0,0,19],
@@ -242,12 +249,5 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1block_1_1BlockNetherBrick.html":[4,0,0,0,94],
 "classcursestone_1_1block_1_1BlockNetherBrick.html#a96136ee988d3b23fcce36e04e9392d8b":[4,0,0,0,94,0],
 "classcursestone_1_1block_1_1BlockNetherBrick.html#ac8ec2ce28f2be1be48a00c4ed86c4bc8":[4,0,0,0,94,1],
-"classcursestone_1_1block_1_1BlockNetherBrickFence.html":[4,0,0,0,95],
-"classcursestone_1_1block_1_1BlockNetherBrickFence.html#a09ec100545c098e46887cc3c4b59ee79":[4,0,0,0,95,0],
-"classcursestone_1_1block_1_1BlockNetherBrickFence.html#acc2b6bebdb931e2cf2cdebddb974aee8":[4,0,0,0,95,1],
-"classcursestone_1_1block_1_1BlockNetherBrickStairs.html":[4,0,0,0,96],
-"classcursestone_1_1block_1_1BlockNetherBrickStairs.html#a8a6f0692e41be85b893a09b546de9b79":[4,0,0,0,96,0],
-"classcursestone_1_1block_1_1BlockNetherBrickStairs.html#ad870d7d3a58940761a1220530cd051f0":[4,0,0,0,96,1],
-"classcursestone_1_1block_1_1BlockNetherQuartzOre.html":[4,0,0,0,97],
-"classcursestone_1_1block_1_1BlockNetherQuartzOre.html#a300af09ecf465f129982b9fa80234ef6":[4,0,0,0,97,1]
+"classcursestone_1_1block_1_1BlockNetherBrickFence.html":[4,0,0,0,95]
 };

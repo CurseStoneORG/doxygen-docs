@@ -1,5 +1,7 @@
 var NAVTREEINDEX7 =
 {
+"SessionManager_8h_source.html":[5,0,0,10,2,7],
+"Session_8h_source.html":[5,0,0,10,2,6],
 "SetDifficultyPacket_8h_source.html":[5,0,0,10,0,49],
 "SetEntityDataPacket_8h_source.html":[5,0,0,10,0,50],
 "SetEntityLinkPacket_8h_source.html":[5,0,0,10,0,51],
@@ -247,7 +249,5 @@ var NAVTREEINDEX7 =
 "VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24ea9bef7adde235abb5903fccdb643e41cc":[3,0,0,17,1,4,0,1,9],
 "VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eab7d8625cb813f436d562f2e1d6367120":[3,0,0,17,1,4,0,1,1],
 "VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eac0bdf8dc269fe79a5102f20382c10663":[3,0,0,17,1,4,0,1,10],
-"VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eae06b2600f317961c21a748e8c460c38f":[3,0,0,17,1,4,0,1,12],
-"VillagePieces_8h.html#a255138dbb55acb7595edc209698dd6e7":[3,0,0,17,1,4,0,6],
-"VillagePieces_8h_source.html":[5,0,0,21,1,5,0,1]
+"VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eae06b2600f317961c21a748e8c460c38f":[3,0,0,17,1,4,0,1,12]
 };

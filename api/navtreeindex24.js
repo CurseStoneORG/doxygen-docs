@@ -1,5 +1,17 @@
 var NAVTREEINDEX24 =
 {
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html":[4,0,0,7,0,52,0],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a0a4cb8add71cc98ae31b2185a8f7afb5":[4,0,0,7,0,52,0,5],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a11feeff249f3341ad7a4788425e8dc54":[4,0,0,7,0,52,0,6],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a3a42e291368e28c59f16d00d7fd156e4":[4,0,0,7,0,52,0,0],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a6aa4ece2dd70241e0701c630be14a075":[4,0,0,7,0,52,0,4],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a6f0e47c76f9bc5315162d7d1e90e9dff":[4,0,0,7,0,52,0,2],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a80e2122af8a7b5f21a8d0ff1934a90eb":[4,0,0,7,0,52,0,1],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#ad86631e7545e2dddf0d63724d4e2cbe8":[4,0,0,7,0,52,0,7],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#ade7275fc594bb716193aa4ddd228a432":[4,0,0,7,0,52,0,3],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html":[4,0,0,7,0,54,0],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#a94878d109a34eca8afaf557d79b1dc5e":[4,0,0,7,0,54,0,0],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#a9bd746d3414301fbba3a340015bc8351":[4,0,0,7,0,54,0,3],
 "structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#aaea050900c59f60b3236e232aa670530":[4,0,0,7,0,54,0,2],
 "structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#ae5affe75bd19c026f4cb2c31f010bafe":[4,0,0,7,0,54,0,1],
 "structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html":[4,0,0,7,0,64,0],
@@ -237,17 +249,5 @@ var NAVTREEINDEX24 =
 "structmcp__async__logger.html#a11fc937e4eea59d9c6fbf76d367713c5":[4,0,3,5],
 "structmcp__async__logger.html#a146358e86a31e2a47d6b058d8fd5a2ed":[4,0,3,2],
 "structmcp__async__logger.html#a17864168f369d059a6de52c7ae5df6c5":[4,0,3,1],
-"structmcp__async__logger.html#a2077810f93fe016531ca110de823a897":[4,0,3,8],
-"structmcp__async__logger.html#a597e5f0b65cc1a0ee470e5e902efc2a6":[4,0,3,9],
-"structmcp__async__logger.html#a5bac4774f8fd487bd1b9d67d4cf83a73":[4,0,3,10],
-"structmcp__async__logger.html#a609820bfa930d62ba7bb8fbc3ae688f1":[4,0,3,7],
-"structmcp__async__logger.html#a6fa86b821dc651bf240b993723e2f6c6":[4,0,3,0],
-"structmcp__async__logger.html#a6fc3e629da03c21e3174249c68552528":[4,0,3,11],
-"structmcp__async__logger.html#a72d56a96a91bed0a13813898d928bead":[4,0,3,4],
-"structmcp__async__logger.html#a9510415f536d8ee69c233c1def6d8c3d":[4,0,3,3],
-"structmcp__async__logger.html#a9904b26f70f9cb3b39d94f0ced1b9c20":[4,0,3,12],
-"structmcp__async__logger.html#ad14491ee989c4a84152e9457b5121563":[4,0,3,6],
-"structmcp__bstream.html":[4,0,4],
-"structmcp__bstream.html#a5bf122f52c73b559b0abca15a7c378cb":[4,0,4,1],
-"structmcp__bstream.html#a75685e7a0f49b6d496b3ba9eff480a16":[4,0,4,3]
+"structmcp__async__logger.html#a2077810f93fe016531ca110de823a897":[4,0,3,8]
 };

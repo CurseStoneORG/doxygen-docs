@@ -683,6 +683,7 @@ var hierarchy =
         [ "cursestone::item::ItemGoldenApple", "classcursestone_1_1item_1_1ItemGoldenApple.html", null ],
         [ "cursestone::item::ItemGoldenCarrot", "classcursestone_1_1item_1_1ItemGoldenCarrot.html", null ],
         [ "cursestone::item::ItemMelon", "classcursestone_1_1item_1_1ItemMelon.html", null ],
+        [ "cursestone::item::ItemMilkBucket", "classcursestone_1_1item_1_1ItemMilkBucket.html", null ],
         [ "cursestone::item::ItemMushroomStew", "classcursestone_1_1item_1_1ItemMushroomStew.html", null ],
         [ "cursestone::item::ItemPotion", "classcursestone_1_1item_1_1ItemPotion.html", null ],
         [ "cursestone::item::ItemPumpkinPie", "classcursestone_1_1item_1_1ItemPumpkinPie.html", null ],
