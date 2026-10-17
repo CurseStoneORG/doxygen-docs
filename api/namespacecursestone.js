@@ -1174,7 +1174,6 @@ var namespacecursestone =
       [ "MELON_SEEDS", "ItemConstants_8h.html#a27e85daee20fad0ae7a9e8ec54910659", null ],
       [ "MELON_SLICE", "ItemConstants_8h.html#a08579f29e447d50f857d8ef40833f16d", null ],
       [ "MELON_STEM", "ItemConstants_8h.html#a9a66752e9d2ab331abdf580e5b555766", null ],
-      [ "MILK_BUCKET", "ItemConstants_8h.html#a37668870285cf50e3e8754f8cb26bcc8", null ],
       [ "MINECART", "ItemConstants_8h.html#af1b0351116fc27b24dc82dad675e754a", null ],
       [ "MONSTER_EGG", "ItemConstants_8h.html#aae33648eeb67fff55283b7565cef5165", null ],
       [ "MONSTER_SPAWNER", "ItemConstants_8h.html#a0e15ebd3ca80e058e84079d543f34328", null ],
