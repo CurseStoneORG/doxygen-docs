@@ -69,6 +69,7 @@ var classcursestone_1_1Player =
     [ "handlePlayerAction", "classcursestone_1_1Player.html#ac7c76de956f4d07d5d07e93ea9cb28d7", null ],
     [ "handleSignEdit", "classcursestone_1_1Player.html#a0ad97f104354df0284156b267fc0d86e", null ],
     [ "handleUseItemAir", "classcursestone_1_1Player.html#aa9c5dd85d64b09aa6d1a13955a4e5341", null ],
+    [ "hasArrowInStock", "classcursestone_1_1Player.html#acdb59db5c2435dca0cb8ef0e86b4a7ea", null ],
     [ "hasAutoJump", "classcursestone_1_1Player.html#a4865bbafd133daeb9bded9dfebef062e", null ],
     [ "hasOpenContainer", "classcursestone_1_1Player.html#aabdce3981a4232287934c6b1a2ce2e13", null ],
     [ "hasPermission", "classcursestone_1_1Player.html#a8adab66a103703a8a1b36c5705e28794", null ],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1entity_1_1EntityDamageByBlockEvent.html#ab6f1942547fa74ff499cdd096077f797":[4,0,0,3,1,6,4],
 "classcursestone_1_1event_1_1entity_1_1EntityDamageByBlockEvent.html#ae7c0235a6b2af06f0f649e7205d2e36e":[4,0,0,3,1,6,2],
 "classcursestone_1_1event_1_1entity_1_1EntityDamageByBlockEvent.html#affac03c1e17e49c515312b628b2a4290":[4,0,0,3,1,6,1],
 "classcursestone_1_1event_1_1entity_1_1EntityDamageByChildEntityEvent.html":[4,0,0,3,1,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1event_1_1player_1_1PlayerEvent.html#aa143b0e1aa169e73b2bf02f8d72e7c04":[4,0,0,3,3,14,0],
 "classcursestone_1_1event_1_1player_1_1PlayerEvent.html#aae14b806d70efc27679da1ad04a3350d":[4,0,0,3,3,14,2],
 "classcursestone_1_1event_1_1player_1_1PlayerEvent.html#af5d41d4b13b91603025e9d3540054c96":[4,0,0,3,3,14,3],
-"classcursestone_1_1event_1_1player_1_1PlayerFoodLevelChangeEvent.html":[4,0,0,3,3,15],
-"classcursestone_1_1event_1_1player_1_1PlayerFoodLevelChangeEvent.html#a06eb1f28ef2873c7842edf52cddeaf1d":[4,0,0,3,3,15,1]
+"classcursestone_1_1event_1_1player_1_1PlayerFoodLevelChangeEvent.html":[4,0,0,3,3,15]
 };

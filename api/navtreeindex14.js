@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1event_1_1player_1_1PlayerFoodLevelChangeEvent.html#a06eb1f28ef2873c7842edf52cddeaf1d":[4,0,0,3,3,15,1],
 "classcursestone_1_1event_1_1player_1_1PlayerFoodLevelChangeEvent.html#a302f44ae9401bef5dbda86ce2d857e7c":[4,0,0,3,3,15,0],
 "classcursestone_1_1event_1_1player_1_1PlayerFoodLevelChangeEvent.html#a30586a4365aa9c39e92609188249a1ca":[4,0,0,3,3,15,2],
 "classcursestone_1_1event_1_1player_1_1PlayerGameModeChangeEvent.html":[4,0,0,3,3,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1inventory_1_1BaseInventory.html#acc19564ff7c63641588d91b4c1ac0362":[4,0,0,4,0,13],
 "classcursestone_1_1inventory_1_1BaseInventory.html#acc5eb0fc53cb6e17dc7fbc8990d80bea":[4,0,0,4,0,32],
 "classcursestone_1_1inventory_1_1BaseInventory.html#acef70ff311afd57740e5d6ea88c434ab":[4,0,0,4,0,31],
-"classcursestone_1_1inventory_1_1BaseInventory.html#ada9298887323cccc1cc3d62d52c1accd":[4,0,0,4,0,2],
-"classcursestone_1_1inventory_1_1BaseInventory.html#add41483dc0ea5b461977c81dde2d6076":[4,0,0,4,0,24]
+"classcursestone_1_1inventory_1_1BaseInventory.html#ada9298887323cccc1cc3d62d52c1accd":[4,0,0,4,0,2]
 };

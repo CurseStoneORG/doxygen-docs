@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeForest.html":[4,0,0,15,1,0,4],
 "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeForest.html#a08068ffd0d8c791617fe4a01cae610e3":[4,0,0,15,1,0,4,0],
 "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeForest.html#a8b7f33f82fba0ec40cfd03a0ebf3cdf0":[4,0,0,15,1,0,4,4],
 "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeForest.html#a9e1f17e0abb97a0cea90afbb09f43b60":[4,0,0,15,1,0,4,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "dir_f6c1c82b4d30ae548d5286e2c80025e9.html":[5,0,0,21,1,2],
 "dir_fc4c7f03e1a69a98c370fae55a743828.html":[5,0,0,10],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[5,0,0,7],
-"files.html":[5,0],
-"functions.html":[4,3,0]
+"files.html":[5,0]
 };

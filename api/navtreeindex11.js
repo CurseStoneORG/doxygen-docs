@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockPressurePlate.html#abd33fc56cf5d4f2ea41f3cb040a0845b":[4,0,0,0,109,1],
 "classcursestone_1_1block_1_1BlockPressurePlateStone.html":[4,0,0,0,110],
 "classcursestone_1_1block_1_1BlockPressurePlateStone.html#a146b5f31dedd2e634512f668e0397be8":[4,0,0,0,110,0],
 "classcursestone_1_1block_1_1BlockPressurePlateStone.html#a5673ef50a176ba175dc08f9db54210e2":[4,0,0,0,110,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1Effect.html#aa805507c3b2469562cee325ed2c80ae7":[4,0,0,2,4,3],
 "classcursestone_1_1entity_1_1Effect.html#aaf3159eb6f2cb0bf23c0b8590f6127c0":[4,0,0,2,4,2],
 "classcursestone_1_1entity_1_1Effect.html#ac1e967498df370cec23c570da849afe0":[4,0,0,2,4,7],
-"classcursestone_1_1entity_1_1Effect.html#aebe9cc23b5a0fb1af3de6baa63144732":[4,0,0,2,4,4],
-"classcursestone_1_1entity_1_1Effect.html#afa91efaa9ba3fe2e53ba2301409c105f":[4,0,0,2,4,6]
+"classcursestone_1_1entity_1_1Effect.html#aebe9cc23b5a0fb1af3de6baa63144732":[4,0,0,2,4,4]
 };
