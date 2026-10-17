@@ -175,6 +175,7 @@ var classcursestone_1_1Player =
     [ "teleportToOverworld", "classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38", null ],
     [ "throwSplashPotion", "classcursestone_1_1Player.html#aa677cab3d5e46cee9829ead8b43ef87b", null ],
     [ "tickHungerAndDamage", "classcursestone_1_1Player.html#a740d425f04a94ec460372129231664a5", null ],
+    [ "tryClaimNearbyDrop", "classcursestone_1_1Player.html#ad19fcd709274b2daaddf9125bee50af1", null ],
     [ "unloadChunk", "classcursestone_1_1Player.html#af4bd1183454c59a4004ea0d97c94b91a", null ],
     [ "viewDistance", "classcursestone_1_1Player.html#a4fb8559da326cc37e133820e11d054aa", null ]
 ];
