@@ -119,8 +119,18 @@ $(document).ready(function(){initNavTree('ItemBow_8h_source.html',''); initResiz
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::string name()<span class="keyword"> const override </span>{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;Bow&quot;</span>;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// The bow carries durability in its damage value, so it can never</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// stack (the reference server&#39;s Bow extends Tool, whose max stack</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// is 1). Without this a pickup of two bows merged them into one</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// illegal count=2 slot — a state the 0.15.10 client treats as</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// invalid: the stack stopped rendering in other players&#39; hands and</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// the client aborted the draw/release handshake, so no arrow ever</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// spawned.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> maxStackSize()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1item_1_1ItemBow_html"><div class="ttname"><a href="classcursestone_1_1item_1_1ItemBow.html">cursestone::item::ItemBow</a></div><div class="ttdef"><b>Definition:</b> ItemBow.h:27</div></div>
 <div class="ttc" id="aclasscursestone_1_1item_1_1Item_html"><div class="ttname"><a href="classcursestone_1_1item_1_1Item.html">cursestone::item::Item</a></div><div class="ttdef"><b>Definition:</b> Item.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
