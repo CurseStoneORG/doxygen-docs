@@ -1,5 +1,11 @@
 var NAVTREEINDEX19 =
 {
+"classcursestone_1_1network_1_1protocol_1_1RiderJumpPacket.html":[4,0,0,7,0,50],
+"classcursestone_1_1network_1_1protocol_1_1RiderJumpPacket.html#a1a04ec9bdb1cb8a45386ca6e77639160":[4,0,0,7,0,50,0],
+"classcursestone_1_1network_1_1protocol_1_1RiderJumpPacket.html#a767a20221d02281e2d88e723eb87ed0d":[4,0,0,7,0,50,1],
+"classcursestone_1_1network_1_1protocol_1_1RiderJumpPacket.html#aea41ad165a3979ae7537b422776cacad":[4,0,0,7,0,50,2],
+"classcursestone_1_1network_1_1protocol_1_1SetDifficultyPacket.html":[4,0,0,7,0,51],
+"classcursestone_1_1network_1_1protocol_1_1SetDifficultyPacket.html#a20c994dd16384b84cb7fa8d793078473":[4,0,0,7,0,51,1],
 "classcursestone_1_1network_1_1protocol_1_1SetDifficultyPacket.html#a664eaeb0bd81dfa59cb5cbea557d7d2b":[4,0,0,7,0,51,3],
 "classcursestone_1_1network_1_1protocol_1_1SetDifficultyPacket.html#aa5a9ea0c35b293a3c3226e7f8073c433":[4,0,0,7,0,51,2],
 "classcursestone_1_1network_1_1protocol_1_1SetDifficultyPacket.html#afef34ebc24c5af09d65edb7d53600a50":[4,0,0,7,0,51,0],
@@ -243,11 +249,5 @@ var NAVTREEINDEX19 =
 "classcursestone_1_1tile_1_1Container.html#ae5fdbca03cefeb9aea5e5fa706909bfc":[4,0,0,12,0,2],
 "classcursestone_1_1tile_1_1Nameable.html":[4,0,0,12,1],
 "classcursestone_1_1tile_1_1Nameable.html#a74f8b36255f25af729fa9d920294f4e4":[4,0,0,12,1,0],
-"classcursestone_1_1tile_1_1Nameable.html#a9d2dc22f490b1d95aa04cf0c43b87939":[4,0,0,12,1,2],
-"classcursestone_1_1tile_1_1Nameable.html#aac9591662cfbb0b82cdb320d2a7d96ed":[4,0,0,12,1,1],
-"classcursestone_1_1tile_1_1Spawnable.html":[4,0,0,12,2],
-"classcursestone_1_1tile_1_1Spawnable.html#a0e82b2864bed8944d192c330247c96c5":[4,0,0,12,2,0],
-"classcursestone_1_1tile_1_1Spawnable.html#a7ccf643c7476a4834b118f014b8f8f4d":[4,0,0,12,2,1],
-"classcursestone_1_1tile_1_1Tile.html":[4,0,0,12,3],
-"classcursestone_1_1tile_1_1Tile.html#a1d074c14b0bf5be14272912dd161a48f":[4,0,0,12,3,7]
+"classcursestone_1_1tile_1_1Nameable.html#a9d2dc22f490b1d95aa04cf0c43b87939":[4,0,0,12,1,2]
 };

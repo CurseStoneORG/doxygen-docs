@@ -13,6 +13,7 @@ var classcursestone_1_1network_1_1protocol_1_1PacketReader =
     [ "readI32BE", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a79702fe4462be57a3cae65de2a752b0f", null ],
     [ "readI64BE", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a856cfd1bf2208e4083c2b4fcb7979334", null ],
     [ "readI8", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a958a78f6bfde5830ed447a4023dc54dd", null ],
+    [ "readLEString", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a8d0e9399920eeefd847949fce245b8fa", null ],
     [ "readString", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#ad124c2f677c2c94c318c18e0d6defff7", null ],
     [ "readU16BE", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a850bf8e11675ac7ae4875980618e2fc5", null ],
     [ "readU16LE", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#aa79ba8d5845d04925da877341bdf305a", null ],

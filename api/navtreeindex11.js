@@ -1,5 +1,10 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockPotato.html":[4,0,0,0,108],
+"classcursestone_1_1block_1_1BlockPotato.html#aa000d883e1f844665e35cba472828c27":[4,0,0,0,108,1],
+"classcursestone_1_1block_1_1BlockPotato.html#ac05d9a0b288afb24386010f0d4fb0403":[4,0,0,0,108,0],
+"classcursestone_1_1block_1_1BlockPressurePlate.html":[4,0,0,0,109],
+"classcursestone_1_1block_1_1BlockPressurePlate.html#a96f23b24444011c6a0c56633a9f8bab1":[4,0,0,0,109,0],
 "classcursestone_1_1block_1_1BlockPressurePlate.html#abd33fc56cf5d4f2ea41f3cb040a0845b":[4,0,0,0,109,1],
 "classcursestone_1_1block_1_1BlockPressurePlateStone.html":[4,0,0,0,110],
 "classcursestone_1_1block_1_1BlockPressurePlateStone.html#a146b5f31dedd2e634512f668e0397be8":[4,0,0,0,110,0],
@@ -244,10 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1Creature.html":[4,0,0,2,3],
 "classcursestone_1_1entity_1_1Effect.html":[4,0,0,2,4],
 "classcursestone_1_1entity_1_1Effect.html#a037e7c903dfa2106b0f93710993bce47":[4,0,0,2,4,1],
-"classcursestone_1_1entity_1_1Effect.html#a17f0df9e3b2e7340fc8770e5feedd435":[4,0,0,2,4,0],
-"classcursestone_1_1entity_1_1Effect.html#a8b33031739a57cf16384fa2eb8a50e03":[4,0,0,2,4,5],
-"classcursestone_1_1entity_1_1Effect.html#aa805507c3b2469562cee325ed2c80ae7":[4,0,0,2,4,3],
-"classcursestone_1_1entity_1_1Effect.html#aaf3159eb6f2cb0bf23c0b8590f6127c0":[4,0,0,2,4,2],
-"classcursestone_1_1entity_1_1Effect.html#ac1e967498df370cec23c570da849afe0":[4,0,0,2,4,7],
-"classcursestone_1_1entity_1_1Effect.html#aebe9cc23b5a0fb1af3de6baa63144732":[4,0,0,2,4,4]
+"classcursestone_1_1entity_1_1Effect.html#a17f0df9e3b2e7340fc8770e5feedd435":[4,0,0,2,4,0]
 };

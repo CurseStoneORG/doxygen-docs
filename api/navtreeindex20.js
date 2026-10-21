@@ -1,5 +1,11 @@
 var NAVTREEINDEX20 =
 {
+"classcursestone_1_1tile_1_1Nameable.html#aac9591662cfbb0b82cdb320d2a7d96ed":[4,0,0,12,1,1],
+"classcursestone_1_1tile_1_1Spawnable.html":[4,0,0,12,2],
+"classcursestone_1_1tile_1_1Spawnable.html#a0e82b2864bed8944d192c330247c96c5":[4,0,0,12,2,0],
+"classcursestone_1_1tile_1_1Spawnable.html#a7ccf643c7476a4834b118f014b8f8f4d":[4,0,0,12,2,1],
+"classcursestone_1_1tile_1_1Tile.html":[4,0,0,12,3],
+"classcursestone_1_1tile_1_1Tile.html#a1d074c14b0bf5be14272912dd161a48f":[4,0,0,12,3,7],
 "classcursestone_1_1tile_1_1Tile.html#a2ae732d980717a54f615bbda69e62d7f":[4,0,0,12,3,5],
 "classcursestone_1_1tile_1_1Tile.html#a468f97a87c6b225da383e2f952418f27":[4,0,0,12,3,4],
 "classcursestone_1_1tile_1_1Tile.html#a5b3a37d33604ff1d1e18f305bdb36175":[4,0,0,12,3,2],
@@ -243,11 +249,5 @@ var NAVTREEINDEX20 =
 "classcursestone_1_1world_1_1World.html#a9a6e66c6c32588007c6e8493a1e70a0e":[4,0,0,15,18,41],
 "classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90":[4,0,0,15,18,12],
 "classcursestone_1_1world_1_1World.html#a9ee6c44296e1600c88096cf9bb1b70b8":[4,0,0,15,18,14],
-"classcursestone_1_1world_1_1World.html#a9f67dbbc61d836a9ffc36626f28d86fc":[4,0,0,15,18,15],
-"classcursestone_1_1world_1_1World.html#aa226b6e7a5d1409109c1dba1b0c4c9ac":[4,0,0,15,18,21],
-"classcursestone_1_1world_1_1World.html#aa2420abb9a37767ed5401050c982a635":[4,0,0,15,18,44],
-"classcursestone_1_1world_1_1World.html#aa75ab2c0fa1c73ed23538d72896553c8":[4,0,0,15,18,62],
-"classcursestone_1_1world_1_1World.html#aa8bbe67906904757a149b34ec3418776":[4,0,0,15,18,33],
-"classcursestone_1_1world_1_1World.html#aa963b6ff4068185c8a03ca98db191036":[4,0,0,15,18,18],
-"classcursestone_1_1world_1_1World.html#aaa0624b007be46807836defc0887dde5":[4,0,0,15,18,59]
+"classcursestone_1_1world_1_1World.html#a9f67dbbc61d836a9ffc36626f28d86fc":[4,0,0,15,18,15]
 };

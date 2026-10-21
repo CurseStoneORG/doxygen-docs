@@ -1,5 +1,10 @@
 var NAVTREEINDEX10 =
 {
+"classcursestone_1_1block_1_1BlockDiamondOre.html#a97fdf208addf88a9f669259d07b1509e":[4,0,0,0,28,1],
+"classcursestone_1_1block_1_1BlockDiamondOre.html#ac6d8174b7d89d5c279b3fcd2d814e564":[4,0,0,0,28,0],
+"classcursestone_1_1block_1_1BlockDirt.html":[4,0,0,0,29],
+"classcursestone_1_1block_1_1BlockDirt.html#a46d883af27958040e959e308aaf94cf4":[4,0,0,0,29,0],
+"classcursestone_1_1block_1_1BlockDirt.html#af5661c8c9f673ca8df67eea9c54fd622":[4,0,0,0,29,1],
 "classcursestone_1_1block_1_1BlockDoor.html":[4,0,0,0,30],
 "classcursestone_1_1block_1_1BlockDoor.html#a93dbb95c45300904de3d7a7fb21e228c":[4,0,0,0,30,0],
 "classcursestone_1_1block_1_1BlockDoor.html#a95c61e08dfe87223b16ea439f23093fe":[4,0,0,0,30,1],
@@ -244,10 +249,5 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1block_1_1BlockPortal.html#a0e143277da2f9ecbbbfca12f26a51ba2":[4,0,0,0,107,3],
 "classcursestone_1_1block_1_1BlockPortal.html#a2869c59be3c4a2c8430236bf4077c0f3":[4,0,0,0,107,2],
 "classcursestone_1_1block_1_1BlockPortal.html#a3573bc59fe9e289deeb0b7b402f780b6":[4,0,0,0,107,0],
-"classcursestone_1_1block_1_1BlockPortal.html#a90ae489047400020502d7b5e68a846de":[4,0,0,0,107,1],
-"classcursestone_1_1block_1_1BlockPotato.html":[4,0,0,0,108],
-"classcursestone_1_1block_1_1BlockPotato.html#aa000d883e1f844665e35cba472828c27":[4,0,0,0,108,1],
-"classcursestone_1_1block_1_1BlockPotato.html#ac05d9a0b288afb24386010f0d4fb0403":[4,0,0,0,108,0],
-"classcursestone_1_1block_1_1BlockPressurePlate.html":[4,0,0,0,109],
-"classcursestone_1_1block_1_1BlockPressurePlate.html#a96f23b24444011c6a0c56633a9f8bab1":[4,0,0,0,109,0]
+"classcursestone_1_1block_1_1BlockPortal.html#a90ae489047400020502d7b5e68a846de":[4,0,0,0,107,1]
 };

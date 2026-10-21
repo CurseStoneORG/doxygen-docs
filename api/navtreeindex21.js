@@ -1,5 +1,11 @@
 var NAVTREEINDEX21 =
 {
+"classcursestone_1_1world_1_1World.html#aa226b6e7a5d1409109c1dba1b0c4c9ac":[4,0,0,15,18,21],
+"classcursestone_1_1world_1_1World.html#aa2420abb9a37767ed5401050c982a635":[4,0,0,15,18,44],
+"classcursestone_1_1world_1_1World.html#aa75ab2c0fa1c73ed23538d72896553c8":[4,0,0,15,18,62],
+"classcursestone_1_1world_1_1World.html#aa8bbe67906904757a149b34ec3418776":[4,0,0,15,18,33],
+"classcursestone_1_1world_1_1World.html#aa963b6ff4068185c8a03ca98db191036":[4,0,0,15,18,18],
+"classcursestone_1_1world_1_1World.html#aaa0624b007be46807836defc0887dde5":[4,0,0,15,18,59],
 "classcursestone_1_1world_1_1World.html#aaeb37b776e72f68f27f84814af0ec05b":[4,0,0,15,18,58],
 "classcursestone_1_1world_1_1World.html#ab31f2681d75632e0ed0af2b8299709d8":[4,0,0,15,18,13],
 "classcursestone_1_1world_1_1World.html#ab5982568f10c6456e7a9bc373255f436":[4,0,0,15,18,46],
@@ -243,11 +249,5 @@ var NAVTREEINDEX21 =
 "classcursestone_1_1world_1_1generator_1_1biome_1_1Biome.html#a7936fdcf2513992699a3795a525238ad":[4,0,0,15,1,0,0,1],
 "classcursestone_1_1world_1_1generator_1_1biome_1_1Biome.html#a97cd7ec1b39702ac827ec0f8595688cb":[4,0,0,15,1,0,0,8],
 "classcursestone_1_1world_1_1generator_1_1biome_1_1Biome.html#aae9e29d797d410d0b1e6dcf608292bfe":[4,0,0,15,1,0,0,2],
-"classcursestone_1_1world_1_1generator_1_1biome_1_1Biome.html#ab133be62187bc0bec079b0a01f38d713":[4,0,0,15,1,0,0,4],
-"classcursestone_1_1world_1_1generator_1_1biome_1_1Biome.html#af7f4cc25a1855ae574f5991b0e6d3681":[4,0,0,15,1,0,0,3],
-"classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeDesert.html":[4,0,0,15,1,0,3],
-"classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeDesert.html#a4d44cba7ea9f8254f61fdb6a5c08a98e":[4,0,0,15,1,0,3,0],
-"classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeDesert.html#a5dbf9d14689e7cf7c90589421759d3b3":[4,0,0,15,1,0,3,5],
-"classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeDesert.html#a79f04be291251e425d043282d02f25a1":[4,0,0,15,1,0,3,3],
-"classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeDesert.html#aca81fa16923813415261a701786a5c36":[4,0,0,15,1,0,3,1]
+"classcursestone_1_1world_1_1generator_1_1biome_1_1Biome.html#ab133be62187bc0bec079b0a01f38d713":[4,0,0,15,1,0,0,4]
 };
