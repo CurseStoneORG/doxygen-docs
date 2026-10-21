@@ -87,59 +87,32 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p align="center"><a class="anchor" id="md_README"></a> </p>
-<p><img src="logo.svg" alt="The CurseStone logo" style="pointer-events: none;" width="140" class="inline"/> <br  />
- <b>A lightweight, open source server software for Minecraft: Pocket Edition 0.15.x, written in C and C++</b> </p>
+<p><img src="logo.svg" alt="CurseStone logo" style="pointer-events: none;" width="140" class="inline"/> <br  />
+ <b>Open-source server software for Minecraft: Pocket Edition 0.15.x</b> <br  />
+ Written in C and C++20 </p>
 <p align="center"></p>
-<p><a href="https://github.com/CurseStoneTeam/CurseStone/actions/workflows/Build.yml"><img src="https://github.com/CurseStoneTeam/CurseStone/actions/workflows/Build.yml/badge.svg" alt="Build" style="pointer-events: none;" class="inline"/></a> <img src="https://img.shields.io/badge/license-LGPL--3.0--or--later-blue" alt="License" class="inline"/> <img src="https://img.shields.io/badge/MCPE%20protocol-84-8A2BE2" alt="Protocol" class="inline"/> </p>
+<p><a href="https://github.com/CurseStoneTeam/CurseStone/actions/workflows/Build.yml"><img src="https://github.com/CurseStoneTeam/CurseStone/actions/workflows/Build.yml/badge.svg" alt="Build status" style="pointer-events: none;" class="inline"/> </a> <img src="https://img.shields.io/badge/license-LGPL--3.0--or--later-blue" alt="License: LGPL-3.0-or-later" class="inline"/> <img src="https://img.shields.io/badge/MCPE%20protocol-84-8A2BE2" alt="MCPE protocol 84" class="inline"/> </p>
+<p>CurseStone is an open-source server implementation for Minecraft: Pocket Edition 0.15.x (protocol 84). Its C core handles low-level systems such as networking, NBT and chunk data, while the game logic is written in C++20.</p>
+<p>The project is intended for people who want to run, study and modify their own server software. It is not designed to reproduce every feature of the original game.</p>
 <h2><a class="anchor" id="autotoc_md0"></a>
-What is this?</h2>
-<p>CurseStone is a server software for Minecraft: Pocket Edition 0.15.x (protocol 84). It has a plain C core for networking, NBT and chunk data, with the game logic written in C++20.</p>
-<p>If you want to run a small MCPE server that you can read, build and modify, this is for you.</p>
+Features</h2>
 <ul>
-<li>🧩 <b>Lua plugins</b> - Lua 5.4 is built into the binary, nothing extra to install</li>
-<li>🗺️ <b>Two world formats</b> - <code>anvil</code> (default) and <code>leveldb</code></li>
-<li>🌍 <b>Terrain generation</b> - biomes, noise and populators included</li>
-<li>🔧 <b>Built-in diagnostics</b> - a runtime profiler (<code>/workbench</code>) and crash dumps</li>
-<li>📱 <b>Runs almost anywhere</b> - Linux, macOS, Windows and Android (Termux)</li>
+<li><b>Lua 5.4 plugins</b> — Lua is built into the server binary, so no separate runtime is required.</li>
+<li><b>World storage</b> — Supports Anvil and LevelDB formats, with Anvil used by default.</li>
+<li><b>Terrain generation</b> — Includes biome support, noise-based terrain and populators.</li>
+<li><b>Runtime diagnostics</b> — Provides a runtime profiler through <code>/workbench</code> and crash dumps.</li>
+<li><b>Multiple platforms</b> — Supports Linux, macOS, Windows and Android through Termux.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md1"></a>
-:x: CurseStone is NOT a vanilla server.</h2>
-<p>It targets an old protocol on purpose and does not implement everything from the vanilla game. For example, entities have no pathfinding or mob AI.</p>
-<p>If you need the full vanilla experience, use the official server software instead.</p>
+Compatibility</h2>
+<p>CurseStone targets <b>Minecraft: Pocket Edition 0.15.x, protocol 84</b>.</p>
+<p>It is not a modern Bedrock Edition server and does not implement every vanilla feature. Some gameplay systems, including mob AI and pathfinding, are not available.</p>
+<p>Make sure your client uses a compatible game version before connecting.</p>
 <h2><a class="anchor" id="autotoc_md2"></a>
-Getting Started</h2>
-<div class="fragment"><div class="line">cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release</div>
-<div class="line">cmake --build build --parallel</div>
-<div class="line">./build/CurseStone</div>
-</div><!-- fragment --><p>On first run, a setup wizard creates the configuration and a fresh world. The server listens on <b>UDP 19132</b> by default, so open that port in your firewall.</p>
-<ul>
-<li><a class="el" href="md_BUILDING.html">Building from source</a> - requirements, presets, Android and cross-compiling</li>
-<li><a href="https://github.com/CurseStoneTeam/CurseStone/actions">Prebuilt binaries</a> - Linux x86_64 and Android ARM64 builds are attached to each workflow run as artifacts</li>
-<li><a href="https://github.com/CurseStoneTeam/cursestone-docs">Plugin documentation</a> - API reference and a ready-to-run example</li>
-</ul>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Configuration</h2>
-<p>CurseStone reads <code>server.properties</code> and <code>cursestone.yml</code> from the working directory. Both are created with built-in defaults on first run. <code>server.properties</code> holds the basic settings; <code>cursestone.yml</code> holds the advanced ones. Plugin data is stored in <code>data_pl/</code> at the server root.</p>
-<p>Lua plugins are guarded against infinite loops and heavy code by three <code>cursestone.yml</code> keys under <code>settings</code> (<code>0</code> disables each one): <code>plugin-instruction-limit</code> (VM instructions per plugin call, default 1000000), <code>plugin-time-limit-ms</code> (milliseconds per plugin call, default 100) and <code>plugin-max-errors</code> (consecutive failed calls before a plugin is disabled automatically, default 10). Existing <code>cursestone.yml</code> files without these keys use the defaults.</p>
-<p>The most common settings are <code>server-port</code>, <code>max-players</code>, <code>view-distance</code>, <code>gamemode</code>, <code>difficulty</code>, <code>world-format</code> and <code>autosave-ticks</code>. The auto-generated files document every option.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
-Developing Plugins</h2>
-<p>Plugins are written in Lua. The documentation, API reference and an example plugin live in <a href="https://CurseStoneTeam.github.com">cursestone docs by Doxygen</a>.</p>
-<h2><a class="anchor" id="autotoc_md5"></a>
-Contributing to CurseStone</h2>
-<p>Contributions are welcome. The following resources will help you get started.</p><ul>
-<li><a class="el" href="md_BUILDING.html">Building from source</a></li>
-<li><a class="el" href="md_CONTRIBUTING.html">Contributing Guidelines</a> - the C/C++ boundary rules, naming, protocol notes and pull request workflow</li>
-<li><a class="el" href="md_docs_STYLE_COMMENTS.html">Comment style guide</a></li>
-</ul>
-<p>For anything larger than a small fix, please open an issue first so the approach can be agreed.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
-AI development tools</h2>
-<p>Instructions and documentation for AI coding assistants (Claude Code) live in the <a href=".claude/"><code>.claude/</code></a> folder. Start with /home/runner/work/CurseStone/CurseStone/.claude/README.md "`.claude/README.md`".</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Licensing information</h2>
-<p>This project is licensed under LGPL-3.0-or-later. Please see the <a href="https://www.gnu.org/licenses/lgpl-3.0.html">license text</a> for details.</p>
-<p>CurseStone is not affiliated with Mojang. All brands and trademarks belong to their respective owners. CurseStone is not a Mojang-approved software, nor is it associated with Mojang. </p>
+Building from source</h2>
+<p>You will need a C/C++ toolchain, CMake and Ninja. Refer to <a class="el" href="md_BUILDING.html">BUILDING.md</a> for platform-specific dependencies, build presets, Android instructions and cross-compilation details.</p>
+<p>For a standard Release build:</p>
+<p>```bash cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release cmake &ndash;build build &ndash;parallel ./build/CurseStone </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
