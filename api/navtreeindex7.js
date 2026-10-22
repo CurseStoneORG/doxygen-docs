@@ -218,13 +218,14 @@ var NAVTREEINDEX7 =
 "WorldProvider_8h_source.html":[5,0,0,21,0,6],
 "WorldSaveEvent_8h_source.html":[5,0,0,4,9,11],
 "WorldUnloadEvent_8h_source.html":[5,0,0,4,9,12],
-"World_8h.html#a09f84e27bb53de2a8af12fd0db87bbee":[3,0,0,17,25],
-"World_8h.html#a271a80db83df226fc4d66a24a65ab98f":[3,0,0,17,22],
+"World_8h.html#a09f84e27bb53de2a8af12fd0db87bbee":[3,0,0,17,26],
+"World_8h.html#a271a80db83df226fc4d66a24a65ab98f":[3,0,0,17,23],
 "World_8h.html#a55e11e04a6f986e214645a0651f6126c":[3,0,0,17,19],
 "World_8h.html#a8d69047032d095c6cfc45e36f4a10c6a":[3,0,0,17,20],
-"World_8h.html#ab07c4398f0b322842edb7af5fda1cb86":[3,0,0,17,23],
-"World_8h.html#ac63f610c4b47dbb78b0ba331c47d633d":[3,0,0,17,24],
-"World_8h.html#af4e88e25975b1bdabaf9c25301af0a13":[3,0,0,17,21],
+"World_8h.html#a920a524bc23bc911a4902e520e798b56":[3,0,0,17,21],
+"World_8h.html#ab07c4398f0b322842edb7af5fda1cb86":[3,0,0,17,24],
+"World_8h.html#ac63f610c4b47dbb78b0ba331c47d633d":[3,0,0,17,25],
+"World_8h.html#af4e88e25975b1bdabaf9c25301af0a13":[3,0,0,17,22],
 "World_8h_source.html":[5,0,0,21,13],
 "annotated.html":[4,0],
 "classcursestone_1_1Command.html":[4,0,0,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "classcursestone_1_1CommandMap.html#adc413a8821cc5bc948cdfce58de7246f":[4,0,0,17,6],
 "classcursestone_1_1CommandReader.html":[4,0,0,18],
 "classcursestone_1_1CommandReader.html#a0d8c449194a1dc93c3eb6bbe7d79497a":[4,0,0,18,0],
-"classcursestone_1_1CommandReader.html#a4455ae31f51c6d1fa57c31d62f475555":[4,0,0,18,1],
-"classcursestone_1_1CommandReader.html#a7b873e4a632dc76f1a7d2f733ccf7af4":[4,0,0,18,3]
+"classcursestone_1_1CommandReader.html#a4455ae31f51c6d1fa57c31d62f475555":[4,0,0,18,1]
 };

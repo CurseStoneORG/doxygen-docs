@@ -1974,6 +1974,7 @@ var namespacecursestone =
       [ "World", "classcursestone_1_1world_1_1World.html", "classcursestone_1_1world_1_1World" ],
       [ "itemWithinPickupVolume", "World_8h.html#a55e11e04a6f986e214645a0651f6126c", null ],
       [ "itemWithinPickupVolume", "World_8h.html#a8d69047032d095c6cfc45e36f4a10c6a", null ],
+      [ "kArrowClientFreezeDist", "World_8h.html#a920a524bc23bc911a4902e520e798b56", null ],
       [ "kItemHalfW", "World_8h.html#af4e88e25975b1bdabaf9c25301af0a13", null ],
       [ "kItemHeight", "World_8h.html#a271a80db83df226fc4d66a24a65ab98f", null ],
       [ "kPickupAboveFeet", "World_8h.html#ab07c4398f0b322842edb7af5fda1cb86", null ],

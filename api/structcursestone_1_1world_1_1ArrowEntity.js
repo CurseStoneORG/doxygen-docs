@@ -1,5 +1,6 @@
 var structcursestone_1_1world_1_1ArrowEntity =
 [
+    [ "client_hold", "structcursestone_1_1world_1_1ArrowEntity.html#a3e8a49a9ddb3a4b2d7e644a663325c0b", null ],
     [ "critical", "structcursestone_1_1world_1_1ArrowEntity.html#a7ac92c19bae01dc6bb0b50b2bdf59b45", null ],
     [ "damage", "structcursestone_1_1world_1_1ArrowEntity.html#a4ea54ace36319dfd29f4f91cb281d4a1", null ],
     [ "eid", "structcursestone_1_1world_1_1ArrowEntity.html#a1aa38f898216460d9faac31da5e3039c", null ],

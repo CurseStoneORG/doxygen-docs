@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1entity_1_1EntityCombustEvent.html#a01bc8c87715ec1acd140a3e03ee732a7":[4,0,0,3,1,5,1],
 "classcursestone_1_1event_1_1entity_1_1EntityCombustEvent.html#a12bb13d805c88d8c7f03592c09f8a988":[4,0,0,3,1,5,2],
 "classcursestone_1_1event_1_1entity_1_1EntityCombustEvent.html#a8ac857295291ce3e86e79f84d881721a":[4,0,0,3,1,5,0],
 "classcursestone_1_1event_1_1entity_1_1EntityDamageByBlockEvent.html":[4,0,0,3,1,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1event_1_1player_1_1PlayerEatFoodEvent.html":[4,0,0,3,3,13],
 "classcursestone_1_1event_1_1player_1_1PlayerEatFoodEvent.html#a3157b5c71dbd98e4d2dc5ea9fd45a507":[4,0,0,3,3,13,2],
 "classcursestone_1_1event_1_1player_1_1PlayerEatFoodEvent.html#a68abd651c35be7826f6f3254565a5d77":[4,0,0,3,3,13,1],
-"classcursestone_1_1event_1_1player_1_1PlayerEatFoodEvent.html#ab8907e54a84133db224e7d6b1334864c":[4,0,0,3,3,13,0],
-"classcursestone_1_1event_1_1player_1_1PlayerEvent.html":[4,0,0,3,3,14]
+"classcursestone_1_1event_1_1player_1_1PlayerEatFoodEvent.html#ab8907e54a84133db224e7d6b1334864c":[4,0,0,3,3,13,0]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockPortal.html#a90ae489047400020502d7b5e68a846de":[4,0,0,0,107,1],
 "classcursestone_1_1block_1_1BlockPotato.html":[4,0,0,0,108],
 "classcursestone_1_1block_1_1BlockPotato.html#aa000d883e1f844665e35cba472828c27":[4,0,0,0,108,1],
 "classcursestone_1_1block_1_1BlockPotato.html#ac05d9a0b288afb24386010f0d4fb0403":[4,0,0,0,108,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1AttributeMap.html#a7252df09dfa40b776b0bf8c6301007b7":[4,0,0,2,2,1],
 "classcursestone_1_1entity_1_1Creature.html":[4,0,0,2,3],
 "classcursestone_1_1entity_1_1Effect.html":[4,0,0,2,4],
-"classcursestone_1_1entity_1_1Effect.html#a037e7c903dfa2106b0f93710993bce47":[4,0,0,2,4,1],
-"classcursestone_1_1entity_1_1Effect.html#a17f0df9e3b2e7340fc8770e5feedd435":[4,0,0,2,4,0]
+"classcursestone_1_1entity_1_1Effect.html#a037e7c903dfa2106b0f93710993bce47":[4,0,0,2,4,1]
 };
