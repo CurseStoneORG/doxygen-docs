@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"structcursestone_1_1network_1_1RakLibAction.html#aa498336ff3d3d0e8a50d9cc5021cb817":[4,0,0,7,6,2],
 "structcursestone_1_1network_1_1RakLibAction.html#abc03973ad74f402e5a4a48ebd98656c3":[4,0,0,7,6,1],
 "structcursestone_1_1network_1_1RakLibAction.html#ae8889781590cfa4251d4fa5572fc005c":[4,0,0,7,6,5],
 "structcursestone_1_1network_1_1RakLibEvent.html":[4,0,0,7,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePiecePlacement.html#ad3201e5fd0d73b8d354176ba5ee4fede":[4,0,0,15,1,3,17,5],
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePiecePlacement.html#aec8af4ea8405e287d1c59ae7c5f7d19b":[4,0,0,15,1,3,17,2],
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html":[4,0,0,15,1,3,19],
-"structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#a5e06f1a98d3981a387f08af071638e99":[4,0,0,15,1,3,19,6],
-"structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#a9b760cf5cc3ee3bf819d5fba88c39aad":[4,0,0,15,1,3,19,7]
+"structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#a5e06f1a98d3981a387f08af071638e99":[4,0,0,15,1,3,19,6]
 };

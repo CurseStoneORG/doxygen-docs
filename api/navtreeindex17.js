@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"classcursestone_1_1item_1_1ItemSwordDiamond.html#aa92aedcfad9583dd15037a856c99d95f":[4,0,0,5,94,0],
 "classcursestone_1_1item_1_1ItemSwordDiamond.html#ac32233b47bc629457460c560b0aa2a8f":[4,0,0,5,94,1],
 "classcursestone_1_1item_1_1ItemSwordGolden.html":[4,0,0,5,95],
 "classcursestone_1_1item_1_1ItemSwordGolden.html#a34514fa4bac5efc5f864ae0412d20c84":[4,0,0,5,95,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetContentPacket.html#aa2a10a1d5c6bba75718cf0d01c56b794":[4,0,0,7,0,15,3],
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetContentPacket.html#ac81ff781f46b5830d8e3d33e882e9fd7":[4,0,0,7,0,15,0],
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetContentPacket.html#ad605d0a5cae0d7a259df6376300b5a3c":[4,0,0,7,0,15,4],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html":[4,0,0,7,0,16],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#a20780c4b338422af4d23053b426d1a19":[4,0,0,7,0,16,0]
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html":[4,0,0,7,0,16]
 };

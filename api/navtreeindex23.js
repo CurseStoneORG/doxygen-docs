@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"classes.html":[4,1],
 "dir_0ba1847fcee0b8a07939e8ab349ef420.html":[5,0,0,4,2],
 "dir_16186a19f23878c1e54fe138c5420315.html":[5,0,0,17],
 "dir_186afecd8038d0b87078969092f62203.html":[5,0,0,21,1,3,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "structcursestone_1_1network_1_1RakLibAction.html":[4,0,0,7,6],
 "structcursestone_1_1network_1_1RakLibAction.html#a5ff3853f3b9dd347010457729b880497":[4,0,0,7,6,3],
 "structcursestone_1_1network_1_1RakLibAction.html#a70ed5811240daeb986a804a6a7cb8f18":[4,0,0,7,6,0],
-"structcursestone_1_1network_1_1RakLibAction.html#a873baab81ebeb154ca95ce4af8974fca":[4,0,0,7,6,4],
-"structcursestone_1_1network_1_1RakLibAction.html#aa498336ff3d3d0e8a50d9cc5021cb817":[4,0,0,7,6,2]
+"structcursestone_1_1network_1_1RakLibAction.html#a873baab81ebeb154ca95ce4af8974fca":[4,0,0,7,6,4]
 };

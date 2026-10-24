@@ -1,5 +1,6 @@
 var NAVTREEINDEX21 =
 {
+"classcursestone_1_1world_1_1World.html#a19f353d34c18c94100cdad3206376625":[4,0,0,15,18,4],
 "classcursestone_1_1world_1_1World.html#a1ecbceacc98d77768c3809655b6324ab":[4,0,0,15,18,25],
 "classcursestone_1_1world_1_1World.html#a228ca692a04d7c3f8c83e62267b8556e":[4,0,0,15,18,64],
 "classcursestone_1_1world_1_1World.html#a23ea7a220a4cc9ebe0cae258eb59ca7c":[4,0,0,15,18,50],
@@ -248,6 +249,5 @@ var NAVTREEINDEX21 =
 "classcursestone_1_1world_1_1generator_1_1MersenneRandom.html#ae040d8e732bff578cf963dae4b5743a1":[4,0,0,15,1,13,8],
 "classcursestone_1_1world_1_1generator_1_1Nether.html":[4,0,0,15,1,11],
 "classcursestone_1_1world_1_1generator_1_1Nether.html#a042919a22c93f5cccb4034b9e00b7469":[4,0,0,15,1,11,0],
-"classcursestone_1_1world_1_1generator_1_1Nether.html#a0ade4b5a0b271ffc691bc6c390311192":[4,0,0,15,1,11,2],
-"classcursestone_1_1world_1_1generator_1_1Nether.html#a1a84abd01d9a7dc0f14ba3c1ed3275e0":[4,0,0,15,1,11,1]
+"classcursestone_1_1world_1_1generator_1_1Nether.html#a0ade4b5a0b271ffc691bc6c390311192":[4,0,0,15,1,11,2]
 };

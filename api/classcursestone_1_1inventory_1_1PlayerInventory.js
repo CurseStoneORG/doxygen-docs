@@ -24,6 +24,7 @@ var classcursestone_1_1inventory_1_1PlayerInventory =
     [ "setBoots", "classcursestone_1_1inventory_1_1PlayerInventory.html#a5e5d0a9d1b8b31b63c9f379911a44194", null ],
     [ "setChestplate", "classcursestone_1_1inventory_1_1PlayerInventory.html#a7ecf3ea80d9bc1e57c566604b821b520", null ],
     [ "setHeldItemIndex", "classcursestone_1_1inventory_1_1PlayerInventory.html#a8bdd025240de527b6d98cc7ca5b133e5", null ],
+    [ "setHeldItemIndex", "classcursestone_1_1inventory_1_1PlayerInventory.html#a9b80ff6bda94cd0e20f9f4f3f50005de", null ],
     [ "setHeldSlot", "classcursestone_1_1inventory_1_1PlayerInventory.html#a01567aa3d48ec052d6d42e83972da469", null ],
     [ "setHelmet", "classcursestone_1_1inventory_1_1PlayerInventory.html#a0252081aee9cf51adce374dcfdc1c0e9", null ],
     [ "setHotbarSlotIndex", "classcursestone_1_1inventory_1_1PlayerInventory.html#a65eaf8aa12f23db4c93256b5f4f1c465", null ],
