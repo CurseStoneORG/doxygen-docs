@@ -165,33 +165,38 @@ $(document).ready(function(){initNavTree('Network_8h_source.html',''); initResiz
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Update average packet receive rate for diagnostics.</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> tick();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// IP ban list (mirrors the reference server&#39;s Network::blockAddress).</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> blockAddress(<span class="keyword">const</span> std::string&amp; ip, uint64_t timeoutMs = 0);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> isBlocked(<span class="keyword">const</span> std::string&amp; ip) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Dispatches a single (already-extracted) sub-packet body to its Player.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> dispatchSingle(<span class="keyword">const</span> std::string&amp; ip, uint16_t port, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Instantiates the right DataPacket subclass by ID and decodes the body.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// `who` is the &quot;ip:port&quot; the packet came from, used for diagnostics.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::shared_ptr&lt;protocol::DataPacket&gt; decodePacketById(uint8_t pid, <span class="keyword">const</span> uint8_t* body,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                           <span class="keywordtype">size_t</span> bodyLen, <span class="keyword">const</span> std::string&amp; who);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Creates a Player for a new (ip,port) session. Returns true on success.</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> createPlayerForSession(<span class="keyword">const</span> std::string&amp; ip, uint16_t port);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* server_;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    std::vector&lt;std::unique_ptr&lt;SourceInterface&gt;&gt; interfaces_;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    std::unordered_map&lt;std::string, size_t&gt; nameToIndex_;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Session key = &quot;ip:port&quot;. weak_ptr so we don&#39;t keep Players alive</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// after Server::tick() reaps them from players_. Using a raw Player*</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// here caused a use-after-free: the network thread called p-&gt;close()</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// on a Player that the main thread had already destroyed.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::unordered_map&lt;std::string, std::weak_ptr&lt;Player&gt;&gt; sessions_;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::unordered_map&lt;std::string, uint64_t&gt; blockedUntil_;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;} <span class="comment">// namespace network</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;} <span class="comment">// namespace cursestone</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Stop and join all interfaces (RakLib thread). Must be called before</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// the process tears down singletons the network thread still touches</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// (async logger, command map).</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> shutdown();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// IP ban list (mirrors the reference server&#39;s Network::blockAddress).</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> blockAddress(<span class="keyword">const</span> std::string&amp; ip, uint64_t timeoutMs = 0);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> isBlocked(<span class="keyword">const</span> std::string&amp; ip) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Dispatches a single (already-extracted) sub-packet body to its Player.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> dispatchSingle(<span class="keyword">const</span> std::string&amp; ip, uint16_t port, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Instantiates the right DataPacket subclass by ID and decodes the body.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// `who` is the &quot;ip:port&quot; the packet came from, used for diagnostics.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::shared_ptr&lt;protocol::DataPacket&gt; decodePacketById(uint8_t pid, <span class="keyword">const</span> uint8_t* body,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                                           <span class="keywordtype">size_t</span> bodyLen, <span class="keyword">const</span> std::string&amp; who);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// Creates a Player for a new (ip,port) session. Returns true on success.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">bool</span> createPlayerForSession(<span class="keyword">const</span> std::string&amp; ip, uint16_t port);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* server_;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    std::vector&lt;std::unique_ptr&lt;SourceInterface&gt;&gt; interfaces_;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::unordered_map&lt;std::string, size_t&gt; nameToIndex_;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Session key = &quot;ip:port&quot;. weak_ptr so we don&#39;t keep Players alive</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// after Server::tick() reaps them from players_. Using a raw Player*</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// here caused a use-after-free: the network thread called p-&gt;close()</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// on a Player that the main thread had already destroyed.</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    std::unordered_map&lt;std::string, std::weak_ptr&lt;Player&gt;&gt; sessions_;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::unordered_map&lt;std::string, uint64_t&gt; blockedUntil_;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;};</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;} <span class="comment">// namespace network</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;} <span class="comment">// namespace cursestone</span></div>
 <div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:85</div></div>
 <div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">Server singleton for startup, ticking, and shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:87</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1AdvancedSourceInterface_html"><div class="ttname"><a href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">cursestone::network::AdvancedSourceInterface</a></div><div class="ttdef"><b>Definition:</b> AdvancedSourceInterface.h:40</div></div>

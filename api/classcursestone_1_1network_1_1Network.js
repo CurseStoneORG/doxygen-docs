@@ -14,6 +14,7 @@ var classcursestone_1_1network_1_1Network =
     [ "registerInterface", "classcursestone_1_1network_1_1Network.html#a8e024e37275934a4289371e6880f0673", null ],
     [ "registerSession", "classcursestone_1_1network_1_1Network.html#af3bc7ba5c72511f4ec83adec727e7f13", null ],
     [ "removePlayer", "classcursestone_1_1network_1_1Network.html#a616510f45d76dd0902ece1317ad09f26", null ],
+    [ "shutdown", "classcursestone_1_1network_1_1Network.html#a775fd7fc2ac0c1f18509856ffd076b87", null ],
     [ "tick", "classcursestone_1_1network_1_1Network.html#a9d7a64c0f04b365a4b5d30d435ac5b49", null ],
     [ "unregisterSession", "classcursestone_1_1network_1_1Network.html#a931ed8332577692d2160f758b7c4b21b", null ]
 ];
