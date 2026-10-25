@@ -11,7 +11,6 @@ var structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig =
     [ "melonAmount", "structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig.html#a12cf06419e49400171a278bde732f328", null ],
     [ "mushroomAmount", "structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig.html#ab4594b5ad93c82c33265ca9f0578a761", null ],
     [ "name", "structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig.html#a190d5b0fe43e97645cd4ef141b6cfb8f", null ],
-    [ "pumpkinAmount", "structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig.html#ac6008bc3907613053cce2569954d2e43", null ],
     [ "snowy", "structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig.html#ab22a6e8de1ea92f8b0d365efdac32f24", null ],
     [ "sugarCaneAmount", "structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig.html#ab3b9f4d9d663bd6244fd1ec03944ab5e", null ],
     [ "temp", "structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig.html#a8e13b6567c85a7769b21163fa2025e96", null ],

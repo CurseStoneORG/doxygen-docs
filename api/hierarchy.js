@@ -865,7 +865,6 @@ var hierarchy =
       [ "cursestone::world::generator::populator::PopulatorMelon", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMelon.html", null ],
       [ "cursestone::world::generator::populator::PopulatorMushroom", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMushroom.html", null ],
       [ "cursestone::world::generator::populator::PopulatorOre", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorOre.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorPumpkin", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorPumpkin.html", null ],
       [ "cursestone::world::generator::populator::PopulatorSugarCane", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorSugarCane.html", null ],
       [ "cursestone::world::generator::populator::PopulatorTallGrass", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorTallGrass.html", null ],
       [ "cursestone::world::generator::populator::PopulatorTree", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorTree.html", null ],

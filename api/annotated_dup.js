@@ -671,7 +671,6 @@ var annotated_dup =
             [ "PopulatorSugarCane", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorSugarCane.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorSugarCane" ],
             [ "PopulatorDeadBush", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorDeadBush.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorDeadBush" ],
             [ "PopulatorMushroom", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMushroom.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMushroom" ],
-            [ "PopulatorPumpkin", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorPumpkin.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorPumpkin" ],
             [ "PopulatorMelon", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMelon.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMelon" ],
             [ "PopulatorDoublePlant", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorDoublePlant.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorDoublePlant" ],
             [ "PopulatorLake", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLake.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLake" ],
