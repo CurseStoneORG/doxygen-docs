@@ -1,5 +1,8 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1event_1_1world_1_1WeatherEvent.html#ae5d108f881ef7bfa97058cc1c5ae08df":[4,0,0,3,9,7,1],
+"classcursestone_1_1event_1_1world_1_1WorldEvent.html":[4,0,0,3,9,8],
+"classcursestone_1_1event_1_1world_1_1WorldEvent.html#a8683285482a14b065bd2f37d66613613":[4,0,0,3,9,8,1],
 "classcursestone_1_1event_1_1world_1_1WorldEvent.html#aa1a31ef492147dc0216b6b8faf5c8117":[4,0,0,3,9,8,2],
 "classcursestone_1_1event_1_1world_1_1WorldEvent.html#af13905e2cee6218940cec7d8fb858f97":[4,0,0,3,9,8,0],
 "classcursestone_1_1event_1_1world_1_1WorldInitEvent.html":[4,0,0,3,9,9],
@@ -246,8 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1item_1_1ItemCarrot.html":[4,0,0,5,17],
 "classcursestone_1_1item_1_1ItemCarrot.html#adc4c2fb8d846e0cefc411a58b42777b6":[4,0,0,5,17,1],
 "classcursestone_1_1item_1_1ItemCarrot.html#ae6bce24f1587f8de3064d81220d5c48e":[4,0,0,5,17,0],
-"classcursestone_1_1item_1_1ItemCoal.html":[4,0,0,5,18],
-"classcursestone_1_1item_1_1ItemCoal.html#a5b49cfb1382a2370a97a865b85804eaf":[4,0,0,5,18,0],
-"classcursestone_1_1item_1_1ItemCoal.html#af2a4722e720c598c422dc3706e14ebb1":[4,0,0,5,18,1],
-"classcursestone_1_1item_1_1ItemCookedChicken.html":[4,0,0,5,19]
+"classcursestone_1_1item_1_1ItemCoal.html":[4,0,0,5,18]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX16 =
 {
+"classcursestone_1_1item_1_1ItemCoal.html#a5b49cfb1382a2370a97a865b85804eaf":[4,0,0,5,18,0],
+"classcursestone_1_1item_1_1ItemCoal.html#af2a4722e720c598c422dc3706e14ebb1":[4,0,0,5,18,1],
+"classcursestone_1_1item_1_1ItemCookedChicken.html":[4,0,0,5,19],
 "classcursestone_1_1item_1_1ItemCookedChicken.html#a24e5472bdad40ecbf0523a91baf48f7e":[4,0,0,5,19,0],
 "classcursestone_1_1item_1_1ItemCookedChicken.html#a3f361c28967d40e10197d54c0b9c52fd":[4,0,0,5,19,1],
 "classcursestone_1_1item_1_1ItemCookedFish.html":[4,0,0,5,20],
@@ -246,8 +249,5 @@ var NAVTREEINDEX16 =
 "classcursestone_1_1item_1_1ItemSugar.html":[4,0,0,5,92],
 "classcursestone_1_1item_1_1ItemSugar.html#a4e37c3e543a62f9b1f4542c25f252905":[4,0,0,5,92,0],
 "classcursestone_1_1item_1_1ItemSugar.html#a7a7a6bf78e1b378266f51d32ac0d89ff":[4,0,0,5,92,1],
-"classcursestone_1_1item_1_1ItemSugarcane.html":[4,0,0,5,93],
-"classcursestone_1_1item_1_1ItemSugarcane.html#a51b589492f38ec134197f04d303e1413":[4,0,0,5,93,0],
-"classcursestone_1_1item_1_1ItemSugarcane.html#ab5c1d572b4d8fae6ed611e0fc3555420":[4,0,0,5,93,1],
-"classcursestone_1_1item_1_1ItemSwordDiamond.html":[4,0,0,5,94]
+"classcursestone_1_1item_1_1ItemSugarcane.html":[4,0,0,5,93]
 };

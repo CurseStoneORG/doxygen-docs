@@ -1761,7 +1761,6 @@ var namespacecursestone =
           [ "PopulatorLake", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLake.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLake" ],
           [ "PopulatorLavaPool", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLavaPool.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLavaPool" ],
           [ "PopulatorWaterLily", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorWaterLily.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorWaterLily" ],
-          [ "PopulatorFlower", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorFlower.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorFlower" ],
           [ "PopulatorOre", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorOre.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorOre" ],
           [ "PopulatorTallGrass", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorTallGrass.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorTallGrass" ],
           [ "PopulatorTree", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorTree.html", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorTree" ],
@@ -1890,8 +1889,12 @@ var namespacecursestone =
         [ "riverValley", "TerrainShape_8cpp.html#ac99cee4a390bc6db1e5716034f9df897", null ],
         [ "savannaCanyon", "TerrainShape_8cpp.html#a05e49b417ea7dcc7ddba608790f58dd9", null ],
         [ "savannaFactor", "TerrainShape_8cpp.html#a035f7e3e247789b02cbe1723d166feef", null ],
+        [ "snapLattice", "TerrainShape_8cpp.html#ae5f585067c7d2707eddd5562494ca981", null ],
         [ "tempAt", "TerrainShape_8cpp.html#a8f560c4deaaf952e7857217ea5fd0e03", null ],
         [ "treeFreeMask", "TerrainShape_8cpp.html#afa20821c7c0ddd39f6b74574b4ada529", null ],
+        [ "kBiomeLattice", "TerrainShape_8cpp.html#ab124076401174fc411adfef17f7b77da", null ],
+        [ "kBiomeLatticeAnchor", "TerrainShape_8cpp.html#aab0b127575d9dfad741ea3389272f467", null ],
+        [ "kBiomeVoteStep", "TerrainShape_8cpp.html#a931c3299230207e42ef0687761834b14", null ],
         [ "kSeaLevel", "TerrainShape_8h.html#a28efe861e66e8f2b39644a54f73ced5f", null ]
       ] ],
       [ "particle", null, [

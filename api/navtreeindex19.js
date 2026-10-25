@@ -1,5 +1,8 @@
 var NAVTREEINDEX19 =
 {
+"classcursestone_1_1network_1_1protocol_1_1PlayStatusPacket.html#a65bd7c5b841aea1138467847769c38ea":[4,0,0,7,0,44,0],
+"classcursestone_1_1network_1_1protocol_1_1PlayStatusPacket.html#abdf9b12711995240af12ad19e3689d8a":[4,0,0,7,0,44,3],
+"classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html":[4,0,0,7,0,41],
 "classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html#a028e2f85da96b3991e78ed358a2b607f":[4,0,0,7,0,41,8],
 "classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html#a065769ec7803857fddec90d821b89379":[4,0,0,7,0,41,1],
 "classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html#a083377bf8d8363ae234f9f98310ec911":[4,0,0,7,0,41,7],
@@ -246,8 +249,5 @@ var NAVTREEINDEX19 =
 "classcursestone_1_1scheduler_1_1AsyncPool.html#af5e533799d27cd9ac2be586810a3328b":[4,0,0,11,0,4],
 "classcursestone_1_1scheduler_1_1AsyncTask.html":[4,0,0,11,6],
 "classcursestone_1_1scheduler_1_1AsyncTask.html#a11f563f4f681f6c6ba2e8240c5da441f":[4,0,0,11,6,2],
-"classcursestone_1_1scheduler_1_1AsyncTask.html#a6ea99f0354f9aeefc845137765d3f54a":[4,0,0,11,6,1],
-"classcursestone_1_1scheduler_1_1AsyncTask.html#aa9914037fc2abdfb2bf96fc82acd79d5":[4,0,0,11,6,0],
-"classcursestone_1_1scheduler_1_1AsyncTask.html#ac75e92ea55e68c4edcfb7c239e6672dd":[4,0,0,11,6,3],
-"classcursestone_1_1scheduler_1_1AsyncWorker.html":[4,0,0,11,1]
+"classcursestone_1_1scheduler_1_1AsyncTask.html#a6ea99f0354f9aeefc845137765d3f54a":[4,0,0,11,6,1]
 };

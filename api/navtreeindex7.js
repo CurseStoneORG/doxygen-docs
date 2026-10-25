@@ -1,6 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"Session_8h_source.html":[5,0,0,10,2,6],
 "SetDifficultyPacket_8h_source.html":[5,0,0,10,0,49],
 "SetEntityDataPacket_8h_source.html":[5,0,0,10,0,50],
 "SetEntityLinkPacket_8h_source.html":[5,0,0,10,0,51],
@@ -42,7 +41,7 @@ var NAVTREEINDEX7 =
 "StatusCommand_8h_source.html":[5,0,0,1,0,11],
 "StopCommand_8h_source.html":[5,0,0,1,0,12],
 "StringTag_8h_source.html":[5,0,0,9,0,11],
-"StructurePopulator_8h_source.html":[5,0,0,21,1,4,8],
+"StructurePopulator_8h_source.html":[5,0,0,21,1,4,7],
 "Structure_8h.html#a17639c0afffcf9b1b68dff123329653c":[3,0,0,17,1,4,5],
 "Structure_8h.html#a82c1eabaf9aef7b30e4f50ba1a4f10ea":[3,0,0,17,1,4,6],
 "Structure_8h.html#a82c1eabaf9aef7b30e4f50ba1a4f10eaa018c14b6bb856e34240388c1fb373ea2":[3,0,0,17,1,4,6,2],
@@ -75,13 +74,17 @@ var NAVTREEINDEX7 =
 "TerrainShape_8cpp.html#a68fcebec47ccd78a8b8b39568ebca02b":[3,0,0,17,1,35],
 "TerrainShape_8cpp.html#a7ff142f3ba84f912d16e11d6537a65ec":[3,0,0,17,1,23],
 "TerrainShape_8cpp.html#a868b0aca93fb2ebd65d2963179e557a3":[3,0,0,17,1,27],
-"TerrainShape_8cpp.html#a8f560c4deaaf952e7857217ea5fd0e03":[3,0,0,17,1,43],
+"TerrainShape_8cpp.html#a8f560c4deaaf952e7857217ea5fd0e03":[3,0,0,17,1,44],
 "TerrainShape_8cpp.html#a90f88fe4748b7081737a87d1e053d70c":[3,0,0,17,1,22],
+"TerrainShape_8cpp.html#a931c3299230207e42ef0687761834b14":[3,0,0,17,1,48],
+"TerrainShape_8cpp.html#aab0b127575d9dfad741ea3389272f467":[3,0,0,17,1,47],
+"TerrainShape_8cpp.html#ab124076401174fc411adfef17f7b77da":[3,0,0,17,1,46],
 "TerrainShape_8cpp.html#abc4e32c7d5a44457b00180a534aa351d":[3,0,0,17,1,38],
 "TerrainShape_8cpp.html#ac99cee4a390bc6db1e5716034f9df897":[3,0,0,17,1,40],
+"TerrainShape_8cpp.html#ae5f585067c7d2707eddd5562494ca981":[3,0,0,17,1,43],
 "TerrainShape_8cpp.html#af3faccef239071cf76ea034951fb1074":[3,0,0,17,1,32],
-"TerrainShape_8cpp.html#afa20821c7c0ddd39f6b74574b4ada529":[3,0,0,17,1,44],
-"TerrainShape_8h.html#a28efe861e66e8f2b39644a54f73ced5f":[3,0,0,17,1,45],
+"TerrainShape_8cpp.html#afa20821c7c0ddd39f6b74574b4ada529":[3,0,0,17,1,45],
+"TerrainShape_8h.html#a28efe861e66e8f2b39644a54f73ced5f":[3,0,0,17,1,49],
 "TerrainShape_8h_source.html":[5,0,0,21,1,12],
 "TextColor_8h.html#a01d1d058bf176589959db33120387c96":[3,0,0,13,23],
 "TextColor_8h.html#a05251d485759d6c2650b6aa6d31b0bce":[3,0,0,13,15],
@@ -246,8 +249,5 @@ var NAVTREEINDEX7 =
 "VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24ea7f2e8173632f3eff208ffdba02ed7a29":[3,0,0,17,1,4,0,1,5],
 "VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24ea80ebe37ca3810b12daad515d3b743aa3":[3,0,0,17,1,4,0,1,3],
 "VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24ea9bef7adde235abb5903fccdb643e41cc":[3,0,0,17,1,4,0,1,9],
-"VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eab7d8625cb813f436d562f2e1d6367120":[3,0,0,17,1,4,0,1,1],
-"VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eac0bdf8dc269fe79a5102f20382c10663":[3,0,0,17,1,4,0,1,10],
-"VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eae06b2600f317961c21a748e8c460c38f":[3,0,0,17,1,4,0,1,12],
-"VillagePieces_8h.html#a255138dbb55acb7595edc209698dd6e7":[3,0,0,17,1,4,0,6]
+"VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eab7d8625cb813f436d562f2e1d6367120":[3,0,0,17,1,4,0,1,1]
 };

@@ -859,7 +859,6 @@ var hierarchy =
       [ "cursestone::world::generator::populator::PopulatorCave", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorCave.html", null ],
       [ "cursestone::world::generator::populator::PopulatorDeadBush", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorDeadBush.html", null ],
       [ "cursestone::world::generator::populator::PopulatorDoublePlant", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorDoublePlant.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorFlower", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorFlower.html", null ],
       [ "cursestone::world::generator::populator::PopulatorLake", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLake.html", null ],
       [ "cursestone::world::generator::populator::PopulatorLavaPool", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLavaPool.html", null ],
       [ "cursestone::world::generator::populator::PopulatorMelon", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMelon.html", null ],

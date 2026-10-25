@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockMushroomBrown.html#a7f70ee3501407edd9b2e8a10efed46a5":[4,0,0,0,91,0],
+"classcursestone_1_1block_1_1BlockMushroomBrown.html#aee89d427fcd86093d1c66fefddb793cc":[4,0,0,0,91,1],
+"classcursestone_1_1block_1_1BlockMushroomRed.html":[4,0,0,0,92],
 "classcursestone_1_1block_1_1BlockMushroomRed.html#af41ac9dac05247fbdaac02a5f8379b1e":[4,0,0,0,92,0],
 "classcursestone_1_1block_1_1BlockMushroomRed.html#af8be281efa9b9dac9aa98b80e079da6a":[4,0,0,0,92,1],
 "classcursestone_1_1block_1_1BlockMycelium.html":[4,0,0,0,93],
@@ -246,8 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1block_1_1BlockWeightedPressurePlateLight.html#a7c64be1775e380601618a94d3a4c63d1":[4,0,0,0,174,0],
 "classcursestone_1_1block_1_1BlockWeightedPressurePlateLight.html#ad72c6957e29b44e582cdc3228c22cc91":[4,0,0,0,174,1],
 "classcursestone_1_1block_1_1BlockWheat.html":[4,0,0,0,175],
-"classcursestone_1_1block_1_1BlockWheat.html#a005556cd0a82b3dfd4c448e696cf0fda":[4,0,0,0,175,1],
-"classcursestone_1_1block_1_1BlockWheat.html#aa04e2c0802dce8034826831eb03e1d51":[4,0,0,0,175,0],
-"classcursestone_1_1block_1_1BlockWood.html":[4,0,0,0,176],
-"classcursestone_1_1block_1_1BlockWood.html#a7f722677e1d570ef452815f52550ac78":[4,0,0,0,176,0]
+"classcursestone_1_1block_1_1BlockWheat.html#a005556cd0a82b3dfd4c448e696cf0fda":[4,0,0,0,175,1]
 };

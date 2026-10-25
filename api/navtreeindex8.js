@@ -1,7 +1,10 @@
 var NAVTREEINDEX8 =
 {
+"VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eac0bdf8dc269fe79a5102f20382c10663":[3,0,0,17,1,4,0,1,10],
+"VillagePieces_8h.html#a1051fc3528a620ece0c151649e4bb24eae06b2600f317961c21a748e8c460c38f":[3,0,0,17,1,4,0,1,12],
+"VillagePieces_8h.html#a255138dbb55acb7595edc209698dd6e7":[3,0,0,17,1,4,0,6],
 "VillagePieces_8h_source.html":[5,0,0,21,1,5,0,1],
-"VillagePopulator_8h_source.html":[5,0,0,21,1,4,9],
+"VillagePopulator_8h_source.html":[5,0,0,21,1,4,8],
 "WeatherCommand_8h_source.html":[5,0,0,1,0,16],
 "WorkbenchCommand_8h_source.html":[5,0,0,1,0,17],
 "WorkbenchManager_8h_source.html":[5,0,0,20,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1Player.html#ab6779acd55f8afe68d7131463d49e662":[4,0,0,46,5],
 "classcursestone_1_1Player.html#ab6d78072a92c548fd7d9130c43573198":[4,0,0,46,1],
 "classcursestone_1_1Player.html#ab7a512da221ae09f109b79a2042ccae6":[4,0,0,46,79],
-"classcursestone_1_1Player.html#ab7dc00f0224753c74a0f82f5ac801493":[4,0,0,46,149],
-"classcursestone_1_1Player.html#abafa890ce97abd64230a1b344125cb9a":[4,0,0,46,164],
-"classcursestone_1_1Player.html#abe35c41ce8ee8ce33959edfdf81f4b22":[4,0,0,46,148],
-"classcursestone_1_1Player.html#abf05c1a28970e7816a4df16439d8af4e":[4,0,0,46,66]
+"classcursestone_1_1Player.html#ab7dc00f0224753c74a0f82f5ac801493":[4,0,0,46,149]
 };
