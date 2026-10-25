@@ -6,7 +6,7 @@ var classcursestone_1_1tile_1_1TileFurnace =
     [ "burnTime", "classcursestone_1_1tile_1_1TileFurnace.html#a6c845fc08a85d1e4ecd2e45285a3fd59", null ],
     [ "cookTime", "classcursestone_1_1tile_1_1TileFurnace.html#acf303f10d8a6126c703237517912be73", null ],
     [ "getItem", "classcursestone_1_1tile_1_1TileFurnace.html#ac1114a60ad80199eca290ce2f8fdb4ac", null ],
-    [ "inventory", "classcursestone_1_1tile_1_1TileFurnace.html#a546cab045779b9cc4a56b864a4291643", null ],
+    [ "inventory", "classcursestone_1_1tile_1_1TileFurnace.html#a6b9a523c82d39230c830ec228ad46383", null ],
     [ "maxBurnTime", "classcursestone_1_1tile_1_1TileFurnace.html#ae30e15fa132c46506276e8b8ce7e878a", null ],
     [ "maxCookTime", "classcursestone_1_1tile_1_1TileFurnace.html#a39841d5d4bbd0070a8b0b03d18d52ab1", null ],
     [ "readNBT", "classcursestone_1_1tile_1_1TileFurnace.html#ad70ca548fac868657674877134b8b44e", null ],

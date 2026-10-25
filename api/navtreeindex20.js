@@ -92,7 +92,7 @@ var NAVTREEINDEX20 =
 "classcursestone_1_1tile_1_1TileFurnace.html#a36e10a4851999fbdf75697ff4db6dd52":[4,0,0,12,5,2],
 "classcursestone_1_1tile_1_1TileFurnace.html#a39841d5d4bbd0070a8b0b03d18d52ab1":[4,0,0,12,5,8],
 "classcursestone_1_1tile_1_1TileFurnace.html#a467604d23f046b5f34b52672e291f21c":[4,0,0,12,5,1],
-"classcursestone_1_1tile_1_1TileFurnace.html#a546cab045779b9cc4a56b864a4291643":[4,0,0,12,5,6],
+"classcursestone_1_1tile_1_1TileFurnace.html#a6b9a523c82d39230c830ec228ad46383":[4,0,0,12,5,6],
 "classcursestone_1_1tile_1_1TileFurnace.html#a6c845fc08a85d1e4ecd2e45285a3fd59":[4,0,0,12,5,3],
 "classcursestone_1_1tile_1_1TileFurnace.html#a74181bc94634f61e312d5b46e319216c":[4,0,0,12,5,14],
 "classcursestone_1_1tile_1_1TileFurnace.html#a7ba7564e5c5795fe3c9cfbf3c7094dbe":[4,0,0,12,5,16],

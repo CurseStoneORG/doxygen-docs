@@ -176,9 +176,9 @@ $(document).ready(function(){initNavTree('TileFurnace_8h_source.html',''); initR
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// El backing inventory (misma arquitectura que TileChest::inventory</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// → ChestInventory): único lugar donde viven los 3 slots para que</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// inventario, NBT y UI no diverjan. Player::openFurnaceAt lo usa</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// para InventoryOpenEvent.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">const</span> std::unique_ptr&lt;cursestone::inventory::FurnaceInventory&gt;&amp; inventory()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// inventario, NBT y UI no diverjan. Se devuelve como shared_ptr</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// propietario para que los eventos de inventario nunca cuelguen.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    std::shared_ptr&lt;cursestone::inventory::FurnaceInventory&gt; inventory()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> inv_;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('TileFurnace_8h_source.html',''); initR
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">bool</span> smeltResult(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; in, <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; out) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// El backing inventory real. Los métodos Container delegan acá</span></div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// para que player-inventory y NBT vivan en un solo lugar.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::unique_ptr&lt;cursestone::inventory::FurnaceInventory&gt; inv_;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::shared_ptr&lt;cursestone::inventory::FurnaceInventory&gt; inv_;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">int</span> burn_time_ = 0;            <span class="comment">// ticks restantes del fuel actual</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">int</span> max_burn_time_ = 0;        <span class="comment">// total ticks del último fuel encendido (escala UI)</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">int</span> cook_time_ = 0;            <span class="comment">// progreso de la fundición actual (0..200)</span></div>
