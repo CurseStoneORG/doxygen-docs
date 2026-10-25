@@ -2022,6 +2022,7 @@ var namespacecursestone =
     [ "WorkbenchManager", "classcursestone_1_1WorkbenchManager.html", "classcursestone_1_1WorkbenchManager" ],
     [ "NbtPtr", "namespacecursestone.html#ac129827eaf5983f0cecbe4d22a127a15", null ],
     [ "World", "namespacecursestone.html#a8c184c5b29406134bd48d0f71345bb3e", null ],
+    [ "adoptNbt", "namespacecursestone.html#ab85bb184c5e71a7baeba8c83670766d8", null ],
     [ "makePoseFlagEntry", "namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa", null ],
     [ "registerDefaultCommands", "namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223", null ],
     [ "kEyeHeight", "namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5", null ]

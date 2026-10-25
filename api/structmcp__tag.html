@@ -83,30 +83,42 @@ $(document).ready(function(){initNavTree('structmcp__tag.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structmcp__tag-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mcp_tag Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Inherited by <a class="el" href="structmcp__byte__array__tag.html">mcp_byte_array_tag</a>, <a class="el" href="structmcp__byte__tag.html">mcp_byte_tag</a>, <a class="el" href="structmcp__compound__tag.html">mcp_compound_tag</a>, <a class="el" href="structmcp__double__tag.html">mcp_double_tag</a>, <a class="el" href="structmcp__end__tag.html">mcp_end_tag</a>, <a class="el" href="structmcp__float__tag.html">mcp_float_tag</a>, <a class="el" href="structmcp__int__array__tag.html">mcp_int_array_tag</a>, <a class="el" href="structmcp__int__tag.html">mcp_int_tag</a>, <a class="el" href="structmcp__list__tag.html">mcp_list_tag</a>, <a class="el" href="structmcp__long__tag.html">mcp_long_tag</a>, <a class="el" href="structmcp__short__tag.html">mcp_short_tag</a>, and <a class="el" href="structmcp__string__tag.html">mcp_string_tag</a>.</p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a29588123564bd6ae0dcc9d49e51c6801"><td class="memItemLeft" align="right" valign="top"><a id="a29588123564bd6ae0dcc9d49e51c6801"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>mcp_tag</b> (mcp_tag_type_t t)</td></tr>
+<tr class="separator:a29588123564bd6ae0dcc9d49e51c6801"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e20dcf9f558d756cee6d24c842d61b7"><td class="memItemLeft" align="right" valign="top"><a id="a1e20dcf9f558d756cee6d24c842d61b7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>mcp_tag</b> (const <a class="el" href="structmcp__tag.html">mcp_tag</a> &amp;)=delete</td></tr>
+<tr class="separator:a1e20dcf9f558d756cee6d24c842d61b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77bad5eef4cdb6f81936d01d3efb5bc2"><td class="memItemLeft" align="right" valign="top"><a id="a77bad5eef4cdb6f81936d01d3efb5bc2"></a>
+<a class="el" href="structmcp__tag.html">mcp_tag</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="structmcp__tag.html">mcp_tag</a> &amp;)=delete</td></tr>
+<tr class="separator:a77bad5eef4cdb6f81936d01d3efb5bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a134a484d85bc0df877a4210503cad99f"><td class="memItemLeft" align="right" valign="top"><a id="a134a484d85bc0df877a4210503cad99f"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write_payload</b> (<a class="el" href="structmcp__bstream.html">mcp_bstream_t</a> *s, bool le) const</td></tr>
+<tr class="separator:a134a484d85bc0df877a4210503cad99f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a1550d41834d0f3cdc28673914897dd0d"><td class="memItemLeft" align="right" valign="top"><a id="a1550d41834d0f3cdc28673914897dd0d"></a>
-const struct <a class="el" href="structmcp__tag__vtable.html">mcp_tag_vtable</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>vtable</b></td></tr>
-<tr class="separator:a1550d41834d0f3cdc28673914897dd0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeea18e34d05b7d3e3ad4afc1c4b84785"><td class="memItemLeft" align="right" valign="top"><a id="aeea18e34d05b7d3e3ad4afc1c4b84785"></a>
 mcp_tag_type_t&#160;</td><td class="memItemRight" valign="bottom"><b>type</b></td></tr>
 <tr class="separator:aeea18e34d05b7d3e3ad4afc1c4b84785"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab24f9b3f60d5b380cd88158d5ad478c3"><td class="memItemLeft" align="right" valign="top"><a id="ab24f9b3f60d5b380cd88158d5ad478c3"></a>
-char *&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
-<tr class="separator:ab24f9b3f60d5b380cd88158d5ad478c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b6c5ae34db9cbfe09e16c0ed3a50edc"><td class="memItemLeft" align="right" valign="top"><a id="a9b6c5ae34db9cbfe09e16c0ed3a50edc"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>name_len</b></td></tr>
-<tr class="separator:a9b6c5ae34db9cbfe09e16c0ed3a50edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf19af49d3c17fcad17e3a96d504774"><td class="memItemLeft" align="right" valign="top"><a id="aacf19af49d3c17fcad17e3a96d504774"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>name</b></td></tr>
+<tr class="separator:aacf19af49d3c17fcad17e3a96d504774"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/nbt/tag/<a class="el" href="Tag_8h_source.html">Tag.h</a></li>
+<li>src/nbt/tag/<a class="el" href="TagDefs_8h_source.html">TagDefs.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -12,5 +12,6 @@ var dir_358289ab4d3463e14fdc15151d0362da =
     [ "LongTag.h", "LongTag_8h_source.html", null ],
     [ "ShortTag.h", "ShortTag_8h_source.html", null ],
     [ "StringTag.h", "StringTag_8h_source.html", null ],
-    [ "Tag.h", "Tag_8h_source.html", null ]
+    [ "Tag.h", "Tag_8h_source.html", null ],
+    [ "TagDefs.h", "TagDefs_8h_source.html", null ]
 ];

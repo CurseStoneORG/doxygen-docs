@@ -1,6 +1,6 @@
 var structmcp__byte__array__tag =
 [
-    [ "data", "structmcp__byte__array__tag.html#acd65d0d294973fd0072d0241fb0d246b", null ],
-    [ "header", "structmcp__byte__array__tag.html#ac32347fd8dac7d6c9f080e2acd89a8c6", null ],
-    [ "length", "structmcp__byte__array__tag.html#af41ddce7e944ab70ce7311d6138723a6", null ]
+    [ "mcp_byte_array_tag", "structmcp__byte__array__tag.html#aa81fab90b643def935bbc3110a13dc6e", null ],
+    [ "write_payload", "structmcp__byte__array__tag.html#a475e999599418b481e1687651954c594", null ],
+    [ "data", "structmcp__byte__array__tag.html#a60bafeaa91bafdc4eef4ba1dad730f98", null ]
 ];

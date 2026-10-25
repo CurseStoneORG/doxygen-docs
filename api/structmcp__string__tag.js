@@ -1,6 +1,6 @@
 var structmcp__string__tag =
 [
-    [ "header", "structmcp__string__tag.html#aadaf6532ef69651491e48edfe35c2b9d", null ],
-    [ "length", "structmcp__string__tag.html#ae9173ebc0fa13d0222749c4ad58b5368", null ],
-    [ "value", "structmcp__string__tag.html#a39110070e18f658bdff298052fd4de65", null ]
+    [ "mcp_string_tag", "structmcp__string__tag.html#ab9159323b91e05aa4d9c25b65aa37821", null ],
+    [ "write_payload", "structmcp__string__tag.html#a2bdf9be2f3e8696808e2c47d2232319d", null ],
+    [ "value", "structmcp__string__tag.html#aed2b7f4cc567b029f9049a98b65594d4", null ]
 ];

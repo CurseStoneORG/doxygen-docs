@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('namespacecursestone_1_1utils.html','')
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -100,10 +101,23 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1utils_1_1Config.html">Config</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1utils_1_1FreeDeleter.html">FreeDeleter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1utils_1_1TagDeleter.html">TagDeleter</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1utils_1_1MainLogger.html">MainLogger</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1utils_1_1VersionString.html">VersionString</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ab18b0ceb3168bf0c6892821db282345a"><td class="memItemLeft" align="right" valign="top"><a id="ab18b0ceb3168bf0c6892821db282345a"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>BufferPtr</b> = std::unique_ptr&lt; uint8_t[], <a class="el" href="structcursestone_1_1utils_1_1FreeDeleter.html">FreeDeleter</a> &gt;</td></tr>
+<tr class="separator:ab18b0ceb3168bf0c6892821db282345a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54a4075803ab9ae30a3c9acc84cf9a82"><td class="memItemLeft" align="right" valign="top"><a id="a54a4075803ab9ae30a3c9acc84cf9a82"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>TagGuard</b> = std::unique_ptr&lt; <a class="el" href="structmcp__tag.html">mcp_tag_t</a>, <a class="el" href="structcursestone_1_1utils_1_1TagDeleter.html">TagDeleter</a> &gt;</td></tr>
+<tr class="separator:a54a4075803ab9ae30a3c9acc84cf9a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>

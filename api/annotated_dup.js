@@ -604,6 +604,8 @@ var annotated_dup =
       [ "utils", "namespacecursestone_1_1utils.html", [
         [ "BlockIterator", "classcursestone_1_1utils_1_1BlockIterator.html", "classcursestone_1_1utils_1_1BlockIterator" ],
         [ "Config", "classcursestone_1_1utils_1_1Config.html", "classcursestone_1_1utils_1_1Config" ],
+        [ "FreeDeleter", "structcursestone_1_1utils_1_1FreeDeleter.html", "structcursestone_1_1utils_1_1FreeDeleter" ],
+        [ "TagDeleter", "structcursestone_1_1utils_1_1TagDeleter.html", "structcursestone_1_1utils_1_1TagDeleter" ],
         [ "MainLogger", "classcursestone_1_1utils_1_1MainLogger.html", "classcursestone_1_1utils_1_1MainLogger" ],
         [ "VersionString", "classcursestone_1_1utils_1_1VersionString.html", "classcursestone_1_1utils_1_1VersionString" ]
       ] ],
@@ -786,6 +788,7 @@ var annotated_dup =
     [ "mcp_cond", "structmcp__cond.html", "structmcp__cond" ],
     [ "mcp_double_tag", "structmcp__double__tag.html", "structmcp__double__tag" ],
     [ "mcp_encapsulated_header", "structmcp__encapsulated__header.html", "structmcp__encapsulated__header" ],
+    [ "mcp_end_tag", "structmcp__end__tag.html", "structmcp__end__tag" ],
     [ "mcp_float_tag", "structmcp__float__tag.html", "structmcp__float__tag" ],
     [ "mcp_hit_result", "structmcp__hit__result.html", "structmcp__hit__result" ],
     [ "mcp_int_array_tag", "structmcp__int__array__tag.html", "structmcp__int__array__tag" ],
@@ -795,7 +798,6 @@ var annotated_dup =
     [ "mcp_long_tag", "structmcp__long__tag.html", "structmcp__long__tag" ],
     [ "mcp_main_logger", "structmcp__main__logger.html", "structmcp__main__logger" ],
     [ "mcp_mutex", "structmcp__mutex.html", "structmcp__mutex" ],
-    [ "mcp_nbt", "structmcp__nbt.html", "structmcp__nbt" ],
     [ "mcp_packet", "structmcp__packet.html", "structmcp__packet" ],
     [ "mcp_packet_vtable", "structmcp__packet__vtable.html", "structmcp__packet__vtable" ],
     [ "mcp_pkt_ack", "structmcp__pkt__ack.html", "structmcp__pkt__ack" ],
@@ -840,7 +842,6 @@ var annotated_dup =
     [ "mcp_split_store", "structmcp__split__store.html", "structmcp__split__store" ],
     [ "mcp_string_tag", "structmcp__string__tag.html", "structmcp__string__tag" ],
     [ "mcp_tag", "structmcp__tag.html", "structmcp__tag" ],
-    [ "mcp_tag_vtable", "structmcp__tag__vtable.html", "structmcp__tag__vtable" ],
     [ "mcp_thread", "structmcp__thread.html", "structmcp__thread" ],
     [ "mcp_udp_socket", "structmcp__udp__socket.html", "structmcp__udp__socket" ],
     [ "mcp_uuid", "structmcp__uuid.html", "structmcp__uuid" ],
