@@ -10,6 +10,8 @@ var classcursestone_1_1Player =
     [ "beginSurvivalSlotWrite", "classcursestone_1_1Player.html#a64362ecf60468f8ca3e080d6afaf7b4b", null ],
     [ "blendedEffectColor", "classcursestone_1_1Player.html#afdbfe3ff0a4c3e445d40902ea1f2e56d", null ],
     [ "broadcastBowPose", "classcursestone_1_1Player.html#a2bd529c6423d1ce21fd09ab290db8303", null ],
+    [ "broadcastChestSlotToViewers", "classcursestone_1_1Player.html#a75b1f66ace71135715a9b44c83b4b9f6", null ],
+    [ "broadcastFurnaceSlotToViewers", "classcursestone_1_1Player.html#a417d2ce83653333cae0f9a85d5684d6b", null ],
     [ "broadcastHeldItemToViewers", "classcursestone_1_1Player.html#a28e8a1a5cdc729f26c72f284d3ce7f79", null ],
     [ "broadcastPoseFlags", "classcursestone_1_1Player.html#a60c81966b5a5a6b3ab148f4a2a8a54e4", null ],
     [ "canCollideWith", "classcursestone_1_1Player.html#ad34b0a99886df6aff2c3340ad4fe6507", null ],

@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html":[4,0,0,3,3,3],
+"classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html#a45189e5f630c9219e72bcb7d4f1c7df2":[4,0,0,3,3,3,0],
 "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html#a832d97bd039be64b374f234aad81585f":[4,0,0,3,3,3,2],
 "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html#a9fe6bf9dd98eb0709d3a06d6111ff0e1":[4,0,0,3,3,3,3],
 "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html#aa1083d34004e99a560cdd8fb1ed55e3f":[4,0,0,3,3,3,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html":[4,0,0,3,9,6],
 "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html#a05cdf9433bbf3e53d212b596a8e20449":[4,0,0,3,9,6,1],
 "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html#a8a45833143d597da623869ac2dcf3929":[4,0,0,3,9,6,0],
-"classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html#afda1897b33321551122ab556939a979f":[4,0,0,3,9,6,2],
-"classcursestone_1_1event_1_1world_1_1WeatherEvent.html":[4,0,0,3,9,7],
-"classcursestone_1_1event_1_1world_1_1WeatherEvent.html#a24e83c459b5333d5dd03c319127327fc":[4,0,0,3,9,7,2]
+"classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html#afda1897b33321551122ab556939a979f":[4,0,0,3,9,6,2]
 };

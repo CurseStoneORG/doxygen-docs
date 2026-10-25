@@ -1,5 +1,7 @@
 var NAVTREEINDEX25 =
 {
+"structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePiecePlacement.html#aec8af4ea8405e287d1c59ae7c5f7d19b":[4,0,0,15,1,3,15,2],
+"structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html":[4,0,0,15,1,3,17],
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#a5e06f1a98d3981a387f08af071638e99":[4,0,0,15,1,3,17,6],
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#a9b760cf5cc3ee3bf819d5fba88c39aad":[4,0,0,15,1,3,17,7],
 "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html#aa55005c2a366d337a77c244a5783780e":[4,0,0,15,1,3,17,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX25 =
 "structmcp__pkt__data__packet__7.html#a7928bd9aee8d3edf4fd427c962e838f1":[4,0,38,5],
 "structmcp__pkt__data__packet__7.html#a9b25faa53dd228afcebc6998e6d82e17":[4,0,38,2],
 "structmcp__pkt__data__packet__7.html#ae33ab467e555a4b2574d7e11146c3d14":[4,0,38,3],
-"structmcp__pkt__data__packet__8.html":[4,0,39],
-"structmcp__pkt__data__packet__8.html#a67a46d9fb840a11daaf5b824eaa0e22d":[4,0,39,0],
-"structmcp__pkt__data__packet__8.html#a8c9c5c4b79e00588597c694a5ba8f580":[4,0,39,5]
+"structmcp__pkt__data__packet__8.html":[4,0,39]
 };

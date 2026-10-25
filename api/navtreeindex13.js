@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1block_1_1BlockUpdateEvent.html":[4,0,0,3,0,7],
+"classcursestone_1_1event_1_1block_1_1BlockUpdateEvent.html#ab68171a76106ff4e677b9aa62f03be2b":[4,0,0,3,0,7,1],
 "classcursestone_1_1event_1_1block_1_1BlockUpdateEvent.html#ad5b2ba7bc35e1320c1a05397969e82ef":[4,0,0,3,0,7,0],
 "classcursestone_1_1event_1_1block_1_1DoorToggleEvent.html":[4,0,0,3,0,8],
 "classcursestone_1_1event_1_1block_1_1DoorToggleEvent.html#ac146c536724bdca8a47d12192d840f62":[4,0,0,3,0,8,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html#a8b2bf4d118bb946c5757d3995cdc1fac":[4,0,0,3,3,2,4],
 "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html#a9c6bc634f833efe1ca9407748455abe7":[4,0,0,3,3,2,2],
 "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html#ab211554ea5069dd067041ebcc09cfea3":[4,0,0,3,3,2,1],
-"classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html#ad80a27838742739f748a00846eb921b8":[4,0,0,3,3,2,3],
-"classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html":[4,0,0,3,3,3],
-"classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html#a45189e5f630c9219e72bcb7d4f1c7df2":[4,0,0,3,3,3,0]
+"classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html#ad80a27838742739f748a00846eb921b8":[4,0,0,3,3,2,3]
 };

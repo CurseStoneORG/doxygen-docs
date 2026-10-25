@@ -154,29 +154,28 @@ $(document).ready(function(){initNavTree('TileChest_8h_source.html',''); initRes
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// How many players currently have this chest open. Player::openChestAt/</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// closeOpenChest keep this in sync. Not used to gate concurrent access</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// yet (this project&#39;s chest flow is single-viewer per player, not</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// single-viewer per chest — two players CAN open the same chest at</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// once, they just don&#39;t see each other&#39;s live changes; see</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// PROMPT_CONTINUACION.md item 2 for the deliberately-small scope).</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">int</span> viewerCount()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> viewer_count_;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> addViewer() {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        ++viewer_count_;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> removeViewer() {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span> (viewer_count_ &gt; 0)</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            --viewer_count_;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> SIZE = 27;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::shared_ptr&lt;cursestone::inventory::ChestInventory&gt; inventory_;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> viewer_count_ = 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::weak_ptr&lt;TileChest&gt; pair_; <span class="comment">// paired chest (double chest)</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// closeOpenChest keep this in sync (drives the lid open/close events).</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Multiple players CAN hold this chest open at once — slot changes are</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// resynced to every co-viewer via Player::broadcastChestSlotToViewers,</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// so all of them see the same live content.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> viewerCount()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> viewer_count_;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> addViewer() {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        ++viewer_count_;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> removeViewer() {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (viewer_count_ &gt; 0)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            --viewer_count_;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> SIZE = 27;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    std::shared_ptr&lt;cursestone::inventory::ChestInventory&gt; inventory_;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> viewer_count_ = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::weak_ptr&lt;TileChest&gt; pair_; <span class="comment">// paired chest (double chest)</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Container_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Container.html">cursestone::tile::Container</a></div><div class="ttdef"><b>Definition:</b> Container.h:32</div></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Nameable_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Nameable.html">cursestone::tile::Nameable</a></div><div class="ttdef"><b>Definition:</b> Nameable.h:27</div></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Spawnable_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Spawnable.html">cursestone::tile::Spawnable</a></div><div class="ttdef"><b>Definition:</b> Spawnable.h:28</div></div>

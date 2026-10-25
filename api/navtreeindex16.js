@@ -1,5 +1,7 @@
 var NAVTREEINDEX16 =
 {
+"classcursestone_1_1item_1_1ItemCarrot.html#adc4c2fb8d846e0cefc411a58b42777b6":[4,0,0,5,17,1],
+"classcursestone_1_1item_1_1ItemCarrot.html#ae6bce24f1587f8de3064d81220d5c48e":[4,0,0,5,17,0],
 "classcursestone_1_1item_1_1ItemCoal.html":[4,0,0,5,18],
 "classcursestone_1_1item_1_1ItemCoal.html#a5b49cfb1382a2370a97a865b85804eaf":[4,0,0,5,18,0],
 "classcursestone_1_1item_1_1ItemCoal.html#af2a4722e720c598c422dc3706e14ebb1":[4,0,0,5,18,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX16 =
 "classcursestone_1_1item_1_1ItemStick.html":[4,0,0,5,91],
 "classcursestone_1_1item_1_1ItemStick.html#a7cf47c46ae7f6d5d45a2558b2f01336d":[4,0,0,5,91,0],
 "classcursestone_1_1item_1_1ItemStick.html#af7d896c6558fa5977ad13137ac8fb8ee":[4,0,0,5,91,1],
-"classcursestone_1_1item_1_1ItemSugar.html":[4,0,0,5,92],
-"classcursestone_1_1item_1_1ItemSugar.html#a4e37c3e543a62f9b1f4542c25f252905":[4,0,0,5,92,0],
-"classcursestone_1_1item_1_1ItemSugar.html#a7a7a6bf78e1b378266f51d32ac0d89ff":[4,0,0,5,92,1]
+"classcursestone_1_1item_1_1ItemSugar.html":[4,0,0,5,92]
 };
