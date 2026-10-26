@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"HurtArmorPacket_8h_source.html":[5,0,0,10,0,26],
 "IPlayer_8h_source.html":[5,0,0,24],
 "ImprovedNoise_8h_source.html":[5,0,0,21,1,2,0],
 "Info_8h.html#a03238211d6b6c109ba78a7ff61518692":[3,0,0,7,0,129],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "ItemConstants_8h.html#a5f2e7d60ab121f01311112ceea6a55b2":[3,0,0,5,425],
 "ItemConstants_8h.html#a5ffbbbbc9c6f419b283b95393a899b55":[3,0,0,5,229],
 "ItemConstants_8h.html#a605d96021a070ecf64c2184345e0a485":[3,0,0,5,486],
-"ItemConstants_8h.html#a609130c9a001208ee197608e03561546":[3,0,0,5,488],
-"ItemConstants_8h.html#a61187c7345805bcfcea46262476b5030":[3,0,0,5,223]
+"ItemConstants_8h.html#a609130c9a001208ee197608e03561546":[3,0,0,5,488]
 };

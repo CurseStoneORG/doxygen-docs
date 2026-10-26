@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"classcursestone_1_1block_1_1BlockDaylightDetectorInverted.html#af9a1fd728bd017aaeb52e0e7c0c4372b":[4,0,0,0,25,0],
 "classcursestone_1_1block_1_1BlockDeadBush.html":[4,0,0,0,26],
 "classcursestone_1_1block_1_1BlockDeadBush.html#a7b8b0dcbf9a9f0ca67d7fbb49d6339d7":[4,0,0,0,26,0],
 "classcursestone_1_1block_1_1BlockDeadBush.html#aae847611b26f32a745bdce8d5d6bd1e8":[4,0,0,0,26,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1block_1_1BlockPistonSticky.html#ada6a9e35b2207cbfa32fe3fe8dec4fcf":[4,0,0,0,104,1],
 "classcursestone_1_1block_1_1BlockPlanks.html":[4,0,0,0,105],
 "classcursestone_1_1block_1_1BlockPlanks.html#a92b2defb1afd7c3b49b2c405323e98cf":[4,0,0,0,105,0],
-"classcursestone_1_1block_1_1BlockPlanks.html#ac334b090df214d45dc58d122cd057b1d":[4,0,0,0,105,1],
-"classcursestone_1_1block_1_1BlockPodzol.html":[4,0,0,0,106]
+"classcursestone_1_1block_1_1BlockPlanks.html#ac334b090df214d45dc58d122cd057b1d":[4,0,0,0,105,1]
 };

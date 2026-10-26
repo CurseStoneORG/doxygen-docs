@@ -57,9 +57,10 @@ var NAVTREEINDEX2 =
 "DataPacketReceiveEvent_8h_source.html":[5,0,0,4,7,0],
 "DataPacketSendEvent_8h_source.html":[5,0,0,4,7,1],
 "DataPacket_8h_source.html":[5,0,0,10,0,20],
-"DefaultConfig_8h.html":[5,0,0,18,6],
-"DefaultConfig_8h.html#a6f60c55af7c4285a24043573e24ad7a1":[5,0,0,18,6,0],
-"DefaultConfig_8h_source.html":[5,0,0,18,6],
+"DebugFlag_8h_source.html":[5,0,0,18,6],
+"DefaultConfig_8h.html":[5,0,0,18,7],
+"DefaultConfig_8h.html#a6f60c55af7c4285a24043573e24ad7a1":[5,0,0,18,7,0],
+"DefaultConfig_8h_source.html":[5,0,0,18,7],
 "DefaultPermissions_8h_source.html":[5,0,0,11,2],
 "Defaults_8h_source.html":[5,0,0,1,6],
 "DeopCommand_8h_source.html":[5,0,0,1,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "HandlerList_8h_source.html":[5,0,0,4,15],
 "HelpCommand_8h_source.html":[5,0,0,1,0,3],
 "HitResult_8h_source.html":[5,0,0,8,1],
-"Human_8h_source.html":[5,0,0,3,20],
-"HurtArmorPacket_8h_source.html":[5,0,0,10,0,26]
+"Human_8h_source.html":[5,0,0,3,20]
 };

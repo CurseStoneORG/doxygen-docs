@@ -1,6 +1,7 @@
 var NAVTREEINDEX6 =
 {
-"Logger_8h_source.html":[5,0,0,18,7],
+"Location_8h_source.html":[5,0,0,21,8],
+"Logger_8h_source.html":[5,0,0,18,8],
 "LoginPacket_8h_source.html":[5,0,0,10,0,31],
 "LongTag_8h_source.html":[5,0,0,9,0,9],
 "LuaBindings_8cpp.html#a3adcabcbb2f602c64c05c44a9efa2e05":[3,0,0,10,6],
@@ -8,8 +9,8 @@ var NAVTREEINDEX6 =
 "LuaBindings_8h_source.html":[5,0,0,14,0],
 "LuaCommand_8h_source.html":[5,0,0,14,1],
 "LuaPlugin_8h_source.html":[5,0,0,14,2],
-"MainLogger_8h_source.html":[5,0,0,18,8],
-"MainLogger_8hpp_source.html":[5,0,0,18,9],
+"MainLogger_8h_source.html":[5,0,0,18,9],
+"MainLogger_8hpp_source.html":[5,0,0,18,10],
 "MapInfoRequestPacket_8h_source.html":[5,0,0,10,0,32],
 "Math_8h_source.html":[5,0,0,8,2],
 "MemoryManager_8h_source.html":[5,0,0,25],
@@ -91,8 +92,8 @@ var NAVTREEINDEX6 =
 "Physics_8cpp.html#a01e2c58dcdd907f4ca5123681f8a3048":[3,0,0,9,3],
 "Physics_8cpp.html#a26cd138d87afb9713c3089604431127e":[3,0,0,9,2],
 "Physics_8h_source.html":[5,0,0,12,0],
-"PlatformCompat_8h.html":[5,0,0,18,10],
-"PlatformCompat_8h_source.html":[5,0,0,18,10],
+"PlatformCompat_8h.html":[5,0,0,18,11],
+"PlatformCompat_8h_source.html":[5,0,0,18,11],
 "PlayStatusPacket_8h_source.html":[5,0,0,10,0,42],
 "PlayerAchievementAwardedEvent_8h_source.html":[5,0,0,4,3,0],
 "PlayerActionPacket_8h_source.html":[5,0,0,10,0,39],
@@ -170,7 +171,7 @@ var NAVTREEINDEX6 =
 "RakLibInterface_8h_source.html":[5,0,0,10,7],
 "RakLibServer_8h_source.html":[5,0,0,10,2,3],
 "RakLib_8h_source.html":[5,0,0,10,2,2],
-"Random_8h_source.html":[5,0,0,18,11],
+"Random_8h_source.html":[5,0,0,18,12],
 "Recipe_8h.html#af4c101e5ac26f445471bb5d6b78cd1f5":[3,0,0,4,10],
 "Recipe_8h.html#af4c101e5ac26f445471bb5d6b78cd1f5a1caa35d59714874c9cba3152189ae2d0":[3,0,0,4,10,2],
 "Recipe_8h.html#af4c101e5ac26f445471bb5d6b78cd1f5aa7e7da32d415609f01c3c15258ca9313":[3,0,0,4,10,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "StopCommand_8h_source.html":[5,0,0,1,0,12],
 "StringTag_8h_source.html":[5,0,0,9,0,11],
 "StructurePopulator_8h_source.html":[5,0,0,21,1,4,7],
-"Structure_8h.html#a17639c0afffcf9b1b68dff123329653c":[3,0,0,17,1,4,5],
-"Structure_8h.html#a82c1eabaf9aef7b30e4f50ba1a4f10ea":[3,0,0,17,1,4,6]
+"Structure_8h.html#a17639c0afffcf9b1b68dff123329653c":[3,0,0,17,1,4,5]
 };

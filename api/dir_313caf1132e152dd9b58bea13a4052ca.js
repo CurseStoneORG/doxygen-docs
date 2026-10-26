@@ -6,6 +6,7 @@ var dir_313caf1132e152dd9b58bea13a4052ca =
     [ "Color.h", "Color_8h_source.html", null ],
     [ "Config.h", "Config_8h_source.html", null ],
     [ "CRaii.h", "CRaii_8h_source.html", null ],
+    [ "DebugFlag.h", "DebugFlag_8h_source.html", null ],
     [ "DefaultConfig.h", "DefaultConfig_8h.html", "DefaultConfig_8h" ],
     [ "Logger.h", "Logger_8h_source.html", null ],
     [ "MainLogger.h", "MainLogger_8h_source.html", null ],

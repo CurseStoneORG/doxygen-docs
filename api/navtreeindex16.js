@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"classcursestone_1_1item_1_1ItemEmerald.html#a03d1f4b91170016498398eed553aadb0":[4,0,0,5,31,0],
 "classcursestone_1_1item_1_1ItemEmerald.html#aafc96062f65b319581687bb7046406f1":[4,0,0,5,31,1],
 "classcursestone_1_1item_1_1ItemEnchantedGoldenApple.html":[4,0,0,5,32],
 "classcursestone_1_1item_1_1ItemEnchantedGoldenApple.html#a5eacd2639f289a1ed14141c81ed9ef9f":[4,0,0,5,32,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html#aa7447ec45e9deb8f97b2640f21debc81":[4,0,0,5,0,2,1],
 "classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html#aad4f9942419279eaa2382e3f8307bf26":[4,0,0,5,0,2,3],
 "classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html#ac23b6db4b5e30792b1c41837c973fb7b":[4,0,0,5,0,2,2],
-"classcursestone_1_1network_1_1AdvancedSourceInterface.html":[4,0,0,7,1],
-"classcursestone_1_1network_1_1AdvancedSourceInterface.html#a145234521d1e18b2efc15a46e6c2064b":[4,0,0,7,1,0]
+"classcursestone_1_1network_1_1AdvancedSourceInterface.html":[4,0,0,7,1]
 };

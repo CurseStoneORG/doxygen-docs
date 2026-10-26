@@ -305,6 +305,46 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_backpressure
 <tr class="memitem:aa2a61c0096918ffe4c240be3c1916aaa"><td class="memItemLeft" align="right" valign="top"><a id="aa2a61c0096918ffe4c240be3c1916aaa"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>diag_backpressure_logged</b></td></tr>
 <tr class="separator:aa2a61c0096918ffe4c240be3c1916aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e3f0e2268692561ceccbc6fca585d2"><td class="memItemLeft" ><a id="a55e3f0e2268692561ceccbc6fca585d2"></a>
+struct {</td></tr>
+<tr class="memitem:a5e382b61b52ae8cc7d23755c175118c2"><td class="memItemLeft" >
+&#160;&#160;&#160;uint8_t *&#160;&#160;&#160;<b>data</b></td></tr>
+<tr class="separator:a5e382b61b52ae8cc7d23755c175118c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c968d2a88ed8d1677582824438b5b25"><td class="memItemLeft" >
+&#160;&#160;&#160;size_t&#160;&#160;&#160;<b>len</b></td></tr>
+<tr class="separator:a3c968d2a88ed8d1677582824438b5b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f0456042300175c0768cfcb1abad1e5"><td class="memItemLeft" >
+&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<b>reliability</b></td></tr>
+<tr class="separator:a6f0456042300175c0768cfcb1abad1e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec674e9d87d54d4540862a9572b9324d"><td class="memItemLeft" >
+&#160;&#160;&#160;uint8_t&#160;&#160;&#160;<b>order_channel</b></td></tr>
+<tr class="separator:aec674e9d87d54d4540862a9572b9324d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e3f0e2268692561ceccbc6fca585d2"><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><b>backlog</b> [MCP_BACKLOG_MAX_ENTRIES]</td></tr>
+<tr class="separator:a55e3f0e2268692561ceccbc6fca585d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a2373f827f5e68561623bbd0e7dfb1f"><td class="memItemLeft" align="right" valign="top"><a id="a4a2373f827f5e68561623bbd0e7dfb1f"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>backlog_head</b></td></tr>
+<tr class="separator:a4a2373f827f5e68561623bbd0e7dfb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff947f2169d74288612d758b4935b308"><td class="memItemLeft" align="right" valign="top"><a id="aff947f2169d74288612d758b4935b308"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>backlog_tail</b></td></tr>
+<tr class="separator:aff947f2169d74288612d758b4935b308"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af94b91bad44bf25ca833c14699708778"><td class="memItemLeft" align="right" valign="top"><a id="af94b91bad44bf25ca833c14699708778"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>backlog_count</b></td></tr>
+<tr class="separator:af94b91bad44bf25ca833c14699708778"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace1dbe202481f7f0b5924cf052e30920"><td class="memItemLeft" align="right" valign="top"><a id="ace1dbe202481f7f0b5924cf052e30920"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>backlog_bytes</b></td></tr>
+<tr class="separator:ace1dbe202481f7f0b5924cf052e30920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a887ad0a49bdd877557523b9e7a297931"><td class="memItemLeft" align="right" valign="top"><a id="a887ad0a49bdd877557523b9e7a297931"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_backlog_queued</b></td></tr>
+<tr class="separator:a887ad0a49bdd877557523b9e7a297931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00cde810482329f6d16978e59dbffe2b"><td class="memItemLeft" align="right" valign="top"><a id="a00cde810482329f6d16978e59dbffe2b"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_backlog_peak</b></td></tr>
+<tr class="separator:a00cde810482329f6d16978e59dbffe2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacf9596e20ec6f754ecb2e2b3a8eda6f"><td class="memItemLeft" align="right" valign="top"><a id="aacf9596e20ec6f754ecb2e2b3a8eda6f"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_backlog_bytes_peak</b></td></tr>
+<tr class="separator:aacf9596e20ec6f754ecb2e2b3a8eda6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eef5445cbbd119d9810086f44fd58c6"><td class="memItemLeft" align="right" valign="top"><a id="a0eef5445cbbd119d9810086f44fd58c6"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_backlog_flushed</b></td></tr>
+<tr class="separator:a0eef5445cbbd119d9810086f44fd58c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf708d70e592096fb07c029d44b5e10f"><td class="memItemLeft" align="right" valign="top"><a id="acf708d70e592096fb07c029d44b5e10f"></a>
 uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>keepalive_ping_sent_ms</b></td></tr>
 <tr class="separator:acf708d70e592096fb07c029d44b5e10f"><td class="memSeparator" colspan="2">&#160;</td></tr>

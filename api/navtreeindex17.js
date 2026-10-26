@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"classcursestone_1_1network_1_1AdvancedSourceInterface.html#a145234521d1e18b2efc15a46e6c2064b":[4,0,0,7,1,0],
 "classcursestone_1_1network_1_1AdvancedSourceInterface.html#aca72dc74c000aecc41feb7960b574db1":[4,0,0,7,1,1],
 "classcursestone_1_1network_1_1CompressBatchedTask.html":[4,0,0,7,2],
 "classcursestone_1_1network_1_1CompressBatchedTask.html#a2494114a3801ae49b313b9163093349a":[4,0,0,7,2,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "classcursestone_1_1network_1_1protocol_1_1DataPacket.html#ad8960b3423145fd456b785872f862086":[4,0,0,7,0,21,5],
 "classcursestone_1_1network_1_1protocol_1_1DataPacket.html#af79785a92904b3a7d54395974b3e52e9":[4,0,0,7,0,21,4],
 "classcursestone_1_1network_1_1protocol_1_1DataPacket.html#afb1933b910d70af4cf8615b537400d99":[4,0,0,7,0,21,1],
-"classcursestone_1_1network_1_1protocol_1_1DataPacket.html#afb94c3c5f5115e8c6a7b69091d6b82a1":[4,0,0,7,0,21,3],
-"classcursestone_1_1network_1_1protocol_1_1DisconnectPacket.html":[4,0,0,7,0,24]
+"classcursestone_1_1network_1_1protocol_1_1DataPacket.html#afb94c3c5f5115e8c6a7b69091d6b82a1":[4,0,0,7,0,21,3]
 };
