@@ -10,6 +10,7 @@ var classcursestone_1_1tile_1_1Tile =
     [ "readNBT", "classcursestone_1_1tile_1_1Tile.html#a1d074c14b0bf5be14272912dd161a48f", null ],
     [ "tick", "classcursestone_1_1tile_1_1Tile.html#ae05198201a005796a85430b6ddd8e81a", null ],
     [ "writeNBT", "classcursestone_1_1tile_1_1Tile.html#a890d7d63ec47cf95c77951a59ba1e725", null ],
+    [ "writeSpawnNBT", "classcursestone_1_1tile_1_1Tile.html#a5afecca6ad2261becd7e9f7033f45ece", null ],
     [ "dirty_", "classcursestone_1_1tile_1_1Tile.html#aeaab5785876843670ed83c13d0e1f453", null ],
     [ "id_", "classcursestone_1_1tile_1_1Tile.html#a86aa514c53f0f60d3df56e17a033bcc3", null ],
     [ "pos_", "classcursestone_1_1tile_1_1Tile.html#aa11e96be6605eed2114114e18843c067", null ]

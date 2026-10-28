@@ -1,5 +1,7 @@
 var NAVTREEINDEX24 =
 {
+"structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#a74d3cb8fb85ef0eec225a6d24a5fdce7":[4,0,0,7,0,64,0,1],
+"structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#a99430adf2e22197fcf6bd5f27f85365a":[4,0,0,7,0,64,0,3],
 "structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#aaa2cd643385138a1a5c5ead33c75dc05":[4,0,0,7,0,64,0,4],
 "structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#ab8bd85827c7a8ef9d28f90fa206519a9":[4,0,0,7,0,64,0,2],
 "structcursestone_1_1physics_1_1BlockBox.html":[4,0,0,9,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX24 =
 "structmcp__async__logger.html#ad14491ee989c4a84152e9457b5121563":[4,0,3,6],
 "structmcp__bstream.html":[4,0,4],
 "structmcp__bstream.html#a5bf122f52c73b559b0abca15a7c378cb":[4,0,4,1],
-"structmcp__bstream.html#a75685e7a0f49b6d496b3ba9eff480a16":[4,0,4,3],
-"structmcp__bstream.html#a931ada0b379e0fc6691d9538a0d25212":[4,0,4,2],
-"structmcp__bstream.html#ad5d155cbc87ef72265e6e067e0d2f4e7":[4,0,4,0]
+"structmcp__bstream.html#a75685e7a0f49b6d496b3ba9eff480a16":[4,0,4,3]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX23 =
 {
+"dir_dc96eb697a66e01ba190c271f9e8ccc9.html":[5,0,0,16],
+"dir_dd3ed405fd0798bdc220634b07294720.html":[5,0,0,10,2,0],
 "dir_e09032bb770e6e0f4355f890c3180c4a.html":[5,0,0,19],
 "dir_e3a10d3dbca26fafaa8cf6a84e5489fb.html":[5,0,0,15],
 "dir_ec48c2d1442f90cb011556743e46a7cf.html":[5,0,0,10,3],
@@ -247,7 +249,5 @@ var NAVTREEINDEX23 =
 "structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#aaea050900c59f60b3236e232aa670530":[4,0,0,7,0,54,0,2],
 "structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#ae5affe75bd19c026f4cb2c31f010bafe":[4,0,0,7,0,54,0,1],
 "structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html":[4,0,0,7,0,64,0],
-"structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#a47b8d02a63879e24e4c9fa7a72d305cc":[4,0,0,7,0,64,0,0],
-"structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#a74d3cb8fb85ef0eec225a6d24a5fdce7":[4,0,0,7,0,64,0,1],
-"structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#a99430adf2e22197fcf6bd5f27f85365a":[4,0,0,7,0,64,0,3]
+"structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#a47b8d02a63879e24e4c9fa7a72d305cc":[4,0,0,7,0,64,0,0]
 };

@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// all&quot;: keepalive PINGs and ACK/NACK traffic both count as activity, so</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// a player who stays idle (AFK) with the game open is never kicked; only</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// a genuinely dead connection (app closed, network lost) is reaped.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define MCP_SESSION_TIMEOUT_MS 30000</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define MCP_SESSION_TIMEOUT_MS 5000</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// FIX (audit priority 4/12): RakNet&#39;s 24-bit index spaces (datagram</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// sequence number, reliable message index, ordering index) all wrap at</span></div>
@@ -273,7 +273,7 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="comment">// session for this long it pings it and measures the round trip. That</span></div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="comment">// RTT is what tells &quot;the client is gone&quot; apart from &quot;the client is alive</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">// but its uplink is drowning in our chunk data&quot;.</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#define MCP_KEEPALIVE_PING_MS 5000</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#define MCP_KEEPALIVE_PING_MS 2000</span></div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="preprocessor">#define MCP_KEEPALIVE_PING_ID_BASE 0x4353000000000000LL</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">// Per-session send queue slot.</span></div>

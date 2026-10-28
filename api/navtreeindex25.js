@@ -1,5 +1,7 @@
 var NAVTREEINDEX25 =
 {
+"structmcp__bstream.html#a931ada0b379e0fc6691d9538a0d25212":[4,0,4,2],
+"structmcp__bstream.html#ad5d155cbc87ef72265e6e067e0d2f4e7":[4,0,4,0],
 "structmcp__byte__array__tag.html":[4,0,5],
 "structmcp__byte__array__tag.html#a475e999599418b481e1687651954c594":[4,0,5,1],
 "structmcp__byte__array__tag.html#a60bafeaa91bafdc4eef4ba1dad730f98":[4,0,5,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX25 =
 "structmcp__pkt__data__packet__d.html#af439d26234305185f81cd8eeba68836c":[4,0,44,4],
 "structmcp__pkt__data__packet__d.html#af7080739851bad29dd63735b554de8c3":[4,0,44,1],
 "structmcp__pkt__data__packet__e.html":[4,0,45],
-"structmcp__pkt__data__packet__e.html#a33e847c3ab3ccb052f5dd22032d62547":[4,0,45,4],
-"structmcp__pkt__data__packet__e.html#a48d86c00270f080e643ebac80e8bb161":[4,0,45,1],
-"structmcp__pkt__data__packet__e.html#aa1dac297e008461b1656f61c3f19302a":[4,0,45,3]
+"structmcp__pkt__data__packet__e.html#a33e847c3ab3ccb052f5dd22032d62547":[4,0,45,4]
 };

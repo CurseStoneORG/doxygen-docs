@@ -17,5 +17,6 @@ var classcursestone_1_1tile_1_1TileFurnace =
     [ "size", "classcursestone_1_1tile_1_1TileFurnace.html#a74181bc94634f61e312d5b46e319216c", null ],
     [ "spawnTo", "classcursestone_1_1tile_1_1TileFurnace.html#ac9df56fb809f2e5a12a75cf5c55ca440", null ],
     [ "tick", "classcursestone_1_1tile_1_1TileFurnace.html#a7ba7564e5c5795fe3c9cfbf3c7094dbe", null ],
-    [ "writeNBT", "classcursestone_1_1tile_1_1TileFurnace.html#a124f47e785732a7c2e11329693d09860", null ]
+    [ "writeNBT", "classcursestone_1_1tile_1_1TileFurnace.html#a124f47e785732a7c2e11329693d09860", null ],
+    [ "writeSpawnNBT", "classcursestone_1_1tile_1_1TileFurnace.html#ad135a8405373924980ae15beb3886780", null ]
 ];
