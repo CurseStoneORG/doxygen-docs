@@ -44,6 +44,9 @@ var searchData=
   ['currentusagekb_276',['currentUsageKB',['../classcursestone_1_1MemoryManager.html#aa06ee7311b760fedcda882fe58052bbc',1,'cursestone::MemoryManager']]],
   ['cursestone_277',['cursestone',['../namespacecursestone.html',1,'']]],
   ['cursestone_20comment_20and_20documentation_20style_20guide_278',['CurseStone Comment and Documentation Style Guide',['../md_docs_STYLE_COMMENTS.html',1,'']]],
-  ['cómo_20compilar_20cursestone_279',['Cómo compilar CurseStone',['../md_BUILDING.html',1,'']]],
-  ['utils_280',['utils',['../namespacecursestone_1_1utils.html',1,'cursestone']]]
+  ['cursestone_20—_20audit_20test_20results_279',['CurseStone — Audit Test Results',['../md_docs_audits_test_results.html',1,'']]],
+  ['cursestone_20—_20deep_20memory_20audit_20report_280',['CurseStone — Deep Memory Audit Report',['../md_docs_audits_memory_audit.html',1,'']]],
+  ['cursestone_20—_20ownership_20_26_20lifecycle_20map_281',['CurseStone — Ownership &amp; Lifecycle Map',['../md_docs_audits_ownership_map.html',1,'']]],
+  ['cómo_20compilar_20cursestone_282',['Cómo compilar CurseStone',['../md_BUILDING.html',1,'']]],
+  ['utils_283',['utils',['../namespacecursestone_1_1utils.html',1,'cursestone']]]
 ];
