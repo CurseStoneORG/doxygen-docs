@@ -1,0 +1,35 @@
+var classvgen_1_1Material =
+[
+    [ "Settings", "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9", [
+      [ "Normal", "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a960b44c579bc2f6818d2daaf9e4c16f0", null ],
+      [ "Gas", "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a635459702f9817de29e608fa3395637c", null ],
+      [ "Liquid", "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a5635bf596d97c1c2e7afe481ed060774", null ],
+      [ "Decoration", "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a24365794120e03b807acbd05c0a48db9", null ],
+      [ "Portal", "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a3e9b3ac6f082ec46a2d1d3f1f1647456", null ]
+    ] ],
+    [ "Material", "classvgen_1_1Material.html#ae8fc3776863d43ebfda5d76b5ab18627", null ],
+    [ "Material", "classvgen_1_1Material.html#a4de430198379b937958461e9bf7a8175", null ],
+    [ "~Material", "classvgen_1_1Material.html#a47b627e2089cf3737f0e391edd53bd98", null ],
+    [ "_setFlammable", "classvgen_1_1Material.html#a17c66789015753ce558b2826737936e2", null ],
+    [ "_setNeverBuildable", "classvgen_1_1Material.html#a8ba2acf1df2b64f88533b2a73849ced3", null ],
+    [ "_setNotAlwaysDestroyable", "classvgen_1_1Material.html#acaa82708d4cbcff521941654f090561c", null ],
+    [ "_setNotBlockingMotion", "classvgen_1_1Material.html#a9b660c372b4aca47b8a71081cddbb42e", null ],
+    [ "_setNotSolid", "classvgen_1_1Material.html#a8cc8d8d65e3bd7939ca8c4f97ba3eeee", null ],
+    [ "_setReplaceable", "classvgen_1_1Material.html#a9b1fc1c5d5a12b0e4d5250fe70b8eb26", null ],
+    [ "_setSuperHot", "classvgen_1_1Material.html#aa8a852cea50e76f9422525298c548e9d", null ],
+    [ "getBlocksMotion", "classvgen_1_1Material.html#ab7f0c047e9934552c73153390ea51115", null ],
+    [ "getColor", "classvgen_1_1Material.html#ae89f04aac53848bf09d2f44188d03b59", null ],
+    [ "getTranslucency", "classvgen_1_1Material.html#a58ddafa680670b37b62b9746a3104de0", null ],
+    [ "isAlwaysDestroyable", "classvgen_1_1Material.html#a6a1d4f0efecad8847ca93b90e4e12155", null ],
+    [ "isFlammable", "classvgen_1_1Material.html#a41450abb397a39edbd306294f9727bbd", null ],
+    [ "isLiquid", "classvgen_1_1Material.html#ac69a1ea0b46562fc872104c1c4653a7d", null ],
+    [ "isNeverBuildable", "classvgen_1_1Material.html#a357afccb7f6b96482f38081a1922ee88", null ],
+    [ "isReplaceable", "classvgen_1_1Material.html#af4dee639d812ceec64fb94071bff7a22", null ],
+    [ "isSolid", "classvgen_1_1Material.html#ac98810e77bbc1cef24ef4567a2507e68", null ],
+    [ "isSolidBlocking", "classvgen_1_1Material.html#ae9146cc6a688ae82be3f07563d3cf1c7", null ],
+    [ "isSuperHot", "classvgen_1_1Material.html#a3b869a373627ed9f10af76b553f7003b", null ],
+    [ "isType", "classvgen_1_1Material.html#acdd18178fbf5883d890352ac628b6c85", null ],
+    [ "operator!=", "classvgen_1_1Material.html#a4ad03eaf9cd8ed6c0c48c9d8bf3fabdc", null ],
+    [ "operator=", "classvgen_1_1Material.html#a713d6fa8dc10125c1f15c94c37983097", null ],
+    [ "operator==", "classvgen_1_1Material.html#a3a3c523d7631a6ad42611dc15d21fc78", null ]
+];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_836',['z',['../classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a4c4efa102599ded750fbb5083b80867d',1,'cursestone::network::protocol::ChangeDimensionPacket']]]
+  ['z_976',['z',['../classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a4c4efa102599ded750fbb5083b80867d',1,'cursestone::network::protocol::ChangeDimensionPacket']]],
+  ['zoomlayer_977',['ZoomLayer',['../classvgen_1_1ZoomLayer.html',1,'vgen']]]
 ];

@@ -1,0 +1,28 @@
+var classvgen_1_1Random =
+[
+    [ "result_type", "classvgen_1_1Random.html#a709ef53b3e784292e3f18718d1b309d0", null ],
+    [ "Random", "classvgen_1_1Random.html#a1a3a8e480270d9337c1a1d4773e45cb1", null ],
+    [ "Random", "classvgen_1_1Random.html#a47520e326d7031714f39a4cb23727071", null ],
+    [ "getSeed", "classvgen_1_1Random.html#a2264213bd3e37f38d6eb45eaa651c160", null ],
+    [ "next2float16", "classvgen_1_1Random.html#a6305462bf83cab016c0bad3e9631ed26", null ],
+    [ "next4float8", "classvgen_1_1Random.html#a99eb413a9a9a7c80ff90f6e75ecc1c2b", null ],
+    [ "nextBoolean", "classvgen_1_1Random.html#a8d66ce3113b1b99445d0858b8147eb3d", null ],
+    [ "nextDouble", "classvgen_1_1Random.html#a4db9661e613267a24cd0c2e39811273a", null ],
+    [ "nextFloat", "classvgen_1_1Random.html#afd9108d700c546ba078b2337569c9c58", null ],
+    [ "nextFloat", "classvgen_1_1Random.html#a999c3a5d04116cba5277e497dde3bf92", null ],
+    [ "nextFloat", "classvgen_1_1Random.html#a057c334ab4293654d04daab3420bfc45", null ],
+    [ "nextGaussian", "classvgen_1_1Random.html#a812fd2da220d31f95e94a1290516944d", null ],
+    [ "nextGaussianFloat", "classvgen_1_1Random.html#a30d42f95c1ef800d7234351330df6cef", null ],
+    [ "nextGaussianInt", "classvgen_1_1Random.html#ab22c7d7d544c104dc299ae901673e21d", null ],
+    [ "nextGaussianVec3", "classvgen_1_1Random.html#a08524485701b91ccfa7f7542caf8d10a", null ],
+    [ "nextInt", "classvgen_1_1Random.html#ab52d268469bd62ffff4f3e1542d2f088", null ],
+    [ "nextInt", "classvgen_1_1Random.html#ae7f7c7cf617ae840c04fb749946e2f09", null ],
+    [ "nextInt", "classvgen_1_1Random.html#a8a72a594a1dae0a0600f11e3c1f10167", null ],
+    [ "nextUnsignedChar", "classvgen_1_1Random.html#aa4a0193e78a8c042f3c6c03f1600431c", null ],
+    [ "nextUnsignedInt", "classvgen_1_1Random.html#a0a57c7e4bd5ddd50e3975801c46de4ed", null ],
+    [ "nextUnsignedInt", "classvgen_1_1Random.html#a25f16e667cc1bedbd46761494b07480a", null ],
+    [ "nextVec3", "classvgen_1_1Random.html#af344e516ca1cf41ff021838b0212fa68", null ],
+    [ "nextVec3", "classvgen_1_1Random.html#a24187f7bbc0c99d1c83856dee0c9e66d", null ],
+    [ "operator()", "classvgen_1_1Random.html#a63eca866db99a3b5a76b96be89879ec3", null ],
+    [ "setSeed", "classvgen_1_1Random.html#a756334299c601c81abd8b480d4e3e47d", null ]
+];

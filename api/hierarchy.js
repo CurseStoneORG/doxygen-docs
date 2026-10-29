@@ -10,15 +10,29 @@ var hierarchy =
     [ "cursestone::entity::AttributeMap", "classcursestone_1_1entity_1_1AttributeMap.html", null ],
     [ "cursestone::permission::BanEntry", "classcursestone_1_1permission_1_1BanEntry.html", null ],
     [ "cursestone::permission::BanList", "classcursestone_1_1permission_1_1BanList.html", null ],
-    [ "cursestone::world::generator::biome::Biome", "classcursestone_1_1world_1_1generator_1_1biome_1_1Biome.html", [
-      [ "cursestone::world::generator::biome::BiomeDesert", "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeDesert.html", null ],
-      [ "cursestone::world::generator::biome::BiomeForest", "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeForest.html", null ],
-      [ "cursestone::world::generator::biome::BiomeMountains", "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeMountains.html", null ],
-      [ "cursestone::world::generator::biome::BiomeOcean", "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeOcean.html", null ],
-      [ "cursestone::world::generator::biome::BiomePlains", "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomePlains.html", null ]
+    [ "vgen::BaseRailBlock", "classvgen_1_1BaseRailBlock.html", null ],
+    [ "vgen::Biome", "classvgen_1_1Biome.html", [
+      [ "vgen::BeachBiome", "classvgen_1_1BeachBiome.html", null ],
+      [ "vgen::DesertBiome", "classvgen_1_1DesertBiome.html", null ],
+      [ "vgen::ExtremeHillsBiome", "classvgen_1_1ExtremeHillsBiome.html", null ],
+      [ "vgen::ForestBiome", "classvgen_1_1ForestBiome.html", null ],
+      [ "vgen::IceBiome", "classvgen_1_1IceBiome.html", null ],
+      [ "vgen::JungleBiome", "classvgen_1_1JungleBiome.html", null ],
+      [ "vgen::MesaBiome", "classvgen_1_1MesaBiome.html", null ],
+      [ "vgen::MushroomIslandBiome", "classvgen_1_1MushroomIslandBiome.html", null ],
+      [ "vgen::OceanBiome", "classvgen_1_1OceanBiome.html", null ],
+      [ "vgen::PlainsBiome", "classvgen_1_1PlainsBiome.html", null ],
+      [ "vgen::RiverBiome", "classvgen_1_1RiverBiome.html", null ],
+      [ "vgen::SavannaBiome", "classvgen_1_1SavannaBiome.html", null ],
+      [ "vgen::StoneBeachBiome", "classvgen_1_1StoneBeachBiome.html", null ],
+      [ "vgen::SwampBiome", "classvgen_1_1SwampBiome.html", null ],
+      [ "vgen::TaigaBiome", "classvgen_1_1TaigaBiome.html", null ]
     ] ],
-    [ "cursestone::world::generator::biome::BiomeConfig", "structcursestone_1_1world_1_1generator_1_1biome_1_1BiomeConfig.html", null ],
-    [ "cursestone::world::generator::biome::BiomeRegistry", "classcursestone_1_1world_1_1generator_1_1biome_1_1BiomeRegistry.html", null ],
+    [ "vgen::BiomeDecorator", "classvgen_1_1BiomeDecorator.html", [
+      [ "vgen::MesaBiome::Decorator", "classvgen_1_1MesaBiome_1_1Decorator.html", null ]
+    ] ],
+    [ "vgen::Biome::BiomeHeight", "structvgen_1_1Biome_1_1BiomeHeight.html", null ],
+    [ "vgen::BiomeSource", "classvgen_1_1BiomeSource.html", null ],
     [ "cursestone::block::Block", "classcursestone_1_1block_1_1Block.html", [
       [ "cursestone::block::BlockAir", "classcursestone_1_1block_1_1BlockAir.html", null ],
       [ "cursestone::block::BlockPortal", "classcursestone_1_1block_1_1BlockPortal.html", null ],
@@ -227,11 +241,28 @@ var hierarchy =
         [ "cursestone::block::BlockWheat", "classcursestone_1_1block_1_1BlockWheat.html", null ]
       ] ]
     ] ],
+    [ "vgen::Block", "classvgen_1_1Block.html", [
+      [ "vgen::BushBlock", "classvgen_1_1BushBlock.html", null ],
+      [ "vgen::DoublePlantBlock", "classvgen_1_1DoublePlantBlock.html", null ]
+    ] ],
     [ "cursestone::physics::BlockBox", "structcursestone_1_1physics_1_1BlockBox.html", null ],
+    [ "vgen::BlockEntity", "classvgen_1_1BlockEntity.html", null ],
+    [ "vgen::BlockID", "structvgen_1_1BlockID.html", null ],
     [ "cursestone::utils::BlockIterator", "classcursestone_1_1utils_1_1BlockIterator.html", null ],
     [ "cursestone::block::BlockOrientation", "structcursestone_1_1block_1_1BlockOrientation.html", null ],
-    [ "cursestone::world::generator::structure::BlockSpec", "structcursestone_1_1world_1_1generator_1_1structure_1_1BlockSpec.html", null ],
-    [ "cursestone::world::generator::structure::BlockState", "structcursestone_1_1world_1_1generator_1_1structure_1_1BlockState.html", null ],
+    [ "vgen::BlockSelector", "classvgen_1_1BlockSelector.html", [
+      [ "vgen::MossStoneSelector", "classvgen_1_1MossStoneSelector.html", null ],
+      [ "vgen::MossyStoneSelector", "classvgen_1_1MossyStoneSelector.html", null ]
+    ] ],
+    [ "vgen::BlockSource", "classvgen_1_1BlockSource.html", null ],
+    [ "vgen::BlockStateRef", "classvgen_1_1BlockStateRef.html", null ],
+    [ "vgen::BlockVolume", "classvgen_1_1BlockVolume.html", null ],
+    [ "vgen::BoundingBox", "classvgen_1_1BoundingBox.html", null ],
+    [ "vgen::Brightness", "structvgen_1_1Brightness.html", null ],
+    [ "vgen::buffer_span< T >", "classvgen_1_1buffer__span.html", null ],
+    [ "vgen::buffer_span_mut< T >", "classvgen_1_1buffer__span__mut.html", null ],
+    [ "vgen::buffer_span_mut< vgen::BlockID >", "classvgen_1_1buffer__span__mut.html", null ],
+    [ "vgen::buffer_span_mut< vgen::NibblePair >", "classvgen_1_1buffer__span__mut.html", null ],
     [ "cursestone::event::Cancellable", "classcursestone_1_1event_1_1Cancellable.html", [
       [ "cursestone::event::block::BlockBreakEvent", "classcursestone_1_1event_1_1block_1_1BlockBreakEvent.html", null ],
       [ "cursestone::event::block::BlockBurnEvent", "classcursestone_1_1event_1_1block_1_1BlockBurnEvent.html", null ],
@@ -327,12 +358,15 @@ var hierarchy =
       [ "cursestone::event::world::WeatherChangeEvent", "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html", null ],
       [ "cursestone::event::world::WorldUnloadEvent", "classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html", null ]
     ] ],
-    [ "cursestone::world::generator::carver::CaveCarver", "classcursestone_1_1world_1_1generator_1_1carver_1_1CaveCarver.html", null ],
+    [ "vgen::CauldronBlock", "classvgen_1_1CauldronBlock.html", null ],
+    [ "vgen::ChunkBlockPos", "structvgen_1_1ChunkBlockPos.html", null ],
     [ "cursestone::world::ChunkLoader", "classcursestone_1_1world_1_1ChunkLoader.html", null ],
     [ "cursestone::world::ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html", [
       [ "cursestone::world::SimpleChunkManager", "classcursestone_1_1world_1_1SimpleChunkManager.html", null ]
     ] ],
+    [ "vgen::ChunkPos", "structvgen_1_1ChunkPos.html", null ],
     [ "cursestone::world::World::ChunkViewer", "structcursestone_1_1world_1_1World_1_1ChunkViewer.html", null ],
+    [ "vgen::Color", "structvgen_1_1Color.html", null ],
     [ "cursestone::Command", "classcursestone_1_1Command.html", [
       [ "cursestone::DeopCommand", "classcursestone_1_1DeopCommand.html", null ],
       [ "cursestone::GamemodeCommand", "classcursestone_1_1GamemodeCommand.html", null ],
@@ -440,11 +474,39 @@ var hierarchy =
     ] ],
     [ "cursestone::permission::DefaultPermissions", "classcursestone_1_1permission_1_1DefaultPermissions.html", null ],
     [ "cursestone::diagnostics::Diagnostics", "classcursestone_1_1diagnostics_1_1Diagnostics.html", null ],
+    [ "vgen::Dimension", "classvgen_1_1Dimension.html", null ],
+    [ "vgen::Direction", "classvgen_1_1Direction.html", null ],
+    [ "vgen::DirtBlock", "classvgen_1_1DirtBlock.html", null ],
     [ "cursestone::DisconnectDump", "structcursestone_1_1DisconnectDump.html", null ],
     [ "cursestone::world::DroppedItem", "structcursestone_1_1world_1_1DroppedItem.html", null ],
     [ "cursestone::entity::Effect", "classcursestone_1_1entity_1_1Effect.html", null ],
     [ "std::enable_shared_from_this", null, [
-      [ "cursestone::Player", "classcursestone_1_1Player.html", null ]
+      [ "cursestone::Player", "classcursestone_1_1Player.html", null ],
+      [ "vgen::Layer", "classvgen_1_1Layer.html", [
+        [ "vgen::AddDeepOceanLayer", "classvgen_1_1AddDeepOceanLayer.html", null ],
+        [ "vgen::AddEdgeLayer", "classvgen_1_1AddEdgeLayer.html", null ],
+        [ "vgen::AddIslandLayer", "classvgen_1_1AddIslandLayer.html", null ],
+        [ "vgen::AddMushroomIslandLayer", "classvgen_1_1AddMushroomIslandLayer.html", null ],
+        [ "vgen::AddSnowLayer", "classvgen_1_1AddSnowLayer.html", null ],
+        [ "vgen::BiomeEdgeLayer", "classvgen_1_1BiomeEdgeLayer.html", null ],
+        [ "vgen::BiomeInitLayer", "classvgen_1_1BiomeInitLayer.html", null ],
+        [ "vgen::DownfallLayer", "classvgen_1_1DownfallLayer.html", null ],
+        [ "vgen::DownfallMixerLayer", "classvgen_1_1DownfallMixerLayer.html", null ],
+        [ "vgen::IslandLayer", "classvgen_1_1IslandLayer.html", null ],
+        [ "vgen::RareBiomeSpotLayer", "classvgen_1_1RareBiomeSpotLayer.html", null ],
+        [ "vgen::RegionHillsLayer", "classvgen_1_1RegionHillsLayer.html", null ],
+        [ "vgen::RemoveTooMuchOceanLayer", "classvgen_1_1RemoveTooMuchOceanLayer.html", null ],
+        [ "vgen::RiverInitLayer", "classvgen_1_1RiverInitLayer.html", null ],
+        [ "vgen::RiverLayer", "classvgen_1_1RiverLayer.html", null ],
+        [ "vgen::RiverMixerLayer", "classvgen_1_1RiverMixerLayer.html", null ],
+        [ "vgen::ShoreLayer", "classvgen_1_1ShoreLayer.html", null ],
+        [ "vgen::SmoothLayer", "classvgen_1_1SmoothLayer.html", null ],
+        [ "vgen::SmoothZoomLayer", "classvgen_1_1SmoothZoomLayer.html", null ],
+        [ "vgen::VoronoiZoom", "classvgen_1_1VoronoiZoom.html", null ],
+        [ "vgen::ZoomLayer", "classvgen_1_1ZoomLayer.html", [
+          [ "vgen::FuzzyZoomLayer", "classvgen_1_1FuzzyZoomLayer.html", null ]
+        ] ]
+      ] ]
     ] ],
     [ "cursestone::item::enchantment::Enchantment", "classcursestone_1_1item_1_1enchantment_1_1Enchantment.html", null ],
     [ "cursestone::item::enchantment::EnchantmentEntry", "structcursestone_1_1item_1_1enchantment_1_1EnchantmentEntry.html", null ],
@@ -477,6 +539,11 @@ var hierarchy =
         [ "cursestone::entity::EntityXPOrb", "classcursestone_1_1entity_1_1EntityXPOrb.html", null ]
       ] ]
     ] ],
+    [ "vgen::Entity", "structvgen_1_1Entity.html", [
+      [ "vgen::Player", "structvgen_1_1Player.html", null ]
+    ] ],
+    [ "vgen::EntityClassTree", "structvgen_1_1EntityClassTree.html", null ],
+    [ "vgen::EntityDefinitionIdentifier", "structvgen_1_1EntityDefinitionIdentifier.html", null ],
     [ "cursestone::network::protocol::PlayerListPacket::Entry", "structcursestone_1_1network_1_1protocol_1_1PlayerListPacket_1_1Entry.html", null ],
     [ "cursestone::network::protocol::SetEntityDataPacket::Entry", "structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html", null ],
     [ "cursestone::network::protocol::UpdateAttributesPacket::Entry", "structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html", null ],
@@ -597,10 +664,52 @@ var hierarchy =
     [ "cursestone::event::EventHandler", "structcursestone_1_1event_1_1EventHandler.html", null ],
     [ "cursestone::event::EventManager", "classcursestone_1_1event_1_1EventManager.html", null ],
     [ "cursestone::world::Explosion", "classcursestone_1_1world_1_1Explosion.html", null ],
+    [ "vgen::Facing", "classvgen_1_1Facing.html", null ],
     [ "cursestone::world::FallingBlockEntity", "structcursestone_1_1world_1_1FallingBlockEntity.html", null ],
-    [ "cursestone::world::generator::FieldNoise", "structcursestone_1_1world_1_1generator_1_1FieldNoise.html", null ],
+    [ "vgen::Feature", "classvgen_1_1Feature.html", [
+      [ "vgen::BlockBlobFeature", "classvgen_1_1BlockBlobFeature.html", null ],
+      [ "vgen::CactusFeature", "classvgen_1_1CactusFeature.html", null ],
+      [ "vgen::ClayFeature", "classvgen_1_1ClayFeature.html", null ],
+      [ "vgen::DeadBushFeature", "classvgen_1_1DeadBushFeature.html", null ],
+      [ "vgen::DesertWellFeature", "classvgen_1_1DesertWellFeature.html", null ],
+      [ "vgen::DoublePlantFeature", "classvgen_1_1DoublePlantFeature.html", null ],
+      [ "vgen::FlowerFeature", "classvgen_1_1FlowerFeature.html", null ],
+      [ "vgen::HugeMushroomFeature", "classvgen_1_1HugeMushroomFeature.html", null ],
+      [ "vgen::IcePatchFeature", "classvgen_1_1IcePatchFeature.html", null ],
+      [ "vgen::IceSpikeFeature", "classvgen_1_1IceSpikeFeature.html", null ],
+      [ "vgen::LakeFeature", "classvgen_1_1LakeFeature.html", null ],
+      [ "vgen::MelonFeature", "classvgen_1_1MelonFeature.html", null ],
+      [ "vgen::MonsterRoomFeature", "classvgen_1_1MonsterRoomFeature.html", null ],
+      [ "vgen::OreFeature", "classvgen_1_1OreFeature.html", null ],
+      [ "vgen::PumpkinFeature", "classvgen_1_1PumpkinFeature.html", null ],
+      [ "vgen::ReedsFeature", "classvgen_1_1ReedsFeature.html", null ],
+      [ "vgen::SandFeature", "classvgen_1_1SandFeature.html", null ],
+      [ "vgen::SpringFeature", "classvgen_1_1SpringFeature.html", null ],
+      [ "vgen::TallGrassFeature", "classvgen_1_1TallGrassFeature.html", null ],
+      [ "vgen::TreeFeature", "classvgen_1_1TreeFeature.html", [
+        [ "vgen::BirchFeature", "classvgen_1_1BirchFeature.html", null ],
+        [ "vgen::FancyTreeFeature", "classvgen_1_1FancyTreeFeature.html", null ],
+        [ "vgen::GroundBushFeature", "classvgen_1_1GroundBushFeature.html", null ],
+        [ "vgen::JungleTreeFeature", "classvgen_1_1JungleTreeFeature.html", null ],
+        [ "vgen::MegaTreeFeature", "classvgen_1_1MegaTreeFeature.html", [
+          [ "vgen::MegaJungleTreeFeature", "classvgen_1_1MegaJungleTreeFeature.html", null ],
+          [ "vgen::MegaPineTreeFeature", "classvgen_1_1MegaPineTreeFeature.html", null ]
+        ] ],
+        [ "vgen::OakFeature", "classvgen_1_1OakFeature.html", null ],
+        [ "vgen::PineFeature", "classvgen_1_1PineFeature.html", null ],
+        [ "vgen::RoofTreeFeature", "classvgen_1_1RoofTreeFeature.html", null ],
+        [ "vgen::SavannaTreeFeature", "classvgen_1_1SavannaTreeFeature.html", null ],
+        [ "vgen::SpruceFeature", "classvgen_1_1SpruceFeature.html", null ],
+        [ "vgen::SwampTreeFeature", "classvgen_1_1SwampTreeFeature.html", null ]
+      ] ],
+      [ "vgen::VinesFeature", "classvgen_1_1VinesFeature.html", null ],
+      [ "vgen::WaterlilyFeature", "classvgen_1_1WaterlilyFeature.html", null ]
+    ] ],
     [ "cursestone::world::generator::FlatLayer", "structcursestone_1_1world_1_1generator_1_1FlatLayer.html", null ],
+    [ "vgen::FlowerBlock", "classvgen_1_1FlowerBlock.html", null ],
+    [ "vgen::FoliageColor", "classvgen_1_1FoliageColor.html", null ],
     [ "cursestone::utils::FreeDeleter", "structcursestone_1_1utils_1_1FreeDeleter.html", null ],
+    [ "vgen::FullBlock", "structvgen_1_1FullBlock.html", null ],
     [ "cursestone::world::format::FullChunk", "classcursestone_1_1world_1_1format_1_1FullChunk.html", [
       [ "cursestone::world::format::ChunkAdapter", "classcursestone_1_1world_1_1format_1_1ChunkAdapter.html", null ]
     ] ],
@@ -610,20 +719,13 @@ var hierarchy =
       [ "cursestone::world::generator::EmptyGenerator", "classcursestone_1_1world_1_1generator_1_1EmptyGenerator.html", null ],
       [ "cursestone::world::generator::Flat", "classcursestone_1_1world_1_1generator_1_1Flat.html", null ],
       [ "cursestone::world::generator::Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", null ],
-      [ "cursestone::world::generator::Normal", "classcursestone_1_1world_1_1generator_1_1Normal.html", null ]
-    ] ],
-    [ "cursestone::world::generator::object::trees::GenericTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1GenericTree.html", [
-      [ "cursestone::world::generator::object::trees::AcaciaTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1AcaciaTree.html", null ],
-      [ "cursestone::world::generator::object::trees::BigJungleTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1BigJungleTree.html", null ],
-      [ "cursestone::world::generator::object::trees::BigOakTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1BigOakTree.html", null ],
-      [ "cursestone::world::generator::object::trees::BirchTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1BirchTree.html", null ],
-      [ "cursestone::world::generator::object::trees::DarkOakTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1DarkOakTree.html", null ],
-      [ "cursestone::world::generator::object::trees::JungleTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1JungleTree.html", null ],
-      [ "cursestone::world::generator::object::trees::OakTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1OakTree.html", null ],
-      [ "cursestone::world::generator::object::trees::SpruceTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1SpruceTree.html", null ],
-      [ "cursestone::world::generator::object::trees::SwampTree", "classcursestone_1_1world_1_1generator_1_1object_1_1trees_1_1SwampTree.html", null ]
+      [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
     ] ],
     [ "cursestone::event::HandlerList", "classcursestone_1_1event_1_1HandlerList.html", null ],
+    [ "std::hash<::vgen::ChunkPos >", "structstd_1_1hash_3_1_1vgen_1_1ChunkPos_01_4.html", null ],
+    [ "std::hash<::vgen::FullBlock >", "structstd_1_1hash_3_1_1vgen_1_1FullBlock_01_4.html", null ],
+    [ "std::hash<::vgen::Pos >", "structstd_1_1hash_3_1_1vgen_1_1Pos_01_4.html", null ],
+    [ "vgen::ImprovedNoise", "classvgen_1_1ImprovedNoise.html", null ],
     [ "cursestone::plugin::PluginManager::Info", "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html", null ],
     [ "cursestone::wizard::Installer", "classcursestone_1_1wizard_1_1Installer.html", null ],
     [ "cursestone::wizard::InstallerLang", "classcursestone_1_1wizard_1_1InstallerLang.html", null ],
@@ -741,13 +843,31 @@ var hierarchy =
       [ "cursestone::item::ItemWheatSeeds", "classcursestone_1_1item_1_1ItemWheatSeeds.html", null ]
     ] ],
     [ "cursestone::item::ItemStack", "structcursestone_1_1item_1_1ItemStack.html", null ],
-    [ "cursestone::world::generator::object::LakeGenerator", "classcursestone_1_1world_1_1generator_1_1object_1_1LakeGenerator.html", null ],
+    [ "vgen::Range< INDEX, STEP >::iterator", "classvgen_1_1Range_1_1iterator.html", null ],
+    [ "vgen::ITerrainFeed", "classvgen_1_1ITerrainFeed.html", [
+      [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
+    ] ],
+    [ "vgen::LargeCaveFeature", "classvgen_1_1LargeCaveFeature.html", null ],
+    [ "vgen::LargeFeature", "classvgen_1_1LargeFeature.html", [
+      [ "vgen::StructureFeature", "classvgen_1_1StructureFeature.html", [
+        [ "vgen::MineshaftFeature", "classvgen_1_1MineshaftFeature.html", null ],
+        [ "vgen::RandomScatteredLargeFeature", "classvgen_1_1RandomScatteredLargeFeature.html", null ],
+        [ "vgen::VillageFeature", "classvgen_1_1VillageFeature.html", null ]
+      ] ]
+    ] ],
+    [ "vgen::LayerData", "classvgen_1_1LayerData.html", null ],
+    [ "vgen::LeafBlock", "classvgen_1_1LeafBlock.html", null ],
+    [ "vgen::Level", "classvgen_1_1Level.html", null ],
+    [ "vgen::LevelChunk", "classvgen_1_1LevelChunk.html", null ],
     [ "cursestone::world::format::leveldb::LevelDBRegistrar", "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html", null ],
     [ "cursestone::world::LightEngine", "classcursestone_1_1world_1_1LightEngine.html", null ],
+    [ "vgen::LightLayer", "structvgen_1_1LightLayer.html", null ],
     [ "cursestone::event::Listener", "classcursestone_1_1event_1_1Listener.html", null ],
     [ "cursestone::world::format::anvil::LocationEntry", "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html", null ],
     [ "cursestone::plugin::LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", null ],
     [ "cursestone::utils::MainLogger", "classcursestone_1_1utils_1_1MainLogger.html", null ],
+    [ "vgen::Material", "classvgen_1_1Material.html", null ],
+    [ "vgen::Math", "structvgen_1_1Math.html", null ],
     [ "mcp_aabb", "structmcp__aabb.html", null ],
     [ "mcp_async_logger", "structmcp__async__logger.html", null ],
     [ "mcp_bstream", "structmcp__bstream.html", null ],
@@ -823,6 +943,8 @@ var hierarchy =
     [ "mcp_vector3", "structmcp__vector3.html", null ],
     [ "cursestone::MemoryManager", "classcursestone_1_1MemoryManager.html", null ],
     [ "cursestone::world::generator::MersenneRandom", "classcursestone_1_1world_1_1generator_1_1MersenneRandom.html", null ],
+    [ "vgen::MineshaftData", "structvgen_1_1MineshaftData.html", null ],
+    [ "vgen::MobSpawnUtils", "classvgen_1_1MobSpawnUtils.html", null ],
     [ "cursestone::network::protocol::SetEntityMotionPacket::Motion", "structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html", null ],
     [ "cursestone::physics::MotionResult", "structcursestone_1_1physics_1_1MotionResult.html", null ],
     [ "cursestone::world::MovingObjectPosition", "classcursestone_1_1world_1_1MovingObjectPosition.html", null ],
@@ -831,8 +953,12 @@ var hierarchy =
       [ "cursestone::tile::TileFurnace", "classcursestone_1_1tile_1_1TileFurnace.html", null ]
     ] ],
     [ "cursestone::network::Network", "classcursestone_1_1network_1_1Network.html", null ],
+    [ "vgen::NewLeafBlock", "classvgen_1_1NewLeafBlock.html", null ],
+    [ "vgen::NewLogBlock", "classvgen_1_1NewLogBlock.html", null ],
+    [ "vgen::NibblePair", "structvgen_1_1NibblePair.html", null ],
     [ "cursestone::utils::Config::Node", "structcursestone_1_1utils_1_1Config_1_1Node.html", null ],
-    [ "cursestone::world::generator::object::ObjectDecorators", "classcursestone_1_1world_1_1generator_1_1object_1_1ObjectDecorators.html", null ],
+    [ "vgen::OldLeafBlock", "classvgen_1_1OldLeafBlock.html", null ],
+    [ "vgen::OldLogBlock", "classvgen_1_1OldLogBlock.html", null ],
     [ "cursestone::world::generator::object::OreGenerator", "classcursestone_1_1world_1_1generator_1_1object_1_1OreGenerator.html", null ],
     [ "cursestone::world::generator::object::OreVein", "structcursestone_1_1world_1_1generator_1_1object_1_1OreVein.html", null ],
     [ "cursestone::PacketLogEntry", "structcursestone_1_1PacketLogEntry.html", null ],
@@ -844,6 +970,8 @@ var hierarchy =
       [ "cursestone::world::particle::DestroyBlockParticle", "classcursestone_1_1world_1_1particle_1_1DestroyBlockParticle.html", null ],
       [ "cursestone::world::particle::GenericParticle", "classcursestone_1_1world_1_1particle_1_1GenericParticle.html", null ]
     ] ],
+    [ "vgen::PerlinNoise", "classvgen_1_1PerlinNoise.html", null ],
+    [ "vgen::PerlinSimplexNoise", "classvgen_1_1PerlinSimplexNoise.html", null ],
     [ "cursestone::permission::Permissible", "classcursestone_1_1permission_1_1Permissible.html", [
       [ "cursestone::permission::PermissibleBase", "classcursestone_1_1permission_1_1PermissibleBase.html", [
         [ "cursestone::Player", "classcursestone_1_1Player.html", null ]
@@ -851,40 +979,37 @@ var hierarchy =
     ] ],
     [ "cursestone::permission::Permission", "classcursestone_1_1permission_1_1Permission.html", null ],
     [ "cursestone::permission::PermissionAttachment", "classcursestone_1_1permission_1_1PermissionAttachment.html", null ],
+    [ "vgen::PieceWeight", "classvgen_1_1PieceWeight.html", null ],
+    [ "vgen::Facing::Plane", "classvgen_1_1Facing_1_1Plane.html", null ],
     [ "cursestone::PlayerConfig", "structcursestone_1_1PlayerConfig.html", null ],
     [ "cursestone::diagnostics::PlayerSnapshot", "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html", null ],
     [ "cursestone::plugin::PluginLimits", "structcursestone_1_1plugin_1_1PluginLimits.html", null ],
     [ "cursestone::plugin::PluginManager", "classcursestone_1_1plugin_1_1PluginManager.html", null ],
-    [ "cursestone::world::generator::populator::Populator", "classcursestone_1_1world_1_1generator_1_1populator_1_1Populator.html", [
-      [ "cursestone::world::generator::populator::PopulatorCactus", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorCactus.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorCave", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorCave.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorDeadBush", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorDeadBush.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorDoublePlant", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorDoublePlant.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorLake", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLake.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorLavaPool", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorLavaPool.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorMelon", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMelon.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorMushroom", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorMushroom.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorOre", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorOre.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorSugarCane", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorSugarCane.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorTallGrass", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorTallGrass.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorTree", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorTree.html", null ],
-      [ "cursestone::world::generator::populator::PopulatorWaterLily", "classcursestone_1_1world_1_1generator_1_1populator_1_1PopulatorWaterLily.html", null ],
-      [ "cursestone::world::generator::populator::StructurePopulator", "classcursestone_1_1world_1_1generator_1_1populator_1_1StructurePopulator.html", null ],
-      [ "cursestone::world::generator::populator::VillagePopulator", "classcursestone_1_1world_1_1generator_1_1populator_1_1VillagePopulator.html", null ]
-    ] ],
     [ "cursestone::world::PortalRegistry::Portal", "structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html", null ],
     [ "cursestone::PortalArrival", "structcursestone_1_1PortalArrival.html", null ],
     [ "cursestone::world::PortalRegistry", "classcursestone_1_1world_1_1PortalRegistry.html", null ],
+    [ "vgen::Pos", "structvgen_1_1Pos.html", [
+      [ "vgen::BlockPos", "structvgen_1_1BlockPos.html", [
+        [ "vgen::FancyTreeFeature::FoliageCoords", "classvgen_1_1FancyTreeFeature_1_1FoliageCoords.html", null ]
+      ] ]
+    ] ],
     [ "cursestone::world::Position", "classcursestone_1_1world_1_1Position.html", [
       [ "cursestone::world::Location", "classcursestone_1_1world_1_1Location.html", null ]
     ] ],
     [ "cursestone::network::RakLibAction", "structcursestone_1_1network_1_1RakLibAction.html", null ],
     [ "cursestone::network::RakLibEvent", "structcursestone_1_1network_1_1RakLibEvent.html", null ],
+    [ "vgen::Random", "classvgen_1_1Random.html", null ],
+    [ "vgen::Range< INDEX, STEP >", "classvgen_1_1Range.html", null ],
     [ "cursestone::network::RCONInstance", "classcursestone_1_1network_1_1RCONInstance.html", null ],
     [ "cursestone::inventory::Recipe", "classcursestone_1_1inventory_1_1Recipe.html", null ],
     [ "cursestone::event::RegisteredListener", "structcursestone_1_1event_1_1RegisteredListener.html", null ],
+    [ "vgen::RotatedPillarBlock", "classvgen_1_1RotatedPillarBlock.html", null ],
+    [ "vgen::SandBlock", "classvgen_1_1SandBlock.html", null ],
+    [ "vgen::SandStoneBlock", "classvgen_1_1SandStoneBlock.html", null ],
+    [ "vgen::ScopedProfile", "structvgen_1_1ScopedProfile.html", null ],
     [ "cursestone::Server", "classcursestone_1_1Server.html", null ],
     [ "cursestone::scheduler::ServerScheduler", "classcursestone_1_1scheduler_1_1ServerScheduler.html", null ],
+    [ "vgen::SimplexNoise", "classvgen_1_1SimplexNoise.html", null ],
     [ "cursestone::world::sound::Sound", "classcursestone_1_1world_1_1sound_1_1Sound.html", [
       [ "cursestone::world::sound::GenericSound", "classcursestone_1_1world_1_1sound_1_1GenericSound.html", null ]
     ] ],
@@ -902,15 +1027,53 @@ var hierarchy =
       [ "cursestone::tile::TileSpawner", "classcursestone_1_1tile_1_1TileSpawner.html", null ]
     ] ],
     [ "cursestone::world::SplashPotionEntity", "structcursestone_1_1world_1_1SplashPotionEntity.html", null ],
-    [ "cursestone::world::generator::structure::Structure", "classcursestone_1_1world_1_1generator_1_1structure_1_1Structure.html", [
-      [ "cursestone::world::generator::structure::DesertTemple", "classcursestone_1_1world_1_1generator_1_1structure_1_1DesertTemple.html", null ],
-      [ "cursestone::world::generator::structure::village::VillagePiece", "classcursestone_1_1world_1_1generator_1_1structure_1_1village_1_1VillagePiece.html", null ]
+    [ "vgen::StoneBlock", "classvgen_1_1StoneBlock.html", null ],
+    [ "vgen::StoneSlabBlock", "classvgen_1_1StoneSlabBlock.html", null ],
+    [ "vgen::StructurePiece", "classvgen_1_1StructurePiece.html", [
+      [ "vgen::MineshaftPiece", "classvgen_1_1MineshaftPiece.html", [
+        [ "vgen::MineshaftCorridor", "classvgen_1_1MineshaftCorridor.html", null ],
+        [ "vgen::MineshaftCrossing", "classvgen_1_1MineshaftCrossing.html", null ],
+        [ "vgen::MineshaftRoom", "classvgen_1_1MineshaftRoom.html", null ],
+        [ "vgen::MineshaftStairs", "classvgen_1_1MineshaftStairs.html", null ]
+      ] ],
+      [ "vgen::ScatteredFeaturePiece", "classvgen_1_1ScatteredFeaturePiece.html", [
+        [ "vgen::DesertPyramidPiece", "classvgen_1_1DesertPyramidPiece.html", null ],
+        [ "vgen::JunglePyramidPiece", "classvgen_1_1JunglePyramidPiece.html", null ],
+        [ "vgen::SwamplandHut", "classvgen_1_1SwamplandHut.html", null ]
+      ] ],
+      [ "vgen::VillagePiece", "classvgen_1_1VillagePiece.html", [
+        [ "vgen::BookHouse", "classvgen_1_1BookHouse.html", null ],
+        [ "vgen::DoubleFarmland", "classvgen_1_1DoubleFarmland.html", null ],
+        [ "vgen::Farmland", "classvgen_1_1Farmland.html", null ],
+        [ "vgen::LightPost", "classvgen_1_1LightPost.html", null ],
+        [ "vgen::PigHouse", "classvgen_1_1PigHouse.html", null ],
+        [ "vgen::SimpleHouse", "classvgen_1_1SimpleHouse.html", null ],
+        [ "vgen::SmallHut", "classvgen_1_1SmallHut.html", null ],
+        [ "vgen::SmallTemple", "classvgen_1_1SmallTemple.html", null ],
+        [ "vgen::Smithy", "classvgen_1_1Smithy.html", null ],
+        [ "vgen::StraightRoad", "classvgen_1_1StraightRoad.html", null ],
+        [ "vgen::TwoRoomHouse", "classvgen_1_1TwoRoomHouse.html", null ],
+        [ "vgen::Well", "classvgen_1_1Well.html", [
+          [ "vgen::StartPiece", "classvgen_1_1StartPiece.html", null ]
+        ] ]
+      ] ]
+    ] ],
+    [ "vgen::StructureStart", "classvgen_1_1StructureStart.html", [
+      [ "vgen::MineshaftStart", "classvgen_1_1MineshaftStart.html", null ],
+      [ "vgen::ScatteredFeatureStart", "classvgen_1_1ScatteredFeatureStart.html", null ],
+      [ "vgen::VillageStart", "classvgen_1_1VillageStart.html", null ]
     ] ],
     [ "cursestone::world::generator::Synth", "classcursestone_1_1world_1_1generator_1_1Synth.html", [
       [ "cursestone::world::generator::ImprovedNoise", "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html", null ],
       [ "cursestone::world::generator::PerlinNoise", "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html", null ]
     ] ],
+    [ "vgen::Tag", "classvgen_1_1Tag.html", [
+      [ "vgen::CompoundTag", "classvgen_1_1CompoundTag.html", null ],
+      [ "vgen::IntArrayTag", "classvgen_1_1IntArrayTag.html", null ],
+      [ "vgen::ListTag", "classvgen_1_1ListTag.html", null ]
+    ] ],
     [ "cursestone::utils::TagDeleter", "structcursestone_1_1utils_1_1TagDeleter.html", null ],
+    [ "vgen::TallGrassTypeShim", "classvgen_1_1TallGrassTypeShim.html", null ],
     [ "cursestone::scheduler::Task", "classcursestone_1_1scheduler_1_1Task.html", [
       [ "cursestone::scheduler::AsyncTask", "classcursestone_1_1scheduler_1_1AsyncTask.html", [
         [ "cursestone::network::CompressBatchedTask", "classcursestone_1_1network_1_1CompressBatchedTask.html", null ],
@@ -919,7 +1082,6 @@ var hierarchy =
       [ "cursestone::scheduler::CallbackTask", "classcursestone_1_1scheduler_1_1CallbackTask.html", null ]
     ] ],
     [ "cursestone::scheduler::TaskHandler", "classcursestone_1_1scheduler_1_1TaskHandler.html", null ],
-    [ "cursestone::world::generator::TerrainNoise", "structcursestone_1_1world_1_1generator_1_1TerrainNoise.html", null ],
     [ "cursestone::ThreadManager", "classcursestone_1_1ThreadManager.html", null ],
     [ "cursestone::TickSample", "structcursestone_1_1TickSample.html", null ],
     [ "cursestone::tile::Tile", "classcursestone_1_1tile_1_1Tile.html", [
@@ -930,14 +1092,18 @@ var hierarchy =
     ] ],
     [ "cursestone::event::Timings", "classcursestone_1_1event_1_1Timings.html", null ],
     [ "cursestone::event::TimingsSection", "classcursestone_1_1event_1_1TimingsSection.html", null ],
-    [ "cursestone::world::generator::object::TreeGenerator", "classcursestone_1_1world_1_1generator_1_1object_1_1TreeGenerator.html", null ],
-    [ "cursestone::world::generator::biome::TreeSpawn", "structcursestone_1_1world_1_1generator_1_1biome_1_1TreeSpawn.html", null ],
+    [ "vgen::TorchBlock", "classvgen_1_1TorchBlock.html", null ],
     [ "cursestone::world::generator::VanillaNoise", "classcursestone_1_1world_1_1generator_1_1VanillaNoise.html", null ],
+    [ "vgen::Vec2", "structvgen_1_1Vec2.html", null ],
     [ "cursestone::math::Vec3", "structcursestone_1_1math_1_1Vec3.html", null ],
+    [ "vgen::Vec3", "structvgen_1_1Vec3.html", null ],
     [ "cursestone::utils::VersionString", "classcursestone_1_1utils_1_1VersionString.html", null ],
-    [ "cursestone::world::generator::populator::VillagePathCell", "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePathCell.html", null ],
-    [ "cursestone::world::generator::populator::VillagePiecePlacement", "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePiecePlacement.html", null ],
-    [ "cursestone::world::generator::populator::VillagePlan", "structcursestone_1_1world_1_1generator_1_1populator_1_1VillagePlan.html", null ],
+    [ "vgen::VineBlock", "classvgen_1_1VineBlock.html", null ],
+    [ "vgen::WeighedRandom", "classvgen_1_1WeighedRandom.html", null ],
+    [ "vgen::WeighedRandom::WeighedRandomItem", "classvgen_1_1WeighedRandom_1_1WeighedRandomItem.html", [
+      [ "vgen::MobSpawnerData", "classvgen_1_1MobSpawnerData.html", null ]
+    ] ],
+    [ "vgen::WoodBlockTypeShim", "classvgen_1_1WoodBlockTypeShim.html", null ],
     [ "cursestone::WorkbenchManager", "classcursestone_1_1WorkbenchManager.html", null ],
     [ "cursestone::world::World", "classcursestone_1_1world_1_1World.html", null ],
     [ "cursestone::world::WorldConfig", "structcursestone_1_1world_1_1WorldConfig.html", null ],
