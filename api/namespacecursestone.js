@@ -1673,6 +1673,8 @@ var namespacecursestone =
         [ "GenerationTask", "classcursestone_1_1world_1_1generator_1_1GenerationTask.html", "classcursestone_1_1world_1_1generator_1_1GenerationTask" ],
         [ "GenerationContext", "structcursestone_1_1world_1_1generator_1_1GenerationContext.html", "structcursestone_1_1world_1_1generator_1_1GenerationContext" ],
         [ "Generator", "classcursestone_1_1world_1_1generator_1_1Generator.html", "classcursestone_1_1world_1_1generator_1_1Generator" ],
+        [ "ISpillQueue", "classcursestone_1_1world_1_1generator_1_1ISpillQueue.html", "classcursestone_1_1world_1_1generator_1_1ISpillQueue" ],
+        [ "INeighborBlockSink", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink" ],
         [ "Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", "classcursestone_1_1world_1_1generator_1_1Nether" ],
         [ "ImprovedNoise", "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html", "classcursestone_1_1world_1_1generator_1_1ImprovedNoise" ],
         [ "MersenneRandom", "classcursestone_1_1world_1_1generator_1_1MersenneRandom.html", "classcursestone_1_1world_1_1generator_1_1MersenneRandom" ],

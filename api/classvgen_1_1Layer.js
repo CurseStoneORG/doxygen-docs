@@ -9,7 +9,6 @@ var classvgen_1_1Layer =
     [ "initRandom", "classvgen_1_1Layer.html#a8b5aaa327aaf3ca631e4ad9f84d17b76", null ],
     [ "nextRandom", "classvgen_1_1Layer.html#adb5f38ea595d93b5edf6528089e1f731", null ],
     [ "mParent", "classvgen_1_1Layer.html#ae171cc9935368745ac647721e0104a24", null ],
-    [ "mRval", "classvgen_1_1Layer.html#a9a7658ed8a90543046ad8a933b81bff3", null ],
     [ "mSeed", "classvgen_1_1Layer.html#a2badc21c40c2959a1c14d43c07581a70", null ],
     [ "mSeedMixup", "classvgen_1_1Layer.html#a1fb5c76e824fa8cfd9ffa130880a578d", null ]
 ];

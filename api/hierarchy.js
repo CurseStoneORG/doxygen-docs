@@ -361,9 +361,6 @@ var hierarchy =
     [ "vgen::CauldronBlock", "classvgen_1_1CauldronBlock.html", null ],
     [ "vgen::ChunkBlockPos", "structvgen_1_1ChunkBlockPos.html", null ],
     [ "cursestone::world::ChunkLoader", "classcursestone_1_1world_1_1ChunkLoader.html", null ],
-    [ "cursestone::world::ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html", [
-      [ "cursestone::world::SimpleChunkManager", "classcursestone_1_1world_1_1SimpleChunkManager.html", null ]
-    ] ],
     [ "vgen::ChunkPos", "structvgen_1_1ChunkPos.html", null ],
     [ "cursestone::world::World::ChunkViewer", "structcursestone_1_1world_1_1World_1_1ChunkViewer.html", null ],
     [ "vgen::Color", "structvgen_1_1Color.html", null ],
@@ -726,6 +723,11 @@ var hierarchy =
     [ "std::hash<::vgen::FullBlock >", "structstd_1_1hash_3_1_1vgen_1_1FullBlock_01_4.html", null ],
     [ "std::hash<::vgen::Pos >", "structstd_1_1hash_3_1_1vgen_1_1Pos_01_4.html", null ],
     [ "vgen::ImprovedNoise", "classvgen_1_1ImprovedNoise.html", null ],
+    [ "cursestone::world::generator::INeighborBlockSink", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html", [
+      [ "cursestone::world::ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html", [
+        [ "cursestone::world::SimpleChunkManager", "classcursestone_1_1world_1_1SimpleChunkManager.html", null ]
+      ] ]
+    ] ],
     [ "cursestone::plugin::PluginManager::Info", "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html", null ],
     [ "cursestone::wizard::Installer", "classcursestone_1_1wizard_1_1Installer.html", null ],
     [ "cursestone::wizard::InstallerLang", "classcursestone_1_1wizard_1_1InstallerLang.html", null ],
@@ -738,6 +740,9 @@ var hierarchy =
     ] ],
     [ "cursestone::inventory::InventoryHolder", "classcursestone_1_1inventory_1_1InventoryHolder.html", null ],
     [ "cursestone::inventory::InventoryType", "classcursestone_1_1inventory_1_1InventoryType.html", null ],
+    [ "cursestone::world::generator::ISpillQueue", "classcursestone_1_1world_1_1generator_1_1ISpillQueue.html", [
+      [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
+    ] ],
     [ "cursestone::item::Item", "classcursestone_1_1item_1_1Item.html", [
       [ "cursestone::item::ItemArmor", "classcursestone_1_1item_1_1ItemArmor.html", [
         [ "cursestone::item::ItemDiamondBoots", "classcursestone_1_1item_1_1ItemDiamondBoots.html", null ],
