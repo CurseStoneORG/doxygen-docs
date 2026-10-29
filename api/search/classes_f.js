@@ -17,7 +17,7 @@ var searchData=
   ['pinefeature_1677',['PineFeature',['../classvgen_1_1PineFeature.html',1,'vgen']]],
   ['plainsbiome_1678',['PlainsBiome',['../classvgen_1_1PlainsBiome.html',1,'vgen']]],
   ['plane_1679',['Plane',['../classvgen_1_1Facing_1_1Plane.html',1,'vgen::Facing']]],
-  ['player_1680',['Player',['../classcursestone_1_1Player.html',1,'cursestone::Player'],['../structvgen_1_1Player.html',1,'vgen::Player']]],
+  ['player_1680',['Player',['../classcursestone_1_1Player.html',1,'cursestone::Player'],['../classvgen_1_1Player.html',1,'vgen::Player']]],
   ['playerachievementawardedevent_1681',['PlayerAchievementAwardedEvent',['../classcursestone_1_1event_1_1player_1_1PlayerAchievementAwardedEvent.html',1,'cursestone::event::player']]],
   ['playeractionpacket_1682',['PlayerActionPacket',['../classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html',1,'cursestone::network::protocol']]],
   ['playeranimationevent_1683',['PlayerAnimationEvent',['../classcursestone_1_1event_1_1player_1_1PlayerAnimationEvent.html',1,'cursestone::event::player']]],

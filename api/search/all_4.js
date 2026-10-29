@@ -5,7 +5,7 @@ var searchData=
   ['enchantment_335',['Enchantment',['../classcursestone_1_1item_1_1enchantment_1_1Enchantment.html',1,'cursestone::item::enchantment']]],
   ['enchantmententry_336',['EnchantmentEntry',['../structcursestone_1_1item_1_1enchantment_1_1EnchantmentEntry.html',1,'cursestone::item::enchantment']]],
   ['enchantmentlist_337',['EnchantmentList',['../classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html',1,'cursestone::item::enchantment']]],
-  ['entity_338',['Entity',['../classcursestone_1_1entity_1_1Entity.html',1,'cursestone::entity::Entity'],['../structvgen_1_1Entity.html',1,'vgen::Entity']]],
+  ['entity_338',['Entity',['../classcursestone_1_1entity_1_1Entity.html',1,'cursestone::entity::Entity'],['../classvgen_1_1Entity.html',1,'vgen::Entity']]],
   ['entityarmorchangeevent_339',['EntityArmorChangeEvent',['../classcursestone_1_1event_1_1entity_1_1EntityArmorChangeEvent.html',1,'cursestone::event::entity']]],
   ['entityarrow_340',['EntityArrow',['../classcursestone_1_1entity_1_1EntityArrow.html',1,'cursestone::entity']]],
   ['entityblockchangeevent_341',['EntityBlockChangeEvent',['../classcursestone_1_1event_1_1entity_1_1EntityBlockChangeEvent.html',1,'cursestone::event::entity']]],

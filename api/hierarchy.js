@@ -539,8 +539,8 @@ var hierarchy =
         [ "cursestone::entity::EntityXPOrb", "classcursestone_1_1entity_1_1EntityXPOrb.html", null ]
       ] ]
     ] ],
-    [ "vgen::Entity", "structvgen_1_1Entity.html", [
-      [ "vgen::Player", "structvgen_1_1Player.html", null ]
+    [ "vgen::Entity", "classvgen_1_1Entity.html", [
+      [ "vgen::Player", "classvgen_1_1Player.html", null ]
     ] ],
     [ "vgen::EntityClassTree", "structvgen_1_1EntityClassTree.html", null ],
     [ "vgen::EntityDefinitionIdentifier", "structvgen_1_1EntityDefinitionIdentifier.html", null ],
