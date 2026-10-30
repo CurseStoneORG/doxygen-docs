@@ -135,14 +135,14 @@ static double&#160;</td><td class="memItemRight" valign="bottom"><b>nextDouble</
 <tr class="memitem:a55262baa93c01a69af937a23b1614eaf"><td class="memItemLeft" align="right" valign="top"><a id="a55262baa93c01a69af937a23b1614eaf"></a>
 static float&#160;</td><td class="memItemRight" valign="bottom"><b>wrapDegrees</b> (float input)</td></tr>
 <tr class="separator:a55262baa93c01a69af937a23b1614eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b0635d06ee7e7d57bec403d4a9097ad"><td class="memTemplParams" colspan="2"><a id="a9b0635d06ee7e7d57bec403d4a9097ad"></a>
+<tr class="memitem:a63b48a37f94b106c31686f7384929d1a"><td class="memTemplParams" colspan="2"><a id="a63b48a37f94b106c31686f7384929d1a"></a>
 template&lt;typename T1 , typename T2 &gt; </td></tr>
-<tr class="memitem:a9b0635d06ee7e7d57bec403d4a9097ad"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>max</b> (T1 a, T2 b) -&gt; decltype(a &gt; b ? a :b)</td></tr>
-<tr class="separator:a9b0635d06ee7e7d57bec403d4a9097ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a657a77334924a51393f173e71481a2ea"><td class="memTemplParams" colspan="2"><a id="a657a77334924a51393f173e71481a2ea"></a>
+<tr class="memitem:a63b48a37f94b106c31686f7384929d1a"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>max</b> (T1 a, T2 b) -&gt; typename std::decay&lt; decltype(a &gt; b ? a :b)&gt;::type</td></tr>
+<tr class="separator:a63b48a37f94b106c31686f7384929d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b8eb213bb3edcf540adecd2191c61f8"><td class="memTemplParams" colspan="2"><a id="a9b8eb213bb3edcf540adecd2191c61f8"></a>
 template&lt;typename T1 , typename T2 &gt; </td></tr>
-<tr class="memitem:a657a77334924a51393f173e71481a2ea"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>min</b> (T1 a, T2 b) -&gt; decltype(a&lt; b ? a :b)</td></tr>
-<tr class="separator:a657a77334924a51393f173e71481a2ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b8eb213bb3edcf540adecd2191c61f8"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><b>min</b> (T1 a, T2 b) -&gt; typename std::decay&lt; decltype(a&lt; b ? a :b)&gt;::type</td></tr>
+<tr class="separator:a9b8eb213bb3edcf540adecd2191c61f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
