@@ -190,9 +190,11 @@ var hierarchy =
         ] ],
         [ "cursestone::block::BlockLiquid", "classcursestone_1_1block_1_1BlockLiquid.html", [
           [ "cursestone::block::BlockLava", "classcursestone_1_1block_1_1BlockLava.html", [
+            [ "cursestone::block::BlockLavaFlowing", "classcursestone_1_1block_1_1BlockLavaFlowing.html", null ],
             [ "cursestone::block::BlockLavaStill", "classcursestone_1_1block_1_1BlockLavaStill.html", null ]
           ] ],
           [ "cursestone::block::BlockWater", "classcursestone_1_1block_1_1BlockWater.html", [
+            [ "cursestone::block::BlockWaterFlowing", "classcursestone_1_1block_1_1BlockWaterFlowing.html", null ],
             [ "cursestone::block::BlockWaterStill", "classcursestone_1_1block_1_1BlockWaterStill.html", null ]
           ] ]
         ] ],
@@ -867,6 +869,7 @@ var hierarchy =
     [ "cursestone::world::format::leveldb::LevelDBRegistrar", "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html", null ],
     [ "cursestone::world::LightEngine", "classcursestone_1_1world_1_1LightEngine.html", null ],
     [ "vgen::LightLayer", "structvgen_1_1LightLayer.html", null ],
+    [ "cursestone::block::LiquidFlow", "classcursestone_1_1block_1_1LiquidFlow.html", null ],
     [ "cursestone::event::Listener", "classcursestone_1_1event_1_1Listener.html", null ],
     [ "cursestone::world::format::anvil::LocationEntry", "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html", null ],
     [ "cursestone::plugin::LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", null ],

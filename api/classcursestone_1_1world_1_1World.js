@@ -50,7 +50,7 @@ var classcursestone_1_1world_1_1World =
     [ "savePortals", "classcursestone_1_1world_1_1World.html#a29500e53e8677e83596233b389250052", null ],
     [ "seed", "classcursestone_1_1world_1_1World.html#a299933da0df76fdf2a1fb5c9414dce78", null ],
     [ "sendWeatherTo", "classcursestone_1_1world_1_1World.html#aa2420abb9a37767ed5401050c982a635", null ],
-    [ "setBlock", "classcursestone_1_1world_1_1World.html#a6b1dd357ddfee4606924c34031ee955a", null ],
+    [ "setBlock", "classcursestone_1_1world_1_1World.html#af19d0e99acc34eef7d8e8425cd068200", null ],
     [ "setFurnaceFlame", "classcursestone_1_1world_1_1World.html#ab5982568f10c6456e7a9bc373255f436", null ],
     [ "setSleepTicks", "classcursestone_1_1world_1_1World.html#aed2cddff1ea689d8e367a43183f50ac3", null ],
     [ "setSpawn", "classcursestone_1_1world_1_1World.html#a8472a9ee81cb175f10b15c6be154700f", null ],
