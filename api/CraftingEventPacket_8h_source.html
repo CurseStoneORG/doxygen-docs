@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('CraftingEventPacket_8h_source.html',''
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// CraftingEventPacket — client→server &quot;el jugador crafteó esto&quot; (MCPE</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// CraftingEventPacket — client-&gt;server &quot;the player crafted this&quot; (MCPE</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// protocol 84).</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Formato p84 verificado contra the reference implementation + Nukkit 2016 —</span></div>
@@ -117,11 +117,11 @@ $(document).ready(function(){initNavTree('CraftingEventPacket_8h_source.html',''
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   getByte()      windowId</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   getInt(BE)     type</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   get(16)        id (UUID binario de la receta — el mismo que el</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//                  server escribió en CraftingDataPacket)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   getInt(BE) size; getSlot() × size    (input, máx 128)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   getInt(BE) size; getSlot() × size    (output, máx 128)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//                  server wrote in CraftingDataPacket)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   getInt(BE) size; getSlot() x size    (input, max 128)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   getInt(BE) size; getSlot() x size    (output, max 128)</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// El server NUNCA encodea este packet (encode() de Genisys es vacío) —</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// The server NEVER encodes this packet (Genisys encode() is empty) —</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// el flujo se cierra con ContainerSetContentPacket windowid=0.</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>

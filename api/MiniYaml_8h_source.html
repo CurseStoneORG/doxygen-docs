@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('MiniYaml_8h_source.html',''); initResi
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   2. La API data.loadYml / data.saveYml (configs de los plugins).</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// El resultado se apila DIRECTAMENTE como valores Lua (tablas anidadas,</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// strings, números, booleanos, nil): sin tipos intermedios.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// strings, numbers, booleans, nil): no intermediate types.</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// SUBCONJUNTO SOPORTADO (documentado en PLUGINS.md):</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//</span></div>
@@ -129,16 +129,16 @@ $(document).ready(function(){initNavTree('MiniYaml_8h_source.html',''); initResi
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//   lista:                  # lista de escalares</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//     - uno</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//     - &quot;dos: con dos puntos&quot;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   mapa:                   # mapa anidado por indentación (2+ espacios)</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   map:                    # nested map via indentation (2+ spaces)</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//     sub: valor</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//   items:                  # lista de mapas:</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//     - nombre: a           #   primera clave pegada al &quot;-&quot;</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//       extra: 1            #   claves siguientes alineadas</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//   {} -&gt; tabla vacía, [] -&gt; lista vacía</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//   {} -&gt; empty table, [] -&gt; empty list</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// NO soportado: anchors (&amp;/*), multi-línea (| &gt;), flow anidado completo,</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// tabs de indentación (error claro).</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// NOT supported: anchors (&amp;/*), multi-line (| &gt;), full nested flow,</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// indentation tabs (clear error).</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;lua.hpp&gt;</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
@@ -149,8 +149,8 @@ $(document).ready(function(){initNavTree('MiniYaml_8h_source.html',''); initResi
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// Devuelve false y llena `err` si hay error de sintaxis.</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">bool</span> parseToLua(lua_State* L, <span class="keyword">const</span> std::string&amp; text, std::string&amp; err);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// Serializa la tabla en `idx` a texto YAML. Acepta también escalares en</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// la raíz (documento de un solo valor). Devuelve false y llena `err` si</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// Serializes the table at `idx` to YAML text. Also accepts scalars at</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// the root (single-value document). Returns false and fills `err` when</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// el valor no es serializable (tabla mixta rara, funciones, etc.).</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keywordtype">bool</span> fromLua(lua_State* L, <span class="keywordtype">int</span> idx, std::string&amp; out, std::string&amp; err);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>

@@ -120,10 +120,10 @@ $(document).ready(function(){initNavTree('BlockRedstoneTorch_8h_source.html','')
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// bloques con id distinto (igual que MCPE/vanilla los modelan:</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// encender/apagar una antorcha de redstone cambia su id de bloque,</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="comment">// no solo su `data`). Esta clase representa el estado apagado —</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// BlockRedstoneTorchOn (si se necesita como clase aparte) usaría</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// REDSTONE_TORCH_ON. La lógica de encendido/apagado real la maneja</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// BlockRedstoneTorchOn (if ever needed as its own class) would use</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// REDSTONE_TORCH_ON. The actual on/off logic lives in</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// RedstoneManager operando directamente sobre el id del mundo, no</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// esta jerarquía (que actualmente no está conectada al flujo de</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// this hierarchy (currently not wired into the</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// juego — ver BlockRegistry.cpp, donde nada llama a Block::get()).</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    uint8_t id()<span class="keyword"> const override </span>{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> REDSTONE_TORCH_OFF;</div>

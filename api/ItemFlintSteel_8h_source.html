@@ -111,15 +111,15 @@ $(document).ready(function(){initNavTree('ItemFlintSteel_8h_source.html',''); in
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// ItemFlintSteel.h — portado of item/FlintSteel (the reference server)</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Implementa:</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//   - Colocación of fire in blocks solids (onActivate)</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//   - Placing fire on solid blocks (onActivate)</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   - lit of the portal of the Nether about a frame of obsidian</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//     (interior of 2x3 until 21x21, in the axis X or in the axis Z)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   - Degradación of durability (2 points by use in survival)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   - Durability loss (2 points per use in survival)</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Diferencias with the original:</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   - onActivate() receives World* + player* + coordinates enteras instead of</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//     objetos Block with position embebida.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   - the inserción of blocks portal uses World::setBlock(x,and,z, portal, meta).</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   - Portal block insertion uses World::setBlock(x,y,z, portal, meta).</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     BlockPortal (id=90 in MCPE 0.15.x) must estar registrado in</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//     Block::registry().</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   - the durability is saves in the field `meta` of the ItemStack (mirrors the reference server</span></div>
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('ItemFlintSteel_8h_source.html',''); in
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// durability máxima: 65 usos (just like the reference server MCPE 0.15.x)</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// max durability: 65 uses (like the reference MCPE 0.15.x)</span></div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> constexpr uint8_t MAX_DURABILITY = 64;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// point of entrada main — call from player::handleBlockPlace()</span></div>
@@ -162,21 +162,21 @@ $(document).ready(function(){initNavTree('ItemFlintSteel_8h_source.html',''); in
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">//</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Mirrors: FlintSteel::onActivate(level, player, block, target, face, ...)</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Parámetros:</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Parameters:</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//   level         — world activo</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//   player        — player that activó the ítem</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">//   player        — player who activated the item</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">//   bx,by,bz      — coordinates of the block AIR in the cara clicked</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//   tx,ty,tz      — coordinates of the block TARGET (that which recibió the click)</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//   tx,ty,tz      — coordinates of the TARGET block (the clicked one)</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">//   face          — cara of the target (0=below, 1=above, 2-5=laterales)</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">//</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// returns true if is realizó some action (propagando the respuesta to the client).</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// returns true when some action was performed (the response is sent to the client).</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> onActivate(<a class="code" href="classcursestone_1_1world_1_1World.html">world::World</a>* world, <a class="code" href="classcursestone_1_1Player.html">Player</a>* player, int32_t bx, int32_t by,</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                           int32_t bz,                         <span class="comment">// block AIR</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                           int32_t tx, int32_t ty, int32_t tz, <span class="comment">// block target</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                           uint8_t face);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// applies 2 points of damage to the ítem in mano of the player (survival only).</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// applies 2 damage points to the player&#39;s held item (survival only).</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// mirrors: useOn(block, 2)</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> applyDurability(<a class="code" href="classcursestone_1_1Player.html">Player</a>* player);</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>

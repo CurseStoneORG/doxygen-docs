@@ -109,18 +109,18 @@ $(document).ready(function(){initNavTree('EventPriority_8h_source.html',''); ini
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// EventPriority.h — orden en que se llama a los listeners de un mismo</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// evento. Las prioridades más bajas se ejecutan primero, dejando a las</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// más altas la última palabra sobre el resultado del evento.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// event. Lower priorities run first, letting higher ones have the last</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// word on the event&#39;s outcome.</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Antes de este cambio este archivo NO EXISTÍA aunque EventHandler.h</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// ya lo incluía (`#include &quot;EventPriority.h&quot;`) — es decir, el sistema</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Before this change this file DID NOT EXIST even though EventHandler.h</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// already included it — meaning the system</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// de eventos no compilaba en cuanto algo incluyera EventHandler.h.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Orden de llamada: LOWEST -&gt; LOW -&gt; NORMAL -&gt; HIGH -&gt; HIGHEST -&gt; MONITOR</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Los listeners MONITOR se usan solo para observar el resultado final:</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// se ejecutan últimos, después de que cualquier otra prioridad haya</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// tenido oportunidad de cancelar o modificar el evento, y no deberían</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// run last, after every other priority had a chance to cancel or modify</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// the event, and should not</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// alterar el estado del evento ellos mismos.</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('EventPriority_8h_source.html',''); ini
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    MONITOR = 5,</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// Número de slots de prioridad — usado por HandlerList para tamañar</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// Number of priority slots — used by HandlerList to size</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// su array de buckets. Mantener en sync con el enum de arriba.</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;constexpr <span class="keywordtype">int</span> kEventPriorityCount = 6;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>

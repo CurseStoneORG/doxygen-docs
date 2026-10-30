@@ -118,23 +118,23 @@ $(document).ready(function(){initNavTree('BlockOrientation_8h_source.html',''); 
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   Escaleras        BlockStairs.place      faces {2,1,3,0} sobre el cuadrante E,W,S,N + bit 0x04 invertida</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   Puerta           BlockDoor.place        faces {1,2,3,0} + bit bisagra 0x01 en la mitad superior</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   Pistón           (uso previo del proyecto) {3,4,2,5}</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   Piston           (project&#39;s earlier scheme) {3,4,2,5}</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   Horno/Cofre      BlockFurnaceBurning / BlockChest  faces {2,5,3,4}</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//   Dispensador      BlockDispenser         cara opuesta a la de click (index 0..5)</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//   Hopper           BlockHopper            cara opuesta; UP colapsa a DOWN (0)</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   Troncos/Cuarzo   BlockWood / BlockQuartz  eje: Y=0/4, Z=8, X=4 según la cara de click</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   Logs/Quartz      BlockWood / BlockQuartz  axis: Y=0/4, Z=8, X=4 per clicked face</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//   Calabaza         BlockPumpkin           cuadrante OPUESTO al del jugador (dan asco)</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//   Repeater         BlockRedstoneDiode     cuadrante OPUESTO al del jugador</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//   Trampilla        BlockTrapdoor.place    faces {2,1,3,0} + bit 0x04 (arriba)</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//   Escalera de mano BlockLadder.place      metadata = cara clickeada (2..5)</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//   Antorcha         BlockTorch.place       top→5; N:4, S:3, W:2, E:1</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//   Botón            BlockButton.place      metadata = cara clickeada (2..5)</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//   Button           BlockButton.place      metadata = clicked face (2..5)</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   Palanca          BlockLever (LeverOrientation.forFacings)</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//   Cartel de pared  BlockSignPost.place    metadata = cara clickeada (2..5)</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//   Vid              BlockVine.place        bit por cara: N=1, S=4, E=8, W=2</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//   Yunque           BlockAnvil.place       faces {1,2,3,0} (eje este-oeste por defecto)</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Para el índice de cuadrante se usa la misma formula yaw→cuadrante que</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// The quadrant index uses the same yaw→quadrant formula as</span></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// ya aplicaba el proyecto para puertas y pistones, asi ambos sistemas</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// quedan alineados y los mapeos son consistentes entre si.</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#pragma once</span></div>
@@ -163,7 +163,7 @@ $(document).ready(function(){initNavTree('BlockOrientation_8h_source.html',''); 
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Cara clickeada (0..5) → metadata &quot;de cara&quot; para bloques pegados a</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// paredes: 2=norte, 3=sur, 4=oeste, 5=este. Cara arriba/abajo → 0</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// (aunque en la práctica el caller ya filtra esas caras).</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// (although in practice the caller already filters those faces).</span></div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">static</span> uint8_t faceIndexToMeta(uint8_t face) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t m[6] = {0, 0, 2, 3, 4, 5};</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> (face &lt; 6) ? m[face] : 0;</div>
@@ -176,26 +176,26 @@ $(document).ready(function(){initNavTree('BlockOrientation_8h_source.html',''); 
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">return</span> (face &lt; 6) ? m[face] : 5;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Vid: cara de click → bit de orientación. N→0x01, S→0x04, E→0x08, W→0x02.</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// Vine: clicked face → orientation bit. N→0x01, S→0x04, E→0x08, W→0x02.</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> uint8_t vineMeta(uint8_t face) {</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t m[6] = {0, 0, 1, 4, 2, 8};</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span> (face &lt; 6) ? m[face] : 0;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Escalera/botón/cartel-pared: metadata = cara clickeada tal cual.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Ladder/button/wall sign: metadata = clicked face as-is.</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">static</span> uint8_t ladderMeta(uint8_t face) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> (face &gt;= 2 &amp;&amp; face &lt;= 5) ? face : 2;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Troncos / cuarzo / heno: eje según la cara de click.</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Y (cara up/down) = sin rotación, Z (caras N/S) = 0x08, X (E/W) = 0x04.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// Logs / quartz / hay: axis per clicked face.</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Y (up/down face) = no rotation, Z (N/S faces) = 0x08, X (E/W) = 0x04.</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// `meta` conserva los bits bajos (tipo de madera/variante).</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keyword">static</span> uint8_t axisMeta(uint8_t face, uint8_t meta) {</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t bits[6] = {0, 0, 0x08, 0x08, 0x04, 0x04};</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">return</span> (uint8_t)((meta &amp; 0x03) | ((face &lt; 6) ? bits[face] : 0));</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// Escalera (stairs): cuadrante del jugador → 2 bits de orientación.</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// Stairs: player quadrant → 2 orientation bits.</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">static</span> uint8_t stairsMeta(uint8_t quadrantBits) {</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t m[4] = {2, 1, 3, 0}; <span class="comment">// E,W,S,N</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> m[quadrantBits &amp; 0x03];</div>
@@ -207,13 +207,13 @@ $(document).ready(function(){initNavTree('BlockOrientation_8h_source.html',''); 
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        <span class="keywordflow">return</span> m[quadrantBits &amp; 0x03];</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Puerta: cuadrante → orientación {1,2,3,0} (Nukkit BlockDoor).</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// Door: quadrant → orientation {1,2,3,0} (Nukkit BlockDoor).</span></div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">static</span> uint8_t doorMeta(uint8_t quadrantBits) {</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t m[4] = {1, 2, 3, 0};</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">return</span> m[quadrantBits &amp; 0x03];</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Pistón: cuadrante → facing {3,4,2,5} (esquema propio ya usado).</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Piston: quadrant → facing {3,4,2,5} (the project&#39;s earlier scheme).</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">static</span> uint8_t pistonMeta(uint8_t quadrantBits) {</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> uint8_t m[4] = {3, 4, 2, 5};</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> m[quadrantBits &amp; 0x03];</div>

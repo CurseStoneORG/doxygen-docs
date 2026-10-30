@@ -131,7 +131,7 @@ $(document).ready(function(){initNavTree('SimpleCommandMap_8h_source.html',''); 
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// Borra todos los comandos cuyo Command::owner() == owner (los</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">// LuaCommand de un plugin, antes de que /plugins reload destruya su</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// lua_State). Si un comando borrado habia pisado a otro (override),</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// el desplazado se restaura en su lugar. Devuelve cuántos borró.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// the displaced one is restored in place. Returns how many were removed.</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">size_t</span> unregisterByOwner(<span class="keywordtype">void</span>* owner) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">size_t</span> size()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> commands_.size();</div>

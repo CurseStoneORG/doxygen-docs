@@ -120,9 +120,9 @@ $(document).ready(function(){initNavTree('BlockFormEvent_8h_source.html',''); in
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>cursestone::event::block {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// NOTA: no hereda Cancellable directamente — BlockGrowEvent ya lo hace.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Heredarlo de nuevo aquí crearía un diamante no-virtual (dos</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// Inheriting it again here would create a non-virtual diamond (two</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// subobjetos Cancellable), lo que vuelve ambiguos isCancelled()/</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// setCancelled() en tiempo de compilación.</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// setCancelled() at compile time.</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1block_1_1BlockFormEvent.html">   38</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1block_1_1BlockFormEvent.html">BlockFormEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1block_1_1BlockGrowEvent.html">BlockGrowEvent</a> {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1block_1_1BlockFormEvent.html">BlockFormEvent</a>(int32_t bx, int32_t by, int32_t bz, int32_t nsx, int32_t nsy, int32_t nsz)</div>

@@ -139,14 +139,14 @@ $(document).ready(function(){initNavTree('Recipe_8h_source.html',''); initResiza
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">return</span> result_;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// Shaped recipe: 3x3 grid of item ids (0 = no requirement),</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// zero-padded alrededor del patrón Width x Height real.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// zero-padded around the real Width x Height pattern.</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> setGrid(<span class="keyword">const</span> std::array&lt;uint16_t, 9&gt;&amp; g) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        grid_ = g;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">const</span> std::array&lt;uint16_t, 9&gt;&amp; grid()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> grid_;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Meta/damage requerido por celda (-1 = cualquier damage). Índices</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// Required meta/damage per cell (-1 = any damage). Indices</span></div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// alineados 1:1 con grid().</span></div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> setGridMeta(<span class="keyword">const</span> std::array&lt;int16_t, 9&gt;&amp; m) {</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        grid_meta_ = m;</div>
@@ -169,9 +169,9 @@ $(document).ready(function(){initNavTree('Recipe_8h_source.html',''); initResiza
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> std::vector&lt;int16_t&gt;&amp; ingredientMeta()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> ingredient_meta_;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Bounding box del patrón shaped tal como se registro (1..3). Para</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Bounding box of the shaped pattern as registered (1..3). For</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// matchShaped basta grid(); width/height se guardan para el</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// CraftingDataPacket (que serializa el patrón SIN padding,</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// CraftingDataPacket (which serializes the pattern WITHOUT padding,</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Width x Height celdas exactas).</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> setSize(<span class="keywordtype">int</span> w, <span class="keywordtype">int</span> h) {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        width_ = w;</div>
@@ -199,7 +199,7 @@ $(document).ready(function(){initNavTree('Recipe_8h_source.html',''); initResiza
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// Los 16 bytes crudos del UUID de receta que viaja en</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// CraftingDataPacket y vuelve en CraftingEventPacket (mismo orden</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// que el servidor de referencia UUID::toBinary). El cliente lo ecoa tal cual, así que el</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// the reference server&#39;s UUID::toBinary). The client echoes it back verbatim, so the</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// match contra recetas se hace por estos bytes, no por uuid().</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> setUuidBytes(<span class="keyword">const</span> std::array&lt;uint8_t, 16&gt;&amp; b) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        uuid_bytes_ = b;</div>

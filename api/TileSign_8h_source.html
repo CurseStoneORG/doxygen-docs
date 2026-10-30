@@ -136,26 +136,27 @@ $(document).ready(function(){initNavTree('TileSign_8h_source.html',''); initResi
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        lines_[idx] = std::move(text);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        dirty_ = <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// UUID del jugador que colocó el cartel (NBT &quot;Creator&quot;). handleSignEdit</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// lo compara contra el UUID del jugador para autorizar la edición,</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// igual que Genisys (the sign&#39;s stored creator id is compared with the player&#39;s unique id).</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">const</span> std::string&amp; creator()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> creator_;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> setCreator(std::string c) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        creator_ = std::move(c);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        dirty_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> spawnTo(<span class="keywordtype">void</span>* <span class="comment">/*player*/</span>)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> writeNBT(<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* tag) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> readNBT(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* tag) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    std::array&lt;std::string, 4&gt; lines_;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::string creator_;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// UUID of the player who placed the sign (NBT &quot;Creator&quot;).</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// handleSignEdit compares it against the player&#39;s UUID to authorize</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// the edit,</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="comment">// igual que Genisys (the sign&#39;s stored creator id is compared with the player&#39;s unique id).</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> std::string&amp; creator()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> creator_;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> setCreator(std::string c) {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        creator_ = std::move(c);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        dirty_ = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> spawnTo(<span class="keywordtype">void</span>* <span class="comment">/*player*/</span>)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> writeNBT(<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* tag) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> readNBT(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* tag) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::array&lt;std::string, 4&gt; lines_;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::string creator_;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Spawnable_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Spawnable.html">cursestone::tile::Spawnable</a></div><div class="ttdef"><b>Definition:</b> Spawnable.h:28</div></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1TileSign_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1TileSign.html">cursestone::tile::TileSign</a></div><div class="ttdef"><b>Definition:</b> TileSign.h:31</div></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Tile_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Tile.html">cursestone::tile::Tile</a></div><div class="ttdef"><b>Definition:</b> Tile.h:47</div></div>

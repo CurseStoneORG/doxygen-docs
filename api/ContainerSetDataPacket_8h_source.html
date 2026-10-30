@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('ContainerSetDataPacket_8h_source.html'
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ContainerSetDataPacket — server→client &quot;cambió una propiedad de un</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// ContainerSetDataPacket — server-&gt;client &quot;a container property</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// contenedor abierto&quot; (MCPE protocol 84).</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Formato p84 verificado contra the reference implementation + Nukkit 2016:</span></div>
@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('ContainerSetDataPacket_8h_source.html'
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// Se usa para la UI del horno: flecha de progreso (property 0) y</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// llama de fuego (property 1), solo mientras el jugador lo tiene</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// abierto. Sin este packet el cliente NO muestra el progreso de</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// fundición aunque el horno esté trabajando.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// smelting even while the furnace is working.</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;DataPacket.h&quot;</span></div>
@@ -136,7 +136,7 @@ $(document).ready(function(){initNavTree('ContainerSetDataPacket_8h_source.html'
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> CONTAINER_SET_DATA_PACKET;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Properties (vanilla): 0 = progreso de fundición (0..200),</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// Properties (vanilla): 0 = smelt progress (0..200),</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// 1 = remaining fuel burn (0..200). El cliente escala ambos a su</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// barra/llama visual.</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> PROPERTY_FURNACE_TICKS = 0;</div>

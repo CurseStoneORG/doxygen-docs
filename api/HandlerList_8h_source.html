@@ -113,79 +113,74 @@ $(document).ready(function(){initNavTree('HandlerList_8h_source.html',''); initR
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// tipo de evento tiene su propio HandlerList, administrado por</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// EventManager (ver EventManager.h).</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// CONTRATO DE ESTABILIDAD (esto reemplaza una versión anterior que</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// nunca llegó a conectarse al resto del código y tenía dos bugs</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// latentes: dispatch() recibía el evento como `const Event&amp;`, por lo</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// que ningún listener podía llamar jamás a setCancelled(); y los</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// campos priority/ignoreCancelled de EventHandler.h no se consultaban</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// en ningún lado):</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//   - dispatch() recibe una Event&amp; NO const, para que los listeners</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//     puedan leer Y modificar el evento (cancelarlo, reescribir un</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//     mensaje de chat, etc).</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//   - Los listeners corren en orden de EventPriority (LOWEST primero,</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//     MONITOR último), así que las prioridades altas ven el resultado</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//     de las bajas, y los listeners MONITOR siempre ven el estado final.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//   - Un listener registrado con ignoreCancelled=true se salta en</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//     cuanto el evento ya fue cancelado por un listener anterior —</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//     replica RegisteredListener::callEvent() del servidor de referencia.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//   - Un listener que lanza una excepción se captura, se loguea y se</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//     salta: un handler roto jamás puede tumbar el tick loop ni</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//     bloquear al resto de los handlers (misma doctrina de estabilidad</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//     que ServerScheduler post-incidente del fire-cascade).</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//   - Todas las mutaciones (registrar/desregistrar) están protegidas</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//     por mutex, así que puede usarse desde cualquier hilo. dispatch()</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//     toma una copia (snapshot) bajo el lock y ejecuta los callbacks</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//     fuera de él, para que un handler pueda registrar/desregistrar</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//     listeners (incluso para este mismo tipo de evento) sin causar</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//     un deadlock contra sí mismo.</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &quot;Event.h&quot;</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;EventPriority.h&quot;</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &quot;RegisteredListener.h&quot;</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">namespace </span>cursestone::event {</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1HandlerList.html">   66</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1HandlerList.html">HandlerList</a> {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Registra `callback` en la prioridad dada. Devuelve un id de</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// registro utilizable con unregister(). Devuelve 0 si callback</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// está vacío (nada que registrar).</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    uint64_t registerListener(<span class="keywordtype">void</span>* owner, EventPriority priority, <span class="keywordtype">bool</span> ignoreCancelled,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                              std::function&lt;<span class="keywordtype">void</span>(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp;)&gt; callback);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Elimina un único registro por id. true si se encontró.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> unregister(uint64_t <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Elimina todos los registros cuyo `owner` coincida. Devuelve</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// cuántos se eliminaron. Se usa cuando un Listener se destruye.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">size_t</span> unregisterOwner(<span class="keywordtype">void</span>* owner);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// Elimina absolutamente todos los registros.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> unregisterAll();</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Ejecuta cada listener registrado para `event`, en orden de</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// prioridad, saltando los ignoreCancelled una vez el evento está</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// cancelado. Segura de llamar mientras otros hilos registran o</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// desregistran listeners concurrentemente.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> dispatch(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp; event) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">size_t</span> size() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">mutable</span> std::mutex mtx_;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    std::array&lt;std::vector&lt;RegisteredListener&gt;, kEventPriorityCount&gt; slots_;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint64_t next_id_ = 1;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;};</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;} <span class="comment">// namespace cursestone::event</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// STABILITY CONTRACT (this replaces an earlier version that never got</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// wired to the rest of the code and had two latent bugs: dispatch()</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// took the event as `const Event&amp;`, so no listener could ever call</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// setCancelled(); and EventHandler.h&#39;s priority/ignoreCancelled fields</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// were never consulted anywhere):</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   - dispatch() takes a non-const Event&amp; so listeners can both read</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     and modify the event (cancel it, rewrite a chat message, etc).</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//   - Listeners run in EventPriority order (LOWEST first, MONITOR</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//     last), so higher priorities see what lower ones produced and</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     MONITOR listeners always see the final state.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//   - A listener registered with ignoreCancelled=true is skipped as</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//     soon as the event was already cancelled by an earlier listener —</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//     replica RegisteredListener::callEvent() del servidor de referencia.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//   - A listener that throws is caught, logged and skipped: a broken</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//     handler can never take down the tick loop nor block the rest</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">//     (same stability doctrine as the post-fire-cascade scheduler).</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//   - All mutations (register/unregister) are mutex-protected, so it</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//     can be used from any thread. dispatch() snapshots under the lock</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//     and runs callbacks outside of it, so a handler can (un)register</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//     listeners without deadlocking against itself.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;Event.h&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#include &quot;EventPriority.h&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;RegisteredListener.h&quot;</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">namespace </span>cursestone::event {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1HandlerList.html">   61</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1HandlerList.html">HandlerList</a> {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Registra `callback` en la prioridad dada. Devuelve un id de</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="comment">// registro utilizable con unregister(). Devuelve 0 si callback</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">// is empty (nothing to register).</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    uint64_t registerListener(<span class="keywordtype">void</span>* owner, EventPriority priority, <span class="keywordtype">bool</span> ignoreCancelled,</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                              std::function&lt;<span class="keywordtype">void</span>(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp;)&gt; callback);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Removes a single registration by id. true if found.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> unregister(uint64_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// Elimina todos los registros cuyo `owner` coincida. Devuelve</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// how many were removed. Used when a Listener is destroyed.</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">size_t</span> unregisterOwner(<span class="keywordtype">void</span>* owner);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// Elimina absolutamente todos los registros.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> unregisterAll();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Ejecuta cada listener registrado para `event`, en orden de</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// priority, skipping ignoreCancelled handlers once the event is</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// cancelado. Segura de llamar mientras otros hilos registran o</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// desregistran listeners concurrentemente.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> dispatch(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp; event) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">size_t</span> size() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">mutable</span> std::mutex mtx_;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    std::array&lt;std::vector&lt;RegisteredListener&gt;, kEventPriorityCount&gt; slots_;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    uint64_t next_id_ = 1;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace cursestone::event</span></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Event_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Event.html">cursestone::event::Event</a></div><div class="ttdef"><b>Definition:</b> Event.h:29</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1HandlerList_html"><div class="ttname"><a href="classcursestone_1_1event_1_1HandlerList.html">cursestone::event::HandlerList</a></div><div class="ttdef"><b>Definition:</b> HandlerList.h:66</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1HandlerList_html"><div class="ttname"><a href="classcursestone_1_1event_1_1HandlerList.html">cursestone::event::HandlerList</a></div><div class="ttdef"><b>Definition:</b> HandlerList.h:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

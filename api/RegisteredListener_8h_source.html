@@ -108,15 +108,15 @@ $(document).ready(function(){initNavTree('RegisteredListener_8h_source.html','')
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// RegisteredListener.h — una suscripción individual de un listener a</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// RegisteredListener.h — a single listener subscription to</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// un HandlerList (es decir, a UN tipo concreto de evento). Guarda el</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// callback type-erased junto con los metadatos necesarios para el</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// despacho ordenado por prioridad y para poder darse de baja en bloque.</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// `owner` identifica quién registró este callback (normalmente el</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// `owner` identifies who registered this callback (usually the</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// puntero `this` de un objeto que implementa Listener, pero puede ser</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// cualquier dirección estable que el llamador controle). El sistema de</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// eventos NUNCA lo desreferencia: solo lo usa como clave de comparación</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// any stable address the caller controls. The event system NEVER</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// dereferences it: it is only used as a comparison key</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// para unregisterOwner()/unlistenAll(), de modo que cuando un objeto se</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// destruye pueda limpiar todas sus suscripciones sin dejar callbacks</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// colgantes que apunten a memoria liberada.</span></div>

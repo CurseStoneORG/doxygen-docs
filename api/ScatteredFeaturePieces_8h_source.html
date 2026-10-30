@@ -86,108 +86,131 @@ $(document).ready(function(){initNavTree('ScatteredFeaturePieces_8h_source.html'
 <div class="title">ScatteredFeaturePieces.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;vgen/v1/LargeFeature.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;vgen/Vanilla.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;vgen/Vanilla.h&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;StructureStart.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;StructurePiece.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>vgen {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classvgen_1_1ScatteredFeaturePiece.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1StructurePiece.html">StructurePiece</a> {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">int</span> mWidth, mHeight, mDepth;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordtype">int</span> mHeightPosition = -1;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a>(<span class="keywordtype">int</span> west, <span class="keywordtype">int</span> floor, <span class="keywordtype">int</span> north, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> depth);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAdditionalSaveData(<a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readAdditionalSaveData(<span class="keyword">const</span> <a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordtype">bool</span> updateAverageGroundHeight(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a> *region, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB, <span class="keywordtype">int</span> offset);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;};</div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> _____                     _____ _</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">/  __ \                   /  ___| |</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">| /  \/_   _ _ __ ___  ___\ `--.| |_ ___  _ __   ___</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">| |   | | | | &#39;__/ __|/ _ \`--. \ __/ _ \| &#39;_ \ / _ \</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">| \__/\ |_| | |  \__ \  __/\__/ / || (_) | | | |  __/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> \____/\__,_|_|  |___/\___\____/ \__\___/|_| |_|\___|</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * CurseStone | Open Source Server Software</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Copyright (C) 2026 CurseStoneTeam</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Developed by CurseStoneTeam.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Built for an open and extensible Minecraft server ecosystem.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Licensed under the GNU Lesser General Public License v3.0 or later.</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * You may study, modify, and redistribute this software under its license.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * License: https://www.gnu.org/licenses/lgpl-3.0.html</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classvgen_1_1DesertPyramidPiece.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1DesertPyramidPiece.html">DesertPyramidPiece</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a> {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">private</span>: </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">bool</span> mHasPlacedChest[4];</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="classvgen_1_1DesertPyramidPiece.html">DesertPyramidPiece</a>(<span class="keywordtype">int</span> west, <span class="keywordtype">int</span> north);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> postProcess(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* region, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        StructurePieceType getType()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">return</span> StructurePieceType::DesertPyramid;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">protected</span>:      </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAdditionalSaveData(<a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readAdditionalSaveData(<span class="keyword">const</span> <a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;vgen/v1/LargeFeature.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;vgen/Vanilla.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;vgen/Vanilla.h&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;StructureStart.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;StructurePiece.h&quot;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>vgen {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classvgen_1_1ScatteredFeaturePiece.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1StructurePiece.html">StructurePiece</a> {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> mWidth, mHeight, mDepth;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">int</span> mHeightPosition = -1;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a>(<span class="keywordtype">int</span> west, <span class="keywordtype">int</span> floor, <span class="keywordtype">int</span> north, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height, <span class="keywordtype">int</span> depth);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="classvgen_1_1MossStoneSelector.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1MossStoneSelector.html">MossStoneSelector</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1BlockSelector.html">BlockSelector</a> {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> next(<a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keywordtype">int</span> worldX, <span class="keywordtype">int</span> worldY, <span class="keywordtype">int</span> worldZ, <span class="keywordtype">bool</span> isEdge) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;};</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classvgen_1_1JunglePyramidPiece.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1JunglePyramidPiece.html">JunglePyramidPiece</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> mHasPlacedMainChest;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">bool</span> mHasPlacedHiddenChest;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> mHasPlacedTrap[2];</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="classvgen_1_1JunglePyramidPiece.html">JunglePyramidPiece</a>(<span class="keywordtype">int</span> west, <span class="keywordtype">int</span> north);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> postProcess(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* region, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    StructurePieceType getType()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span> StructurePieceType::JunglePyramid;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAdditionalSaveData(<a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readAdditionalSaveData(<span class="keyword">const</span> <a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">bool</span> updateAverageGroundHeight(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a> *region, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB, <span class="keywordtype">int</span> offset);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;};</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classvgen_1_1DesertPyramidPiece.html">   47</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1DesertPyramidPiece.html">DesertPyramidPiece</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">private</span>: </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">bool</span> mHasPlacedChest[4];</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="classvgen_1_1DesertPyramidPiece.html">DesertPyramidPiece</a>(<span class="keywordtype">int</span> west, <span class="keywordtype">int</span> north);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> postProcess(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* region, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        StructurePieceType getType()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span> StructurePieceType::DesertPyramid;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">static</span> <a class="code" href="classvgen_1_1MossStoneSelector.html">MossStoneSelector</a> stoneSelector;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAdditionalSaveData(<a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> readAdditionalSaveData(<span class="keyword">const</span> <a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classvgen_1_1SwamplandHut.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1SwamplandHut.html">SwamplandHut</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a> {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> mSpawnedWitch = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="classvgen_1_1SwamplandHut.html">SwamplandHut</a>(<span class="keywordtype">int</span> west, <span class="keywordtype">int</span> north);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    StructurePieceType getType()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> StructurePieceType::WitchHut;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAdditionalSaveData(<a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> readAdditionalSaveData(<span class="keyword">const</span> <a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> placeCauldron(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* region, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">protected</span>:      </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAdditionalSaveData(<a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> readAdditionalSaveData(<span class="keyword">const</span> <a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classvgen_1_1MossStoneSelector.html">   64</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1MossStoneSelector.html">MossStoneSelector</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1BlockSelector.html">BlockSelector</a> {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> next(<a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keywordtype">int</span> worldX, <span class="keywordtype">int</span> worldY, <span class="keywordtype">int</span> worldZ, <span class="keywordtype">bool</span> isEdge) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classvgen_1_1JunglePyramidPiece.html">   69</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1JunglePyramidPiece.html">JunglePyramidPiece</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a> {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">bool</span> mHasPlacedMainChest;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> mHasPlacedHiddenChest;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">bool</span> mHasPlacedTrap[2];</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classvgen_1_1JunglePyramidPiece.html">JunglePyramidPiece</a>(<span class="keywordtype">int</span> west, <span class="keywordtype">int</span> north);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> postProcess(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* region, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    StructurePieceType getType()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> StructurePieceType::JunglePyramid;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> postProcess(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* region, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> postProcessMobsAt(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* level, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">static</span> <a class="code" href="classvgen_1_1MossStoneSelector.html">MossStoneSelector</a> stoneSelector;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAdditionalSaveData(<a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> readAdditionalSaveData(<span class="keyword">const</span> <a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;};</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// namespace vgen</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="ttc" id="aclassvgen_1_1BlockSelector_html"><div class="ttname"><a href="classvgen_1_1BlockSelector.html">vgen::BlockSelector</a></div><div class="ttdef"><b>Definition:</b> StructurePiece.h:24</div></div>
-<div class="ttc" id="aclassvgen_1_1BlockSource_html"><div class="ttname"><a href="classvgen_1_1BlockSource.html">vgen::BlockSource</a></div><div class="ttdef"><b>Definition:</b> VgenWorld.h:190</div></div>
-<div class="ttc" id="aclassvgen_1_1BoundingBox_html"><div class="ttname"><a href="classvgen_1_1BoundingBox.html">vgen::BoundingBox</a></div><div class="ttdef"><b>Definition:</b> BoundingBox.h:13</div></div>
-<div class="ttc" id="aclassvgen_1_1CompoundTag_html"><div class="ttname"><a href="classvgen_1_1CompoundTag.html">vgen::CompoundTag</a></div><div class="ttdef"><b>Definition:</b> VgenTags.h:32</div></div>
-<div class="ttc" id="aclassvgen_1_1DesertPyramidPiece_html"><div class="ttname"><a href="classvgen_1_1DesertPyramidPiece.html">vgen::DesertPyramidPiece</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:24</div></div>
-<div class="ttc" id="aclassvgen_1_1JunglePyramidPiece_html"><div class="ttname"><a href="classvgen_1_1JunglePyramidPiece.html">vgen::JunglePyramidPiece</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:46</div></div>
-<div class="ttc" id="aclassvgen_1_1MossStoneSelector_html"><div class="ttname"><a href="classvgen_1_1MossStoneSelector.html">vgen::MossStoneSelector</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:41</div></div>
-<div class="ttc" id="aclassvgen_1_1Random_html"><div class="ttname"><a href="classvgen_1_1Random.html">vgen::Random</a></div><div class="ttdef"><b>Definition:</b> Random.h:26</div></div>
-<div class="ttc" id="aclassvgen_1_1ScatteredFeaturePiece_html"><div class="ttname"><a href="classvgen_1_1ScatteredFeaturePiece.html">vgen::ScatteredFeaturePiece</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:11</div></div>
-<div class="ttc" id="aclassvgen_1_1StructurePiece_html"><div class="ttname"><a href="classvgen_1_1StructurePiece.html">vgen::StructurePiece</a></div><div class="ttdef"><b>Definition:</b> StructurePiece.h:73</div></div>
-<div class="ttc" id="aclassvgen_1_1SwamplandHut_html"><div class="ttname"><a href="classvgen_1_1SwamplandHut.html">vgen::SwamplandHut</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:67</div></div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="classvgen_1_1SwamplandHut.html">   90</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1SwamplandHut.html">SwamplandHut</a> : <span class="keyword">public</span> <a class="code" href="classvgen_1_1ScatteredFeaturePiece.html">ScatteredFeaturePiece</a> {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> mSpawnedWitch = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="classvgen_1_1SwamplandHut.html">SwamplandHut</a>(<span class="keywordtype">int</span> west, <span class="keywordtype">int</span> north);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    StructurePieceType getType()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">return</span> StructurePieceType::WitchHut;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> addAdditionalSaveData(<a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> readAdditionalSaveData(<span class="keyword">const</span> <a class="code" href="classvgen_1_1CompoundTag.html">CompoundTag</a>&amp; tag) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> placeCauldron(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* region, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> postProcess(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* region, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> postProcessMobsAt(<a class="code" href="classvgen_1_1BlockSource.html">BlockSource</a>* level, <a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random, <span class="keyword">const</span> <a class="code" href="classvgen_1_1BoundingBox.html">BoundingBox</a>&amp; chunkBB) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;} <span class="comment">// namespace vgen</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="ttc" id="aclassvgen_1_1BlockSelector_html"><div class="ttname"><a href="classvgen_1_1BlockSelector.html">vgen::BlockSelector</a></div><div class="ttdef"><b>Definition:</b> StructurePiece.h:47</div></div>
+<div class="ttc" id="aclassvgen_1_1BlockSource_html"><div class="ttname"><a href="classvgen_1_1BlockSource.html">vgen::BlockSource</a></div><div class="ttdef"><b>Definition:</b> VgenWorld.h:192</div></div>
+<div class="ttc" id="aclassvgen_1_1BoundingBox_html"><div class="ttname"><a href="classvgen_1_1BoundingBox.html">vgen::BoundingBox</a></div><div class="ttdef"><b>Definition:</b> BoundingBox.h:36</div></div>
+<div class="ttc" id="aclassvgen_1_1CompoundTag_html"><div class="ttname"><a href="classvgen_1_1CompoundTag.html">vgen::CompoundTag</a></div><div class="ttdef"><b>Definition:</b> VgenTags.h:49</div></div>
+<div class="ttc" id="aclassvgen_1_1DesertPyramidPiece_html"><div class="ttname"><a href="classvgen_1_1DesertPyramidPiece.html">vgen::DesertPyramidPiece</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:47</div></div>
+<div class="ttc" id="aclassvgen_1_1JunglePyramidPiece_html"><div class="ttname"><a href="classvgen_1_1JunglePyramidPiece.html">vgen::JunglePyramidPiece</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:69</div></div>
+<div class="ttc" id="aclassvgen_1_1MossStoneSelector_html"><div class="ttname"><a href="classvgen_1_1MossStoneSelector.html">vgen::MossStoneSelector</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:64</div></div>
+<div class="ttc" id="aclassvgen_1_1Random_html"><div class="ttname"><a href="classvgen_1_1Random.html">vgen::Random</a></div><div class="ttdef"><b>Definition:</b> Random.h:49</div></div>
+<div class="ttc" id="aclassvgen_1_1ScatteredFeaturePiece_html"><div class="ttname"><a href="classvgen_1_1ScatteredFeaturePiece.html">vgen::ScatteredFeaturePiece</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:34</div></div>
+<div class="ttc" id="aclassvgen_1_1StructurePiece_html"><div class="ttname"><a href="classvgen_1_1StructurePiece.html">vgen::StructurePiece</a></div><div class="ttdef"><b>Definition:</b> StructurePiece.h:96</div></div>
+<div class="ttc" id="aclassvgen_1_1SwamplandHut_html"><div class="ttname"><a href="classvgen_1_1SwamplandHut.html">vgen::SwamplandHut</a></div><div class="ttdef"><b>Definition:</b> ScatteredFeaturePieces.h:90</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

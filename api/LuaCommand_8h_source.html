@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('LuaCommand_8h_source.html',''); initRe
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// LuaCommand — un comando registrado desde Lua via commands.register().</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// PERMISOS: el campo `permission` de commands.register decide QUIÉN puede</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// PERMISSIONS: the `permission` field of commands.register decides WHO can</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// ejecutarlo y se chequea en canUse() (llamado por SimpleCommandMap::</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// dispatch() ANTES de execute(), y por /help para filtrar la lista):</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//</span></div>
@@ -120,11 +120,11 @@ $(document).ready(function(){initNavTree('LuaCommand_8h_source.html',''); initRe
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//                                   (player.setPermission) o un op</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// ⚠️ HILOS: execute() puede correr en el hilo del CommandReader (consola)</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// o en el hilo principal (jugador). Lua NO es thread-safe, así que</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// or on the main thread (players). Lua is NOT thread-safe, so</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// execute() NUNCA llama a Lua directamente: copia los datos del sender</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// (el puntero NO sobrevive: en consola es una variable local del</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// CommandReader), encola un CallbackTask con ServerScheduler::scheduleSync</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// y el callback corre en el próximo tick, en el hilo principal.</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// and the callback runs next tick, on the main thread.</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;command/Command.h&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;LuaPlugin.h&quot;</span></div>

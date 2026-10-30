@@ -108,19 +108,19 @@ $(document).ready(function(){initNavTree('EventManager_8h_source.html',''); init
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// EventManager — bus de eventos de todo el servidor. Es dueño de UN</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// EventManager — the server-wide event bus. Owns ONE</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// HandlerList por cada subclase concreta de Event (indexado por</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// std::type_index vía RTTI sobre el Event base, que es polimórfico) y</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// es el único punto de entrada que el resto del código usa para</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// std::type_index via RTTI on the polymorphic Event base) and is the</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// only entry point the rest of the code uses</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// disparar eventos y escucharlos.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Esta es la pieza que hace que las ~120 subclases de Event bajo</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// src/event/ hagan algo de verdad. Antes de esto:</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   - Ninguna de esas ~120 clases se instanciaba en ningún lugar del</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//     código fuera de su propia carpeta.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   - HandlerList::dispatch() recibía el evento por const-ref, así que</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//     ningún listener podía cancelar nada aunque quisiera.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//   - EventPriority.h ni siquiera existía como archivo.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   - None of those ~120 classes were ever instantiated outside their</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//     own folder.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   - HandlerList::dispatch() took the event by const-ref, so no</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//     listener could ever cancel anything.</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//   - EventPriority.h did not even exist as a file.</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// USO — escuchar un evento:</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     EventManager::get().listen&lt;event::block::BlockBreakEvent&gt;(this,</span></div>
@@ -141,9 +141,9 @@ $(document).ready(function(){initNavTree('EventManager_8h_source.html',''); init
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// HILOS: listen()/unlisten()/call() pueden invocarse desde cualquier</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// hilo — cada HandlerList protege sus propios registros con un mutex.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// Dicho esto, por convención (igual que el resto del tick loop) los</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// eventos de juego deben dispararse desde el hilo principal: nada acá</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// lo impide, pero World/Player no son thread-safe por sí mismos, así</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// That said, by convention (like the rest of the tick loop) gameplay</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// events should fire on the main thread: nothing here prevents it, but</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// World/Player are not thread-safe by themselves, so</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// que un callback que los toque debe seguir corriendo en el hilo</span></div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// principal.</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#pragma once</span></div>
@@ -166,7 +166,7 @@ $(document).ready(function(){initNavTree('EventManager_8h_source.html',''); init
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Registra `handler` para EventT en la prioridad dada. `owner` es</span></div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// una etiqueta opaca (normalmente `this`) que solo sirve para que</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// unlistenAll(owner) pueda encontrar y quitar esta suscripción más</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// unlistenAll(owner) can find and remove this subscription later</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// adelante — nunca se desreferencia. Devuelve un id de registro</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// utilizable con unlisten&lt;EventT&gt;().</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> EventT&gt;</div>
@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('EventManager_8h_source.html',''); init
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        });</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Quita un único registro de EventT por id.</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// Removes a single EventT registration by id.</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> EventT&gt;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">bool</span> unlisten(uint64_t <span class="keywordtype">id</span>) {</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        static_assert(std::is_base_of&lt;Event, EventT&gt;::value,</div>
@@ -191,13 +191,13 @@ $(document).ready(function(){initNavTree('EventManager_8h_source.html',''); init
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// Quita TODOS los registros (de cualquier tipo de evento) que</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// pertenezcan a `owner`. Llamar esto cuando un objeto Listener se</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// destruye, para que jamás quede un callback colgante apuntando a</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// destroyed, so a dangling callback never survives</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// memoria liberada.</span></div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">size_t</span> unlistenAll(<span class="keywordtype">void</span>* owner);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// Despacha `event` a cada listener registrado para su tipo</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// DINÁMICO exacto, en orden de prioridad. No hace nada (aparte del</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// lookup) si nadie se registró jamás para ese tipo concreto.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// DYNAMIC type, in priority order. No-op (beyond the lookup) when</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// nobody ever registered for that concrete type.</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> call(<a class="code" href="classcursestone_1_1event_1_1Event.html">Event</a>&amp; event);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// Construye un EventT con `args`, lo despacha y lo devuelve por</span></div>
@@ -213,7 +213,7 @@ $(document).ready(function(){initNavTree('EventManager_8h_source.html',''); init
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    }</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="comment">// Cantidad de listeners registrados actualmente para EventT.</span></div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Principalmente para diagnóstico/tests.</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="comment">// Mostly for diagnostics/tests.</span></div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> EventT&gt;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">size_t</span> listenerCount()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <a class="code" href="classcursestone_1_1event_1_1HandlerList.html">HandlerList</a>* list = findList(std::type_index(<span class="keyword">typeid</span>(EventT)));</div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('EventManager_8h_source.html',''); init
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;} <span class="comment">// namespace cursestone::event</span></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1EventManager_html"><div class="ttname"><a href="classcursestone_1_1event_1_1EventManager.html">cursestone::event::EventManager</a></div><div class="ttdef"><b>Definition:</b> EventManager.h:75</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Event_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Event.html">cursestone::event::Event</a></div><div class="ttdef"><b>Definition:</b> Event.h:29</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1HandlerList_html"><div class="ttname"><a href="classcursestone_1_1event_1_1HandlerList.html">cursestone::event::HandlerList</a></div><div class="ttdef"><b>Definition:</b> HandlerList.h:66</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1HandlerList_html"><div class="ttname"><a href="classcursestone_1_1event_1_1HandlerList.html">cursestone::event::HandlerList</a></div><div class="ttdef"><b>Definition:</b> HandlerList.h:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

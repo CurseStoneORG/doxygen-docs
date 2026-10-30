@@ -108,49 +108,48 @@ $(document).ready(function(){initNavTree('PathSafe_8h_source.html',''); initResi
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// PathSafe — normalización de rutas relativas usada por TODO el sistema</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// de plugins (plugin.include(), data.*). Viva en un header inline para que</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// LuaPlugin y los bindings de datos compartan EXACTAMENTE las mismas</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// reglas de seguridad:</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   - Rechaza cadenas vacías.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   - Rechaza rutas absolutas (empiezan con &#39;/&#39;).</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   - Rechaza backslashes (separador no portable; en Windows confundiría</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//     el chequeo de &quot;..&quot; — se prohíbe de raíz).</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   - Rechaza cualquier componente &quot;..&quot;: NUNCA se puede salir de la</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//     carpeta base (data_pl/&lt;plugin&gt; o la carpeta del plugin).</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//   - Normaliza &quot;./src//x.lua&quot; -&gt; &quot;src/x.lua&quot; (colapsa &#39;/&#39; y &#39;.&#39;).</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>cursestone::plugin {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> sanitizeRelPath(<span class="keyword">const</span> std::string&amp; in, std::string&amp; out) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (in.empty() || in[0] == <span class="charliteral">&#39;/&#39;</span> || in.find(<span class="charliteral">&#39;\\&#39;</span>) != std::string::npos)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string clean;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">size_t</span> i = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">while</span> (i &lt;= in.size()) {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">size_t</span> j = in.find(<span class="charliteral">&#39;/&#39;</span>, i);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (j == std::string::npos)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            j = in.size();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        std::string part = in.substr(i, j - i);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">if</span> (!part.empty() &amp;&amp; part != <span class="stringliteral">&quot;.&quot;</span>) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">if</span> (part == <span class="stringliteral">&quot;..&quot;</span>)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// NO salirse de la carpeta base</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">if</span> (!clean.empty())</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                clean += <span class="charliteral">&#39;/&#39;</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            clean += part;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        i = j + 1;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">if</span> (clean.empty())</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    out = clean;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;} <span class="comment">// namespace cursestone::plugin</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// PathSafe — relative-path normalization used by the WHOLE plugin</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// system (plugin.include(), data.*). Lives in an inline header so</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// LuaPlugin and the data bindings share EXACTLY the same rules:</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   - Rejects empty strings.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   - Rechaza rutas absolutas (empiezan con &#39;/&#39;).</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   - Rejects backslashes (non-portable separator; on Windows it would</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//     confuse the &quot;..&quot; check — banned outright).</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   - Rechaza cualquier componente &quot;..&quot;: NUNCA se puede salir de la</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//     carpeta base (data_pl/&lt;plugin&gt; o la carpeta del plugin).</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//   - Normaliza &quot;./src//x.lua&quot; -&gt; &quot;src/x.lua&quot; (colapsa &#39;/&#39; y &#39;.&#39;).</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span>cursestone::plugin {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> sanitizeRelPath(<span class="keyword">const</span> std::string&amp; in, std::string&amp; out) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (in.empty() || in[0] == <span class="charliteral">&#39;/&#39;</span> || in.find(<span class="charliteral">&#39;\\&#39;</span>) != std::string::npos)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::string clean;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">while</span> (i &lt;= in.size()) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">size_t</span> j = in.find(<span class="charliteral">&#39;/&#39;</span>, i);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">if</span> (j == std::string::npos)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            j = in.size();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        std::string part = in.substr(i, j - i);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">if</span> (!part.empty() &amp;&amp; part != <span class="stringliteral">&quot;.&quot;</span>) {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (part == <span class="stringliteral">&quot;..&quot;</span>)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">// NO salirse de la carpeta base</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">if</span> (!clean.empty())</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                clean += <span class="charliteral">&#39;/&#39;</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            clean += part;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        i = j + 1;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span> (clean.empty())</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    out = clean;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <span class="comment">// namespace cursestone::plugin</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
