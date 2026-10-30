@@ -308,309 +308,314 @@ $(document).ready(function(){initNavTree('World_8h_source.html',''); initResizab
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// Returns world-space collision boxes within the requested region.</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    std::vector&lt;physics::BlockBox&gt; collisionBoxes(<a class="code" href="structmcp__aabb.html">mcp_aabb_t</a> region);</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160; </div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// Queues lighting updates for newly added chunks.</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordtype">void</span> onChunkAdded(int32_t cx, int32_t cz);</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160; </div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="comment">// Updates the furnace&#39;s lit state and reports whether it changed.</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">bool</span> setFurnaceFlame(int32_t x, int32_t y, int32_t z, <span class="keywordtype">bool</span> lit);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="comment">// Checks chunk loading without triggering generation.</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">bool</span> isChunkLoaded(int32_t x, int32_t z) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        <span class="keywordflow">return</span> chunks_.getChunkIfLoaded(x &gt;&gt; 4, z &gt;&gt; 4) != <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="comment">// Whether the block id carries an entity collision volume. The</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="comment">// movement collision cubes run on this same table, so block</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="comment">// placement refuses exactly the cells an entity could not share.</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> entityCollidable(uint8_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="comment">// Queues lighting updates for newly added chunks.</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    <span class="keywordtype">void</span> onChunkAdded(int32_t cx, int32_t cz);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="comment">// Updates the furnace&#39;s lit state and reports whether it changed.</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <span class="keywordtype">bool</span> setFurnaceFlame(int32_t x, int32_t y, int32_t z, <span class="keywordtype">bool</span> lit);</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// Returns the world time in ticks.</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    int32_t time()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">return</span> cfg_.time;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// Checks chunk loading without triggering generation.</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    <span class="keywordtype">bool</span> isChunkLoaded(int32_t x, int32_t z) {</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;        <span class="keywordflow">return</span> chunks_.getChunkIfLoaded(x &gt;&gt; 4, z &gt;&gt; 4) != <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160; </div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">void</span> setTime(int32_t t) {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        cfg_.time = t;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    }</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160; </div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordtype">void</span> advanceTime(<span class="keywordtype">int</span> dt_ticks) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        cfg_.time = (cfg_.time + dt_ticks) % 24000;</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">// ----- Sleep and skip-night system -----</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// Advances the pending sleep countdown and checks whether all players are sleeping.</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">static</span> constexpr int32_t TIME_SUNSET = 12000;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keyword">static</span> constexpr int32_t TIME_NIGHT = 14000;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keyword">static</span> constexpr int32_t TIME_SUNRISE = 23000;</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keyword">static</span> constexpr int32_t TIME_FULL = 24000;</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160; </div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="comment">// Sets the skip-night countdown; non-positive values cancel it.</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">void</span> setSleepTicks(int32_t t) {</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        sleep_ticks_ = t;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    }</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="comment">// Returns the world time in ticks.</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    int32_t time()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        <span class="keywordflow">return</span> cfg_.time;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keywordtype">void</span> setTime(int32_t t) {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        cfg_.time = t;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160; </div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordtype">void</span> advanceTime(<span class="keywordtype">int</span> dt_ticks) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        cfg_.time = (cfg_.time + dt_ticks) % 24000;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="comment">// ----- Sleep and skip-night system -----</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="comment">// Advances the pending sleep countdown and checks whether all players are sleeping.</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keyword">static</span> constexpr int32_t TIME_SUNSET = 12000;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keyword">static</span> constexpr int32_t TIME_NIGHT = 14000;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keyword">static</span> constexpr int32_t TIME_SUNRISE = 23000;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keyword">static</span> constexpr int32_t TIME_FULL = 24000;</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">// Checks whether the pending sleep vote can skip the night.</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">void</span> checkSleep();</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="comment">// ----- Weather system -----</span></div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="comment">// Uses MCPE 0.15.10 rain and thunder events with non-zero strengths.</span></div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="keyword">enum</span> WeatherState : <span class="keywordtype">int</span> {</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        WEATHER_CLEAR = 0,</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        WEATHER_RAIN = 1,</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        WEATHER_RAINY_THUNDER = 2,</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        WEATHER_THUNDER = 3,</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    };</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordtype">int</span> weatherState()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">return</span> weather_state_;</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordtype">bool</span> isRaining()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        <span class="keywordflow">return</span> weather_state_ == WEATHER_RAIN || weather_state_ == WEATHER_RAINY_THUNDER;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160; </div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordtype">bool</span> isThundering()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">return</span> weather_state_ == WEATHER_RAINY_THUNDER || weather_state_ == WEATHER_THUNDER;</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    }</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="comment">// Returns remaining weather ticks; -1 means unlimited duration.</span></div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    int32_t weatherTicksLeft()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">return</span> weather_ticks_left_;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="comment">// Sets the skip-night countdown; non-positive values cancel it.</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">void</span> setSleepTicks(int32_t t) {</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        sleep_ticks_ = t;</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">// Checks whether the pending sleep vote can skip the night.</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    <span class="keywordtype">void</span> checkSleep();</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// ----- Weather system -----</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="comment">// Uses MCPE 0.15.10 rain and thunder events with non-zero strengths.</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keyword">enum</span> WeatherState : <span class="keywordtype">int</span> {</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        WEATHER_CLEAR = 0,</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        WEATHER_RAIN = 1,</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        WEATHER_RAINY_THUNDER = 2,</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        WEATHER_THUNDER = 3,</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    };</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;    <span class="keywordtype">int</span> weatherState()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">return</span> weather_state_;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordtype">bool</span> isRaining()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">return</span> weather_state_ == WEATHER_RAIN || weather_state_ == WEATHER_RAINY_THUNDER;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    }</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordtype">bool</span> isThundering()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        <span class="keywordflow">return</span> weather_state_ == WEATHER_RAINY_THUNDER || weather_state_ == WEATHER_THUNDER;</div>
 <div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    }</div>
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">// Changes the weather and broadcasts its packet pair to online players.</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    <span class="keywordtype">void</span> setWeather(<span class="keywordtype">int</span> state, int32_t durationTicks = 0);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160; </div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="comment">// Sends the current weather state to a joining player.</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordtype">void</span> sendWeatherTo(<span class="keyword">class</span> Player* p);</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">// Updates weather duration and processes rain-related fire extinguishing.</span></div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> WEATHER_CHUNKS_PER_TICK = 8;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> MAX_EXTINGUISH_PER_TICK = 40;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keyword">static</span> constexpr uint64_t FIRE_EXTINGUISH_LOG_INTERVAL = 40;</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="keyword">static</span> constexpr uint64_t LIGHTNING_STRIKE_INTERVAL = 200;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordtype">void</span> doWeatherTick(uint64_t current_tick);</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">// ----- Lightning system -----</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="comment">// Spawns lightning, applies damage, and optionally ignites the strike location.</span></div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordtype">void</span> spawnLightning(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z, <span class="keywordtype">bool</span> withFire);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160; </div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="comment">// Returns the world spawn position.</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> spawn()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="keywordflow">return</span> spawn_;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="comment">// Returns remaining weather ticks; -1 means unlimited duration.</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    int32_t weatherTicksLeft()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        <span class="keywordflow">return</span> weather_ticks_left_;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="comment">// Changes the weather and broadcasts its packet pair to online players.</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordtype">void</span> setWeather(<span class="keywordtype">int</span> state, int32_t durationTicks = 0);</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">// Sends the current weather state to a joining player.</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">void</span> sendWeatherTo(<span class="keyword">class</span> Player* p);</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160; </div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="comment">// Updates weather duration and processes rain-related fire extinguishing.</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> WEATHER_CHUNKS_PER_TICK = 8;</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> MAX_EXTINGUISH_PER_TICK = 40;</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keyword">static</span> constexpr uint64_t FIRE_EXTINGUISH_LOG_INTERVAL = 40;</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keyword">static</span> constexpr uint64_t LIGHTNING_STRIKE_INTERVAL = 200;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    <span class="keywordtype">void</span> doWeatherTick(uint64_t current_tick);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <span class="comment">// ----- Lightning system -----</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="comment">// Spawns lightning, applies damage, and optionally ignites the strike location.</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordtype">void</span> spawnLightning(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z, <span class="keywordtype">bool</span> withFire);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordtype">void</span> setSpawn(<a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> v) {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        spawn_ = v;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <span class="comment">// Saves all dirty chunks and world data.</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordtype">int</span> save();</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160; </div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="comment">// Saves a limited number of chunks within a time budget.</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    <span class="keywordtype">int</span> saveBudget(<span class="keywordtype">size_t</span> max_chunks, uint64_t max_ms, <span class="keywordtype">bool</span> write_level_data);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160; </div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">// Returns the number of chunks with unsaved changes.</span></div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordtype">size_t</span> unsavedChunkCount() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="comment">// Advances world time and weather; entity cleanup is handled globally.</span></div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    <span class="keywordtype">void</span> tick(uint64_t current_tick);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
-<div class="line"><a name="l00332"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90">  332</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90">beginTickSample</a>(<span class="keywordtype">double</span> ms) {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        avgTickMs_ = avgTickMs_ * 0.95 + lastTickMs_ * 0.05;</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        lastTickMs_ = ms;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67">  339</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67">addTickSample</a>(<span class="keywordtype">double</span> ms) {</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        lastTickMs_ += ms;</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1World.html#aff52b965d8ab03977f1c8debaf8d7a7c">  344</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcursestone_1_1world_1_1World.html#aff52b965d8ab03977f1c8debaf8d7a7c">lastTickMs</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">return</span> lastTickMs_;</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="comment">// Returns the world spawn position.</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> spawn()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keywordflow">return</span> spawn_;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    }</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;    <span class="keywordtype">void</span> setSpawn(<a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> v) {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        spawn_ = v;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="comment">// Saves all dirty chunks and world data.</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="keywordtype">int</span> save();</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160; </div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;    <span class="comment">// Saves a limited number of chunks within a time budget.</span></div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;    <span class="keywordtype">int</span> saveBudget(<span class="keywordtype">size_t</span> max_chunks, uint64_t max_ms, <span class="keywordtype">bool</span> write_level_data);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="comment">// Returns the number of chunks with unsaved changes.</span></div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;    <span class="keywordtype">size_t</span> unsavedChunkCount() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    <span class="comment">// Advances world time and weather; entity cleanup is handled globally.</span></div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    <span class="keywordtype">void</span> tick(uint64_t current_tick);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90">  337</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90">beginTickSample</a>(<span class="keywordtype">double</span> ms) {</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        avgTickMs_ = avgTickMs_ * 0.95 + lastTickMs_ * 0.05;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        lastTickMs_ = ms;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    }</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67">  344</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67">addTickSample</a>(<span class="keywordtype">double</span> ms) {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        lastTickMs_ += ms;</div>
 <div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b">  349</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b">avgTickMs</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">return</span> avgTickMs_;</div>
+<div class="line"><a name="l00349"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1World.html#aff52b965d8ab03977f1c8debaf8d7a7c">  349</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcursestone_1_1world_1_1World.html#aff52b965d8ab03977f1c8debaf8d7a7c">lastTickMs</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <span class="keywordflow">return</span> lastTickMs_;</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    }</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="comment">// Updates dropped-item physics, movement packets, and player attraction.</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <span class="keywordtype">void</span> tickDroppedItems(uint64_t current_tick);</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160; </div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    <span class="comment">// Updates arrow physics, player hits, block collisions, and despawning.</span></div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    <span class="keywordtype">void</span> tickArrows(uint64_t current_tick);</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordtype">void</span> addArrow(<a class="code" href="structcursestone_1_1world_1_1ArrowEntity.html">ArrowEntity</a> a);</div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    std::vector&lt;ArrowEntity*&gt; arrows();</div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b">  354</a></span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b">avgTickMs</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        <span class="keywordflow">return</span> avgTickMs_;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="comment">// Updates dropped-item physics, movement packets, and player attraction.</span></div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;    <span class="keywordtype">void</span> tickDroppedItems(uint64_t current_tick);</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// Splash potion flight, block/player impact, and area effects.</span></div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordtype">void</span> tickSplashPotions(uint64_t current_tick);</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordtype">void</span> addSplashPotion(<a class="code" href="structcursestone_1_1world_1_1SplashPotionEntity.html">SplashPotionEntity</a> p);</div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160; </div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="comment">// Atomically claims an arrow for pickup.</span></div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordtype">bool</span> tryClaimArrow(int64_t eid);</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="comment">// Broadcasts a particle to players who can see its chunk.</span></div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">void</span> addParticle(<span class="keyword">const</span> <a class="code" href="classcursestone_1_1world_1_1particle_1_1Particle.html">particle::Particle</a>&amp; p);</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160; </div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="comment">// ----- Falling-block physics -----</span></div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="comment">// Converts a supported falling block into an entity and checks the block above.</span></div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="keywordtype">void</span> spawnFallingBlock(int32_t bx, int32_t by, int32_t bz);</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    <span class="comment">// Updates falling-block physics, landing, damage, sounds, and cleanup.</span></div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="keywordtype">void</span> tickFallingBlocks(uint64_t current_tick);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160; </div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="comment">// Converts unsupported sand, gravel, or anvils into falling entities.</span></div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;    <span class="keywordtype">void</span> checkFallingSupport(int32_t x, int32_t y, int32_t z);</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160; </div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="comment">// Checks whether a block follows gravity in MCPE 0.15.10.</span></div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> isFallableBlockId(uint8_t <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160; </div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="comment">// Drops an item at a world position without player context.</span></div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;    <span class="keywordtype">void</span> dropItemAt(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z, uint16_t itemId, uint8_t count, uint16_t damage);</div>
-<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="comment">// Updates block entities such as furnaces once per server tick.</span></div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    <span class="keywordtype">size_t</span> tickTiles(uint64_t current_tick);</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="comment">// Removes expired or claimed dropped items during global garbage collection.</span></div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    <span class="keywordtype">size_t</span> collectDroppedItems(uint64_t current_tick);</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160; </div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="comment">// Returns the configured world generator.</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    std::shared_ptr&lt;generator::Generator&gt; generator()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        <span class="keywordflow">return</span> generator_;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    }</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <span class="comment">// Updates arrow physics, player hits, block collisions, and despawning.</span></div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordtype">void</span> tickArrows(uint64_t current_tick);</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordtype">void</span> addArrow(<a class="code" href="structcursestone_1_1world_1_1ArrowEntity.html">ArrowEntity</a> a);</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    std::vector&lt;ArrowEntity*&gt; arrows();</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="comment">// Splash potion flight, block/player impact, and area effects.</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    <span class="keywordtype">void</span> tickSplashPotions(uint64_t current_tick);</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    <span class="keywordtype">void</span> addSplashPotion(<a class="code" href="structcursestone_1_1world_1_1SplashPotionEntity.html">SplashPotionEntity</a> p);</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160; </div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="comment">// Atomically claims an arrow for pickup.</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordtype">bool</span> tryClaimArrow(int64_t eid);</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    <span class="comment">// Broadcasts a particle to players who can see its chunk.</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordtype">void</span> addParticle(<span class="keyword">const</span> <a class="code" href="classcursestone_1_1world_1_1particle_1_1Particle.html">particle::Particle</a>&amp; p);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    <span class="comment">// ----- Falling-block physics -----</span></div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="comment">// Converts a supported falling block into an entity and checks the block above.</span></div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <span class="keywordtype">void</span> spawnFallingBlock(int32_t bx, int32_t by, int32_t bz);</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160; </div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;    <span class="comment">// Updates falling-block physics, landing, damage, sounds, and cleanup.</span></div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;    <span class="keywordtype">void</span> tickFallingBlocks(uint64_t current_tick);</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160; </div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    <span class="comment">// Converts unsupported sand, gravel, or anvils into falling entities.</span></div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordtype">void</span> checkFallingSupport(int32_t x, int32_t y, int32_t z);</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160; </div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;    <span class="comment">// Checks whether a block follows gravity in MCPE 0.15.10.</span></div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> isFallableBlockId(uint8_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="comment">// Drops an item at a world position without player context.</span></div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordtype">void</span> dropItemAt(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> z, uint16_t itemId, uint8_t count, uint16_t damage);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="comment">// Updates block entities such as furnaces once per server tick.</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    <span class="keywordtype">size_t</span> tickTiles(uint64_t current_tick);</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160; </div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    <span class="comment">// Removes expired or claimed dropped items during global garbage collection.</span></div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">size_t</span> collectDroppedItems(uint64_t current_tick);</div>
 <div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="comment">// Returns the active world provider.</span></div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    std::shared_ptr&lt;format::WorldProvider&gt; provider()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">return</span> provider_;</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="comment">// Returns the configured world generator.</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;    std::shared_ptr&lt;generator::Generator&gt; generator()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">return</span> generator_;</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    }</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">// Registers or unregisters chunk loaders.</span></div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <span class="keywordtype">void</span> registerLoader(uint64_t loader_id, <span class="keyword">class</span> ChunkLoader* loader);</div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordtype">void</span> unregisterLoader(uint64_t loader_id);</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160; </div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;    <span class="comment">// ----- Dropped-item registry -----</span></div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="comment">// Returns a non-owning pointer to a dropped item, or nullptr.</span></div>
-<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    DroppedItem* droppedItem(int64_t eid);</div>
-<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160; </div>
-<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    <span class="comment">// Returns a snapshot of dropped items for pickup scans.</span></div>
-<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    std::vector&lt;DroppedItem*&gt; droppedItems();</div>
-<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
-<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="comment">// Registers a newly dropped item.</span></div>
-<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    <span class="keywordtype">void</span> addDroppedItem(<span class="keyword">const</span> DroppedItem&amp; di);</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160; </div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="comment">// Marks an item for removal.</span></div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    <span class="keywordtype">void</span> removeDroppedItem(int64_t eid);</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160; </div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="comment">// Atomically claims an item to prevent duplicate pickups.</span></div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordtype">bool</span> tryClaimDroppedItem(int64_t eid);</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160; </div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="comment">// ----- Tile-entity registry -----</span></div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="comment">// Maintains persistent tile instances for chests, furnaces, signs, and other blocks.</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    std::shared_ptr&lt;cursestone::tile::Tile&gt; getTile(int32_t x, int32_t y, int32_t z);</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordtype">void</span> setTile(int32_t x, int32_t y, int32_t z, std::shared_ptr&lt;cursestone::tile::Tile&gt; t);</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    <span class="keywordtype">void</span> removeTile(int32_t x, int32_t y, int32_t z);</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160; </div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="comment">// Returns all tile entities in a chunk for client synchronization.</span></div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    std::vector&lt;std::shared_ptr&lt;cursestone::tile::Tile&gt;&gt; getTilesInChunk(int32_t cx, int32_t cz);</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
-<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="comment">// ----- Chunk memory eviction -----</span></div>
-<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="comment">// Stores a player&#39;s current chunk and configured view radius.</span></div>
-<div class="line"><a name="l00434"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">  434</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">ChunkViewer</a> {</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        int32_t cx, cz, view_radius;</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    };</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160; </div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="comment">// Unloads chunks outside all viewer radii, saving dirty chunks first.</span></div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="keywordtype">int</span> unloadDistantChunks(<span class="keyword">const</span> std::vector&lt;ChunkViewer&gt;&amp; viewers, int32_t margin = 4);</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160; </div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordtype">double</span> lastTickMs_ = 0.0;</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordtype">double</span> avgTickMs_ = 0.0;</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="comment">// Flushes a chunk&#39;s tiles and removes their in-memory registry entries.</span></div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordtype">void</span> evictTilesForChunk(int32_t cx, int32_t cz);</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="comment">// Loads tile entities from a chunk&#39;s stored NBT data.</span></div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordtype">void</span> ensureTilesLoaded(int32_t cx, int32_t cz);</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160; </div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="comment">// Creates missing tile entities for blocks that require them.</span></div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    <span class="keywordtype">void</span> hydrateTilesFromBlocks(int32_t cx, int32_t cz, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk);</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="comment">// Writes dirty tile entities back into their owning chunks before saving.</span></div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="keywordtype">void</span> syncTilesToChunks();</div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <a class="code" href="structcursestone_1_1world_1_1WorldConfig.html">WorldConfig</a> cfg_;</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1ChunkManager.html">ChunkManager</a> chunks_;</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    std::shared_ptr&lt;format::WorldProvider&gt; provider_;</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    std::shared_ptr&lt;generator::Generator&gt; generator_;</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1PortalRegistry.html">PortalRegistry</a> portals_;   <span class="comment">// Persistent Nether portal registry.</span></div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    std::string portals_path_; <span class="comment">// Path to the portal registry file.</span></div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> spawn_;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    std::unordered_map&lt;uint64_t, class ChunkLoader*&gt; loaders_;</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="comment">// ----- Weather state -----</span></div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordtype">int</span> weather_state_ = WEATHER_CLEAR;</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    int32_t weather_ticks_left_ = -1;       <span class="comment">// -1 means unlimited duration.</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    uint32_t rain_strength_ = 100000;       <span class="comment">// Rain event strength.</span></div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    uint32_t thunder_strength_ = 35000;     <span class="comment">// Thunder event strength.</span></div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    uint64_t rain_scan_offset_ = 0;         <span class="comment">// Round-robin chunk scan cursor.</span></div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    uint64_t last_fire_extinguish_log_ = 0; <span class="comment">// Fire log rate limit.</span></div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    uint64_t next_lightning_tick_ = 0;      <span class="comment">// Next permitted lightning tick.</span></div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <span class="comment">// Skip-night countdown; 0 means inactive.</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    int32_t sleep_ticks_ = 0;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    <span class="comment">// Selects a random online player for a lightning strike during thunderstorms.</span></div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <span class="keywordtype">void</span> strikeRandomPlayerLightning();</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="comment">// Dropped items indexed by runtime entity ID.</span></div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;DroppedItem&gt;&gt; dropped_items_;</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="keyword">mutable</span> std::mutex dropped_items_mtx_;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;ArrowEntity&gt;&gt; arrows_;</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="keyword">mutable</span> std::mutex arrows_mtx_;</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="comment">// Thrown splash potions indexed by runtime entity ID.</span></div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;SplashPotionEntity&gt;&gt; splash_potions_;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keyword">mutable</span> std::mutex splash_potions_mtx_;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    <span class="comment">// Falling blocks indexed by runtime entity ID.</span></div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;FallingBlockEntity&gt;&gt; falling_blocks_;</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keyword">mutable</span> std::mutex falling_blocks_mtx_;</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160; </div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;    <span class="comment">// Tile entities indexed by packed block position.</span></div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    std::unordered_map&lt;uint64_t, std::shared_ptr&lt;cursestone::tile::Tile&gt;&gt; tiles_;</div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="keyword">mutable</span> std::mutex tiles_mtx_;</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="comment">// Tracks chunks whose tile NBT has been loaded this session.</span></div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_hydrated_chunks_;</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160; </div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="comment">// Tracks chunks whose stored tile NBT must be rebuilt after removals.</span></div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_dirty_chunks_;</div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="comment">// Manages sky and block light propagation.</span></div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1LightEngine.html">LightEngine</a> light_;</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160; </div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keyword">static</span> uint64_t packChunkPos(int32_t cx, int32_t cz) {</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cx));</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cz));</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 32) | uz;</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    }</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    <span class="comment">// Packs 28-bit X/Z coordinates and an 8-bit Y coordinate into one key.</span></div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="keyword">static</span> uint64_t packTilePos(int32_t x, int32_t y, int32_t z) {</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(x)) &amp; 0xFFFFFFFULL;</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(z)) &amp; 0xFFFFFFFULL;</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;        uint64_t uy = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(y));</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 36) | (uz &lt;&lt; 8) | uy;</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    }</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;};</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="comment">// Broadcasts a single block update to every viewer of the chunk.</span></div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;<span class="keywordtype">void</span> sendUpdateBlock(World* w, int32_t x, int32_t y, int32_t z, uint8_t <span class="keywordtype">id</span>, uint8_t data);</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="comment">// Returns the active world provider.</span></div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    std::shared_ptr&lt;format::WorldProvider&gt; provider()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;        <span class="keywordflow">return</span> provider_;</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    }</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="comment">// Registers or unregisters chunk loaders.</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    <span class="keywordtype">void</span> registerLoader(uint64_t loader_id, <span class="keyword">class</span> ChunkLoader* loader);</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    <span class="keywordtype">void</span> unregisterLoader(uint64_t loader_id);</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160; </div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="comment">// ----- Dropped-item registry -----</span></div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    <span class="comment">// Returns a non-owning pointer to a dropped item, or nullptr.</span></div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    DroppedItem* droppedItem(int64_t eid);</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160; </div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="comment">// Returns a snapshot of dropped items for pickup scans.</span></div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    std::vector&lt;DroppedItem*&gt; droppedItems();</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160; </div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    <span class="comment">// Registers a newly dropped item.</span></div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordtype">void</span> addDroppedItem(<span class="keyword">const</span> DroppedItem&amp; di);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160; </div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="comment">// Marks an item for removal.</span></div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordtype">void</span> removeDroppedItem(int64_t eid);</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="comment">// Atomically claims an item to prevent duplicate pickups.</span></div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordtype">bool</span> tryClaimDroppedItem(int64_t eid);</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160; </div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="comment">// ----- Tile-entity registry -----</span></div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="comment">// Maintains persistent tile instances for chests, furnaces, signs, and other blocks.</span></div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    std::shared_ptr&lt;cursestone::tile::Tile&gt; getTile(int32_t x, int32_t y, int32_t z);</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;    <span class="keywordtype">void</span> setTile(int32_t x, int32_t y, int32_t z, std::shared_ptr&lt;cursestone::tile::Tile&gt; t);</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordtype">void</span> removeTile(int32_t x, int32_t y, int32_t z);</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="comment">// Returns all tile entities in a chunk for client synchronization.</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    std::vector&lt;std::shared_ptr&lt;cursestone::tile::Tile&gt;&gt; getTilesInChunk(int32_t cx, int32_t cz);</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="comment">// ----- Chunk memory eviction -----</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="comment">// Stores a player&#39;s current chunk and configured view radius.</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">  439</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">ChunkViewer</a> {</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        int32_t cx, cz, view_radius;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    };</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="comment">// Unloads chunks outside all viewer radii, saving dirty chunks first.</span></div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keywordtype">int</span> unloadDistantChunks(<span class="keyword">const</span> std::vector&lt;ChunkViewer&gt;&amp; viewers, int32_t margin = 4);</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="keywordtype">double</span> lastTickMs_ = 0.0;</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordtype">double</span> avgTickMs_ = 0.0;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="comment">// Flushes a chunk&#39;s tiles and removes their in-memory registry entries.</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="keywordtype">void</span> evictTilesForChunk(int32_t cx, int32_t cz);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="comment">// Loads tile entities from a chunk&#39;s stored NBT data.</span></div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keywordtype">void</span> ensureTilesLoaded(int32_t cx, int32_t cz);</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="comment">// Creates missing tile entities for blocks that require them.</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keywordtype">void</span> hydrateTilesFromBlocks(int32_t cx, int32_t cz, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk);</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="comment">// Writes dirty tile entities back into their owning chunks before saving.</span></div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordtype">void</span> syncTilesToChunks();</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <a class="code" href="structcursestone_1_1world_1_1WorldConfig.html">WorldConfig</a> cfg_;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1ChunkManager.html">ChunkManager</a> chunks_;</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    std::shared_ptr&lt;format::WorldProvider&gt; provider_;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    std::shared_ptr&lt;generator::Generator&gt; generator_;</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1PortalRegistry.html">PortalRegistry</a> portals_;   <span class="comment">// Persistent Nether portal registry.</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    std::string portals_path_; <span class="comment">// Path to the portal registry file.</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> spawn_;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    std::unordered_map&lt;uint64_t, class ChunkLoader*&gt; loaders_;</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="comment">// ----- Weather state -----</span></div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordtype">int</span> weather_state_ = WEATHER_CLEAR;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    int32_t weather_ticks_left_ = -1;       <span class="comment">// -1 means unlimited duration.</span></div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    uint32_t rain_strength_ = 100000;       <span class="comment">// Rain event strength.</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    uint32_t thunder_strength_ = 35000;     <span class="comment">// Thunder event strength.</span></div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    uint64_t rain_scan_offset_ = 0;         <span class="comment">// Round-robin chunk scan cursor.</span></div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    uint64_t last_fire_extinguish_log_ = 0; <span class="comment">// Fire log rate limit.</span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    uint64_t next_lightning_tick_ = 0;      <span class="comment">// Next permitted lightning tick.</span></div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <span class="comment">// Skip-night countdown; 0 means inactive.</span></div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    int32_t sleep_ticks_ = 0;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="comment">// Selects a random online player for a lightning strike during thunderstorms.</span></div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    <span class="keywordtype">void</span> strikeRandomPlayerLightning();</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160; </div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="comment">// Dropped items indexed by runtime entity ID.</span></div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;DroppedItem&gt;&gt; dropped_items_;</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keyword">mutable</span> std::mutex dropped_items_mtx_;</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;ArrowEntity&gt;&gt; arrows_;</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keyword">mutable</span> std::mutex arrows_mtx_;</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="comment">// Thrown splash potions indexed by runtime entity ID.</span></div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;SplashPotionEntity&gt;&gt; splash_potions_;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keyword">mutable</span> std::mutex splash_potions_mtx_;</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="comment">// Falling blocks indexed by runtime entity ID.</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;FallingBlockEntity&gt;&gt; falling_blocks_;</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="keyword">mutable</span> std::mutex falling_blocks_mtx_;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <span class="comment">// Tile entities indexed by packed block position.</span></div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    std::unordered_map&lt;uint64_t, std::shared_ptr&lt;cursestone::tile::Tile&gt;&gt; tiles_;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keyword">mutable</span> std::mutex tiles_mtx_;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160; </div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="comment">// Tracks chunks whose tile NBT has been loaded this session.</span></div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_hydrated_chunks_;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="comment">// Tracks chunks whose stored tile NBT must be rebuilt after removals.</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_dirty_chunks_;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="comment">// Manages sky and block light propagation.</span></div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1LightEngine.html">LightEngine</a> light_;</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keyword">static</span> uint64_t packChunkPos(int32_t cx, int32_t cz) {</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cx));</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cz));</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 32) | uz;</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    }</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="comment">// Packs 28-bit X/Z coordinates and an 8-bit Y coordinate into one key.</span></div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keyword">static</span> uint64_t packTilePos(int32_t x, int32_t y, int32_t z) {</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(x)) &amp; 0xFFFFFFFULL;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(z)) &amp; 0xFFFFFFFULL;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        uint64_t uy = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(y));</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 36) | (uz &lt;&lt; 8) | uy;</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    }</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;};</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="comment">// Broadcasts a single block update to every viewer of the chunk.</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="keywordtype">void</span> sendUpdateBlock(World* w, int32_t x, int32_t y, int32_t z, uint8_t <span class="keywordtype">id</span>, uint8_t data);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1ChunkManager_html"><div class="ttname"><a href="classcursestone_1_1world_1_1ChunkManager.html">cursestone::world::ChunkManager</a></div><div class="ttdef"><b>Definition:</b> ChunkManager.h:46</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1LightEngine_html"><div class="ttname"><a href="classcursestone_1_1world_1_1LightEngine.html">cursestone::world::LightEngine</a></div><div class="ttdef"><b>Definition:</b> LightEngine.h:68</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1PortalRegistry_html"><div class="ttname"><a href="classcursestone_1_1world_1_1PortalRegistry.html">cursestone::world::PortalRegistry</a></div><div class="ttdef"><b>Definition:</b> PortalRegistry.h:38</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:177</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1World_html_a2ce9afacee86234fadde0927f9eca672"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672">cursestone::world::World::getBlockId</a></div><div class="ttdeci">uint8_t getBlockId(int32_t x, int32_t y, int32_t z)</div><div class="ttdoc">Returns the block ID; unloaded chunks are not generated.</div><div class="ttdef"><b>Definition:</b> World.cpp:250</div></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1World_html_a44926cccb7ee40bdda14aae6bc179e67"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67">cursestone::world::World::addTickSample</a></div><div class="ttdeci">void addTickSample(double ms)</div><div class="ttdoc">Adds time spent in a later tick phase.</div><div class="ttdef"><b>Definition:</b> World.h:339</div></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1World_html_a9c027f0ca22fb450cc1a0ee5c2ba2c90"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90">cursestone::world::World::beginTickSample</a></div><div class="ttdeci">void beginTickSample(double ms)</div><div class="ttdoc">Starts a new tick sample and updates the moving average.</div><div class="ttdef"><b>Definition:</b> World.h:332</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html_a44926cccb7ee40bdda14aae6bc179e67"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67">cursestone::world::World::addTickSample</a></div><div class="ttdeci">void addTickSample(double ms)</div><div class="ttdoc">Adds time spent in a later tick phase.</div><div class="ttdef"><b>Definition:</b> World.h:344</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html_a9c027f0ca22fb450cc1a0ee5c2ba2c90"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90">cursestone::world::World::beginTickSample</a></div><div class="ttdeci">void beginTickSample(double ms)</div><div class="ttdoc">Starts a new tick sample and updates the moving average.</div><div class="ttdef"><b>Definition:</b> World.h:337</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1World_html_ae4b2e3241f8fa81d91580925b3399a8f"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#ae4b2e3241f8fa81d91580925b3399a8f">cursestone::world::World::dimension</a></div><div class="ttdeci">uint8_t dimension() const</div><div class="ttdoc">Returns the world dimension: 0 for surface, 1 for Nether.</div><div class="ttdef"><b>Definition:</b> World.h:195</div></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1World_html_af0810e93b211e5192728dfeac053e67b"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b">cursestone::world::World::avgTickMs</a></div><div class="ttdeci">double avgTickMs() const</div><div class="ttdoc">Returns the moving average of world tick duration.</div><div class="ttdef"><b>Definition:</b> World.h:349</div></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1World_html_aff52b965d8ab03977f1c8debaf8d7a7c"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#aff52b965d8ab03977f1c8debaf8d7a7c">cursestone::world::World::lastTickMs</a></div><div class="ttdeci">double lastTickMs() const</div><div class="ttdoc">Returns the duration of the last completed world tick.</div><div class="ttdef"><b>Definition:</b> World.h:344</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html_af0810e93b211e5192728dfeac053e67b"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b">cursestone::world::World::avgTickMs</a></div><div class="ttdeci">double avgTickMs() const</div><div class="ttdoc">Returns the moving average of world tick duration.</div><div class="ttdef"><b>Definition:</b> World.h:354</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html_aff52b965d8ab03977f1c8debaf8d7a7c"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html#aff52b965d8ab03977f1c8debaf8d7a7c">cursestone::world::World::lastTickMs</a></div><div class="ttdeci">double lastTickMs() const</div><div class="ttdoc">Returns the duration of the last completed world tick.</div><div class="ttdef"><b>Definition:</b> World.h:349</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1particle_1_1Particle_html"><div class="ttname"><a href="classcursestone_1_1world_1_1particle_1_1Particle.html">cursestone::world::particle::Particle</a></div><div class="ttdef"><b>Definition:</b> Particle.h:69</div></div>
 <div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1ArrowEntity_html"><div class="ttname"><a href="structcursestone_1_1world_1_1ArrowEntity.html">cursestone::world::ArrowEntity</a></div><div class="ttdef"><b>Definition:</b> World.h:69</div></div>
@@ -621,7 +626,7 @@ $(document).ready(function(){initNavTree('World_8h_source.html',''); initResizab
 <div class="ttc" id="astructcursestone_1_1world_1_1WorldConfig_html_a6266fe7a819a9ddbda93a93c2a042e5c"><div class="ttname"><a href="structcursestone_1_1world_1_1WorldConfig.html#a6266fe7a819a9ddbda93a93c2a042e5c">cursestone::world::WorldConfig::format</a></div><div class="ttdeci">std::string format</div><div class="ttdoc">Supported formats: anvil and leveldb.</div><div class="ttdef"><b>Definition:</b> World.h:165</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1WorldConfig_html_a746a342ab93b97d7d694bd01039bf25c"><div class="ttname"><a href="structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c">cursestone::world::WorldConfig::generator</a></div><div class="ttdeci">std::string generator</div><div class="ttdoc">Supported generators: normal, flat, Nether, void.</div><div class="ttdef"><b>Definition:</b> World.h:166</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1WorldConfig_html_a856c8d9cd0cc6fb1919f3d3a804df90a"><div class="ttname"><a href="structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a">cursestone::world::WorldConfig::dimension</a></div><div class="ttdeci">uint8_t dimension</div><div class="ttdoc">World dimension: 0 for surface, 1 for Nether.</div><div class="ttdef"><b>Definition:</b> World.h:170</div></div>
-<div class="ttc" id="astructcursestone_1_1world_1_1World_1_1ChunkViewer_html"><div class="ttname"><a href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">cursestone::world::World::ChunkViewer</a></div><div class="ttdef"><b>Definition:</b> World.h:434</div></div>
+<div class="ttc" id="astructcursestone_1_1world_1_1World_1_1ChunkViewer_html"><div class="ttname"><a href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">cursestone::world::World::ChunkViewer</a></div><div class="ttdef"><b>Definition:</b> World.h:439</div></div>
 <div class="ttc" id="astructmcp__aabb_html"><div class="ttname"><a href="structmcp__aabb.html">mcp_aabb</a></div><div class="ttdef"><b>Definition:</b> AxisAlignedBB.h:35</div></div>
 <div class="ttc" id="astructmcp__chunk_html"><div class="ttname"><a href="structmcp__chunk.html">mcp_chunk</a></div><div class="ttdef"><b>Definition:</b> Chunk.h:54</div></div>
 <div class="ttc" id="astructmcp__vector3_html"><div class="ttname"><a href="structmcp__vector3.html">mcp_vector3</a></div><div class="ttdef"><b>Definition:</b> Vector3.h:40</div></div>
