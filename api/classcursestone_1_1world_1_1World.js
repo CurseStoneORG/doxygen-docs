@@ -34,6 +34,7 @@ var classcursestone_1_1world_1_1World =
     [ "getBlockId", "classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672", null ],
     [ "getTile", "classcursestone_1_1world_1_1World.html#a56bac9b3f491b902b9512a14dcc49a9a", null ],
     [ "getTilesInChunk", "classcursestone_1_1world_1_1World.html#aebfcf1174071f094b883b8982e61e196", null ],
+    [ "invalidateTileHydration", "classcursestone_1_1world_1_1World.html#a6bd86724206e0f10e15b50acfdd727ae", null ],
     [ "isChunkLoaded", "classcursestone_1_1world_1_1World.html#a56925762133a5c2460175c73d068606f", null ],
     [ "isRaining", "classcursestone_1_1world_1_1World.html#a79175f2ace52a0f0ebab9b38c0474e9d", null ],
     [ "isThundering", "classcursestone_1_1world_1_1World.html#a6a80dc97f06a179a5a15b910663f86c0", null ],

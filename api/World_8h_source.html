@@ -512,100 +512,113 @@ $(document).ready(function(){initNavTree('World_8h_source.html',''); initResizab
 <div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;    <span class="comment">// Returns all tile entities in a chunk for client synchronization.</span></div>
 <div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;    std::vector&lt;std::shared_ptr&lt;cursestone::tile::Tile&gt;&gt; getTilesInChunk(int32_t cx, int32_t cz);</div>
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160; </div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="comment">// ----- Chunk memory eviction -----</span></div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="comment">// Stores a player&#39;s current chunk and configured view radius.</span></div>
-<div class="line"><a name="l00439"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">  439</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">ChunkViewer</a> {</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        int32_t cx, cz, view_radius;</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    };</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="comment">// Unloads chunks outside all viewer radii, saving dirty chunks first.</span></div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keywordtype">int</span> unloadDistantChunks(<span class="keyword">const</span> std::vector&lt;ChunkViewer&gt;&amp; viewers, int32_t margin = 4);</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="keywordtype">double</span> lastTickMs_ = 0.0;</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordtype">double</span> avgTickMs_ = 0.0;</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="comment">// Drops the &quot;tiles hydrated&quot; marker of a chunk so its blocks are</span></div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="comment">// rescanned on the next tile access. The chunk stream must carry the</span></div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;    <span class="comment">// CURRENT tile set every time it goes out (chunk data, then tile NBTs):</span></div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="comment">// a client can drop and re-request a chunk at any moment (render-radius</span></div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="comment">// changes, leaving and coming back), and blocks that became tile blocks</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="comment">// after the first hydration — structure population writing into a</span></div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="comment">// resident chunk, plugin setBlock, a furnace placed before a round</span></div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="comment">// trip — would otherwise reach that client WITHOUT their block actor.</span></div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="comment">// The 0.15.10 client only binds a container UI to an actor it already</span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="comment">// holds; a furnace screen opened against a missing actor takes the</span></div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <span class="comment">// game down.</span></div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordtype">void</span> invalidateTileHydration(int32_t cx, int32_t cz);</div>
 <div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="comment">// Flushes a chunk&#39;s tiles and removes their in-memory registry entries.</span></div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="keywordtype">void</span> evictTilesForChunk(int32_t cx, int32_t cz);</div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160; </div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;    <span class="comment">// Loads tile entities from a chunk&#39;s stored NBT data.</span></div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keywordtype">void</span> ensureTilesLoaded(int32_t cx, int32_t cz);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="comment">// ----- Chunk memory eviction -----</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="comment">// Stores a player&#39;s current chunk and configured view radius.</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">  452</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">ChunkViewer</a> {</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        int32_t cx, cz, view_radius;</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    };</div>
 <div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="comment">// Creates missing tile entities for blocks that require them.</span></div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keywordtype">void</span> hydrateTilesFromBlocks(int32_t cx, int32_t cz, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="comment">// Unloads chunks outside all viewer radii, saving dirty chunks first.</span></div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    <span class="keywordtype">int</span> unloadDistantChunks(<span class="keyword">const</span> std::vector&lt;ChunkViewer&gt;&amp; viewers, int32_t margin = 4);</div>
 <div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160; </div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;    <span class="comment">// Writes dirty tile entities back into their owning chunks before saving.</span></div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordtype">void</span> syncTilesToChunks();</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <a class="code" href="structcursestone_1_1world_1_1WorldConfig.html">WorldConfig</a> cfg_;</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1ChunkManager.html">ChunkManager</a> chunks_;</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    std::shared_ptr&lt;format::WorldProvider&gt; provider_;</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    std::shared_ptr&lt;generator::Generator&gt; generator_;</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1PortalRegistry.html">PortalRegistry</a> portals_;   <span class="comment">// Persistent Nether portal registry.</span></div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    std::string portals_path_; <span class="comment">// Path to the portal registry file.</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> spawn_;</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    std::unordered_map&lt;uint64_t, class ChunkLoader*&gt; loaders_;</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;    <span class="comment">// ----- Weather state -----</span></div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="keywordtype">int</span> weather_state_ = WEATHER_CLEAR;</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    int32_t weather_ticks_left_ = -1;       <span class="comment">// -1 means unlimited duration.</span></div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;    uint32_t rain_strength_ = 100000;       <span class="comment">// Rain event strength.</span></div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    uint32_t thunder_strength_ = 35000;     <span class="comment">// Thunder event strength.</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    uint64_t rain_scan_offset_ = 0;         <span class="comment">// Round-robin chunk scan cursor.</span></div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    uint64_t last_fire_extinguish_log_ = 0; <span class="comment">// Fire log rate limit.</span></div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    uint64_t next_lightning_tick_ = 0;      <span class="comment">// Next permitted lightning tick.</span></div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <span class="comment">// Skip-night countdown; 0 means inactive.</span></div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    int32_t sleep_ticks_ = 0;</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    <span class="comment">// Selects a random online player for a lightning strike during thunderstorms.</span></div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    <span class="keywordtype">void</span> strikeRandomPlayerLightning();</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160; </div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <span class="comment">// Dropped items indexed by runtime entity ID.</span></div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;DroppedItem&gt;&gt; dropped_items_;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    <span class="keyword">mutable</span> std::mutex dropped_items_mtx_;</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;ArrowEntity&gt;&gt; arrows_;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    <span class="keyword">mutable</span> std::mutex arrows_mtx_;</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    <span class="comment">// Thrown splash potions indexed by runtime entity ID.</span></div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;SplashPotionEntity&gt;&gt; splash_potions_;</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keyword">mutable</span> std::mutex splash_potions_mtx_;</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;    <span class="keywordtype">double</span> lastTickMs_ = 0.0;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;    <span class="keywordtype">double</span> avgTickMs_ = 0.0;</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160; </div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="comment">// Flushes a chunk&#39;s tiles and removes their in-memory registry entries.</span></div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keywordtype">void</span> evictTilesForChunk(int32_t cx, int32_t cz);</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160; </div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="comment">// Loads tile entities from a chunk&#39;s stored NBT data.</span></div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordtype">void</span> ensureTilesLoaded(int32_t cx, int32_t cz);</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="comment">// Creates missing tile entities for blocks that require them.</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;    <span class="keywordtype">void</span> hydrateTilesFromBlocks(int32_t cx, int32_t cz, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk);</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;    <span class="comment">// Writes dirty tile entities back into their owning chunks before saving.</span></div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;    <span class="keywordtype">void</span> syncTilesToChunks();</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;    <a class="code" href="structcursestone_1_1world_1_1WorldConfig.html">WorldConfig</a> cfg_;</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1ChunkManager.html">ChunkManager</a> chunks_;</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    std::shared_ptr&lt;format::WorldProvider&gt; provider_;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;    std::shared_ptr&lt;generator::Generator&gt; generator_;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1PortalRegistry.html">PortalRegistry</a> portals_;   <span class="comment">// Persistent Nether portal registry.</span></div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    std::string portals_path_; <span class="comment">// Path to the portal registry file.</span></div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> spawn_;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    std::unordered_map&lt;uint64_t, class ChunkLoader*&gt; loaders_;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    <span class="comment">// ----- Weather state -----</span></div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    <span class="keywordtype">int</span> weather_state_ = WEATHER_CLEAR;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    int32_t weather_ticks_left_ = -1;       <span class="comment">// -1 means unlimited duration.</span></div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    uint32_t rain_strength_ = 100000;       <span class="comment">// Rain event strength.</span></div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;    uint32_t thunder_strength_ = 35000;     <span class="comment">// Thunder event strength.</span></div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    uint64_t rain_scan_offset_ = 0;         <span class="comment">// Round-robin chunk scan cursor.</span></div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    uint64_t last_fire_extinguish_log_ = 0; <span class="comment">// Fire log rate limit.</span></div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    uint64_t next_lightning_tick_ = 0;      <span class="comment">// Next permitted lightning tick.</span></div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="comment">// Skip-night countdown; 0 means inactive.</span></div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    int32_t sleep_ticks_ = 0;</div>
 <div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="comment">// Falling blocks indexed by runtime entity ID.</span></div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;FallingBlockEntity&gt;&gt; falling_blocks_;</div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    <span class="keyword">mutable</span> std::mutex falling_blocks_mtx_;</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160; </div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <span class="comment">// Tile entities indexed by packed block position.</span></div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    std::unordered_map&lt;uint64_t, std::shared_ptr&lt;cursestone::tile::Tile&gt;&gt; tiles_;</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keyword">mutable</span> std::mutex tiles_mtx_;</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160; </div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="comment">// Tracks chunks whose tile NBT has been loaded this session.</span></div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_hydrated_chunks_;</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160; </div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="comment">// Tracks chunks whose stored tile NBT must be rebuilt after removals.</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_dirty_chunks_;</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    <span class="comment">// Manages sky and block light propagation.</span></div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1LightEngine.html">LightEngine</a> light_;</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;    <span class="comment">// Selects a random online player for a lightning strike during thunderstorms.</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="keywordtype">void</span> strikeRandomPlayerLightning();</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="comment">// Dropped items indexed by runtime entity ID.</span></div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;DroppedItem&gt;&gt; dropped_items_;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <span class="keyword">mutable</span> std::mutex dropped_items_mtx_;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;ArrowEntity&gt;&gt; arrows_;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="keyword">mutable</span> std::mutex arrows_mtx_;</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;    <span class="comment">// Thrown splash potions indexed by runtime entity ID.</span></div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;SplashPotionEntity&gt;&gt; splash_potions_;</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;    <span class="keyword">mutable</span> std::mutex splash_potions_mtx_;</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="comment">// Falling blocks indexed by runtime entity ID.</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    std::unordered_map&lt;int64_t, std::unique_ptr&lt;FallingBlockEntity&gt;&gt; falling_blocks_;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;    <span class="keyword">mutable</span> std::mutex falling_blocks_mtx_;</div>
 <div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="keyword">static</span> uint64_t packChunkPos(int32_t cx, int32_t cz) {</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cx));</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cz));</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 32) | uz;</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    }</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;    <span class="comment">// Packs 28-bit X/Z coordinates and an 8-bit Y coordinate into one key.</span></div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keyword">static</span> uint64_t packTilePos(int32_t x, int32_t y, int32_t z) {</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(x)) &amp; 0xFFFFFFFULL;</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(z)) &amp; 0xFFFFFFFULL;</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        uint64_t uy = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(y));</div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 36) | (uz &lt;&lt; 8) | uy;</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    }</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;};</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="comment">// Broadcasts a single block update to every viewer of the chunk.</span></div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="keywordtype">void</span> sendUpdateBlock(World* w, int32_t x, int32_t y, int32_t z, uint8_t <span class="keywordtype">id</span>, uint8_t data);</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;    <span class="comment">// Tile entities indexed by packed block position.</span></div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;    std::unordered_map&lt;uint64_t, std::shared_ptr&lt;cursestone::tile::Tile&gt;&gt; tiles_;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="keyword">mutable</span> std::mutex tiles_mtx_;</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <span class="comment">// Tracks chunks whose tile NBT has been loaded this session.</span></div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_hydrated_chunks_;</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="comment">// Tracks chunks whose stored tile NBT must be rebuilt after removals.</span></div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_dirty_chunks_;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    <span class="comment">// Manages sky and block light propagation.</span></div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1LightEngine.html">LightEngine</a> light_;</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    <span class="keyword">static</span> uint64_t packChunkPos(int32_t cx, int32_t cz) {</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cx));</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cz));</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 32) | uz;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;    }</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    <span class="comment">// Packs 28-bit X/Z coordinates and an 8-bit Y coordinate into one key.</span></div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keyword">static</span> uint64_t packTilePos(int32_t x, int32_t y, int32_t z) {</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(x)) &amp; 0xFFFFFFFULL;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(z)) &amp; 0xFFFFFFFULL;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;        uint64_t uy = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(y));</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 36) | (uz &lt;&lt; 8) | uy;</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;    }</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;};</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;<span class="comment">// Broadcasts a single block update to every viewer of the chunk.</span></div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;<span class="keywordtype">void</span> sendUpdateBlock(World* w, int32_t x, int32_t y, int32_t z, uint8_t <span class="keywordtype">id</span>, uint8_t data);</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1ChunkManager_html"><div class="ttname"><a href="classcursestone_1_1world_1_1ChunkManager.html">cursestone::world::ChunkManager</a></div><div class="ttdef"><b>Definition:</b> ChunkManager.h:46</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1LightEngine_html"><div class="ttname"><a href="classcursestone_1_1world_1_1LightEngine.html">cursestone::world::LightEngine</a></div><div class="ttdef"><b>Definition:</b> LightEngine.h:68</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1PortalRegistry_html"><div class="ttname"><a href="classcursestone_1_1world_1_1PortalRegistry.html">cursestone::world::PortalRegistry</a></div><div class="ttdef"><b>Definition:</b> PortalRegistry.h:38</div></div>
@@ -626,7 +639,7 @@ $(document).ready(function(){initNavTree('World_8h_source.html',''); initResizab
 <div class="ttc" id="astructcursestone_1_1world_1_1WorldConfig_html_a6266fe7a819a9ddbda93a93c2a042e5c"><div class="ttname"><a href="structcursestone_1_1world_1_1WorldConfig.html#a6266fe7a819a9ddbda93a93c2a042e5c">cursestone::world::WorldConfig::format</a></div><div class="ttdeci">std::string format</div><div class="ttdoc">Supported formats: anvil and leveldb.</div><div class="ttdef"><b>Definition:</b> World.h:165</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1WorldConfig_html_a746a342ab93b97d7d694bd01039bf25c"><div class="ttname"><a href="structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c">cursestone::world::WorldConfig::generator</a></div><div class="ttdeci">std::string generator</div><div class="ttdoc">Supported generators: normal, flat, Nether, void.</div><div class="ttdef"><b>Definition:</b> World.h:166</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1WorldConfig_html_a856c8d9cd0cc6fb1919f3d3a804df90a"><div class="ttname"><a href="structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a">cursestone::world::WorldConfig::dimension</a></div><div class="ttdeci">uint8_t dimension</div><div class="ttdoc">World dimension: 0 for surface, 1 for Nether.</div><div class="ttdef"><b>Definition:</b> World.h:170</div></div>
-<div class="ttc" id="astructcursestone_1_1world_1_1World_1_1ChunkViewer_html"><div class="ttname"><a href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">cursestone::world::World::ChunkViewer</a></div><div class="ttdef"><b>Definition:</b> World.h:439</div></div>
+<div class="ttc" id="astructcursestone_1_1world_1_1World_1_1ChunkViewer_html"><div class="ttname"><a href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">cursestone::world::World::ChunkViewer</a></div><div class="ttdef"><b>Definition:</b> World.h:452</div></div>
 <div class="ttc" id="astructmcp__aabb_html"><div class="ttname"><a href="structmcp__aabb.html">mcp_aabb</a></div><div class="ttdef"><b>Definition:</b> AxisAlignedBB.h:35</div></div>
 <div class="ttc" id="astructmcp__chunk_html"><div class="ttname"><a href="structmcp__chunk.html">mcp_chunk</a></div><div class="ttdef"><b>Definition:</b> Chunk.h:54</div></div>
 <div class="ttc" id="astructmcp__vector3_html"><div class="ttname"><a href="structmcp__vector3.html">mcp_vector3</a></div><div class="ttdef"><b>Definition:</b> Vector3.h:40</div></div>
