@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['saveall_1935',['saveAll',['../classcursestone_1_1Server.html#a6ef3c80a186b12163c835a40faa80ce8',1,'cursestone::Server']]],
-  ['setexternalstopflag_1936',['setExternalStopFlag',['../classcursestone_1_1Server.html#aa9dd0c36ea68bb26e14f341cc9375807',1,'cursestone::Server']]],
-  ['setlimits_1937',['setLimits',['../classcursestone_1_1plugin_1_1LuaPlugin.html#acd7e790eab04ce59300ecbb62505150d',1,'cursestone::plugin::LuaPlugin']]],
-  ['shouldgc_1938',['shouldGc',['../classcursestone_1_1MemoryManager.html#a9a471ab2707ed6b00145f47be6a3d334',1,'cursestone::MemoryManager']]],
-  ['shutdown_1939',['shutdown',['../classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31',1,'cursestone::Server']]],
-  ['start_1940',['start',['../classcursestone_1_1Server.html#aa146861aee07ae4819af202d0f37ac80',1,'cursestone::Server']]]
+  ['saveall_1631',['saveAll',['../classcursestone_1_1Server.html#a6ef3c80a186b12163c835a40faa80ce8',1,'cursestone::Server']]],
+  ['setexternalstopflag_1632',['setExternalStopFlag',['../classcursestone_1_1Server.html#aa9dd0c36ea68bb26e14f341cc9375807',1,'cursestone::Server']]],
+  ['setlimits_1633',['setLimits',['../classcursestone_1_1plugin_1_1LuaPlugin.html#acd7e790eab04ce59300ecbb62505150d',1,'cursestone::plugin::LuaPlugin']]],
+  ['shouldgc_1634',['shouldGc',['../classcursestone_1_1MemoryManager.html#a9a471ab2707ed6b00145f47be6a3d334',1,'cursestone::MemoryManager']]],
+  ['shutdown_1635',['shutdown',['../classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31',1,'cursestone::Server']]],
+  ['start_1636',['start',['../classcursestone_1_1Server.html#aa146861aee07ae4819af202d0f37ac80',1,'cursestone::Server']]]
 ];

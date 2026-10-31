@@ -131,7 +131,7 @@ virtual void *&#160;</td><td class="memItemRight" valign="bottom"><b>owner</b> (
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Prints a server health summary. </p>
 <p>Restricted to operators and the console.</p>
-<p>Data is collected on the main thread (scheduled), because the console runs commands on the <a class="el" href="classcursestone_1_1CommandReader.html">CommandReader</a> thread and world/player state must not be read from there. </p>
+<p>Data is collected on the main thread: console commands are scheduled onto it because the console runs on the <a class="el" href="classcursestone_1_1CommandReader.html">CommandReader</a> thread; player commands already run there. Players are limited to one use every 2 seconds. </p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/command/defaults/<a class="el" href="StatusCommand_8h_source.html">StatusCommand.h</a></li>
 <li>src/command/defaults/StatusCommand.cpp</li>

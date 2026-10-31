@@ -851,41 +851,44 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160; </div>
 <div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    <span class="comment">// Shared chunk spiral algorithm.</span></div>
 <div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; buildChunkSpiral(<span class="keywordtype">int</span> vd);</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="comment">// Chunks already sent to this player, protected by chunks_mtx_.</span></div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    std::unordered_set&lt;int64_t&gt; used_chunks_;</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <span class="keyword">mutable</span> std::mutex chunks_mtx_;</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="comment">// View radius the client last requested, already clamped to</span></div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="comment">// cfg_.view_distance. 0 until the first RequestChunkRadiusPacket</span></div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="comment">// arrives; chunk streaming then falls back to cfg_.view_distance.</span></div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <span class="comment">// Written by the network thread, read by the tick thread.</span></div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    std::atomic&lt;int32_t&gt; client_chunk_radius_{0};</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="comment">// Ensures the spawn acknowledgment triggers re-streaming only once.</span></div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    std::atomic&lt;bool&gt; spawn_ack_done_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160; </div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <span class="comment">// Pending chunk requests in spiral order.</span></div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; chunk_queue_;</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="keyword">mutable</span> std::mutex queue_mtx_;</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    <span class="comment">// Flush batches immediately when they reach 32 KB.</span></div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160; </div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <span class="comment">// Ensures close() cleanup runs only once across threads.</span></div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    std::once_flag close_once_;</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <span class="comment">// Defers player removal to the main server thread.</span></div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <span class="comment">// Checks whether player removal is pending.</span></div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire);</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    }</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;};</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;} <span class="comment">// namespace cursestone</span></div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="comment">// Spiral for the radius onUpdate() used last; main thread only.</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="keywordtype">int</span> spiral_cache_radius_ = -1;</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; spiral_cache_;</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="comment">// Chunks already sent to this player, protected by chunks_mtx_.</span></div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    std::unordered_set&lt;int64_t&gt; used_chunks_;</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="keyword">mutable</span> std::mutex chunks_mtx_;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <span class="comment">// View radius the client last requested, already clamped to</span></div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <span class="comment">// cfg_.view_distance. 0 until the first RequestChunkRadiusPacket</span></div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    <span class="comment">// arrives; chunk streaming then falls back to cfg_.view_distance.</span></div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;    <span class="comment">// Written by the network thread, read by the tick thread.</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    std::atomic&lt;int32_t&gt; client_chunk_radius_{0};</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <span class="comment">// Ensures the spawn acknowledgment triggers re-streaming only once.</span></div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    std::atomic&lt;bool&gt; spawn_ack_done_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160; </div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <span class="comment">// Pending chunk requests in spiral order.</span></div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; chunk_queue_;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    <span class="keyword">mutable</span> std::mutex queue_mtx_;</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <span class="comment">// Flush batches immediately when they reach 32 KB.</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    <span class="comment">// Ensures close() cleanup runs only once across threads.</span></div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    std::once_flag close_once_;</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    <span class="comment">// Defers player removal to the main server thread.</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="comment">// Checks whether player removal is pending.</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire);</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    }</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;};</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;} <span class="comment">// namespace cursestone</span></div>
 <div class="ttc" id="aclasscursestone_1_1IPlayer_html"><div class="ttname"><a href="classcursestone_1_1IPlayer.html">cursestone::IPlayer</a></div><div class="ttdef"><b>Definition:</b> IPlayer.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
 <div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">Server singleton for startup, ticking, and shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:95</div></div>
