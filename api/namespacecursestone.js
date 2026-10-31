@@ -653,6 +653,7 @@ var namespacecursestone =
       [ "ChestInventory", "classcursestone_1_1inventory_1_1ChestInventory.html", "classcursestone_1_1inventory_1_1ChestInventory" ],
       [ "CraftingManager", "classcursestone_1_1inventory_1_1CraftingManager.html", "classcursestone_1_1inventory_1_1CraftingManager" ],
       [ "CreativeItemDef", "structcursestone_1_1inventory_1_1CreativeItemDef.html", "structcursestone_1_1inventory_1_1CreativeItemDef" ],
+      [ "DoubleChestInventory", "classcursestone_1_1inventory_1_1DoubleChestInventory.html", "classcursestone_1_1inventory_1_1DoubleChestInventory" ],
       [ "FurnaceInventory", "classcursestone_1_1inventory_1_1FurnaceInventory.html", "classcursestone_1_1inventory_1_1FurnaceInventory" ],
       [ "Inventory", "classcursestone_1_1inventory_1_1Inventory.html", "classcursestone_1_1inventory_1_1Inventory" ],
       [ "InventoryHolder", "classcursestone_1_1inventory_1_1InventoryHolder.html", "classcursestone_1_1inventory_1_1InventoryHolder" ],

@@ -84,6 +84,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1tile_1_1TileChest.h
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classcursestone_1_1tile_1_1TileChest-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::tile::TileChest Class Reference</div>  </div>
@@ -130,6 +131,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>addViewer</b> ()</td>
 <tr class="memitem:ae91129eb2eef86af12d6d5f92af3e913"><td class="memItemLeft" align="right" valign="top"><a id="ae91129eb2eef86af12d6d5f92af3e913"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>removeViewer</b> ()</td></tr>
 <tr class="separator:ae91129eb2eef86af12d6d5f92af3e913"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef55adb4915de5fb451cd5aa60903be"><td class="memItemLeft" align="right" valign="top"><a id="a0ef55adb4915de5fb451cd5aa60903be"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isPaired</b> () const</td></tr>
+<tr class="separator:a0ef55adb4915de5fb451cd5aa60903be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a485b7fdc6c72181875098f20f105c1b4"><td class="memItemLeft" align="right" valign="top"><a id="a485b7fdc6c72181875098f20f105c1b4"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>pairX</b> () const</td></tr>
+<tr class="separator:a485b7fdc6c72181875098f20f105c1b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa026b1f8ab662d333f5ff282363175e7"><td class="memItemLeft" align="right" valign="top"><a id="aa026b1f8ab662d333f5ff282363175e7"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>pairZ</b> () const</td></tr>
+<tr class="separator:aa026b1f8ab662d333f5ff282363175e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9db250db137b16e695bfda4bf1a93008"><td class="memItemLeft" align="right" valign="top"><a id="a9db250db137b16e695bfda4bf1a93008"></a>
+std::shared_ptr&lt; <a class="el" href="classcursestone_1_1tile_1_1TileChest.html">TileChest</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>pairTile</b> (<a class="el" href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a> *lvl) const</td></tr>
+<tr class="separator:a9db250db137b16e695bfda4bf1a93008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b51186de2dcbca7a60ee492c7ea0d0"><td class="memItemLeft" align="right" valign="top"><a id="aa4b51186de2dcbca7a60ee492c7ea0d0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setPair</b> (const std::shared_ptr&lt; <a class="el" href="classcursestone_1_1tile_1_1TileChest.html">TileChest</a> &gt; &amp;other)</td></tr>
+<tr class="separator:aa4b51186de2dcbca7a60ee492c7ea0d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c9082159cf2c97d5a98c6a843236d98"><td class="memItemLeft" align="right" valign="top"><a id="a7c9082159cf2c97d5a98c6a843236d98"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearPair</b> ()</td></tr>
+<tr class="separator:a7c9082159cf2c97d5a98c6a843236d98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classcursestone_1_1tile_1_1Tile"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcursestone_1_1tile_1_1Tile')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcursestone_1_1tile_1_1Tile.html">cursestone::tile::Tile</a></td></tr>
 <tr class="memitem:aab644cdbae67c29b9e8f90fbf0db2783 inherit pub_methods_classcursestone_1_1tile_1_1Tile"><td class="memItemLeft" align="right" valign="top"><a id="aab644cdbae67c29b9e8f90fbf0db2783"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Tile</b> (std::string id, <a class="el" href="classcursestone_1_1world_1_1Position.html">cursestone::world::Position</a> pos)</td></tr>
@@ -169,6 +188,12 @@ virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="botto
 <tr class="memitem:a9d2dc22f490b1d95aa04cf0c43b87939 inherit pub_methods_classcursestone_1_1tile_1_1Nameable"><td class="memItemLeft" align="right" valign="top"><a id="a9d2dc22f490b1d95aa04cf0c43b87939"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setName</b> (const std::string &amp;s)</td></tr>
 <tr class="separator:a9d2dc22f490b1d95aa04cf0c43b87939 inherit pub_methods_classcursestone_1_1tile_1_1Nameable"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a2c2e8a3835ecba68616452f9e41ab3e3"><td class="memItemLeft" align="right" valign="top"><a id="a2c2e8a3835ecba68616452f9e41ab3e3"></a>
+static std::shared_ptr&lt; <a class="el" href="classcursestone_1_1inventory_1_1DoubleChestInventory.html">cursestone::inventory::DoubleChestInventory</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>getOrCreateDouble</b> (const std::shared_ptr&lt; <a class="el" href="classcursestone_1_1tile_1_1TileChest.html">TileChest</a> &gt; &amp;a, const std::shared_ptr&lt; <a class="el" href="classcursestone_1_1tile_1_1TileChest.html">TileChest</a> &gt; &amp;b)</td></tr>
+<tr class="separator:a2c2e8a3835ecba68616452f9e41ab3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>

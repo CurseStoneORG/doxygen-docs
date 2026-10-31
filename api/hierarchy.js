@@ -736,6 +736,7 @@ var hierarchy =
     [ "cursestone::inventory::Inventory", "classcursestone_1_1inventory_1_1Inventory.html", [
       [ "cursestone::inventory::BaseInventory", "classcursestone_1_1inventory_1_1BaseInventory.html", [
         [ "cursestone::inventory::ChestInventory", "classcursestone_1_1inventory_1_1ChestInventory.html", null ],
+        [ "cursestone::inventory::DoubleChestInventory", "classcursestone_1_1inventory_1_1DoubleChestInventory.html", null ],
         [ "cursestone::inventory::FurnaceInventory", "classcursestone_1_1inventory_1_1FurnaceInventory.html", null ],
         [ "cursestone::inventory::PlayerInventory", "classcursestone_1_1inventory_1_1PlayerInventory.html", null ]
       ] ]

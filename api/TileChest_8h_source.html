@@ -126,62 +126,113 @@ $(document).ready(function(){initNavTree('TileChest_8h_source.html',''); initRes
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;Spawnable.h&quot;</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;item/ItemStack.h&quot;</span> <span class="comment">// required for ItemStack return/param types below</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;inventory/ChestInventory.h&quot;</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span>cursestone::tile {</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classcursestone_1_1tile_1_1TileChest.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1tile_1_1TileChest.html">TileChest</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1tile_1_1Tile.html">Tile</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1tile_1_1Container.html">Container</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1tile_1_1Nameable.html">Nameable</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1tile_1_1Spawnable.html">Spawnable</a> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classcursestone_1_1tile_1_1TileChest.html">TileChest</a>(<a class="code" href="classcursestone_1_1world_1_1Position.html">cursestone::world::Position</a> pos)</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        : <a class="code" href="classcursestone_1_1tile_1_1Tile.html">Tile</a>(<span class="stringliteral">&quot;Chest&quot;</span>, pos),</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;          inventory_(std::make_shared&lt;cursestone::inventory::ChestInventory&gt;()) {</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">int</span> size()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> SIZE;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> setItem(<span class="keywordtype">int</span> slot, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; it) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> getItem(<span class="keywordtype">int</span> slot) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> removeItem(<span class="keywordtype">int</span> slot) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> spawnTo(<span class="keywordtype">void</span>* <span class="comment">/*player*/</span>)<span class="keyword"> override </span>{</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> writeNBT(<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* tag) <span class="keyword">const override</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">void</span> readNBT(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* tag) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="comment">// The backing inventory. Player::openChestAt() hands this shared_ptr</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="comment">// straight to InventoryOpenEvent / ContainerSetContentPacket — no</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// copy, so edits made through either the Container interface above</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// or directly via this Inventory land in the same 27 slots.</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::shared_ptr&lt;cursestone::inventory::ChestInventory&gt; inventory()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> inventory_;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// How many players currently have this chest open. Player::openChestAt/</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// closeOpenChest keep this in sync (drives the lid open/close events).</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Multiple players CAN hold this chest open at once — slot changes are</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// resynced to every co-viewer via Player::broadcastChestSlotToViewers,</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// so all of them see the same live content.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">int</span> viewerCount()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> viewer_count_;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">namespace </span>cursestone::world {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">class </span>World;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">namespace </span>cursestone::inventory {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">class </span>DoubleChestInventory;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;}</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">namespace </span>cursestone::tile {</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classcursestone_1_1tile_1_1TileChest.html">   50</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1tile_1_1TileChest.html">TileChest</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1tile_1_1Tile.html">Tile</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1tile_1_1Container.html">Container</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1tile_1_1Nameable.html">Nameable</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1tile_1_1Spawnable.html">Spawnable</a> {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classcursestone_1_1tile_1_1TileChest.html">TileChest</a>(<a class="code" href="classcursestone_1_1world_1_1Position.html">cursestone::world::Position</a> pos)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        : <a class="code" href="classcursestone_1_1tile_1_1Tile.html">Tile</a>(<span class="stringliteral">&quot;Chest&quot;</span>, pos),</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;          inventory_(std::make_shared&lt;cursestone::inventory::ChestInventory&gt;()) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">int</span> size()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> SIZE;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> setItem(<span class="keywordtype">int</span> slot, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; it) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> getItem(<span class="keywordtype">int</span> slot) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> removeItem(<span class="keywordtype">int</span> slot) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> spawnTo(<span class="keywordtype">void</span>* <span class="comment">/*player*/</span>)<span class="keyword"> override </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> writeNBT(<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* tag) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> readNBT(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* tag) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// The backing inventory. Player::openChestAt() hands this shared_ptr</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// straight to InventoryOpenEvent / ContainerSetContentPacket — no</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// copy, so edits made through either the Container interface above</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// or directly via this Inventory land in the same 27 slots. A paired</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// chest is opened through TileChest::getOrCreateDouble() instead,</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// which wraps both halves without copying any slot.</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::shared_ptr&lt;cursestone::inventory::ChestInventory&gt; inventory()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> inventory_;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> addViewer() {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        ++viewer_count_;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> removeViewer() {</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span> (viewer_count_ &gt; 0)</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            --viewer_count_;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> SIZE = 27;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    std::shared_ptr&lt;cursestone::inventory::ChestInventory&gt; inventory_;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> viewer_count_ = 0;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::weak_ptr&lt;TileChest&gt; pair_; <span class="comment">// paired chest (double chest)</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;};</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// How many players currently have this chest open. Player::openChestAt/</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// closeOpenChest keep this in sync (drives the lid open/close events).</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Multiple players CAN hold this chest open at once — slot changes are</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// resynced to every co-viewer via Player::broadcastChestSlotToViewers,</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// so all of them see the same live content.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">int</span> viewerCount()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span> viewer_count_;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> addViewer() {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        ++viewer_count_;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> removeViewer() {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordflow">if</span> (viewer_count_ &gt; 0)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            --viewer_count_;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// ---- Vanilla double-chest pairing ----</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// The pairing is the vanilla one: each half stores the integer</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// position of its partner (&quot;pairx&quot;/&quot;pairz&quot;, same-Y implied) — the</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// fields persist through the tile NBT, so a double chest saved and</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// reloaded stays a double chest.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">bool</span> isPaired()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">return</span> has_pair_;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    int32_t pairX()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <span class="keywordflow">return</span> pair_x_;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    int32_t pairZ()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        <span class="keywordflow">return</span> pair_z_;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// Resolves the paired half through the world tile registry. Returns</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// null when this chest is single, the chunk is not loaded, or the</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// registered tile at the pair position is not a chest anymore.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::shared_ptr&lt;TileChest&gt; pairTile(<a class="code" href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a>* lvl) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// Vanilla Chest::createPair — writes the pairing onto BOTH halves and</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// invalidates the cached double inventories.</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> setPair(<span class="keyword">const</span> std::shared_ptr&lt;TileChest&gt;&amp; other);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Drops the pairing state of THIS half only (pair position + cached</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// double inventory) and marks the tile dirty for the next save.</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> clearPair();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="comment">// Vanilla InventoryLargeChest for the pair a/b — built once and SHARED</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="comment">// by both tiles so every viewer of either half works on the same 54</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="comment">// slot space. Slot order follows the vanilla orientation rule: the</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="comment">// east half of an X-axis pair (and the north half of a Z-axis pair)</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="comment">// addresses slots 0-26. Returns null when a/b are not a valid pair.</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keyword">static</span> std::shared_ptr&lt;cursestone::inventory::DoubleChestInventory&gt; getOrCreateDouble(</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keyword">const</span> std::shared_ptr&lt;TileChest&gt;&amp; a, <span class="keyword">const</span> std::shared_ptr&lt;TileChest&gt;&amp; b);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> SIZE = 27;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    std::shared_ptr&lt;cursestone::inventory::ChestInventory&gt; inventory_;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">int</span> viewer_count_ = 0;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="comment">// Vanilla &quot;pairx&quot;/&quot;pairz&quot; — the paired half&#39;s block position (same Y).</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">bool</span> has_pair_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    int32_t pair_x_ = 0;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    int32_t pair_z_ = 0;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="comment">// Cached double window, always shared by both halves when set.</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    std::shared_ptr&lt;cursestone::inventory::DoubleChestInventory&gt; double_;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;};</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Container_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Container.html">cursestone::tile::Container</a></div><div class="ttdef"><b>Definition:</b> Container.h:32</div></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Nameable_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Nameable.html">cursestone::tile::Nameable</a></div><div class="ttdef"><b>Definition:</b> Nameable.h:27</div></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Spawnable_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Spawnable.html">cursestone::tile::Spawnable</a></div><div class="ttdef"><b>Definition:</b> Spawnable.h:28</div></div>
-<div class="ttc" id="aclasscursestone_1_1tile_1_1TileChest_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1TileChest.html">cursestone::tile::TileChest</a></div><div class="ttdef"><b>Definition:</b> TileChest.h:43</div></div>
+<div class="ttc" id="aclasscursestone_1_1tile_1_1TileChest_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1TileChest.html">cursestone::tile::TileChest</a></div><div class="ttdef"><b>Definition:</b> TileChest.h:50</div></div>
 <div class="ttc" id="aclasscursestone_1_1tile_1_1Tile_html"><div class="ttname"><a href="classcursestone_1_1tile_1_1Tile.html">cursestone::tile::Tile</a></div><div class="ttdef"><b>Definition:</b> Tile.h:47</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1Position_html"><div class="ttname"><a href="classcursestone_1_1world_1_1Position.html">cursestone::world::Position</a></div><div class="ttdef"><b>Definition:</b> Position.h:35</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1World_html"><div class="ttname"><a href="classcursestone_1_1world_1_1World.html">cursestone::world::World</a></div><div class="ttdef"><b>Definition:</b> World.h:177</div></div>
 <div class="ttc" id="astructcursestone_1_1item_1_1ItemStack_html"><div class="ttname"><a href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a></div><div class="ttdef"><b>Definition:</b> ItemStack.h:32</div></div>
 <div class="ttc" id="astructmcp__tag_html"><div class="ttname"><a href="structmcp__tag.html">mcp_tag</a></div><div class="ttdef"><b>Definition:</b> TagDefs.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
