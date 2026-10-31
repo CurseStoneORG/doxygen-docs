@@ -5,6 +5,8 @@ var structmcp__rak__session__manager =
     [ "ip_sec_buf", "structmcp__rak__session__manager.html#a207fda0e35ca3fd30248257a9e5998e0", null ],
     [ "ip_sec_cnt", "structmcp__rak__session__manager.html#a3f5ce75dba9ad9ca24a932c94bd6c201", null ],
     [ "ip_sec_n", "structmcp__rak__session__manager.html#adba1bdfb51c9193dd28854869a8d6a47", null ],
+    [ "map_key", "structmcp__rak__session__manager.html#ae5dadc3758d693226a5cc68d00850a98", null ],
+    [ "map_ptr", "structmcp__rak__session__manager.html#ad8b9edfa8157268c749fc9fb609cbf25", null ],
     [ "mtu", "structmcp__rak__session__manager.html#a541fb7b5f33e74c302948a0c7d79e956", null ],
     [ "server_id", "structmcp__rak__session__manager.html#afcb22dba5eab7ed21665d64f85a1a080", null ],
     [ "server_name", "structmcp__rak__session__manager.html#a1733ca4cfba098b5576c3a5db5a223ef", null ],

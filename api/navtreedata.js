@@ -216,7 +216,7 @@ var NAVTREEINDEX =
 "structcursestone_1_1TickSample.html#a6dd584ccf0069b75f68b53f1b2752fc3",
 "structcursestone_1_1world_1_1World_1_1ChunkViewer.html#a54e98b868afd20855f6c08b6708f9c0f",
 "structmcp__rak__session.html#ae89d528d70fa3709c1040a6119b16851",
-"structvgen_1_1Pos.html#af7eaf3d8c6132020c688a1217a3b3491"
+"structvgen_1_1Pos.html#ab41bd2b1b411516204c73b05b364027e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

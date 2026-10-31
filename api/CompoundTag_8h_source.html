@@ -155,18 +155,17 @@ $(document).ready(function(){initNavTree('CompoundTag_8h_source.html',''); initR
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// Returns the named child as a CompoundTag (NULL if not a compound).</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* mcp_compound_tag_get_compound(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* <span class="keyword">self</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">size_t</span> mcp_compound_tag_size(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* <span class="keyword">self</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">bool</span> mcp_compound_tag_contains(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* <span class="keyword">self</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// Remove `name` and destroy its tag. Returns true when something was</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// actually removed (so a caller can use it as a conditional rewrite</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// without knowing whether the key was there). The order of the remaining</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// entries is preserved.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="keywordtype">bool</span> mcp_compound_tag_remove(<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* <span class="keyword">self</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">bool</span> mcp_compound_tag_contains(<span class="keyword">const</span> <a class="code" href="structmcp__tag.html">mcp_tag_t</a>* <span class="keyword">self</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">// Remove `name` and destroy its tag. Returns true when something was</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">// actually removed (so a caller can use it as a conditional rewrite</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">// without knowing whether the key was there). The order of the remaining</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// entries is preserved.</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keywordtype">bool</span> mcp_compound_tag_remove(<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* <span class="keyword">self</span>, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="astructmcp__tag_html"><div class="ttname"><a href="structmcp__tag.html">mcp_tag</a></div><div class="ttdef"><b>Definition:</b> TagDefs.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

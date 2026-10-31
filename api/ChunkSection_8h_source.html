@@ -116,7 +116,7 @@ $(document).ready(function(){initNavTree('ChunkSection_8h_source.html',''); init
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// sky light, and block light. Chunk.h includes this header so</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Chunk can stack 16 of these on Y.</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Pure C, no global state. Small index/nibble helpers are inlined;</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// No global state. Small index/nibble helpers are inlined;</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// larger allocators live in ChunkSection.c.</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
@@ -124,86 +124,77 @@ $(document).ready(function(){initNavTree('ChunkSection_8h_source.html',''); init
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;stddef.h&gt;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// Opaque struct — the layout is defined in ChunkSection.c.</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// `mcp_chunk_section_t` is the public alias; users go through</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">// the accessors below and never touch the fields directly.</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structmcp__chunk__section.html">   46</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__chunk__section.html">mcp_chunk_section</a> {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    uint8_t y_index;      <span class="comment">// 0..15 — which sub-Y this is.</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint8_t* blocks;      <span class="comment">// 4096 bytes (XZY order)</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    uint8_t* data;        <span class="comment">// 2048 bytes  (4-bit nibbles)</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    uint8_t* sky_light;   <span class="comment">// 2048 bytes  (4-bit nibbles)</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    uint8_t* block_light; <span class="comment">// 2048 bytes  (4-bit nibbles)</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> non_air_top;     <span class="comment">// true if upper half has any non-air block</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;} <a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// XZY coordinate packing: idx = (x&amp;15) | ((z&amp;15)&lt;&lt;4) | ((y&amp;15)&lt;&lt;8).</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// Range 0..4095 for blocks, 0..2047 for nibble arrays.</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// NOTE (CurseStone): the nibble index MUST use the same shift-8 packing</span></div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// as Chunk.c&#39;s nibble_index()/get_nibble()/set_nibble() — byte =</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// 128*y + 8*z + x/2, low nibble for even x, high nibble for odd x.</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// An earlier revision used (y&lt;&lt;7) here, which overlaps with the z bits</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// ((x=1,z=8,y=0) and (x=1,z=0,y=1) both map to 129) and desynchronizes</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// the whole data array for every y &gt;= 1: blocks written through these</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// helpers came back with the wrong data (or none) when read through</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// mcp_chunk_get_block_data, the save path and mcp_chunk_network_serialize.</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// Visible effect: spruce/leaves/snow data nibbles above the first</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// section row read back as 0 — e.g. taiga trees with oak trunks.</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint32_t mcp_section_block_index(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z) {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">return</span> (uint32_t)((x &amp; 15) | ((z &amp; 15) &lt;&lt; 4) | ((y &amp; 15) &lt;&lt; 8));</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;}</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint32_t mcp_section_nibble_index(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">return</span> (uint32_t)((x &amp; 15) | ((z &amp; 15) &lt;&lt; 4) | ((y &amp; 15) &lt;&lt; 8));</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint8_t mcp_section_get_nibble(<span class="keyword">const</span> uint8_t* arr, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">if</span> (!arr)</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    uint32_t i = mcp_section_nibble_index(x, y, z);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    uint8_t b = arr[i &gt;&gt; 1];</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">return</span> (i &amp; 1) ? (uint8_t)((b &gt;&gt; 4) &amp; 0x0F) : (uint8_t)(b &amp; 0x0F);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> mcp_section_set_nibble(uint8_t* arr, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, uint8_t v) {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (!arr)</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    v &amp;= 0x0F;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    uint32_t i = mcp_section_nibble_index(x, y, z);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    uint8_t* b = &amp;arr[i &gt;&gt; 1];</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">if</span> (i &amp; 1) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        *b = (uint8_t)((*b &amp; 0x0F) | (v &lt;&lt; 4));</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        *b = (uint8_t)((*b &amp; 0xF0) | v);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// Lifecycle. mcp_section_new allocates + zeroes the section, with</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// sky_light defaulting to 0xFF (full bright) for freshly generated</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// chunks that haven&#39;t had a light pass yet.</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>* mcp_section_new(uint8_t y);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keywordtype">void</span> mcp_section_destroy(<a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>* s);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Opaque struct — the layout is defined in ChunkSection.c.</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// `mcp_chunk_section_t` is the public alias; users go through</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// the accessors below and never touch the fields directly.</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="structmcp__chunk__section.html">   43</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__chunk__section.html">mcp_chunk_section</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    uint8_t y_index;      <span class="comment">// 0..15 — which sub-Y this is.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    uint8_t* blocks;      <span class="comment">// 4096 bytes (XZY order)</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    uint8_t* data;        <span class="comment">// 2048 bytes  (4-bit nibbles)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    uint8_t* sky_light;   <span class="comment">// 2048 bytes  (4-bit nibbles)</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    uint8_t* block_light; <span class="comment">// 2048 bytes  (4-bit nibbles)</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">bool</span> non_air_top;     <span class="comment">// true if upper half has any non-air block</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;} <a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// XZY coordinate packing: idx = (x&amp;15) | ((z&amp;15)&lt;&lt;4) | ((y&amp;15)&lt;&lt;8).</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// Range 0..4095 for blocks, 0..2047 for nibble arrays.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// NOTE (CurseStone): the nibble index MUST use the same shift-8 packing</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// as Chunk.c&#39;s nibble_index()/get_nibble()/set_nibble() — byte =</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// 128*y + 8*z + x/2, low nibble for even x, high nibble for odd x.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// An earlier revision used (y&lt;&lt;7) here, which overlaps with the z bits</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// ((x=1,z=8,y=0) and (x=1,z=0,y=1) both map to 129) and desynchronizes</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// the whole data array for every y &gt;= 1: blocks written through these</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// helpers came back with the wrong data (or none) when read through</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// mcp_chunk_get_block_data, the save path and mcp_chunk_network_serialize.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// Visible effect: spruce/leaves/snow data nibbles above the first</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// section row read back as 0 — e.g. taiga trees with oak trunks.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint32_t mcp_section_block_index(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z) {</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> (uint32_t)((x &amp; 15) | ((z &amp; 15) &lt;&lt; 4) | ((y &amp; 15) &lt;&lt; 8));</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint32_t mcp_section_nibble_index(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> (uint32_t)((x &amp; 15) | ((z &amp; 15) &lt;&lt; 4) | ((y &amp; 15) &lt;&lt; 8));</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> uint8_t mcp_section_get_nibble(<span class="keyword">const</span> uint8_t* arr, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordflow">if</span> (!arr)</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    uint32_t i = mcp_section_nibble_index(x, y, z);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    uint8_t b = arr[i &gt;&gt; 1];</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> (i &amp; 1) ? (uint8_t)((b &gt;&gt; 4) &amp; 0x0F) : (uint8_t)(b &amp; 0x0F);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> mcp_section_set_nibble(uint8_t* arr, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> z, uint8_t v) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span> (!arr)</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    v &amp;= 0x0F;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint32_t i = mcp_section_nibble_index(x, y, z);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    uint8_t* b = &amp;arr[i &gt;&gt; 1];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (i &amp; 1) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        *b = (uint8_t)((*b &amp; 0x0F) | (v &lt;&lt; 4));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        *b = (uint8_t)((*b &amp; 0xF0) | v);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// Lifecycle. mcp_section_new allocates + zeroes the section, with</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// sky_light defaulting to 0xFF (full bright) for freshly generated</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// chunks that haven&#39;t had a light pass yet.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>* mcp_section_new(uint8_t y);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keywordtype">void</span> mcp_section_destroy(<a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>* s);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// Fill `s-&gt;blocks` with `id` for the entire 4096-byte array.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// Used by the Flat generator and the Void generator&#39;s bedrock floor.</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">// Fill `s-&gt;blocks` with `id` for the entire 4096-byte array.</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">// Used by the Flat generator and the Void generator&#39;s bedrock floor.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="keywordtype">void</span> mcp_section_fill_blocks(<a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>* s, uint8_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">// True if the section has no non-air block anywhere (s == NULL or</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">// every byte of `blocks` is zero). Used by the network serializer</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">// to decide whether to skip the section.</span></div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// True if the section has no non-air block anywhere (s == NULL or</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">// every byte of `blocks` is zero). Used by the network serializer</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">// to decide whether to skip the section.</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">bool</span> mcp_section_is_empty(<span class="keyword">const</span> <a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>* s);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// Count non-air blocks in the section (debug + light-populated flag).</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="keywordtype">size_t</span> mcp_section_count_non_air(<span class="keyword">const</span> <a class="code" href="structmcp__chunk__section.html">mcp_chunk_section_t</a>* s);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="astructmcp__chunk__section_html"><div class="ttname"><a href="structmcp__chunk__section.html">mcp_chunk_section</a></div><div class="ttdef"><b>Definition:</b> ChunkSection.h:46</div></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">// Count non-air blocks in the section (debug + light-populated flag).</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="ttc" id="astructmcp__chunk__section_html"><div class="ttname"><a href="structmcp__chunk__section.html">mcp_chunk_section</a></div><div class="ttdef"><b>Definition:</b> ChunkSection.h:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
