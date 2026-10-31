@@ -1,7 +1,6 @@
 var classvgen_1_1LevelChunk =
 [
     [ "LevelChunk", "classvgen_1_1LevelChunk.html#a20516ba2f35da6e6bbdfbb0824a01894", null ],
-    [ "_touchColumn", "classvgen_1_1LevelChunk.html#a390d88a06cbf2556a10e42102f297e2f", null ],
     [ "deferLightEmitter", "classvgen_1_1LevelChunk.html#a4220eef8d557fceda8af46342cf6882a", null ],
     [ "getAboveTopSolidBlock", "classvgen_1_1LevelChunk.html#a2e083aa8758d9c9ebfddc1c085cbc8cc", null ],
     [ "getAllocatedHeight", "classvgen_1_1LevelChunk.html#a83c8e278c35f1669e9355f484bb4d9d7", null ],
