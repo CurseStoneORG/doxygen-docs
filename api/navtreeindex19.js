@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html#a6ae136e1a8b3242565be505225bf8931":[9,0,0,7,0,11,0],
 "classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html#ae84bd6ac9c81339e3afdc6a2ce1751a0":[9,0,0,7,0,11,1],
 "classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html#af5f9d1f17670a0c1c085def39042fc65":[9,0,0,7,0,11,2],
 "classcursestone_1_1network_1_1protocol_1_1ClientboundMapItemDataPacket.html":[9,0,0,7,0,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#ae19883b05a85f078f46b13a56494a0a4":[9,0,0,7,0,22,24],
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#ae4ee06ce0bb5ab9c5764b7abc7a432ee":[9,0,0,7,0,22,21],
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#aee54bc37fd436ba74cb58f0eaf095536":[9,0,0,7,0,22,1],
-"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#aee630b8442dd08ca1b17d3284b3dbb15":[9,0,0,7,0,22,9],
-"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html":[9,0,0,7,0,23]
+"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#aee630b8442dd08ca1b17d3284b3dbb15":[9,0,0,7,0,22,9]
 };

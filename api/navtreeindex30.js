@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"structcursestone_1_1math_1_1Vec3.html#a1938ecdfa3625c7eac7b25c428f87b8c":[9,0,0,6,0,13],
 "structcursestone_1_1math_1_1Vec3.html#a241e3093c6818ec4519795a071c4e44b":[9,0,0,6,0,1],
 "structcursestone_1_1math_1_1Vec3.html#a2901917e063a38762a41bcaedb00a852":[9,0,0,6,0,15],
 "structcursestone_1_1math_1_1Vec3.html#a2cff48afedee44b72bd91df07d074214":[9,0,0,6,0,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX30 =
 "structmcp__bstream.html#a75685e7a0f49b6d496b3ba9eff480a16":[9,0,6,3],
 "structmcp__bstream.html#a931ada0b379e0fc6691d9538a0d25212":[9,0,6,2],
 "structmcp__bstream.html#ad5d155cbc87ef72265e6e067e0d2f4e7":[9,0,6,0],
-"structmcp__byte__array__tag.html":[9,0,7],
-"structmcp__byte__array__tag.html#a475e999599418b481e1687651954c594":[9,0,7,1]
+"structmcp__byte__array__tag.html":[9,0,7]
 };

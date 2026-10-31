@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"classvgen_1_1CompoundTag.html#ae9cbd22e0e67486fbb24eaa43b8cbb3a":[9,0,2,172,3],
 "classvgen_1_1CompoundTag.html#af289ae8c952a30ad48e894da8be8b67b":[9,0,2,172,19],
 "classvgen_1_1CompoundTag.html#afd0b25951873f998cc39bb66e4df83d7":[9,0,2,172,6],
 "classvgen_1_1CompoundTag.html#affc0fb2cee2bc10c379469938e814d39":[9,0,2,172,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "classvgen_1_1LevelChunk.html#a21d7828c83c3dad2ff8a6905a06de793":[9,0,2,178,13],
 "classvgen_1_1LevelChunk.html#a2aa4bae765e42f118b2d04ff44e03ef7":[9,0,2,178,25],
 "classvgen_1_1LevelChunk.html#a2ab075497497596f6726c3d1862183a1":[9,0,2,178,22],
-"classvgen_1_1LevelChunk.html#a2e083aa8758d9c9ebfddc1c085cbc8cc":[9,0,2,178,3],
-"classvgen_1_1LevelChunk.html#a390d88a06cbf2556a10e42102f297e2f":[9,0,2,178,1]
+"classvgen_1_1LevelChunk.html#a2e083aa8758d9c9ebfddc1c085cbc8cc":[9,0,2,178,3]
 };

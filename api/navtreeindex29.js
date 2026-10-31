@@ -1,5 +1,6 @@
 var NAVTREEINDEX29 =
 {
+"functions.html":[9,3,0],
 "functions_func.html":[9,3,1],
 "functions_vars.html":[9,3,2],
 "globals.html":[10,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX29 =
 "structcursestone_1_1math_1_1Vec3.html":[9,0,0,6,0],
 "structcursestone_1_1math_1_1Vec3.html#a027a36be5cb0f189ecf967109c6e2eed":[9,0,0,6,0,4],
 "structcursestone_1_1math_1_1Vec3.html#a11191623953fde207c8720faf34658b2":[9,0,0,6,0,11],
-"structcursestone_1_1math_1_1Vec3.html#a16945eea63522b9b668164d2e802bdb0":[9,0,0,6,0,7],
-"structcursestone_1_1math_1_1Vec3.html#a1938ecdfa3625c7eac7b25c428f87b8c":[9,0,0,6,0,13]
+"structcursestone_1_1math_1_1Vec3.html#a16945eea63522b9b668164d2e802bdb0":[9,0,0,6,0,7]
 };

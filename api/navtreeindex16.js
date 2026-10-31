@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html":[9,0,0,3,9,6],
 "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html#a05cdf9433bbf3e53d212b596a8e20449":[9,0,0,3,9,6,1],
 "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html#a8a45833143d597da623869ac2dcf3929":[9,0,0,3,9,6,0],
 "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html#afda1897b33321551122ab556939a979f":[9,0,0,3,9,6,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "classcursestone_1_1item_1_1ItemBakedPotato.html#a7d9ff9c8ff4d3477c52d83e75ebd9c42":[9,0,0,5,10,1],
 "classcursestone_1_1item_1_1ItemBakedPotato.html#a9a91d027849ad4f46bd857e90d3b72a1":[9,0,0,5,10,0],
 "classcursestone_1_1item_1_1ItemBeetroot.html":[9,0,0,5,11],
-"classcursestone_1_1item_1_1ItemBeetroot.html#a216bad7f6840973d96adc9c661bdff3b":[9,0,0,5,11,1],
-"classcursestone_1_1item_1_1ItemBeetroot.html#a42319f2d44a383c824ae0cbe9508f862":[9,0,0,5,11,0]
+"classcursestone_1_1item_1_1ItemBeetroot.html#a216bad7f6840973d96adc9c661bdff3b":[9,0,0,5,11,1]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"classcursestone_1_1item_1_1ItemShovelStone.html#ad81597f12487ad715fbd5d02b4949bf5":[9,0,0,5,83,1],
 "classcursestone_1_1item_1_1ItemShovelWooden.html":[9,0,0,5,84],
 "classcursestone_1_1item_1_1ItemShovelWooden.html#a0d4e7abb6f6a623ef3bb609e37c1e42b":[9,0,0,5,84,1],
 "classcursestone_1_1item_1_1ItemShovelWooden.html#a661863d7ae433f3481b6581ce9d8154c":[9,0,0,5,84,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#ad290920f3248153574791558bf032da2":[9,0,0,7,0,10,4],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#af0a15c1f9993b742f4294f53b6297db3":[9,0,0,7,0,10,3],
 "classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html":[9,0,0,7,0,11],
-"classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html#a59ed706aa0ccc3cd4f0c2cefef11f95d":[9,0,0,7,0,11,3],
-"classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html#a6ae136e1a8b3242565be505225bf8931":[9,0,0,7,0,11,0]
+"classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html#a59ed706aa0ccc3cd4f0c2cefef11f95d":[9,0,0,7,0,11,3]
 };

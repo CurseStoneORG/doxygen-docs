@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"classvgen_1_1StructurePiece.html#a5b8a1018b2d978f188935f79d701a43d":[9,0,2,128,28],
 "classvgen_1_1StructurePiece.html#a63dc97864f3e36ccf08236f4bff11f05":[9,0,2,128,37],
 "classvgen_1_1StructurePiece.html#a6696bfb4e9973209ed7a65ac1ddc1032":[9,0,2,128,39],
 "classvgen_1_1StructurePiece.html#a74e68b38fb36c1a7c660f7f3a3c8a701":[9,0,2,128,35],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "dir_f6c1c82b4d30ae548d5286e2c80025e9.html":[10,0,0,21,1,0],
 "dir_fc4c7f03e1a69a98c370fae55a743828.html":[10,0,0,10],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[10,0,0,7],
-"files.html":[10,0],
-"functions.html":[9,3,0]
+"files.html":[10,0]
 };

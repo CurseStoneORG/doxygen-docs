@@ -174,33 +174,39 @@ $(document).ready(function(){initNavTree('ServerScheduler_8h_source.html',''); i
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> MAX_TASKS_PER_TICK = 64;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> MAX_PENDING_COMPLETIONS = 512;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::vector&lt;std::unique_ptr&lt;TaskHandler&gt;&gt; handlers_;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Task ids whose TaskHandler::tick() returned true (finished/</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// cancelled) during the current tick()&#39;s run phase, collected</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">// while handlers_ is unlocked so we know exactly what to erase</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// once we re-lock — instead of re-deriving &quot;is this done?&quot; from</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// task state after the fact, which can disagree with what</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// TaskHandler::tick() itself decided (e.g. for periodic tasks</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// whose nextRun() has already been advanced past current_tick).</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    std::vector&lt;uint64_t&gt; finished_task_ids_;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">mutable</span> std::mutex mtx_;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    std::atomic&lt;uint64_t&gt; next_id_{1};</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// Async completion queue — tasks that finished on worker threads</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// and need their onCompletion() called on the main thread.</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::deque&lt;std::shared_ptr&lt;AsyncTask&gt;&gt; completion_queue_;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">mutable</span> std::mutex completion_mtx_;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::atomic&lt;size_t&gt; dropped_completions_{0};</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Wall-clock ceiling for the sync drain phase, next to the task-count</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// cap. A burst of due tasks (e.g. the generated-liquid wake settling a</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// freshly loaded world) must never eat the whole 50 ms tick: whatever</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// is still due when the budget runs out simply runs next tick, exactly</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// like the MAX_TASKS_PER_TICK remainder.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">double</span> SYNC_DRAIN_BUDGET_MS = 10.0;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> MAX_PENDING_COMPLETIONS = 512;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::vector&lt;std::unique_ptr&lt;TaskHandler&gt;&gt; handlers_;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// Task ids whose TaskHandler::tick() returned true (finished/</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// cancelled) during the current tick()&#39;s run phase, collected</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// while handlers_ is unlocked so we know exactly what to erase</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// once we re-lock — instead of re-deriving &quot;is this done?&quot; from</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// task state after the fact, which can disagree with what</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// TaskHandler::tick() itself decided (e.g. for periodic tasks</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// whose nextRun() has already been advanced past current_tick).</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::vector&lt;uint64_t&gt; finished_task_ids_;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keyword">mutable</span> std::mutex mtx_;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    std::atomic&lt;uint64_t&gt; next_id_{1};</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// task_id -&gt; AsyncTask, kept only long enough to support cancel()</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// before the task is done and removed from the completion path.</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">// Guarded by completion_mtx_ (same lock domain as the completion</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// queue, since both are touched from the worker-thread lambda).</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    std::vector&lt;std::pair&lt;uint64_t, std::shared_ptr&lt;AsyncTask&gt;&gt;&gt; in_flight_async_;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// Async completion queue — tasks that finished on worker threads</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// and need their onCompletion() called on the main thread.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::deque&lt;std::shared_ptr&lt;AsyncTask&gt;&gt; completion_queue_;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">mutable</span> std::mutex completion_mtx_;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    std::atomic&lt;size_t&gt; dropped_completions_{0};</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// task_id -&gt; AsyncTask, kept only long enough to support cancel()</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// before the task is done and removed from the completion path.</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// Guarded by completion_mtx_ (same lock domain as the completion</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// queue, since both are touched from the worker-thread lambda).</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::vector&lt;std::pair&lt;uint64_t, std::shared_ptr&lt;AsyncTask&gt;&gt;&gt; in_flight_async_;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1scheduler_1_1ServerScheduler_html"><div class="ttname"><a href="classcursestone_1_1scheduler_1_1ServerScheduler.html">cursestone::scheduler::ServerScheduler</a></div><div class="ttdef"><b>Definition:</b> ServerScheduler.h:60</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

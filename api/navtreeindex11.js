@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockCarpet.html#a57c5351d72202f6626734df2e1e80dc3":[9,0,0,0,12,1],
 "classcursestone_1_1block_1_1BlockCarpet.html#a74da6cb98f6a3bc33ff5540ad030122a":[9,0,0,0,12,0],
 "classcursestone_1_1block_1_1BlockCarrot.html":[9,0,0,0,13],
 "classcursestone_1_1block_1_1BlockCarrot.html#a235266436a3d462f0ed0da21da9e337c":[9,0,0,0,13,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1block_1_1BlockMagmaBlock.html#a9d23ef65f4fa2b368d5e4cdeae4562c8":[9,0,0,0,90,1],
 "classcursestone_1_1block_1_1BlockMagmaBlock.html#add4fbb9845fb3477798c7c0be758a73b":[9,0,0,0,90,0],
 "classcursestone_1_1block_1_1BlockMelon.html":[9,0,0,0,91],
-"classcursestone_1_1block_1_1BlockMelon.html#ae5b2b1b30e5efd8d1c72961c92355197":[9,0,0,0,91,0],
-"classcursestone_1_1block_1_1BlockMelon.html#af68317d36c8bf20f333968d487919b84":[9,0,0,0,91,1]
+"classcursestone_1_1block_1_1BlockMelon.html#ae5b2b1b30e5efd8d1c72961c92355197":[9,0,0,0,91,0]
 };

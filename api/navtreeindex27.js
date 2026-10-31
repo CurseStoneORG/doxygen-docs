@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"classvgen_1_1PineFeature.html":[9,0,2,69],
 "classvgen_1_1PineFeature.html#a3efb4c77bb7ed70d8a8505a1caf921b6":[9,0,2,69,1],
 "classvgen_1_1PineFeature.html#aec9f6f8c12aa97264ddafcf99c908265":[9,0,2,69,0],
 "classvgen_1_1PlainsBiome.html":[9,0,2,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "classvgen_1_1StructurePiece.html#a3eb36e886beb56037803e60eb9f003a2":[9,0,2,128,32],
 "classvgen_1_1StructurePiece.html#a4488ea26116e1ff395a2a6be24f6f906":[9,0,2,128,3],
 "classvgen_1_1StructurePiece.html#a47ea7666dd03dd8d0edfabe9613723dd":[9,0,2,128,11],
-"classvgen_1_1StructurePiece.html#a54ef8cbebaa0f41b08584f483228e42a":[9,0,2,128,16],
-"classvgen_1_1StructurePiece.html#a5b8a1018b2d978f188935f79d701a43d":[9,0,2,128,28]
+"classvgen_1_1StructurePiece.html#a54ef8cbebaa0f41b08584f483228e42a":[9,0,2,128,16]
 };

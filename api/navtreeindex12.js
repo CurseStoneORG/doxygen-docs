@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1block_1_1BlockMelon.html#af68317d36c8bf20f333968d487919b84":[9,0,0,0,91,1],
 "classcursestone_1_1block_1_1BlockMushroomBrown.html":[9,0,0,0,92],
 "classcursestone_1_1block_1_1BlockMushroomBrown.html#a7f70ee3501407edd9b2e8a10efed46a5":[9,0,0,0,92,0],
 "classcursestone_1_1block_1_1BlockMushroomBrown.html#aee89d427fcd86093d1c66fefddb793cc":[9,0,0,0,92,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1block_1_1BlockWeightedPressurePlate.html#a764ae190255547982f11bb935218b1a5":[9,0,0,0,174,0],
 "classcursestone_1_1block_1_1BlockWeightedPressurePlate.html#aa3d9f5df43c66b7c2b6de2484f40adaf":[9,0,0,0,174,1],
 "classcursestone_1_1block_1_1BlockWeightedPressurePlateHeavy.html":[9,0,0,0,175],
-"classcursestone_1_1block_1_1BlockWeightedPressurePlateHeavy.html#a315edda492c6d206abb15a9deb386005":[9,0,0,0,175,1],
-"classcursestone_1_1block_1_1BlockWeightedPressurePlateHeavy.html#a8eef91600ff428e0616493d25160fbda":[9,0,0,0,175,0]
+"classcursestone_1_1block_1_1BlockWeightedPressurePlateHeavy.html#a315edda492c6d206abb15a9deb386005":[9,0,0,0,175,1]
 };

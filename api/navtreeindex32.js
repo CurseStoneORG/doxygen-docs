@@ -1,5 +1,6 @@
 var NAVTREEINDEX32 =
 {
+"structmcp__pkt__data__packet__e.html#ac094838e82de6084bf18ce8aec03ffd2":[9,0,47,0],
 "structmcp__pkt__data__packet__e.html#ac8b66646db65cd20024f610b35af6678":[9,0,47,2],
 "structmcp__pkt__data__packet__f.html":[9,0,48],
 "structmcp__pkt__data__packet__f.html#a24a4adc561de924c65b9b2cf5fe1c522":[9,0,48,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX32 =
 "structmcp__vector3.html":[9,0,75],
 "structmcp__vector3.html#a745bb0599ff9f5ceddeeba1396547440":[9,0,75,1],
 "structmcp__vector3.html#a7d357f24cb8b2f1297357c18813c55eb":[9,0,75,0],
-"structmcp__vector3.html#af69d72ee3d6f2c1817d7c334b13865f3":[9,0,75,2],
-"structstd_1_1hash_3_1_1vgen_1_1ChunkPos_01_4.html":[9,0,1,0]
+"structmcp__vector3.html#af69d72ee3d6f2c1817d7c334b13865f3":[9,0,75,2]
 };
