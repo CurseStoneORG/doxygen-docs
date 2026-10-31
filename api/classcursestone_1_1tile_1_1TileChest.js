@@ -9,7 +9,7 @@ var classcursestone_1_1tile_1_1TileChest =
     [ "pairTile", "classcursestone_1_1tile_1_1TileChest.html#a9db250db137b16e695bfda4bf1a93008", null ],
     [ "pairX", "classcursestone_1_1tile_1_1TileChest.html#a485b7fdc6c72181875098f20f105c1b4", null ],
     [ "pairZ", "classcursestone_1_1tile_1_1TileChest.html#aa026b1f8ab662d333f5ff282363175e7", null ],
-    [ "readNBT", "classcursestone_1_1tile_1_1TileChest.html#a8bddd3bb388fb574347ed9f813314e41", null ],
+    [ "readNBT", "classcursestone_1_1tile_1_1TileChest.html#a9831841981ecce16d01afbce7f67b6cf", null ],
     [ "removeItem", "classcursestone_1_1tile_1_1TileChest.html#a991a1221911aea9624d664b086ce3de7", null ],
     [ "removeViewer", "classcursestone_1_1tile_1_1TileChest.html#ae91129eb2eef86af12d6d5f92af3e913", null ],
     [ "setItem", "classcursestone_1_1tile_1_1TileChest.html#afb685fcbdbcdbc859c1e3dd478281401", null ],
@@ -17,5 +17,5 @@ var classcursestone_1_1tile_1_1TileChest =
     [ "size", "classcursestone_1_1tile_1_1TileChest.html#abc3b5d127255b778948f805aae2b5778", null ],
     [ "spawnTo", "classcursestone_1_1tile_1_1TileChest.html#ad1a7a400ea7b1b16615bc432c37eeb9f", null ],
     [ "viewerCount", "classcursestone_1_1tile_1_1TileChest.html#af07f32e64de613a1adea54ecc3aa1245", null ],
-    [ "writeNBT", "classcursestone_1_1tile_1_1TileChest.html#aa6b7dcd2f0f27e43371847bd7ffc13d2", null ]
+    [ "writeNBT", "classcursestone_1_1tile_1_1TileChest.html#a5f464d96775b59b7fe70f95d457e2528", null ]
 ];

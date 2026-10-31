@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['effect_890',['Effect',['../classcursestone_1_1entity_1_1Effect.html',1,'cursestone::entity']]],
-  ['emptygenerator_891',['EmptyGenerator',['../classcursestone_1_1world_1_1generator_1_1EmptyGenerator.html',1,'cursestone::world::generator']]],
-  ['enchantment_892',['Enchantment',['../classcursestone_1_1item_1_1enchantment_1_1Enchantment.html',1,'cursestone::item::enchantment']]],
-  ['enchantmententry_893',['EnchantmentEntry',['../structcursestone_1_1item_1_1enchantment_1_1EnchantmentEntry.html',1,'cursestone::item::enchantment']]],
-  ['enchantmentlist_894',['EnchantmentList',['../classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html',1,'cursestone::item::enchantment']]],
+  ['effect_889',['Effect',['../classcursestone_1_1entity_1_1Effect.html',1,'cursestone::entity']]],
+  ['emptygenerator_890',['EmptyGenerator',['../classcursestone_1_1world_1_1generator_1_1EmptyGenerator.html',1,'cursestone::world::generator']]],
+  ['enchantment_891',['Enchantment',['../classcursestone_1_1item_1_1enchantment_1_1Enchantment.html',1,'cursestone::item::enchantment']]],
+  ['enchantmententry_892',['EnchantmentEntry',['../structcursestone_1_1item_1_1enchantment_1_1EnchantmentEntry.html',1,'cursestone::item::enchantment']]],
+  ['enchantmentlist_893',['EnchantmentList',['../classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html',1,'cursestone::item::enchantment']]],
+  ['endtag_894',['EndTag',['../classcursestone_1_1nbt_1_1EndTag.html',1,'cursestone::nbt']]],
   ['entity_895',['Entity',['../classcursestone_1_1entity_1_1Entity.html',1,'cursestone::entity::Entity'],['../classvgen_1_1Entity.html',1,'vgen::Entity']]],
   ['entityarrow_896',['EntityArrow',['../classcursestone_1_1entity_1_1EntityArrow.html',1,'cursestone::entity']]],
   ['entityclasstree_897',['EntityClassTree',['../structvgen_1_1EntityClassTree.html',1,'vgen']]],

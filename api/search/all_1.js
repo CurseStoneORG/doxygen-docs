@@ -96,5 +96,7 @@ var searchData=
   ['buffer_5fspan_5fmut_117',['buffer_span_mut',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
   ['buffer_5fspan_5fmut_3c_20vgen_3a_3ablockid_20_3e_118',['buffer_span_mut&lt; vgen::BlockID &gt;',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
   ['buffer_5fspan_5fmut_3c_20vgen_3a_3anibblepair_20_3e_119',['buffer_span_mut&lt; vgen::NibblePair &gt;',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
-  ['bushblock_120',['BushBlock',['../classvgen_1_1BushBlock.html',1,'vgen']]]
+  ['bushblock_120',['BushBlock',['../classvgen_1_1BushBlock.html',1,'vgen']]],
+  ['bytearraytag_121',['ByteArrayTag',['../classcursestone_1_1nbt_1_1ByteArrayTag.html',1,'cursestone::nbt']]],
+  ['bytetag_122',['ByteTag',['../classcursestone_1_1nbt_1_1ByteTag.html',1,'cursestone::nbt']]]
 ];

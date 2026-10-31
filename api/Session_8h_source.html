@@ -191,7 +191,7 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">size_t</span> seg_sizes[MCP_MAX_SPLIT_SEGMENTS];</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">bool</span> in_use;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// FIX: ordering info from the first fragment, applied once to the</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// reassembled packet (see deliver_ordered() in SessionManager.c).</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// reassembled packet (see deliver_ordered() in SessionManager.cpp).</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">bool</span> is_ordered;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    uint32_t order_index;</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    uint8_t order_channel;</div>
@@ -200,7 +200,7 @@ $(document).ready(function(){initNavTree('Session_8h_source.html',''); initResiz
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="comment">// assigns a single reliableMessageNumber to a fragmented message</span></div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="comment">// BEFORE splitting it — every physical fragment shares that same</span></div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="comment">// index. That means the reliable-index duplicate/staleness check</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// (reliable_index_accept in SessionManager.c) must run exactly once,</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="comment">// (reliable_index_accept in SessionManager.cpp) must run exactly once,</span></div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// against the REASSEMBLED message — never per-fragment, which would</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">// reject every fragment after the first as &quot;already seen&quot; the moment</span></div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// the first one set that index&#39;s bit in the receive window.</span></div>

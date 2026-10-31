@@ -7,10 +7,10 @@ var classcursestone_1_1tile_1_1Tile =
     [ "isDirty", "classcursestone_1_1tile_1_1Tile.html#a468f97a87c6b225da383e2f952418f27", null ],
     [ "markDirty", "classcursestone_1_1tile_1_1Tile.html#a2ae732d980717a54f615bbda69e62d7f", null ],
     [ "position", "classcursestone_1_1tile_1_1Tile.html#a6901279463c00608e0a634f6dfca863c", null ],
-    [ "readNBT", "classcursestone_1_1tile_1_1Tile.html#a1d074c14b0bf5be14272912dd161a48f", null ],
+    [ "readNBT", "classcursestone_1_1tile_1_1Tile.html#a8c971f4387666be50c72593c09b37867", null ],
     [ "tick", "classcursestone_1_1tile_1_1Tile.html#ae05198201a005796a85430b6ddd8e81a", null ],
-    [ "writeNBT", "classcursestone_1_1tile_1_1Tile.html#a890d7d63ec47cf95c77951a59ba1e725", null ],
-    [ "writeSpawnNBT", "classcursestone_1_1tile_1_1Tile.html#a5afecca6ad2261becd7e9f7033f45ece", null ],
+    [ "writeNBT", "classcursestone_1_1tile_1_1Tile.html#a923866c06822cfde8ae576534388514a", null ],
+    [ "writeSpawnNBT", "classcursestone_1_1tile_1_1Tile.html#a75313a825008dd0c7e9ef801371b5f04", null ],
     [ "dirty_", "classcursestone_1_1tile_1_1Tile.html#aeaab5785876843670ed83c13d0e1f453", null ],
     [ "id_", "classcursestone_1_1tile_1_1Tile.html#a86aa514c53f0f60d3df56e17a033bcc3", null ],
     [ "pos_", "classcursestone_1_1tile_1_1Tile.html#aa11e96be6605eed2114114e18843c067", null ]

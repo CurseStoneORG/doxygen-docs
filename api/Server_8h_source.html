@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('Server_8h_source.html',''); initResiza
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// Commands are dispatched from the console or player chat.</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;CurseStone.h&quot;</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;nbt/tag/Tag.h&quot;</span> <span class="comment">// mcp_tag_t / ::mcp_tag</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;nbt/tag/Tag.h&quot;</span> <span class="comment">// cursestone::nbt::Tag</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
@@ -167,13 +167,13 @@ $(document).ready(function(){initNavTree('Server_8h_source.html',''); initResiza
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// Shared owner for an NBT root tag; releases it when the reference count reaches zero.</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">using</span> NbtPtr = std::shared_ptr&lt;::mcp_tag&gt;;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">using</span> NbtPtr = std::shared_ptr&lt;cursestone::nbt::Tag&gt;;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// Adopt a raw tag returned by the C NBT API; destroys it on last reference.</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">inline</span> NbtPtr adoptNbt(<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* t) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> NbtPtr(t, [](<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* p) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// Adopt a raw tag from a parse result; destroys it on last reference.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">inline</span> NbtPtr adoptNbt(<a class="code" href="classcursestone_1_1nbt_1_1Tag.html">cursestone::nbt::Tag</a>* t) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">return</span> NbtPtr(t, [](<a class="code" href="classcursestone_1_1nbt_1_1Tag.html">cursestone::nbt::Tag</a>* p) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">if</span> (p)</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            mcp_tag_destroy(p);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keyword">delete</span> p;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    });</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
@@ -481,8 +481,8 @@ $(document).ready(function(){initNavTree('Server_8h_source.html',''); initResiza
 <div class="ttc" id="aclasscursestone_1_1Server_html_aa9dd0c36ea68bb26e14f341cc9375807"><div class="ttname"><a href="classcursestone_1_1Server.html#aa9dd0c36ea68bb26e14f341cc9375807">cursestone::Server::setExternalStopFlag</a></div><div class="ttdeci">void setExternalStopFlag(const volatile std::sig_atomic_t *flag)</div><div class="ttdoc">Registers a stop flag for runTickLoop() to poll on the main thread.</div><div class="ttdef"><b>Definition:</b> Server.h:123</div></div>
 <div class="ttc" id="aclasscursestone_1_1Server_html_aab680d3e8e197fb5d19b48983b539131"><div class="ttname"><a href="classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131">cursestone::Server::runTickLoop</a></div><div class="ttdeci">void runTickLoop()</div><div class="ttdoc">Runs the main tick loop until shutdown.</div><div class="ttdef"><b>Definition:</b> Server.cpp:446</div></div>
 <div class="ttc" id="aclasscursestone_1_1Server_html_ae2c7def5cd17b59ef4a26b4906c5aa3b"><div class="ttname"><a href="classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b">cursestone::Server::playersSnapshot</a></div><div class="ttdeci">std::vector&lt; std::shared_ptr&lt; Player &gt; &gt; playersSnapshot() const</div><div class="ttdoc">Returns a thread-safe snapshot of the online player list.</div><div class="ttdef"><b>Definition:</b> Server.cpp:716</div></div>
+<div class="ttc" id="aclasscursestone_1_1nbt_1_1Tag_html"><div class="ttname"><a href="classcursestone_1_1nbt_1_1Tag.html">cursestone::nbt::Tag</a></div><div class="ttdef"><b>Definition:</b> Tag.h:65</div></div>
 <div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:27</div></div>
-<div class="ttc" id="astructmcp__tag_html"><div class="ttname"><a href="structmcp__tag.html">mcp_tag</a></div><div class="ttdef"><b>Definition:</b> TagDefs.h:37</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -183,6 +183,7 @@ var hierarchy =
         [ "cursestone::Player", "classcursestone_1_1Player.html", null ]
       ] ]
     ] ],
+    [ "cursestone::nbt::CompoundEntry", "structcursestone_1_1nbt_1_1CompoundEntry.html", null ],
     [ "cursestone::utils::Config", "classcursestone_1_1utils_1_1Config.html", null ],
     [ "cursestone::tile::Container", "classcursestone_1_1tile_1_1Container.html", [
       [ "cursestone::tile::TileChest", "classcursestone_1_1tile_1_1TileChest.html", null ],
@@ -562,7 +563,6 @@ var hierarchy =
     [ "mcp_chunk", "structmcp__chunk.html", null ],
     [ "mcp_chunk_section", "structmcp__chunk__section.html", null ],
     [ "mcp_color", "structmcp__color.html", null ],
-    [ "mcp_compound_entry", "structmcp__compound__entry.html", null ],
     [ "mcp_cond", "structmcp__cond.html", null ],
     [ "mcp_encapsulated_header", "structmcp__encapsulated__header.html", null ],
     [ "mcp_hit_result", "structmcp__hit__result.html", null ],
@@ -577,20 +577,6 @@ var hierarchy =
     [ "mcp_server_handler", "structmcp__server__handler.html", null ],
     [ "mcp_server_instance", "structmcp__server__instance.html", null ],
     [ "mcp_split_store", "structmcp__split__store.html", null ],
-    [ "mcp_tag", "structmcp__tag.html", [
-      [ "mcp_byte_array_tag", "structmcp__byte__array__tag.html", null ],
-      [ "mcp_byte_tag", "structmcp__byte__tag.html", null ],
-      [ "mcp_compound_tag", "structmcp__compound__tag.html", null ],
-      [ "mcp_double_tag", "structmcp__double__tag.html", null ],
-      [ "mcp_end_tag", "structmcp__end__tag.html", null ],
-      [ "mcp_float_tag", "structmcp__float__tag.html", null ],
-      [ "mcp_int_array_tag", "structmcp__int__array__tag.html", null ],
-      [ "mcp_int_tag", "structmcp__int__tag.html", null ],
-      [ "mcp_list_tag", "structmcp__list__tag.html", null ],
-      [ "mcp_long_tag", "structmcp__long__tag.html", null ],
-      [ "mcp_short_tag", "structmcp__short__tag.html", null ],
-      [ "mcp_string_tag", "structmcp__string__tag.html", null ]
-    ] ],
     [ "mcp_thread", "structmcp__thread.html", null ],
     [ "mcp_udp_socket", "structmcp__udp__socket.html", null ],
     [ "mcp_uuid", "structmcp__uuid.html", null ],
@@ -721,12 +707,25 @@ var hierarchy =
       [ "cursestone::world::generator::ImprovedNoise", "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html", null ],
       [ "cursestone::world::generator::PerlinNoise", "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html", null ]
     ] ],
+    [ "cursestone::nbt::Tag", "classcursestone_1_1nbt_1_1Tag.html", [
+      [ "cursestone::nbt::ByteArrayTag", "classcursestone_1_1nbt_1_1ByteArrayTag.html", null ],
+      [ "cursestone::nbt::ByteTag", "classcursestone_1_1nbt_1_1ByteTag.html", null ],
+      [ "cursestone::nbt::CompoundTag", "classcursestone_1_1nbt_1_1CompoundTag.html", null ],
+      [ "cursestone::nbt::DoubleTag", "classcursestone_1_1nbt_1_1DoubleTag.html", null ],
+      [ "cursestone::nbt::EndTag", "classcursestone_1_1nbt_1_1EndTag.html", null ],
+      [ "cursestone::nbt::FloatTag", "classcursestone_1_1nbt_1_1FloatTag.html", null ],
+      [ "cursestone::nbt::IntArrayTag", "classcursestone_1_1nbt_1_1IntArrayTag.html", null ],
+      [ "cursestone::nbt::IntTag", "classcursestone_1_1nbt_1_1IntTag.html", null ],
+      [ "cursestone::nbt::ListTag", "classcursestone_1_1nbt_1_1ListTag.html", null ],
+      [ "cursestone::nbt::LongTag", "classcursestone_1_1nbt_1_1LongTag.html", null ],
+      [ "cursestone::nbt::ShortTag", "classcursestone_1_1nbt_1_1ShortTag.html", null ],
+      [ "cursestone::nbt::StringTag", "classcursestone_1_1nbt_1_1StringTag.html", null ]
+    ] ],
     [ "vgen::Tag", "classvgen_1_1Tag.html", [
       [ "vgen::CompoundTag", "classvgen_1_1CompoundTag.html", null ],
       [ "vgen::IntArrayTag", "classvgen_1_1IntArrayTag.html", null ],
       [ "vgen::ListTag", "classvgen_1_1ListTag.html", null ]
     ] ],
-    [ "cursestone::utils::TagDeleter", "structcursestone_1_1utils_1_1TagDeleter.html", null ],
     [ "vgen::TallGrassTypeShim", "classvgen_1_1TallGrassTypeShim.html", null ],
     [ "cursestone::scheduler::Task", "classcursestone_1_1scheduler_1_1Task.html", [
       [ "cursestone::scheduler::AsyncTask", "classcursestone_1_1scheduler_1_1AsyncTask.html", [

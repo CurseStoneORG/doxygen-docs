@@ -87,38 +87,32 @@ $(document).ready(function(){initNavTree('CRaii_8h_source.html',''); initResizab
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// CRaii.h — RAII handles for memory the C core allocates. Owning C++ code</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// holds these instead of raw pointers so early returns cannot leak.</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;nbt/tag/Tag.h&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone_1_1utils.html">cursestone::utils</a> {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// Byte buffer returned by the C serialize/write helpers (caller must free).</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structcursestone_1_1utils_1_1FreeDeleter.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1utils_1_1FreeDeleter.html">FreeDeleter</a> {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> operator()(<span class="keywordtype">void</span>* p) <span class="keyword">const</span> noexcept { free(p); }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">using</span> BufferPtr = std::unique_ptr&lt;uint8_t[], FreeDeleter&gt;;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">// NBT tag owned by a single C++ scope; shared roots keep using NbtPtr.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structcursestone_1_1utils_1_1TagDeleter.html">   21</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1utils_1_1TagDeleter.html">TagDeleter</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> operator()(<a class="code" href="structmcp__tag.html">mcp_tag_t</a>* t) <span class="keyword">const</span> noexcept {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (t)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            mcp_tag_destroy(t);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> TagGuard = std::unique_ptr&lt;mcp_tag_t, TagDeleter&gt;;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}  <span class="comment">// namespace cursestone::utils</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// CRaii.h — RAII handles for raw memory the serialize helpers still hand</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// out and for NBT roots. Owning C++ code holds these instead of raw</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// pointers so early returns cannot leak.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;nbt/tag/Tag.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone_1_1utils.html">cursestone::utils</a> {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// Byte buffer returned by helpers that allocate with malloc (caller frees).</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="structcursestone_1_1utils_1_1FreeDeleter.html">   16</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1utils_1_1FreeDeleter.html">FreeDeleter</a> {</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> operator()(<span class="keywordtype">void</span>* p) <span class="keyword">const</span> noexcept { free(p); }</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;};</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">using</span> BufferPtr = std::unique_ptr&lt;uint8_t[], FreeDeleter&gt;;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// NBT tag owned by a single C++ scope; destroyed (with its children)</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">// when the guard leaves scope.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using</span> TagGuard = std::unique_ptr&lt;cursestone::nbt::Tag&gt;;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}  <span class="comment">// namespace cursestone::utils</span></div>
 <div class="ttc" id="anamespacecursestone_1_1utils_html"><div class="ttname"><a href="namespacecursestone_1_1utils.html">cursestone::utils</a></div><div class="ttdoc">Loads the server config file (YAML / INI / JSON).</div><div class="ttdef"><b>Definition:</b> CurseStone.h:149</div></div>
-<div class="ttc" id="astructcursestone_1_1utils_1_1FreeDeleter_html"><div class="ttname"><a href="structcursestone_1_1utils_1_1FreeDeleter.html">cursestone::utils::FreeDeleter</a></div><div class="ttdef"><b>Definition:</b> CRaii.h:15</div></div>
-<div class="ttc" id="astructcursestone_1_1utils_1_1TagDeleter_html"><div class="ttname"><a href="structcursestone_1_1utils_1_1TagDeleter.html">cursestone::utils::TagDeleter</a></div><div class="ttdef"><b>Definition:</b> CRaii.h:21</div></div>
-<div class="ttc" id="astructmcp__tag_html"><div class="ttname"><a href="structmcp__tag.html">mcp_tag</a></div><div class="ttdef"><b>Definition:</b> TagDefs.h:37</div></div>
+<div class="ttc" id="astructcursestone_1_1utils_1_1FreeDeleter_html"><div class="ttname"><a href="structcursestone_1_1utils_1_1FreeDeleter.html">cursestone::utils::FreeDeleter</a></div><div class="ttdef"><b>Definition:</b> CRaii.h:16</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
