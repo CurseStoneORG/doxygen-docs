@@ -1,9 +1,7 @@
 var dir_23c847fc118655650d80ee30437441f9 =
 [
-    [ "PlayerAnimationEvent.h", "PlayerAnimationEvent_8h_source.html", null ],
     [ "PlayerBedEnterEvent.h", "PlayerBedEnterEvent_8h_source.html", null ],
     [ "PlayerBedLeaveEvent.h", "PlayerBedLeaveEvent_8h_source.html", null ],
-    [ "PlayerBucketEvent.h", "PlayerBucketEvent_8h_source.html", null ],
     [ "PlayerChatEvent.h", "PlayerChatEvent_8h_source.html", null ],
     [ "PlayerDeathEvent.h", "PlayerDeathEvent_8h_source.html", null ],
     [ "PlayerDropItemEvent.h", "PlayerDropItemEvent_8h_source.html", null ],

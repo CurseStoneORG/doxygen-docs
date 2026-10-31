@@ -1,27 +1,13 @@
 var dir_b6f0bb288e976a059ae88387d5b9ae90 =
 [
-    [ "Animal.h", "Animal_8h_source.html", null ],
     [ "Attribute.h", "Attribute_8h_source.html", null ],
-    [ "AttributeMap.h", "AttributeMap_8h_source.html", null ],
-    [ "Creature.h", "Creature_8h_source.html", null ],
     [ "Effect.h", "Effect_8h_source.html", null ],
     [ "Entity.h", "Entity_8h_source.html", null ],
     [ "EntityArrow.h", "EntityArrow_8h_source.html", null ],
-    [ "EntityChicken.h", "EntityChicken_8h_source.html", null ],
-    [ "EntityCow.h", "EntityCow_8h_source.html", null ],
-    [ "EntityCreeper.h", "EntityCreeper_8h_source.html", null ],
     [ "EntityFallingSand.h", "EntityFallingSand_8h_source.html", null ],
-    [ "EntityIds.h", "EntityIds_8h_source.html", null ],
     [ "EntityItemDrop.h", "EntityItemDrop_8h_source.html", null ],
-    [ "EntityPig.h", "EntityPig_8h_source.html", null ],
     [ "EntityPrimedTNT.h", "EntityPrimedTNT_8h_source.html", null ],
-    [ "EntitySheep.h", "EntitySheep_8h_source.html", null ],
-    [ "EntitySkeleton.h", "EntitySkeleton_8h_source.html", null ],
-    [ "EntityWolf.h", "EntityWolf_8h_source.html", null ],
-    [ "EntityXPOrb.h", "EntityXPOrb_8h_source.html", null ],
-    [ "EntityZombie.h", "EntityZombie_8h_source.html", null ],
     [ "Human.h", "Human_8h_source.html", null ],
     [ "Living.h", "Living_8h_source.html", null ],
-    [ "Monster.h", "Monster_8h_source.html", null ],
     [ "Projectile.h", "Projectile_8h_source.html", null ]
 ];

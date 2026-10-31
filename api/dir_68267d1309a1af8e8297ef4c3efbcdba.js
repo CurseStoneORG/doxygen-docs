@@ -26,8 +26,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "CurseStone.h", "CurseStone_8h_source.html", null ],
     [ "IPlayer.h", "IPlayer_8h_source.html", null ],
     [ "MemoryManager.h", "MemoryManager_8h_source.html", null ],
-    [ "OfflinePlayer.h", "OfflinePlayer_8h_source.html", null ],
     [ "Player.h", "Player_8h_source.html", null ],
-    [ "Server.h", "Server_8h_source.html", null ],
-    [ "ThreadManager.h", "ThreadManager_8h_source.html", null ]
+    [ "Server.h", "Server_8h_source.html", null ]
 ];

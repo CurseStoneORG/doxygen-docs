@@ -7,7 +7,6 @@ var hierarchy =
     [ "cursestone::scheduler::AsyncPool", "classcursestone_1_1scheduler_1_1AsyncPool.html", null ],
     [ "cursestone::scheduler::AsyncWorker", "classcursestone_1_1scheduler_1_1AsyncWorker.html", null ],
     [ "cursestone::entity::Attribute", "classcursestone_1_1entity_1_1Attribute.html", null ],
-    [ "cursestone::entity::AttributeMap", "classcursestone_1_1entity_1_1AttributeMap.html", null ],
     [ "cursestone::permission::BanEntry", "classcursestone_1_1permission_1_1BanEntry.html", null ],
     [ "cursestone::permission::BanList", "classcursestone_1_1permission_1_1BanList.html", null ],
     [ "vgen::BaseRailBlock", "classvgen_1_1BaseRailBlock.html", null ],
@@ -38,18 +37,11 @@ var hierarchy =
       [ "cursestone::block::BlockPortal", "classcursestone_1_1block_1_1BlockPortal.html", null ],
       [ "cursestone::block::BlockSolid", "classcursestone_1_1block_1_1BlockSolid.html", [
         [ "cursestone::block::BlockBedrock", "classcursestone_1_1block_1_1BlockBedrock.html", null ],
-        [ "cursestone::block::BlockBricks", "classcursestone_1_1block_1_1BlockBricks.html", null ],
-        [ "cursestone::block::BlockClay", "classcursestone_1_1block_1_1BlockClay.html", null ],
-        [ "cursestone::block::BlockCoal", "classcursestone_1_1block_1_1BlockCoal.html", null ],
         [ "cursestone::block::BlockCoalOre", "classcursestone_1_1block_1_1BlockCoalOre.html", null ],
         [ "cursestone::block::BlockCobblestone", "classcursestone_1_1block_1_1BlockCobblestone.html", null ],
         [ "cursestone::block::BlockDiamond", "classcursestone_1_1block_1_1BlockDiamond.html", null ],
         [ "cursestone::block::BlockDiamondOre", "classcursestone_1_1block_1_1BlockDiamondOre.html", null ],
         [ "cursestone::block::BlockDirt", "classcursestone_1_1block_1_1BlockDirt.html", null ],
-        [ "cursestone::block::BlockDoor", "classcursestone_1_1block_1_1BlockDoor.html", [
-          [ "cursestone::block::BlockDoorWood", "classcursestone_1_1block_1_1BlockDoorWood.html", null ]
-        ] ],
-        [ "cursestone::block::BlockDoubleSlab", "classcursestone_1_1block_1_1BlockDoubleSlab.html", null ],
         [ "cursestone::block::BlockEmerald", "classcursestone_1_1block_1_1BlockEmerald.html", null ],
         [ "cursestone::block::BlockEmeraldOre", "classcursestone_1_1block_1_1BlockEmeraldOre.html", null ],
         [ "cursestone::block::BlockFallable", "classcursestone_1_1block_1_1BlockFallable.html", [
@@ -59,26 +51,18 @@ var hierarchy =
         ] ],
         [ "cursestone::block::BlockFarmland", "classcursestone_1_1block_1_1BlockFarmland.html", null ],
         [ "cursestone::block::BlockFurnace", "classcursestone_1_1block_1_1BlockFurnace.html", null ],
-        [ "cursestone::block::BlockFurnaceBurning", "classcursestone_1_1block_1_1BlockFurnaceBurning.html", null ],
         [ "cursestone::block::BlockGlowstone", "classcursestone_1_1block_1_1BlockGlowstone.html", null ],
         [ "cursestone::block::BlockGold", "classcursestone_1_1block_1_1BlockGold.html", null ],
         [ "cursestone::block::BlockGoldOre", "classcursestone_1_1block_1_1BlockGoldOre.html", null ],
         [ "cursestone::block::BlockGrass", "classcursestone_1_1block_1_1BlockGrass.html", null ],
         [ "cursestone::block::BlockIron", "classcursestone_1_1block_1_1BlockIron.html", null ],
         [ "cursestone::block::BlockIronOre", "classcursestone_1_1block_1_1BlockIronOre.html", null ],
-        [ "cursestone::block::BlockLapis", "classcursestone_1_1block_1_1BlockLapis.html", null ],
         [ "cursestone::block::BlockLapisOre", "classcursestone_1_1block_1_1BlockLapisOre.html", null ],
         [ "cursestone::block::BlockLog", "classcursestone_1_1block_1_1BlockLog.html", null ],
         [ "cursestone::block::BlockMagmaBlock", "classcursestone_1_1block_1_1BlockMagmaBlock.html", null ],
-        [ "cursestone::block::BlockNetherBrick", "classcursestone_1_1block_1_1BlockNetherBrick.html", null ],
         [ "cursestone::block::BlockNetherrack", "classcursestone_1_1block_1_1BlockNetherrack.html", null ],
         [ "cursestone::block::BlockObsidian", "classcursestone_1_1block_1_1BlockObsidian.html", null ],
-        [ "cursestone::block::BlockPiston", "classcursestone_1_1block_1_1BlockPiston.html", null ],
         [ "cursestone::block::BlockPlanks", "classcursestone_1_1block_1_1BlockPlanks.html", null ],
-        [ "cursestone::block::BlockPumpkin", "classcursestone_1_1block_1_1BlockPumpkin.html", null ],
-        [ "cursestone::block::BlockQuartz", "classcursestone_1_1block_1_1BlockQuartz.html", null ],
-        [ "cursestone::block::BlockRedstone", "classcursestone_1_1block_1_1BlockRedstone.html", null ],
-        [ "cursestone::block::BlockRedstoneLamp", "classcursestone_1_1block_1_1BlockRedstoneLamp.html", null ],
         [ "cursestone::block::BlockRedstoneOre", "classcursestone_1_1block_1_1BlockRedstoneOre.html", null ],
         [ "cursestone::block::BlockSandstone", "classcursestone_1_1block_1_1BlockSandstone.html", null ],
         [ "cursestone::block::BlockSnow", "classcursestone_1_1block_1_1BlockSnow.html", null ],
@@ -90,23 +74,14 @@ var hierarchy =
         [ "cursestone::block::BlockWoodStairs", "classcursestone_1_1block_1_1BlockWoodStairs.html", null ]
       ] ],
       [ "cursestone::block::BlockTransparent", "classcursestone_1_1block_1_1BlockTransparent.html", [
-        [ "cursestone::block::BlockBed", "classcursestone_1_1block_1_1BlockBed.html", null ],
         [ "cursestone::block::BlockChest", "classcursestone_1_1block_1_1BlockChest.html", null ],
-        [ "cursestone::block::BlockDaylightDetector", "classcursestone_1_1block_1_1BlockDaylightDetector.html", null ],
-        [ "cursestone::block::BlockFence", "classcursestone_1_1block_1_1BlockFence.html", null ],
-        [ "cursestone::block::BlockFenceGate", "classcursestone_1_1block_1_1BlockFenceGate.html", null ],
         [ "cursestone::block::BlockFire", "classcursestone_1_1block_1_1BlockFire.html", null ],
         [ "cursestone::block::BlockFlowable", "classcursestone_1_1block_1_1BlockFlowable.html", [
-          [ "cursestone::block::BlockCrops", "classcursestone_1_1block_1_1BlockCrops.html", null ],
-          [ "cursestone::block::BlockFlower", "classcursestone_1_1block_1_1BlockFlower.html", null ],
-          [ "cursestone::block::BlockLever", "classcursestone_1_1block_1_1BlockLever.html", null ],
-          [ "cursestone::block::BlockRail", "classcursestone_1_1block_1_1BlockRail.html", null ],
           [ "cursestone::block::BlockSnowLayer", "classcursestone_1_1block_1_1BlockSnowLayer.html", null ]
         ] ],
         [ "cursestone::block::BlockGlass", "classcursestone_1_1block_1_1BlockGlass.html", null ],
         [ "cursestone::block::BlockGlassPane", "classcursestone_1_1block_1_1BlockGlassPane.html", null ],
         [ "cursestone::block::BlockIce", "classcursestone_1_1block_1_1BlockIce.html", null ],
-        [ "cursestone::block::BlockLadder", "classcursestone_1_1block_1_1BlockLadder.html", null ],
         [ "cursestone::block::BlockLeaves", "classcursestone_1_1block_1_1BlockLeaves.html", null ],
         [ "cursestone::block::BlockLiquid", "classcursestone_1_1block_1_1BlockLiquid.html", [
           [ "cursestone::block::BlockLava", "classcursestone_1_1block_1_1BlockLava.html", [
@@ -116,20 +91,10 @@ var hierarchy =
             [ "cursestone::block::BlockWaterFlowing", "classcursestone_1_1block_1_1BlockWaterFlowing.html", null ]
           ] ]
         ] ],
-        [ "cursestone::block::BlockPressurePlate", "classcursestone_1_1block_1_1BlockPressurePlate.html", null ],
         [ "cursestone::block::BlockSapling", "classcursestone_1_1block_1_1BlockSapling.html", null ],
         [ "cursestone::block::BlockSign", "classcursestone_1_1block_1_1BlockSign.html", null ],
-        [ "cursestone::block::BlockSignPost", "classcursestone_1_1block_1_1BlockSignPost.html", null ],
         [ "cursestone::block::BlockSlab", "classcursestone_1_1block_1_1BlockSlab.html", null ],
-        [ "cursestone::block::BlockStairs", "classcursestone_1_1block_1_1BlockStairs.html", [
-          [ "cursestone::block::BlockStairsWood", "classcursestone_1_1block_1_1BlockStairsWood.html", null ]
-        ] ],
-        [ "cursestone::block::BlockThin", "classcursestone_1_1block_1_1BlockThin.html", null ],
         [ "cursestone::block::BlockTorch", "classcursestone_1_1block_1_1BlockTorch.html", null ],
-        [ "cursestone::block::BlockTrapdoor", "classcursestone_1_1block_1_1BlockTrapdoor.html", null ],
-        [ "cursestone::block::BlockVine", "classcursestone_1_1block_1_1BlockVine.html", null ],
-        [ "cursestone::block::BlockWall", "classcursestone_1_1block_1_1BlockWall.html", null ],
-        [ "cursestone::block::BlockWeightedPressurePlate", "classcursestone_1_1block_1_1BlockWeightedPressurePlate.html", null ],
         [ "cursestone::block::BlockWheat", "classcursestone_1_1block_1_1BlockWheat.html", null ]
       ] ]
     ] ],
@@ -157,30 +122,19 @@ var hierarchy =
     [ "vgen::buffer_span_mut< vgen::NibblePair >", "classvgen_1_1buffer__span__mut.html", null ],
     [ "cursestone::event::Cancellable", "classcursestone_1_1event_1_1Cancellable.html", [
       [ "cursestone::event::block::BlockBreakEvent", "classcursestone_1_1event_1_1block_1_1BlockBreakEvent.html", null ],
-      [ "cursestone::event::block::BlockGrowEvent", "classcursestone_1_1event_1_1block_1_1BlockGrowEvent.html", [
-        [ "cursestone::event::block::BlockFormEvent", "classcursestone_1_1event_1_1block_1_1BlockFormEvent.html", null ]
-      ] ],
       [ "cursestone::event::block::BlockPlaceEvent", "classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html", null ],
       [ "cursestone::event::block::BlockUpdateEvent", "classcursestone_1_1event_1_1block_1_1BlockUpdateEvent.html", [
         [ "cursestone::event::block::DoorToggleEvent", "classcursestone_1_1event_1_1block_1_1DoorToggleEvent.html", null ]
       ] ],
       [ "cursestone::event::block::SignChangeEvent", "classcursestone_1_1event_1_1block_1_1SignChangeEvent.html", null ],
-      [ "cursestone::event::entity::EntityCombustEvent", "classcursestone_1_1event_1_1entity_1_1EntityCombustEvent.html", null ],
       [ "cursestone::event::entity::EntityDamageEvent", "classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html", [
         [ "cursestone::event::entity::EntityDamageByEntityEvent", "classcursestone_1_1event_1_1entity_1_1EntityDamageByEntityEvent.html", null ]
       ] ],
-      [ "cursestone::event::entity::EntityExplodeEvent", "classcursestone_1_1event_1_1entity_1_1EntityExplodeEvent.html", null ],
-      [ "cursestone::event::entity::EntityInventoryChangeEvent", "classcursestone_1_1event_1_1entity_1_1EntityInventoryChangeEvent.html", null ],
       [ "cursestone::event::entity::EntityPortalEnterEvent", "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html", null ],
-      [ "cursestone::event::entity::ExplosionPrimeEvent", "classcursestone_1_1event_1_1entity_1_1ExplosionPrimeEvent.html", null ],
       [ "cursestone::event::inventory::CraftItemEvent", "classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html", null ],
       [ "cursestone::event::inventory::InventoryClickEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryClickEvent.html", null ],
       [ "cursestone::event::inventory::InventoryOpenEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryOpenEvent.html", null ],
-      [ "cursestone::event::inventory::InventoryPickupArrowEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryPickupArrowEvent.html", null ],
-      [ "cursestone::event::inventory::InventoryPickupItemEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryPickupItemEvent.html", null ],
-      [ "cursestone::event::player::PlayerAnimationEvent", "classcursestone_1_1event_1_1player_1_1PlayerAnimationEvent.html", null ],
       [ "cursestone::event::player::PlayerBedEnterEvent", "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html", null ],
-      [ "cursestone::event::player::PlayerBucketEvent", "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html", null ],
       [ "cursestone::event::player::PlayerChatEvent", "classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html", null ],
       [ "cursestone::event::player::PlayerDeathEvent", "classcursestone_1_1event_1_1player_1_1PlayerDeathEvent.html", null ],
       [ "cursestone::event::player::PlayerDropItemEvent", "classcursestone_1_1event_1_1player_1_1PlayerDropItemEvent.html", null ],
@@ -191,16 +145,10 @@ var hierarchy =
       [ "cursestone::event::player::PlayerMoveEvent", "classcursestone_1_1event_1_1player_1_1PlayerMoveEvent.html", null ],
       [ "cursestone::event::player::PlayerQuitEvent", "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html", null ],
       [ "cursestone::event::player::PlayerTeleportEvent", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html", null ],
-      [ "cursestone::event::server::ServerCommandEvent", "classcursestone_1_1event_1_1server_1_1ServerCommandEvent.html", null ],
-      [ "cursestone::event::weather::ThunderChangeEvent", "classcursestone_1_1event_1_1weather_1_1ThunderChangeEvent.html", null ],
-      [ "cursestone::event::weather::WeatherChangeEvent", "classcursestone_1_1event_1_1weather_1_1WeatherChangeEvent.html", null ],
-      [ "cursestone::event::world::ThunderChangeEvent", "classcursestone_1_1event_1_1world_1_1ThunderChangeEvent.html", null ],
-      [ "cursestone::event::world::WeatherChangeEvent", "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html", null ],
       [ "cursestone::event::world::WorldUnloadEvent", "classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html", null ]
     ] ],
     [ "vgen::CauldronBlock", "classvgen_1_1CauldronBlock.html", null ],
     [ "vgen::ChunkBlockPos", "structvgen_1_1ChunkBlockPos.html", null ],
-    [ "cursestone::world::ChunkLoader", "classcursestone_1_1world_1_1ChunkLoader.html", null ],
     [ "vgen::ChunkPos", "structvgen_1_1ChunkPos.html", null ],
     [ "cursestone::world::World::ChunkViewer", "structcursestone_1_1world_1_1World_1_1ChunkViewer.html", null ],
     [ "vgen::Color", "structvgen_1_1Color.html", null ],
@@ -232,7 +180,6 @@ var hierarchy =
     [ "cursestone::CommandSender", "classcursestone_1_1CommandSender.html", [
       [ "cursestone::ConsoleCommandSender", "classcursestone_1_1ConsoleCommandSender.html", null ],
       [ "cursestone::IPlayer", "classcursestone_1_1IPlayer.html", [
-        [ "cursestone::OfflinePlayer", "classcursestone_1_1OfflinePlayer.html", null ],
         [ "cursestone::Player", "classcursestone_1_1Player.html", null ]
       ] ]
     ] ],
@@ -248,8 +195,6 @@ var hierarchy =
     [ "cursestone::network::protocol::DataPacket", "classcursestone_1_1network_1_1protocol_1_1DataPacket.html", [
       [ "cursestone::network::protocol::AddEntityPacket", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html", null ],
       [ "cursestone::network::protocol::AddItemEntityPacket", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html", null ],
-      [ "cursestone::network::protocol::AddItemPacket", "classcursestone_1_1network_1_1protocol_1_1AddItemPacket.html", null ],
-      [ "cursestone::network::protocol::AddPaintingPacket", "classcursestone_1_1network_1_1protocol_1_1AddPaintingPacket.html", null ],
       [ "cursestone::network::protocol::AddPlayerPacket", "classcursestone_1_1network_1_1protocol_1_1AddPlayerPacket.html", null ],
       [ "cursestone::network::protocol::AdventureSettingsPacket", "classcursestone_1_1network_1_1protocol_1_1AdventureSettingsPacket.html", null ],
       [ "cursestone::network::protocol::AnimatePacket", "classcursestone_1_1network_1_1protocol_1_1AnimatePacket.html", null ],
@@ -258,7 +203,6 @@ var hierarchy =
       [ "cursestone::network::protocol::BlockEventPacket", "classcursestone_1_1network_1_1protocol_1_1BlockEventPacket.html", null ],
       [ "cursestone::network::protocol::ChangeDimensionPacket", "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html", null ],
       [ "cursestone::network::protocol::ChunkRadiusUpdatedPacket", "classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html", null ],
-      [ "cursestone::network::protocol::ClientboundMapItemDataPacket", "classcursestone_1_1network_1_1protocol_1_1ClientboundMapItemDataPacket.html", null ],
       [ "cursestone::network::protocol::ContainerClosePacket", "classcursestone_1_1network_1_1protocol_1_1ContainerClosePacket.html", null ],
       [ "cursestone::network::protocol::ContainerOpenPacket", "classcursestone_1_1network_1_1protocol_1_1ContainerOpenPacket.html", null ],
       [ "cursestone::network::protocol::ContainerSetContentPacket", "classcursestone_1_1network_1_1protocol_1_1ContainerSetContentPacket.html", null ],
@@ -271,12 +215,10 @@ var hierarchy =
       [ "cursestone::network::protocol::EntityEventPacket", "classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html", null ],
       [ "cursestone::network::protocol::ExplodePacket", "classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html", null ],
       [ "cursestone::network::protocol::FullChunkDataPacket", "classcursestone_1_1network_1_1protocol_1_1FullChunkDataPacket.html", null ],
-      [ "cursestone::network::protocol::HurtArmorPacket", "classcursestone_1_1network_1_1protocol_1_1HurtArmorPacket.html", null ],
       [ "cursestone::network::protocol::InteractPacket", "classcursestone_1_1network_1_1protocol_1_1InteractPacket.html", null ],
       [ "cursestone::network::protocol::ItemFrameDropItemPacket", "classcursestone_1_1network_1_1protocol_1_1ItemFrameDropItemPacket.html", null ],
       [ "cursestone::network::protocol::LevelEventPacket", "classcursestone_1_1network_1_1protocol_1_1LevelEventPacket.html", null ],
       [ "cursestone::network::protocol::LoginPacket", "classcursestone_1_1network_1_1protocol_1_1LoginPacket.html", null ],
-      [ "cursestone::network::protocol::MapInfoRequestPacket", "classcursestone_1_1network_1_1protocol_1_1MapInfoRequestPacket.html", null ],
       [ "cursestone::network::protocol::MobArmorEquipmentPacket", "classcursestone_1_1network_1_1protocol_1_1MobArmorEquipmentPacket.html", null ],
       [ "cursestone::network::protocol::MobEffectPacket", "classcursestone_1_1network_1_1protocol_1_1MobEffectPacket.html", null ],
       [ "cursestone::network::protocol::MobEquipmentPacket", "classcursestone_1_1network_1_1protocol_1_1MobEquipmentPacket.html", null ],
@@ -284,26 +226,20 @@ var hierarchy =
       [ "cursestone::network::protocol::MovePlayerPacket", "classcursestone_1_1network_1_1protocol_1_1MovePlayerPacket.html", null ],
       [ "cursestone::network::protocol::PlayStatusPacket", "classcursestone_1_1network_1_1protocol_1_1PlayStatusPacket.html", null ],
       [ "cursestone::network::protocol::PlayerActionPacket", "classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html", null ],
-      [ "cursestone::network::protocol::PlayerInputPacket", "classcursestone_1_1network_1_1protocol_1_1PlayerInputPacket.html", null ],
       [ "cursestone::network::protocol::PlayerListPacket", "classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html", null ],
       [ "cursestone::network::protocol::RemoveBlockPacket", "classcursestone_1_1network_1_1protocol_1_1RemoveBlockPacket.html", null ],
       [ "cursestone::network::protocol::RemoveEntityPacket", "classcursestone_1_1network_1_1protocol_1_1RemoveEntityPacket.html", null ],
-      [ "cursestone::network::protocol::ReplaceSelectedItemPacket", "classcursestone_1_1network_1_1protocol_1_1ReplaceSelectedItemPacket.html", null ],
       [ "cursestone::network::protocol::RequestChunkRadiusPacket", "classcursestone_1_1network_1_1protocol_1_1RequestChunkRadiusPacket.html", null ],
       [ "cursestone::network::protocol::RespawnPacket", "classcursestone_1_1network_1_1protocol_1_1RespawnPacket.html", null ],
-      [ "cursestone::network::protocol::RiderJumpPacket", "classcursestone_1_1network_1_1protocol_1_1RiderJumpPacket.html", null ],
       [ "cursestone::network::protocol::SetDifficultyPacket", "classcursestone_1_1network_1_1protocol_1_1SetDifficultyPacket.html", null ],
       [ "cursestone::network::protocol::SetEntityDataPacket", "classcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket.html", null ],
-      [ "cursestone::network::protocol::SetEntityLinkPacket", "classcursestone_1_1network_1_1protocol_1_1SetEntityLinkPacket.html", null ],
       [ "cursestone::network::protocol::SetEntityMotionPacket", "classcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket.html", null ],
       [ "cursestone::network::protocol::SetHealthPacket", "classcursestone_1_1network_1_1protocol_1_1SetHealthPacket.html", null ],
       [ "cursestone::network::protocol::SetPlayerGameTypePacket", "classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html", null ],
       [ "cursestone::network::protocol::SetSpawnPositionPacket", "classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html", null ],
       [ "cursestone::network::protocol::SetTimePacket", "classcursestone_1_1network_1_1protocol_1_1SetTimePacket.html", null ],
-      [ "cursestone::network::protocol::SpawnExperienceOrbPacket", "classcursestone_1_1network_1_1protocol_1_1SpawnExperienceOrbPacket.html", null ],
       [ "cursestone::network::protocol::StartGamePacket", "classcursestone_1_1network_1_1protocol_1_1StartGamePacket.html", null ],
       [ "cursestone::network::protocol::TakeItemEntityPacket", "classcursestone_1_1network_1_1protocol_1_1TakeItemEntityPacket.html", null ],
-      [ "cursestone::network::protocol::TelemetryEventPacket", "classcursestone_1_1network_1_1protocol_1_1TelemetryEventPacket.html", null ],
       [ "cursestone::network::protocol::TextPacket", "classcursestone_1_1network_1_1protocol_1_1TextPacket.html", null ],
       [ "cursestone::network::protocol::UpdateAttributesPacket", "classcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket.html", null ],
       [ "cursestone::network::protocol::UpdateBlockPacket", "classcursestone_1_1network_1_1protocol_1_1UpdateBlockPacket.html", null ],
@@ -350,20 +286,6 @@ var hierarchy =
     [ "cursestone::item::enchantment::EnchantmentList", "classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html", null ],
     [ "cursestone::entity::Entity", "classcursestone_1_1entity_1_1Entity.html", [
       [ "cursestone::entity::Living", "classcursestone_1_1entity_1_1Living.html", [
-        [ "cursestone::entity::Creature", "classcursestone_1_1entity_1_1Creature.html", [
-          [ "cursestone::entity::Animal", "classcursestone_1_1entity_1_1Animal.html", [
-            [ "cursestone::entity::EntityChicken", "classcursestone_1_1entity_1_1EntityChicken.html", null ],
-            [ "cursestone::entity::EntityCow", "classcursestone_1_1entity_1_1EntityCow.html", null ],
-            [ "cursestone::entity::EntityPig", "classcursestone_1_1entity_1_1EntityPig.html", null ],
-            [ "cursestone::entity::EntitySheep", "classcursestone_1_1entity_1_1EntitySheep.html", null ],
-            [ "cursestone::entity::EntityWolf", "classcursestone_1_1entity_1_1EntityWolf.html", null ]
-          ] ],
-          [ "cursestone::entity::Monster", "classcursestone_1_1entity_1_1Monster.html", [
-            [ "cursestone::entity::EntityCreeper", "classcursestone_1_1entity_1_1EntityCreeper.html", null ],
-            [ "cursestone::entity::EntitySkeleton", "classcursestone_1_1entity_1_1EntitySkeleton.html", null ],
-            [ "cursestone::entity::EntityZombie", "classcursestone_1_1entity_1_1EntityZombie.html", null ]
-          ] ]
-        ] ],
         [ "cursestone::entity::Human", "classcursestone_1_1entity_1_1Human.html", [
           [ "cursestone::Player", "classcursestone_1_1Player.html", null ]
         ] ]
@@ -372,8 +294,7 @@ var hierarchy =
         [ "cursestone::entity::EntityArrow", "classcursestone_1_1entity_1_1EntityArrow.html", null ],
         [ "cursestone::entity::EntityFallingSand", "classcursestone_1_1entity_1_1EntityFallingSand.html", null ],
         [ "cursestone::entity::EntityItemDrop", "classcursestone_1_1entity_1_1EntityItemDrop.html", null ],
-        [ "cursestone::entity::EntityPrimedTNT", "classcursestone_1_1entity_1_1EntityPrimedTNT.html", null ],
-        [ "cursestone::entity::EntityXPOrb", "classcursestone_1_1entity_1_1EntityXPOrb.html", null ]
+        [ "cursestone::entity::EntityPrimedTNT", "classcursestone_1_1entity_1_1EntityPrimedTNT.html", null ]
       ] ]
     ] ],
     [ "vgen::Entity", "classvgen_1_1Entity.html", [
@@ -388,34 +309,25 @@ var hierarchy =
     [ "cursestone::event::Event", "classcursestone_1_1event_1_1Event.html", [
       [ "cursestone::event::block::BlockBreakEvent", "classcursestone_1_1event_1_1block_1_1BlockBreakEvent.html", null ],
       [ "cursestone::event::block::BlockEvent", "classcursestone_1_1event_1_1block_1_1BlockEvent.html", [
-        [ "cursestone::event::block::BlockGrowEvent", "classcursestone_1_1event_1_1block_1_1BlockGrowEvent.html", null ],
         [ "cursestone::event::block::BlockUpdateEvent", "classcursestone_1_1event_1_1block_1_1BlockUpdateEvent.html", null ],
         [ "cursestone::event::block::SignChangeEvent", "classcursestone_1_1event_1_1block_1_1SignChangeEvent.html", null ]
       ] ],
       [ "cursestone::event::block::BlockPlaceEvent", "classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html", null ],
       [ "cursestone::event::entity::EntityDamageEvent", "classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html", null ],
       [ "cursestone::event::entity::EntityEvent", "classcursestone_1_1event_1_1entity_1_1EntityEvent.html", [
-        [ "cursestone::event::entity::EntityCombustEvent", "classcursestone_1_1event_1_1entity_1_1EntityCombustEvent.html", null ],
-        [ "cursestone::event::entity::EntityExplodeEvent", "classcursestone_1_1event_1_1entity_1_1EntityExplodeEvent.html", null ],
-        [ "cursestone::event::entity::EntityInventoryChangeEvent", "classcursestone_1_1event_1_1entity_1_1EntityInventoryChangeEvent.html", null ],
-        [ "cursestone::event::entity::EntityPortalEnterEvent", "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html", null ],
-        [ "cursestone::event::entity::ExplosionPrimeEvent", "classcursestone_1_1event_1_1entity_1_1ExplosionPrimeEvent.html", null ]
+        [ "cursestone::event::entity::EntityPortalEnterEvent", "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html", null ]
       ] ],
       [ "cursestone::event::inventory::InventoryEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryEvent.html", [
         [ "cursestone::event::inventory::CraftItemEvent", "classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html", null ],
         [ "cursestone::event::inventory::InventoryClickEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryClickEvent.html", null ],
         [ "cursestone::event::inventory::InventoryCloseEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryCloseEvent.html", null ],
-        [ "cursestone::event::inventory::InventoryOpenEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryOpenEvent.html", null ],
-        [ "cursestone::event::inventory::InventoryPickupArrowEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryPickupArrowEvent.html", null ],
-        [ "cursestone::event::inventory::InventoryPickupItemEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryPickupItemEvent.html", null ]
+        [ "cursestone::event::inventory::InventoryOpenEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryOpenEvent.html", null ]
       ] ],
       [ "cursestone::event::player::PlayerChatEvent", "classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html", null ],
       [ "cursestone::event::player::PlayerDeathEvent", "classcursestone_1_1event_1_1player_1_1PlayerDeathEvent.html", null ],
       [ "cursestone::event::player::PlayerEvent", "classcursestone_1_1event_1_1player_1_1PlayerEvent.html", [
-        [ "cursestone::event::player::PlayerAnimationEvent", "classcursestone_1_1event_1_1player_1_1PlayerAnimationEvent.html", null ],
         [ "cursestone::event::player::PlayerBedEnterEvent", "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html", null ],
         [ "cursestone::event::player::PlayerBedLeaveEvent", "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html", null ],
-        [ "cursestone::event::player::PlayerBucketEvent", "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html", null ],
         [ "cursestone::event::player::PlayerDropItemEvent", "classcursestone_1_1event_1_1player_1_1PlayerDropItemEvent.html", null ],
         [ "cursestone::event::player::PlayerInteractEvent", "classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html", null ],
         [ "cursestone::event::player::PlayerItemConsumeEvent", "classcursestone_1_1event_1_1player_1_1PlayerItemConsumeEvent.html", null ],
@@ -426,25 +338,11 @@ var hierarchy =
       [ "cursestone::event::player::PlayerMoveEvent", "classcursestone_1_1event_1_1player_1_1PlayerMoveEvent.html", null ],
       [ "cursestone::event::player::PlayerQuitEvent", "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html", null ],
       [ "cursestone::event::player::PlayerRespawnEvent", "classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html", null ],
-      [ "cursestone::event::plugin::PluginEvent", "classcursestone_1_1event_1_1plugin_1_1PluginEvent.html", null ],
-      [ "cursestone::event::potion::PotionEvent", "classcursestone_1_1event_1_1potion_1_1PotionEvent.html", null ],
-      [ "cursestone::event::server::ServerCommandEvent", "classcursestone_1_1event_1_1server_1_1ServerCommandEvent.html", null ],
-      [ "cursestone::event::server::ServerEvent", "classcursestone_1_1event_1_1server_1_1ServerEvent.html", null ],
-      [ "cursestone::event::weather::WeatherEvent", "classcursestone_1_1event_1_1weather_1_1WeatherEvent.html", [
-        [ "cursestone::event::weather::ThunderChangeEvent", "classcursestone_1_1event_1_1weather_1_1ThunderChangeEvent.html", null ],
-        [ "cursestone::event::weather::WeatherChangeEvent", "classcursestone_1_1event_1_1weather_1_1WeatherChangeEvent.html", null ]
-      ] ],
-      [ "cursestone::event::world::WeatherEvent", "classcursestone_1_1event_1_1world_1_1WeatherEvent.html", [
-        [ "cursestone::event::world::ThunderChangeEvent", "classcursestone_1_1event_1_1world_1_1ThunderChangeEvent.html", null ],
-        [ "cursestone::event::world::WeatherChangeEvent", "classcursestone_1_1event_1_1world_1_1WeatherChangeEvent.html", null ]
-      ] ],
       [ "cursestone::event::world::WorldEvent", "classcursestone_1_1event_1_1world_1_1WorldEvent.html", [
-        [ "cursestone::event::world::ChunkEvent", "classcursestone_1_1event_1_1world_1_1ChunkEvent.html", null ],
         [ "cursestone::event::world::WorldUnloadEvent", "classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html", null ]
       ] ],
       [ "cursestone::event::world::WorldLoadEvent", "classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html", null ]
     ] ],
-    [ "cursestone::event::EventHandler", "structcursestone_1_1event_1_1EventHandler.html", null ],
     [ "cursestone::event::EventManager", "classcursestone_1_1event_1_1EventManager.html", null ],
     [ "cursestone::world::Explosion", "classcursestone_1_1world_1_1Explosion.html", null ],
     [ "vgen::Facing", "classvgen_1_1Facing.html", null ],
@@ -510,9 +408,7 @@ var hierarchy =
     [ "std::hash<::vgen::Pos >", "structstd_1_1hash_3_1_1vgen_1_1Pos_01_4.html", null ],
     [ "vgen::ImprovedNoise", "classvgen_1_1ImprovedNoise.html", null ],
     [ "cursestone::world::generator::INeighborBlockSink", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html", [
-      [ "cursestone::world::ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html", [
-        [ "cursestone::world::SimpleChunkManager", "classcursestone_1_1world_1_1SimpleChunkManager.html", null ]
-      ] ]
+      [ "cursestone::world::ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html", null ]
     ] ],
     [ "cursestone::plugin::PluginManager::Info", "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html", null ],
     [ "cursestone::wizard::Installer", "classcursestone_1_1wizard_1_1Installer.html", null ],
@@ -655,7 +551,6 @@ var hierarchy =
     [ "cursestone::world::LightEngine", "classcursestone_1_1world_1_1LightEngine.html", null ],
     [ "vgen::LightLayer", "structvgen_1_1LightLayer.html", null ],
     [ "cursestone::block::LiquidFlow", "classcursestone_1_1block_1_1LiquidFlow.html", null ],
-    [ "cursestone::event::Listener", "classcursestone_1_1event_1_1Listener.html", null ],
     [ "cursestone::world::format::anvil::LocationEntry", "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html", null ],
     [ "cursestone::plugin::LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", null ],
     [ "cursestone::utils::MainLogger", "classcursestone_1_1utils_1_1MainLogger.html", null ],
@@ -674,39 +569,6 @@ var hierarchy =
     [ "mcp_logger", "structmcp__logger.html", null ],
     [ "mcp_main_logger", "structmcp__main__logger.html", null ],
     [ "mcp_mutex", "structmcp__mutex.html", null ],
-    [ "mcp_packet", "structmcp__packet.html", null ],
-    [ "mcp_packet_vtable", "structmcp__packet__vtable.html", null ],
-    [ "mcp_pkt_ack", "structmcp__pkt__ack.html", null ],
-    [ "mcp_pkt_client_connect", "structmcp__pkt__client__connect.html", null ],
-    [ "mcp_pkt_client_disconnect", "structmcp__pkt__client__disconnect.html", null ],
-    [ "mcp_pkt_client_handshake", "structmcp__pkt__client__handshake.html", null ],
-    [ "mcp_pkt_data_packet_0", "structmcp__pkt__data__packet__0.html", null ],
-    [ "mcp_pkt_data_packet_1", "structmcp__pkt__data__packet__1.html", null ],
-    [ "mcp_pkt_data_packet_2", "structmcp__pkt__data__packet__2.html", null ],
-    [ "mcp_pkt_data_packet_3", "structmcp__pkt__data__packet__3.html", null ],
-    [ "mcp_pkt_data_packet_4", "structmcp__pkt__data__packet__4.html", null ],
-    [ "mcp_pkt_data_packet_5", "structmcp__pkt__data__packet__5.html", null ],
-    [ "mcp_pkt_data_packet_6", "structmcp__pkt__data__packet__6.html", null ],
-    [ "mcp_pkt_data_packet_7", "structmcp__pkt__data__packet__7.html", null ],
-    [ "mcp_pkt_data_packet_8", "structmcp__pkt__data__packet__8.html", null ],
-    [ "mcp_pkt_data_packet_9", "structmcp__pkt__data__packet__9.html", null ],
-    [ "mcp_pkt_data_packet_a", "structmcp__pkt__data__packet__a.html", null ],
-    [ "mcp_pkt_data_packet_b", "structmcp__pkt__data__packet__b.html", null ],
-    [ "mcp_pkt_data_packet_c", "structmcp__pkt__data__packet__c.html", null ],
-    [ "mcp_pkt_data_packet_d", "structmcp__pkt__data__packet__d.html", null ],
-    [ "mcp_pkt_data_packet_e", "structmcp__pkt__data__packet__e.html", null ],
-    [ "mcp_pkt_data_packet_f", "structmcp__pkt__data__packet__f.html", null ],
-    [ "mcp_pkt_nack", "structmcp__pkt__nack.html", null ],
-    [ "mcp_pkt_open_connection_reply_1", "structmcp__pkt__open__connection__reply__1.html", null ],
-    [ "mcp_pkt_open_connection_reply_2", "structmcp__pkt__open__connection__reply__2.html", null ],
-    [ "mcp_pkt_open_connection_request_1", "structmcp__pkt__open__connection__request__1.html", null ],
-    [ "mcp_pkt_open_connection_request_2", "structmcp__pkt__open__connection__request__2.html", null ],
-    [ "mcp_pkt_ping", "structmcp__pkt__ping.html", null ],
-    [ "mcp_pkt_pong", "structmcp__pkt__pong.html", null ],
-    [ "mcp_pkt_server_handshake", "structmcp__pkt__server__handshake.html", null ],
-    [ "mcp_pkt_unconnected_ping", "structmcp__pkt__unconnected__ping.html", null ],
-    [ "mcp_pkt_unconnected_ping_oc", "structmcp__pkt__unconnected__ping__oc.html", null ],
-    [ "mcp_pkt_unconnected_pong", "structmcp__pkt__unconnected__pong.html", null ],
     [ "mcp_rak_session", "structmcp__rak__session.html", null ],
     [ "mcp_rak_session_manager", "structmcp__rak__session__manager.html", null ],
     [ "mcp_raklib_server", "structmcp__raklib__server.html", null ],
@@ -874,7 +736,6 @@ var hierarchy =
       [ "cursestone::scheduler::CallbackTask", "classcursestone_1_1scheduler_1_1CallbackTask.html", null ]
     ] ],
     [ "cursestone::scheduler::TaskHandler", "classcursestone_1_1scheduler_1_1TaskHandler.html", null ],
-    [ "cursestone::ThreadManager", "classcursestone_1_1ThreadManager.html", null ],
     [ "cursestone::TickSample", "structcursestone_1_1TickSample.html", null ],
     [ "cursestone::tile::Tile", "classcursestone_1_1tile_1_1Tile.html", [
       [ "cursestone::tile::TileChest", "classcursestone_1_1tile_1_1TileChest.html", null ],
@@ -882,8 +743,6 @@ var hierarchy =
       [ "cursestone::tile::TileSign", "classcursestone_1_1tile_1_1TileSign.html", null ],
       [ "cursestone::tile::TileSpawner", "classcursestone_1_1tile_1_1TileSpawner.html", null ]
     ] ],
-    [ "cursestone::event::Timings", "classcursestone_1_1event_1_1Timings.html", null ],
-    [ "cursestone::event::TimingsSection", "classcursestone_1_1event_1_1TimingsSection.html", null ],
     [ "vgen::TorchBlock", "classvgen_1_1TorchBlock.html", null ],
     [ "cursestone::world::generator::VanillaNoise", "classcursestone_1_1world_1_1generator_1_1VanillaNoise.html", null ],
     [ "vgen::Vec2", "structvgen_1_1Vec2.html", null ],
