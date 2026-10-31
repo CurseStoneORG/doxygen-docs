@@ -134,6 +134,7 @@ var classcursestone_1_1Player =
     [ "sendChunksAroundSpawn", "classcursestone_1_1Player.html#a700c99595b9a9323c679d3f7e8572bea", null ],
     [ "sendChunkTiles", "classcursestone_1_1Player.html#afddb0a4ca7387c42ed9354917a0839b6", null ],
     [ "sendCreativeInventory", "classcursestone_1_1Player.html#a4c8ad71fa8a3782b5490f9f16901bc06", null ],
+    [ "sendEncodedBody", "classcursestone_1_1Player.html#a4800357ed4cbd318cd31fa39fb125c05", null ],
     [ "sendExperience", "classcursestone_1_1Player.html#a35b304f7e6300bebd0567e5ea502d917", null ],
     [ "sendExperienceLevel", "classcursestone_1_1Player.html#af766dc06d3c71cf726055fabda67d38d", null ],
     [ "sendFoodLevel", "classcursestone_1_1Player.html#a8aafe690813d31c9b5153f409601a024", null ],

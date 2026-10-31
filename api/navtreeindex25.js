@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"structcursestone_1_1TickSample.html#a6dd584ccf0069b75f68b53f1b2752fc3":[9,0,0,47,3],
 "structcursestone_1_1TickSample.html#a98062abe28bfd1d1161570dd1cd2e9f8":[9,0,0,47,1],
 "structcursestone_1_1TickSample.html#ae4b7db981623779eb1ba541c7261019d":[9,0,0,47,5],
 "structcursestone_1_1block_1_1BlockOrientation.html":[9,0,0,0,36],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "structcursestone_1_1world_1_1WorldConfig.html#aafccbd9ad72880ffc007f5c9882de6d0":[9,0,0,15,14,4],
 "structcursestone_1_1world_1_1WorldConfig.html#adb9d1bd7deb76c558cf6032d7a8ad8de":[9,0,0,15,14,8],
 "structcursestone_1_1world_1_1WorldConfig.html#ae517570f00449b4641925a221f82fe6b":[9,0,0,15,14,0],
-"structcursestone_1_1world_1_1World_1_1ChunkViewer.html":[9,0,0,15,15,0],
-"structcursestone_1_1world_1_1World_1_1ChunkViewer.html#a54e98b868afd20855f6c08b6708f9c0f":[9,0,0,15,15,0,1]
+"structcursestone_1_1world_1_1World_1_1ChunkViewer.html":[9,0,0,15,15,0]
 };

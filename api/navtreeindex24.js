@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classvgen_1_1buffer__span__mut.html":[9,0,2,158],
 "classvgen_1_1buffer__span__mut.html#a019311b3ffb953beedc46e09f7820636":[9,0,2,158,2],
 "classvgen_1_1buffer__span__mut.html#a1820dbd4494ab6118bdd93776b259b85":[9,0,2,158,4],
 "classvgen_1_1buffer__span__mut.html#a239a8f76e7f69da98bba71949d11c1a7":[9,0,2,158,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "structcursestone_1_1TickSample.html#a07191825b7112159653490c07b43e190":[9,0,0,47,0],
 "structcursestone_1_1TickSample.html#a0c64e9f01bd45123efc2eeafd867568b":[9,0,0,47,2],
 "structcursestone_1_1TickSample.html#a374b7dd64e07123b7d417d0a4010a24c":[9,0,0,47,4],
-"structcursestone_1_1TickSample.html#a390b64ee0cd939ee93dce5375b902c90":[9,0,0,47,6],
-"structcursestone_1_1TickSample.html#a6dd584ccf0069b75f68b53f1b2752fc3":[9,0,0,47,3]
+"structcursestone_1_1TickSample.html#a390b64ee0cd939ee93dce5375b902c90":[9,0,0,47,6]
 };

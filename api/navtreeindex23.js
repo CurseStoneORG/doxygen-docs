@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1StartPiece.html#adabf373e318194978dc4b827414ed5a3":[9,0,2,135,6],
 "classvgen_1_1StartPiece.html#ae96c2b56d2d8ec434be447ad06ee276c":[9,0,2,135,5],
 "classvgen_1_1StartPiece.html#af151bbca92d5111662b990c12d19d6c8":[9,0,2,135,9],
 "classvgen_1_1StoneBeachBiome.html":[9,0,2,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1buffer__span.html#a4f8d247778c83ac0219bc6384bfd38d1":[9,0,2,159,5],
 "classvgen_1_1buffer__span.html#a7d2d952739a705be6b24135d21576963":[9,0,2,159,0],
 "classvgen_1_1buffer__span.html#acb356fcaeae17de6277c4ffe6542cb79":[9,0,2,159,1],
-"classvgen_1_1buffer__span.html#addfe62fef1e9327084c2c48a7df38287":[9,0,2,159,2],
-"classvgen_1_1buffer__span__mut.html":[9,0,2,158]
+"classvgen_1_1buffer__span.html#addfe62fef1e9327084c2c48a7df38287":[9,0,2,159,2]
 };

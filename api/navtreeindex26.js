@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"structcursestone_1_1world_1_1World_1_1ChunkViewer.html#a54e98b868afd20855f6c08b6708f9c0f":[9,0,0,15,15,0,1],
 "structcursestone_1_1world_1_1World_1_1ChunkViewer.html#a815bf890d7cb1675834cefc083d4dfab":[9,0,0,15,15,0,0],
 "structcursestone_1_1world_1_1World_1_1ChunkViewer.html#a9d66d5ed49fe7d063d49c0db198c5b86":[9,0,0,15,15,0,2],
 "structcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegistrar.html":[9,0,0,15,0,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX26 =
 "structmcp__rak__session.html#ad58a3a26e58280c3a89323604d612653":[9,0,27,60],
 "structmcp__rak__session.html#ad631d383d45c99ce5c921105e0188109":[9,0,27,32],
 "structmcp__rak__session.html#adec4aa8b578dd82a6b86d7fdbffa750d":[9,0,27,53],
-"structmcp__rak__session.html#ae7207a859fd2a041ad2c748ca6f7460c":[9,0,27,31],
-"structmcp__rak__session.html#ae89d528d70fa3709c1040a6119b16851":[9,0,27,91]
+"structmcp__rak__session.html#ae7207a859fd2a041ad2c748ca6f7460c":[9,0,27,31]
 };

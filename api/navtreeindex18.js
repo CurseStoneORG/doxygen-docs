@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"classcursestone_1_1world_1_1format_1_1WorldProvider.html#ab559e99b1a4ed35140a4acb9f7be518a":[9,0,0,15,0,4,9],
 "classcursestone_1_1world_1_1format_1_1WorldProvider.html#ae11c7f5ff113e1e1fc6f4d56cb588e37":[9,0,0,15,0,4,4],
 "classcursestone_1_1world_1_1format_1_1WorldProvider.html#af6087f3fb6f4b59a02243c487705ccc4":[9,0,0,15,0,4,14],
 "classcursestone_1_1world_1_1format_1_1WorldProviderManager.html":[9,0,0,15,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187a2260b669d1c515bc489704f350fe023f":[9,0,2,1,2,8],
 "classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187a2b6f48ac3e1c531576cb06c03d0cb81b":[9,0,2,1,2,15],
 "classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187a32864c09ef538453b4d8110734ee355b":[9,0,2,1,2,16],
-"classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187a3a2445d89edbcab66b2cf292dac1bb58":[9,0,2,1,2,17],
-"classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187a4cd8413207629a963225f4314b53adcd":[9,0,2,1,2,11]
+"classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187a3a2445d89edbcab66b2cf292dac1bb58":[9,0,2,1,2,17]
 };

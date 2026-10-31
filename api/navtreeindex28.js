@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"structvgen_1_1Pos.html#af7eaf3d8c6132020c688a1217a3b3491":[9,0,2,165,10],
 "structvgen_1_1ScopedProfile.html":[9,0,2,153],
 "structvgen_1_1ScopedProfile.html#acaa3400bb48480f1f27bc7aedc6f172b":[9,0,2,153,0],
 "structvgen_1_1Vec2.html":[9,0,2,163],

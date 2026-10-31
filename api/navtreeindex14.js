@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1network_1_1RCONInstance.html#a850843dea86548afaac2424d6c285f22":[9,0,0,7,9,4],
 "classcursestone_1_1network_1_1RakLibInterface.html":[9,0,0,7,7],
 "classcursestone_1_1network_1_1RakLibInterface.html#a02433156da9d7476ba5962aabdcd5e23":[9,0,0,7,7,17],
 "classcursestone_1_1network_1_1RakLibInterface.html#a058d3d276d50f5e80bd688a8c64de7e3":[9,0,0,7,7,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1network_1_1protocol_1_1LevelEventPacket.html":[9,0,0,7,0,28],
 "classcursestone_1_1network_1_1protocol_1_1LevelEventPacket.html#a10dc91f05fd65193a4f21585dfe463e3":[9,0,0,7,0,28,1],
 "classcursestone_1_1network_1_1protocol_1_1LevelEventPacket.html#a2c3e9bc29007850143846bfea5b2d3ae":[9,0,0,7,0,28,2],
-"classcursestone_1_1network_1_1protocol_1_1LevelEventPacket.html#a5cbce326f5aac47f93998026e990dd38":[9,0,0,7,0,28,5],
-"classcursestone_1_1network_1_1protocol_1_1LevelEventPacket.html#a720970059434ce78fa3c794388f8ab94":[9,0,0,7,0,28,4]
+"classcursestone_1_1network_1_1protocol_1_1LevelEventPacket.html#a5cbce326f5aac47f93998026e990dd38":[9,0,0,7,0,28,5]
 };
