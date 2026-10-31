@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_test_results.html','');
 <div class="textblock"><p>Companion to <a class="el" href="md_docs_audits_memory_audit.html">`memory-audit.md`</a> and <a class="el" href="md_docs_audits_ownership_map.html">`ownership-map.md`</a>. Every result below was produced on <code>stable</code> @ <code>1c2e94d</code> + the audit working tree. Nothing here is inferred: each section states what ran, where the evidence is, and how to reproduce it.</p>
 <p><b>Status legend:</b> PASS (verified green) / FAIL (verified red) / N/E (not executable here, reason given). Counts are never extrapolated.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md110"></a>
+<h1><a class="anchor" id="autotoc_md118"></a>
 1. Environment</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -105,7 +105,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_test_results.html','');
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Test clients   </td><td class="markdownTableBodyNone">project's own Python 0.15.10 protocol tooling in <code>tools/</code> (no official client available in sandbox)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md111"></a>
+<h1><a class="anchor" id="autotoc_md119"></a>
 2. Builds</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_test_results.html','');
 <td class="markdownTableBodyNone">Warnings (<code>-Wall -Wextra</code>, compile-only)   </td><td class="markdownTableBodyNone"><code>bash scripts/warn_build.sh</code>   </td><td class="markdownTableBodyNone"><b>PASS</b> (compiles clean) — 677 diagnostics, bucketed in §3   </td></tr>
 </table>
 <p>The audit diff (29 files, +315/−68) compiles and links under both configurations. Baseline size moved 4,034,168 → 4,048,192 bytes (+14 KB of hardening).</p>
-<h1><a class="anchor" id="autotoc_md112"></a>
+<h1><a class="anchor" id="autotoc_md120"></a>
 3. Static analysis</h1>
 <p><code>-Wall -Wextra</code> full pass (production uses <code>-w</code>, so these were previously invisible):</p>
 <table class="markdownTable">
@@ -130,15 +130,15 @@ $(document).ready(function(){initNavTree('md_docs_audits_test_results.html','');
 <td class="markdownTableBodyNone">&lsquo;unused variable 'col&rsquo;<code>—</code>PerlinNoise.cpp&lt;tt&gt;\ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; 1 \ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; dead code, documented, not fixed (out of audit's minimal-fix scope) \ilinebr &lt;/td&gt; &lt;/tr&gt; &lt;tr class="markdownTableRowOdd"&gt; &lt;td class="markdownTableBodyNone"&gt;unused parameter<code>×3 —</code>Normal.cpp&lt;tt&gt;,PlayerInventory.cpp&lt;tt&gt;\ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; 3 \ilinebr &lt;/td&gt; &lt;td class="markdownTableBodyNone"&gt; dead code, documented, not fixed \ilinebr &lt;/td&gt; &lt;/tr&gt; &lt;tr class="markdownTableRowEven"&gt; &lt;td class="markdownTableBodyNone"&gt;comparison will always evaluate as true<code>(</code>-Waddress<code>) —</code>AnvilChunkCodec.c`   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone"><b>real finding</b>: dead null-check on an array member's address; code after it is correct → documented as suspected/cosmetic in memory-audit.md §11   </td></tr>
 </table>
 <p>Tools not executable here: cppcheck, clang-tidy, clang static analyzer, valgrind (not installed, no sudo). The static-analysis leg is therefore compiler diagnostics + manual review; that limitation is restated in memory-audit.md §12.</p>
-<h1><a class="anchor" id="autotoc_md113"></a>
+<h1><a class="anchor" id="autotoc_md121"></a>
 4. Sanitizer runs (ASan + UBSan + LSan)</h1>
-<h2><a class="anchor" id="autotoc_md114"></a>
+<h2><a class="anchor" id="autotoc_md122"></a>
 4.1 Discovery run (first pass, same audit)</h2>
 <ul>
 <li>UBSan <b>flagged live</b> <code>signed integer overflow: 128 * 73856093</code> at <code>Normal.cpp:408</code> during normal world generation (random-seed spawn). → became fix <b>U1</b> (same family fixed in 3 more files by inspection). After the fix: <b>0 <code>runtime error</code> lines in the entire sanitizer log</b>.</li>
 <li>One operational note: under ASan, world generation is slow enough that a 30 s SIGTERM grace window once expired before the shutdown finished — the run budget was raised; not a server defect (the server was <em>still saving</em>, which is correct behavior).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md115"></a>
+<h2><a class="anchor" id="autotoc_md123"></a>
 4.2 Final-state leak verification (fresh re-run on the final tree)</h2>
 <p>Script: <code>scripts/leak_run.sh</code> (starts the sanitizer build, waits for readiness, drives churn, sends SIGINT, extracts sanitizer reports). Workload:</p><ul>
 <li><code>python3 tools/memory_audit_checks.py --host 127.0.0.1 --port 19132 --name LeakAud --cycles 20</code> → 20 × (connect → invalid-name login → <b>server kick</b> → session teardown) — PASS (<code>CHURN_EXIT=0</code>)</li>
@@ -155,14 +155,14 @@ $(document).ready(function(){initNavTree('md_docs_audits_test_results.html','');
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">ASan error reports (use-after-free, overflow, etc.)   </td><td class="markdownTableBodyNone"><b>0</b>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md116"></a>
+<h2><a class="anchor" id="autotoc_md124"></a>
 4.3 Red/green experiment proving the harness detects the leak (fix C1)</h2>
 <p>Performed during the audit's first verification pass, one-line revert of <code>mcp_rak_session_destroy()</code> on the kick path, identical workload:</p><ul>
 <li><b>Red run:</b> LeakSanitizer reported <b>1490 bytes leaked in 21 allocations — exactly one allocation per kicked session</b> (20 churn cycles + 1 forced close). This is the per-session leak signature predicted by code reading; the harness reproduces it deterministically.</li>
 <li><b>Green run (fix restored, rebuilt): 0 leaks.</b> Fix then kept; final re-verification in §4.2.</li>
 </ul>
 <p>This satisfies the "the test must be able to fail" requirement: the leak tool demonstrably discriminates the defect.</p>
-<h1><a class="anchor" id="autotoc_md117"></a>
+<h1><a class="anchor" id="autotoc_md125"></a>
 5. Malformed-input / lifecycle stress suite</h1>
 <p>Tool: <code>tools/memory_audit_checks.py</code> (new in this audit, 284 lines; reuses the project's Python protocol client). <b>7 scenarios, 9 assertions.</b> Run against the <b>fixed baseline build</b>:</p>
 <p>Script: <code>scripts/suite_run.sh</code> → <code>python3 tools/memory_audit_checks.py --host 127.0.0.1 --port 19132 --name SuiteAud</code></p>
@@ -185,11 +185,11 @@ $(document).ready(function(){initNavTree('md_docs_audits_test_results.html','');
 <td class="markdownTableBodyNone">7   </td><td class="markdownTableBodyNone"><code>ocr_flood</code>   </td><td class="markdownTableBodyNone">150 unauthenticated OCR1 datagrams in a burst (session-creation pressure)   </td><td class="markdownTableBodyNone">server still answers pings   </td><td class="markdownTableBodyNone"><b>PASS</b>   </td></tr>
 </table>
 <p><b>Result: ALL SCENARIOS PASSED</b>, then SIGINT → <code>SERVER_EXIT=0</code>, <code>Shutdown complete.</code> Full log: <code>/tmp/cs_suite_run/base_out.log</code>.</p>
-<h2><a class="anchor" id="autotoc_md118"></a>
+<h2><a class="anchor" id="autotoc_md126"></a>
 Test-development failure recorded honestly</h2>
 <p>During suite development (first pass), <code>zlib_bomb</code>'s "fresh-client login after bomb" assertion <b>failed</b>: analysis showed the server had <em>intentionally</em> closed the abusive session ("bad
 batch" response — correct behavior), and the test had tried to reuse the same client. The test was corrected to expect a fresh client login; the server behavior was verified correct and was <b>not</b> changed. No failing test was deleted or ignored.</p>
-<h1><a class="anchor" id="autotoc_md119"></a>
+<h1><a class="anchor" id="autotoc_md127"></a>
 6. Gameplay regression tests (existing e2e tools)</h1>
 <p>All six existing suites, run against the fixed baseline (tools spawn their own server):</p>
 <table class="markdownTable">
@@ -209,7 +209,7 @@ batch" response — correct behavior), and the test had tried to reuse the same 
 <td class="markdownTableBodyNone"><code>bow_stack_check.py</code>   </td><td class="markdownTableBodyNone"><b>ALL CHECKS PASSED</b> (<code>--server</code> as above)   </td></tr>
 </table>
 <p>No gameplay regressions from the 30 audit fixes, including the login-path (<code>kick</code>) and block-break (<code>getChunkIfLoaded</code>) changes.</p>
-<h1><a class="anchor" id="autotoc_md120"></a>
+<h1><a class="anchor" id="autotoc_md128"></a>
 7. Repeated-lifecycle stress evidence (summary)</h1>
 <ul>
 <li><b>Player connect/disconnect ×20</b> under LeakSanitizer → 0 leaks (§4.2), red/green-proven (§4.3).</li>
@@ -218,7 +218,7 @@ batch" response — correct behavior), and the test had tried to reuse the same 
 <li><b>Chunk load/unload</b>: exercised implicitly by every login (spawn chunks) and by the GC sweep in the forced final GC; no sanitizer findings.</li>
 <li>Not exercised (and why): world unload/reload via <code>/unload</code>-style commands with in-flight generation (the drain-guard path) — no second world was available in the sandbox config used by the harness; plugin load/unload cycles — no third-party plugin binary was available; both are recorded as N/E rather than claimed.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md121"></a>
+<h1><a class="anchor" id="autotoc_md129"></a>
 8. Not executed — with reasons</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -236,7 +236,7 @@ batch" response — correct behavior), and the test had tried to reuse the same 
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Plugin load/unload stress, second-world unload with in-flight generation   </td><td class="markdownTableBodyNone">N/E   </td><td class="markdownTableBodyNone">no suitable plugin/world fixture in harness; unit covered by code review only   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md122"></a>
+<h1><a class="anchor" id="autotoc_md130"></a>
 9. Reproduction commands</h1>
 <div class="fragment"><div class="line"># builds (config-identical to build_local.sh, isolated output trees)</div>
 <div class="line">bash scripts/cs_build.sh          # baseline   -&gt; /tmp/cs_build/CurseStone</div>

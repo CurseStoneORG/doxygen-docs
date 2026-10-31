@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_ownership_map.html','')
 <li><b>C-owned</b> — <code>malloc</code>-allocated, released by the matching <code>mcp_*_destroy()</code> / <code>free()</code> function.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md96"></a>
+<h1><a class="anchor" id="autotoc_md104"></a>
 1. Process shape</h1>
 <p>Single process. Six thread classes exist (verified by <code>std::thread</code>/<code>pthread_create</code> sites):</p>
 <table class="markdownTable">
@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_ownership_map.html','')
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Logger worker   </td><td class="markdownTableBodyNone">C async logger   </td><td class="markdownTableBodyNone">formatted log emission   </td><td class="markdownTableBodyNone"><code>mcp_main_logger_async_destroy()</code>; respawn-after-destroy blocked by latch (fix L1)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md97"></a>
+<h1><a class="anchor" id="autotoc_md105"></a>
 2. Ownership graph (Mermaid)</h1>
 <div class="fragment"><div class="line">flowchart TD</div>
 <div class="line">    subgraph CXX[&quot;C++ layer — shared_ptr ownership&quot;]</div>
@@ -151,16 +151,16 @@ $(document).ready(function(){initNavTree('md_docs_audits_ownership_map.html','')
 <div class="line">    MM -.-&gt;|sweeps every world (fix C5)| W</div>
 <div class="line">    LOG[&quot;AsyncMainLogger (C singleton, worker thread)&quot;]</div>
 <div class="line">    EVERY[&quot;all subsystems&quot;] -.-&gt;|log calls| LOG</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md98"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md106"></a>
 3. Object lifecycles and cleanup responsibilities</h1>
-<h2><a class="anchor" id="autotoc_md99"></a>
+<h2><a class="anchor" id="autotoc_md107"></a>
 3.1 Server and singletons</h2>
 <ul>
 <li><code>Server</code> is a process-lifetime singleton (<code>getInstance()</code>). It <em>owns</em> the network, all worlds, all players, the command map, the crafting manager, the async pool, the console reader and the ban lists (member list verified in <code><a class="el" href="Server_8h_source.html">Server.h</a></code> lines 378–393).</li>
 <li>Startup order (verified in <code>src/CurseStone.cpp</code> + <code>Server::start()</code>): logger init → config → server construct (network bind, world load, plugin enable) → "Server ready" → tick loop.</li>
 <li>Shutdown order (verified in <code>Server::runTickLoop()</code> tail): stop flag → final <code>Network::tick()</code> → **<code>Network::shutdown()</code> (join rx thread — fix L2)** → final forced GC → <code>saveAll()</code> → world destruction → plugin disable → logger destroy. The signal path only sets <code>g_stopRequested</code> (async-signal-safe); the tick loop performs the real shutdown. Crash dumps run in a forked child (fix P3) so they cannot deadlock on malloc/logger locks.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md100"></a>
+<h2><a class="anchor" id="autotoc_md108"></a>
 3.2 Player session (highest-churn lifecycle)</h2>
 <div class="fragment"><div class="line">sequenceDiagram</div>
 <div class="line">    participant C as Client (UDP)</div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_ownership_map.html','')
 <div class="line">    end</div>
 <div class="line">    Note over M: Player shared_ptr released by Server::players_</div>
 </div><!-- fragment --><p>Ownership chain: <code>Server::players_</code> (owning <code>shared_ptr</code>) → <code>Player</code> borrows its <code>RakLibInterface</code> and <code>World</code> (both owned by <code>Server</code>, guaranteed to outlive players because players are destroyed before worlds in the teardown order). The C session outlives the C++ <code>Player</code> only during the disconnect window and is destroyed by exactly one of the two paths above.</p>
-<h2><a class="anchor" id="autotoc_md101"></a>
+<h2><a class="anchor" id="autotoc_md109"></a>
 3.3 Chunk lifecycle</h2>
 <div class="fragment"><div class="line">flowchart LR</div>
 <div class="line">    REQ[&quot;getChunkOrRequestAsync&quot;] --&gt;|pending_| GENQ[&quot;AsyncPool worker&quot;]</div>
@@ -196,26 +196,26 @@ $(document).ready(function(){initNavTree('md_docs_audits_ownership_map.html','')
 <div class="line">    MAP -.-&gt;|dtor takes mtx_ — fix A6| MAP</div>
 <div class="line">    W[&quot;World::unloadWorld&quot;] --&gt;|wait pendingCount()==0, else refuse — fix A3| UNL</div>
 </div><!-- fragment --><p>Rules verified in code: every <code>mcp_chunk_t*</code> in <code>chunks_</code> is destroyed exactly once — either by <code>unloadDistantChunks</code> after a successful save, or by the <code>ChunkManager</code> destructor sweep. The destructor holds <code>mtx_</code> so it cannot race a worker installing a chunk. Generation completion callbacks touch only the manager through the pending-count guard, so a world cannot be destroyed under them (fix A3).</p>
-<h2><a class="anchor" id="autotoc_md102"></a>
+<h2><a class="anchor" id="autotoc_md110"></a>
 3.4 Entities, dropped items, tiles</h2>
 <ul>
 <li><code>DroppedItem</code>: owned by <code>World::dropped_items_</code> (<code>unique_ptr</code>), erased only by the GC's despawn-by-age loop — which now runs for <b>every</b> world (fix C5), not just the default world.</li>
 <li><code>ArrowEntity</code>: borrowed by <code>World::arrows()</code>; owned by the entity registry. Tasks that outlive a tick (lightning removal) must not capture <code>World*</code> — the one that did was converted to capture the world <em>name</em> (fix A5).</li>
 <li><code>Tile</code> (block entities): <code>shared_ptr</code>, owned by <code>World</code>'s tile map; handed out as <code>shared_ptr</code> so a tile outlives a pointer handed to a packet handler.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md103"></a>
+<h2><a class="anchor" id="autotoc_md111"></a>
 3.5 Packets (C structs and C++ objects)</h2>
 <p>Two families, two conventions:</p><ul>
 <li>C packet structs (<code>mcp_pkt_*</code>) use a vtable with <code>pkt_destroy</code>; the UNCONNECTED_PONG destroy was the only one that leaked its string member (fix C2).</li>
 <li>C++ packets are <code>shared_ptr&lt;DataPacket&gt;</code> created per send/broadcast; handlers receive <code>shared_ptr</code>, so a packet cannot die mid-handler. Decode is exception-guarded centrally in <code>Network::decodePacketById</code> (fix P1) — a throwing or failing decode drops the packet and logs; no half-initialized object escapes.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md104"></a>
+<h2><a class="anchor" id="autotoc_md112"></a>
 3.6 Plugins / Lua</h2>
 <ul>
 <li><code>PluginManager</code> owns <code>LuaPlugin</code> instances; each <code>LuaPlugin</code> owns exactly one <code>lua_State*</code>, created on load and closed by <code>LuaPlugin::disable()</code> (which also removes listeners and cancels tasks). Enable/disable is driven by the main thread (commands are scheduler-dispatched since fix L3), so plugin VMs are never touched concurrently by the console thread.</li>
 <li><code>MemoryManager</code> is not an allocator — it is the GC scheduler; since fix C5 it sweeps chunk and dropped-item GC across all worlds on one coordinated schedule.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md105"></a>
+<h1><a class="anchor" id="autotoc_md113"></a>
 4. Non-owning references inventory (as fixed or verified safe)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -233,14 +233,14 @@ $(document).ready(function(){initNavTree('md_docs_audits_ownership_map.html','')
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">raw <code>new</code> sites (PlatformCompat dir object, PerlinNoise arrays)   </td><td class="markdownTableBodyNone">—   </td><td class="markdownTableBodyNone">—   </td><td class="markdownTableBodyNone">verified: each has a matching owner/deleter, no change needed   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md106"></a>
+<h1><a class="anchor" id="autotoc_md114"></a>
 5. Dangling-reference risks by design (accepted, documented)</h1>
 <ul>
 <li><code>Server::getInstance()</code> is reachable from static destructors; the shutdown-order fixes (L1, L2) are what make that survivable. New subsystems must follow the same rule: <b>stop your threads before main() leaves its scope</b>.</li>
 <li>The C core borrows nothing from the C++ layer except the packet delivery callback; the rx thread is joined before the C++ objects it calls into are destroyed (L2).</li>
 <li>Task/capture rule going forward: anything scheduled with a delay must capture IDs/names or <code>shared_ptr</code>, never raw subsystem pointers (the lightning task was the only violator found).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md107"></a>
+<h1><a class="anchor" id="autotoc_md115"></a>
 6. Cleanup responsibility matrix</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">

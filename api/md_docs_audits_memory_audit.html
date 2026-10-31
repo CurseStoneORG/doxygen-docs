@@ -89,16 +89,16 @@ $(document).ready(function(){initNavTree('md_docs_audits_memory_audit.html','');
 <div class="textblock"><p>Audited tree: <code>stable</code> @ <code>1c2e94d</code> (uncommitted working tree carries every fix in this report). Date: 2026-10-24. Method: evidence-based — every finding below was verified by reading the exact code, reproducing the failure mode where possible (sanitizer run, provocation test, or targeted reasoning over the real call graph), and re-verifying after the fix.</p>
 <p>Companion documents: <a class="el" href="md_docs_audits_ownership_map.html">`ownership-map.md`</a> (who owns what, Mermaid diagrams) and <a class="el" href="md_docs_audits_test_results.html">`test-results.md`</a> (every build, run and command with results).</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md62"></a>
+<h1><a class="anchor" id="autotoc_md70"></a>
 1. Scope</h1>
 <p>The audit covered the entire server: ~460 source files under <code>src/</code> (C core: raklib, NBT, chunk and Anvil codecs; C++ upper layer: server, network, protocol, player, world, entities, plugins, scheduler, logger), the bundled Lua interpreter in <code>third_party/lua</code>, the build configuration (<code>CMakeLists.txt</code>, <code>build_local.sh</code>), and the existing test tooling in <code>tools/</code>.</p>
 <p>Dimensions examined: allocation/deallocation pairing (<code>new</code>/<code>delete</code>, <code>new[]</code>/<code>delete[]</code>, <code>malloc</code>/<code>free</code>/<code>realloc</code>/<code>calloc</code>), ownership and lifetime of every long-lived object, cleanup on every exit path (normal, error, exception, disconnect, shutdown), exception safety of packet decode, unbounded or attacker-influenced allocations, iterator/pointer invalidation, use-after-free and dangling references across subsystem boundaries, thread safety of shared state, resource leaks beyond heap memory (threads, FILE handles, sockets, Lua states), and undefined behavior that compilers are entitled to miscompile.</p>
 <p>Out of scope: gameplay balance, protocol semantics beyond what memory safety requires, and the bundled Lua interpreter internals (treated as a library; its state lifecycle <em>is</em> in scope and is owned correctly by <code>LuaPlugin</code>).</p>
-<h1><a class="anchor" id="autotoc_md63"></a>
+<h1><a class="anchor" id="autotoc_md71"></a>
 2. Architecture as found (summary)</h1>
 <p>CurseStone is a single process with one C core and one C++ layer. The C core (<code>src/network/raklib</code>, <code>src/nbt</code>, <code>src/world/format/anvil</code>, chunk codec) does almost all manual memory management with <code>malloc</code>/<code>free</code> and accounts for the overwhelming majority of the codebase's manual allocations. The C++ layer allocates almost exclusively through <code>std::make_shared</code>/<code>make_unique</code> (~436 <code>make_*</code> call sites versus 8 raw <code>new</code> at audit time, the raw ones being a directory object in PlatformCompat and two arrays in PerlinNoise). Threads found: main tick thread, RakLib network thread, a chunk-generation worker pool (<code>AsyncPool</code>), Anvil async I/O, the console reader thread, and the async logger worker. Full ownership and lifecycle detail, including the Mermaid diagrams, is in <a class="el" href="md_docs_audits_ownership_map.html">`ownership-map.md`</a>.</p>
 <p>The memory-management model is sound at the top (smart pointers with clear owners) and was mostly sound in the C core, with a fixed set of lifecycle functions per object type. The defects found were concentrated in five places: RakLib session teardown paths, unbounded wire-controlled allocation sizes, subsystem destruction order at shutdown, GC coverage of non-default worlds, and a handful of raw-pointer snapshots held across callbacks that could invalidate them.</p>
-<h1><a class="anchor" id="autotoc_md64"></a>
+<h1><a class="anchor" id="autotoc_md72"></a>
 3. Tooling and constraints</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -117,7 +117,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_memory_audit.html','');
 <td class="markdownTableBodyNone">TSan   </td><td class="markdownTableBodyNone"><b>not run</b>   </td><td class="markdownTableBodyNone">TSan cannot be combined with ASan in one binary, and the codebase's synchronization is simple enough that the ASan+code-review pass covered it; a dedicated TSan run is listed as residual work   </td></tr>
 </table>
 <p>Build isolation: both instrumented builds write to their own output trees (<code>/tmp/cs_build_san</code>, <code>/tmp/cs_warn</code>). No production build configuration was modified; <code>scripts/cs_build.sh</code> and <code>scripts/cs_build_san.sh</code> (kept outside the repo) replicate <code>build_local.sh</code> flags exactly.</p>
-<h1><a class="anchor" id="autotoc_md65"></a>
+<h1><a class="anchor" id="autotoc_md73"></a>
 4. Memory-management model as found</h1>
 <ul>
 <li><b>C core objects</b> (<code>mcp_rak_session_t</code>, <code>mcp_tag_t</code>, <code>mcp_chunk_t</code>, packet structs) follow a create/destroy function pair convention. Every leak found in this layer was a path that reached <code>free()</code> of the outer struct while skipping the matching destroy function.</li>
@@ -125,9 +125,9 @@ $(document).ready(function(){initNavTree('md_docs_audits_memory_audit.html','');
 <li><b>Containers</b> own their contents in both layers (<code>unordered_map&lt;..., mcp_chunk_t*&gt;</code> with explicit destroy, <code>vector&lt;shared_ptr&lt;T&gt;&gt;</code>, <code>map&lt;int64_t, unique_ptr&lt;DroppedItem&gt;&gt;</code>).</li>
 <li>No ownership-model conversions (raw→smart) were applied in this audit beyond <code>Living::tickEffects</code>, where the snapshot vector demonstrably needed to <em>own</em> during iteration; that change preserves the existing external type (<code>effects_</code> was already a <code>shared_ptr</code> container).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md66"></a>
+<h1><a class="anchor" id="autotoc_md74"></a>
 5. Confirmed memory leaks — fixed (5)</h1>
-<h2><a class="anchor" id="autotoc_md67"></a>
+<h2><a class="anchor" id="autotoc_md75"></a>
 C1 (confirmed, LSan-proven): kick path frees the session struct without destroying session-owned buffers</h2>
 <ul>
 <li><b>Where:</b> <code>src/network/raklib/ServerHandler.c</code>, <code>mcp_server_handler_close_session()</code> (~line 75).</li>
@@ -135,58 +135,58 @@ C1 (confirmed, LSan-proven): kick path frees the session struct without destroyi
 <li><b>Repro:</b> any server-initiated disconnect (kick, shutdown with live clients). 20 connect/kick cycles under LeakSanitizer leaked exactly one allocation per cycle (red run: 1490 bytes in 21 allocations = 20 verify cycles + 1 forced close; green run after fix: 0).</li>
 <li><b>Fix:</b> call <code>mcp_rak_session_destroy(m-&gt;sessions[i])</code> before <code>free()</code>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md68"></a>
+<h2><a class="anchor" id="autotoc_md76"></a>
 C2 (confirmed): UNCONNECTED_PONG leaked its MOTD twice</h2>
 <ul>
 <li><b>Where:</b> <code>src/network/raklib/protocol/UNCONNECTED_PONG.c</code>, <code>pkt_decode()</code> and <code>pkt_destroy()</code>.</li>
 <li><b>Root cause:</b> <code>pkt_decode()</code> assigned a freshly parsed <code>motd</code> string over <code>p-&gt;motd</code> without freeing the previous value (one leak per pong decode of a second pong), and <code>pkt_destroy()</code> freed only the struct, never the string (one leak per packet lifetime).</li>
 <li><b>Fix:</b> <code>free(p-&gt;motd)</code> before reassignment; <code>pkt_destroy()</code> now frees <code>motd</code> then the struct.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md69"></a>
+<h2><a class="anchor" id="autotoc_md77"></a>
 C3 (confirmed): chunk-serialize buffer leaked on empty chunks (2 sites)</h2>
 <ul>
 <li><b>Where:</b> <code>src/player/PlayerChunks.cpp</code> <code>sendChunk()</code> and <code>src/player/PlayerTick.cpp</code> <code>onUpdate()</code>, both <code>if (!buf || outLen == 0) return;</code> after <code>mcp_chunk_network_serialize()</code>.</li>
 <li><b>Root cause:</b> C-style short-circuit: when the serializer succeeded but produced zero bytes, the non-null <code>buf</code> was abandoned. The condition merged the error case (no buffer) with the empty case (buffer that must be freed).</li>
 <li><b>Fix:</b> split the checks; <code>free(buf)</code> on the <code>outLen == 0</code> path.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md70"></a>
+<h2><a class="anchor" id="autotoc_md78"></a>
 C4 (confirmed): login rejections used &lt;tt&gt;close()&lt;/tt&gt; and left the RakNet session alive</h2>
 <ul>
 <li><b>Where:</b> <code>src/player/PlayerLogin.cpp</code> — five rejection paths (outdated protocol, invalid name length, invalid name characters, reserved name, whitelist, ban list).</li>
 <li><b>Root cause:</b> <code>close()</code> only closes the C++ player-side view; the RakNet session remains open and answers keepalives, so a rejected client keeps a session (and the associated few hundred KB of session state, plus during the window a player slot) alive indefinitely.</li>
 <li><b>Fix:</b> all five paths now call <code>kick()</code>, which performs the full server-side teardown. Also clamps <code>skin_id</code> to 128 bytes so echoed list packets stay well-formed.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md71"></a>
+<h2><a class="anchor" id="autotoc_md79"></a>
 C5 (confirmed): GC swept only the default world</h2>
 <ul>
 <li><b>Where:</b> <code>src/MemoryManager.cpp</code> <code>collect()</code> — both the chunk GC and the dropped-item GC resolved <code>getDefaultWorld()</code> and swept only that world.</li>
 <li><b>Root cause:</b> chunks in non-default worlds were never evicted (unbounded growth while a Nether/plugin world is visited), and dropped items outside the default world were never erased from <code>dropped_items_</code> (a permanent per-entry leak by design of the despawn-by-age loop).</li>
 <li><b>Fix:</b> both sweeps iterate <code>getWorlds()</code>.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md72"></a>
+<h1><a class="anchor" id="autotoc_md80"></a>
 6. Invalid / unsafe memory access — fixed (6)</h1>
-<h2><a class="anchor" id="autotoc_md73"></a>
+<h2><a class="anchor" id="autotoc_md81"></a>
 A1: split reassembly accepted fragments that change &lt;tt&gt;split_count&lt;/tt&gt; mid-message</h2>
 <ul>
 <li><b>Where:</b> <code>src/network/raklib/SessionManager.c</code> <code>handle_data_packet()</code> split handling.</li>
 <li><b>Root cause:</b> a slot created for <code>split_count</code> N would accept a fragment declaring <code>split_count</code> M ≠ N; segments land at indexes the free paths never walk (all of them stop at <code>slot-&gt;count</code>), leaving reachable-state inconsistency and unbounded segment storage for indices ≥ count. The completion loop also walked <code>slot-&gt;count</code> unguarded against <code>MCP_MAX_SPLIT_SEGMENTS</code>.</li>
 <li><b>Fix:</b> drop fragments whose <code>split_count</code> disagrees with the slot's; bound the cleanup walk by <code>MCP_MAX_SPLIT_SEGMENTS</code> as defense in depth. Covered by the <code>split_mismatch</code> scenario in <code>tools/memory_audit_checks.py</code>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md74"></a>
+<h2><a class="anchor" id="autotoc_md82"></a>
 A2: enqueue's double &lt;tt&gt;realloc&lt;/tt&gt; could leave a dangling pointer</h2>
 <ul>
 <li><b>Where:</b> <code>src/network/raklib/Session.c</code> <code>mcp_rak_session_enqueue()</code>.</li>
 <li><b>Root cause:</b> two independent <code>realloc</code> calls; if the second failed after the first succeeded, the function returned false with <code>send_queue_bufs</code> committed but <code>send_queue_lens</code> either stale or freed — later use reads a pointer <code>realloc</code> may already have released.</li>
 <li><b>Fix:</b> commit the first array before attempting the second; return false on second failure with a consistent struct.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md75"></a>
+<h2><a class="anchor" id="autotoc_md83"></a>
 A3 (UAF): world unload while generation tasks are in flight</h2>
 <ul>
 <li><b>Where:</b> <code>src/Server.cpp</code> <code>unloadWorld()</code>; accessor added in <code><a class="el" href="ChunkManager_8h_source.html">src/world/ChunkManager.h</a></code>.</li>
 <li><b>Root cause:</b> the generation-completion callback captures the world's <code>ChunkManager</code>; erasing the world from <code>worlds_</code> while tasks are queued destroys the manager the tasks will touch.</li>
 <li><b>Fix:</b> bounded (5 s) drain wait on <code>pendingCount()</code> before erase; refuse the unload if generation is still in flight. <code>pendingCount()</code> takes the same lock the workers use.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md76"></a>
+<h2><a class="anchor" id="autotoc_md84"></a>
 A4 (UAF): effect tick snapshot held raw pointers across callbacks</h2>
 <ul>
 <li><b>Where:</b> <code>src/entity/Living.cpp</code> <code>tickEffects()</code>.</li>
@@ -194,30 +194,30 @@ A4 (UAF): effect tick snapshot held raw pointers across callbacks</h2>
   list" — exactly the hazard: a callback that removes an effect destroys it while the loop is still iterating the snapshot.</li>
 <li><b>Fix:</b> the snapshot holds <code>std::shared_ptr&lt;Effect&gt;</code> (ownership during iteration). No public API change.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md77"></a>
+<h2><a class="anchor" id="autotoc_md85"></a>
 A5 (dangling): lightning removal task held a raw &lt;tt&gt;World*&lt;/tt&gt; across a 20-tick delay</h2>
 <ul>
 <li><b>Where:</b> <code>src/world/World.cpp</code> <code>LightningRemovalTask</code>.</li>
 <li><b>Root cause:</b> the task captured <code>this</code> (a <code>World*</code>) and dereferenced it 20 ticks later; a world unload inside that window leaves a dangling pointer that is then compared/dereferenced.</li>
 <li><b>Fix:</b> the task captures the world <em>name</em> and resolves it per player at run time.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md78"></a>
+<h2><a class="anchor" id="autotoc_md86"></a>
 A6: ChunkManager destructor raced with generation workers</h2>
 <ul>
 <li><b>Where:</b> <code>src/world/ChunkManager.cpp</code> destructor.</li>
 <li><b>Root cause:</b> workers install chunks via <code>setChunk()</code> under <code>mtx_</code>; the destructor walked <code>chunks_</code> unlocked. Process shutdown drains the pool first, but any other destruction path (world unload) is not ordered against the pool.</li>
 <li><b>Fix:</b> destructor takes <code>mtx_</code> for the sweep.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md79"></a>
+<h1><a class="anchor" id="autotoc_md87"></a>
 7. Undefined behavior — fixed (1 family, 4 sites, 3 files)</h1>
-<h2><a class="anchor" id="autotoc_md80"></a>
+<h2><a class="anchor" id="autotoc_md88"></a>
 U1: signed integer overflow in generator seed/hash mixing</h2>
 <ul>
 <li><b>Where:</b> <code>src/world/generator/Normal.cpp</code> (stone→dirt hash; <b>flagged live by UBSan</b> at <code>Normal.cpp:408</code> as <code>signed integer overflow: 128 * 73856093</code>), and the copied <code>regionCandidate()</code> seed mix in <code>src/world/generator/populator/StructurePopulator.cpp</code> and <code>src/world/generator/populator/VillagePopulator.cpp</code> (twice: region candidate + village layout).</li>
 <li><b>Root cause:</b> the mixes intend 32-bit / 64-bit wraparound, but were written in <code>int</code>/<code>int64_t</code>, where overflow is undefined and optimizers are free to break the hash.</li>
 <li><b>Fix:</b> same arithmetic in <code>uint32_t</code>/<code>uint64_t</code> — on gcc this is bit-identical to the previous actual behavior, so generated terrain is unchanged. The two populators' functions were kept textually in sync as their comment requires.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md81"></a>
+<h1><a class="anchor" id="autotoc_md89"></a>
 8. Unbounded / attacker-influenced allocation — hardened (10)</h1>
 <p>These are not leaks in the classic sense; they are allocations whose size is chosen by wire input or corrupt data, each of which allowed unauthenticated or low-privilege input to consume unbounded memory (OOM kill) or unbounded work.</p>
 <table class="markdownTable">
@@ -245,67 +245,67 @@ U1: signed integer overflow in generator seed/hash mixing</h2>
 <td class="markdownTableBodyNone">R10   </td><td class="markdownTableBodyNone"><code>AnvilRegionLoader.cpp</code> writeChunk zero-pad   </td><td class="markdownTableBodyNone">corrupt location table (e.g. offset 0xFFFFFF)   </td><td class="markdownTableBodyNone">refuse pad &gt; 64 MiB instead of allocating it or writing gigabytes of zeros   </td></tr>
 </table>
 <p>Related behavioral hardening in the same class: <code>PlayerBlocks.cpp</code> <code>handleBlockBreak()</code> now uses <code>getChunkIfLoaded()</code> — a <code>RemoveBlockPacket</code> for arbitrary coordinates previously triggered synchronous chunk <em>generation and later save</em> for any coordinate the attacker chose (counted here as part of R-class; one fix, listed in the totals).</p>
-<h1><a class="anchor" id="autotoc_md82"></a>
+<h1><a class="anchor" id="autotoc_md90"></a>
 9. Crash / corruption paths — fixed (3)</h1>
-<h2><a class="anchor" id="autotoc_md83"></a>
+<h2><a class="anchor" id="autotoc_md91"></a>
 P1: exceptions escaping packet &lt;tt&gt;decode()&lt;/tt&gt; reached &lt;tt&gt;std::terminate&lt;/tt&gt;</h2>
 <ul>
 <li><b>Where:</b> <code>src/network/Network.cpp</code> <code>decodePacketById()</code>.</li>
 <li><b>Root cause:</b> no <code>try/catch</code> anywhere up the tick-loop stack; a <code>std::bad_alloc</code> (or anything else) thrown by a packet's <code>decode()</code> killed the whole server. With R7 fixed this is now a defense in depth, but it was independently reachable (e.g. under memory pressure).</li>
 <li><b>Fix:</b> decode runs inside <code>try/catch (const std::exception&amp;)</code> + <code>catch (...)</code>; failures are logged with packet id and peer and the packet is dropped.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md84"></a>
+<h2><a class="anchor" id="autotoc_md92"></a>
 P2: &lt;tt&gt;writeBEString&lt;/tt&gt; wrapped its u16 length on oversized strings</h2>
 <ul>
 <li><b>Where:</b> <code><a class="el" href="DataPacket_8h_source.html">src/network/protocol/DataPacket.h</a></code> <code>PacketWriter::writeBEString()</code>.</li>
 <li><b>Root cause:</b> <code>static_cast&lt;uint16_t&gt;(s.size())</code> wraps past 65535 while <em>every</em> byte was still appended — the receiver reads a short string and the rest desynchronizes the stream. Only reachable with pathological data (e.g. unclamped skin strings), which is why the C4 skin clamp accompanies it.</li>
 <li><b>Fix:</b> truncate to 65535 so the written length always matches the bytes.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md85"></a>
+<h2><a class="anchor" id="autotoc_md93"></a>
 P3: crash-dump write could deadlock inside the crashing process</h2>
 <ul>
 <li><b>Where:</b> <code>src/CurseStone.cpp</code> signal handler.</li>
 <li><b>Root cause:</b> the dump writer is malloc-heavy; a crash while the process holds the malloc arena lock or the logger mutex deadlocked the handler before writing anything.</li>
 <li><b>Fix:</b> on POSIX the dump is written by a <code>fork()</code>ed child (<code>fork</code>/<code>waitpid</code> are async-signal-safe) and the parent waits, then re-raises. Windows path unchanged.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md86"></a>
+<h1><a class="anchor" id="autotoc_md94"></a>
 10. Concurrency / lifetime / shutdown-order — fixed (5)</h1>
-<h2><a class="anchor" id="autotoc_md87"></a>
+<h2><a class="anchor" id="autotoc_md95"></a>
 L1: async logger could respawn after destroy</h2>
 <ul>
 <li><b>Where:</b> <code>src/logger/AsyncMainLogger.c</code>.</li>
 <li><b>Root cause:</b> <code>mcp_async_logger_get_instance()</code> lazily re-initialized the singleton; after <code>mcp_main_logger_async_destroy()</code> during shutdown, any straggler log call spawned a fresh joinable worker thread whose FILE* and mutex are never cleaned.</li>
 <li><b>Fix:</b> <code>g_async_destroyed</code> latch — init is a no-op after destroy.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md88"></a>
+<h2><a class="anchor" id="autotoc_md96"></a>
 L2: network thread joined at static destruction instead of shutdown</h2>
 <ul>
 <li><b>Where:</b> <code>src/network/Network.{h,cpp}</code> (new <code>shutdown()</code>) + <code>src/Server.cpp</code> <code>runTickLoop()</code>.</li>
 <li><b>Root cause:</b> RakLib's thread kept draining and <em>logging</em> until global destructors; anything it logged after the logger was destroyed hit L1's respawn path.</li>
 <li><b>Fix:</b> <code>Server::runTickLoop()</code> calls <code>network_-&gt;shutdown()</code> (stop + join all interfaces) right after the final <code>network_-&gt;tick()</code>, before world save and logger teardown.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md89"></a>
+<h2><a class="anchor" id="autotoc_md97"></a>
 L3: console commands dispatched on the console thread</h2>
 <ul>
 <li><b>Where:</b> <code>src/Server.cpp</code> <code>startCommandReader()</code>.</li>
 <li><b>Root cause:</b> <code>/stop</code>, <code>/kick</code>, world and plugin commands mutate players, worlds and plugin VMs that the tick loop also touches — an unsynchronized cross-thread mutation on every console command.</li>
 <li><b>Fix:</b> dispatch is scheduled onto the main tick thread via <code>ServerScheduler::scheduleSync()</code>. Verified live: <code>/stop</code> still works (suite's forced-close path and every clean shutdown run).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md90"></a>
+<h2><a class="anchor" id="autotoc_md98"></a>
 L4: recovery-slot accounting consumed capacity on failed &lt;tt&gt;malloc&lt;/tt&gt;</h2>
 <ul>
 <li><b>Where:</b> <code>src/network/raklib/Session.c</code> <code>mcp_rak_session_build_datagram()</code>.</li>
 <li><b>Root cause:</b> <code>diag_recovery_occupied++</code> ran before the allocation attempt; a failed <code>malloc</code> permanently consumed one unit of the reliable-send backpressure budget, eventually starving the session.</li>
 <li><b>Fix:</b> count only after a successful store (and only when not overwriting an existing slot).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md91"></a>
+<h2><a class="anchor" id="autotoc_md99"></a>
 L5: block break generated chunks for arbitrary coordinates</h2>
 <ul>
 <li><b>Where:</b> <code>src/player/PlayerBlocks.cpp</code> <code>handleBlockBreak()</code>.</li>
 <li><b>Root cause:</b> <code>getChunk()</code> synchronously generates on miss; a <code>RemoveBlockPacket</code> is client-controlled, so a client could force generation (CPU + disk + later save) of any chunk.</li>
 <li><b>Fix:</b> <code>getChunkIfLoaded()</code>; unknown chunks are ignored.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md92"></a>
+<h1><a class="anchor" id="autotoc_md100"></a>
 11. Suspected findings (documented, intentionally not "fixed")</h1>
 <ul>
 <li>**<code>AnvilChunkCodec.c</code> dead null-check** (<code>-Waddress</code>): a comparison of an array member's address against NULL that is always true. Cosmetic — the guard is ineffective but the code after it is correct. Fixing it is a one-line cleanup left for a separate change to keep this diff reviewable.</li>
@@ -313,7 +313,7 @@ L5: block break generated chunks for arbitrary coordinates</h2>
 <li>**<code>PerlinNoise.cpp</code> unused variable <code>col</code>, three unused parameters** (<code>Normal.cpp</code>, <code>PlayerInventory.cpp</code>): dead code warnings only.</li>
 <li>Production build suppresses diagnostics with <code>-w</code> (<code>CMakeLists.txt</code>); recommending <code>-Wall -Wextra</code> (without <code>-Werror</code>) in CI is recorded in test-results.md as an observation, not applied.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md93"></a>
+<h1><a class="anchor" id="autotoc_md101"></a>
 12. Residual risks and limitations</h1>
 <ol type="1">
 <li><b>TSan was not run.</b> The concurrency fixes (A6, L3, L1) were reasoned over the real code and the synchronization is simple (one mutex per hot structure, scheduler-serialized dispatch), but a dedicated ThreadSanitizer build would strengthen the claim. TSan cannot share a binary with ASan, and the sandbox lacks a second instrumented toolchain configuration — residual work.</li>

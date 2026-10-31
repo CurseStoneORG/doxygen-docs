@@ -88,13 +88,13 @@ $(document).ready(function(){initNavTree('md_docs_audits_c_to_cpp_assessment.htm
 <div class="contents">
 <div class="textblock"><p>Repo: CurseStone (branch <code>stable</code>, HEAD <code>013dc90</code>). Alcance: todo el código C propio (<code>src/</code>), excluyendo <code>third_party/lua</code> (vendored, no se toca jamás).</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md47"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 1. Veredicto ejecutivo</h1>
 <p><b>No es necesario convertir todo el C a C++. Sí es recomendable una migración selectiva por fases que cubre ~40% del C y elimina el 80% del riesgo real.</b></p>
 <p>El C propio son <b>10.748 LOC en 74 archivos</b> frente a <b>54.857 LOC de C++ en 433 archivos</b> (17% del código). La capa C++ ya es moderna (factorías <code>make_*</code> en casi todo el árbol, ~8 <code>new</code> crudos en total según la auditoría de memoria). El C no es un lastre generalizado: es un núcleo pequeño y ya endurecido. Un big-bang C→C++ tocaría el protocolo de red, el formato de disco y los hot paths de chunks para obtener cero beneficio de rendimiento y riesgo alto de regresión contra un cliente (0.15.10, protocolo 84) que no perdona cambios de comportamiento en el wire.</p>
 <p>Lo que sí merece la pena: convertir NBT y los módulos hoja de <code>utils</code>/<code>math</code> (trivial), blindar las fronteras con RAII sin tocar el C (gratis), y dejar raklib y Chunk/Anvil en C con encapsulación — son precisamente los módulos donde una conversión a clases aportaría menos y rompería más.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md49"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 2. Estado actual del C propio</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_c_to_cpp_assessment.htm
 <li>El patrón de memoria está documentado en el propio <code><a class="el" href="Chunk_8h_source.html">Chunk.h</a></code>: el <code>Chunk</code> es un struct C plano que posee sus 16 secciones (<code>mcp_chunk_new/mcp_chunk_destroy</code>), y la interfaz C++ <code>FullChunk</code> lo envuelve. Es un contrato deliberado, no legacy accidental: el layout plano es lo que el codec Anvil escribe a disco y lo que el generador escribió a 13.6 ms/chunk.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md51"></a>
+<h1><a class="anchor" id="autotoc_md59"></a>
 3. Riesgos con evidencia (auditoría de memoria, commit &lt;tt&gt;2afbc53&lt;/tt&gt;)</h1>
 <p>La auditoría profunda de memoria (30 defectos corregidos, todo verificado con ASan/UBSan/LSan) sirve como radiografía exacta de dónde vive el riesgo:</p>
 <ul>
@@ -134,7 +134,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_c_to_cpp_assessment.htm
 </ul>
 <p><b>Lectura correcta de esta evidencia:</b> el riesgo no era "C" en abstracto, sino <em>ownership manual + error paths + decode de input hostil</em>, y ese código está exactamente en raklib y NBT. Tras el audit ese riesgo está mitigado con fixes probados red/green; lo que la migración compraría es que esa clase de bug <em>no pueda escribirse</em> (destructores, <code>unique_ptr</code>, límites de tipo), no arreglar los que ya están arreglados.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md53"></a>
+<h1><a class="anchor" id="autotoc_md61"></a>
 4. Comparativa esfuerzo vs beneficio</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -154,7 +154,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_c_to_cpp_assessment.htm
 </table>
 <p>El 40% convertido (math + utils hojas + NBT ≈ 2.400 LOC) elimina los dos mayores concentradores de memoria manual tras raklib (NBT) a cambio del esfuerzo más bajo de toda la tabla.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md55"></a>
+<h1><a class="anchor" id="autotoc_md63"></a>
 5. Ruta de migración recomendada</h1>
 <ul>
 <li><b>Fase 0 — fronteras RAII, sin tocar C (medio día, riesgo nulo).</b> Deleters <code>unique_ptr</code> para <code>mcp_chunk_destroy</code>, NBT y buffers raklib en los 71 .cpp que consumen C. Convierte cada <code>free</code> olvidable en imposible, incluso si el C queda como está. Es la mayor compra por unidad de esfuerzo de todo el plan.</li>
@@ -164,7 +164,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_c_to_cpp_assessment.htm
 <li><b>Nunca:</b> <code>third_party/lua</code>; el layout binario de Chunk/Anvil mientras el formato de mundo no cambie.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md57"></a>
+<h1><a class="anchor" id="autotoc_md65"></a>
 6. Lo que la migración NO compra</h1>
 <ul>
 <li><b>Rendimiento:</b> gcc-14 genera código equivalente para este C (ya medido: el costo de generación está en el ruido de Perlin y la E/S, no en el ABI C). No hay p50/p99 que ganar.</li>
@@ -172,7 +172,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_c_to_cpp_assessment.htm
 <li><b>Simplicidad de build:</b> el build ya compila C y C++ juntos en un solo target; migrar no simplifica CMake ni el CI.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md59"></a>
+<h1><a class="anchor" id="autotoc_md67"></a>
 7. Conclusión</h1>
 <p>¿Es <em>necesario</em>? <b>No.</b> El sistema está sano, auditado y el C es solo el 17% del código tras una frontera limpia. ¿Es <em>recomendable</em>? <b>Parcialmente y por fases</b>: Fase 0 (RAII en fronteras) + Fase 2 (NBT) dan ~80% del beneficio con ~5% del riesgo de un rewrite total; raklib y Chunk/Anvil rinden más como C bien encapsulado que como C++ rehecho. La energía de ingeniería rinde más aplicada a features y al bug pendiente del inventario creativo que a una reescritura cosmética. </p>
 </div></div><!-- contents -->

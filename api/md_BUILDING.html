@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('md_BUILDING.html',''); initResizable()
 <div class="title">Cómo compilar CurseStone </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md34"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md42"></a>
 Opción 1 — GitHub Actions (recomendado)</h1>
 <p>Sube el repo a GitHub y el workflow <code>.github/workflows/build.yml</code> compila automáticamente:</p><ul>
 <li><b>Linux x86_64</b> — para probar en VPS/PC</li>
@@ -96,7 +96,7 @@ Opción 1 — GitHub Actions (recomendado)</h1>
 <p>Para hacer un release con los binarios adjuntos: </p><div class="fragment"><div class="line">git tag v1.0.0</div>
 <div class="line">git push origin v1.0.0</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md44"></a>
 Opción 1.5 — Release personalizado (versión y descripción custom)</h1>
 <p>El workflow **"Release personalizado"** (<code>.github/workflows/release.yml</code>) compila Linux x86_64 + Android ARM64 y crea un release con el nombre, la versión y la descripción que tú quieras (ej. <code>CurseStone-alpha-v1.0</code>), adjuntando los binarios:</p>
 <ul>
@@ -122,16 +122,16 @@ Opción 1.5 — Release personalizado (versión y descripción custom)</h1>
 </div><!-- fragment --><blockquote class="doxtable">
 <p>Nota: también sigue funcionando el release automático por tag <code>vX.X.X</code> (job <code>release</code> de <code>Build.yml</code>). </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md37"></a>
+<h1><a class="anchor" id="autotoc_md45"></a>
 &lt;/blockquote&gt;</h1>
-<h1><a class="anchor" id="autotoc_md38"></a>
+<h1><a class="anchor" id="autotoc_md46"></a>
 Opción 2 — Linux x86_64 (VPS / PC)</h1>
 <div class="fragment"><div class="line">sudo apt-get install cmake ninja-build gcc-12 g++-12 zlib1g-dev libleveldb-dev</div>
 <div class="line">cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release</div>
 <div class="line">cmake --build build --parallel</div>
 <div class="line">./build/CurseStone</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md40"></a>
+<h1><a class="anchor" id="autotoc_md48"></a>
 Opción 3 — Android ARM64 desde Termux (en tu celular)</h1>
 <div class="fragment"><div class="line"># Instalar dependencias en Termux</div>
 <div class="line">pkg update &amp;&amp; pkg install -y \</div>
@@ -151,9 +151,9 @@ Opción 3 — Android ARM64 desde Termux (en tu celular)</h1>
 </div><!-- fragment --><blockquote class="doxtable">
 <p>Termux detecta automáticamente ARM64, no necesitas pasar el toolchain manualmente. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h1><a class="anchor" id="autotoc_md49"></a>
 &lt;/blockquote&gt;</h1>
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h1><a class="anchor" id="autotoc_md50"></a>
 Opción 4 — Cross-compile ARM64 desde Linux (con NDK)</h1>
 <div class="fragment"><div class="line"># Descargar NDK r26c</div>
 <div class="line">wget https://dl.google.com/android/repository/android-ndk-r26c-linux.zip</div>
@@ -169,7 +169,7 @@ Opción 4 — Cross-compile ARM64 desde Linux (con NDK)</h1>
 <div class="line">cmake --build build-arm64 --parallel</div>
 <div class="line"># Copia el binario a tu Android y córrelo en Termux</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md44"></a>
+<h1><a class="anchor" id="autotoc_md52"></a>
 Variables CMake útiles</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
