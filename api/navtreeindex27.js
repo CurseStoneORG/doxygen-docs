@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"structmcp__rak__session.html#a927278d0355c004923681a0bdbb65e2f":[9,0,16,39],
 "structmcp__rak__session.html#a9a4c18f604806332450c8c2934c96d37":[9,0,16,75],
 "structmcp__rak__session.html#a9ab2bec9aad228e71c93201abc61c113":[9,0,16,22],
 "structmcp__rak__session.html#a9bc5bbc8c37ced1cc7e42f3ea715dd96":[9,0,16,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "structvgen_1_1LightLayer.html#a627c8365c55739b0805821e58def3b09":[9,0,2,180,0],
 "structvgen_1_1Math.html":[9,0,2,156],
 "structvgen_1_1MineshaftData.html":[9,0,2,112],
-"structvgen_1_1MineshaftData.html#a172b58eeb055d47eff77f7e43ccecdd3":[9,0,2,112,2],
-"structvgen_1_1MineshaftData.html#a224013e577c4b9053296a92117226d0f":[9,0,2,112,3]
+"structvgen_1_1MineshaftData.html#a172b58eeb055d47eff77f7e43ccecdd3":[9,0,2,112,2]
 };

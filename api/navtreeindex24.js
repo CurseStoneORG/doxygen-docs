@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classvgen_1_1VillageFeature.html#a0762b3c76c3c4c493a5ad4f99a383ea3":[9,0,2,130,4],
 "classvgen_1_1VillageFeature.html#a29ef0196c7aa6d8c72188d9ed09f5efa":[9,0,2,130,1],
 "classvgen_1_1VillageFeature.html#a55aff4edf7e0900c4becb43a1839e87c":[9,0,2,130,2],
 "classvgen_1_1VillageFeature.html#a5e3a534d6c0442f86059b2e2d45f7519":[9,0,2,130,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "md_docs_audits_ownership_map.html#autotoc_md114":[5,4],
 "md_docs_audits_ownership_map.html#autotoc_md115":[5,5],
 "md_docs_audits_test_results.html":[6],
-"md_docs_audits_test_results.html#autotoc_md118":[6,0],
-"md_docs_audits_test_results.html#autotoc_md119":[6,1]
+"md_docs_audits_test_results.html#autotoc_md118":[6,0]
 };

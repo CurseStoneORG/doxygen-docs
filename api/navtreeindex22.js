@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"classvgen_1_1MesaBiome_1_1Decorator.html#a7aca8928fb9898e89075d581e29806c8":[9,0,2,9,0,0],
 "classvgen_1_1MineshaftCorridor.html":[9,0,2,115],
 "classvgen_1_1MineshaftCorridor.html#a04c3c7e761e65a994e7c3adb61a6cf52":[9,0,2,115,6],
 "classvgen_1_1MineshaftCorridor.html#a1aa8263818b76491a178e7a6403bd765":[9,0,2,115,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "classvgen_1_1SavannaTreeFeature.html#a61d011f5c689460e65cec8e447f9fb82":[9,0,2,74,1],
 "classvgen_1_1SavannaTreeFeature.html#a849cb1f208fcc7d39e88e85f5fecc557":[9,0,2,74,0],
 "classvgen_1_1ScatteredFeaturePiece.html":[9,0,2,120],
-"classvgen_1_1ScatteredFeaturePiece.html#a00b341b773316d4a80b5c7d7de350569":[9,0,2,120,7],
-"classvgen_1_1ScatteredFeaturePiece.html#a072f0dcec472c1a34392ea870f3c1210":[9,0,2,120,2]
+"classvgen_1_1ScatteredFeaturePiece.html#a00b341b773316d4a80b5c7d7de350569":[9,0,2,120,7]
 };

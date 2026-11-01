@@ -16,6 +16,7 @@ var classcursestone_1_1world_1_1World =
     [ "addTickSample", "classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67", null ],
     [ "advanceTime", "classcursestone_1_1world_1_1World.html#a017f1ec41619bdbe5dba2ec6f897d83f", null ],
     [ "arrows", "classcursestone_1_1world_1_1World.html#a42b9e76a18a45184883b0293ba4f36e1", null ],
+    [ "avgLightMs", "classcursestone_1_1world_1_1World.html#a7184588fef2d07b19093c4807374a7ef", null ],
     [ "avgTickMs", "classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b", null ],
     [ "beginTickSample", "classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90", null ],
     [ "checkFallingSupport", "classcursestone_1_1world_1_1World.html#ab31f2681d75632e0ed0af2b8299709d8", null ],
