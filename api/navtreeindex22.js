@@ -1,5 +1,9 @@
 var NAVTREEINDEX22 =
 {
+"classvgen_1_1MesaBiome.html#ac0af1832ea712ab96fafcf32f07d13c5":[9,0,2,9,2],
+"classvgen_1_1MesaBiome.html#ad0d2e32c40b2f5dfa2aaae37e1392cc3":[9,0,2,9,14],
+"classvgen_1_1MesaBiome.html#ad137abc48f6d9f4a482621856f96485b":[9,0,2,9,10],
+"classvgen_1_1MesaBiome_1_1Decorator.html":[9,0,2,9,0],
 "classvgen_1_1MesaBiome_1_1Decorator.html#a7aca8928fb9898e89075d581e29806c8":[9,0,2,9,0,0],
 "classvgen_1_1MineshaftCorridor.html":[9,0,2,115],
 "classvgen_1_1MineshaftCorridor.html#a04c3c7e761e65a994e7c3adb61a6cf52":[9,0,2,115,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX22 =
 "classvgen_1_1SavannaBiome.html#a42080fbff7514fff3742f7464dd21567":[9,0,2,18,1],
 "classvgen_1_1SavannaBiome.html#a7c9ce1e2682290e250407c82f84e58ab":[9,0,2,18,2],
 "classvgen_1_1SavannaBiome.html#ace2be9e6669a1708e1bf32250039b70a":[9,0,2,18,0],
-"classvgen_1_1SavannaTreeFeature.html":[9,0,2,74],
-"classvgen_1_1SavannaTreeFeature.html#a61d011f5c689460e65cec8e447f9fb82":[9,0,2,74,1],
-"classvgen_1_1SavannaTreeFeature.html#a849cb1f208fcc7d39e88e85f5fecc557":[9,0,2,74,0],
-"classvgen_1_1ScatteredFeaturePiece.html":[9,0,2,120],
-"classvgen_1_1ScatteredFeaturePiece.html#a00b341b773316d4a80b5c7d7de350569":[9,0,2,120,7]
+"classvgen_1_1SavannaTreeFeature.html":[9,0,2,74]
 };

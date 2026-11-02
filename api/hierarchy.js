@@ -551,6 +551,7 @@ var hierarchy =
     [ "cursestone::world::format::leveldb::LevelDBRegistrar", "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html", null ],
     [ "cursestone::world::LightEngine", "classcursestone_1_1world_1_1LightEngine.html", null ],
     [ "vgen::LightLayer", "structvgen_1_1LightLayer.html", null ],
+    [ "LightNode", "structLightNode.html", null ],
     [ "cursestone::block::LiquidFlow", "classcursestone_1_1block_1_1LiquidFlow.html", null ],
     [ "cursestone::world::format::anvil::LocationEntry", "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html", null ],
     [ "cursestone::plugin::LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", null ],

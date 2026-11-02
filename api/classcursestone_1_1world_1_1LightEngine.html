@@ -103,15 +103,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>relightAround</b> (in
 <tr class="memitem:a6952c1c757d105b07a84a89ce6ad5f07"><td class="memItemLeft" align="right" valign="top"><a id="a6952c1c757d105b07a84a89ce6ad5f07"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>relightChunk</b> (int32_t cx, int32_t cz, int32_t radius)</td></tr>
 <tr class="separator:a6952c1c757d105b07a84a89ce6ad5f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23b2ef1915ff58cfb1bc5dcd05e29342"><td class="memItemLeft" align="right" valign="top"><a id="a23b2ef1915ff58cfb1bc5dcd05e29342"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onChunkAdded</b> (int32_t cx, int32_t cz)</td></tr>
-<tr class="separator:a23b2ef1915ff58cfb1bc5dcd05e29342"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7db4553ae2df351b0fc686b327e844b3"><td class="memItemLeft" align="right" valign="top"><a id="a7db4553ae2df351b0fc686b327e844b3"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>processPending</b> (int32_t budget)</td></tr>
-<tr class="separator:a7db4553ae2df351b0fc686b327e844b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0950dbbae0daa923963172b1079501bc"><td class="memItemLeft" align="right" valign="top"><a id="a0950dbbae0daa923963172b1079501bc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onChunkAdded</b> (int32_t cx, int32_t cz, bool full=true)</td></tr>
+<tr class="separator:a0950dbbae0daa923963172b1079501bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab29f783b2dd0c8fab822ddbccec8ad78"><td class="memItemLeft" align="right" valign="top"><a id="ab29f783b2dd0c8fab822ddbccec8ad78"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>processPending</b> (int32_t budget, int32_t max_ms=0)</td></tr>
+<tr class="separator:ab29f783b2dd0c8fab822ddbccec8ad78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e99257f27956829dffef84d1e5e1f12"><td class="memItemLeft" align="right" valign="top"><a id="a0e99257f27956829dffef84d1e5e1f12"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>flushPending</b> (int32_t cx, int32_t cz)</td></tr>
+<tr class="separator:a0e99257f27956829dffef84d1e5e1f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0aa63a5d2b7b35c5717c77298f06abeb"><td class="memItemLeft" align="right" valign="top"><a id="a0aa63a5d2b7b35c5717c77298f06abeb"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasPending</b> () const</td></tr>
 <tr class="separator:a0aa63a5d2b7b35c5717c77298f06abeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c374cf73290d7f68f438fa50a3e7cab"><td class="memItemLeft" align="right" valign="top"><a id="a7c374cf73290d7f68f438fa50a3e7cab"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>relightBoxExact</b> (int32_t x0, int32_t y0, int32_t z0, int32_t x1, int32_t y1, int32_t z1)</td></tr>
+<tr class="separator:a7c374cf73290d7f68f438fa50a3e7cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -124,6 +130,9 @@ static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>k
 <tr class="memitem:af4e9114262e0417863e607d7cc5dc3d4"><td class="memItemLeft" align="right" valign="top"><a id="af4e9114262e0417863e607d7cc5dc3d4"></a>
 static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>kPendingBudget</b> = 2</td></tr>
 <tr class="separator:af4e9114262e0417863e607d7cc5dc3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76f620432d894f46ec7c98636adcd2b5"><td class="memItemLeft" align="right" valign="top"><a id="a76f620432d894f46ec7c98636adcd2b5"></a>
+static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>kTickBudgetMs</b> = 6</td></tr>
+<tr class="separator:a76f620432d894f46ec7c98636adcd2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/world/<a class="el" href="LightEngine_8h_source.html">LightEngine.h</a></li>

@@ -678,6 +678,7 @@ var annotated_dup =
       [ "WeighedRandom", "classvgen_1_1WeighedRandom.html", "classvgen_1_1WeighedRandom" ]
     ] ],
     [ "async_log_entry_t", "structasync__log__entry__t.html", "structasync__log__entry__t" ],
+    [ "LightNode", "structLightNode.html", "structLightNode" ],
     [ "mcp_aabb", "structmcp__aabb.html", "structmcp__aabb" ],
     [ "mcp_async_logger", "structmcp__async__logger.html", "structmcp__async__logger" ],
     [ "mcp_bstream", "structmcp__bstream.html", "structmcp__bstream" ],

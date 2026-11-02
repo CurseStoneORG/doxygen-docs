@@ -148,15 +148,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>setBlock</b> (int32_t
 <tr class="memitem:af1b4ad7a802995814b9801f015481fb9"><td class="memItemLeft" align="right" valign="top"><a id="af1b4ad7a802995814b9801f015481fb9"></a>
 std::vector&lt; <a class="el" href="structcursestone_1_1physics_1_1BlockBox.html">physics::BlockBox</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>collisionBoxes</b> (<a class="el" href="structmcp__aabb.html">mcp_aabb_t</a> region)</td></tr>
 <tr class="separator:af1b4ad7a802995814b9801f015481fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52c4570c9f8c261e52319c3faa2608e8"><td class="memItemLeft" align="right" valign="top"><a id="a52c4570c9f8c261e52319c3faa2608e8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>onChunkAdded</b> (int32_t cx, int32_t cz)</td></tr>
-<tr class="separator:a52c4570c9f8c261e52319c3faa2608e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cd3fa7183c47d183485190f2a38fcad"><td class="memItemLeft" align="right" valign="top"><a id="a2cd3fa7183c47d183485190f2a38fcad"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>drainLightPending</b> (int32_t budget)</td></tr>
-<tr class="separator:a2cd3fa7183c47d183485190f2a38fcad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5c7cc65a5a196f657ffc700dfedaf45"><td class="memItemLeft" align="right" valign="top"><a id="ac5c7cc65a5a196f657ffc700dfedaf45"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>onChunkAdded</b> (int32_t cx, int32_t cz, bool full=true)</td></tr>
+<tr class="separator:ac5c7cc65a5a196f657ffc700dfedaf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b802cd4405f8e57beb451fcd353f24c"><td class="memItemLeft" align="right" valign="top"><a id="a1b802cd4405f8e57beb451fcd353f24c"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>drainLightPending</b> (int32_t budget, int32_t max_ms=0)</td></tr>
+<tr class="separator:a1b802cd4405f8e57beb451fcd353f24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb0efb813cb491f3fc12901bf1cfdbe2"><td class="memItemLeft" align="right" valign="top"><a id="afb0efb813cb491f3fc12901bf1cfdbe2"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasPendingLight</b> () const</td></tr>
 <tr class="separator:afb0efb813cb491f3fc12901bf1cfdbe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacb7c89b0940fcc9c405e38f02d7a6cb"><td class="memItemLeft" align="right" valign="top"><a id="aacb7c89b0940fcc9c405e38f02d7a6cb"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>flushLightForChunk</b> (int32_t cx, int32_t cz)</td></tr>
+<tr class="separator:aacb7c89b0940fcc9c405e38f02d7a6cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26b48a045f218234ceb8c8b422e04d5b"><td class="memItemLeft" align="right" valign="top"><a id="a26b48a045f218234ceb8c8b422e04d5b"></a>
+<a class="el" href="classcursestone_1_1world_1_1LightEngine.html">LightEngine</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>light</b> ()</td></tr>
+<tr class="separator:a26b48a045f218234ceb8c8b422e04d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ebfb2a65dfc4af908d37337c43d546e"><td class="memItemLeft" align="right" valign="top"><a id="a4ebfb2a65dfc4af908d37337c43d546e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>queueLiquidWake</b> (int32_t cx, int32_t cz)</td></tr>
 <tr class="separator:a4ebfb2a65dfc4af908d37337c43d546e"><td class="memSeparator" colspan="2">&#160;</td></tr>

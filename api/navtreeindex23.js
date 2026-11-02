@@ -1,5 +1,9 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1SavannaTreeFeature.html#a61d011f5c689460e65cec8e447f9fb82":[9,0,2,74,1],
+"classvgen_1_1SavannaTreeFeature.html#a849cb1f208fcc7d39e88e85f5fecc557":[9,0,2,74,0],
+"classvgen_1_1ScatteredFeaturePiece.html":[9,0,2,120],
+"classvgen_1_1ScatteredFeaturePiece.html#a00b341b773316d4a80b5c7d7de350569":[9,0,2,120,7],
 "classvgen_1_1ScatteredFeaturePiece.html#a072f0dcec472c1a34392ea870f3c1210":[9,0,2,120,2],
 "classvgen_1_1ScatteredFeaturePiece.html#a255d1f794fa5b9b87f5bc90121c21abb":[9,0,2,120,3],
 "classvgen_1_1ScatteredFeaturePiece.html#a349a5ed16c54dcd17ad2dee102065519":[9,0,2,120,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1TwoRoomHouse.html#a1a0919b5d3fa89d14f5593176e906e32":[9,0,2,144,0],
 "classvgen_1_1TwoRoomHouse.html#a2d3205f4259e19a47d6cd7fc70b05571":[9,0,2,144,7],
 "classvgen_1_1TwoRoomHouse.html#a3ac4cc1c0e0e2f7bee386239d3d9e1ea":[9,0,2,144,2],
-"classvgen_1_1TwoRoomHouse.html#a5607179e13851ebd92185943b182caab":[9,0,2,144,1],
-"classvgen_1_1TwoRoomHouse.html#a725f06c8720b5054d3606195bccbac49":[9,0,2,144,3],
-"classvgen_1_1TwoRoomHouse.html#a8ba47a323128753dbe1932aea29ca4ca":[9,0,2,144,5],
-"classvgen_1_1TwoRoomHouse.html#a912f93707b65c8610126661841ddb244":[9,0,2,144,6],
-"classvgen_1_1VillageFeature.html":[9,0,2,130]
+"classvgen_1_1TwoRoomHouse.html#a5607179e13851ebd92185943b182caab":[9,0,2,144,1]
 };

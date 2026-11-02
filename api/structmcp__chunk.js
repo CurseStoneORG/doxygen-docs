@@ -9,6 +9,7 @@ var structmcp__chunk =
     [ "height_map", "structmcp__chunk.html#a8c5c46fe87b74db56b5531a5d1567032", null ],
     [ "last_update", "structmcp__chunk.html#a9392513951577dfd3861ae21cf9bc379", null ],
     [ "light_populated", "structmcp__chunk.html#a0918d96baf725ff197184a9a1dcd0149", null ],
+    [ "light_touched", "structmcp__chunk.html#ae665e9242efe0232b87dd053efc69550", null ],
     [ "sections", "structmcp__chunk.html#a62c68fd269bb000a3f43c365431f2e4e", null ],
     [ "terrain_populated", "structmcp__chunk.html#a76f738658547dac867a1428dd9b33e0e", null ],
     [ "tile_entities", "structmcp__chunk.html#adc1c75d45bb133fecd41d7f774f47585", null ],

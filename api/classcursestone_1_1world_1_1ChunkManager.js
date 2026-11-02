@@ -16,7 +16,7 @@ var classcursestone_1_1world_1_1ChunkManager =
     [ "provider", "classcursestone_1_1world_1_1ChunkManager.html#a53d6eee3e5cfcac486a05b0191a1fc26", null ],
     [ "setChunk", "classcursestone_1_1world_1_1ChunkManager.html#ad1a04a751fac0371d3f46d140e709318", null ],
     [ "setGenerator", "classcursestone_1_1world_1_1ChunkManager.html#af38289743ff780b4abb102810cce03ed", null ],
-    [ "setOnChunkAdded", "classcursestone_1_1world_1_1ChunkManager.html#a51bc8ccd5f991814d98396759611d402", null ],
+    [ "setOnChunkAdded", "classcursestone_1_1world_1_1ChunkManager.html#a28f9addc12122927969067becfe2c4d4", null ],
     [ "setOnChunkInstalled", "classcursestone_1_1world_1_1ChunkManager.html#a874bf43b3da78cfa924dd195907564fd", null ],
     [ "setProvider", "classcursestone_1_1world_1_1ChunkManager.html#af15997dbf7c5447326ab5d33b7db49f6", null ],
     [ "setSpillQueue", "classcursestone_1_1world_1_1ChunkManager.html#a9381425f13d62a002dd00030363b9c21", null ],
