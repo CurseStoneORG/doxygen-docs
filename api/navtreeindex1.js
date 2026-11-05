@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4ad6950e0ea45910943d6175203892d75e":[8,0,0,0,60,144],
+"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4ad8b06969cea6ce88b49f2db8a795173a":[8,0,0,0,60,91],
 "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4ad9e04502c2b6f6915cbd4f3d95b4991a":[8,0,0,0,60,104],
 "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4addee9c5362a071b60449a5769f06190f":[8,0,0,0,60,181],
 "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4adf414edd4bbd6f11b2bdf88ad5a6667e":[8,0,0,0,60,165],
@@ -247,7 +249,5 @@ var NAVTREEINDEX1 =
 "CraftingManager_8h_source.html":[10,0,0,5,2],
 "CrashDump_8h_source.html":[10,0,0,22],
 "CreativeItems_8h.html#ad069f83b5ee6bbc6b345b3d36fbe8704":[8,0,0,4,12],
-"CreativeItems_8h.html#aff0051b58d9237961443ad2b56b94098":[8,0,0,4,13],
-"CreativeItems_8h_source.html":[10,0,0,5,3],
-"CurseStone_8h_source.html":[10,0,0,23]
+"CreativeItems_8h.html#aff0051b58d9237961443ad2b56b94098":[8,0,0,4,13]
 };

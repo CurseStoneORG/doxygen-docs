@@ -1,5 +1,10 @@
 var NAVTREEINDEX2 =
 {
+"CreativeItems_8h_source.html":[10,0,0,5,3],
+"CurseStone_8h.html#a0a55b6118a200354d714aa6bf5e95bcf":[8,0,0,6,3],
+"CurseStone_8h.html#a889b6409a0c20dcac5d71baa6f505e88":[8,0,0,6,2],
+"CurseStone_8h.html#aa92a849fe151721400ca2bde7b29dc1b":[8,0,0,6,1],
+"CurseStone_8h_source.html":[10,0,0,23],
 "DataPacket_8h_source.html":[10,0,0,10,0,17],
 "DeadBushFeature_8h_source.html":[10,0,0,21,1,2,1,4],
 "DebugFlag_8h_source.html":[10,0,0,18,6],
@@ -244,10 +249,5 @@ var NAVTREEINDEX2 =
 "ItemAxeDiamond_8h_source.html":[10,0,0,6,5],
 "ItemAxeGolden_8h_source.html":[10,0,0,6,6],
 "ItemAxeIron_8h_source.html":[10,0,0,6,7],
-"ItemAxeStone_8h_source.html":[10,0,0,6,8],
-"ItemAxeWooden_8h_source.html":[10,0,0,6,9],
-"ItemBakedPotato_8h_source.html":[10,0,0,6,10],
-"ItemBeetrootSoup_8h_source.html":[10,0,0,6,12],
-"ItemBeetroot_8h_source.html":[10,0,0,6,11],
-"ItemBlock_8h_source.html":[10,0,0,6,13]
+"ItemAxeStone_8h_source.html":[10,0,0,6,8]
 };

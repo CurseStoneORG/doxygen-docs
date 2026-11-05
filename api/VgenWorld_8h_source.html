@@ -389,10 +389,25 @@ $(document).ready(function(){initNavTree('VgenWorld_8h_source.html',''); initRes
 <div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160; </div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        <a class="code" href="classvgen_1_1ITerrainFeed.html">ITerrainFeed</a>&amp; mFeed;</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <a class="code" href="classvgen_1_1LevelChunk.html">LevelChunk</a>&amp; mCenter;</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <a class="code" href="classvgen_1_1LevelChunk.html">LevelChunk</a>* mNeighbors[3][3] = {}; <span class="comment">// [dx+1][dz+1]; center is mCenter</span></div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;};</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;} <span class="comment">// namespace vgen</span></div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;        <span class="comment">// Lazy 3x3 neighbourhood: slot [dx][dz] (dx/dz in 0..2, [1][1] is the</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="comment">// center) is acquired on FIRST ACCESS — acquireTerrain builds the</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        <span class="comment">// neighbour&#39;s terrain if the cache misses, then acquireScratchNeighbor</span></div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        <span class="comment">// copies it into a private scratch snapshot. Features that never read</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;        <span class="comment">// a neighbour (interior chunks, plains without border features) no</span></div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="comment">// longer pay that neighbour&#39;s terrain build on THIS worker: the build</span></div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <span class="comment">// happens later, on the neighbour&#39;s own populate task, off this</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        <span class="comment">// chunk&#39;s critical path. Output-identical: acquireTerrain is</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <span class="comment">// deterministic and cache-backed, so a slot reads the same bytes</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <span class="comment">// eager or lazy, and writes still go through the same spill path.</span></div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="comment">// Single-threaded per populate (each BlockSource is stack-local to</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="comment">// one worker task), so plain mutable fields are enough.</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <span class="keyword">struct </span>NeighborSlot {</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                <a class="code" href="classvgen_1_1LevelChunk.html">LevelChunk</a>* snapshot = <span class="keyword">nullptr</span>; <span class="comment">// private scratch copy; null = not acquired yet</span></div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        };</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keyword">mutable</span> NeighborSlot mSlots[3][3];</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;};</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160; </div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;} <span class="comment">// namespace vgen</span></div>
 <div class="ttc" id="aclassvgen_1_1BiomeSource_html"><div class="ttname"><a href="classvgen_1_1BiomeSource.html">vgen::BiomeSource</a></div><div class="ttdef"><b>Definition:</b> BiomeSource.h:40</div></div>
 <div class="ttc" id="aclassvgen_1_1Biome_html"><div class="ttname"><a href="classvgen_1_1Biome.html">vgen::Biome</a></div><div class="ttdef"><b>Definition:</b> Biome.h:51</div></div>
 <div class="ttc" id="aclassvgen_1_1BlockEntity_html"><div class="ttname"><a href="classvgen_1_1BlockEntity.html">vgen::BlockEntity</a></div><div class="ttdef"><b>Definition:</b> VgenWorld.h:43</div></div>
