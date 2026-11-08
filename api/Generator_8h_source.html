@@ -109,14 +109,14 @@ $(document).ready(function(){initNavTree('Generator_8h_source.html',''); initRes
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// Generator — abstract world generator interface.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Mirrors Nukkit&#39;s cn.nukkit.level.generator.Generator: a generator is</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Mirrors the reference server&#39;s the reference server API: a generator is</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// asked to populate a chunk&#39;s terrain, biomes and features. Generators</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// run on AsyncPool workers (one chunk at a time), so implementations must</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// be self-contained and stateless w.r.t. the main thread (the seed is</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// the only state).</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// CRITICAL: each generator defines its OWN spawn point via getSpawn().</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// This mirrors Nukkit where Normal returns (127.5, 128, 127.5), Flat</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// This mirrors the era reference where Normal returns (127.5, 128, 127.5), Flat</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// returns (128, floorLevel, 128), and Nether returns (128, 64, 128).</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// The World no longer hardcodes a spawn position — it asks the generator.</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#pragma once</span></div>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('Generator_8h_source.html',''); initRes
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> populate(<a class="code" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a>&amp; ctx) = 0;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Returns the world spawn position for this generator type.</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Mirrors Nukkit&#39;s Generator.getSpawn() — each generator type</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Mirrors the reference server&#39;s Generator.getSpawn() — each generator type</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// defines its own spawn (Normal, Flat, Nether all differ).</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// The World calls this on first load to set the spawn point.</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> getSpawn() <span class="keyword">const</span> = 0;</div>

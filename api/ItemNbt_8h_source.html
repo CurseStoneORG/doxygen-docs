@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('ItemNbt_8h_source.html',''); initResiz
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//     Damage  SHORT    aux value (durability for tools/armor)</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// on top of it, the enchantment list, which the client&#39;s 2013 loader</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// never had but Bedrock/Genisys always stored:</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// never had but Bedrock/the era reference always stored:</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     ench    LIST&lt;COMPOUND&gt;  { id SHORT, lvl SHORT }</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//</span></div>
@@ -148,7 +148,7 @@ $(document).ready(function(){initNavTree('ItemNbt_8h_source.html',''); initResiz
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtCount = <span class="stringliteral">&quot;Count&quot;</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtDamage = <span class="stringliteral">&quot;Damage&quot;</span>;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnch = <span class="stringliteral">&quot;ench&quot;</span>;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// Bedrock/Genisys write the enchantment level as &quot;lvl&quot;; a few Nukkit-era</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">// Bedrock/the era reference write the enchantment level as &quot;lvl&quot;; a few the era reference-era</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">// writers spell it out as &quot;level&quot;. The reader accepts both, the writer</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// always emits &quot;lvl&quot;.</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;constexpr <span class="keyword">const</span> <span class="keywordtype">char</span>* kNbtEnchLvl = <span class="stringliteral">&quot;lvl&quot;</span>;</div>
@@ -181,7 +181,7 @@ $(document).ready(function(){initNavTree('ItemNbt_8h_source.html',''); initResiz
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// Builds the little-endian network NBT compound that gives an item a</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment">// custom visible name on 0.15.10 clients: {display:{Name:&quot;...&quot;}}. The</span></div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// returned blob goes verbatim into ItemStack::nbt; every slot writer</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// prefixes it with its u16 LE length (Genisys putSlot). An empty name</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// prefixes it with its u16 LE length (the era reference putSlot). An empty name</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// yields an empty blob (an unnamed item has no NBT at all).</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;std::string buildDisplayNbt(<span class="keyword">const</span> std::string&amp; name);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>

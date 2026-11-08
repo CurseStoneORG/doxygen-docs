@@ -123,14 +123,14 @@ $(document).ready(function(){initNavTree('ItemStack_8h_source.html',''); initRes
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span> count = 0;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// Raw little-endian network NBT compound of this stack (the exact</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// bytes the 0.15.10 client expects after the slot&#39;s nbtLen short —</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// Genisys Item tags). Empty string = no NBT. A custom item name is</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">// the era reference Item tags). Empty string = no NBT. A custom item name is</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">// stored as the compound {display:{Name:&quot;...&quot;}}; build it with</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// item::buildDisplayNbt(). The blob travels verbatim in every packet</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// that carries a slot (ContainerSetSlot / ContainerSetContent /</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// MobEquipment / AddItemEntity), which is what makes named items</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// survive inventory moves, being dropped and being picked up.</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::string nbt;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Encantamientos del stack (el tag &quot;ench&quot; del NBT del item). Genisys los</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="comment">// Encantamientos del stack (el tag &quot;ench&quot; del NBT del item). la referencia de la era los</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">// lee del NBT; CurseStone todavia no carga ese tag, asi que la lista</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// arranca vacia — pero el sistema de dano YA la consulta (EPF de la</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// armadura, Knockback / Fire Aspect / Sharpness del arma), asi que en</span></div>

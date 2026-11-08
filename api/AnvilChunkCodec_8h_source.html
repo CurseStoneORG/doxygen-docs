@@ -109,11 +109,11 @@ $(document).ready(function(){initNavTree('AnvilChunkCodec_8h_source.html',''); i
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// AnvilChunkCodec.h — encodes/decodes mcp_chunk_t* to/from the Nukkit</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// AnvilChunkCodec.h — encodes/decodes mcp_chunk_t* to/from the era reference</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// Anvil chunk NBT payload (big-endian, ZLIB-compressed separately).</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Ported from Nukkit InfinityEdition&#39;s</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// `cn.nukkit.level.format.anvil.Chunk` (toBinary / fromBinary).</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Ported from the era reference</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// `the reference server API` (toBinary / fromBinary).</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// On-disk chunk NBT layout (after ZLIB inflation):</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//</span></div>
@@ -140,7 +140,7 @@ $(document).ready(function(){initNavTree('AnvilChunkCodec_8h_source.html',''); i
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// The CurseStone chunk has 16 sections (256-tall). We persist only the</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">// lower 8 sections (Y 0..7, i.e. block Y 0..127) since MCPE 0.15.x is</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// 128-tall — matching what Nukkit stores in its Anvil format. Upper</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// 128-tall — matching what the era reference stores in its Anvil format. Upper</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// sections are dropped on save and zero-initialized on load.</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>

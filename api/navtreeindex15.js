@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1network_1_1protocol_1_1CraftingDataPacket.html#a54a52d388d7ee143b9af819d32488f8b":[9,0,0,8,0,16,2],
 "classcursestone_1_1network_1_1protocol_1_1CraftingDataPacket.html#a88e576cfd38c0e2a7c4506d6653d72a1":[9,0,0,8,0,16,3],
 "classcursestone_1_1network_1_1protocol_1_1CraftingEventPacket.html":[9,0,0,8,0,17],
 "classcursestone_1_1network_1_1protocol_1_1CraftingEventPacket.html#a25753159b15b4e7c0a4dd6f3ebe3ef79":[9,0,0,8,0,17,7],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1network_1_1protocol_1_1RemoveEntityPacket.html#a088817058098c86cb9107063b61ff6db":[9,0,0,8,0,40,0],
 "classcursestone_1_1network_1_1protocol_1_1RemoveEntityPacket.html#a352c6049e4fd4df3fc188aae2911f434":[9,0,0,8,0,40,1],
 "classcursestone_1_1network_1_1protocol_1_1RemoveEntityPacket.html#a8e003f5a4c00b2b2712a1782bb7dbf45":[9,0,0,8,0,40,2],
-"classcursestone_1_1network_1_1protocol_1_1RemoveEntityPacket.html#ad2c709542d53620302a33d2b620321bf":[9,0,0,8,0,40,3],
-"classcursestone_1_1network_1_1protocol_1_1RequestChunkRadiusPacket.html":[9,0,0,8,0,41]
+"classcursestone_1_1network_1_1protocol_1_1RemoveEntityPacket.html#ad2c709542d53620302a33d2b620321bf":[9,0,0,8,0,40,3]
 };

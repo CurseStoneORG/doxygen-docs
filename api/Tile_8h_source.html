@@ -160,7 +160,7 @@ $(document).ready(function(){initNavTree('Tile_8h_source.html',''); initResizabl
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// the caller — World::syncTilesToChunks() creates it, hands it here,</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// then hands it to mcp_chunk_add_tile_entity()). Base implementation</span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// writes the fields every tile needs regardless of subclass: block</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// position (x/y/z) and the &quot;id&quot; string the reference server/Nukkit-style loaders key</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// position (x/y/z) and the &quot;id&quot; string the reference-server-style loaders key</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// on (&quot;Chest&quot;, &quot;Furnace&quot;, &quot;Sign&quot;, ...). Subclasses override, call</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Tile::writeNBT() first, then add their own fields.</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> writeNBT(<a class="code" href="classcursestone_1_1nbt_1_1Tag.html">cursestone::nbt::Tag</a>* tag) <span class="keyword">const</span>;</div>
@@ -169,7 +169,7 @@ $(document).ready(function(){initNavTree('Tile_8h_source.html',''); initResizabl
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// the disk layout; a tile whose client reads different keys than the</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// save format overrides it. The 0.15 furnace screen binds BurnTime/</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// CookTime at open time, so TileFurnace must send THOSE keys even</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// though the save format keeps the legacy Nukkit ones.</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// though the save format keeps the legacy reference ones.</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> writeSpawnNBT(<a class="code" href="classcursestone_1_1nbt_1_1Tag.html">cursestone::nbt::Tag</a>* tag) <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// Read tile state back from `tag`. Base implementation is a no-op</span></div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// (x/y/z/id are already known from how the tile was constructed —</span></div>

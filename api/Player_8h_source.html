@@ -750,152 +750,160 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;        event::entity::DamageCause cause = event::entity::DamageCause::ENTITY_ATTACK) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;    <span class="comment">// Updates the burn timer and broadcasts the fire metadata flag.</span></div>
 <div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;    <span class="keywordtype">void</span> setOnFire(<span class="keywordtype">int</span> seconds) <span class="keyword">override</span>;</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160; </div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv_;</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;    <a class="code" href="structcursestone_1_1PlayerConfig.html">PlayerConfig</a> cfg_;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;    <a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">network::AdvancedSourceInterface</a>* adv_iface_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    std::shared_ptr&lt;inventory::PlayerInventory&gt; inv_;</div>
-<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <span class="comment">// Borrowed pointer; Server owns world instances.</span></div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* world_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    <span class="comment">// Only one chest or furnace can be open at a time.</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    std::shared_ptr&lt;tile::TileChest&gt; open_chest_;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    std::shared_ptr&lt;tile::TileFurnace&gt; open_furnace_;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="comment">// The vanilla 54-slot large-chest window, set instead of the plain</span></div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    <span class="comment">// 27-slot inventory whenever the opened chest is one half of a</span></div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    <span class="comment">// double chest. Shared by both halves, so co-viewers opening the</span></div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="comment">// pair from opposite sides still sync against the same instance.</span></div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    std::shared_ptr&lt;inventory::DoubleChestInventory&gt; open_double_;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="comment">// Active and next container window IDs.</span></div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    uint8_t container_window_id_ = 0;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    uint8_t next_container_window_id_ = 2;</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="comment">// Items temporarily held by the client cursor.</span></div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    std::vector&lt;item::ItemStack&gt; floating_items_;</div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    NbtPtr named_tag_; <span class="comment">// Player data.</span></div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    std::atomic&lt;bool&gt; connected_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    std::atomic&lt;bool&gt; logged_in_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    std::atomic&lt;bool&gt; spawned_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160; </div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    <span class="comment">// Delays first spawn until enough chunks reach the client.</span></div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    std::atomic&lt;bool&gt; awaiting_first_spawn_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> FIRST_SPAWN_CHUNK_THRESHOLD = 9; <span class="comment">// 3x3 area.</span></div>
-<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    uint64_t last_save_tick_ = 0;</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    uint64_t start_time_ms_ = 0;    <span class="comment">// Session start time.</span></div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    uint64_t last_activity_ms_ = 0; <span class="comment">// Last packet timestamp.</span></div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    uint64_t last_attack_ms_ = 0;   <span class="comment">// Last accepted melee attack.</span></div>
-<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    <span class="comment">// --- Nametag and display name ---</span></div>
-<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    std::string nametag_;      <span class="comment">// Empty means username.</span></div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    std::string display_name_; <span class="comment">// Empty means username.</span></div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">// --- Bow draw state ---</span></div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    int64_t bow_start_action_ = -1; <span class="comment">// Start tick; -1 means inactive.</span></div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    <span class="keywordtype">bool</span> bow_pose_active_ = <span class="keyword">false</span>;  <span class="comment">// Action pose currently broadcast to viewers.</span></div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
-<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    <span class="comment">// --- Hunger and environmental damage ---</span></div>
-<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="keywordtype">float</span> food_saturation_ = 5.0f;   <span class="comment">// Saturation drains before food.</span></div>
-<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="keywordtype">float</span> food_exhaustion_ = 0.0f;   <span class="comment">// Exhaustion accumulator.</span></div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    uint64_t last_eat_ms_ = 0;       <span class="comment">// Eating/drinking cooldown.</span></div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keywordtype">float</span> movement_speed_base_ = 0.1f; <span class="comment">// Walk speed before effect multipliers.</span></div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordtype">bool</span> invisible_ = <span class="keyword">false</span>;         <span class="comment">// Invisibility effect pose bit.</span></div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    <span class="keywordtype">float</span> tick_move_dist_ = 0.0f;    <span class="comment">// Horizontal distance moved this tick.</span></div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="keywordtype">bool</span> food_attrs_dirty_ = <span class="keyword">false</span>;  <span class="comment">// Food attributes need syncing.</span></div>
-<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    uint64_t last_pos_y_ = 0;        <span class="comment">// Previous Y position.</span></div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keywordtype">bool</span> last_pos_set_ = <span class="keyword">false</span>;      <span class="comment">// Fall-damage initialization guard.</span></div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keywordtype">bool</span> was_in_lava_ = <span class="keyword">false</span>;       <span class="comment">// Lava damage state.</span></div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    <span class="keywordtype">bool</span> was_on_fire_ = <span class="keyword">false</span>;       <span class="comment">// Previous fire state.</span></div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    uint64_t last_fire_dmg_ms_ = 0;  <span class="comment">// Fire damage interval.</span></div>
-<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    uint64_t last_lava_dmg_ms_ = 0;  <span class="comment">// Lava damage interval.</span></div>
-<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    uint64_t last_fire_tick_dmg_ms_ = 0;</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    uint64_t last_drown_dmg_ms_ = 0; <span class="comment">// Drowning damage interval.</span></div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    uint64_t last_cactus_dmg_ms_ = 0;</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    uint64_t last_regen_ms_ = 0;     <span class="comment">// Natural regeneration interval.</span></div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    <span class="keywordtype">int</span> starve_ticks_ = 0;           <span class="comment">// Starvation damage accumulator.</span></div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    <span class="keywordtype">int</span> air_ticks_ = 300;            <span class="comment">// Remaining underwater air.</span></div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <span class="keywordtype">int</span> fire_ticks_ = 0;             <span class="comment">// Remaining burn time.</span></div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160; </div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <span class="comment">// --- Experience state ---</span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordtype">int</span> xp_level_ = 0;               <span class="comment">// Displayed level (player.level).</span></div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="keywordtype">float</span> xp_progress_ = 0.0f;       <span class="comment">// 0..1 progress within the level.</span></div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="keywordtype">bool</span> moved_this_tick_ = <span class="keyword">false</span>;   <span class="comment">// Movement flag for hunger updates.</span></div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="keywordtype">bool</span> sprinting_ = <span class="keyword">false</span>;         <span class="comment">// Client sprint state.</span></div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <span class="keywordtype">int</span> sprint_dust_cd_ = 0;         <span class="comment">// Ticks until the next sprint dust burst.</span></div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <span class="keywordtype">bool</span> sneaking_ = <span class="keyword">false</span>;          <span class="comment">// Client crouch state.</span></div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;    <span class="comment">// Clears the burn timer and drops the on-fire overlay flag from every</span></div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;    <span class="comment">// client. Idempotent and packet-free when the player was not burning.</span></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;    <span class="keywordtype">void</span> extinguishFire();</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; </div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;    <a class="code" href="classcursestone_1_1Server.html">Server</a>* srv_;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;    <a class="code" href="structcursestone_1_1PlayerConfig.html">PlayerConfig</a> cfg_;</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;    <a class="code" href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">network::AdvancedSourceInterface</a>* adv_iface_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;    std::shared_ptr&lt;inventory::PlayerInventory&gt; inv_;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;    <span class="comment">// Borrowed pointer; Server owns world instances.</span></div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* world_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;    <span class="comment">// Only one chest or furnace can be open at a time.</span></div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;    std::shared_ptr&lt;tile::TileChest&gt; open_chest_;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;    std::shared_ptr&lt;tile::TileFurnace&gt; open_furnace_;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;    <span class="comment">// The vanilla 54-slot large-chest window, set instead of the plain</span></div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;    <span class="comment">// 27-slot inventory whenever the opened chest is one half of a</span></div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;    <span class="comment">// double chest. Shared by both halves, so co-viewers opening the</span></div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;    <span class="comment">// pair from opposite sides still sync against the same instance.</span></div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;    std::shared_ptr&lt;inventory::DoubleChestInventory&gt; open_double_;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;    <span class="comment">// Active and next container window IDs.</span></div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;    uint8_t container_window_id_ = 0;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;    uint8_t next_container_window_id_ = 2;</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;    <span class="comment">// Items temporarily held by the client cursor.</span></div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;    std::vector&lt;item::ItemStack&gt; floating_items_;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;    NbtPtr named_tag_; <span class="comment">// Player data.</span></div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;    std::atomic&lt;bool&gt; connected_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;    std::atomic&lt;bool&gt; logged_in_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;    std::atomic&lt;bool&gt; spawned_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    <span class="comment">// Delays first spawn until enough chunks reach the client.</span></div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;    std::atomic&lt;bool&gt; awaiting_first_spawn_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> FIRST_SPAWN_CHUNK_THRESHOLD = 9; <span class="comment">// 3x3 area.</span></div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;    uint64_t last_save_tick_ = 0;</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;    uint64_t start_time_ms_ = 0;    <span class="comment">// Session start time.</span></div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;    uint64_t last_activity_ms_ = 0; <span class="comment">// Last packet timestamp.</span></div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;    uint64_t last_attack_ms_ = 0;   <span class="comment">// Last accepted melee attack.</span></div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;    <span class="comment">// --- Nametag and display name ---</span></div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;    std::string nametag_;      <span class="comment">// Empty means username.</span></div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;    std::string display_name_; <span class="comment">// Empty means username.</span></div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    <span class="comment">// --- Bow draw state ---</span></div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;    int64_t bow_start_action_ = -1; <span class="comment">// Start tick; -1 means inactive.</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;    <span class="keywordtype">bool</span> bow_pose_active_ = <span class="keyword">false</span>;  <span class="comment">// Action pose currently broadcast to viewers.</span></div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160; </div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <span class="comment">// --- Hunger and environmental damage ---</span></div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keywordtype">float</span> food_saturation_ = 5.0f;   <span class="comment">// Saturation drains before food.</span></div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    <span class="keywordtype">float</span> food_exhaustion_ = 0.0f;   <span class="comment">// Exhaustion accumulator.</span></div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;    uint64_t last_eat_ms_ = 0;       <span class="comment">// Eating/drinking cooldown.</span></div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;    <span class="keywordtype">float</span> movement_speed_base_ = 0.1f; <span class="comment">// Walk speed before effect multipliers.</span></div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;    <span class="keywordtype">bool</span> invisible_ = <span class="keyword">false</span>;         <span class="comment">// Invisibility effect pose bit.</span></div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;    <span class="keywordtype">float</span> tick_move_dist_ = 0.0f;    <span class="comment">// Horizontal distance moved this tick.</span></div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;    <span class="keywordtype">bool</span> food_attrs_dirty_ = <span class="keyword">false</span>;  <span class="comment">// Food attributes need syncing.</span></div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;    uint64_t last_pos_y_ = 0;        <span class="comment">// Previous Y position.</span></div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;    <span class="keywordtype">bool</span> last_pos_set_ = <span class="keyword">false</span>;      <span class="comment">// Fall-damage initialization guard.</span></div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;    <span class="keywordtype">bool</span> was_in_lava_ = <span class="keyword">false</span>;       <span class="comment">// Lava damage state.</span></div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;    <span class="keywordtype">bool</span> was_on_fire_ = <span class="keyword">false</span>;       <span class="comment">// Previous fire state.</span></div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;    uint64_t last_fire_dmg_ms_ = 0;  <span class="comment">// Fire damage interval.</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;    uint64_t last_lava_dmg_ms_ = 0;  <span class="comment">// Lava damage interval.</span></div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    uint64_t last_fire_tick_dmg_ms_ = 0;</div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    uint64_t last_drown_dmg_ms_ = 0; <span class="comment">// Drowning damage interval.</span></div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;    uint64_t last_cactus_dmg_ms_ = 0;</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    uint64_t last_regen_ms_ = 0;     <span class="comment">// Natural regeneration interval.</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <span class="keywordtype">int</span> starve_ticks_ = 0;           <span class="comment">// Starvation damage accumulator.</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <span class="keywordtype">int</span> air_ticks_ = 300;            <span class="comment">// Remaining underwater air.</span></div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <span class="keywordtype">int</span> fire_ticks_ = 0;             <span class="comment">// Remaining burn time.</span></div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <span class="comment">// Last pose flags byte actually broadcast — broadcastPoseFlags() skips</span></div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <span class="comment">// its packets when the byte has not changed, so repeated edge calls</span></div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <span class="comment">// (water tick, burn expiry) never touch the wire.</span></div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    uint8_t last_sent_pose_flags_ = 0;</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    <span class="keywordtype">bool</span> pose_flags_sent_ = <span class="keyword">false</span>;   <span class="comment">// Guard for the cache above.</span></div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
-<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="comment">// --- Sleep state ---</span></div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="comment">// Stores the sleeping state and bed head coordinates.</span></div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keywordtype">bool</span> sleeping_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    int32_t sleep_x_ = 0, sleep_y_ = 0, sleep_z_ = 0;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <span class="comment">// --- Personal spawn ---</span></div>
-<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    <span class="comment">// Uses the world spawn until a bed spawn is set.</span></div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;    <span class="keywordtype">bool</span> has_spawn_override_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    int32_t spawn_x_ = 0, spawn_y_ = 64, spawn_z_ = 0;</div>
-<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160; </div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="comment">// --- Nether portal state ---</span></div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    <span class="keywordtype">bool</span> in_portal_ = <span class="keyword">false</span>;      <span class="comment">// Player is inside a portal.</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;    uint64_t last_portal_ms_ = 0; <span class="comment">// Last portal travel timestamp.</span></div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="comment">// Waits for chunks before completing a dimension switch.</span></div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="keywordtype">bool</span> dimension_spawn_pending_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    uint64_t dimension_switch_ms_ = 0;</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    <span class="comment">// World to return to after Nether travel.</span></div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* portal_return_ = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="comment">// Stores the last portal pair for round-trip travel.</span></div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <span class="keywordtype">bool</span> portal_link_used_ = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    int32_t portal_link_ax_ = 0, portal_link_ay_ = 0, portal_link_az_ = 0;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    int32_t portal_link_bx_ = 0, portal_link_by_ = 0, portal_link_bz_ = 0;</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    uint8_t portal_link_adim_ = 0, portal_link_bdim_ = 0;</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
-<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="keywordtype">bool</span> on_ground_fall_check_ = <span class="keyword">true</span>; <span class="comment">// Last client-reported ground state.</span></div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <span class="keywordtype">float</span> fall_distance_ = 0.0f;       <span class="comment">// Accumulated fall distance.</span></div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160; </div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <span class="comment">// Resolves a portal destination in the target world.</span></div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    <span class="keywordtype">bool</span> resolvePortalDestination(<a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* target, <span class="keywordtype">double</span>&amp; x, <span class="keywordtype">double</span>&amp; y, <span class="keywordtype">double</span>&amp; z,</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;                                  <a class="code" href="structcursestone_1_1PortalArrival.html">PortalArrival</a>&amp; arrival);</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    <span class="comment">// Stores a completed portal link.</span></div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;    <span class="keywordtype">void</span> storePortalLink(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1PortalArrival.html">PortalArrival</a>&amp; from, uint8_t from_dim, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1PortalArrival.html">PortalArrival</a>&amp; to,</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;                         uint8_t to_dim);</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160; </div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;    <span class="comment">// Shared chunk spiral algorithm.</span></div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; buildChunkSpiral(<span class="keywordtype">int</span> vd);</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="comment">// Spiral for the radius onUpdate() used last; main thread only.</span></div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;    <span class="keywordtype">int</span> spiral_cache_radius_ = -1;</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; spiral_cache_;</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <span class="comment">// Steady-clock ms of the last accepted chat message (anti-spam).</span></div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;    int64_t last_chat_ms_ = 0;</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    <span class="comment">// --- Experience state ---</span></div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <span class="keywordtype">int</span> xp_level_ = 0;               <span class="comment">// Displayed level (player.level).</span></div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;    <span class="keywordtype">float</span> xp_progress_ = 0.0f;       <span class="comment">// 0..1 progress within the level.</span></div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keywordtype">bool</span> moved_this_tick_ = <span class="keyword">false</span>;   <span class="comment">// Movement flag for hunger updates.</span></div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;    <span class="keywordtype">bool</span> sprinting_ = <span class="keyword">false</span>;         <span class="comment">// Client sprint state.</span></div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;    <span class="keywordtype">int</span> sprint_dust_cd_ = 0;         <span class="comment">// Ticks until the next sprint dust burst.</span></div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;    <span class="keywordtype">bool</span> sneaking_ = <span class="keyword">false</span>;          <span class="comment">// Client crouch state.</span></div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160; </div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;    <span class="comment">// --- Sleep state ---</span></div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;    <span class="comment">// Stores the sleeping state and bed head coordinates.</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;    <span class="keywordtype">bool</span> sleeping_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    int32_t sleep_x_ = 0, sleep_y_ = 0, sleep_z_ = 0;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;    <span class="comment">// --- Personal spawn ---</span></div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;    <span class="comment">// Uses the world spawn until a bed spawn is set.</span></div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    <span class="keywordtype">bool</span> has_spawn_override_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;    int32_t spawn_x_ = 0, spawn_y_ = 64, spawn_z_ = 0;</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    <span class="comment">// --- Nether portal state ---</span></div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;    <span class="keywordtype">bool</span> in_portal_ = <span class="keyword">false</span>;      <span class="comment">// Player is inside a portal.</span></div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;    uint64_t last_portal_ms_ = 0; <span class="comment">// Last portal travel timestamp.</span></div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    <span class="comment">// Waits for chunks before completing a dimension switch.</span></div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;    <span class="keywordtype">bool</span> dimension_spawn_pending_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;    uint64_t dimension_switch_ms_ = 0;</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    <span class="comment">// World to return to after Nether travel.</span></div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* portal_return_ = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    <span class="comment">// Stores the last portal pair for round-trip travel.</span></div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <span class="keywordtype">bool</span> portal_link_used_ = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;    int32_t portal_link_ax_ = 0, portal_link_ay_ = 0, portal_link_az_ = 0;</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;    int32_t portal_link_bx_ = 0, portal_link_by_ = 0, portal_link_bz_ = 0;</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    uint8_t portal_link_adim_ = 0, portal_link_bdim_ = 0;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    <span class="keywordtype">bool</span> on_ground_fall_check_ = <span class="keyword">true</span>; <span class="comment">// Last client-reported ground state.</span></div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="keywordtype">float</span> fall_distance_ = 0.0f;       <span class="comment">// Accumulated fall distance.</span></div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;    <span class="comment">// Resolves a portal destination in the target world.</span></div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;    <span class="keywordtype">bool</span> resolvePortalDestination(<a class="code" href="classcursestone_1_1world_1_1World.html">World</a>* target, <span class="keywordtype">double</span>&amp; x, <span class="keywordtype">double</span>&amp; y, <span class="keywordtype">double</span>&amp; z,</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                                  <a class="code" href="structcursestone_1_1PortalArrival.html">PortalArrival</a>&amp; arrival);</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;    <span class="comment">// Stores a completed portal link.</span></div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;    <span class="keywordtype">void</span> storePortalLink(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1PortalArrival.html">PortalArrival</a>&amp; from, uint8_t from_dim, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1PortalArrival.html">PortalArrival</a>&amp; to,</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                         uint8_t to_dim);</div>
 <div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="comment">// Chunks already sent to this player, protected by chunks_mtx_.</span></div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    std::unordered_set&lt;int64_t&gt; used_chunks_;</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    <span class="keyword">mutable</span> std::mutex chunks_mtx_;</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="comment">// View radius the client last requested, already clamped to</span></div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    <span class="comment">// cfg_.view_distance. 0 until the first RequestChunkRadiusPacket</span></div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="comment">// arrives; chunk streaming then falls back to cfg_.view_distance.</span></div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    <span class="comment">// Written by the network thread, read by the tick thread.</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;    std::atomic&lt;int32_t&gt; client_chunk_radius_{0};</div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="comment">// Ensures the spawn acknowledgment triggers re-streaming only once.</span></div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    std::atomic&lt;bool&gt; spawn_ack_done_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="comment">// Pending chunk requests in spiral order.</span></div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; chunk_queue_;</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="keyword">mutable</span> std::mutex queue_mtx_;</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="comment">// Flush batches immediately when they reach 32 KB.</span></div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;    <span class="comment">// Ensures close() cleanup runs only once across threads.</span></div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    std::once_flag close_once_;</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    <span class="comment">// Defers player removal to the main server thread.</span></div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="comment">// Checks whether player removal is pending.</span></div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire);</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    }</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;};</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;} <span class="comment">// namespace cursestone</span></div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;    <span class="comment">// Shared chunk spiral algorithm.</span></div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; buildChunkSpiral(<span class="keywordtype">int</span> vd);</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;    <span class="comment">// Spiral for the radius onUpdate() used last; main thread only.</span></div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;    <span class="keywordtype">int</span> spiral_cache_radius_ = -1;</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; spiral_cache_;</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;    <span class="comment">// Steady-clock ms of the last accepted chat message (anti-spam).</span></div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;    int64_t last_chat_ms_ = 0;</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;    <span class="comment">// Chunks already sent to this player, protected by chunks_mtx_.</span></div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;    std::unordered_set&lt;int64_t&gt; used_chunks_;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;    <span class="keyword">mutable</span> std::mutex chunks_mtx_;</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;    <span class="comment">// View radius the client last requested, already clamped to</span></div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;    <span class="comment">// cfg_.view_distance. 0 until the first RequestChunkRadiusPacket</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;    <span class="comment">// arrives; chunk streaming then falls back to cfg_.view_distance.</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;    <span class="comment">// Written by the network thread, read by the tick thread.</span></div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;    std::atomic&lt;int32_t&gt; client_chunk_radius_{0};</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;    <span class="comment">// Ensures the spawn acknowledgment triggers re-streaming only once.</span></div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;    std::atomic&lt;bool&gt; spawn_ack_done_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160; </div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;    <span class="comment">// Pending chunk requests in spiral order.</span></div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;    std::vector&lt;std::pair&lt;int32_t, int32_t&gt;&gt; chunk_queue_;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;    <span class="keyword">mutable</span> std::mutex queue_mtx_;</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160; </div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;    <span class="comment">// Flush batches immediately when they reach 32 KB.</span></div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;    <span class="comment">// Ensures close() cleanup runs only once across threads.</span></div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;    std::once_flag close_once_;</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;    <span class="comment">// Defers player removal to the main server thread.</span></div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;    <span class="comment">// Checks whether player removal is pending.</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;        <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;    }</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;};</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;} <span class="comment">// namespace cursestone</span></div>
 <div class="ttc" id="aclasscursestone_1_1IPlayer_html"><div class="ttname"><a href="classcursestone_1_1IPlayer.html">cursestone::IPlayer</a></div><div class="ttdef"><b>Definition:</b> IPlayer.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
 <div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">Server singleton for startup, ticking, and shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:95</div></div>

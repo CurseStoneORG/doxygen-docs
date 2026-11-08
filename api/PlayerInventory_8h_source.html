@@ -109,12 +109,12 @@ $(document).ready(function(){initNavTree('PlayerInventory_8h_source.html',''); i
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// PlayerInventory.h — ported from cn.nukkit.inventory.PlayerInventory</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// PlayerInventory.h — ported from the reference server API</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Player inventory: 36 main slots + 4 armor slots + 9 hotbar reference</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// slots. The hotbar links hotbar indices (0..8) to inventory slots.</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Layout (mirrors Nukkit):</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// Layout (mirrors the era reference):</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   slots 0..35  : main inventory (the bottom 36 of the 45-slot grid)</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   slots 36..39 : armor (helmet, chestplate, leggings, boots)</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">//   hotbar 0..8  : indices into the main inventory (default: 0..8)</span></div>
@@ -126,7 +126,7 @@ $(document).ready(function(){initNavTree('PlayerInventory_8h_source.html',''); i
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">namespace </span>cursestone::inventory {</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Backward-compat constants used by Player.cpp.</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// SIZE is the number of slots EXCLUDING the 4 armor slots (Nukkit&#39;s</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// SIZE is the number of slots EXCLUDING the 4 armor slots (the reference server&#39;s</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// getSize() returns super.getSize() - 4). Total storage = SIZE + 4.</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">static</span> constexpr <span class="keywordtype">int</span> PLAYER_INV_MAIN_SIZE = 36;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">static</span> constexpr <span class="keywordtype">int</span> PLAYER_INV_ARMOR_COUNT = 4;</div>
@@ -159,7 +159,7 @@ $(document).ready(function(){initNavTree('PlayerInventory_8h_source.html',''); i
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> setHeldItemIndex(<span class="keywordtype">int</span> index);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Reference (Genisys/PMMP 0.15) setHeldItemIndex(index, sendToHolder,</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Reference (the reference 0.15 implementation) setHeldItemIndex(index, sendToHolder,</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// slotMapping): MobEquipmentPacket is the ONLY client-driven place a</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// hotbar-position -&gt; inventory-slot link may change. slotMapping is the</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// position&#39;s new inventory slot (the wire&#39;s padded absolute byte minus</span></div>
@@ -201,7 +201,7 @@ $(document).ready(function(){initNavTree('PlayerInventory_8h_source.html',''); i
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordflow">return</span> setItem(heldSlot(), item);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// ---- Armor accessors (mirrors Nukkit) ----</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// ---- Armor accessors (mirrors the era reference) ----</span></div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">item::ItemStack</a> getHelmet() {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">return</span> getItem(SIZE);</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
@@ -238,7 +238,7 @@ $(document).ready(function(){initNavTree('PlayerInventory_8h_source.html',''); i
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::array&lt;item::ItemStack, 4&gt; getArmorContents();</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">void</span> setArmorContents(<span class="keyword">const</span> std::array&lt;item::ItemStack, 4&gt;&amp; items);</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// ---- Nukkit overrides ----</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// ---- the era reference overrides ----</span></div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// getSize() returns the MAIN inventory size (36), NOT including armor.</span></div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// The underlying storage has 40 slots (36 + 4 armor).</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">int</span> getSize()<span class="keyword"> const override </span>{</div>

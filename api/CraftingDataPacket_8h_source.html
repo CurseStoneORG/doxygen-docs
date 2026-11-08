@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('CraftingDataPacket_8h_source.html','')
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format verificado BYTE A BYTE contra the reference implementation</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// (network/protocol/CraftingDataPacket, protocolo 84 /</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// MCPE 0.15.10) y cross-checkeado con Nukkit 2016 (mismo formato):</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// MCPE 0.15.10) y cross-checkeado con the 2016-era reference server (mismo formato):</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//   putInt(BE)   count(entries)          &lt;- 32-bit big-endian</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//   foreach entry:</span></div>
@@ -135,7 +135,7 @@ $(document).ready(function(){initNavTree('CraftingDataPacket_8h_source.html','')
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//   ENTRY_SHAPED (1):</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//     putInt(BE) width; putInt(BE) height;</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">//     putSlot(width*height celdas, fila-por-fila: z&lt;Height exterior,</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//             inner x&lt;Width — identical to Genisys/the reference server,</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">//             inner x&lt;Width — identical to the reference server,</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">//             and the pattern is row-major anchored top-left, like</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">//             Recipe::grid)</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">//     putInt(BE) 1; putSlot(result);</span></div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('CraftingDataPacket_8h_source.html','')
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//            + putLShort(nbtLen) + nbt   (nbtLen=0 here; LShort is LE)</span></div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//   damage -1 (&quot;any damage&quot;) viaja como 0xFFFF en el short BE.</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// cleanRecipes: The reference server/Genisys lo mandan en true (generateRecipeList</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// cleanRecipes: The reference server lo mandan en true (generateRecipeList</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// pone cleanRecipes = true). El cliente borra sus recetas por</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// defecto y usa SOLO las nuestras — con la lista completa que manda el</span></div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// CraftingManager es lo correcto.</span></div>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"md_docs_audits_ownership_map.html#autotoc_md112":[5,2,5],
 "md_docs_audits_ownership_map.html#autotoc_md113":[5,3],
 "md_docs_audits_ownership_map.html#autotoc_md114":[5,4],
 "md_docs_audits_ownership_map.html#autotoc_md115":[5,5],
@@ -19,11 +20,12 @@ var NAVTREEINDEX25 =
 "md_docs_audits_test_results.html#autotoc_md130":[6,8],
 "namespacecursestone.html":[8,0,0],
 "namespacecursestone.html#a1c8c3fee428f4c665f076f22f4b0ac7c":[8,0,0,54],
-"namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5":[8,0,0,59],
+"namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5":[8,0,0,60],
 "namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa":[8,0,0,57],
 "namespacecursestone.html#a8c184c5b29406134bd48d0f71345bb3e":[8,0,0,55],
 "namespacecursestone.html#a9ff205cb621b43c64560c1d0fe4a7907":[8,0,0,56],
-"namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223":[8,0,0,58],
+"namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223":[8,0,0,59],
+"namespacecursestone.html#adec485e08dd2b6fe4a06b0549e970f1a":[8,0,0,58],
 "namespacecursestone_1_1utils.html":[8,0,0,16],
 "namespacecursestone_1_1utils.html#a419f94d4e820fe780a0e546cbb9c053c":[8,0,0,16,9],
 "namespacecursestone_1_1utils.html#a5645fe9cf148a69e62272a15dfc57795":[8,0,0,16,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX25 =
 "structcursestone_1_1utils_1_1Config_1_1Node.html#ac4aaddac8c21682d94b9276ac3e3069a":[9,0,0,14,1,0,3],
 "structcursestone_1_1utils_1_1Config_1_1Node.html#ae6f95d910b13039332dd5a60190ab3aa":[9,0,0,14,1,0,2],
 "structcursestone_1_1utils_1_1FreeDeleter.html":[9,0,0,14,2],
-"structcursestone_1_1utils_1_1FreeDeleter.html#ae06ee21c6e311bbd881cc962eb6ee986":[9,0,0,14,2,0],
-"structcursestone_1_1world_1_1ArrowEntity.html":[9,0,0,16,10],
-"structcursestone_1_1world_1_1ArrowEntity.html#a0080c13c5245ffea46e3acd3cc8e74fc":[9,0,0,16,10,23]
+"structcursestone_1_1utils_1_1FreeDeleter.html#ae06ee21c6e311bbd881cc962eb6ee986":[9,0,0,14,2,0]
 };

@@ -109,13 +109,13 @@ $(document).ready(function(){initNavTree('Inventory_8h_source.html',''); initRes
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Inventory.h — ported from cn.nukkit.inventory.Inventory (interface)</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// Inventory.h — ported from the reference server API (interface)</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Abstract inventory interface. Concrete implementations:</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//   - BaseInventory   (the default in-memory storage)</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   - PlayerInventory (extends BaseInventory with hotbar + armor + held slot)</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// In Nukkit this is a Java interface with ~30 methods. We mirror the</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// In the era reference this is a Java interface with ~30 methods. We mirror the</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// public surface but adapt signatures to C++ (std::vector instead of</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// Item[], shared_ptr&lt;Player&gt; instead of Player, etc.).</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#pragma once</span></div>
@@ -156,13 +156,13 @@ $(document).ready(function(){initNavTree('Inventory_8h_source.html',''); initRes
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;item::ItemStack&gt; removeItem(std::vector&lt;item::ItemStack&gt; slots) = 0;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// Contents as a map (slot index → item). Only non-empty slots are</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// included, matching Nukkit&#39;s HashMap&lt;Integer,Item&gt; slots semantics.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// included, matching the reference server&#39;s HashMap&lt;Integer,Item&gt; slots semantics.</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> std::unordered_map&lt;int, item::ItemStack&gt; getContents() = 0;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> setContents(<span class="keyword">const</span> std::unordered_map&lt;int, item::ItemStack&gt;&amp; items) = 0;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">// Send the full contents or a single slot to a player. These</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">// generate ContainerSetContentPacket / ContainerSetSlotPacket.</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Mirrors Nukkit&#39;s sendContents(player) / sendSlot(index, player).</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Mirrors the reference server&#39;s sendContents(player) / sendSlot(index, player).</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> sendContents(<a class="code" href="classcursestone_1_1Player.html">Player</a>* player) = 0;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> sendSlot(<span class="keywordtype">int</span> index, <a class="code" href="classcursestone_1_1Player.html">Player</a>* player) = 0;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>

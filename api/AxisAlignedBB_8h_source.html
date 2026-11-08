@@ -180,7 +180,7 @@ $(document).ready(function(){initNavTree('AxisAlignedBB_8h_source.html',''); ini
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">// &quot;where does this box end up after being pushed by (dx,dy,dz)&quot;.</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">// ---------------------------------------------------------------------</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// `expand` (Genisys AxisAlignedBB::addCoord): grow the box by the</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// `expand` (the era reference AxisAlignedBB::addCoord): grow the box by the</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// offset ON THE SIDE the offset pushes towards, so the result covers</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// BOTH the original box and the box translated by (dx,dy,dz). This is</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// the region a swept move has to look at.</span></div>
@@ -249,7 +249,7 @@ $(document).ready(function(){initNavTree('AxisAlignedBB_8h_source.html',''); ini
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;}</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="comment">// ---- per-axis swept clipping ---------------------------------------</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">// calculateXOffset / calculateYOffset / calculateZOffset (Genisys</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">// calculateXOffset / calculateYOffset / calculateZOffset (the era reference</span></div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">// AxisAlignedBB, what Entity::move() clips with). Given the moving box</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">// `b`, one obstacle `c` and the requested displacement along that axis,</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="comment">// return the displacement that is actually free: `d` unchanged when the</span></div>

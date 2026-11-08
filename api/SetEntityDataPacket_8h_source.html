@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('SetEntityDataPacket_8h_source.html',''
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// SetEntityDataPacket.h — server→client entity metadata (pose flags).</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format (protocol 84) — Genisys 0.15.0</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format (protocol 84) — the 0.15.0 reference server</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// SetEntityDataPacket::encode + Binary::writeMetadata():</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//     [Int64 BE] eid</span></div>
@@ -125,13 +125,13 @@ $(document).ready(function(){initNavTree('SetEntityDataPacket_8h_source.html',''
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//     [Byte] 0x7f                                 // terminator</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// This packet is how the SERVER tells other clients about a pose change.</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// Genisys 0.15 itself never sends it for sneaking (its Player::setSneaking()</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// the 0.15 reference server itself never sends it for sneaking (its Player::setSneaking()</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// is local-only — see Player, which only flips the local</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">// property), which is exactly why this server&#39;s players were invisible to</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// each other while crouching. The reference here is Genisys&#39; *metadata</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">// each other while crouching. The reference here is the era reference&#39;s *metadata</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">// encoding* plus the vanilla semantic of Entity::DATA_FLAGS.</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// The pose bits we care about (Genisys Entity):</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// The pose bits we care about (the era reference Entity):</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">//     DATA_FLAGS    = 0   (byte)   -- bit 1 = SNEAKING, bit 3 = SPRINTING</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// They all live in the SAME property, so every update has to send the full</span></div>
@@ -152,7 +152,7 @@ $(document).ready(function(){initNavTree('SetEntityDataPacket_8h_source.html',''
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> SET_ENTITY_DATA_PACKET;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Value types (Genisys Entity::DATA_TYPE_*).</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="comment">// Value types (the era reference Entity::DATA_TYPE_*).</span></div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">static</span> constexpr uint8_t TYPE_BYTE = 0;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">static</span> constexpr uint8_t TYPE_SHORT = 1;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">static</span> constexpr uint8_t TYPE_INT = 2;</div>
@@ -162,10 +162,10 @@ $(document).ready(function(){initNavTree('SetEntityDataPacket_8h_source.html',''
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">static</span> constexpr uint8_t TYPE_POS = 6;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">static</span> constexpr uint8_t TYPE_LONG = 7;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Metadata terminator byte (Genisys Binary::writeMetadata).</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Metadata terminator byte (the era reference Binary::writeMetadata).</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keyword">static</span> constexpr uint8_t TERMINATOR = 0x7F;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Well-known property indices / flag bits (Genisys Entity).</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// Well-known property indices / flag bits (the era reference Entity).</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">static</span> constexpr uint8_t PROP_FLAGS = 0; <span class="comment">// byte</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_BIT_ONFIRE = 0;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_BIT_SNEAKING = 1;</div>
@@ -174,7 +174,7 @@ $(document).ready(function(){initNavTree('SetEntityDataPacket_8h_source.html',''
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_BIT_ACTION = 4;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> constexpr uint8_t FLAG_BIT_INVISIBLE = 5;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Generic entity properties (Genisys Entity, protocol 84).</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// Generic entity properties (the era reference Entity, protocol 84).</span></div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">static</span> constexpr uint8_t PROP_AIR = 1;           <span class="comment">// short, 300 = full</span></div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">static</span> constexpr uint8_t PROP_NAMETAG = 2;       <span class="comment">// string</span></div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> constexpr uint8_t PROP_SHOW_NAMETAG = 3;  <span class="comment">// byte, 1 = visible</span></div>
@@ -185,7 +185,7 @@ $(document).ready(function(){initNavTree('SetEntityDataPacket_8h_source.html',''
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">static</span> constexpr uint8_t PROP_LEAD = 24;         <span class="comment">// byte</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">// Player-specific metadata (the reference server entity/Human,</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// protocol 84 — note these indices DIFFER from the newer Genisys</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// protocol 84 — note these indices DIFFER from the newer era reference</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// multi-protocol tables: on protocol 84 the sleeping flags live at</span></div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// 16/17, not 28/29).</span></div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">static</span> constexpr uint8_t PROP_PLAYER_FLAGS = 16;        <span class="comment">// byte, bit 1 = SLEEP</span></div>

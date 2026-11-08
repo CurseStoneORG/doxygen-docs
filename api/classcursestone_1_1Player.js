@@ -35,6 +35,7 @@ var classcursestone_1_1Player =
     [ "dropItem", "classcursestone_1_1Player.html#ae6304feeabb9bb1333156c7c3b984a75", null ],
     [ "experienceLevel", "classcursestone_1_1Player.html#a5edb680e3685feacb61110058eea6c3f", null ],
     [ "experienceProgressPercent", "classcursestone_1_1Player.html#afe6da62c00c3461802061c6a68488d56", null ],
+    [ "extinguishFire", "classcursestone_1_1Player.html#a222ccb8570140877d0521194ad91b7ea", null ],
     [ "finishDimensionSwitch", "classcursestone_1_1Player.html#a164a53abf2e5608cae4457a023678b89", null ],
     [ "floatingAdd", "classcursestone_1_1Player.html#af8440c19e7d53d0662bf7f8c038f845b", null ],
     [ "floatingContains", "classcursestone_1_1Player.html#a6ef7851b97300553615419978656dd2c", null ],

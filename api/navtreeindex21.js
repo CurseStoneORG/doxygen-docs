@@ -1,5 +1,6 @@
 var NAVTREEINDEX21 =
 {
+"classvgen_1_1FancyTreeFeature.html#aada77537489235f4ea92127c55021fa2":[9,0,2,53,15],
 "classvgen_1_1FancyTreeFeature.html#ab3bea636b9b97112ad151a776606db3d":[9,0,2,53,11],
 "classvgen_1_1FancyTreeFeature.html#adb3d93f84d5df16eb0972497a4bf4859":[9,0,2,53,5],
 "classvgen_1_1FancyTreeFeature_1_1FoliageCoords.html":[9,0,2,53,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX21 =
 "classvgen_1_1MesaBiome.html#a7b31e6614be4d4f1f33b2742bd01715d":[9,0,2,9,8],
 "classvgen_1_1MesaBiome.html#a7eaed02a92f9d9644811a7ea988b0034":[9,0,2,9,16],
 "classvgen_1_1MesaBiome.html#aa0361a364a63e36a65034d2fe3a59e76":[9,0,2,9,13],
-"classvgen_1_1MesaBiome.html#ab363acbe318468311e13f4292e8c3c8f":[9,0,2,9,1],
-"classvgen_1_1MesaBiome.html#ab5c505a83eeb23879731fc255631da46":[9,0,2,9,6]
+"classvgen_1_1MesaBiome.html#ab363acbe318468311e13f4292e8c3c8f":[9,0,2,9,1]
 };

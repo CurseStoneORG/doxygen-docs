@@ -122,7 +122,7 @@ $(document).ready(function(){initNavTree('TileFurnace_8h_source.html',''); initR
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">//     0/1, escala 0..200). Un horno apagado manda a lo sumo un par</span></div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">//     final en ceros y se calla: replicar (0,0) cada tick es un flood</span></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//     de 0x2D que tumba al cliente.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   - Persistencia NBT legacy de Nukkit: { BurnDuration, BurnTicks,</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//   - Persistencia NBT legacy de the era reference: { BurnDuration, BurnTicks,</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//     CookTicks, Items: [{Slot,id,Damage,Count}] }.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;Tile.h&quot;</span></div>
@@ -168,7 +168,7 @@ $(document).ready(function(){initNavTree('TileFurnace_8h_source.html',''); initR
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">int</span> maxCookTime()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> 200;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Slot indices (Nukkit FurnaceInventory).</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// Slot indices (the era reference FurnaceInventory).</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> SLOT_INPUT = 0;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> SLOT_FUEL = 1;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> SLOT_RESULT = 2;</div>

@@ -111,7 +111,7 @@ $(document).ready(function(){initNavTree('PlayerListPacket_8h_source.html',''); 
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// PlayerListPacket.h — sync the server-side player list (tab list) to client.</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format (protocol 84) — Genisys 0.15.0 PlayerListPacket::encode</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// Wire format (protocol 84) — the 0.15.0 reference server PlayerListPacket::encode</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// (the tag the reference implementation for this protocol ships):</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//   [1 byte ID 0x38]</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//   [Uint8]   type     (0=ADD, 1=REMOVE)</span></div>
@@ -124,7 +124,7 @@ $(document).ready(function(){initNavTree('PlayerListPacket_8h_source.html',''); 
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//       [BE String] skinId      &lt;- NOT &quot;isSlim&quot;</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">//       [BE String] skinData    &lt;- the player&#39;s skin blob, never empty</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">//       (a &quot;BE String&quot; here is putString: uint16 BE length + bytes —</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//        Genisys 0.15.0 BinaryStream::putString — NOT a 4-byte LString,</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">//        the 0.15.0 reference server BinaryStream::putString — NOT a 4-byte LString,</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//        which is reserved for the login JWT)</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">//     else:</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//       [16 bytes] uuid</span></div>
