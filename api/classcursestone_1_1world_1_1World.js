@@ -19,6 +19,7 @@ var classcursestone_1_1world_1_1World =
     [ "avgLightMs", "classcursestone_1_1world_1_1World.html#a7184588fef2d07b19093c4807374a7ef", null ],
     [ "avgTickMs", "classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b", null ],
     [ "beginTickSample", "classcursestone_1_1world_1_1World.html#a9c027f0ca22fb450cc1a0ee5c2ba2c90", null ],
+    [ "broadcastBlockParticles", "classcursestone_1_1world_1_1World.html#a776ad00339e2e75f87f0e1003aa0c1f1", null ],
     [ "checkFallingSupport", "classcursestone_1_1world_1_1World.html#ab31f2681d75632e0ed0af2b8299709d8", null ],
     [ "checkSleep", "classcursestone_1_1world_1_1World.html#a9ee6c44296e1600c88096cf9bb1b70b8", null ],
     [ "chunks", "classcursestone_1_1world_1_1World.html#a9f67dbbc61d836a9ffc36626f28d86fc", null ],
