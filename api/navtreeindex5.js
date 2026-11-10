@@ -143,6 +143,7 @@ var NAVTREEINDEX5 =
 "LevelDB_8cpp.html#a7e215cba446811bf03e0960d976c3d88":[8,0,0,18,0,1,2],
 "LevelDB_8h_source.html":[10,0,0,21,0,1,0],
 "LevelEventPacket_8h_source.html":[10,0,0,10,0,26],
+"LightEngine_8h_source.html":[10,0,0,21,6],
 "LiquidFlow_8h_source.html":[10,0,0,0,62],
 "ListCommand_8h_source.html":[10,0,0,1,0,6],
 "ListTag_8cpp.html#a683eaf829edf975c7f587f55f2afd546":[8,0,0,7,41],
@@ -215,6 +216,7 @@ var NAVTREEINDEX5 =
 "MersenneRandom_8h_source.html":[10,0,0,21,1,0,1],
 "MesaBiome_8h_source.html":[10,0,0,21,1,2,0,10],
 "MineshaftFeature_8cpp.html#a30b1d8eb854a83bc6542796fcaac689e":[8,0,2,210],
+"MineshaftFeature_8h_source.html":[10,0,0,21,1,2,4,1],
 "MineshaftPieces_8h_source.html":[10,0,0,21,1,2,4,2],
 "MiniJson_8cpp.html#a6188ce7b232a7cd8b644578a986a9409":[8,0,0,11,0,1],
 "MiniJson_8cpp.html#acc7481bae8bbbfcc8a28e6f7c3cf41bc":[8,0,0,11,0,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX5 =
 "MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea64e97040576bae7f684f78a30f450bd0":[8,0,2,205,19],
 "MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea6712ef6e51cd6f0a4ae67626002f7193":[8,0,2,205,20],
 "MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea6ab48f7ed56efc362f41853c5616bf75":[8,0,2,205,26],
-"MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea7c3d115a77fd8d39fbbc0bb2bf54cfc7":[8,0,2,205,34],
-"MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea7d037f8be425e72ef6a68c59d91673ef":[8,0,2,205,16],
-"MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea927ff44ae319e043a892042e489f7845":[8,0,2,205,21]
+"MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea7c3d115a77fd8d39fbbc0bb2bf54cfc7":[8,0,2,205,34]
 };
