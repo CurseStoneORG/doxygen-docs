@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a8009a95d5e2f5c50a19ea062ce852359":[8,0,2,208,2],
+"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a88183b946cc5f0e8c96b2e66e1c74a7e":[8,0,2,208,7],
+"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15aabc63490c815af81276f930216c8d92b":[8,0,2,208,6],
+"StructureFeatureType_8h_source.html":[10,0,0,21,1,2,4,6],
 "StructureFeature_8h_source.html":[10,0,0,21,1,2,4,5],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04":[8,0,2,209],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a03e76c8730c1c16aee28722b2718c5d7":[8,0,2,209,17],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "WorkbenchCommand_8h_source.html":[10,0,0,1,0,17],
 "WorkbenchManager_8h_source.html":[10,0,0,20,0],
 "WorldEvent_8h_source.html":[10,0,0,4,4,0],
-"WorldLoadEvent_8h_source.html":[10,0,0,4,4,1],
-"WorldProviderManager_8h.html#a4f446c24768512f2d8aeb80a8b456f44":[8,0,0,18,0,6],
-"WorldProviderManager_8h_source.html":[10,0,0,21,0,7],
-"WorldProvider_8h_source.html":[10,0,0,21,0,6],
-"WorldUnloadEvent_8h_source.html":[10,0,0,4,4,2]
+"WorldLoadEvent_8h_source.html":[10,0,0,4,4,1]
 };

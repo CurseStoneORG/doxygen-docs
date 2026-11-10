@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"MersenneRandom_8h_source.html":[10,0,0,21,1,0,1],
+"MesaBiome_8h_source.html":[10,0,0,21,1,2,0,10],
+"MineshaftFeature_8cpp.html#a30b1d8eb854a83bc6542796fcaac689e":[8,0,2,210],
+"MineshaftFeature_8h_source.html":[10,0,0,21,1,2,4,1],
 "MineshaftPieces_8h_source.html":[10,0,0,21,1,2,4,2],
 "MiniJson_8cpp.html#a6188ce7b232a7cd8b644578a986a9409":[8,0,0,11,0,1],
 "MiniJson_8cpp.html#acc7481bae8bbbfcc8a28e6f7c3cf41bc":[8,0,0,11,0,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX6 =
 "StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a3cfbf3022c9e476ea09ebc7ce6d81a8f":[8,0,2,208,1],
 "StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a459371d3e60dd97b20475c2d722bbba2":[8,0,2,208,0],
 "StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a54026e80aeaf32220fe0b10441eaca0d":[8,0,2,208,5],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a64ff06a3760f9cd7c19d86a751a74205":[8,0,2,208,3],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a8009a95d5e2f5c50a19ea062ce852359":[8,0,2,208,2],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a88183b946cc5f0e8c96b2e66e1c74a7e":[8,0,2,208,7],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15aabc63490c815af81276f930216c8d92b":[8,0,2,208,6],
-"StructureFeatureType_8h_source.html":[10,0,0,21,1,2,4,6]
+"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a64ff06a3760f9cd7c19d86a751a74205":[8,0,2,208,3]
 };

@@ -1,5 +1,9 @@
 var NAVTREEINDEX25 =
 {
+"md_docs_audits_memory_audit.html":[4],
+"md_docs_audits_memory_audit.html#autotoc_md100":[4,10],
+"md_docs_audits_memory_audit.html#autotoc_md101":[4,11],
+"md_docs_audits_memory_audit.html#autotoc_md70":[4,0],
 "md_docs_audits_memory_audit.html#autotoc_md71":[4,1],
 "md_docs_audits_memory_audit.html#autotoc_md72":[4,2],
 "md_docs_audits_memory_audit.html#autotoc_md73":[4,3],
@@ -131,7 +135,11 @@ var NAVTREEINDEX25 =
 "structcursestone_1_1TickSample.html#a6dd584ccf0069b75f68b53f1b2752fc3":[9,0,0,48,3],
 "structcursestone_1_1TickSample.html#a98062abe28bfd1d1161570dd1cd2e9f8":[9,0,0,48,1],
 "structcursestone_1_1TickSample.html#ae4b7db981623779eb1ba541c7261019d":[9,0,0,48,5],
-"structcursestone_1_1block_1_1BlockOrientation.html":[9,0,0,0,36],
+"structcursestone_1_1block_1_1BlockMiningRule.html":[9,0,0,0,34],
+"structcursestone_1_1block_1_1BlockMiningRule.html#a5b07f0b7448f94e461310cdd8a0de77b":[9,0,0,0,34,1],
+"structcursestone_1_1block_1_1BlockMiningRule.html#a6dfd81f6489047f2cbc1d09745a04f43":[9,0,0,0,34,0],
+"structcursestone_1_1block_1_1BlockMiningRule.html#aaa4aeb4ee7537aa9189205acd3a16d8e":[9,0,0,0,34,2],
+"structcursestone_1_1block_1_1BlockOrientation.html":[9,0,0,0,37],
 "structcursestone_1_1diagnostics_1_1ErrorRecord.html":[9,0,0,1,1],
 "structcursestone_1_1diagnostics_1_1ErrorRecord.html#a161952bb63852e0e4cb3397d78cb9ea8":[9,0,0,1,1,2],
 "structcursestone_1_1diagnostics_1_1ErrorRecord.html#a64dc83f47986e3a4cd6499885edaf623":[9,0,0,1,1,1],
@@ -241,13 +249,5 @@ var NAVTREEINDEX25 =
 "structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a0a4cb8add71cc98ae31b2185a8f7afb5":[9,0,0,8,0,44,0,5],
 "structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a11feeff249f3341ad7a4788425e8dc54":[9,0,0,8,0,44,0,6],
 "structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a3a42e291368e28c59f16d00d7fd156e4":[9,0,0,8,0,44,0,0],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a6aa4ece2dd70241e0701c630be14a075":[9,0,0,8,0,44,0,4],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a6f0e47c76f9bc5315162d7d1e90e9dff":[9,0,0,8,0,44,0,2],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a80e2122af8a7b5f21a8d0ff1934a90eb":[9,0,0,8,0,44,0,1],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#ad86631e7545e2dddf0d63724d4e2cbe8":[9,0,0,8,0,44,0,7],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#ade7275fc594bb716193aa4ddd228a432":[9,0,0,8,0,44,0,3],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html":[9,0,0,8,0,45,0],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#a94878d109a34eca8afaf557d79b1dc5e":[9,0,0,8,0,45,0,0],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#a9bd746d3414301fbba3a340015bc8351":[9,0,0,8,0,45,0,3],
-"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#aaea050900c59f60b3236e232aa670530":[9,0,0,8,0,45,0,2]
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a6aa4ece2dd70241e0701c630be14a075":[9,0,0,8,0,44,0,4]
 };

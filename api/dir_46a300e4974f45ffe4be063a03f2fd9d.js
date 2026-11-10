@@ -35,6 +35,7 @@ var dir_46a300e4974f45ffe4be063a03f2fd9d =
     [ "BlockLiquid.h", "BlockLiquid_8h_source.html", null ],
     [ "BlockLog.h", "BlockLog_8h_source.html", null ],
     [ "BlockMagmaBlock.h", "BlockMagmaBlock_8h_source.html", null ],
+    [ "BlockMining.h", "BlockMining_8h_source.html", null ],
     [ "BlockNetherrack.h", "BlockNetherrack_8h_source.html", null ],
     [ "BlockObsidian.h", "BlockObsidian_8h_source.html", null ],
     [ "BlockOrientation.h", "BlockOrientation_8h_source.html", null ],

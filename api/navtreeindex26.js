@@ -1,5 +1,13 @@
 var NAVTREEINDEX26 =
 {
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a6f0e47c76f9bc5315162d7d1e90e9dff":[9,0,0,8,0,44,0,2],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#a80e2122af8a7b5f21a8d0ff1934a90eb":[9,0,0,8,0,44,0,1],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#ad86631e7545e2dddf0d63724d4e2cbe8":[9,0,0,8,0,44,0,7],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html#ade7275fc594bb716193aa4ddd228a432":[9,0,0,8,0,44,0,3],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html":[9,0,0,8,0,45,0],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#a94878d109a34eca8afaf557d79b1dc5e":[9,0,0,8,0,45,0,0],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#a9bd746d3414301fbba3a340015bc8351":[9,0,0,8,0,45,0,3],
+"structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#aaea050900c59f60b3236e232aa670530":[9,0,0,8,0,45,0,2],
 "structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html#ae5affe75bd19c026f4cb2c31f010bafe":[9,0,0,8,0,45,0,1],
 "structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html":[9,0,0,8,0,53,0],
 "structcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket_1_1Entry.html#a47b8d02a63879e24e4c9fa7a72d305cc":[9,0,0,8,0,53,0,0],
@@ -241,13 +249,5 @@ var NAVTREEINDEX26 =
 "structmcp__logger.html#a2af49c858c36d80abe6e578a775eaf49":[9,0,14,7],
 "structmcp__logger.html#a5ff21b122a0b8dddda8e5b2553d590d6":[9,0,14,2],
 "structmcp__logger.html#a899833f71578dddc96b5101c57070944":[9,0,14,10],
-"structmcp__logger.html#a98dcf4e86f46d4cc1b9491cf5bdde923":[9,0,14,4],
-"structmcp__logger.html#aa7674bc32d9b510b6bfb19d71a7ae8af":[9,0,14,0],
-"structmcp__logger.html#ab6926272d6bf7b5d7e927d2026842b27":[9,0,14,3],
-"structmcp__logger.html#ab6beb2ee095c950a5b989242916e7511":[9,0,14,5],
-"structmcp__logger.html#ac014ce56189d8dd0ae242184472fc754":[9,0,14,8],
-"structmcp__logger.html#ac8f08d1e42bf510fcdb8c77a3b2da8b7":[9,0,14,9],
-"structmcp__logger.html#ae291da8fbb584073e5f2097195f16b5d":[9,0,14,1],
-"structmcp__main__logger.html":[9,0,15],
-"structmcp__main__logger.html#a5ebcbc18e30bae4e77137ed83ad16d60":[9,0,15,1]
+"structmcp__logger.html#a98dcf4e86f46d4cc1b9491cf5bdde923":[9,0,14,4]
 };

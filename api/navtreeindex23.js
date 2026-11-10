@@ -1,5 +1,9 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1ReedsFeature.html#af58bc780a1a607a0aea6c0c174984310":[9,0,2,71,0],
+"classvgen_1_1RegionHillsLayer.html":[9,0,2,98],
+"classvgen_1_1RegionHillsLayer.html#a452051df09e04b4725e834daa20ddf09":[9,0,2,98,0],
+"classvgen_1_1RegionHillsLayer.html#a7b855c253fb3ea71eb6e1c0a5ddda448":[9,0,2,98,1],
 "classvgen_1_1RegionHillsLayer.html#ab0afb74bb8456c00e706f12ed17253cb":[9,0,2,98,2],
 "classvgen_1_1RemoveTooMuchOceanLayer.html":[9,0,2,99],
 "classvgen_1_1RemoveTooMuchOceanLayer.html#a86eb3e478f31f75baadcb2a1a2a1fe82":[9,0,2,99,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1SwampBiome.html#afdcd80db2f956cdea6aeb84a0de3cf63":[9,0,2,20,6],
 "classvgen_1_1SwampTreeFeature.html":[9,0,2,77],
 "classvgen_1_1SwampTreeFeature.html#a0cc4539b29b6472c964d2e39396e65e1":[9,0,2,77,1],
-"classvgen_1_1SwampTreeFeature.html#a8dfc838ac53b98b8a40c08d61d88ab45":[9,0,2,77,0],
-"classvgen_1_1SwamplandHut.html":[9,0,2,124],
-"classvgen_1_1SwamplandHut.html#a2ec7eb044bb6f3e4f9505894d08c8ca9":[9,0,2,124,0],
-"classvgen_1_1SwamplandHut.html#a6a794884d92af990fe0edf0bedd27154":[9,0,2,124,5],
-"classvgen_1_1SwamplandHut.html#a947464ff1c9ac7c42d2d6cdf3d66d07e":[9,0,2,124,3]
+"classvgen_1_1SwampTreeFeature.html#a8dfc838ac53b98b8a40c08d61d88ab45":[9,0,2,77,0]
 };

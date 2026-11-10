@@ -1,5 +1,9 @@
 var NAVTREEINDEX2 =
 {
+"Color_8h_source.html":[10,0,0,18,3],
+"CommandMap_8h_source.html":[10,0,0,1,2],
+"CommandReader_8h_source.html":[10,0,0,1,3],
+"CommandSender_8h_source.html":[10,0,0,1,4],
 "Command_8h_source.html":[10,0,0,1,1],
 "CompoundTag_8cpp.html#a053b206cb87315dd44cccf547f327688":[8,0,0,7,20],
 "CompoundTag_8cpp.html#a065f791412eaa10305e03002074fe85f":[8,0,0,7,30],
@@ -245,9 +249,5 @@ var NAVTREEINDEX2 =
 "Info_8h.html#ad20a6e41fc419b5fcabc1ef74e74f339":[8,0,0,8,0,114],
 "Info_8h.html#ad25a0e68433fc1b6a23a88339b6433ef":[8,0,0,8,0,65],
 "Info_8h.html#adead2c139aca56d257353969b368e22f":[8,0,0,8,0,61],
-"Info_8h.html#ae1932fb67715ba97ec1537de34d94208":[8,0,0,8,0,107],
-"Info_8h.html#aec88398b8c44ffeb72511b6cb221103a":[8,0,0,8,0,98],
-"Info_8h.html#aef43e55a171810bcf7cd1c7c7a056b71":[8,0,0,8,0,76],
-"Info_8h.html#af0fc7bb85857ec2c9020e37eaa3fd7b3":[8,0,0,8,0,120],
-"Info_8h.html#af15d42bb3ca9bfa76bcfa288a62834b6":[8,0,0,8,0,86]
+"Info_8h.html#ae1932fb67715ba97ec1537de34d94208":[8,0,0,8,0,107]
 };

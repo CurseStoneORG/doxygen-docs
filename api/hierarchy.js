@@ -106,6 +106,7 @@ var hierarchy =
     [ "vgen::BlockEntity", "classvgen_1_1BlockEntity.html", null ],
     [ "vgen::BlockID", "structvgen_1_1BlockID.html", null ],
     [ "cursestone::utils::BlockIterator", "classcursestone_1_1utils_1_1BlockIterator.html", null ],
+    [ "cursestone::block::BlockMiningRule", "structcursestone_1_1block_1_1BlockMiningRule.html", null ],
     [ "cursestone::block::BlockOrientation", "structcursestone_1_1block_1_1BlockOrientation.html", null ],
     [ "vgen::BlockSelector", "classvgen_1_1BlockSelector.html", [
       [ "vgen::MossStoneSelector", "classvgen_1_1MossStoneSelector.html", null ],

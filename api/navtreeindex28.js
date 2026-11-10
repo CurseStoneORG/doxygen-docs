@@ -1,5 +1,13 @@
 var NAVTREEINDEX28 =
 {
+"structvgen_1_1ChunkBlockPos.html#a8615e6a63ffadc1fd06844fb9c70fba6":[9,0,2,168,9],
+"structvgen_1_1ChunkBlockPos.html#a98cd9051e5bb6f44ca13a3fc9df48795":[9,0,2,168,5],
+"structvgen_1_1ChunkBlockPos.html#aa47f454d871f0847a0cbc9f065df3fc7":[9,0,2,168,1],
+"structvgen_1_1ChunkBlockPos.html#aa7fe0fdeb4f47573e1d9c790aed8d95a":[9,0,2,168,13],
+"structvgen_1_1ChunkBlockPos.html#abd5d20a82a4705beb104c1f1c27c2837":[9,0,2,168,6],
+"structvgen_1_1ChunkBlockPos.html#acbc8db256e8cf7a8fb5c1761849e382a":[9,0,2,168,8],
+"structvgen_1_1ChunkBlockPos.html#ad17a3a44f7ebda6bdb6a9c084440f640":[9,0,2,168,12],
+"structvgen_1_1ChunkBlockPos.html#aea05cc230d57dc0c5adea5824a217992":[9,0,2,168,2],
 "structvgen_1_1ChunkBlockPos.html#aed1f194f228c4fe3620621546105932e":[9,0,2,168,3],
 "structvgen_1_1ChunkPos.html":[9,0,2,167],
 "structvgen_1_1ChunkPos.html#a06122f5afb6ba45990e8e2980c52c7a6":[9,0,2,167,12],

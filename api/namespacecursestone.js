@@ -35,6 +35,7 @@ var namespacecursestone =
       [ "BlockLiquid", "classcursestone_1_1block_1_1BlockLiquid.html", "classcursestone_1_1block_1_1BlockLiquid" ],
       [ "BlockLog", "classcursestone_1_1block_1_1BlockLog.html", "classcursestone_1_1block_1_1BlockLog" ],
       [ "BlockMagmaBlock", "classcursestone_1_1block_1_1BlockMagmaBlock.html", "classcursestone_1_1block_1_1BlockMagmaBlock" ],
+      [ "BlockMiningRule", "structcursestone_1_1block_1_1BlockMiningRule.html", "structcursestone_1_1block_1_1BlockMiningRule" ],
       [ "BlockNetherrack", "classcursestone_1_1block_1_1BlockNetherrack.html", "classcursestone_1_1block_1_1BlockNetherrack" ],
       [ "BlockObsidian", "classcursestone_1_1block_1_1BlockObsidian.html", "classcursestone_1_1block_1_1BlockObsidian" ],
       [ "BlockOrientation", "structcursestone_1_1block_1_1BlockOrientation.html", null ],
@@ -257,7 +258,10 @@ var namespacecursestone =
         [ "WOOL_ID", "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4afc6963192593c1283f83e00d34d09393", null ],
         [ "WORKBENCH", "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a6b145c8f6d8bb64d88f9eed54f7edbdf", null ]
       ] ],
-      [ "register_all_blocks", "BlockRegistry_8cpp.html#a70927c4e1e24a8987cde584bcb16ba36", null ]
+      [ "breakSeconds", "BlockMining_8cpp.html#a7d74b33e42b88ccb369fba832713cb8e", null ],
+      [ "canHarvest", "BlockMining_8cpp.html#a31e78685bbfaeb8e17a3bc3c32531aa1", null ],
+      [ "register_all_blocks", "BlockRegistry_8cpp.html#a70927c4e1e24a8987cde584bcb16ba36", null ],
+      [ "T_NONE", "BlockMining_8h.html#a463b88185ed174d57c2fdea01dbe706c", null ]
     ] ],
     [ "diagnostics", null, [
       [ "PacketRecord", "structcursestone_1_1diagnostics_1_1PacketRecord.html", "structcursestone_1_1diagnostics_1_1PacketRecord" ],

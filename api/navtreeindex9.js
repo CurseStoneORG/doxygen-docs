@@ -1,5 +1,9 @@
 var NAVTREEINDEX9 =
 {
+"classcursestone_1_1Player.html#ad19fcd709274b2daaddf9125bee50af1":[9,0,0,46,185],
+"classcursestone_1_1Player.html#ad34b0a99886df6aff2c3340ad4fe6507":[9,0,0,46,14],
+"classcursestone_1_1Player.html#ad4a08f7284c8ba6d739c67d4ef0e5f4e":[9,0,0,46,2],
+"classcursestone_1_1Player.html#ad60dd3e69f8ff7094103960ea0eb23ec":[9,0,0,46,56],
 "classcursestone_1_1Player.html#ada36364860301f962d1df78d832d7e34":[9,0,0,46,154],
 "classcursestone_1_1Player.html#adcf77d61a2ec3edd06010f91d2433cfb":[9,0,0,46,20],
 "classcursestone_1_1Player.html#add176ce135d68defb99f8c8901f6c341":[9,0,0,46,97],
@@ -245,9 +249,5 @@ var NAVTREEINDEX9 =
 "classcursestone_1_1block_1_1BlockGlass.html#ac60acd7df8e56a467fd5e05bf1108ca9":[9,0,0,0,17,0],
 "classcursestone_1_1block_1_1BlockGlass.html#aff6381362fc0e65b0803204548354c6b":[9,0,0,0,17,1],
 "classcursestone_1_1block_1_1BlockGlassPane.html":[9,0,0,0,18],
-"classcursestone_1_1block_1_1BlockGlassPane.html#a192d3618374dba91c3eaa2bde0024434":[9,0,0,0,18,1],
-"classcursestone_1_1block_1_1BlockGlassPane.html#a63108ef5b391a47a739e574733b0b368":[9,0,0,0,18,0],
-"classcursestone_1_1block_1_1BlockGlowstone.html":[9,0,0,0,19],
-"classcursestone_1_1block_1_1BlockGlowstone.html#a7185fe5a5a9fa68400960608f60980bd":[9,0,0,0,19,2],
-"classcursestone_1_1block_1_1BlockGlowstone.html#aa3a18ce09c11bc98af3021d61e10ff08":[9,0,0,0,19,0]
+"classcursestone_1_1block_1_1BlockGlassPane.html#a192d3618374dba91c3eaa2bde0024434":[9,0,0,0,18,1]
 };

@@ -36,6 +36,7 @@ var annotated_dup =
         [ "BlockLiquid", "classcursestone_1_1block_1_1BlockLiquid.html", "classcursestone_1_1block_1_1BlockLiquid" ],
         [ "BlockLog", "classcursestone_1_1block_1_1BlockLog.html", "classcursestone_1_1block_1_1BlockLog" ],
         [ "BlockMagmaBlock", "classcursestone_1_1block_1_1BlockMagmaBlock.html", "classcursestone_1_1block_1_1BlockMagmaBlock" ],
+        [ "BlockMiningRule", "structcursestone_1_1block_1_1BlockMiningRule.html", "structcursestone_1_1block_1_1BlockMiningRule" ],
         [ "BlockNetherrack", "classcursestone_1_1block_1_1BlockNetherrack.html", "classcursestone_1_1block_1_1BlockNetherrack" ],
         [ "BlockObsidian", "classcursestone_1_1block_1_1BlockObsidian.html", "classcursestone_1_1block_1_1BlockObsidian" ],
         [ "BlockOrientation", "structcursestone_1_1block_1_1BlockOrientation.html", null ],
