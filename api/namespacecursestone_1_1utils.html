@@ -119,9 +119,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>TagGuard</b> = std::
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6f60c55af7c4285a24043573e24ad7a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1utils.html#a6f60c55af7c4285a24043573e24ad7a1">writeDefaultConfigs</a> (const std::string &amp;dataPath, std::vector&lt; std::string &gt; *created=nullptr)</td></tr>
-<tr class="memdesc:a6f60c55af7c4285a24043573e24ad7a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates <code>dataPath</code> and any missing config file from the defaults.  <a href="namespacecursestone_1_1utils.html#a6f60c55af7c4285a24043573e24ad7a1">More...</a><br /></td></tr>
-<tr class="separator:a6f60c55af7c4285a24043573e24ad7a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91abddc8b7d39138161301056118706b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1utils.html#a91abddc8b7d39138161301056118706b">writeDefaultConfigs</a> (const std::string &amp;dataPath, std::vector&lt; std::string &gt; *created=nullptr, std::vector&lt; std::string &gt; *completed=nullptr)</td></tr>
+<tr class="memdesc:a91abddc8b7d39138161301056118706b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates <code>dataPath</code> and both config files from the built-in defaults.  <a href="namespacecursestone_1_1utils.html#a91abddc8b7d39138161301056118706b">More...</a><br /></td></tr>
+<tr class="separator:a91abddc8b7d39138161301056118706b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5645fe9cf148a69e62272a15dfc57795"><td class="memItemLeft" align="right" valign="top"><a id="a5645fe9cf148a69e62272a15dfc57795"></a>
 std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>split</b> (const std::string &amp;s, char delim)</td></tr>
 <tr class="separator:a5645fe9cf148a69e62272a15dfc57795"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,8 +154,8 @@ Variables</h2></td></tr>
 <p>Include this in C++ files; C files include <a class="el" href="Utils_8h_source.html">utils/Utils.h</a>.</p>
 <p>Used by the <a class="el" href="classcursestone_1_1Server.html" title="Server singleton for startup, ticking, and shutdown.">Server</a> and by plugin manifests. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a6f60c55af7c4285a24043573e24ad7a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f60c55af7c4285a24043573e24ad7a1">&#9670;&nbsp;</a></span>writeDefaultConfigs()</h2>
+<a id="a91abddc8b7d39138161301056118706b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91abddc8b7d39138161301056118706b">&#9670;&nbsp;</a></span>writeDefaultConfigs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -170,7 +170,13 @@ Variables</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; std::string &gt; *&#160;</td>
-          <td class="paramname"><em>created</em> = <code>nullptr</code>&#160;</td>
+          <td class="paramname"><em>created</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; *&#160;</td>
+          <td class="paramname"><em>completed</em> = <code>nullptr</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -180,12 +186,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates <code>dataPath</code> and any missing config file from the defaults. </p>
-<p>Existing files are never overwritten.</p>
+<p>Creates <code>dataPath</code> and both config files from the built-in defaults. </p>
+<p>server.properties is completed in place: an existing file keeps its values, comments and keys CurseStone does not manage (panel defaults), options missing from it are appended with their defaults, and a file without any property line (empty or comments only) is replaced by the default template. Hosts such as Pterodactyl ship stub files that would otherwise never grow the options the server adds over time. A file that already carries every option is left untouched. cursestone.yml is created only when missing.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dataPath</td><td>server data directory. </td></tr>
-    <tr><td class="paramname">created</td><td>optional; receives the names of the files written. </td></tr>
+    <tr><td class="paramname">created</td><td>optional; receives the names of the files written from scratch. </td></tr>
+    <tr><td class="paramname">completed</td><td>optional; receives the names of the existing files completed. </td></tr>
   </table>
   </dd>
 </dl>
