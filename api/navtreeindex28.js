@@ -1,6 +1,5 @@
 var NAVTREEINDEX28 =
 {
-"structmcp__rak__session__manager.html":[9,0,18],
 "structmcp__rak__session__manager.html#a0515316316b45844047165046e4a35b4":[9,0,18,11],
 "structmcp__rak__session__manager.html#a1733ca4cfba098b5576c3a5db5a223ef":[9,0,18,9],
 "structmcp__rak__session__manager.html#a207fda0e35ca3fd30248257a9e5998e0":[9,0,18,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX28 =
 "structvgen_1_1Vec3.html#a74d469df09c0badf892decd28c811ef2":[9,0,2,188,16],
 "structvgen_1_1Vec3.html#a8520718704b186e23b7c2bfb374ca34e":[9,0,2,188,12],
 "structvgen_1_1Vec3.html#a9334e3df53308c14c7efce80b21da5c6":[9,0,2,188,8],
-"structvgen_1_1Vec3.html#a99c41dc65555d83c1b63a4a0fe420cdf":[9,0,2,188,5]
+"structvgen_1_1Vec3.html#a99c41dc65555d83c1b63a4a0fe420cdf":[9,0,2,188,5],
+"structvgen_1_1Vec3.html#a9ecaa5bef3fd0e9ba5ef28b6b911187f":[9,0,2,188,15]
 };

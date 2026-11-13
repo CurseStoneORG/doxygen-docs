@@ -1,6 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html":[9,0,0,16,8,0],
 "structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a15873f5407402ac523179436e9b22414":[9,0,0,16,8,0,0],
 "structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a58bc262e37b4ee7756de0a6bebbf7e00":[9,0,0,16,8,0,1],
 "structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a8d07fa2e32550b46291e7c334ae7afaf":[9,0,0,16,8,0,3],
@@ -249,5 +248,6 @@ var NAVTREEINDEX27 =
 "structmcp__rak__session.html#afafc47be7ea15fe1bdd2a816c40cd752":[9,0,17,69],
 "structmcp__rak__session.html#afc5c6964c2e58a1257bdccb4b64961de":[9,0,17,30],
 "structmcp__rak__session.html#aff947f2169d74288612d758b4935b308":[9,0,17,6],
-"structmcp__rak__session.html#aff9b8c4c7fe599c27418589b7cf449a2":[9,0,17,52]
+"structmcp__rak__session.html#aff9b8c4c7fe599c27418589b7cf449a2":[9,0,17,52],
+"structmcp__rak__session__manager.html":[9,0,18]
 };

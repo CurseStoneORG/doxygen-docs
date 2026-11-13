@@ -135,15 +135,18 @@ $(document).ready(function(){initNavTree('AdvancedSourceInterface_8h_source.html
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Default false keeps the existing unordered RELIABLE behavior,</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">// appropriate for chunks/entity updates where inter-packet order</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// doesn&#39;t matter.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> sendRawPacket(<span class="keyword">const</span> std::string&amp; ip, uint16_t port,</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                               <span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data, <span class="keywordtype">bool</span> ordered = <span class="keyword">false</span>) = 0;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// Close a session immediately, optionally sending a DisconnectPacket first.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> closeSession(<span class="keyword">const</span> std::string&amp; ip, uint16_t port,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                              <span class="keyword">const</span> std::string&amp; reason = <span class="stringliteral">&quot;&quot;</span>) = 0;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// namespace network</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;} <span class="comment">// namespace cursestone</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// `data` is taken by value: callers that just built the buffer</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="comment">// (the batch writer) can std::move it in, so the wire payload</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="comment">// transfers into the outbound queue without a heap copy per send.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> sendRawPacket(<span class="keyword">const</span> std::string&amp; ip, uint16_t port,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                               std::vector&lt;uint8_t&gt; data, <span class="keywordtype">bool</span> ordered = <span class="keyword">false</span>) = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// Close a session immediately, optionally sending a DisconnectPacket first.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> closeSession(<span class="keyword">const</span> std::string&amp; ip, uint16_t port,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                              <span class="keyword">const</span> std::string&amp; reason = <span class="stringliteral">&quot;&quot;</span>) = 0;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;} <span class="comment">// namespace network</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;} <span class="comment">// namespace cursestone</span></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1AdvancedSourceInterface_html"><div class="ttname"><a href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">cursestone::network::AdvancedSourceInterface</a></div><div class="ttdef"><b>Definition:</b> AdvancedSourceInterface.h:40</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1SourceInterface_html"><div class="ttname"><a href="classcursestone_1_1network_1_1SourceInterface.html">cursestone::network::SourceInterface</a></div><div class="ttdef"><b>Definition:</b> SourceInterface.h:34</div></div>
 <div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:28</div></div>
