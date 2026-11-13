@@ -31,7 +31,9 @@ var hierarchy =
       [ "vgen::MesaBiome::Decorator", "classvgen_1_1MesaBiome_1_1Decorator.html", null ]
     ] ],
     [ "vgen::Biome::BiomeHeight", "structvgen_1_1Biome_1_1BiomeHeight.html", null ],
-    [ "vgen::BiomeSource", "classvgen_1_1BiomeSource.html", null ],
+    [ "vgen::BiomeSource", "classvgen_1_1BiomeSource.html", [
+      [ "vgen::FixedBiomeSource", "classvgen_1_1FixedBiomeSource.html", null ]
+    ] ],
     [ "cursestone::block::Block", "classcursestone_1_1block_1_1Block.html", [
       [ "cursestone::block::BlockAir", "classcursestone_1_1block_1_1BlockAir.html", null ],
       [ "cursestone::block::BlockPortal", "classcursestone_1_1block_1_1BlockPortal.html", null ],
@@ -357,6 +359,9 @@ var hierarchy =
       [ "vgen::DesertWellFeature", "classvgen_1_1DesertWellFeature.html", null ],
       [ "vgen::DoublePlantFeature", "classvgen_1_1DoublePlantFeature.html", null ],
       [ "vgen::FlowerFeature", "classvgen_1_1FlowerFeature.html", null ],
+      [ "vgen::GlowStoneFeature", "classvgen_1_1GlowStoneFeature.html", null ],
+      [ "vgen::HellFireFeature", "classvgen_1_1HellFireFeature.html", null ],
+      [ "vgen::HellSpringFeature", "classvgen_1_1HellSpringFeature.html", null ],
       [ "vgen::HugeMushroomFeature", "classvgen_1_1HugeMushroomFeature.html", null ],
       [ "vgen::IcePatchFeature", "classvgen_1_1IcePatchFeature.html", null ],
       [ "vgen::IceSpikeFeature", "classvgen_1_1IceSpikeFeature.html", null ],
@@ -408,6 +413,7 @@ var hierarchy =
     [ "std::hash<::vgen::ChunkPos >", "structstd_1_1hash_3_1_1vgen_1_1ChunkPos_01_4.html", null ],
     [ "std::hash<::vgen::FullBlock >", "structstd_1_1hash_3_1_1vgen_1_1FullBlock_01_4.html", null ],
     [ "std::hash<::vgen::Pos >", "structstd_1_1hash_3_1_1vgen_1_1Pos_01_4.html", null ],
+    [ "vgen::HellRandomLevelSource", "classvgen_1_1HellRandomLevelSource.html", null ],
     [ "vgen::ImprovedNoise", "classvgen_1_1ImprovedNoise.html", null ],
     [ "cursestone::world::generator::INeighborBlockSink", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html", [
       [ "cursestone::world::ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html", null ]
@@ -426,6 +432,7 @@ var hierarchy =
     [ "cursestone::inventory::InventoryHolder", "classcursestone_1_1inventory_1_1InventoryHolder.html", null ],
     [ "cursestone::inventory::InventoryType", "classcursestone_1_1inventory_1_1InventoryType.html", null ],
     [ "cursestone::world::generator::ISpillQueue", "classcursestone_1_1world_1_1generator_1_1ISpillQueue.html", [
+      [ "cursestone::world::generator::Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", null ],
       [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
     ] ],
     [ "cursestone::item::Item", "classcursestone_1_1item_1_1Item.html", [
@@ -535,16 +542,19 @@ var hierarchy =
     [ "cursestone::item::ItemStack", "structcursestone_1_1item_1_1ItemStack.html", null ],
     [ "vgen::Range< INDEX, STEP >::iterator", "classvgen_1_1Range_1_1iterator.html", null ],
     [ "vgen::ITerrainFeed", "classvgen_1_1ITerrainFeed.html", [
+      [ "cursestone::world::generator::Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", null ],
       [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
     ] ],
     [ "vgen::LargeCaveFeature", "classvgen_1_1LargeCaveFeature.html", null ],
     [ "vgen::LargeFeature", "classvgen_1_1LargeFeature.html", [
       [ "vgen::StructureFeature", "classvgen_1_1StructureFeature.html", [
         [ "vgen::MineshaftFeature", "classvgen_1_1MineshaftFeature.html", null ],
+        [ "vgen::NetherBridgeFeature", "classvgen_1_1NetherBridgeFeature.html", null ],
         [ "vgen::RandomScatteredLargeFeature", "classvgen_1_1RandomScatteredLargeFeature.html", null ],
         [ "vgen::VillageFeature", "classvgen_1_1VillageFeature.html", null ]
       ] ]
     ] ],
+    [ "vgen::LargeHellCaveFeature", "classvgen_1_1LargeHellCaveFeature.html", null ],
     [ "vgen::LayerData", "classvgen_1_1LayerData.html", null ],
     [ "vgen::LeafBlock", "classvgen_1_1LeafBlock.html", null ],
     [ "vgen::Level", "classvgen_1_1Level.html", null ],
@@ -678,6 +688,24 @@ var hierarchy =
         [ "vgen::MineshaftRoom", "classvgen_1_1MineshaftRoom.html", null ],
         [ "vgen::MineshaftStairs", "classvgen_1_1MineshaftStairs.html", null ]
       ] ],
+      [ "vgen::NetherBridgePiece", "classvgen_1_1NetherBridgePiece.html", [
+        [ "vgen::NBBridgeCrossing", "classvgen_1_1NBBridgeCrossing.html", [
+          [ "vgen::NBStartPiece", "classvgen_1_1NBStartPiece.html", null ]
+        ] ],
+        [ "vgen::NBBridgeEndFiller", "classvgen_1_1NBBridgeEndFiller.html", null ],
+        [ "vgen::NBBridgeStraight", "classvgen_1_1NBBridgeStraight.html", null ],
+        [ "vgen::NBCastleCorridorStairsPiece", "classvgen_1_1NBCastleCorridorStairsPiece.html", null ],
+        [ "vgen::NBCastleCorridorTBalconyPiece", "classvgen_1_1NBCastleCorridorTBalconyPiece.html", null ],
+        [ "vgen::NBCastleEntrance", "classvgen_1_1NBCastleEntrance.html", null ],
+        [ "vgen::NBCastleSmallCorridorCrossingPiece", "classvgen_1_1NBCastleSmallCorridorCrossingPiece.html", null ],
+        [ "vgen::NBCastleSmallCorridorLeftTurnPiece", "classvgen_1_1NBCastleSmallCorridorLeftTurnPiece.html", null ],
+        [ "vgen::NBCastleSmallCorridorPiece", "classvgen_1_1NBCastleSmallCorridorPiece.html", null ],
+        [ "vgen::NBCastleSmallCorridorRightTurnPiece", "classvgen_1_1NBCastleSmallCorridorRightTurnPiece.html", null ],
+        [ "vgen::NBCastleStalkRoom", "classvgen_1_1NBCastleStalkRoom.html", null ],
+        [ "vgen::NBMonsterThrone", "classvgen_1_1NBMonsterThrone.html", null ],
+        [ "vgen::NBRoomCrossing", "classvgen_1_1NBRoomCrossing.html", null ],
+        [ "vgen::NBStairsRoom", "classvgen_1_1NBStairsRoom.html", null ]
+      ] ],
       [ "vgen::ScatteredFeaturePiece", "classvgen_1_1ScatteredFeaturePiece.html", [
         [ "vgen::DesertPyramidPiece", "classvgen_1_1DesertPyramidPiece.html", null ],
         [ "vgen::JunglePyramidPiece", "classvgen_1_1JunglePyramidPiece.html", null ],
@@ -702,6 +730,7 @@ var hierarchy =
     ] ],
     [ "vgen::StructureStart", "classvgen_1_1StructureStart.html", [
       [ "vgen::MineshaftStart", "classvgen_1_1MineshaftStart.html", null ],
+      [ "vgen::NetherBridgeStart", "classvgen_1_1NetherBridgeStart.html", null ],
       [ "vgen::ScatteredFeatureStart", "classvgen_1_1ScatteredFeatureStart.html", null ],
       [ "vgen::VillageStart", "classvgen_1_1VillageStart.html", null ]
     ] ],
@@ -737,6 +766,7 @@ var hierarchy =
       [ "cursestone::scheduler::CallbackTask", "classcursestone_1_1scheduler_1_1CallbackTask.html", null ]
     ] ],
     [ "cursestone::scheduler::TaskHandler", "classcursestone_1_1scheduler_1_1TaskHandler.html", null ],
+    [ "vgen::HellRandomLevelSource::ThreadData", "structvgen_1_1HellRandomLevelSource_1_1ThreadData.html", null ],
     [ "cursestone::TickSample", "structcursestone_1_1TickSample.html", null ],
     [ "cursestone::tile::Tile", "classcursestone_1_1tile_1_1Tile.html", [
       [ "cursestone::tile::TileChest", "classcursestone_1_1tile_1_1TileChest.html", null ],

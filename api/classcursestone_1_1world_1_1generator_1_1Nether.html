@@ -83,6 +83,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1world_1_1generator_
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classcursestone_1_1world_1_1generator_1_1Nether-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -90,7 +91,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1world_1_1generator_
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits <a class="el" href="classcursestone_1_1world_1_1generator_1_1Generator.html">cursestone::world::generator::Generator</a>.</p>
+<p>Inherits <a class="el" href="classcursestone_1_1world_1_1generator_1_1Generator.html">cursestone::world::generator::Generator</a>, <a class="el" href="classvgen_1_1ITerrainFeed.html">vgen::ITerrainFeed</a>, and <a class="el" href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">cursestone::world::generator::ISpillQueue</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -109,6 +110,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>populate</b> (<a clas
 <tr class="memitem:aa784b80a4b234f9a15943ee32ba12721"><td class="memItemLeft" align="right" valign="top"><a id="aa784b80a4b234f9a15943ee32ba12721"></a>
 <a class="el" href="structmcp__vector3.html">mcp_vector3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getSpawn</b> () const override</td></tr>
 <tr class="separator:aa784b80a4b234f9a15943ee32ba12721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9baee769f1919dd455454da7c4849bd5"><td class="memItemLeft" align="right" valign="top"><a id="a9baee769f1919dd455454da7c4849bd5"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setNeighborSink</b> (<a class="el" href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">INeighborBlockSink</a> *sink)</td></tr>
+<tr class="separator:a9baee769f1919dd455454da7c4849bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b368eeacfad085bce5b8a55ddc5d19"><td class="memItemLeft" align="right" valign="top"><a id="aa9b368eeacfad085bce5b8a55ddc5d19"></a>
+std::shared_ptr&lt; <a class="el" href="classvgen_1_1LevelChunk.html">vgen::LevelChunk</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>acquireTerrain</b> (int cx, int cz) override</td></tr>
+<tr class="separator:aa9b368eeacfad085bce5b8a55ddc5d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567982e330aad44c2f4c50c7f5fa4706"><td class="memItemLeft" align="right" valign="top"><a id="a567982e330aad44c2f4c50c7f5fa4706"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>commitNeighborWrite</b> (int cx, int cz, uint32_t index, uint8_t id, uint8_t data) override</td></tr>
+<tr class="separator:a567982e330aad44c2f4c50c7f5fa4706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54cd3ea34b35773accd790dbba187e73"><td class="memItemLeft" align="right" valign="top"><a id="a54cd3ea34b35773accd790dbba187e73"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>applySpill</b> (<a class="el" href="classvgen_1_1LevelChunk.html">vgen::LevelChunk</a> &amp;center, int cx, int cz) override</td></tr>
+<tr class="separator:a54cd3ea34b35773accd790dbba187e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3a21a10addc7e55d8f50f4b30acc93"><td class="memItemLeft" align="right" valign="top"><a id="a1a3a21a10addc7e55d8f50f4b30acc93"></a>
+<a class="el" href="classvgen_1_1Level.html">vgen::Level</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getLevel</b> () override</td></tr>
+<tr class="separator:a1a3a21a10addc7e55d8f50f4b30acc93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac843e3703d88d04b4800298eef3072f7"><td class="memItemLeft" align="right" valign="top"><a id="ac843e3703d88d04b4800298eef3072f7"></a>
+<a class="el" href="classvgen_1_1Dimension.html">vgen::Dimension</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getDimension</b> () override</td></tr>
+<tr class="separator:ac843e3703d88d04b4800298eef3072f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44a529b4105ff26bee11e33a8ef97855"><td class="memItemLeft" align="right" valign="top"><a id="a44a529b4105ff26bee11e33a8ef97855"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>queueSpill</b> (int cx, int cz, uint32_t index, uint8_t id, uint8_t data) override</td></tr>
+<tr class="separator:a44a529b4105ff26bee11e33a8ef97855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad71789a5fac7cd01b1d25b9680fc95fa"><td class="memItemLeft" align="right" valign="top"><a id="ad71789a5fac7cd01b1d25b9680fc95fa"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>drainSpills</b> (int cx, int cz, <a class="el" href="structmcp__chunk.html">mcp_chunk_t</a> *chunk) override</td></tr>
+<tr class="separator:ad71789a5fac7cd01b1d25b9680fc95fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/world/generator/<a class="el" href="Nether_8h_source.html">Nether.h</a></li>

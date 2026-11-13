@@ -7,6 +7,7 @@ var dir_9f76cabe24041cfb851f45031c1cd233 =
     [ "BiomeSource.h", "BiomeSource_8h_source.html", null ],
     [ "DesertBiome.h", "DesertBiome_8h_source.html", null ],
     [ "ExtremeHillsBiome.h", "ExtremeHillsBiome_8h_source.html", null ],
+    [ "FixedBiomeSource.h", "FixedBiomeSource_8h_source.html", null ],
     [ "ForestBiome.h", "ForestBiome_8h_source.html", null ],
     [ "IceBiome.h", "IceBiome_8h_source.html", null ],
     [ "JungleBiome.h", "JungleBiome_8h_source.html", null ],
