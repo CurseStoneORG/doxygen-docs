@@ -672,46 +672,59 @@ $(document).ready(function(){initNavTree('World_8h_source.html',''); initResizab
 <div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;    std::unordered_map&lt;uint64_t, std::shared_ptr&lt;cursestone::tile::Tile&gt;&gt; tiles_;</div>
 <div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;    <span class="keyword">mutable</span> std::mutex tiles_mtx_;</div>
 <div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">// Tracks chunks whose tile NBT has been loaded this session.</span></div>
-<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_hydrated_chunks_;</div>
-<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160; </div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="comment">// Tracks chunks whose stored tile NBT must be rebuilt after removals.</span></div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_dirty_chunks_;</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">// Manages sky and block light propagation.</span></div>
-<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1LightEngine.html">LightEngine</a> light_;</div>
-<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160; </div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;    <span class="comment">// Dynamic-liquid wake queue (see queueLiquidWake). Chunks are queued</span></div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    <span class="comment">// from the generation worker thread and drained on the main thread;</span></div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    <span class="comment">// next_cell_ is the scan cursor so a chunk whose dynamic cells exceed</span></div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;    <span class="comment">// one tick&#39;s submission budget resumes where it stopped.</span></div>
-<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="keyword">struct </span>LiquidWake {</div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;        int32_t cx;</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;        int32_t cz;</div>
-<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;        uint32_t next_cell;</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    };</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;    std::deque&lt;LiquidWake&gt; liquid_wake_;</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    std::unordered_set&lt;uint64_t&gt; liquid_wake_keys_;</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <span class="keyword">mutable</span> std::mutex liquid_wake_mtx_;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;    <span class="comment">// Per-chunk tile index: chunk key -&gt; slots of (packed tile pos, tile).</span></div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;    <span class="comment">// Mirrors tiles_ under the same mutex (tiles_ stays the authority for</span></div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;    <span class="comment">// position lookups) so chunk-send, save grouping and eviction touch</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;    <span class="comment">// O(tiles of the chunk) instead of scanning the whole world map</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;    <span class="comment">// (CURSESTONE_ARCHITECTURE_AUDIT #16). The packed position lives in</span></div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;    <span class="comment">// each slot so removal and eviction never re-derive keys from the</span></div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;    <span class="comment">// tile&#39;s float position. Chunks without tiles carry no bucket.</span></div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;    <span class="keyword">struct </span>TileSlot {</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        uint64_t key;</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        std::shared_ptr&lt;cursestone::tile::Tile&gt; tile;</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;    };</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    std::unordered_map&lt;uint64_t, std::vector&lt;TileSlot&gt;&gt; tiles_by_chunk_;</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;    <span class="comment">// Tracks chunks whose tile NBT has been loaded this session.</span></div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_hydrated_chunks_;</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; </div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    <span class="comment">// Tracks chunks whose stored tile NBT must be rebuilt after removals.</span></div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    std::unordered_set&lt;uint64_t&gt; tiles_dirty_chunks_;</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160; </div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;    <span class="comment">// Manages sky and block light propagation.</span></div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;    <a class="code" href="classcursestone_1_1world_1_1LightEngine.html">LightEngine</a> light_;</div>
 <div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160; </div>
-<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="keyword">static</span> uint64_t packChunkPos(int32_t cx, int32_t cz) {</div>
-<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cx));</div>
-<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cz));</div>
-<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 32) | uz;</div>
-<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    }</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160; </div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;    <span class="comment">// Packs 28-bit X/Z coordinates and an 8-bit Y coordinate into one key.</span></div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <span class="keyword">static</span> uint64_t packTilePos(int32_t x, int32_t y, int32_t z) {</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(x)) &amp; 0xFFFFFFFULL;</div>
-<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(z)) &amp; 0xFFFFFFFULL;</div>
-<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;        uint64_t uy = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(y));</div>
-<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 36) | (uz &lt;&lt; 8) | uy;</div>
-<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;    }</div>
-<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;};</div>
-<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160; </div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;<span class="comment">// Broadcasts a single block update to every viewer of the chunk.</span></div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;<span class="keywordtype">void</span> sendUpdateBlock(World* w, int32_t x, int32_t y, int32_t z, uint8_t <span class="keywordtype">id</span>, uint8_t data);</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <span class="comment">// Dynamic-liquid wake queue (see queueLiquidWake). Chunks are queued</span></div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;    <span class="comment">// from the generation worker thread and drained on the main thread;</span></div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <span class="comment">// next_cell_ is the scan cursor so a chunk whose dynamic cells exceed</span></div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;    <span class="comment">// one tick&#39;s submission budget resumes where it stopped.</span></div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    <span class="keyword">struct </span>LiquidWake {</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;        int32_t cx;</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;        int32_t cz;</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;        uint32_t next_cell;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;    };</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    std::deque&lt;LiquidWake&gt; liquid_wake_;</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;    std::unordered_set&lt;uint64_t&gt; liquid_wake_keys_;</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;    <span class="keyword">mutable</span> std::mutex liquid_wake_mtx_;</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160; </div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keyword">static</span> uint64_t packChunkPos(int32_t cx, int32_t cz) {</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cx));</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(cz));</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 32) | uz;</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;    }</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;    <span class="comment">// Packs 28-bit X/Z coordinates and an 8-bit Y coordinate into one key.</span></div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    <span class="keyword">static</span> uint64_t packTilePos(int32_t x, int32_t y, int32_t z) {</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;        uint64_t ux = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(x)) &amp; 0xFFFFFFFULL;</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        uint64_t uz = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint32_t<span class="keyword">&gt;</span>(z)) &amp; 0xFFFFFFFULL;</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;        uint64_t uy = <span class="keyword">static_cast&lt;</span>uint64_t<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span>uint8_t<span class="keyword">&gt;</span>(y));</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;        <span class="keywordflow">return</span> (ux &lt;&lt; 36) | (uz &lt;&lt; 8) | uy;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    }</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;};</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="comment">// Broadcasts a single block update to every viewer of the chunk.</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="keywordtype">void</span> sendUpdateBlock(World* w, int32_t x, int32_t y, int32_t z, uint8_t <span class="keywordtype">id</span>, uint8_t data);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1ChunkManager_html"><div class="ttname"><a href="classcursestone_1_1world_1_1ChunkManager.html">cursestone::world::ChunkManager</a></div><div class="ttdef"><b>Definition:</b> ChunkManager.h:47</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1LightEngine_html"><div class="ttname"><a href="classcursestone_1_1world_1_1LightEngine.html">cursestone::world::LightEngine</a></div><div class="ttdef"><b>Definition:</b> LightEngine.h:71</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1PortalRegistry_html"><div class="ttname"><a href="classcursestone_1_1world_1_1PortalRegistry.html">cursestone::world::PortalRegistry</a></div><div class="ttdef"><b>Definition:</b> PortalRegistry.h:38</div></div>
