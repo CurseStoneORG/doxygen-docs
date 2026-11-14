@@ -1,6 +1,7 @@
 var classcursestone_1_1network_1_1protocol_1_1PacketWriter =
 [
     [ "PacketWriter", "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a8b11b28fe6d7ae13b53f2039481332eb", null ],
+    [ "reserve", "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a677a8d540d5ee5ae39c6a051d9ffaa5b", null ],
     [ "writeBEString", "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a92faa940c562f0088d5c5a2aea301e6d", null ],
     [ "writeBytes", "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#aa7be8ea94f627713f610b774053ab408", null ],
     [ "writeF32BE", "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#aa65490caf9a5d72b1958ca90c247899e", null ],

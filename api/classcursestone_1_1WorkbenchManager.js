@@ -3,7 +3,7 @@ var classcursestone_1_1WorkbenchManager =
     [ "isActive", "classcursestone_1_1WorkbenchManager.html#a7cc79095ce7262ad86058b0130bd68ce", null ],
     [ "onAutosave", "classcursestone_1_1WorkbenchManager.html#a7e08b4f07c7a034fb17840be9aa778db", null ],
     [ "onDisconnect", "classcursestone_1_1WorkbenchManager.html#ac5b48a7cc52b78a035a7b9348197ac37", null ],
-    [ "onPacketIn", "classcursestone_1_1WorkbenchManager.html#a1319638c60f3b63806f027a829be8414", null ],
+    [ "onPacketIn", "classcursestone_1_1WorkbenchManager.html#a946dea63da719314e454b091ce578fec", null ],
     [ "onPacketOut", "classcursestone_1_1WorkbenchManager.html#ab02368d8a8614c46f18336e9377659c6", null ],
     [ "onPlayerUpdate", "classcursestone_1_1WorkbenchManager.html#a550cc460516aea15d2b067dc038fd957", null ],
     [ "onTickEnd", "classcursestone_1_1WorkbenchManager.html#ad35d8f8a5b92ad3c4e25193284737612", null ],
