@@ -1,5 +1,10 @@
 var NAVTREEINDEX24 =
 {
+"classvgen_1_1SimpleHouse.html#a3d12e57e1b03213ed76900dcc418052a":[9,0,2,158,1],
+"classvgen_1_1SimpleHouse.html#a877c46478d3ee13bede5ec47e6fdc137":[9,0,2,158,0],
+"classvgen_1_1SimpleHouse.html#abdeecb28bb129ee6fd4a67648d1b2943":[9,0,2,158,3],
+"classvgen_1_1SimpleHouse.html#ad29d8063fa3f46c0f3da2e04625a52be":[9,0,2,158,6],
+"classvgen_1_1SimpleHouse.html#ad8d61d4829a1b7292fc5c2e89cf934fa":[9,0,2,158,5],
 "classvgen_1_1SimpleHouse.html#afa0f469d8dcffb72c238976f791ff315":[9,0,2,158,4],
 "classvgen_1_1SimplexNoise.html":[9,0,2,172],
 "classvgen_1_1SimplexNoise.html#a0add8dfe26247b77a6ac6b82a5414c9f":[9,0,2,172,4],
@@ -244,10 +249,5 @@ var NAVTREEINDEX24 =
 "classvgen_1_1VillagePiece.html#a2f8d5ab62d7c68df5d8a9218f2df7638":[9,0,2,155,24],
 "classvgen_1_1VillagePiece.html#a2fd678eabe5d3e4e36830616b3cc271c":[9,0,2,155,6],
 "classvgen_1_1VillagePiece.html#a3d4054b058485394190f187f4f9b91f0":[9,0,2,155,17],
-"classvgen_1_1VillagePiece.html#a4dcf860bb32a7fa1a2c0994d6a164586":[9,0,2,155,21],
-"classvgen_1_1VillagePiece.html#a5b6e1150e16b85a2d818710c1a9f9ad3":[9,0,2,155,22],
-"classvgen_1_1VillagePiece.html#a6f03ce07023998737a16af305de7b18c":[9,0,2,155,4],
-"classvgen_1_1VillagePiece.html#a83fa24f8cd68ba441706405d97b89eff":[9,0,2,155,10],
-"classvgen_1_1VillagePiece.html#a8c12db5ec70695d2c7855ecc9fd2b3a8":[9,0,2,155,15],
-"classvgen_1_1VillagePiece.html#a92ffcdf8b9fe8cee0501d832086eac7a":[9,0,2,155,14]
+"classvgen_1_1VillagePiece.html#a4dcf860bb32a7fa1a2c0994d6a164586":[9,0,2,155,21]
 };

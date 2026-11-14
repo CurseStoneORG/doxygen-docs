@@ -1,5 +1,10 @@
 var NAVTREEINDEX26 =
 {
+"namespacecursestone.html#a9ff205cb621b43c64560c1d0fe4a7907":[8,0,0,56],
+"namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223":[8,0,0,59],
+"namespacecursestone.html#adec485e08dd2b6fe4a06b0549e970f1a":[8,0,0,58],
+"namespacecursestone_1_1utils.html":[8,0,0,16],
+"namespacecursestone_1_1utils.html#a419f94d4e820fe780a0e546cbb9c053c":[8,0,0,16,9],
 "namespacecursestone_1_1utils.html#a5645fe9cf148a69e62272a15dfc57795":[8,0,0,16,7],
 "namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0":[8,0,0,16,13],
 "namespacecursestone_1_1utils.html#a7b1ae3b94627cc7ab1067eb816f92563":[8,0,0,16,8],
@@ -244,10 +249,5 @@ var NAVTREEINDEX26 =
 "structcursestone_1_1world_1_1ArrowEntity.html#a94cf9824de9d94f1c5a95a8f2a4e686f":[9,0,0,16,10,12],
 "structcursestone_1_1world_1_1ArrowEntity.html#a9823a88fe5e92e911a6035223021c664":[9,0,0,16,10,9],
 "structcursestone_1_1world_1_1ArrowEntity.html#aa04b099d3fcdf3b8bd9bc4502ac5690a":[9,0,0,16,10,22],
-"structcursestone_1_1world_1_1ArrowEntity.html#aa87f136a3fc3d7cc5d84fcc7b9b52491":[9,0,0,16,10,17],
-"structcursestone_1_1world_1_1ArrowEntity.html#ac36a2b9f92b629bb2e36eca71ecf3708":[9,0,0,16,10,4],
-"structcursestone_1_1world_1_1ArrowEntity.html#ad3fc12e2c13914bb6beac38be35f0953":[9,0,0,16,10,15],
-"structcursestone_1_1world_1_1ArrowEntity.html#aded4064957be93ad24cbdce838600b28":[9,0,0,16,10,7],
-"structcursestone_1_1world_1_1ArrowEntity.html#aef3938edcb2cb25334dd11ecd3215948":[9,0,0,16,10,5],
-"structcursestone_1_1world_1_1ArrowEntity.html#af19692fda8fc324dcf2071386e9b54d2":[9,0,0,16,10,16]
+"structcursestone_1_1world_1_1ArrowEntity.html#aa87f136a3fc3d7cc5d84fcc7b9b52491":[9,0,0,16,10,17]
 };

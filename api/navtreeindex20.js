@@ -1,5 +1,10 @@
 var NAVTREEINDEX20 =
 {
+"classvgen_1_1BiomeDecorator.html#a88b83119995f94ce2bb215e50c88999c":[9,0,2,2,38],
+"classvgen_1_1BiomeDecorator.html#a9295d07b5eb12add793e0aea200f2e9a":[9,0,2,2,25],
+"classvgen_1_1BiomeDecorator.html#a97bbd72cd349670df986db2b1b3ad849":[9,0,2,2,15],
+"classvgen_1_1BiomeDecorator.html#a9a4f4f365fdc688963b4bed23276e1f6":[9,0,2,2,46],
+"classvgen_1_1BiomeDecorator.html#a9c411a93adfd6c04e023c704f298a678":[9,0,2,2,13],
 "classvgen_1_1BiomeDecorator.html#a9e776721e0c76962745f566eb6a42adf":[9,0,2,2,39],
 "classvgen_1_1BiomeDecorator.html#a9f434257a2a189408953fa64472adcb4":[9,0,2,2,47],
 "classvgen_1_1BiomeDecorator.html#a9fbe990e7a9699f0d74085a1dafc10aa":[9,0,2,2,63],
@@ -244,10 +249,5 @@ var NAVTREEINDEX20 =
 "classvgen_1_1Direction.html":[9,0,2,45],
 "classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968":[9,0,2,45,0],
 "classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968a0dfa7266888c3952e3a986d4a54dd2a7":[9,0,2,45,0,4],
-"classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968a36120567f79c32243a8f1c1596e2f034":[9,0,2,45,0,0],
-"classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968a3ef344c5bbf522f94c45c59cd40b0ff3":[9,0,2,45,0,3],
-"classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968a50da1dcd8a19d5812ae5f964a012f0e3":[9,0,2,45,0,2],
-"classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968a5331a1736831e045583c860252fde1b3":[9,0,2,45,0,1],
-"classvgen_1_1DirtBlock.html":[9,0,2,36],
-"classvgen_1_1DirtBlock.html#ad513e287b32dc5df6acf02e9848a3270":[9,0,2,36,0]
+"classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968a36120567f79c32243a8f1c1596e2f034":[9,0,2,45,0,0]
 };

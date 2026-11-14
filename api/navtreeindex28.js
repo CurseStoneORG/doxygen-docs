@@ -1,5 +1,12 @@
 var NAVTREEINDEX28 =
 {
+"structmcp__rak__session.html#aa2a61c0096918ffe4c240be3c1916aaa":[9,0,17,17],
+"structmcp__rak__session.html#aa390f747678771e04f014d279f5ab34b":[9,0,17,24],
+"structmcp__rak__session.html#aa5dc900b4206383657c8c54eb90f4d1e":[9,0,17,27],
+"structmcp__rak__session.html#aa7354d8e565454af7c7d7a527dde52ae":[9,0,17,54],
+"structmcp__rak__session.html#aa80b493f69e176c83b2fc445346003f6":[9,0,17,76],
+"structmcp__rak__session.html#aa847c843ff40170e773975f7f9931483":[9,0,17,88],
+"structmcp__rak__session.html#aac45c6225baab544b3243945e1291c0a":[9,0,17,78],
 "structmcp__rak__session.html#aacdca656427dbdd2356d91b314b36091":[9,0,17,11],
 "structmcp__rak__session.html#aacf9596e20ec6f754ecb2e2b3a8eda6f":[9,0,17,12],
 "structmcp__rak__session.html#aaf4a7087be993c019bd3d83e2c638941":[9,0,17,1],
@@ -242,12 +249,5 @@ var NAVTREEINDEX28 =
 "structvgen_1_1MineshaftData.html":[9,0,2,116],
 "structvgen_1_1MineshaftData.html#a172b58eeb055d47eff77f7e43ccecdd3":[9,0,2,116,2],
 "structvgen_1_1MineshaftData.html#a224013e577c4b9053296a92117226d0f":[9,0,2,116,3],
-"structvgen_1_1MineshaftData.html#a5f99eab89919c19a0d30e1555198a2ed":[9,0,2,116,0],
-"structvgen_1_1MineshaftData.html#a6856b61e5d41be41b36d791e5cf4e652":[9,0,2,116,1],
-"structvgen_1_1NibblePair.html":[9,0,2,184],
-"structvgen_1_1NibblePair.html#a3a70aca630428d56f78eeeb53ac067e6":[9,0,2,184,0],
-"structvgen_1_1NibblePair.html#a6ab9efb75c207763909efbbe57bb3134":[9,0,2,184,1],
-"structvgen_1_1Pos.html":[9,0,2,189],
-"structvgen_1_1Pos.html#a1cc699d4f48de8fc1db06223ea2266a4":[9,0,2,189,11],
-"structvgen_1_1Pos.html#a1fc4e17be14bf46eb67f7fc8068e8e39":[9,0,2,189,12]
+"structvgen_1_1MineshaftData.html#a5f99eab89919c19a0d30e1555198a2ed":[9,0,2,116,0]
 };

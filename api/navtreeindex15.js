@@ -1,5 +1,10 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1network_1_1protocol_1_1BlockEventPacket.html#a7a4bd7b10ceb6dfde97766ef1f3b08cd":[9,0,0,8,0,7,4],
+"classcursestone_1_1network_1_1protocol_1_1BlockEventPacket.html#a94ec827d615ec6431649aeea4e899c8d":[9,0,0,8,0,7,2],
+"classcursestone_1_1network_1_1protocol_1_1BlockEventPacket.html#ae3cf089f1ac4b031b62acf104fd39cf7":[9,0,0,8,0,7,6],
+"classcursestone_1_1network_1_1protocol_1_1BlockEventPacket.html#aee204716366ae6140f094979c5019918":[9,0,0,8,0,7,1],
+"classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html":[9,0,0,8,0,8],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a197698f6c80c431d100cf54580359f3d":[9,0,0,8,0,8,2],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a35ad8a95cf53099585d195fee4bca683":[9,0,0,8,0,8,1],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a4c4efa102599ded750fbb5083b80867d":[9,0,0,8,0,8,7],
@@ -244,10 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#ad124c2f677c2c94c318c18e0d6defff7":[9,0,0,8,0,19,14],
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#adf1d37e7afd06d306b4471b4e74a4519":[9,0,0,8,0,19,7],
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#ae19883b05a85f078f46b13a56494a0a4":[9,0,0,8,0,19,24],
-"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#ae4ee06ce0bb5ab9c5764b7abc7a432ee":[9,0,0,8,0,19,21],
-"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#aee54bc37fd436ba74cb58f0eaf095536":[9,0,0,8,0,19,1],
-"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#aee630b8442dd08ca1b17d3284b3dbb15":[9,0,0,8,0,19,9],
-"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html":[9,0,0,8,0,20],
-"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a274404a7f064b5c38405fcbbc116b57a":[9,0,0,8,0,20,11],
-"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a34a124288bdf9d6db0f54da4a3ec2887":[9,0,0,8,0,20,16]
+"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#ae4ee06ce0bb5ab9c5764b7abc7a432ee":[9,0,0,8,0,19,21]
 };

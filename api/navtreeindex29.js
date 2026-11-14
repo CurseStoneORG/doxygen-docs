@@ -1,5 +1,12 @@
 var NAVTREEINDEX29 =
 {
+"structvgen_1_1MineshaftData.html#a6856b61e5d41be41b36d791e5cf4e652":[9,0,2,116,1],
+"structvgen_1_1NibblePair.html":[9,0,2,184],
+"structvgen_1_1NibblePair.html#a3a70aca630428d56f78eeeb53ac067e6":[9,0,2,184,0],
+"structvgen_1_1NibblePair.html#a6ab9efb75c207763909efbbe57bb3134":[9,0,2,184,1],
+"structvgen_1_1Pos.html":[9,0,2,189],
+"structvgen_1_1Pos.html#a1cc699d4f48de8fc1db06223ea2266a4":[9,0,2,189,11],
+"structvgen_1_1Pos.html#a1fc4e17be14bf46eb67f7fc8068e8e39":[9,0,2,189,12],
 "structvgen_1_1Pos.html#a29c2d59d1a99fdb11db532044f3ceade":[9,0,2,189,13],
 "structvgen_1_1Pos.html#a2e33ff7ec27ba7acf4f40f2770982245":[9,0,2,189,5],
 "structvgen_1_1Pos.html#a3579e15517a31e62de564569dea63fbb":[9,0,2,189,6],

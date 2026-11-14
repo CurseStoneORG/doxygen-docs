@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"VersionString_8h_source.html":[10,0,0,18,20],
 "VgenSource_8h_source.html":[10,0,0,21,1,2,13],
 "VgenTags_8h_source.html":[10,0,0,21,1,2,14],
 "VgenWorld_8h_source.html":[10,0,0,21,1,2,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1Player.html#ab6d78072a92c548fd7d9130c43573198":[9,0,0,46,1],
 "classcursestone_1_1Player.html#ab7a512da221ae09f109b79a2042ccae6":[9,0,0,46,82],
 "classcursestone_1_1Player.html#ab7dc00f0224753c74a0f82f5ac801493":[9,0,0,46,153],
-"classcursestone_1_1Player.html#abafa890ce97abd64230a1b344125cb9a":[9,0,0,46,168],
-"classcursestone_1_1Player.html#abe35c41ce8ee8ce33959edfdf81f4b22":[9,0,0,46,152]
+"classcursestone_1_1Player.html#abafa890ce97abd64230a1b344125cb9a":[9,0,0,46,168]
 };

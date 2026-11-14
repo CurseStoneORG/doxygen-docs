@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"classcursestone_1_1Player.html#abe35c41ce8ee8ce33959edfdf81f4b22":[9,0,0,46,152],
 "classcursestone_1_1Player.html#abf05c1a28970e7816a4df16439d8af4e":[9,0,0,46,69],
 "classcursestone_1_1Player.html#ac12c9238c98813f439468f5d8530d300":[9,0,0,46,151],
 "classcursestone_1_1Player.html#ac3436c16750c2320b17300525247dc7f":[9,0,0,46,169],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "classcursestone_1_1block_1_1BlockFire.html":[9,0,0,0,14],
 "classcursestone_1_1block_1_1BlockFire.html#a0c21a2c68279d923702b6caf3567d14b":[9,0,0,0,14,2],
 "classcursestone_1_1block_1_1BlockFire.html#a1611bd66409f7c2ce0eec8a0e32d7b48":[9,0,0,0,14,0],
-"classcursestone_1_1block_1_1BlockFire.html#a3b44201b76e2c4db0bf7f62f8d4a5262":[9,0,0,0,14,5],
-"classcursestone_1_1block_1_1BlockFire.html#a3bb60bab994adfb689ac77fed0f9b29b":[9,0,0,0,14,6]
+"classcursestone_1_1block_1_1BlockFire.html#a3b44201b76e2c4db0bf7f62f8d4a5262":[9,0,0,0,14,5]
 };

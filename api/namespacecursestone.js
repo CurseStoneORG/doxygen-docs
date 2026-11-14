@@ -1144,6 +1144,7 @@ var namespacecursestone =
       [ "set_float", "CompoundTag_8cpp.html#a69db10d557e41e769ff6bba212b6939a", null ],
       [ "set_int", "CompoundTag_8cpp.html#a7820d7ed6ee075762a7df00f8784ec31", null ],
       [ "set_long", "CompoundTag_8cpp.html#a0979152c0a8f37b41f4af362abd156e1", null ],
+      [ "set_moved", "CompoundTag_8cpp.html#a7b95fd3e2ad8953e997c790be59b1143", null ],
       [ "set_name", "Tag_8h.html#a9d859c5c76e1de5dd3710b1f9dc21db0", null ],
       [ "set_name", "Tag_8h.html#ad7d67b491239cd5471196e776272235c", null ],
       [ "set_short", "CompoundTag_8cpp.html#a8dcd4f842471a011eef390fd5b48cc76", null ],
