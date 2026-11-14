@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1NBCastleStalkRoom.html#a6fc8062af0218121543a03ab1bcafa9e":[9,0,2,133,2],
 "classvgen_1_1NBCastleStalkRoom.html#a9b73aab533cdf91d11a071f9e45762c9":[9,0,2,133,3],
 "classvgen_1_1NBCastleStalkRoom.html#ab981fe0d05658633581eaf3c909dc138":[9,0,2,133,1],
 "classvgen_1_1NBCastleStalkRoom.html#ad2b87374c4336f5622b1c3a3d86cac0d":[9,0,2,133,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1SimpleHouse.html#a877c46478d3ee13bede5ec47e6fdc137":[9,0,2,158,0],
 "classvgen_1_1SimpleHouse.html#abdeecb28bb129ee6fd4a67648d1b2943":[9,0,2,158,3],
 "classvgen_1_1SimpleHouse.html#ad29d8063fa3f46c0f3da2e04625a52be":[9,0,2,158,6],
-"classvgen_1_1SimpleHouse.html#ad8d61d4829a1b7292fc5c2e89cf934fa":[9,0,2,158,5],
-"classvgen_1_1SimpleHouse.html#afa0f469d8dcffb72c238976f791ff315":[9,0,2,158,4]
+"classvgen_1_1SimpleHouse.html#ad8d61d4829a1b7292fc5c2e89cf934fa":[9,0,2,158,5]
 };

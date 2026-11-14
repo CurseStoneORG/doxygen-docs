@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1entity_1_1Living.html#a8117dad5609828d8af0ec88063b30c71":[9,0,0,2,8,9],
 "classcursestone_1_1entity_1_1Living.html#a8d135268b9e0f335b8b29d11abc991e4":[9,0,0,2,8,30],
 "classcursestone_1_1entity_1_1Living.html#a980c4d9a74b0b77c2d165cdef8ca0f6c":[9,0,0,2,8,23],
 "classcursestone_1_1entity_1_1Living.html#a98cadd85f58648a81d2b416ab75eacb4":[9,0,0,2,8,29],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1inventory_1_1BaseInventory.html#a8f7447eb742f30bf943c4ce561f4ea3f":[9,0,0,4,0,21],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a9a63d105b46690be296a9e542c67955f":[9,0,0,4,0,14],
 "classcursestone_1_1inventory_1_1BaseInventory.html#aa4506920797ce953b067b3f5f4cdd2e7":[9,0,0,4,0,30],
-"classcursestone_1_1inventory_1_1BaseInventory.html#aa622af8e95c6127eb236cbf534ea9c11":[9,0,0,4,0,10],
-"classcursestone_1_1inventory_1_1BaseInventory.html#aa69fa4bbd1c852cd6ced4e07b1d0811c":[9,0,0,4,0,15]
+"classcursestone_1_1inventory_1_1BaseInventory.html#aa622af8e95c6127eb236cbf534ea9c11":[9,0,0,4,0,10]
 };

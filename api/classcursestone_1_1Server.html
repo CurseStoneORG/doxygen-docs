@@ -138,6 +138,9 @@ const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_
 std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Player.html">Player</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b">playersSnapshot</a> () const</td></tr>
 <tr class="memdesc:ae2c7def5cd17b59ef4a26b4906c5aa3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a thread-safe snapshot of the online player list. <br /></td></tr>
 <tr class="separator:ae2c7def5cd17b59ef4a26b4906c5aa3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4a2c78ba6f9377f961b3de7556b48ad"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Player.html">Player</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#af4a2c78ba6f9377f961b3de7556b48ad">playersSnapshotRef</a> () const</td></tr>
+<tr class="memdesc:af4a2c78ba6f9377f961b3de7556b48ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main-thread fast path: returns the cached player list, rebuilt only when the player set changed (join, tick-start reap).  <a href="classcursestone_1_1Server.html#af4a2c78ba6f9377f961b3de7556b48ad">More...</a><br /></td></tr>
+<tr class="separator:af4a2c78ba6f9377f961b3de7556b48ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb150d02a809b387e028745a26d7273a"><td class="memItemLeft" align="right" valign="top"><a id="adb150d02a809b387e028745a26d7273a"></a>
 <a class="el" href="classcursestone_1_1Player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getPlayer</b> (const std::string &amp;name) const</td></tr>
 <tr class="separator:adb150d02a809b387e028745a26d7273a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -364,6 +367,26 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
 
 <p>Loads a world or returns the existing world with the given name. </p>
 <dl class="section return"><dt>Returns</dt><dd>A borrowed world pointer, or nullptr on failure. </dd></dl>
+
+</div>
+</div>
+<a id="af4a2c78ba6f9377f961b3de7556b48ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4a2c78ba6f9377f961b3de7556b48ad">&#9670;&nbsp;</a></span>playersSnapshotRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Player.html">Player</a> &gt; &gt; &amp; cursestone::Server::playersSnapshotRef </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Main-thread fast path: returns the cached player list, rebuilt only when the player set changed (join, tick-start reap). </p>
+<p>Zero allocations and zero locks in steady state. Broadcast and iteration call sites use this instead of copying <a class="el" href="classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b" title="Returns a thread-safe snapshot of the online player list.">playersSnapshot()</a> per call. Must be called on the main thread only: the cache is not synchronized, cross-thread callers keep <a class="el" href="classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b" title="Returns a thread-safe snapshot of the online player list.">playersSnapshot()</a>. </p>
 
 </div>
 </div>

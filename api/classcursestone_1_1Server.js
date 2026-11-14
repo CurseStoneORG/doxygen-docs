@@ -47,6 +47,7 @@ var classcursestone_1_1Server =
     [ "players", "classcursestone_1_1Server.html#a113cdb1bde59dccd494f1e3a62ce01c0", null ],
     [ "players", "classcursestone_1_1Server.html#ac5d33db09d6749c79718dae20c91f24c", null ],
     [ "playersSnapshot", "classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b", null ],
+    [ "playersSnapshotRef", "classcursestone_1_1Server.html#af4a2c78ba6f9377f961b3de7556b48ad", null ],
     [ "port", "classcursestone_1_1Server.html#a1644f355e02457e1fdffec32e76f6d0a", null ],
     [ "removeOp", "classcursestone_1_1Server.html#ae825cca89ef104967a2630c71fd2cd4b", null ],
     [ "removePlayer", "classcursestone_1_1Server.html#a537feba3b5047aaa85f783c6af0b721f", null ],

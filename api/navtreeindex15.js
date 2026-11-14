@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a197698f6c80c431d100cf54580359f3d":[9,0,0,8,0,8,2],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a35ad8a95cf53099585d195fee4bca683":[9,0,0,8,0,8,1],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a4c4efa102599ded750fbb5083b80867d":[9,0,0,8,0,8,7],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a804bab03d83e35b2062ca875f1200335":[9,0,0,8,0,8,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1network_1_1protocol_1_1PacketReader.html#aee630b8442dd08ca1b17d3284b3dbb15":[9,0,0,8,0,19,9],
 "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html":[9,0,0,8,0,20],
 "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a274404a7f064b5c38405fcbbc116b57a":[9,0,0,8,0,20,11],
-"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a34a124288bdf9d6db0f54da4a3ec2887":[9,0,0,8,0,20,16],
-"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a38bb9ca092755693b14ccc8f69f9e3bb":[9,0,0,8,0,20,23]
+"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a34a124288bdf9d6db0f54da4a3ec2887":[9,0,0,8,0,20,16]
 };

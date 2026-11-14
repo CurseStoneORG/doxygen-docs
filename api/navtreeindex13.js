@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1item_1_1ItemDiamond.html#ad40157961879898dc9642e5fdd2c1ce1":[9,0,0,5,25,0],
 "classcursestone_1_1item_1_1ItemDiamondBoots.html":[9,0,0,5,26],
 "classcursestone_1_1item_1_1ItemDiamondBoots.html#a0cbff5b1e6a42e3c7e03f95cf5cc3edd":[9,0,0,5,26,1],
 "classcursestone_1_1item_1_1ItemDiamondBoots.html#aec51e3f5f8eb76a9c999710ca6f36d41":[9,0,0,5,26,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1item_1_1ItemTool.html#a91e0295da778b3d63c4fa22c5fa736c9":[9,0,0,5,99,4],
 "classcursestone_1_1item_1_1ItemTool.html#aab1306e5392d3d7b0614618ec5e60421":[9,0,0,5,99,1],
 "classcursestone_1_1item_1_1ItemTool.html#aad73e79dcd5c3bbe931ee758e8a805fd":[9,0,0,5,99,5],
-"classcursestone_1_1item_1_1ItemTool.html#acb34f1f221da9b38c45efe0a5d261a66":[9,0,0,5,99,0],
-"classcursestone_1_1item_1_1ItemWheat.html":[9,0,0,5,100]
+"classcursestone_1_1item_1_1ItemTool.html#acb34f1f221da9b38c45efe0a5d261a66":[9,0,0,5,99,0]
 };

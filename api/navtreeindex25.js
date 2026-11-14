@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"classvgen_1_1VillagePiece.html#a94e84a5e6d7e6dec9c5461f6196c5bbc":[9,0,2,155,20],
 "classvgen_1_1VillagePiece.html#a9aa2e4af98196fe87c3a628595494fb4":[9,0,2,155,8],
 "classvgen_1_1VillagePiece.html#a9b46437a8177cf763bb64b269c2ea158":[9,0,2,155,3],
 "classvgen_1_1VillagePiece.html#a9d9909ade94fd04ead469f55557f7891":[9,0,2,155,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223":[8,0,0,59],
 "namespacecursestone.html#adec485e08dd2b6fe4a06b0549e970f1a":[8,0,0,58],
 "namespacecursestone_1_1utils.html":[8,0,0,16],
-"namespacecursestone_1_1utils.html#a419f94d4e820fe780a0e546cbb9c053c":[8,0,0,16,9],
-"namespacecursestone_1_1utils.html#a5645fe9cf148a69e62272a15dfc57795":[8,0,0,16,7]
+"namespacecursestone_1_1utils.html#a419f94d4e820fe780a0e546cbb9c053c":[8,0,0,16,9]
 };

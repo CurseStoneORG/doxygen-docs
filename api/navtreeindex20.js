@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"classvgen_1_1BiomeDecorator.html#a9e776721e0c76962745f566eb6a42adf":[9,0,2,2,39],
 "classvgen_1_1BiomeDecorator.html#a9f434257a2a189408953fa64472adcb4":[9,0,2,2,47],
 "classvgen_1_1BiomeDecorator.html#a9fbe990e7a9699f0d74085a1dafc10aa":[9,0,2,2,63],
 "classvgen_1_1BiomeDecorator.html#aa1c9859a75f4de88f4f048aeba5b87eb":[9,0,2,2,65],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968a50da1dcd8a19d5812ae5f964a012f0e3":[9,0,2,45,0,2],
 "classvgen_1_1Direction.html#afc24e02ae1f7110f3f9f4f2b8fb08968a5331a1736831e045583c860252fde1b3":[9,0,2,45,0,1],
 "classvgen_1_1DirtBlock.html":[9,0,2,36],
-"classvgen_1_1DirtBlock.html#ad513e287b32dc5df6acf02e9848a3270":[9,0,2,36,0],
-"classvgen_1_1DirtBlock.html#ad513e287b32dc5df6acf02e9848a3270abef0152d4f0d66e65a94d22eb3e73c52":[9,0,2,36,0,1]
+"classvgen_1_1DirtBlock.html#ad513e287b32dc5df6acf02e9848a3270":[9,0,2,36,0]
 };

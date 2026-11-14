@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classvgen_1_1SimpleHouse.html#afa0f469d8dcffb72c238976f791ff315":[9,0,2,158,4],
 "classvgen_1_1SimplexNoise.html":[9,0,2,172],
 "classvgen_1_1SimplexNoise.html#a0add8dfe26247b77a6ac6b82a5414c9f":[9,0,2,172,4],
 "classvgen_1_1SimplexNoise.html#a271dec5b09ec40461501a235c59036f3":[9,0,2,172,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "classvgen_1_1VillagePiece.html#a6f03ce07023998737a16af305de7b18c":[9,0,2,155,4],
 "classvgen_1_1VillagePiece.html#a83fa24f8cd68ba441706405d97b89eff":[9,0,2,155,10],
 "classvgen_1_1VillagePiece.html#a8c12db5ec70695d2c7855ecc9fd2b3a8":[9,0,2,155,15],
-"classvgen_1_1VillagePiece.html#a92ffcdf8b9fe8cee0501d832086eac7a":[9,0,2,155,14],
-"classvgen_1_1VillagePiece.html#a94e84a5e6d7e6dec9c5461f6196c5bbc":[9,0,2,155,20]
+"classvgen_1_1VillagePiece.html#a92ffcdf8b9fe8cee0501d832086eac7a":[9,0,2,155,14]
 };
