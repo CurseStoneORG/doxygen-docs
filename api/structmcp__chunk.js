@@ -1,6 +1,7 @@
 var structmcp__chunk =
 [
     [ "biomes", "structmcp__chunk.html#a2a02b981c6c8d5b86ddacf101956f0ff", null ],
+    [ "block_edit_serial", "structmcp__chunk.html#a341650595c10d70d2184ac3d878edaaa", null ],
     [ "dirty", "structmcp__chunk.html#ad7ee0e0345590f84b207672a87c54dea", null ],
     [ "entities", "structmcp__chunk.html#a7ab61647bcdd68200888dc8ec331a497", null ],
     [ "entity_cap", "structmcp__chunk.html#a4cf8235e8aa9fee69e26bcb89b2311e2", null ],

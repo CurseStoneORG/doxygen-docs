@@ -23,6 +23,7 @@ var classcursestone_1_1Server =
     [ "getDefaultWorld", "classcursestone_1_1Server.html#a69875d52e208cbb7698e032dc570880a", null ],
     [ "getIPBans", "classcursestone_1_1Server.html#a556c189f4fd0f43bc462710b92da60d2", null ],
     [ "getMotd", "classcursestone_1_1Server.html#a1fe66b328025b7551c7908401c628ae0", null ],
+    [ "getMSPT", "classcursestone_1_1Server.html#a078ddfabb2582b4b86875da88fa274dd", null ],
     [ "getNameBans", "classcursestone_1_1Server.html#af32e312fbfceb5b231fa6cb9ad507908", null ],
     [ "getNetwork", "classcursestone_1_1Server.html#ad7f9ca7cae0ef787fd0a094d0e6bdd0e", null ],
     [ "getOfflinePlayerData", "classcursestone_1_1Server.html#a3e56e65d9ba66b928ba9defd1ff348c2", null ],
