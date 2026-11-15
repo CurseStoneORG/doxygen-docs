@@ -1,0 +1,27 @@
+var structCsEvent =
+[
+    [ "action", "structCsEvent.html#a3c21cd4955084eabb8f3349bf3012539", null ],
+    [ "amount", "structCsEvent.html#af07affa85f5121d3bcc40e74a9cd35b4", null ],
+    [ "blockId", "structCsEvent.html#ad0149495ed4d46b3b5570a1210cc4032", null ],
+    [ "cancelled", "structCsEvent.html#ab41533c7dc8ce276a95b226e35c3601f", null ],
+    [ "cause", "structCsEvent.html#a5d54481846ee77c813ca6c4db0000b77", null ],
+    [ "damager", "structCsEvent.html#a0bcdbee53f20f97ecf5dd8a7ee819442", null ],
+    [ "face", "structCsEvent.html#a92ad806499582b32c91fbe267554ad4a", null ],
+    [ "fromX", "structCsEvent.html#aecd1c63d70c489f48d2c568a7d46a892", null ],
+    [ "fromY", "structCsEvent.html#ad049fc5bb10c48285baccb7d81068b3e", null ],
+    [ "fromZ", "structCsEvent.html#ad4aa1b38eb404c1c6b65ec17d664b5d8", null ],
+    [ "inventory", "structCsEvent.html#a938ee05292f9eb8cbfc7cf0b03659259", null ],
+    [ "itemCount", "structCsEvent.html#abe78a9abe890742dbf3c1025c56b626c", null ],
+    [ "itemId", "structCsEvent.html#aab47b2a6c261aecc0443c5fbdf3a7439", null ],
+    [ "itemMeta", "structCsEvent.html#a55aa761185f46528bed64dd6e35a692c", null ],
+    [ "message", "structCsEvent.html#a3fd6df991a020443ee86b2b5e4c15517", null ],
+    [ "player", "structCsEvent.html#a64fe453976f4600d9cf333630035d518", null ],
+    [ "slot", "structCsEvent.html#a832396cb6b9d13443111d92b7e05f858", null ],
+    [ "toX", "structCsEvent.html#af1152a6050d50e187290c6cae99f8d99", null ],
+    [ "toY", "structCsEvent.html#a2f98eacc8d215bef1f67a8d6da1524e8", null ],
+    [ "toZ", "structCsEvent.html#a999742eb3263c0034155edf891fdd8a7", null ],
+    [ "type", "structCsEvent.html#a594c168f3d5b40f6ae4d4696292a6e25", null ],
+    [ "x", "structCsEvent.html#a2f062c3d081418315eba93068ae25439", null ],
+    [ "y", "structCsEvent.html#af37320e05aba50b661c8221f60397a53", null ],
+    [ "z", "structCsEvent.html#af962a18e01d445094cc870046559e02f", null ]
+];

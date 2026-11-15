@@ -5,6 +5,10 @@ var dir_40bb855b7b2023435b78cde29725ed48 =
     [ "LuaPlugin.h", "LuaPlugin_8h_source.html", null ],
     [ "MiniJson.h", "MiniJson_8h_source.html", null ],
     [ "MiniYaml.h", "MiniYaml_8h_source.html", null ],
+    [ "NativeAPI.h", "NativeAPI_8h_source.html", null ],
+    [ "NativeCommand.h", "NativeCommand_8h_source.html", null ],
+    [ "NativePlugin.h", "NativePlugin_8h_source.html", null ],
     [ "PathSafe.h", "PathSafe_8h_source.html", null ],
+    [ "PluginBase.h", "PluginBase_8h_source.html", null ],
     [ "PluginManager.h", "PluginManager_8h_source.html", null ]
 ];

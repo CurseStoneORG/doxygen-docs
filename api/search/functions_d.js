@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['writedefaultconfigs_1456',['writeDefaultConfigs',['../namespacecursestone_1_1utils.html#a91abddc8b7d39138161301056118706b',1,'cursestone::utils']]]
+  ['rungc_1561',['runGc',['../classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8',1,'cursestone::MemoryManager']]],
+  ['runtickloop_1562',['runTickLoop',['../classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131',1,'cursestone::Server']]]
 ];

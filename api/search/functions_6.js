@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['lasttickms_1429',['lastTickMs',['../classcursestone_1_1world_1_1World.html#aff52b965d8ab03977f1c8debaf8d7a7c',1,'cursestone::world::World']]],
-  ['limits_1430',['limits',['../classcursestone_1_1plugin_1_1LuaPlugin.html#a0284c33fd2fdb0f60ac0f02c7b08dabb',1,'cursestone::plugin::LuaPlugin']]],
-  ['loadall_1431',['loadAll',['../classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce',1,'cursestone::plugin::PluginManager']]],
-  ['loadworld_1432',['loadWorld',['../classcursestone_1_1Server.html#a5b261a0ca53391d20529f4a03a265b76',1,'cursestone::Server']]]
+  ['getblock_1535',['getBlock',['../classvgen_1_1StructurePiece.html#a961dc4073f9158d8cbd6b497d5daef52',1,'vgen::StructurePiece']]],
+  ['getblockid_1536',['getBlockId',['../classcursestone_1_1world_1_1World.html#a2ce9afacee86234fadde0927f9eca672',1,'cursestone::world::World']]],
+  ['getworlds_1537',['getWorlds',['../classcursestone_1_1Server.html#a1794d2af7c3c7724c5c16892ee6360fa',1,'cursestone::Server']]],
+  ['getworldshared_1538',['getWorldShared',['../classcursestone_1_1Server.html#a06573a1b487acbd04e39356c9847278c',1,'cursestone::Server']]]
 ];

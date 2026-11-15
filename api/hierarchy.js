@@ -174,8 +174,10 @@ var hierarchy =
       [ "cursestone::VersionCommand", "classcursestone_1_1VersionCommand.html", null ],
       [ "cursestone::WeatherCommand", "classcursestone_1_1WeatherCommand.html", null ],
       [ "cursestone::WorkbenchCommand", "classcursestone_1_1WorkbenchCommand.html", null ],
-      [ "cursestone::plugin::LuaCommand", "classcursestone_1_1plugin_1_1LuaCommand.html", null ]
+      [ "cursestone::plugin::LuaCommand", "classcursestone_1_1plugin_1_1LuaCommand.html", null ],
+      [ "cursestone::plugin::NativeCommand", "classcursestone_1_1plugin_1_1NativeCommand.html", null ]
     ] ],
+    [ "cursestone::plugin::NativePlugin::CommandEntry", "structcursestone_1_1plugin_1_1NativePlugin_1_1CommandEntry.html", null ],
     [ "cursestone::CommandMap", "classcursestone_1_1CommandMap.html", [
       [ "cursestone::SimpleCommandMap", "classcursestone_1_1SimpleCommandMap.html", null ]
     ] ],
@@ -196,6 +198,19 @@ var hierarchy =
     [ "cursestone::inventory::CraftingManager", "classcursestone_1_1inventory_1_1CraftingManager.html", null ],
     [ "cursestone::CrashDump", "classcursestone_1_1CrashDump.html", null ],
     [ "cursestone::inventory::CreativeItemDef", "structcursestone_1_1inventory_1_1CreativeItemDef.html", null ],
+    [ "CsCommandApi", "structCsCommandApi.html", null ],
+    [ "CsCommandSender", "structCsCommandSender.html", null ],
+    [ "CsDataApi", "structCsDataApi.html", null ],
+    [ "CsEvent", "structCsEvent.html", null ],
+    [ "CsEventApi", "structCsEventApi.html", null ],
+    [ "CsLogApi", "structCsLogApi.html", null ],
+    [ "CsPlayerApi", "structCsPlayerApi.html", null ],
+    [ "CsPluginApi", "structCsPluginApi.html", null ],
+    [ "CsPluginDesc", "structCsPluginDesc.html", null ],
+    [ "CsPluginVTable", "structCsPluginVTable.html", null ],
+    [ "CsSchedulerApi", "structCsSchedulerApi.html", null ],
+    [ "CsServerApi", "structCsServerApi.html", null ],
+    [ "CsWorldApi", "structCsWorldApi.html", null ],
     [ "cursestone::network::protocol::DataPacket", "classcursestone_1_1network_1_1protocol_1_1DataPacket.html", [
       [ "cursestone::network::protocol::AddEntityPacket", "classcursestone_1_1network_1_1protocol_1_1AddEntityPacket.html", null ],
       [ "cursestone::network::protocol::AddItemEntityPacket", "classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html", null ],
@@ -567,7 +582,6 @@ var hierarchy =
     [ "cursestone::world::format::anvil::LocationEntry", "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html", null ],
     [ "cursestone::loot::LootEntry", "structcursestone_1_1loot_1_1LootEntry.html", null ],
     [ "cursestone::loot::LootTable", "structcursestone_1_1loot_1_1LootTable.html", null ],
-    [ "cursestone::plugin::LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", null ],
     [ "cursestone::utils::MainLogger", "classcursestone_1_1utils_1_1MainLogger.html", null ],
     [ "vgen::Material", "classvgen_1_1Material.html", null ],
     [ "vgen::Math", "structvgen_1_1Math.html", null ],
@@ -637,6 +651,10 @@ var hierarchy =
     [ "vgen::Facing::Plane", "classvgen_1_1Facing_1_1Plane.html", null ],
     [ "cursestone::PlayerConfig", "structcursestone_1_1PlayerConfig.html", null ],
     [ "cursestone::diagnostics::PlayerSnapshot", "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html", null ],
+    [ "cursestone::plugin::PluginBase", "classcursestone_1_1plugin_1_1PluginBase.html", [
+      [ "cursestone::plugin::LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", null ],
+      [ "cursestone::plugin::NativePlugin", "classcursestone_1_1plugin_1_1NativePlugin.html", null ]
+    ] ],
     [ "cursestone::plugin::PluginLimits", "structcursestone_1_1plugin_1_1PluginLimits.html", null ],
     [ "cursestone::plugin::PluginManager", "classcursestone_1_1plugin_1_1PluginManager.html", null ],
     [ "cursestone::world::PortalRegistry::Portal", "structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html", null ],

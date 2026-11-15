@@ -90,21 +90,26 @@ $(document).ready(function(){initNavTree('classcursestone_1_1plugin_1_1LuaPlugin
 <div class="title">cursestone::plugin::LuaPlugin Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Inherits <a class="el" href="classcursestone_1_1plugin_1_1PluginBase.html">cursestone::plugin::PluginBase</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acddda8215f483c954c71d9c9a6e96f3b"><td class="memItemLeft" align="right" valign="top"><a id="acddda8215f483c954c71d9c9a6e96f3b"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>LuaPlugin</b> (std::string dir, std::string dataRoot)</td></tr>
 <tr class="separator:acddda8215f483c954c71d9c9a6e96f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace6dcd074fe39e1c3eacbc742bb9744c"><td class="memItemLeft" align="right" valign="top"><a id="ace6dcd074fe39e1c3eacbc742bb9744c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>load</b> ()</td></tr>
-<tr class="separator:ace6dcd074fe39e1c3eacbc742bb9744c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a192e17c2da88528152fb076c736ee924"><td class="memItemLeft" align="right" valign="top"><a id="a192e17c2da88528152fb076c736ee924"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>enable</b> ()</td></tr>
-<tr class="separator:a192e17c2da88528152fb076c736ee924"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dabd057c2878014cec58c77e8bf4d47"><td class="memItemLeft" align="right" valign="top"><a id="a0dabd057c2878014cec58c77e8bf4d47"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>disable</b> ()</td></tr>
-<tr class="separator:a0dabd057c2878014cec58c77e8bf4d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1673af6b71c6de79203ee26c6ebde66"><td class="memItemLeft" align="right" valign="top"><a id="aa1673af6b71c6de79203ee26c6ebde66"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#aa1673af6b71c6de79203ee26c6ebde66">load</a> () override</td></tr>
+<tr class="memdesc:aa1673af6b71c6de79203ee26c6ebde66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads manifest and entry point; false discards the plugin. <br /></td></tr>
+<tr class="separator:aa1673af6b71c6de79203ee26c6ebde66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65cff2c0bd1bd7ca0949dbf547674f3a"><td class="memItemLeft" align="right" valign="top"><a id="a65cff2c0bd1bd7ca0949dbf547674f3a"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#a65cff2c0bd1bd7ca0949dbf547674f3a">enable</a> () override</td></tr>
+<tr class="memdesc:a65cff2c0bd1bd7ca0949dbf547674f3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the enable hook; false disables and discards. <br /></td></tr>
+<tr class="separator:a65cff2c0bd1bd7ca0949dbf547674f3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafd6205c2d843629c8e63826179ab72d"><td class="memItemLeft" align="right" valign="top"><a id="aafd6205c2d843629c8e63826179ab72d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#aafd6205c2d843629c8e63826179ab72d">disable</a> () override</td></tr>
+<tr class="memdesc:aafd6205c2d843629c8e63826179ab72d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the disable hook and detaches listeners, tasks and commands. <br /></td></tr>
+<tr class="separator:aafd6205c2d843629c8e63826179ab72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6c88730b66f71f0d5cdeba8954aac5a"><td class="memItemLeft" align="right" valign="top"><a id="ad6c88730b66f71f0d5cdeba8954aac5a"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>pcall</b> (int nargs, int nresults)</td></tr>
 <tr class="separator:ad6c88730b66f71f0d5cdeba8954aac5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,15 +138,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>cancelAllTasks</b> ()
 <tr class="memitem:a911864feed97b5d990f6de4bfab99aa7"><td class="memItemLeft" align="right" valign="top"><a id="a911864feed97b5d990f6de4bfab99aa7"></a>
 lua_State *&#160;</td><td class="memItemRight" valign="bottom"><b>L</b> () const</td></tr>
 <tr class="separator:a911864feed97b5d990f6de4bfab99aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329ac4ec575b8a222d9dab21e388be05"><td class="memItemLeft" align="right" valign="top"><a id="a329ac4ec575b8a222d9dab21e388be05"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>name</b> () const</td></tr>
-<tr class="separator:a329ac4ec575b8a222d9dab21e388be05"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6a1c65d61ddb766ddf51aa52570fd32"><td class="memItemLeft" align="right" valign="top"><a id="ab6a1c65d61ddb766ddf51aa52570fd32"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>version</b> () const</td></tr>
-<tr class="separator:ab6a1c65d61ddb766ddf51aa52570fd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57103f58bb8110e661ea7a0dfaa79931"><td class="memItemLeft" align="right" valign="top"><a id="a57103f58bb8110e661ea7a0dfaa79931"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>author</b> () const</td></tr>
-<tr class="separator:a57103f58bb8110e661ea7a0dfaa79931"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a497c3ae372a79c48df3918d5a8982c0b"><td class="memItemLeft" align="right" valign="top"><a id="a497c3ae372a79c48df3918d5a8982c0b"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#a497c3ae372a79c48df3918d5a8982c0b">name</a> () const override</td></tr>
+<tr class="memdesc:a497c3ae372a79c48df3918d5a8982c0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plugin identity from plugin.yml; empty until <a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#aa1673af6b71c6de79203ee26c6ebde66" title="Loads manifest and entry point; false discards the plugin.">load()</a> succeeds. <br /></td></tr>
+<tr class="separator:a497c3ae372a79c48df3918d5a8982c0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e4d0fa1e6a94c97d53797d41388f338"><td class="memItemLeft" align="right" valign="top"><a id="a6e4d0fa1e6a94c97d53797d41388f338"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>version</b> () const override</td></tr>
+<tr class="separator:a6e4d0fa1e6a94c97d53797d41388f338"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13db146e48e495b42328da72a2314e93"><td class="memItemLeft" align="right" valign="top"><a id="a13db146e48e495b42328da72a2314e93"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>author</b> () const override</td></tr>
+<tr class="separator:a13db146e48e495b42328da72a2314e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25e215122a7300f98af34e35ee72eb45"><td class="memItemLeft" align="right" valign="top"><a id="a25e215122a7300f98af34e35ee72eb45"></a>
 const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>api</b> () const</td></tr>
 <tr class="separator:a25e215122a7300f98af34e35ee72eb45"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,9 +160,14 @@ const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>da
 <tr class="memitem:acac27af06111c7b0dfc8af12c0b26786"><td class="memItemLeft" align="right" valign="top"><a id="acac27af06111c7b0dfc8af12c0b26786"></a>
 const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>resourcesDir</b> () const</td></tr>
 <tr class="separator:acac27af06111c7b0dfc8af12c0b26786"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c622c8c898d9eefa12067348435edbf"><td class="memItemLeft" align="right" valign="top"><a id="a3c622c8c898d9eefa12067348435edbf"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isEnabled</b> () const</td></tr>
-<tr class="separator:a3c622c8c898d9eefa12067348435edbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44dfa4fab570249150b1e59bd62a125c"><td class="memItemLeft" align="right" valign="top"><a id="a44dfa4fab570249150b1e59bd62a125c"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#a44dfa4fab570249150b1e59bd62a125c">isEnabled</a> () const override</td></tr>
+<tr class="memdesc:a44dfa4fab570249150b1e59bd62a125c"><td class="mdescLeft">&#160;</td><td class="mdescRight">True between successful <a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#a65cff2c0bd1bd7ca0949dbf547674f3a" title="Runs the enable hook; false disables and discards.">enable()</a> and <a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#aafd6205c2d843629c8e63826179ab72d" title="Runs the disable hook and detaches listeners, tasks and commands.">disable()</a>. <br /></td></tr>
+<tr class="separator:a44dfa4fab570249150b1e59bd62a125c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaabb27e6d3e1b9b665d465eb2918642"><td class="memItemLeft" align="right" valign="top"><a id="acaabb27e6d3e1b9b665d465eb2918642"></a>
+const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1LuaPlugin.html#acaabb27e6d3e1b9b665d465eb2918642">kind</a> () const override</td></tr>
+<tr class="memdesc:acaabb27e6d3e1b9b665d465eb2918642"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backend tag for /plugins: "lua" or "native". <br /></td></tr>
+<tr class="separator:acaabb27e6d3e1b9b665d465eb2918642"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>

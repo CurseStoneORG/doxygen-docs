@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['unloadworld_1454',['unloadWorld',['../classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c',1,'cursestone::Server']]],
-  ['uptimeseconds_1455',['uptimeSeconds',['../classcursestone_1_1diagnostics_1_1Diagnostics.html#accfdc792e34e30754118862e7ce79df4',1,'cursestone::diagnostics::Diagnostics']]]
+  ['playerssnapshot_1559',['playersSnapshot',['../classcursestone_1_1Server.html#ae2c7def5cd17b59ef4a26b4906c5aa3b',1,'cursestone::Server']]],
+  ['playerssnapshotref_1560',['playersSnapshotRef',['../classcursestone_1_1Server.html#af4a2c78ba6f9377f961b3de7556b48ad',1,'cursestone::Server']]]
 ];

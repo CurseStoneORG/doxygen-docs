@@ -1,0 +1,25 @@
+var structCsPlayerApi =
+[
+    [ "getDisplayName", "structCsPlayerApi.html#adb72cc5cc6a4e7f8ea6d03882cb5953c", null ],
+    [ "getHealth", "structCsPlayerApi.html#aeba1c33bea464e17a96674bbaea7e83c", null ],
+    [ "getNameTag", "structCsPlayerApi.html#af7a2061f12ea4db4ff0df9f203aba604", null ],
+    [ "getPosition", "structCsPlayerApi.html#a30ff81dc9e9200764acaa0588a531787", null ],
+    [ "getRotation", "structCsPlayerApi.html#a70d941402ed29929cf9d2b89fc856d73", null ],
+    [ "getWorld", "structCsPlayerApi.html#a957018144cae0afd1cb9b4219b32b36f", null ],
+    [ "giveItem", "structCsPlayerApi.html#afa26c1c6c4c9e842a5b40cce55ef5847", null ],
+    [ "hasPermission", "structCsPlayerApi.html#a74f2447c05e476cb6d0b008bb85c82eb", null ],
+    [ "isOp", "structCsPlayerApi.html#a7705df310db22e55ffbb3f8bf2ff87dc", null ],
+    [ "kick", "structCsPlayerApi.html#a8c992ae0a731920ff43f9427371db69d", null ],
+    [ "kill", "structCsPlayerApi.html#a720373310238b7f28eaf97ac209c3815", null ],
+    [ "sendMessage", "structCsPlayerApi.html#a7b1d4f113c16d4b87c36d8fe7d1054ec", null ],
+    [ "sendPopup", "structCsPlayerApi.html#a9e1ca3e9e4de7cba35332bc78e12d905", null ],
+    [ "sendTip", "structCsPlayerApi.html#acde48644eece7a2779a96c82ba67c928", null ],
+    [ "setDisplayName", "structCsPlayerApi.html#a710e55cfb4cad45b2c52ae9456e37f71", null ],
+    [ "setHealth", "structCsPlayerApi.html#ac124526473ba3c8bf944de16c4937c6b", null ],
+    [ "setMotion", "structCsPlayerApi.html#adc11c7424f87017c58f71c34350f45f5", null ],
+    [ "setNameTag", "structCsPlayerApi.html#a3befeedce2b0b2a7118d26944411b7a2", null ],
+    [ "setPermission", "structCsPlayerApi.html#abaefaa3429449097ada7ac2a163fb05d", null ],
+    [ "setRotation", "structCsPlayerApi.html#a747dd41801de10a8f1c990fad336b78e", null ],
+    [ "teleport", "structCsPlayerApi.html#a05138f25bdb90028fc271f9f25ff897d", null ],
+    [ "teleportWorld", "structCsPlayerApi.html#ae55c3681438c95e7214e64ae3bb4577a", null ]
+];
