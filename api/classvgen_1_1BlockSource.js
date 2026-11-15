@@ -2,6 +2,7 @@ var classvgen_1_1BlockSource =
 [
     [ "BlockSource", "classvgen_1_1BlockSource.html#a2ff235ced7d9129f56380b3341732f63", null ],
     [ "~BlockSource", "classvgen_1_1BlockSource.html#ab46e919c984b82597b51f85e96c1d27c", null ],
+    [ "addTileEntity", "classvgen_1_1BlockSource.html#a6780e7be4005074692abc586dafa71f1", null ],
     [ "centerChunk", "classvgen_1_1BlockSource.html#a78c4d2631f481e2bd384c64c4719df96", null ],
     [ "getAboveTopSolidBlock", "classvgen_1_1BlockSource.html#ae3e82334aeaf81e81e1bb4c4aec9435a", null ],
     [ "getAboveTopSolidBlock", "classvgen_1_1BlockSource.html#afc13a24214f3a94ea65c7cada3fd22bb", null ],

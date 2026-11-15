@@ -252,6 +252,10 @@ var annotated_dup =
         [ "ItemWheat", "classcursestone_1_1item_1_1ItemWheat.html", "classcursestone_1_1item_1_1ItemWheat" ],
         [ "ItemWheatSeeds", "classcursestone_1_1item_1_1ItemWheatSeeds.html", "classcursestone_1_1item_1_1ItemWheatSeeds" ]
       ] ],
+      [ "loot", null, [
+        [ "LootEntry", "structcursestone_1_1loot_1_1LootEntry.html", "structcursestone_1_1loot_1_1LootEntry" ],
+        [ "LootTable", "structcursestone_1_1loot_1_1LootTable.html", "structcursestone_1_1loot_1_1LootTable" ]
+      ] ],
       [ "math", null, [
         [ "Vec3", "structcursestone_1_1math_1_1Vec3.html", "structcursestone_1_1math_1_1Vec3" ]
       ] ],

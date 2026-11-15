@@ -536,6 +536,7 @@ var namespaces_dup =
       [ "B", "Blocks_8cpp.html#a60d867b0f1da27c9e2c5222723312095", null ],
       [ "EntityTypeToString", "MobSpawnerData_8h.html#af354926025d09bf5d1f12bb6e3dba1c3", null ],
       [ "enum_cast", "Vanilla_8h.html#a21ea144338918cb5fc35e7fa877748a9", null ],
+      [ "placeLootChest", "LootChest_8cpp.html#ab6282096730e4445d8324d4852bc80c2", null ],
       [ "range", "Vanilla_8h.html#a7e00a12a2281abd73e8bfd7b5e73117d", null ],
       [ "range", "Vanilla_8h.html#a3dc07b164c4cd97492428368a7635025", null ],
       [ "range_incl", "Vanilla_8h.html#a630bd3d52114d082e554e7465da91417", null ],

@@ -28,6 +28,8 @@ var searchData=
   ['locationentry_432',['LocationEntry',['../structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html',1,'cursestone::world::format::anvil']]],
   ['loginpacket_433',['LoginPacket',['../classcursestone_1_1network_1_1protocol_1_1LoginPacket.html',1,'cursestone::network::protocol']]],
   ['longtag_434',['LongTag',['../classcursestone_1_1nbt_1_1LongTag.html',1,'cursestone::nbt']]],
-  ['luacommand_435',['LuaCommand',['../classcursestone_1_1plugin_1_1LuaCommand.html',1,'cursestone::plugin']]],
-  ['luaplugin_436',['LuaPlugin',['../classcursestone_1_1plugin_1_1LuaPlugin.html',1,'cursestone::plugin']]]
+  ['lootentry_435',['LootEntry',['../structcursestone_1_1loot_1_1LootEntry.html',1,'cursestone::loot']]],
+  ['loottable_436',['LootTable',['../structcursestone_1_1loot_1_1LootTable.html',1,'cursestone::loot']]],
+  ['luacommand_437',['LuaCommand',['../classcursestone_1_1plugin_1_1LuaCommand.html',1,'cursestone::plugin']]],
+  ['luaplugin_438',['LuaPlugin',['../classcursestone_1_1plugin_1_1LuaPlugin.html',1,'cursestone::plugin']]]
 ];

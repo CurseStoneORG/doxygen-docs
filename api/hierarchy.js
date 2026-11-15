@@ -565,6 +565,8 @@ var hierarchy =
     [ "LightNode", "structLightNode.html", null ],
     [ "cursestone::block::LiquidFlow", "classcursestone_1_1block_1_1LiquidFlow.html", null ],
     [ "cursestone::world::format::anvil::LocationEntry", "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html", null ],
+    [ "cursestone::loot::LootEntry", "structcursestone_1_1loot_1_1LootEntry.html", null ],
+    [ "cursestone::loot::LootTable", "structcursestone_1_1loot_1_1LootTable.html", null ],
     [ "cursestone::plugin::LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", null ],
     [ "cursestone::utils::MainLogger", "classcursestone_1_1utils_1_1MainLogger.html", null ],
     [ "vgen::Material", "classvgen_1_1Material.html", null ],

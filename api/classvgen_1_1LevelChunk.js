@@ -1,6 +1,7 @@
 var classvgen_1_1LevelChunk =
 [
     [ "LevelChunk", "classvgen_1_1LevelChunk.html#a20516ba2f35da6e6bbdfbb0824a01894", null ],
+    [ "addPendingTile", "classvgen_1_1LevelChunk.html#af9e33bc38039fbcb69e44baf1a8811ca", null ],
     [ "deferLightEmitter", "classvgen_1_1LevelChunk.html#a4220eef8d557fceda8af46342cf6882a", null ],
     [ "getAboveTopSolidBlock", "classvgen_1_1LevelChunk.html#a2e083aa8758d9c9ebfddc1c085cbc8cc", null ],
     [ "getAllocatedHeight", "classvgen_1_1LevelChunk.html#a83c8e278c35f1669e9355f484bb4d9d7", null ],
@@ -25,6 +26,7 @@ var classvgen_1_1LevelChunk =
     [ "mDimension", "classvgen_1_1LevelChunk.html#aa98525d4f6c18efe89ecfd5d0c331343", null ],
     [ "mHeightmap", "classvgen_1_1LevelChunk.html#a564f1918d0e2c2c9b69d833009e5732f", null ],
     [ "mLevel", "classvgen_1_1LevelChunk.html#a2aa4bae765e42f118b2d04ff44e03ef7", null ],
+    [ "mPendingTiles", "classvgen_1_1LevelChunk.html#acdc5bffa8b08ba7d1075aaf51ebf0c87", null ],
     [ "mPos", "classvgen_1_1LevelChunk.html#ac7edc186fcd380bc9596c4cc32161410", null ],
     [ "mRainHeights", "classvgen_1_1LevelChunk.html#a467d04684e6e99d02b2824014b79652e", null ]
 ];

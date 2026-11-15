@@ -657,7 +657,11 @@ var namespacecursestone =
         [ "ITEM_WHEAT_SEEDS", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a97786cc75d7f1ffb5447128edae3bde7", null ],
         [ "ITEM_PUMPKIN_SEEDS", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a893a319abd5971ddca22559bc8572d8f", null ],
         [ "ITEM_MELON_SEEDS", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a161e5be6c57800d1d46e656c4eece619", null ],
-        [ "ITEM_MAP", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a028c2e8455a92d2c1b625cba7a446268", null ]
+        [ "ITEM_MAP", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a028c2e8455a92d2c1b625cba7a446268", null ],
+        [ "ITEM_SADDLE", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a3657b7477c3f5f957373cf4f778610c7", null ],
+        [ "ITEM_BONE", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a877f2f1c361cf735e84b90692f5508a8", null ],
+        [ "ITEM_ROTTEN_FLESH", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a1f1f0808626c879b8833f11d7562bd33", null ],
+        [ "ITEM_NETHER_WART", "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a8302516c5e9b226dfd2630386d30df99", null ]
       ] ],
       [ "ToolMaterial", "ItemTool_8h.html#a253c0d6bae5cdb6f2dd15c66d2614cdf", [
         [ "TOOL_WOOD", "ItemTool_8h.html#a253c0d6bae5cdb6f2dd15c66d2614cdfa16f0f538ba3d020ef77742e1f86871c2", null ],
@@ -1086,6 +1090,12 @@ var namespacecursestone =
       [ "WOOL", "ItemConstants_8h.html#ae709a0427ae6caac3ed56929748301d2", null ],
       [ "WORKBENCH", "ItemConstants_8h.html#afeed371f59286e5f8d46a3511b738927", null ],
       [ "WRITTEN_BOOK", "ItemConstants_8h.html#a80e204d3e1022939b340ae0de3e0e6b6", null ]
+    ] ],
+    [ "loot", null, [
+      [ "LootEntry", "structcursestone_1_1loot_1_1LootEntry.html", "structcursestone_1_1loot_1_1LootEntry" ],
+      [ "LootTable", "structcursestone_1_1loot_1_1LootTable.html", "structcursestone_1_1loot_1_1LootTable" ],
+      [ "findTable", "SimpleLoot_8cpp.html#a56b467d365c3db0d59b76aff44b82cf1", null ],
+      [ "rollTable", "SimpleLoot_8cpp.html#a75ef64a9805b9006f69f8b709cd9f63c", null ]
     ] ],
     [ "math", null, [
       [ "Vec3", "structcursestone_1_1math_1_1Vec3.html", "structcursestone_1_1math_1_1Vec3" ],

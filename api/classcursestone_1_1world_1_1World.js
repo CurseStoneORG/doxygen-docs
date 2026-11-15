@@ -15,6 +15,7 @@ var classcursestone_1_1world_1_1World =
     [ "addSplashPotion", "classcursestone_1_1world_1_1World.html#a9995c7c04f13b62a29fd52fdab6bfc24", null ],
     [ "addTickSample", "classcursestone_1_1world_1_1World.html#a44926cccb7ee40bdda14aae6bc179e67", null ],
     [ "advanceTime", "classcursestone_1_1world_1_1World.html#a017f1ec41619bdbe5dba2ec6f897d83f", null ],
+    [ "applyTileBlob", "classcursestone_1_1world_1_1World.html#a1398702da471336f6cb096183e1ea8a8", null ],
     [ "arrows", "classcursestone_1_1world_1_1World.html#a42b9e76a18a45184883b0293ba4f36e1", null ],
     [ "avgLightMs", "classcursestone_1_1world_1_1World.html#a7184588fef2d07b19093c4807374a7ef", null ],
     [ "avgTickMs", "classcursestone_1_1world_1_1World.html#af0810e93b211e5192728dfeac053e67b", null ],

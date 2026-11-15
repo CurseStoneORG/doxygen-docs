@@ -4,6 +4,7 @@ var classcursestone_1_1world_1_1generator_1_1Nether =
     [ "~Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html#a1a84abd01d9a7dc0f14ba3c1ed3275e0", null ],
     [ "acquireTerrain", "classcursestone_1_1world_1_1generator_1_1Nether.html#aa9b368eeacfad085bce5b8a55ddc5d19", null ],
     [ "applySpill", "classcursestone_1_1world_1_1generator_1_1Nether.html#a54cd3ea34b35773accd790dbba187e73", null ],
+    [ "commitNeighborTile", "classcursestone_1_1world_1_1generator_1_1Nether.html#ac001a2abb116daebfa7f5fde31da83d7", null ],
     [ "commitNeighborWrite", "classcursestone_1_1world_1_1generator_1_1Nether.html#a567982e330aad44c2f4c50c7f5fa4706", null ],
     [ "drainSpills", "classcursestone_1_1world_1_1generator_1_1Nether.html#ad71789a5fac7cd01b1d25b9680fc95fa", null ],
     [ "generate", "classcursestone_1_1world_1_1generator_1_1Nether.html#a0ade4b5a0b271ffc691bc6c390311192", null ],

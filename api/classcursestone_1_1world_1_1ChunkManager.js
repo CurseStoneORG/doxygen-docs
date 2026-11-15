@@ -2,6 +2,7 @@ var classcursestone_1_1world_1_1ChunkManager =
 [
     [ "ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html#ab90c7d59b12f8029b4d6187749142502", null ],
     [ "~ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html#acc508c55f69f6cdb691e0113e73d4210", null ],
+    [ "commitNeighborTile", "classcursestone_1_1world_1_1ChunkManager.html#af6c8776f47d95408d2f5db77c7ad3b63", null ],
     [ "commitNeighborWrite", "classcursestone_1_1world_1_1ChunkManager.html#ae2747e9f41a538acb558a265875ed97f", null ],
     [ "count", "classcursestone_1_1world_1_1ChunkManager.html#a4a11db00bd89db6215a39c5d1f987c9a", null ],
     [ "dirtyCount", "classcursestone_1_1world_1_1ChunkManager.html#adfab8701500891c64addea7d4ecb31df", null ],
@@ -20,5 +21,6 @@ var classcursestone_1_1world_1_1ChunkManager =
     [ "setOnChunkInstalled", "classcursestone_1_1world_1_1ChunkManager.html#a874bf43b3da78cfa924dd195907564fd", null ],
     [ "setProvider", "classcursestone_1_1world_1_1ChunkManager.html#af15997dbf7c5447326ab5d33b7db49f6", null ],
     [ "setSpillQueue", "classcursestone_1_1world_1_1ChunkManager.html#a9381425f13d62a002dd00030363b9c21", null ],
+    [ "setTileBlobSink", "classcursestone_1_1world_1_1ChunkManager.html#abab339973c36a4db0432f76b45700970", null ],
     [ "unloadChunk", "classcursestone_1_1world_1_1ChunkManager.html#ac830fcaaf8acd2ff12a7066d0d3b5234", null ]
 ];
