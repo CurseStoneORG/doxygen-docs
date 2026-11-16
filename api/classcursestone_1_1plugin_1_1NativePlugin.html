@@ -102,9 +102,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a391559965a18e2ec787bb4a01e7a6954"><td class="memItemLeft" align="right" valign="top"><a id="a391559965a18e2ec787bb4a01e7a6954"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>NativePlugin</b> (std::string dir, std::string dataRoot)</td></tr>
-<tr class="separator:a391559965a18e2ec787bb4a01e7a6954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1e76cc43b9b4175b606d83154b604ac"><td class="memItemLeft" align="right" valign="top"><a id="ae1e76cc43b9b4175b606d83154b604ac"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>NativePlugin</b> (std::string <a class="el" href="classcursestone_1_1plugin_1_1NativePlugin.html#abe9c308ac4161507e30fd1dc7b50b13f">libPath</a>, std::string dataRoot)</td></tr>
+<tr class="separator:ae1e76cc43b9b4175b606d83154b604ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20afb499be427f50ac4b2c605def3b8d"><td class="memItemLeft" align="right" valign="top"><a id="a20afb499be427f50ac4b2c605def3b8d"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1NativePlugin.html#a20afb499be427f50ac4b2c605def3b8d">load</a> () override</td></tr>
 <tr class="memdesc:a20afb499be427f50ac4b2c605def3b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads manifest and entry point; false discards the plugin. <br /></td></tr>
@@ -136,8 +136,12 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="memdesc:a27cfd77e5b72e3364c1ca09cb2012b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Backend tag for /plugins: "lua" or "native". <br /></td></tr>
 <tr class="separator:a27cfd77e5b72e3364c1ca09cb2012b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fe45ab309606e2a3da8ae869613f695"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1NativePlugin.html#a4fe45ab309606e2a3da8ae869613f695">dataDir</a> () const</td></tr>
-<tr class="memdesc:a4fe45ab309606e2a3da8ae869613f695"><td class="mdescLeft">&#160;</td><td class="mdescRight">The per-plugin data folder (data_pl/&lt;plugin&gt;), shared with the data.  <a href="classcursestone_1_1plugin_1_1NativePlugin.html#a4fe45ab309606e2a3da8ae869613f695">More...</a><br /></td></tr>
+<tr class="memdesc:a4fe45ab309606e2a3da8ae869613f695"><td class="mdescLeft">&#160;</td><td class="mdescRight">The per-plugin data folder (data_pl/&lt;stem&gt;), shared with the data.  <a href="classcursestone_1_1plugin_1_1NativePlugin.html#a4fe45ab309606e2a3da8ae869613f695">More...</a><br /></td></tr>
 <tr class="separator:a4fe45ab309606e2a3da8ae869613f695"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe9c308ac4161507e30fd1dc7b50b13f"><td class="memItemLeft" align="right" valign="top"><a id="abe9c308ac4161507e30fd1dc7b50b13f"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1NativePlugin.html#abe9c308ac4161507e30fd1dc7b50b13f">libPath</a> () const</td></tr>
+<tr class="memdesc:abe9c308ac4161507e30fd1dc7b50b13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The plugins-folder file backing this plugin, as scanned. <br /></td></tr>
+<tr class="separator:abe9c308ac4161507e30fd1dc7b50b13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a207ba8aa256e72ce04f197111e518175"><td class="memItemLeft" align="right" valign="top"><a id="a207ba8aa256e72ce04f197111e518175"></a>
 uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1plugin_1_1NativePlugin.html#a207ba8aa256e72ce04f197111e518175">addCommandEntry</a> (CsCommandFn fn, void *ud)</td></tr>
 <tr class="memdesc:a207ba8aa256e72ce04f197111e518175"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a callback slot and returns its id for <a class="el" href="classcursestone_1_1plugin_1_1NativeCommand.html">NativeCommand</a>. <br /></td></tr>
@@ -190,7 +194,7 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hre
 </table>
 </div><div class="memdoc">
 
-<p>The per-plugin data folder (data_pl/&lt;plugin&gt;), shared with the data. </p>
+<p>The per-plugin data folder (data_pl/&lt;stem&gt;), shared with the data. </p>
 <ul>
 <li>API. </li>
 </ul>

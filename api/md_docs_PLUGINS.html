@@ -86,33 +86,30 @@ $(document).ready(function(){initNavTree('md_docs_PLUGINS.html',''); initResizab
 <div class="title">CurseStone Plugin API </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>CurseStone plugins live in <code>plugins/&lt;Name&gt;/</code> and are discovered by their <code>plugin.yml</code> manifest. Two backends share the same manifest, lifecycle, data sandbox and permission rules:</p>
+<div class="textblock"><p>CurseStone plugins come in two load types, distinguished by what an operator puts into the <code>plugins/</code> folder:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Backend   </th><th class="markdownTableHeadNone"><code>main</code> points at   </th><th class="markdownTableHeadNone">Runtime    </th></tr>
+<th class="markdownTableHeadNone">Load type   </th><th class="markdownTableHeadNone">What is dropped into <code>plugins/</code>   </th><th class="markdownTableHeadNone">Manifest   </th><th class="markdownTableHeadNone">Runtime    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Lua   </td><td class="markdownTableBodyNone"><code>src/main.lua</code> (script)   </td><td class="markdownTableBodyNone">Bundled Lua 5.4 interpreter    </td></tr>
+<td class="markdownTableBodyNone"><b>Folder</b>   </td><td class="markdownTableBodyNone"><code>MyPlugin/</code> — a folder with a <code>plugin.yml</code>   </td><td class="markdownTableBodyNone"><code>plugin.yml</code>   </td><td class="markdownTableBodyNone">Bundled Lua 5.4 interpreter    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Native   </td><td class="markdownTableBodyNone"><code>HelloNative.so</code> / <code>.dll</code>   </td><td class="markdownTableBodyNone">C ABI shared library   </td></tr>
+<td class="markdownTableBodyNone"><b>File</b>   </td><td class="markdownTableBodyNone"><code>MyPlugin.so</code> / <code>MyPlugin.dll</code> — a bare shared library   </td><td class="markdownTableBodyNone">none — the binary IS the plugin   </td><td class="markdownTableBodyNone">C ABI shared library (C++)   </td></tr>
 </table>
-<p>The plugin API version is <code>CURSESTONE_API</code> in <code><a class="el" href="CurseStone_8h_source.html">src/CurseStone.h</a></code> (currently <code>1.0.3</code>). Plugins declare it in <code>plugin.yml</code> with the <code>api</code> field: same major required, server minor must be &gt;= plugin minor.</p>
+<p>The rules in one line each:</p>
+<ul>
+<li><b>Lua plugins are folder plugins</b>: <code>plugins/&lt;Name&gt;/plugin.yml</code> with the entry script under <code>src/</code>.</li>
+<li><b>C++ plugins are file plugins</b>: drop the compiled <code>.so</code> (Linux, Android, macOS) or <code>.dll</code> (Windows) directly into <code>plugins/</code>. No folder, no <code>plugin.yml</code>, nothing else — the server opens the library, reads the descriptor inside it and that is the whole identity.</li>
+</ul>
+<p>The plugin API version is <code>CURSESTONE_API</code> in <code><a class="el" href="CurseStone_8h_source.html">src/CurseStone.h</a></code> (currently <code>1.0.3</code>).</p>
 <h1><a class="anchor" id="autotoc_md265"></a>
-Manifest (&lt;tt&gt;plugin.yml&lt;/tt&gt;)</h1>
-<div class="fragment"><div class="line">name: MyPlugin          # identity; duplicates (case-insensitive) disable all copies</div>
-<div class="line">main: src/main.lua      # Lua: entry script inside src/ — or MyPlugin.so/.dll for native</div>
+Folder plugins (Lua)</h1>
+<div class="fragment"><div class="line"># plugins/MyPlugin/plugin.yml</div>
+<div class="line">name: MyPlugin          # identity; duplicates (case-insensitive) disable all copies</div>
+<div class="line">main: src/main.lua      # entry script inside src/</div>
 <div class="line">api: 1.0.3              # required server plugin API</div>
 <div class="line">version: 1.0.0</div>
 <div class="line">author: YourName</div>
-</div><!-- fragment --><p>Every plugin gets a private data folder <code>&lt;server&gt;/data_pl/&lt;Name&gt;/</code> created at load; <code>data.*</code> (Lua) and <code>data.*</code> (native) are jailed to it (relative paths, no <code>..</code>, no backslashes).</p>
-<h1><a class="anchor" id="autotoc_md266"></a>
-Lifecycle (both backends)</h1>
-<div class="fragment"><div class="line">load()    manifest + entry ready; failure discards the plugin</div>
-<div class="line">enable()  onEnable hook; failure disables and discards</div>
-<div class="line">disable() onDisable hook + listeners removed + tasks cancelled (idempotent)</div>
-<div class="line">unload    /plugins reload or shutdown; commands unregistered first</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md267"></a>
-Lua plugins</h1>
-<p>Entry <code>src/main.lua</code> must return a table with optional <code>onEnable</code> / <code>onDisable</code>. The VM is sandboxed: no <code>io</code>, <code>os</code>, <code>package</code> or <code>debug</code>, and per-plugin instruction/time limits trip a circuit breaker.</p>
+</div><!-- fragment --><p>Entry <code>src/main.lua</code> must return a table with optional <code>onEnable</code> / <code>onDisable</code>. The VM is sandboxed: no <code>io</code>, <code>os</code>, <code>package</code> or <code>debug</code>, and per-plugin instruction/time limits trip a circuit breaker.</p>
 <p>API surface (globals):</p>
 <ul>
 <li><code>log.info/warn/error(msg)</code></li>
@@ -126,26 +123,61 @@ Lua plugins</h1>
 <li><code>plugin.include/import/getResource/saveResource/listResources</code></li>
 </ul>
 <p>Sample plugin: <code>plugins/SpawnProtection/</code>.</p>
-<h1><a class="anchor" id="autotoc_md268"></a>
-Native plugins (C++ via .so / .dll)</h1>
-<p>A native plugin is a shared library exporting ONE symbol:</p>
+<p>A folder whose <code>main</code> points at a <code>.so</code>/<code>.dll</code> is <b>not</b> loaded: native plugins are bare files now, and the log explains the migration (move the library into <code>plugins/</code>, delete the manifest).</p>
+<h1><a class="anchor" id="autotoc_md266"></a>
+File plugins (C++ via .so / .dll)</h1>
+<h2><a class="anchor" id="autotoc_md267"></a>
+Structure</h2>
+<p>The final plugin is ONE file, named after the plugin:</p>
+<div class="fragment"><div class="line">plugins/</div>
+<div class="line">  SpawnProtection/          &lt;- Lua plugin: folder + plugin.yml</div>
+<div class="line">    plugin.yml</div>
+<div class="line">    src/main.lua</div>
+<div class="line">  HelloNative.so            &lt;- C++ plugin: the file itself</div>
+<div class="line">  HelloNative.dll           &lt;- its Windows flavor (optional, may sit side by side)</div>
+</div><!-- fragment --><ul>
+<li><b>No <code>plugin.yml</code></b>: name, version, author and the API the plugin was built for come from the <code><a class="el" href="structCsPluginDesc.html" title="Static plugin metadata returned by the vtable&#39;s desc hook.">CsPluginDesc</a></code> the vtable returns.</li>
+<li><b>No folder</b>: the file sits directly in <code>plugins/</code>. The file <b>stem</b> (<code>HelloNative</code> from <code>HelloNative.so</code>) owns the private data folder <code>data_pl/&lt;stem&gt;/</code> and doubles as the fallback display name.</li>
+<li><b>Cross-platform flavors</b>: <code>HelloNative.so</code> and <code>HelloNative.dll</code> may sit side by side; each platform picks its own extension. A lone foreign-extension file is skipped with a hint (<code>MyPlugin.dll</code> on Linux, <code>MyPlugin.so</code> on Windows) instead of a cryptic loader error.</li>
+<li><b>Naming rules</b>: the stem must be unique per server (case-insensitive), and the descriptor <code>name</code> must not collide with another loaded plugin — duplicates disable the copies involved with a warning.</li>
+</ul>
+<p>The library exports ONE symbol:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>);</div>
-<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:336</div></div>
+<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:390</div></div>
 </div><!-- fragment --><p><code><a class="el" href="NativeAPI_8h_source.html">src/plugin/NativeAPI.h</a></code> is the complete SDK header — copy it (or point <code>-I</code> at the server <code>src/</code>) and compile against it. The plugin links nothing: the entire server surface arrives as function-pointer groups in the <code>CsPluginApi*</code> handed to <code>onLoad</code>.</p>
+<h2><a class="anchor" id="autotoc_md268"></a>
+Minimal complete plugin</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;plugin/NativeAPI.h&quot;</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {   <span class="comment">// keeps the entry symbol&#39;s C name (no C++ mangling)</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <a class="code" href="structCsPluginApi.html">CsPluginApi</a>* g_api = <span class="keyword">nullptr</span>;</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> onJoin(<a class="code" href="structCsEvent.html">CsEvent</a>* ev, <span class="keywordtype">void</span>* ud) {</div>
+<div class="line">    g_api-&gt;player-&gt;sendMessage(ev-&gt;<a class="code" href="structCsEvent.html#a64fe453976f4600d9cf333630035d518">player</a>, <span class="stringliteral">&quot;welcome!&quot;</span>);</div>
+<div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> helloCmd(<span class="keyword">const</span> <a class="code" href="structCsCommandSender.html">CsCommandSender</a>* s, <span class="keywordtype">int</span> argc, <span class="keyword">const</span> <span class="keywordtype">char</span>* <span class="keyword">const</span>* argv, <span class="keywordtype">void</span>* ud) {</div>
-<div class="line">    g_api-&gt;commands-&gt;reply(s, <span class="stringliteral">&quot;hi from C++&quot;</span>);</div>
+<div class="line">    g_api-&gt;commands-&gt;<a class="code" href="structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d">reply</a>(s, <span class="stringliteral">&quot;hi from C++&quot;</span>);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">CS_PLUGIN_EXPORT <span class="keyword">const</span> <a class="code" href="structCsPluginDesc.html">CsPluginDesc</a>* myDesc(<span class="keywordtype">void</span>) {</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structCsPluginDesc.html">CsPluginDesc</a> desc = {CS_PLUGIN_ABI_VERSION, <span class="stringliteral">&quot;MyPlugin&quot;</span>, <span class="stringliteral">&quot;1.0.0&quot;</span>,</div>
+<div class="line">                                      <span class="stringliteral">&quot;YourName&quot;</span>, <span class="stringliteral">&quot;1.0.3&quot;</span>};</div>
+<div class="line">    <span class="keywordflow">return</span> &amp;desc;</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">CS_PLUGIN_EXPORT <span class="keywordtype">int</span> myOnLoad(<a class="code" href="structCsPluginApi.html">CsPluginApi</a>* api) {</div>
+<div class="line">    g_api = api;</div>
 <div class="line">    api-&gt;events-&gt;on(api, <span class="stringliteral">&quot;PlayerJoin&quot;</span>, onJoin, <span class="keyword">nullptr</span>);</div>
 <div class="line">    api-&gt;commands-&gt;add(api, <span class="stringliteral">&quot;hello&quot;</span>, <span class="stringliteral">&quot;Greet&quot;</span>, <span class="stringliteral">&quot;/hello&quot;</span>, <span class="keyword">nullptr</span>, helloCmd, <span class="keyword">nullptr</span>);</div>
 <div class="line">    api-&gt;scheduler-&gt;<a class="code" href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">every</a>(api, 100, heartbeat, <span class="keyword">nullptr</span>);</div>
-<div class="line">    <span class="keywordflow">return</span> 0;</div>
+<div class="line">    <span class="keywordflow">return</span> 0;   <span class="comment">// non-zero discards the plugin</span></div>
 <div class="line">}</div>
+<div class="line"> </div>
+<div class="line">CS_PLUGIN_EXPORT <span class="keywordtype">void</span> myOnEnable(<span class="keywordtype">void</span>)  {}</div>
+<div class="line">CS_PLUGIN_EXPORT <span class="keywordtype">void</span> myOnDisable(<span class="keywordtype">void</span>) {}</div>
+<div class="line">CS_PLUGIN_EXPORT <span class="keywordtype">void</span> myOnUnload(<span class="keywordtype">void</span>)  { g_api = <span class="keyword">nullptr</span>; }</div>
 <div class="line"> </div>
 <div class="line">CS_PLUGIN_EXPORT <span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>) {</div>
 <div class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a> vt = {CS_PLUGIN_ABI_VERSION, myDesc, myOnLoad,</div>
@@ -153,29 +185,194 @@ Native plugins (C++ via .so / .dll)</h1>
 <div class="line">    <span class="keywordflow">return</span> &amp;vt;</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line">} <span class="comment">// extern &quot;C&quot; — keeps the entry symbol&#39;s C name (no C++ mangling)</span></div>
-<div class="ttc" id="astructCsCommandSender_html"><div class="ttname"><a href="structCsCommandSender.html">CsCommandSender</a></div><div class="ttdoc">Who ran a plugin command.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:115</div></div>
-<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:311</div></div>
-<div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:184</div></div>
-</div><!-- fragment --><p>Build:</p>
-<div class="fragment"><div class="line">gcc -shared -fPIC -O2 -I&lt;repo&gt;/src -o MyPlugin.so src/MyPlugin.cpp   # Linux/Android</div>
-<div class="line">cl /LD /O2 /I&lt;repo&gt;\src src\MyPlugin.cpp                             # Windows</div>
-</div><!-- fragment --><p>Rules and guarantees:</p>
+<div class="line">} <span class="comment">// extern &quot;C&quot;</span></div>
+<div class="ttc" id="astructCsCommandApi_html_ac6e2956c7aa58f601d16d68c1737cb0d"><div class="ttname"><a href="structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d">CsCommandApi::reply</a></div><div class="ttdeci">void(* reply)(const CsCommandSender *sender, const char *msg)</div><div class="ttdoc">Answers the sender: console -&gt; log, player -&gt; chat message.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:217</div></div>
+<div class="ttc" id="astructCsCommandSender_html"><div class="ttname"><a href="structCsCommandSender.html">CsCommandSender</a></div><div class="ttdoc">Who ran a plugin command.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:131</div></div>
+<div class="ttc" id="astructCsEvent_html"><div class="ttname"><a href="structCsEvent.html">CsEvent</a></div><div class="ttdoc">Event snapshot passed to native listeners.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:157</div></div>
+<div class="ttc" id="astructCsEvent_html_a64fe453976f4600d9cf333630035d518"><div class="ttname"><a href="structCsEvent.html#a64fe453976f4600d9cf333630035d518">CsEvent::player</a></div><div class="ttdeci">const char * player</div><div class="ttdoc">Player name, or &quot;&quot; when the event has none.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:159</div></div>
+<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:365</div></div>
+<div class="ttc" id="astructCsPluginDesc_html"><div class="ttname"><a href="structCsPluginDesc.html">CsPluginDesc</a></div><div class="ttdoc">Static plugin metadata returned by the vtable's desc hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:117</div></div>
+<div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:200</div></div>
+</div><!-- fragment --><p><code>onLoad</code> / <code>desc</code> are required; the other hooks may be <code>NULL</code>. The descriptor is the manifest: keep <code>name</code> non-empty and unique, and set <code>api</code> to the <code>CURSESTONE_API</code> you built against (an empty value means "this SDK"; an incompatible claim refuses the load).</p>
+<h2><a class="anchor" id="autotoc_md269"></a>
+Building</h2>
+<div class="fragment"><div class="line"># Linux / macOS / Android NDK</div>
+<div class="line">gcc -shared -fPIC -O2 -I&lt;repo&gt;/src -o MyPlugin.so src/MyPlugin.cpp</div>
+<div class="line"> </div>
+<div class="line"># Windows (MSVC, x64)</div>
+<div class="line">cl /LD /O2 /I&lt;repo&gt;\src src\MyPlugin.cpp</div>
+</div><!-- fragment --><p>Or with CMake (see <code>plugins/HelloNative/</code> and the <code>cursestone-example-plugin</code> target):</p>
+<div class="fragment"><div class="line">add_library(MyPlugin SHARED src/MyPlugin.cpp)</div>
+<div class="line">target_include_directories(MyPlugin PRIVATE &lt;repo&gt;/src)</div>
+<div class="line">set_target_properties(MyPlugin PROPERTIES PREFIX &quot;&quot;)   # MyPlugin.so, not libMyPlugin.so</div>
+</div><!-- fragment --><p>For Android use the NDK toolchain (<code>-DANDROID_ABI=arm64-v8a</code> and friends); for MSVC make sure the platform matches the server build (x64 vs x86).</p>
+<h2><a class="anchor" id="autotoc_md270"></a>
+Data folder</h2>
+<p>Every loaded plugin gets <code>&lt;server&gt;/data_pl/&lt;stem&gt;/</code> created at load. The <code>data.*</code> group is jailed to it: relative paths only, no <code>..</code>, no backslashes. The Lua sandbox uses the same root, keyed by folder name.</p>
+<h2><a class="anchor" id="autotoc_md271"></a>
+Rules and guarantees</h2>
 <ul>
-<li><b>ABI version</b>: <code>CS_PLUGIN_ABI_VERSION</code> (currently 1) is checked right after the entry lookup; a mismatch refuses the library with a clear log line. It only moves when a struct layout changes — API additions ride the normal plugin API version.</li>
+<li><b>ABI version</b>: <code>CS_PLUGIN_ABI_VERSION</code> (currently 1) is checked right after the entry lookup; a mismatch refuses the library with a clear log line. It only moves when an existing field changes meaning, type or order — new surface is appended to the end of the group structs.</li>
+<li><b>Older/newer servers</b>: a plugin built against a newer header than the server detects that through <code>api-&gt;apiSize</code> — compare it with <code>sizeof(CsPluginApi)</code> as compiled before calling any appended function.</li>
 <li><b>Threading</b>: every callback (events, tasks, commands) runs on the main thread. Never block inside a callback.</li>
 <li><b>Safety</b>: the library opens with <code>RTLD_LOCAL</code> (symbol-isolated from other plugins); every callback is wrapped so an exception is logged, not fatal; the command bridge re-resolves the plugin by name and registration id each execution, so <code>/plugins reload</code> can never call a pointer from a <code>dlclose()</code>d library.</li>
 <li><b>Context-bound groups</b>: <code>log.*</code>, <code>scheduler.*</code>, <code>commands.*</code>, <code>events.*</code> and <code>data.*</code> take the <code>CsPluginApi*</code> first; <code>server.*</code>, <code>player.*</code> and <code>world.*</code> are context-free.</li>
 <li><b>Permissions</b> mirror the Lua <code>commands.register</code> vocabulary: <code>NULL</code>/<code>""</code> = public, <code>"op"</code> = operators + console, any other string = permission node.</li>
-<li><b>Cross-platform manifests</b>: a <code>main</code> of <code>MyPlugin.so</code> also tries <code>MyPlugin.dll</code> on Windows (and the reverse on POSIX), so one manifest serves every platform.</li>
+<li><b>String ownership</b>: strings handed OUT by the API are valid only until the callback returns; buffers the plugin fills are caller-owned.</li>
 </ul>
-<p>Reference implementation: <code>plugins/HelloNative/</code> (build with the <code>cursestone-example-plugin</code> CMake target or the one-liner above).</p>
-<h1><a class="anchor" id="autotoc_md269"></a>
+<h2><a class="anchor" id="autotoc_md272"></a>
+API reference (native)</h2>
+<p>All functions return <code>bool</code>/<code>int</code> failure markers (<code>false</code> / <code>-1</code> / <code>0</code>) instead of raising anything; invalid arguments never crash the server.</p>
+<p><b>log</b> (context-bound)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>info/warn/error(api, fmt, ...)</code>   </td><td class="markdownTableBodyNone">printf-style, <code>[PluginName]</code> prefix; malformed formats are logged as-is   </td></tr>
+</table>
+<p><b>scheduler</b> (context-bound; tasks run on the main thread, cancelled on disable)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>later(api, ticks, fn, ud) -&gt; id</code>   </td><td class="markdownTableBodyNone">one-shot; <code>0</code> on invalid input    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>every(api, ticks, fn, ud) -&gt; id</code>   </td><td class="markdownTableBodyNone">repeating    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>cancel(api, id) -&gt; bool</code>   </td><td class="markdownTableBodyNone"></td></tr>
+</table>
+<p><b>commands</b> (context-bound; names case-insensitive, stored lowercase)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>add(api, name, description, usage, permission, fn, ud) -&gt; bool</code>   </td><td class="markdownTableBodyNone">permission: <code>NULL</code>/<code>""</code> public, <code>"op"</code>, or a node    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>reply(sender, msg)</code>   </td><td class="markdownTableBodyNone">console → log, player → chat   </td></tr>
+</table>
+<p><b>events</b> (context-bound; names identical to the Lua <code>events.on()</code> list above)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>on(api, eventName, fn, ud) -&gt; bool</code>   </td><td class="markdownTableBodyNone"><code>false</code> on unknown names; writable fields: <code>message</code>, <code>amount</code>, <code>cancelled</code>   </td></tr>
+</table>
+<p><b>server</b> (context-free)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>broadcast(msg)</code>   </td><td class="markdownTableBodyNone">chat line to every player    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>broadcastTip(msg)</code> / <code>broadcastPopup(msg)</code>   </td><td class="markdownTableBodyNone">tip/popup flavor to every player    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>playerCount()</code> / <code>playerNameAt(idx, out, cap)</code> / <code>isPlayerOnline(name)</code>   </td><td class="markdownTableBodyNone">player list queries    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>tps() -&gt; 0..20</code> / <code>mspt() -&gt; double</code> / <code>currentTick() -&gt; u64</code>   </td><td class="markdownTableBodyNone">tick statistics    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>dispatchCommand(line) -&gt; bool</code>   </td><td class="markdownTableBodyNone">runs <code>/line</code> as console    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>motd(out, cap)</code>   </td><td class="markdownTableBodyNone">configured MOTD    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>maxPlayers()</code> / <code>difficulty()</code> / <code>whitelistEnabled()</code>   </td><td class="markdownTableBodyNone">server.properties reads    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>isBanned(name)</code> / <code>setBanned(name, value)</code>   </td><td class="markdownTableBodyNone">name bans; banning kicks the player    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>worldCount()</code> / <code>worldNameAt(idx, out, cap)</code> / <code>worldExists(name)</code>   </td><td class="markdownTableBodyNone">loaded-world queries    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>loadWorld(name, generator)</code> / <code>unloadWorld(name)</code>   </td><td class="markdownTableBodyNone">unload fails for the default world   </td></tr>
+</table>
+<p><b>player</b> (context-free; every call fails for offline players)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>sendMessage</code> / <code>sendTip</code> / <code>sendPopup(name, msg)</code>   </td><td class="markdownTableBodyNone">chat flavors    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>kick(name, reason)</code> / <code>kill(name)</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>getHealth -&gt; 0..20</code> / <code>setHealth(name, hp)</code>   </td><td class="markdownTableBodyNone">hearts    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>getGamemode -&gt; 0..3</code> / <code>setGamemode(name, gm)</code>   </td><td class="markdownTableBodyNone">0 survival / 1 creative / 2 adventure / 3 spectator    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>addEffect(name, effectId, durationTicks, amplifier)</code> / <code>removeEffect(name, effectId)</code>   </td><td class="markdownTableBodyNone">vanilla ids, Speed=1 .. Saturation=23    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>getExperienceLevel -&gt; int</code> / <code>setExperience(name, exp, level)</code>   </td><td class="markdownTableBodyNone">exp is 0..100 progress percent    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>getAddress(name, out, cap)</code>   </td><td class="markdownTableBodyNone"><code>"ip:port"</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>teleport(name, x, y, z)</code> / <code>teleportWorld(name, world, x, y, z)</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>getWorld(name, out, cap)</code> / <code>getPosition(name, out[3])</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>getRotation(name, out[2])</code> / <code>setRotation(name, yaw, pitch)</code>   </td><td class="markdownTableBodyNone">camera re-sync included    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>setMotion(name, x, y, z)</code>   </td><td class="markdownTableBodyNone">protocol-84 self-motion form    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>setPermission(name, node, value)</code> / <code>hasPermission(name, node)</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>giveItem(name, id, count, meta, customName)</code>   </td><td class="markdownTableBodyNone">count ≤ 2304; full inventory resync    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>setNameTag</code> / <code>getNameTag</code> / <code>setDisplayName</code> / <code>getDisplayName</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>getSpawnPoint(name, out[3])</code> / <code>setSpawnPoint(name, x, y, z)</code>   </td><td class="markdownTableBodyNone">personal spawn, persisted    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>setOnFire(name, seconds)</code>   </td><td class="markdownTableBodyNone"><code>0</code> extinguishes   </td></tr>
+</table>
+<p><b>world</b> (context-free; fails for unloaded worlds)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>seed(world) -&gt; i64</code> / <code>dimension(world) -&gt; int</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>getTime -&gt; int</code> / <code>setTime(world, t)</code>   </td><td class="markdownTableBodyNone">normalized to 0..23999    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>getBlock(world, x, y, z) -&gt; id</code> / <code>getBlockMeta(...) -&gt; 0..15</code>   </td><td class="markdownTableBodyNone"><code>0</code> for unloaded chunks / invalid y    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>setBlock(world, x, y, z, id, meta)</code>   </td><td class="markdownTableBodyNone">forces the chunk resident first    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>getSpawn(world, out[3])</code> / <code>setSpawnPoint(world, x, y, z)</code>   </td><td class="markdownTableBodyNone">compass spawn    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>getWeather -&gt; 0..2</code> / <code>setWeather(world, state)</code>   </td><td class="markdownTableBodyNone">0 clear / 1 rain / 2 thunder    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>spawnLightning(world, x, y, z, fire)</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>isChunkLoaded(world, cx, cz)</code>   </td><td class="markdownTableBodyNone">chunk-residency probe    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>save(world)</code>   </td><td class="markdownTableBodyNone">persists dirty chunks + level.dat; costly — schedule it, do not spam it    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>spawnItem(world, x, y, z, id, count, meta)</code>   </td><td class="markdownTableBodyNone">visible drop; count 1..64    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>playerCount(world)</code>   </td><td class="markdownTableBodyNone">players currently in that world   </td></tr>
+</table>
+<p><b>data</b> (context-bound; jailed to <code>data_pl/&lt;stem&gt;</code>)</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>exists(api, rel)</code> / <code>remove(api, rel)</code>   </td><td class="markdownTableBodyNone"></td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>readFile(api, rel, void** out, uint32_t* size)</code>   </td><td class="markdownTableBodyNone">server-allocated buffer; release with <code>data.free</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>writeFile(api, rel, data, size)</code>   </td><td class="markdownTableBodyNone">creates parent folders    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>list(api, rel, out, cap) -&gt; count</code>   </td><td class="markdownTableBodyNone">entry names joined with <code>\n</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>free(ptr)</code>   </td><td class="markdownTableBodyNone">releases <code>readFile</code> buffers across allocator boundaries   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md273"></a>
+Versioning</h2>
+<p><code>CS_PLUGIN_ABI_VERSION</code> stays at 1 while fields are only appended; the server's plugin API version (<code>CURSESTONE_API</code>, currently <code>1.0.3</code>) only moves at release time, not per change.</p>
+<h1><a class="anchor" id="autotoc_md274"></a>
 Commands</h1>
 <ul>
 <li><code>/plugins</code> — lists every plugin; native ones show a <code>[C++]</code> tag.</li>
-<li><code>/plugins reload</code> — disables, unloads (dtor runs <code>onUnload</code>, library closed) and re-scans the folder; runs on the main thread. </li>
+<li><code>/plugins reload</code> — disables, unloads (dtor runs <code>onUnload</code>, library closed) and re-scans the folder (folders for Lua, bare files for C++), all on the main thread.</li>
 </ul>
+<h1><a class="anchor" id="autotoc_md275"></a>
+Reference implementation</h1>
+<p><code>plugins/HelloNative/</code> — build with the <code>cursestone-example-plugin</code> CMake target or the one-liner above, then drop the produced <code>HelloNative.so</code> / <code>HelloNative.dll</code> directly into <code>plugins/</code>. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

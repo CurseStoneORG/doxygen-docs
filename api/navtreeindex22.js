@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"classvgen_1_1Layer.html#aa5e9172dda1157f08067719d486ecfb5":[12,0,2,100,5],
 "classvgen_1_1Layer.html#adb5f38ea595d93b5edf6528089e1f731":[12,0,2,100,7],
 "classvgen_1_1Layer.html#ae171cc9935368745ac647721e0104a24":[12,0,2,100,8],
 "classvgen_1_1LayerData.html":[12,0,2,99],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "classvgen_1_1NBCastleEntrance.html#a418dc53ee78f9f679527ca1a1c5b5907":[12,0,2,132,2],
 "classvgen_1_1NBCastleEntrance.html#a6fc3d66d64259305dea07c3663d5c36f":[12,0,2,132,3],
 "classvgen_1_1NBCastleEntrance.html#afc6c01076c7693d9a7cb837a62d88ca3":[12,0,2,132,1],
-"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html":[12,0,2,135],
-"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a5c1c21f65c40adda85a730e8267d4367":[12,0,2,135,1]
+"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html":[12,0,2,135]
 };

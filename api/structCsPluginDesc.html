@@ -103,7 +103,7 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 <tr class="separator:a902c9697a97b1b388f0807f5904750ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fde5db8252ee9b74d048dfa08a074dc"><td class="memItemLeft" align="right" valign="top"><a id="a8fde5db8252ee9b74d048dfa08a074dc"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPluginDesc.html#a8fde5db8252ee9b74d048dfa08a074dc">name</a></td></tr>
-<tr class="memdesc:a8fde5db8252ee9b74d048dfa08a074dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plugin name; plugin.yml <code>name</code> stays authoritative. <br /></td></tr>
+<tr class="memdesc:a8fde5db8252ee9b74d048dfa08a074dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Plugin name; NULL/"" falls back to the file stem. <br /></td></tr>
 <tr class="separator:a8fde5db8252ee9b74d048dfa08a074dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed59f4ce910c1431ea8c5ee5d690b8c2"><td class="memItemLeft" align="right" valign="top"><a id="aed59f4ce910c1431ea8c5ee5d690b8c2"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPluginDesc.html#aed59f4ce910c1431ea8c5ee5d690b8c2">version</a></td></tr>
@@ -119,6 +119,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Static plugin metadata returned by the vtable's desc hook. </p>
+<p>For native plugins the descriptor IS the manifest — there is no plugin.yml. <code>name</code> must be unique and non-empty (the server falls back to the file stem when it is NULL or ""). </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="afd0600fe3e408718ea8ff43713390940"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd0600fe3e408718ea8ff43713390940">&#9670;&nbsp;</a></span>api</h2>
@@ -133,7 +134,7 @@ const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><div class="memdoc">
 
 <p>Server plugin API the plugin was built for, e.g. </p>
-<p>"1.0.3". </p>
+<p>"1.0.3"; NULL/"" = built against this SDK. </p>
 
 </div>
 </div>

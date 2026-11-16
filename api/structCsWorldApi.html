@@ -121,6 +121,33 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>getSpawn</b> )(cons
 <tr class="memitem:a6d5276d0aa68d9635ea82120c025a2d0"><td class="memItemLeft" align="right" valign="top"><a id="a6d5276d0aa68d9635ea82120c025a2d0"></a>
 uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>playerCount</b> )(const char *world)</td></tr>
 <tr class="separator:a6d5276d0aa68d9635ea82120c025a2d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a584fffe48b47f7a5c0c7c0230768254f"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f">getBlockMeta</a> )(const char *world, int32_t x, int32_t y, int32_t z)</td></tr>
+<tr class="separator:a584fffe48b47f7a5c0c7c0230768254f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f720c52bb241d41b3aebe6b04f49a5"><td class="memItemLeft" align="right" valign="top"><a id="a00f720c52bb241d41b3aebe6b04f49a5"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a00f720c52bb241d41b3aebe6b04f49a5">setSpawnPoint</a> )(const char *world, double x, double y, double z)</td></tr>
+<tr class="memdesc:a00f720c52bb241d41b3aebe6b04f49a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">World compass spawn. <br /></td></tr>
+<tr class="separator:a00f720c52bb241d41b3aebe6b04f49a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62261493a35b1533a55a9fa342962c12"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a62261493a35b1533a55a9fa342962c12">getWeather</a> )(const char *world)</td></tr>
+<tr class="separator:a62261493a35b1533a55a9fa342962c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c5627238a7d3ad5ad1bc54431453782"><td class="memItemLeft" align="right" valign="top"><a id="a7c5627238a7d3ad5ad1bc54431453782"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a7c5627238a7d3ad5ad1bc54431453782">setWeather</a> )(const char *world, int32_t state)</td></tr>
+<tr class="memdesc:a7c5627238a7d3ad5ad1bc54431453782"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 clear / 1 rain / 2 thunder. <br /></td></tr>
+<tr class="separator:a7c5627238a7d3ad5ad1bc54431453782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b919d74ff68edb830d10f22ca54f03a"><td class="memItemLeft" align="right" valign="top"><a id="a7b919d74ff68edb830d10f22ca54f03a"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>spawnLightning</b> )(const char *world, double x, double y, double z, bool fire)</td></tr>
+<tr class="separator:a7b919d74ff68edb830d10f22ca54f03a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319c696c178e01fee40ecf91c5aed49b"><td class="memItemLeft" align="right" valign="top"><a id="a319c696c178e01fee40ecf91c5aed49b"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a319c696c178e01fee40ecf91c5aed49b">isChunkLoaded</a> )(const char *world, int32_t cx, int32_t cz)</td></tr>
+<tr class="memdesc:a319c696c178e01fee40ecf91c5aed49b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chunk-residency probe. <br /></td></tr>
+<tr class="separator:a319c696c178e01fee40ecf91c5aed49b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68c330dd79ba27065ed1db675bc151a"><td class="memItemLeft" align="right" valign="top"><a id="ac68c330dd79ba27065ed1db675bc151a"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#ac68c330dd79ba27065ed1db675bc151a">save</a> )(const char *world)</td></tr>
+<tr class="memdesc:ac68c330dd79ba27065ed1db675bc151a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Persists dirty chunks + level.dat; costly. <br /></td></tr>
+<tr class="separator:ac68c330dd79ba27065ed1db675bc151a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8adc738141d7da740d05ee7e2ebbb474"><td class="memItemLeft" align="right" valign="top"><a id="a8adc738141d7da740d05ee7e2ebbb474"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a8adc738141d7da740d05ee7e2ebbb474">spawnItem</a> )(const char *world, double x, double y, double z, int32_t id, int32_t count, int32_t meta)</td></tr>
+<tr class="memdesc:a8adc738141d7da740d05ee7e2ebbb474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a visible item drop; id/count behave like giveItem (count 1..64). <br /></td></tr>
+<tr class="separator:a8adc738141d7da740d05ee7e2ebbb474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
@@ -138,6 +165,36 @@ uint32_t(*&#160;</td><td class="memItemRight" valign="bottom"><b>playerCount</b>
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>block id, or 0 for unloaded chunks / invalid y. </dd></dl>
+
+</div>
+</div>
+<a id="a584fffe48b47f7a5c0c7c0230768254f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a584fffe48b47f7a5c0c7c0230768254f">&#9670;&nbsp;</a></span>getBlockMeta</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* CsWorldApi::getBlockMeta) (const char *world, int32_t x, int32_t y, int32_t z)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>block metadata nibble (0..15), or 0 for unloaded chunks / invalid y. </dd></dl>
+
+</div>
+</div>
+<a id="a62261493a35b1533a55a9fa342962c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62261493a35b1533a55a9fa342962c12">&#9670;&nbsp;</a></span>getWeather</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* CsWorldApi::getWeather) (const char *world)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>0 clear / 1 rain / 2 thunder, or -1 for unloaded worlds. </dd></dl>
 
 </div>
 </div>

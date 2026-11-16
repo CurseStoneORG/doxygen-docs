@@ -269,20 +269,27 @@ var NAVTREE =
       [ "9. Reproduction commands", "md_docs_audits_test_results.html#autotoc_md263", null ]
     ] ],
     [ "CurseStone Plugin API", "md_docs_PLUGINS.html", [
-      [ "Manifest (<tt>plugin.yml</tt>)", "md_docs_PLUGINS.html#autotoc_md265", null ],
-      [ "Lifecycle (both backends)", "md_docs_PLUGINS.html#autotoc_md266", null ],
-      [ "Lua plugins", "md_docs_PLUGINS.html#autotoc_md267", null ],
-      [ "Native plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md268", null ],
-      [ "Commands", "md_docs_PLUGINS.html#autotoc_md269", null ]
+      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md265", null ],
+      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md266", [
+        [ "Structure", "md_docs_PLUGINS.html#autotoc_md267", null ],
+        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md268", null ],
+        [ "Building", "md_docs_PLUGINS.html#autotoc_md269", null ],
+        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md270", null ],
+        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md271", null ],
+        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md272", null ],
+        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md273", null ]
+      ] ],
+      [ "Commands", "md_docs_PLUGINS.html#autotoc_md274", null ],
+      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md275", null ]
     ] ],
     [ "CurseStone Comment and Documentation Style Guide", "md_docs_STYLE_COMMENTS.html", [
-      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md277", null ],
-      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md278", null ],
-      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md279", null ],
-      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md280", null ],
-      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md281", null ],
-      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md282", null ],
-      [ "7. Tooling workflow (per migration batch)", "md_docs_STYLE_COMMENTS.html#autotoc_md283", null ]
+      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md283", null ],
+      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md284", null ],
+      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md285", null ],
+      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md286", null ],
+      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md287", null ],
+      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md288", null ],
+      [ "7. Tooling workflow (per migration batch)", "md_docs_STYLE_COMMENTS.html#autotoc_md289", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -333,20 +340,20 @@ var NAVTREEINDEX =
 "classcursestone_1_1nbt_1_1ByteTag.html",
 "classcursestone_1_1network_1_1protocol_1_1ContainerOpenPacket.html",
 "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#ae7995d2f0ab3d07648a4051a0bc6cd50",
-"classcursestone_1_1plugin_1_1PluginBase.html#a5ee7e37fdf34a19fd338c9083a53dd86",
-"classcursestone_1_1world_1_1Position.html#a491b5e90ce802708e840331727cc2c4f",
-"classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html",
-"classvgen_1_1BiomeDecorator.html#a355d50c30820548a6b9cbc0e765e6cbc",
-"classvgen_1_1DesertPyramidPiece.html",
-"classvgen_1_1Layer.html#adb5f38ea595d93b5edf6528089e1f731",
-"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a81c3d1d27fdfb9358a829fe6e9f01a63",
-"classvgen_1_1SavannaBiome.html#ace2be9e6669a1708e1bf32250039b70a",
-"classvgen_1_1TwoRoomHouse.html#a3ac4cc1c0e0e2f7bee386239d3d9e1ea",
-"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md150",
-"structCsPluginVTable.html#aa5042763771ff661354399b50e699e44",
-"structcursestone_1_1utils_1_1Config_1_1Node.html#ae6f95d910b13039332dd5a60190ab3aa",
-"structmcp__rak__session.html#a614951912a89e96454bed1ea22f2fcf3",
-"structvgen_1_1EntityDefinitionIdentifier.html#af8f717fc3ba446411f0db16ebc82078f"
+"classcursestone_1_1plugin_1_1PluginBase.html#a5992492fdf4662d33dcdf3822306fcb7",
+"classcursestone_1_1world_1_1Position.html#a3b7151d5dd28c14ca2216279401fd9c4",
+"classcursestone_1_1world_1_1generator_1_1ISpillQueue.html#ad2ace08437cd12c0aed774a87b76e09a",
+"classvgen_1_1BiomeDecorator.html#a349eabc54efc9ab9c1d1e3d40e3ba6d0",
+"classvgen_1_1DesertBiome.html#acfd14e0be73bf8c95a370e79497c8c0a",
+"classvgen_1_1Layer.html#aa5e9172dda1157f08067719d486ecfb5",
+"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a5c1c21f65c40adda85a730e8267d4367",
+"classvgen_1_1SavannaBiome.html#a7c9ce1e2682290e250407c82f84e58ab",
+"classvgen_1_1TwoRoomHouse.html#a2d3205f4259e19a47d6cd7fc70b05571",
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md142",
+"structCsPluginApi.html#a91b7635a8ef46fc019016efa7a8d7d60",
+"structcursestone_1_1physics_1_1BlockBox.html",
+"structmcp__main__logger.html#a9d3464822ba7dcc800b3ef6e742a2714",
+"structvgen_1_1ChunkBlockPos.html#aed1f194f228c4fe3620621546105932e"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

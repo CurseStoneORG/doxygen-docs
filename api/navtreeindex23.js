@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a5c1c21f65c40adda85a730e8267d4367":[12,0,2,135,1],
 "classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a81c3d1d27fdfb9358a829fe6e9f01a63":[12,0,2,135,2],
 "classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a848183464c79de396fa325bec375ed12":[12,0,2,135,3],
 "classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#ad983b7b445d3a93def561a2f24596208":[12,0,2,135,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1SandStoneBlock.html#a10fdd0480222706f27ecacb664404b1fa7a1920d61156abc05a60135aefe8bc67":[12,0,2,40,0,0],
 "classvgen_1_1SandStoneBlock.html#a10fdd0480222706f27ecacb664404b1fa7d0042b8e05628a27ca35132ab812bba":[12,0,2,40,0,1],
 "classvgen_1_1SavannaBiome.html":[12,0,2,19],
-"classvgen_1_1SavannaBiome.html#a42080fbff7514fff3742f7464dd21567":[12,0,2,19,1],
-"classvgen_1_1SavannaBiome.html#a7c9ce1e2682290e250407c82f84e58ab":[12,0,2,19,2]
+"classvgen_1_1SavannaBiome.html#a42080fbff7514fff3742f7464dd21567":[12,0,2,19,1]
 };

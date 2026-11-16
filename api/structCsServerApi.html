@@ -153,10 +153,55 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsServerApi.html#a4647ff8b0d8f2ff1ddc68ff511ae6d00">motd</a> )(char *out, uint32_t cap)</td></tr>
 <tr class="memdesc:a4647ff8b0d8f2ff1ddc68ff511ae6d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configured MOTD. <br /></td></tr>
 <tr class="separator:a4647ff8b0d8f2ff1ddc68ff511ae6d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af294a337a0f54fcb7d248291dcefa01a"><td class="memItemLeft" align="right" valign="top"><a id="af294a337a0f54fcb7d248291dcefa01a"></a>
+int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsServerApi.html#af294a337a0f54fcb7d248291dcefa01a">maxPlayers</a> )(void)</td></tr>
+<tr class="memdesc:af294a337a0f54fcb7d248291dcefa01a"><td class="mdescLeft">&#160;</td><td class="mdescRight">server.properties max-players. <br /></td></tr>
+<tr class="separator:af294a337a0f54fcb7d248291dcefa01a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94703bd3c1a6c9dc80e7f1034589cdc9"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsServerApi.html#a94703bd3c1a6c9dc80e7f1034589cdc9">difficulty</a> )(void)</td></tr>
+<tr class="memdesc:a94703bd3c1a6c9dc80e7f1034589cdc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 peaceful .  <a href="structCsServerApi.html#a94703bd3c1a6c9dc80e7f1034589cdc9">More...</a><br /></td></tr>
+<tr class="separator:a94703bd3c1a6c9dc80e7f1034589cdc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35c6cedc15128c0911150004fc744e0"><td class="memItemLeft" align="right" valign="top"><a id="ad35c6cedc15128c0911150004fc744e0"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsServerApi.html#ad35c6cedc15128c0911150004fc744e0">whitelistEnabled</a> )(void)</td></tr>
+<tr class="memdesc:ad35c6cedc15128c0911150004fc744e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whitelist toggle state. <br /></td></tr>
+<tr class="separator:ad35c6cedc15128c0911150004fc744e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee78779277daf1a94a9a8f1a69b43adb"><td class="memItemLeft" align="right" valign="top"><a id="aee78779277daf1a94a9a8f1a69b43adb"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsServerApi.html#aee78779277daf1a94a9a8f1a69b43adb">isBanned</a> )(const char *name)</td></tr>
+<tr class="memdesc:aee78779277daf1a94a9a8f1a69b43adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when the name is banned. <br /></td></tr>
+<tr class="separator:aee78779277daf1a94a9a8f1a69b43adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90a0249dd800302345ee16c2f7eee6a9"><td class="memItemLeft" align="right" valign="top"><a id="a90a0249dd800302345ee16c2f7eee6a9"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsServerApi.html#a90a0249dd800302345ee16c2f7eee6a9">setBanned</a> )(const char *name, bool value)</td></tr>
+<tr class="memdesc:a90a0249dd800302345ee16c2f7eee6a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bans / pardons by name; banning kicks the player. <br /></td></tr>
+<tr class="separator:a90a0249dd800302345ee16c2f7eee6a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41733668dc002ab213a66f3bdc9991ef"><td class="memItemLeft" align="right" valign="top"><a id="a41733668dc002ab213a66f3bdc9991ef"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsServerApi.html#a41733668dc002ab213a66f3bdc9991ef">broadcastTip</a> )(const char *msg)</td></tr>
+<tr class="memdesc:a41733668dc002ab213a66f3bdc9991ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tip line above the hotbar to every player. <br /></td></tr>
+<tr class="separator:a41733668dc002ab213a66f3bdc9991ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3bbabad1bb8cf92c49e6614fbfa56a"><td class="memItemLeft" align="right" valign="top"><a id="aad3bbabad1bb8cf92c49e6614fbfa56a"></a>
+void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsServerApi.html#aad3bbabad1bb8cf92c49e6614fbfa56a">broadcastPopup</a> )(const char *msg)</td></tr>
+<tr class="memdesc:aad3bbabad1bb8cf92c49e6614fbfa56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Popup line to every player. <br /></td></tr>
+<tr class="separator:aad3bbabad1bb8cf92c49e6614fbfa56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Server-wide queries and world management. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a94703bd3c1a6c9dc80e7f1034589cdc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94703bd3c1a6c9dc80e7f1034589cdc9">&#9670;&nbsp;</a></span>difficulty</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* CsServerApi::difficulty) (void)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>0 peaceful . </p>
+<p>. 3 hard. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/plugin/<a class="el" href="NativeAPI_8h_source.html">NativeAPI.h</a></li>
 </ul>
 </div><!-- contents -->

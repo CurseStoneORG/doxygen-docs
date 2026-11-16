@@ -1,5 +1,6 @@
 var NAVTREEINDEX21 =
 {
+"classvgen_1_1DesertBiome.html#acfd14e0be73bf8c95a370e79497c8c0a":[12,0,2,4,0],
 "classvgen_1_1DesertPyramidPiece.html":[12,0,2,143],
 "classvgen_1_1DesertPyramidPiece.html#a09e711cae1873a5165ada968823194c3":[12,0,2,143,2],
 "classvgen_1_1DesertPyramidPiece.html#a8b4070ff883ca7fa173ffbf21d4e36e1":[12,0,2,143,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX21 =
 "classvgen_1_1Layer.html#a537b4ae1246833082e9870ca689b12ed":[12,0,2,100,4],
 "classvgen_1_1Layer.html#a74dd20a802f521f44e7a0b2d4fbbffba":[12,0,2,100,2],
 "classvgen_1_1Layer.html#a7631903ca664be9ea3e40a987642476e":[12,0,2,100,3],
-"classvgen_1_1Layer.html#a8b5aaa327aaf3ca631e4ad9f84d17b76":[12,0,2,100,6],
-"classvgen_1_1Layer.html#aa5e9172dda1157f08067719d486ecfb5":[12,0,2,100,5]
+"classvgen_1_1Layer.html#a8b5aaa327aaf3ca631e4ad9f84d17b76":[12,0,2,100,6]
 };

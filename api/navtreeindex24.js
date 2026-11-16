@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classvgen_1_1SavannaBiome.html#a7c9ce1e2682290e250407c82f84e58ab":[12,0,2,19,2],
 "classvgen_1_1SavannaBiome.html#ace2be9e6669a1708e1bf32250039b70a":[12,0,2,19,0],
 "classvgen_1_1SavannaTreeFeature.html":[12,0,2,78],
 "classvgen_1_1SavannaTreeFeature.html#a61d011f5c689460e65cec8e447f9fb82":[12,0,2,78,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "classvgen_1_1TreeFeature.html#afb043c88fc52144f594848a85f071f58":[12,0,2,83,2],
 "classvgen_1_1TwoRoomHouse.html":[12,0,2,166],
 "classvgen_1_1TwoRoomHouse.html#a0dd9827de60d58793e61b45dc9e6fcfe":[12,0,2,166,4],
-"classvgen_1_1TwoRoomHouse.html#a1a0919b5d3fa89d14f5593176e906e32":[12,0,2,166,0],
-"classvgen_1_1TwoRoomHouse.html#a2d3205f4259e19a47d6cd7fc70b05571":[12,0,2,166,7]
+"classvgen_1_1TwoRoomHouse.html#a1a0919b5d3fa89d14f5593176e906e32":[12,0,2,166,0]
 };

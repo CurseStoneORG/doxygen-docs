@@ -161,11 +161,101 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>setDisplayName</b> 
 <tr class="memitem:adb72cc5cc6a4e7f8ea6d03882cb5953c"><td class="memItemLeft" align="right" valign="top"><a id="adb72cc5cc6a4e7f8ea6d03882cb5953c"></a>
 bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>getDisplayName</b> )(const char *name, char *out, uint32_t cap)</td></tr>
 <tr class="separator:adb72cc5cc6a4e7f8ea6d03882cb5953c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4535518b05131599bf5df4b6677f421c"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#a4535518b05131599bf5df4b6677f421c">getGamemode</a> )(const char *name)</td></tr>
+<tr class="separator:a4535518b05131599bf5df4b6677f421c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3b6275189b9b40f3cc368b6ead3e6b0"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#ab3b6275189b9b40f3cc368b6ead3e6b0">setGamemode</a> )(const char *name, int gm)</td></tr>
+<tr class="separator:ab3b6275189b9b40f3cc368b6ead3e6b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16731cfff2d6396d6c95b6a010aaa292"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#a16731cfff2d6396d6c95b6a010aaa292">addEffect</a> )(const char *name, int32_t effectId, int32_t durationTicks, int32_t amplifier)</td></tr>
+<tr class="memdesc:a16731cfff2d6396d6c95b6a010aaa292"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vanilla effect id (Speed=1 .  <a href="structCsPlayerApi.html#a16731cfff2d6396d6c95b6a010aaa292">More...</a><br /></td></tr>
+<tr class="separator:a16731cfff2d6396d6c95b6a010aaa292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac01b6b3d00acba5529bfdb3662be8161"><td class="memItemLeft" align="right" valign="top"><a id="ac01b6b3d00acba5529bfdb3662be8161"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>removeEffect</b> )(const char *name, int32_t effectId)</td></tr>
+<tr class="separator:ac01b6b3d00acba5529bfdb3662be8161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1752661c1493f2d0a2ebfd408cebb707"><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#a1752661c1493f2d0a2ebfd408cebb707">getExperienceLevel</a> )(const char *name)</td></tr>
+<tr class="separator:a1752661c1493f2d0a2ebfd408cebb707"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a103b896d24611fb9a122e4c44222fa44"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#a103b896d24611fb9a122e4c44222fa44">setExperience</a> )(const char *name, int32_t exp, int32_t level)</td></tr>
+<tr class="separator:a103b896d24611fb9a122e4c44222fa44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9089f90b9f36840bb824750a62ddd13e"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#a9089f90b9f36840bb824750a62ddd13e">getAddress</a> )(const char *name, char *out, uint32_t cap)</td></tr>
+<tr class="separator:a9089f90b9f36840bb824750a62ddd13e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e5ab6a42492c529c55b2cf710dbd96"><td class="memItemLeft" align="right" valign="top"><a id="a73e5ab6a42492c529c55b2cf710dbd96"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#a73e5ab6a42492c529c55b2cf710dbd96">getSpawnPoint</a> )(const char *name, double out[3])</td></tr>
+<tr class="memdesc:a73e5ab6a42492c529c55b2cf710dbd96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bed/personal spawn; falls back to world spawn. <br /></td></tr>
+<tr class="separator:a73e5ab6a42492c529c55b2cf710dbd96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fc15f0d748320107d92634314848d96"><td class="memItemLeft" align="right" valign="top"><a id="a6fc15f0d748320107d92634314848d96"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#a6fc15f0d748320107d92634314848d96">setSpawnPoint</a> )(const char *name, double x, double y, double z)</td></tr>
+<tr class="memdesc:a6fc15f0d748320107d92634314848d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Persists with the player data. <br /></td></tr>
+<tr class="separator:a6fc15f0d748320107d92634314848d96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18c82024b2cbc92c0d44fdcaa29d7355"><td class="memItemLeft" align="right" valign="top"><a id="a18c82024b2cbc92c0d44fdcaa29d7355"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsPlayerApi.html#a18c82024b2cbc92c0d44fdcaa29d7355">setOnFire</a> )(const char *name, int32_t seconds)</td></tr>
+<tr class="memdesc:a18c82024b2cbc92c0d44fdcaa29d7355"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 extinguishes. <br /></td></tr>
+<tr class="separator:a18c82024b2cbc92c0d44fdcaa29d7355"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Per-player operations. </p>
 <p>First argument is the exact player name; every call returns false when the player is offline. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a16731cfff2d6396d6c95b6a010aaa292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16731cfff2d6396d6c95b6a010aaa292">&#9670;&nbsp;</a></span>addEffect</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsPlayerApi::addEffect) (const char *name, int32_t effectId, int32_t durationTicks, int32_t amplifier)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vanilla effect id (Speed=1 . </p>
+<p>. Saturation=23); unknown ids fail. </p>
+
+</div>
+</div>
+<a id="a9089f90b9f36840bb824750a62ddd13e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9089f90b9f36840bb824750a62ddd13e">&#9670;&nbsp;</a></span>getAddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsPlayerApi::getAddress) (const char *name, char *out, uint32_t cap)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>"ip:port" the player connected from. </dd></dl>
+
+</div>
+</div>
+<a id="a1752661c1493f2d0a2ebfd408cebb707"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1752661c1493f2d0a2ebfd408cebb707">&#9670;&nbsp;</a></span>getExperienceLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* CsPlayerApi::getExperienceLevel) (const char *name)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>current XP level, or -1 offline. </dd></dl>
+
+</div>
+</div>
+<a id="a4535518b05131599bf5df4b6677f421c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4535518b05131599bf5df4b6677f421c">&#9670;&nbsp;</a></span>getGamemode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int(* CsPlayerApi::getGamemode) (const char *name)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>0 survival / 1 creative / 2 adventure / 3 spectator, or -1 offline. </dd></dl>
+
+</div>
+</div>
 <a id="aeba1c33bea464e17a96674bbaea7e83c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeba1c33bea464e17a96674bbaea7e83c">&#9670;&nbsp;</a></span>getHealth</h2>
 
@@ -195,6 +285,46 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>getDisplayName</b> 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">customName</td><td>NULL or "" keeps the item unnamed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a103b896d24611fb9a122e4c44222fa44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a103b896d24611fb9a122e4c44222fa44">&#9670;&nbsp;</a></span>setExperience</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsPlayerApi::setExperience) (const char *name, int32_t exp, int32_t level)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exp</td><td>0..100 progress percent within <code>level</code>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab3b6275189b9b40f3cc368b6ead3e6b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3b6275189b9b40f3cc368b6ead3e6b0">&#9670;&nbsp;</a></span>setGamemode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsPlayerApi::setGamemode) (const char *name, int gm)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gm</td><td>0 survival / 1 creative / 2 adventure / 3 spectator. </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"classvgen_1_1BiomeDecorator.html#a349eabc54efc9ab9c1d1e3d40e3ba6d0":[12,0,2,2,64],
 "classvgen_1_1BiomeDecorator.html#a355d50c30820548a6b9cbc0e765e6cbc":[12,0,2,2,54],
 "classvgen_1_1BiomeDecorator.html#a35a4160150b3adb34c8a1c495851d7ca":[12,0,2,2,18],
 "classvgen_1_1BiomeDecorator.html#a3f1d287473205a464252e05c1ce2d8aa":[12,0,2,2,67],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "classvgen_1_1DeadBushFeature.html":[12,0,2,51],
 "classvgen_1_1DeadBushFeature.html#af12b51e9e6bf8e6cc36b9ad399df222d":[12,0,2,51,0],
 "classvgen_1_1DesertBiome.html":[12,0,2,4],
-"classvgen_1_1DesertBiome.html#a973e40952663ca6088f8c23760c06220":[12,0,2,4,1],
-"classvgen_1_1DesertBiome.html#acfd14e0be73bf8c95a370e79497c8c0a":[12,0,2,4,0]
+"classvgen_1_1DesertBiome.html#a973e40952663ca6088f8c23760c06220":[12,0,2,4,1]
 };
