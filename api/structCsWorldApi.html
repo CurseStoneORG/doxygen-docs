@@ -157,6 +157,17 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 <tr class="memitem:a0230605d345ccc36048cd9d707efb798"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a0230605d345ccc36048cd9d707efb798">spawnSplashParticles</a> )(const char *world, double x, double y, double z, int32_t rgb)</td></tr>
 <tr class="memdesc:a0230605d345ccc36048cd9d707efb798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splash-potion shatter (LevelEvent 2002): colored swirl + glass smash sound.  <a href="structCsWorldApi.html#a0230605d345ccc36048cd9d707efb798">More...</a><br /></td></tr>
 <tr class="separator:a0230605d345ccc36048cd9d707efb798"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a583f83052b69476cdc9dcc54f216dbdc"><td class="memItemLeft" align="right" valign="top">int64_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc">spawnFloatingText</a> )(const char *world, double x, double y, double z, const char *text, int32_t ttlTicks)</td></tr>
+<tr class="memdesc:a583f83052b69476cdc9dcc54f216dbdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a floating text: an invisible item-entity carrier whose only visible part is its nametag (protocol 84 has no text particle).  <a href="structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc">More...</a><br /></td></tr>
+<tr class="separator:a583f83052b69476cdc9dcc54f216dbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0106f853b1cc6ce23f2fbc73e93246fa"><td class="memItemLeft" align="right" valign="top"><a id="a0106f853b1cc6ce23f2fbc73e93246fa"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a0106f853b1cc6ce23f2fbc73e93246fa">moveFloatingText</a> )(const char *world, int64_t id, double x, double y, double z)</td></tr>
+<tr class="memdesc:a0106f853b1cc6ce23f2fbc73e93246fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Repositions a floating text for its current viewers. <br /></td></tr>
+<tr class="separator:a0106f853b1cc6ce23f2fbc73e93246fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7249412c78ac54ab090813a30353fc33"><td class="memItemLeft" align="right" valign="top"><a id="a7249412c78ac54ab090813a30353fc33"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a7249412c78ac54ab090813a30353fc33">removeFloatingText</a> )(const char *world, int64_t id)</td></tr>
+<tr class="memdesc:a7249412c78ac54ab090813a30353fc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Despawns a floating text; false for unknown ids. <br /></td></tr>
+<tr class="separator:a7249412c78ac54ab090813a30353fc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
@@ -221,6 +232,30 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 
 <p>Break burst + dig sound on a block (LevelEvent 2001, the one protocol-84 event that carries both). </p>
 <p>id 0..255, meta 0..15. </p>
+
+</div>
+</div>
+<a id="a583f83052b69476cdc9dcc54f216dbdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a583f83052b69476cdc9dcc54f216dbdc">&#9670;&nbsp;</a></span>spawnFloatingText</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t(* CsWorldApi::spawnFloatingText) (const char *world, double x, double y, double z, const char *text, int32_t ttlTicks)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spawns a floating text: an invisible item-entity carrier whose only visible part is its nametag (protocol 84 has no text particle). </p>
+<p>One spawn packet, zero per-tick cost.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ttlTicks</td><td>&gt; 0 despawns automatically after that many ticks; 0 keeps it until <a class="el" href="structCsWorldApi.html#a7249412c78ac54ab090813a30353fc33" title="Despawns a floating text; false for unknown ids.">removeFloatingText()</a>. Entity ids do not survive server restarts. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the entity id for move/remove, or -1 at the per-world cap. </dd></dl>
 
 </div>
 </div>

@@ -97,11 +97,12 @@ var searchData=
   ['broadcast_126',['broadcast',['../structCsServerApi.html#a0b995282110c411ed202d8d613cba814',1,'CsServerApi']]],
   ['broadcastpopup_127',['broadcastPopup',['../structCsServerApi.html#aad3bbabad1bb8cf92c49e6614fbfa56a',1,'CsServerApi']]],
   ['broadcasttip_128',['broadcastTip',['../structCsServerApi.html#a41733668dc002ab213a66f3bdc9991ef',1,'CsServerApi']]],
-  ['buffer_5fspan_129',['buffer_span',['../classvgen_1_1buffer__span.html',1,'vgen']]],
-  ['buffer_5fspan_5fmut_130',['buffer_span_mut',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
-  ['buffer_5fspan_5fmut_3c_20vgen_3a_3ablockid_20_3e_131',['buffer_span_mut&lt; vgen::BlockID &gt;',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
-  ['buffer_5fspan_5fmut_3c_20vgen_3a_3anibblepair_20_3e_132',['buffer_span_mut&lt; vgen::NibblePair &gt;',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
-  ['bushblock_133',['BushBlock',['../classvgen_1_1BushBlock.html',1,'vgen']]],
-  ['bytearraytag_134',['ByteArrayTag',['../classcursestone_1_1nbt_1_1ByteArrayTag.html',1,'cursestone::nbt']]],
-  ['bytetag_135',['ByteTag',['../classcursestone_1_1nbt_1_1ByteTag.html',1,'cursestone::nbt']]]
+  ['bubbleparticle_129',['BubbleParticle',['../classcursestone_1_1world_1_1particle_1_1BubbleParticle.html',1,'cursestone::world::particle']]],
+  ['buffer_5fspan_130',['buffer_span',['../classvgen_1_1buffer__span.html',1,'vgen']]],
+  ['buffer_5fspan_5fmut_131',['buffer_span_mut',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
+  ['buffer_5fspan_5fmut_3c_20vgen_3a_3ablockid_20_3e_132',['buffer_span_mut&lt; vgen::BlockID &gt;',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
+  ['buffer_5fspan_5fmut_3c_20vgen_3a_3anibblepair_20_3e_133',['buffer_span_mut&lt; vgen::NibblePair &gt;',['../classvgen_1_1buffer__span__mut.html',1,'vgen']]],
+  ['bushblock_134',['BushBlock',['../classvgen_1_1BushBlock.html',1,'vgen']]],
+  ['bytearraytag_135',['ByteArrayTag',['../classcursestone_1_1nbt_1_1ByteArrayTag.html',1,'cursestone::nbt']]],
+  ['bytetag_136',['ByteTag',['../classcursestone_1_1nbt_1_1ByteTag.html',1,'cursestone::nbt']]]
 ];

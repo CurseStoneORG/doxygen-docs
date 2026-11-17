@@ -1,5 +1,15 @@
 var NAVTREEINDEX3 =
 {
+"InventoryHolder_8h_source.html":[8,0,0,5,7],
+"InventoryOpenEvent_8h_source.html":[8,0,0,4,2,4],
+"InventoryType_8h_source.html":[8,0,0,5,8],
+"Inventory_8h_source.html":[8,0,0,5,6],
+"IslandLayer_8h_source.html":[8,0,0,21,1,2,3,10],
+"ItemApple_8h_source.html":[8,0,0,6,2],
+"ItemArmor_8h.html#a77ddb776930626741f48744b3fabf4f7":[6,0,0,5,103],
+"ItemArmor_8h.html#a77ddb776930626741f48744b3fabf4f7a0b2405757af5d1cde4d650bff44d9083":[6,0,0,5,103,3],
+"ItemArmor_8h.html#a77ddb776930626741f48744b3fabf4f7a1722eef60a046cf55468787a56811a9a":[6,0,0,5,103,4],
+"ItemArmor_8h.html#a77ddb776930626741f48744b3fabf4f7a5ddfb662fe4b37b1a9fb008cd1a3e5ce":[6,0,0,5,103,1],
 "ItemArmor_8h.html#a77ddb776930626741f48744b3fabf4f7a6a2cbed01dfffac314e0b82d3bda961f":[6,0,0,5,103,0],
 "ItemArmor_8h.html#a77ddb776930626741f48744b3fabf4f7ae355e7f69b64ccf2a036b16bbb200fa3":[6,0,0,5,103,2],
 "ItemArmor_8h.html#a9d3a74512a03531cca3aa6300d273a6c":[6,0,0,5,104],
@@ -20,6 +30,7 @@ var NAVTREEINDEX3 =
 "ItemBlock_8h_source.html":[8,0,0,6,13],
 "ItemBow_8h_source.html":[8,0,0,6,14],
 "ItemBread_8h_source.html":[8,0,0,6,15],
+"ItemBreakParticle_8h_source.html":[8,0,0,21,3,12],
 "ItemBucket_8h_source.html":[8,0,0,6,16],
 "ItemCarrot_8h_source.html":[8,0,0,6,17],
 "ItemCoal_8h_source.html":[8,0,0,6,18],
@@ -238,16 +249,5 @@ var NAVTREEINDEX3 =
 "ItemConstants_8h.html#a8e847124340f2474c553245e48f10fda":[6,0,0,5,380],
 "ItemConstants_8h.html#a8fa5eda3aeaf3a3d7e3823583cdf6573":[6,0,0,5,341],
 "ItemConstants_8h.html#a91b9622adb0a8dd514c9dc1b61c55ebc":[6,0,0,5,306],
-"ItemConstants_8h.html#a9228a3d1844ba43e902e8750b637cd5a":[6,0,0,5,234],
-"ItemConstants_8h.html#a92bd921079faa86a73d23fbcb1a2e365":[6,0,0,5,152],
-"ItemConstants_8h.html#a9344ceec33da27aa17ef131adaaa3f7e":[6,0,0,5,467],
-"ItemConstants_8h.html#a93dbd45c1a10c507b8d5155ede77e292":[6,0,0,5,254],
-"ItemConstants_8h.html#a9407184dad7316319696933e3d14329a":[6,0,0,5,215],
-"ItemConstants_8h.html#a9433bd23b6cd1e3eb297a947f0624dbe":[6,0,0,5,292],
-"ItemConstants_8h.html#a946f6bcd9f16c767d99daa59444f415f":[6,0,0,5,159],
-"ItemConstants_8h.html#a95fb7e103b420434118faff3fe50018f":[6,0,0,5,340],
-"ItemConstants_8h.html#a96ae261da210b120454afb87d325875b":[6,0,0,5,238],
-"ItemConstants_8h.html#a96c73c0c7c8cbd6f8aabeb3b5eda64bf":[6,0,0,5,273],
-"ItemConstants_8h.html#a97188d3a4b322f50b9fc675bf1c29275":[6,0,0,5,300],
-"ItemConstants_8h.html#a975c92da77d0b7151b94af736572060a":[6,0,0,5,441]
+"ItemConstants_8h.html#a9228a3d1844ba43e902e8750b637cd5a":[6,0,0,5,234]
 };

@@ -201,6 +201,7 @@ var NAVTREEINDEX1 =
 "Blocks_8h.html#adb4d45999c1ac59398074f857397bfc8":[6,0,2,224],
 "Blocks_8h_source.html":[8,0,0,21,1,2,7],
 "BoundingBox_8h_source.html":[8,0,0,21,1,2,4,0],
+"BubbleParticle_8h_source.html":[8,0,0,21,3,0],
 "ByteArrayTag_8cpp.html#a5873a2a38aa706067be618ed0644d9be":[6,0,0,8,17],
 "ByteArrayTag_8h_source.html":[8,0,0,9,0,0],
 "ByteTag_8h_source.html":[8,0,0,9,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "ContainerClosePacket_8h_source.html":[8,0,0,10,0,10],
 "ContainerOpenPacket_8h_source.html":[8,0,0,10,0,11],
 "ContainerSetContentPacket_8h_source.html":[8,0,0,10,0,12],
-"ContainerSetDataPacket_8h_source.html":[8,0,0,10,0,13],
-"ContainerSetSlotPacket_8h_source.html":[8,0,0,10,0,14]
+"ContainerSetDataPacket_8h_source.html":[8,0,0,10,0,13]
 };
