@@ -1,5 +1,9 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1inventory_1_1CraftingManager.html#a36867a5cc4aa8b4d2b37a8928e7aa1b2":[7,0,0,4,2,3],
+"classcursestone_1_1inventory_1_1CraftingManager.html#a49fdb7b94cdf7f5195105229262d6060":[7,0,0,4,2,0],
+"classcursestone_1_1inventory_1_1CraftingManager.html#a89dccee3635550c29c7c9ab9c3601fb4":[7,0,0,4,2,1],
+"classcursestone_1_1inventory_1_1CraftingManager.html#a8a569216094446f7f1311a956efedc67":[7,0,0,4,2,10],
 "classcursestone_1_1inventory_1_1CraftingManager.html#a8f79bb547ac9fc9a526a1d2901d4af7e":[7,0,0,4,2,9],
 "classcursestone_1_1inventory_1_1CraftingManager.html#ab4051e58e23c481e6cd2807c051a3583":[7,0,0,4,2,2],
 "classcursestone_1_1inventory_1_1CraftingManager.html#ac8dbe7877d542c425f3e8c5884ced87e":[7,0,0,4,2,8],
@@ -245,9 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1item_1_1ItemEgg.html#acc63111fa59e88ec6562574c4a8f6abf":[7,0,0,5,30,0],
 "classcursestone_1_1item_1_1ItemEgg.html#adc7463a0405927420c70c8daf189a72f":[7,0,0,5,30,1],
 "classcursestone_1_1item_1_1ItemEmerald.html":[7,0,0,5,31],
-"classcursestone_1_1item_1_1ItemEmerald.html#a03d1f4b91170016498398eed553aadb0":[7,0,0,5,31,0],
-"classcursestone_1_1item_1_1ItemEmerald.html#aafc96062f65b319581687bb7046406f1":[7,0,0,5,31,1],
-"classcursestone_1_1item_1_1ItemEnchantedGoldenApple.html":[7,0,0,5,32],
-"classcursestone_1_1item_1_1ItemEnchantedGoldenApple.html#a5eacd2639f289a1ed14141c81ed9ef9f":[7,0,0,5,32,0],
-"classcursestone_1_1item_1_1ItemEnchantedGoldenApple.html#a73b39397a770df468bcb0c0bc6dcc985":[7,0,0,5,32,2]
+"classcursestone_1_1item_1_1ItemEmerald.html#a03d1f4b91170016498398eed553aadb0":[7,0,0,5,31,0]
 };

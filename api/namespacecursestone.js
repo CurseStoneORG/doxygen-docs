@@ -1530,7 +1530,10 @@ var namespacecursestone =
           [ "PARTICLE_VILLAGER_ANGRY", "Particle_8h.html#a05b9231530ad541be3df5658fda9eb38a1de9f534d59d1a7681071f622bf77d46", null ],
           [ "PARTICLE_VILLAGER_HAPPY", "Particle_8h.html#a05b9231530ad541be3df5658fda9eb38a1ec4dab3c11082330762222641bb22a6", null ],
           [ "PARTICLE_ENCHANTMENT_TABLE", "Particle_8h.html#a05b9231530ad541be3df5658fda9eb38aeebfd08de538c5ac5807a5f5583f5afa", null ]
-        ] ]
+        ] ],
+        [ "isValidParticleType", "ParticleNames_8h.html#a8a8e4029b43126844e6d42cb344f1dc2", null ],
+        [ "particleFromName", "ParticleNames_8cpp.html#a6e8aae4786bd8b2864450faeb2e761d6", null ],
+        [ "kParticleTypeCount", "ParticleNames_8h.html#a3501b3294d6ee49ada484ce78be541f9", null ]
       ] ],
       [ "sound", null, [
         [ "GenericSound", "classcursestone_1_1world_1_1sound_1_1GenericSound.html", "classcursestone_1_1world_1_1sound_1_1GenericSound" ],

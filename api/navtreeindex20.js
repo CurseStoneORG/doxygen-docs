@@ -1,5 +1,11 @@
 var NAVTREEINDEX20 =
 {
+"classvgen_1_1BiomeDecorator.html#a196c64c402af12a9f3e52b3521bafb79":[7,0,2,2,16],
+"classvgen_1_1BiomeDecorator.html#a1a1a0bbaea535133de17648e9e5ffc31":[7,0,2,2,33],
+"classvgen_1_1BiomeDecorator.html#a1e4890ffb54bd58c10591f9232a25758":[7,0,2,2,27],
+"classvgen_1_1BiomeDecorator.html#a1ee2436a7f3cc51efc206d95715912de":[7,0,2,2,23],
+"classvgen_1_1BiomeDecorator.html#a288266e248aac68a28a71575c72c95c4":[7,0,2,2,26],
+"classvgen_1_1BiomeDecorator.html#a2f9903019cf1eed33e44196a028675f5":[7,0,2,2,19],
 "classvgen_1_1BiomeDecorator.html#a349eabc54efc9ab9c1d1e3d40e3ba6d0":[7,0,2,2,64],
 "classvgen_1_1BiomeDecorator.html#a355d50c30820548a6b9cbc0e765e6cbc":[7,0,2,2,54],
 "classvgen_1_1BiomeDecorator.html#a35a4160150b3adb34c8a1c495851d7ca":[7,0,2,2,18],
@@ -243,11 +249,5 @@ var NAVTREEINDEX20 =
 "classvgen_1_1CompoundTag.html#ae2ccdab0240a49bd58e074e893ff5f25":[7,0,2,196,9],
 "classvgen_1_1CompoundTag.html#ae58af96136f85eb4842de20d8d72989d":[7,0,2,196,10],
 "classvgen_1_1CompoundTag.html#ae9cbd22e0e67486fbb24eaa43b8cbb3a":[7,0,2,196,3],
-"classvgen_1_1CompoundTag.html#af289ae8c952a30ad48e894da8be8b67b":[7,0,2,196,19],
-"classvgen_1_1CompoundTag.html#afd0b25951873f998cc39bb66e4df83d7":[7,0,2,196,6],
-"classvgen_1_1CompoundTag.html#affc0fb2cee2bc10c379469938e814d39":[7,0,2,196,18],
-"classvgen_1_1DeadBushFeature.html":[7,0,2,51],
-"classvgen_1_1DeadBushFeature.html#af12b51e9e6bf8e6cc36b9ad399df222d":[7,0,2,51,0],
-"classvgen_1_1DesertBiome.html":[7,0,2,4],
-"classvgen_1_1DesertBiome.html#a973e40952663ca6088f8c23760c06220":[7,0,2,4,1]
+"classvgen_1_1CompoundTag.html#af289ae8c952a30ad48e894da8be8b67b":[7,0,2,196,19]
 };

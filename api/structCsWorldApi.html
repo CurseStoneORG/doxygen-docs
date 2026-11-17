@@ -148,6 +148,15 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a8adc738141d7da740d05ee7e2ebbb474">spawnItem</a> )(const char *world, double x, double y, double z, int32_t id, int32_t count, int32_t meta)</td></tr>
 <tr class="memdesc:a8adc738141d7da740d05ee7e2ebbb474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a visible item drop; id/count behave like giveItem (count 1..64). <br /></td></tr>
 <tr class="separator:a8adc738141d7da740d05ee7e2ebbb474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3def6755ab53639b995d8d501ce71509"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a3def6755ab53639b995d8d501ce71509">spawnParticle</a> )(const char *world, double x, double y, double z, int32_t type, int32_t data)</td></tr>
+<tr class="memdesc:a3def6755ab53639b995d8d501ce71509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns one protocol-84 particle of <code>type</code> (CsParticleType, 1..32) at a world position; out-of-range ids fail.  <a href="structCsWorldApi.html#a3def6755ab53639b995d8d501ce71509">More...</a><br /></td></tr>
+<tr class="separator:a3def6755ab53639b995d8d501ce71509"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8a295aee8a34774391715a261b9792e"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#ac8a295aee8a34774391715a261b9792e">spawnBlockParticles</a> )(const char *world, double x, double y, double z, int32_t blockId, int32_t meta)</td></tr>
+<tr class="memdesc:ac8a295aee8a34774391715a261b9792e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Break burst + dig sound on a block (LevelEvent 2001, the one protocol-84 event that carries both).  <a href="structCsWorldApi.html#ac8a295aee8a34774391715a261b9792e">More...</a><br /></td></tr>
+<tr class="separator:ac8a295aee8a34774391715a261b9792e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0230605d345ccc36048cd9d707efb798"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a0230605d345ccc36048cd9d707efb798">spawnSplashParticles</a> )(const char *world, double x, double y, double z, int32_t rgb)</td></tr>
+<tr class="memdesc:a0230605d345ccc36048cd9d707efb798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splash-potion shatter (LevelEvent 2002): colored swirl + glass smash sound.  <a href="structCsWorldApi.html#a0230605d345ccc36048cd9d707efb798">More...</a><br /></td></tr>
+<tr class="separator:a0230605d345ccc36048cd9d707efb798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
@@ -195,6 +204,62 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>0 clear / 1 rain / 2 thunder, or -1 for unloaded worlds. </dd></dl>
+
+</div>
+</div>
+<a id="ac8a295aee8a34774391715a261b9792e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8a295aee8a34774391715a261b9792e">&#9670;&nbsp;</a></span>spawnBlockParticles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::spawnBlockParticles) (const char *world, double x, double y, double z, int32_t blockId, int32_t meta)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Break burst + dig sound on a block (LevelEvent 2001, the one protocol-84 event that carries both). </p>
+<p>id 0..255, meta 0..15. </p>
+
+</div>
+</div>
+<a id="a3def6755ab53639b995d8d501ce71509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3def6755ab53639b995d8d501ce71509">&#9670;&nbsp;</a></span>spawnParticle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::spawnParticle) (const char *world, double x, double y, double z, int32_t type, int32_t data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spawns one protocol-84 particle of <code>type</code> (CsParticleType, 1..32) at a world position; out-of-range ids fail. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>particle payload: scale for smoke/white_smoke/ink/critical/ heart/redstone, ARGB for dust and mob_spell*, block packing id | (meta &lt;&lt; 12) for terrain and item_break, else 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0230605d345ccc36048cd9d707efb798"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0230605d345ccc36048cd9d707efb798">&#9670;&nbsp;</a></span>spawnSplashParticles</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::spawnSplashParticles) (const char *world, double x, double y, double z, int32_t rgb)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Splash-potion shatter (LevelEvent 2002): colored swirl + glass smash sound. </p>
+<p><code>rgb</code> is 0xRRGGBB; values above fail. </p>
 
 </div>
 </div>

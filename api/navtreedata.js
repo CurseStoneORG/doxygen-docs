@@ -152,27 +152,29 @@ var NAVTREE =
       ] ]
     ] ],
     [ "CurseStone Plugin API", "md_docs_PLUGINS.html", [
-      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md146", null ],
-      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md147", [
-        [ "Structure", "md_docs_PLUGINS.html#autotoc_md148", null ],
-        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md149", null ],
-        [ "Building", "md_docs_PLUGINS.html#autotoc_md150", null ],
-        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md151", null ],
-        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md152", null ],
-        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md153", null ],
-        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md154", null ]
+      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md146", [
+        [ "Particles", "md_docs_PLUGINS.html#autotoc_md147", null ]
       ] ],
-      [ "Commands", "md_docs_PLUGINS.html#autotoc_md155", null ],
-      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md156", null ]
+      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md148", [
+        [ "Structure", "md_docs_PLUGINS.html#autotoc_md149", null ],
+        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md150", null ],
+        [ "Building", "md_docs_PLUGINS.html#autotoc_md151", null ],
+        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md152", null ],
+        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md153", null ],
+        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md154", null ],
+        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md155", null ]
+      ] ],
+      [ "Commands", "md_docs_PLUGINS.html#autotoc_md156", null ],
+      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md157", null ]
     ] ],
     [ "CurseStone Comment and Documentation Style Guide", "md_docs_STYLE_COMMENTS.html", [
-      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md164", null ],
-      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md165", null ],
-      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md166", null ],
-      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md167", null ],
-      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md168", null ],
-      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md169", null ],
-      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md170", null ]
+      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md165", null ],
+      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md166", null ],
+      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md167", null ],
+      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md168", null ],
+      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md169", null ],
+      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md170", null ],
+      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md171", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -213,30 +215,30 @@ var NAVTREEINDEX =
 "ItemConstants_8h.html#a97e00dcbb57009d1635353cd6e64b51a",
 "ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a661faf4a6ceb6714b38f5488d3a47372",
 "MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea243a3afa44aed85d504dbd53fd9804e9",
-"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a1bf78b4876eed92cf456383ab3141353",
-"World_8h.html#a55e11e04a6f986e214645a0651f6126c",
-"classcursestone_1_1Player.html#ae6304feeabb9bb1333156c7c3b984a75",
-"classcursestone_1_1block_1_1BlockGold.html#ad3f7c44257f67746007e0cacc092425f",
-"classcursestone_1_1entity_1_1Projectile.html#ae5e7db885c42ca5e8305b532cbff2a65",
-"classcursestone_1_1inventory_1_1CraftingManager.html#a8f79bb547ac9fc9a526a1d2901d4af7e",
-"classcursestone_1_1item_1_1ItemEnchantedGoldenApple.html#aa9580e0c345693bf805f5623eda9fb1d",
-"classcursestone_1_1nbt_1_1ByteTag.html",
-"classcursestone_1_1network_1_1protocol_1_1ContainerOpenPacket.html",
-"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#ae7995d2f0ab3d07648a4051a0bc6cd50",
-"classcursestone_1_1plugin_1_1PluginBase.html#a5992492fdf4662d33dcdf3822306fcb7",
-"classcursestone_1_1world_1_1Position.html#a3b7151d5dd28c14ca2216279401fd9c4",
-"classcursestone_1_1world_1_1generator_1_1ISpillQueue.html#ad2ace08437cd12c0aed774a87b76e09a",
-"classvgen_1_1BiomeDecorator.html#a349eabc54efc9ab9c1d1e3d40e3ba6d0",
-"classvgen_1_1DesertBiome.html#acfd14e0be73bf8c95a370e79497c8c0a",
-"classvgen_1_1Layer.html#aa5e9172dda1157f08067719d486ecfb5",
-"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a5c1c21f65c40adda85a730e8267d4367",
-"classvgen_1_1SavannaBiome.html#a7c9ce1e2682290e250407c82f84e58ab",
-"classvgen_1_1TwoRoomHouse.html#a2d3205f4259e19a47d6cd7fc70b05571",
-"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md56",
-"structcursestone_1_1PortalArrival.html#a690bc0deacf65a1ee0a867a2e210199d",
-"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a58bc262e37b4ee7756de0a6bebbf7e00",
-"structmcp__rak__session.html#aff9b8c4c7fe599c27418589b7cf449a2",
-"structvgen_1_1Vec3.html#a99c41dc65555d83c1b63a4a0fe420cdf"
+"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04",
+"World_8cpp.html#abd183b7a4fbd865f35dfacc3ca93f880",
+"classcursestone_1_1Player.html#adcf77d61a2ec3edd06010f91d2433cfb",
+"classcursestone_1_1block_1_1BlockGlowstone.html#aa3a18ce09c11bc98af3021d61e10ff08",
+"classcursestone_1_1entity_1_1Projectile.html#a7f1fae2e6becd17f6512d916f60046d0",
+"classcursestone_1_1inventory_1_1CraftingManager.html#a36867a5cc4aa8b4d2b37a8928e7aa1b2",
+"classcursestone_1_1item_1_1ItemEmerald.html#aafc96062f65b319581687bb7046406f1",
+"classcursestone_1_1nbt_1_1ByteArrayTag.html#a115db0731b68bd21b32fda16f1386a7f",
+"classcursestone_1_1network_1_1protocol_1_1ContainerClosePacket.html#a2fbcf5e86df4bcdd57966ee603701d7e",
+"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#ab13bca6726c76451bda8055a572c8446",
+"classcursestone_1_1plugin_1_1PluginBase.html#a1b60e46ffeaecb00d783e71f6bd7e510",
+"classcursestone_1_1world_1_1PortalRegistry.html#a9e59324d956f964a3a3883d988860d37",
+"classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html#a1213c76ac8adcf0d77926695308676a4",
+"classvgen_1_1BiomeDecorator.html#a196c64c402af12a9f3e52b3521bafb79",
+"classvgen_1_1CompoundTag.html#afd0b25951873f998cc39bb66e4df83d7",
+"classvgen_1_1Layer.html#a2a2fb0fd5ee09b028dde0c37e1b5ec4f",
+"classvgen_1_1NBCastleEntrance.html#a0802f2e47f28b176aceee83956f36cde",
+"classvgen_1_1SandStoneBlock.html#a10fdd0480222706f27ecacb664404b1f",
+"classvgen_1_1TreeFeature.html#adab789cf678b750c98d04be9714fffe9",
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md137",
+"structcursestone_1_1PlayerConfig.html#a2a4f9c95013b19cdc0a62fb1fbcaa656",
+"structcursestone_1_1world_1_1FallingBlockEntity.html#a83a0a939831a7124b47ff6c745683ea2",
+"structmcp__rak__session.html#aed488d7faaf12f8bc6cd58363b98842b",
+"structvgen_1_1Vec3.html#a0804c3917a6e0b509c8a2b452e95e41d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

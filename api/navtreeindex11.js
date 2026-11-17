@@ -1,5 +1,9 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1entity_1_1Projectile.html#a7f1fae2e6becd17f6512d916f60046d0":[7,0,0,2,9,5],
+"classcursestone_1_1entity_1_1Projectile.html#aa20571dafdeeac49b7df196f29aa9e65":[7,0,0,2,9,6],
+"classcursestone_1_1entity_1_1Projectile.html#ad795dcd851b0aa3b7d246eccabf770db":[7,0,0,2,9,0],
+"classcursestone_1_1entity_1_1Projectile.html#adb3d63926a91866221c478061bccb3b1":[7,0,0,2,9,1],
 "classcursestone_1_1entity_1_1Projectile.html#ae5e7db885c42ca5e8305b532cbff2a65":[7,0,0,2,9,4],
 "classcursestone_1_1event_1_1Cancellable.html":[7,0,0,3,5],
 "classcursestone_1_1event_1_1Cancellable.html#a6bb4f55476780a206550e28e15641dbb":[7,0,0,3,5,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1inventory_1_1ChestInventory.html":[7,0,0,4,1],
 "classcursestone_1_1inventory_1_1ChestInventory.html#a1f0c7d1f7ae85960eb3da20180ea2187":[7,0,0,4,1,0],
 "classcursestone_1_1inventory_1_1CraftingManager.html":[7,0,0,4,2],
-"classcursestone_1_1inventory_1_1CraftingManager.html#a13a1fe38797a39769f9f11dd1fd4db1e":[7,0,0,4,2,4],
-"classcursestone_1_1inventory_1_1CraftingManager.html#a36867a5cc4aa8b4d2b37a8928e7aa1b2":[7,0,0,4,2,3],
-"classcursestone_1_1inventory_1_1CraftingManager.html#a49fdb7b94cdf7f5195105229262d6060":[7,0,0,4,2,0],
-"classcursestone_1_1inventory_1_1CraftingManager.html#a89dccee3635550c29c7c9ab9c3601fb4":[7,0,0,4,2,1],
-"classcursestone_1_1inventory_1_1CraftingManager.html#a8a569216094446f7f1311a956efedc67":[7,0,0,4,2,10]
+"classcursestone_1_1inventory_1_1CraftingManager.html#a13a1fe38797a39769f9f11dd1fd4db1e":[7,0,0,4,2,4]
 };

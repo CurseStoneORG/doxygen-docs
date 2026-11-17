@@ -1,5 +1,9 @@
 var NAVTREEINDEX8 =
 {
+"World_8cpp.html#abd183b7a4fbd865f35dfacc3ca93f880":[6,0,0,19,22],
+"World_8cpp.html#acc07309ec273bf352813f06196a23ac3":[6,0,0,19,26],
+"World_8h.html#a09f84e27bb53de2a8af12fd0db87bbee":[6,0,0,19,25],
+"World_8h.html#a271a80db83df226fc4d66a24a65ab98f":[6,0,0,19,21],
 "World_8h.html#a55e11e04a6f986e214645a0651f6126c":[6,0,0,19,16],
 "World_8h.html#a8d69047032d095c6cfc45e36f4a10c6a":[6,0,0,19,17],
 "World_8h.html#a920a524bc23bc911a4902e520e798b56":[6,0,0,19,19],
@@ -245,9 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1Player.html#ad34b0a99886df6aff2c3340ad4fe6507":[7,0,0,47,14],
 "classcursestone_1_1Player.html#ad4a08f7284c8ba6d739c67d4ef0e5f4e":[7,0,0,47,2],
 "classcursestone_1_1Player.html#ad60dd3e69f8ff7094103960ea0eb23ec":[7,0,0,47,56],
-"classcursestone_1_1Player.html#ada36364860301f962d1df78d832d7e34":[7,0,0,47,154],
-"classcursestone_1_1Player.html#adcf77d61a2ec3edd06010f91d2433cfb":[7,0,0,47,20],
-"classcursestone_1_1Player.html#add176ce135d68defb99f8c8901f6c341":[7,0,0,47,97],
-"classcursestone_1_1Player.html#adfb606d7b156484e9045446dbe5754c0":[7,0,0,47,43],
-"classcursestone_1_1Player.html#ae49fdc0e2852104d93d052654987140a":[7,0,0,47,49]
+"classcursestone_1_1Player.html#ada36364860301f962d1df78d832d7e34":[7,0,0,47,154]
 };

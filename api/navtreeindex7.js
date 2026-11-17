@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04":[6,0,2,233],
+"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a03e76c8730c1c16aee28722b2718c5d7":[6,0,2,233,17],
+"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a0d01b8ab269a133c6429afa55a5fc3cf":[6,0,2,233,43],
+"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a117df782ad73dc0ef7147be9f3140d02":[6,0,2,233,16],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a1bf78b4876eed92cf456383ab3141353":[6,0,2,233,29],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a20d844f19fbbb16f8229af5a7e32ad41":[6,0,2,233,39],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a265354cca62f91a7f227f90dd92c054d":[6,0,2,233,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "WorldProviderManager_8h_source.html":[8,0,0,21,0,7],
 "WorldProvider_8h_source.html":[8,0,0,21,0,6],
 "WorldUnloadEvent_8h_source.html":[8,0,0,4,4,2],
-"World_8cpp.html#a2a7c4703a041fddf4633646ca7537d7d":[6,0,0,19,18],
-"World_8cpp.html#abd183b7a4fbd865f35dfacc3ca93f880":[6,0,0,19,22],
-"World_8cpp.html#acc07309ec273bf352813f06196a23ac3":[6,0,0,19,26],
-"World_8h.html#a09f84e27bb53de2a8af12fd0db87bbee":[6,0,0,19,25],
-"World_8h.html#a271a80db83df226fc4d66a24a65ab98f":[6,0,0,19,21]
+"World_8cpp.html#a2a7c4703a041fddf4633646ca7537d7d":[6,0,0,19,18]
 };

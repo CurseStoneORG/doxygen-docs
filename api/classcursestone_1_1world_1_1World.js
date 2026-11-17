@@ -71,6 +71,8 @@ var classcursestone_1_1world_1_1World =
     [ "spawn", "classcursestone_1_1world_1_1World.html#a2d28eb441c76f6b3e656143b4f22ff02", null ],
     [ "spawnFallingBlock", "classcursestone_1_1world_1_1World.html#a28b4bbda54d03f34c9ddd74a09af655e", null ],
     [ "spawnLightning", "classcursestone_1_1world_1_1World.html#aee98a1f6c3ff1a147431da730a57f4ea", null ],
+    [ "spawnParticle", "classcursestone_1_1world_1_1World.html#a75d08fb2f5110172257890cdfcb56230", null ],
+    [ "spawnSplashParticles", "classcursestone_1_1world_1_1World.html#afc1aa9410b54608b9cb4e431f7059889", null ],
     [ "tick", "classcursestone_1_1world_1_1World.html#a82ac624c8ed12452eb01288ce1383d56", null ],
     [ "tickArrows", "classcursestone_1_1world_1_1World.html#a447564455626c6b88cb87d4ac92ebd06", null ],
     [ "tickDroppedItems", "classcursestone_1_1world_1_1World.html#a85c5023a23dacd0369dc9f410155d3a7", null ],

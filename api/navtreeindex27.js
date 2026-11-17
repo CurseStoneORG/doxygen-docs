@@ -1,5 +1,15 @@
 var NAVTREEINDEX27 =
 {
+"structcursestone_1_1PlayerConfig.html#a2a4f9c95013b19cdc0a62fb1fbcaa656":[7,0,0,46,2],
+"structcursestone_1_1PlayerConfig.html#a5f98ab7b2110405585f1248330f9e95b":[7,0,0,46,8],
+"structcursestone_1_1PlayerConfig.html#a7247e3629fee55980660ad7d7d7df6fc":[7,0,0,46,7],
+"structcursestone_1_1PlayerConfig.html#a76e0f84b6c9009615c29c3e40989445b":[7,0,0,46,9],
+"structcursestone_1_1PlayerConfig.html#a84455ee0fe7cc08df6da4431c4ac68c7":[7,0,0,46,6],
+"structcursestone_1_1PlayerConfig.html#a99985729fcd247ff5086c101f4241359":[7,0,0,46,4],
+"structcursestone_1_1PlayerConfig.html#acd6e04904b3cfc72c5bdad4e2f7c4d7b":[7,0,0,46,3],
+"structcursestone_1_1PlayerConfig.html#ad8ff13d51f4871bb7a753891bc540a0a":[7,0,0,46,0],
+"structcursestone_1_1PlayerConfig.html#af0e6546f091f7ef3aaf1756569b6d46b":[7,0,0,46,5],
+"structcursestone_1_1PortalArrival.html":[7,0,0,45],
 "structcursestone_1_1PortalArrival.html#a690bc0deacf65a1ee0a867a2e210199d":[7,0,0,45,2],
 "structcursestone_1_1PortalArrival.html#a6fef5612b8dba980648ab45b8323f4a7":[7,0,0,45,1],
 "structcursestone_1_1PortalArrival.html#a7766fb64afd5fdc7963d8923e3eb1402":[7,0,0,45,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX27 =
 "structcursestone_1_1world_1_1FallingBlockEntity.html#a2f5d0b8d331293a5a4d67227777a7b0d":[7,0,0,17,13,12],
 "structcursestone_1_1world_1_1FallingBlockEntity.html#a375270a286f76a60631d478804b6f504":[7,0,0,17,13,15],
 "structcursestone_1_1world_1_1FallingBlockEntity.html#a6180f8e432c779b34307874c2137658c":[7,0,0,17,13,4],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#a764600ae5e496487aa5be5e288090eb9":[7,0,0,17,13,10],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#a83a0a939831a7124b47ff6c745683ea2":[7,0,0,17,13,8],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#a88a28edd39ed627ef0d27de60cc47b10":[7,0,0,17,13,3],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#a9c91cfc604e77a16ff738bb0095f8b7f":[7,0,0,17,13,2],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#ab528bcf159dc799edc29537269887d51":[7,0,0,17,13,7],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#abe3eb9da5d30995b125b8e6dc4d22e39":[7,0,0,17,13,14],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#abf7b5b9701ffb12d6c89abbae2b06eb6":[7,0,0,17,13,9],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#ac0f73a610e49d2588156dcf746cfc407":[7,0,0,17,13,5],
-"structcursestone_1_1world_1_1FallingBlockEntity.html#ad74f73ea596478ad248adc7cbe870f52":[7,0,0,17,13,6],
-"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html":[7,0,0,17,8,0],
-"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a15873f5407402ac523179436e9b22414":[7,0,0,17,8,0,0]
+"structcursestone_1_1world_1_1FallingBlockEntity.html#a764600ae5e496487aa5be5e288090eb9":[7,0,0,17,13,10]
 };

@@ -14,6 +14,9 @@ var structCsWorldApi =
     [ "setSpawnPoint", "structCsWorldApi.html#a00f720c52bb241d41b3aebe6b04f49a5", null ],
     [ "setTime", "structCsWorldApi.html#a3a9065f743f11e82a9d4d92fafe5e97d", null ],
     [ "setWeather", "structCsWorldApi.html#a7c5627238a7d3ad5ad1bc54431453782", null ],
+    [ "spawnBlockParticles", "structCsWorldApi.html#ac8a295aee8a34774391715a261b9792e", null ],
     [ "spawnItem", "structCsWorldApi.html#a8adc738141d7da740d05ee7e2ebbb474", null ],
-    [ "spawnLightning", "structCsWorldApi.html#a7b919d74ff68edb830d10f22ca54f03a", null ]
+    [ "spawnLightning", "structCsWorldApi.html#a7b919d74ff68edb830d10f22ca54f03a", null ],
+    [ "spawnParticle", "structCsWorldApi.html#a3def6755ab53639b995d8d501ce71509", null ],
+    [ "spawnSplashParticles", "structCsWorldApi.html#a0230605d345ccc36048cd9d707efb798", null ]
 ];
