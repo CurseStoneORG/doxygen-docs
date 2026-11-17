@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <div class="contents">
 <div class="textblock"><p><b>Repositorio:</b> CurseStone · rama <code>stable</code> · HEAD <code>d8647d5</code> ("Make the NBT layer a native C++ class API with zero C linkage") <b>Fecha:</b> 1 de noviembre de 2026 · <b>Alcance:</b> todo el árbol (<code>src/</code>, <code>third_party/lua</code>, <code>tools/</code>, build, CI, docs) <b>Objetivo:</b> evaluar arquitectura, rendimiento, memoria, escalabilidad, mantenibilidad y aprovechamiento real de C++; determinar si CurseStone es un motor C++ nativo o una recreación literal de la referencia de la era-MP. <b>Método:</b> inspección directa del código con referencias <code>archivo:línea</code> para cada afirmación. Auditoría de solo lectura: <b>no se modificó ningún archivo fuente</b>. No se inventaron benchmarks: toda afirmación de coste está clasificada como <em>confirmada por inspección</em>, <em>probable (requiere profiling)</em> o <em>hipotética (requiere benchmarking)</em>. <b>Cifras base:</b> <code>src/</code> = 474 <code>.cpp</code> + 553 headers (<code>.h</code>/<code>.hpp</code>) ≈ <b>104.405 LOC</b>. Cero <code>.c</code> propios (solo <code>third_party/lua</code>, 32 archivos vendidos). Cero <code>extern "C"</code> en <code>src/</code>. C++20 (<code>CMAKE_CXX_STANDARD 20</code>, <code>CMakeLists.txt:34</code>).</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md70"></a>
+<h1><a class="anchor" id="autotoc_md53"></a>
 1. RESUMEN EJECUTIVO</h1>
 <p><b>Veredicto en una frase:</b> CurseStone ya no es un puerto PHP→C++ de la referencia de la era-MP; es un <b>híbrido con dos personalidades</b>: un núcleo de datos excelente (chunks planos, raklib de una sola propietaria por hilo, E/S asíncrona acotada) y una <b>capa de juego que conserva los hábitos de asignación y despacho de PHP</b> (objeto por paquete, copia de listas de jugadores por difusión, eventos con copia de <code>std::function</code>, cadenas como clave universal). El idioma C++20 se usa como <em>flag de compilación</em> más que como <em>idiom</em>.</p>
 <p><b>Lo que ya es C++ nativo y bien hecho (conservar):</b></p>
@@ -112,9 +112,9 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <p><b>Estado de la herramienta:</b> la suite de wire real (28 harness Python que levantan el binario) es una fortaleza; pero 5 de 6 wrappers <code>tools/run_*.sh</code> compilan rutas <code>.c</code> que ya no existen (rotos por la migración C→C++) y <b>CI no ejecuta ningún test</b> (<code>Build.yml</code> solo compila).</p>
 <p><b>Riesgo de protocolo:</b> nada de lo propuesto toca el wire-format de protocolo 84; §9.6 lista lo inmutable.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md72"></a>
+<h1><a class="anchor" id="autotoc_md55"></a>
 2. MAPA DE ARQUITECTURA DEL REPOSITORIO</h1>
-<h2><a class="anchor" id="autotoc_md73"></a>
+<h2><a class="anchor" id="autotoc_md56"></a>
 2.1 Distribución del código</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -142,7 +142,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>third_party/lua/</code>   </td><td class="markdownTableBodyRight">(vendido)   </td><td class="markdownTableBodyNone">Lua 5.4 estático   </td><td class="markdownTableBodyNone">Intocable por política correcta   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md74"></a>
+<h2><a class="anchor" id="autotoc_md57"></a>
 2.2 Hilos (inventario completo, verificado por sitios de creación)</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -162,17 +162,17 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Watchdogs   </td><td class="markdownTableBodyNone"><code>Server.cpp:680</code>, <code>WorkbenchManager.cpp:197</code>   </td><td class="markdownTableBodyNone">100 ms   </td><td class="markdownTableBodyNone">shutdown <code>_Exit(1)</code> a 5 s; diagnóstico   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md75"></a>
+<h2><a class="anchor" id="autotoc_md58"></a>
 2.3 Singletons / estado global</h2>
 <p>12 Meyers singletons (<code>Server::getInstance</code> <code><a class="el" href="Server_8h_source.html">Server.h</a>:97-100</code>, <code>MainLogger::get</code>, <code>MemoryManager::get</code>, <code>WorkbenchManager::get</code>, <code>Diagnostics::get</code>, <code>EventManager::get</code>, <code>PluginManager::get</code>, <code>ServerScheduler::get</code>, <code>WorldProviderManager::getInstance</code>, <code>PacketPool::get</code>, <code>InstallerLang::get</code>, logger async C). Todos de primera construcción post-<code>main</code> (sin riesgo de init-order hoy), pero <code>MemoryManager::collect()</code> llama a <code>Server::getInstance()</code> (<code>MemoryManager.cpp:72</code>), y <code>ServerScheduler.cpp:79</code> llega al pool vía el singleton — acoplamiento de service-locator heredado de the reference.</p>
-<h2><a class="anchor" id="autotoc_md76"></a>
+<h2><a class="anchor" id="autotoc_md59"></a>
 2.4 Flujo de un tick (orden real, &lt;tt&gt;Server::tick()&lt;/tt&gt; &lt;tt&gt;Server.cpp:508-674&lt;/tt&gt;)</h2>
 <div class="fragment"><div class="line">reap de jugadores → scheduler (≤64 tareas/10ms budget) → world.tick ×N</div>
 <div class="line">→ tickTiles ×N (copia todo el mapa de tiles) → MemoryManager.collect (rate-limited 10s)</div>
 <div class="line">→ network.tick #1 (drain inbound → decode → handlers) → player.onUpdate ×N</div>
 <div class="line">  (chunk streaming ≤3/tick, hunger, pickups ≤32 pasadas) → diagnostics snapshot /10 ticks</div>
 <div class="line">→ flushPendingPackets por jugador (batch ≤32KB) → network.tick #2 → autosave drain (6000 ticks)</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md77"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md60"></a>
 2.5 Grafo de propiedad (resumen; detalle completo en &lt;tt&gt;docs/audits/ownership-map.md&lt;/tt&gt;, que sigue siendo esencialmente válido)</h2>
 <ul>
 <li><code>Server</code> (proceso) posee <code>Network</code> → <code>RakLibInterface</code> (hilo RX) · <code>worlds_</code> → <code>World</code> → {<code>ChunkManager</code> embebido (mapa de <code>mcp_chunk_t*</code>), <code>Anvil</code> provider (hilo I/O), <code>LightEngine</code>, <code>Generator</code>} · <code>players_</code> (<code>vector&lt;shared_ptr&lt;Player&gt;&gt;</code>) · <code>command_map_</code> · <code>async_pool_</code>.</li>
@@ -181,10 +181,10 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><code>Player</code> hereda de <code>IPlayer</code>, <code>entity::Human</code>, <code>PermissibleBase</code> + <code>enable_shared_from_this</code> (<code><a class="el" href="Player_8h_source.html">Player.h</a>:83-86</code>), con <b>84 miembros propios</b>.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md79"></a>
+<h1><a class="anchor" id="autotoc_md62"></a>
 3. ANÁLISIS DE LA HERENCIA ARQUITECTÓNICA DE LA REFERENCIA DE LA ERA</h1>
 <p>Metodología: para cada patrón sospechoso, se responde el cuestionario de 9 puntos. Se distingue explícitamente entre herencia que merece conservarse y limitación heredada.</p>
-<h2><a class="anchor" id="autotoc_md80"></a>
+<h2><a class="anchor" id="autotoc_md63"></a>
 3.1 H1 — Objeto heap + &lt;tt&gt;dynamic_cast&lt;/tt&gt; por paquete entrante</h2>
 <ol type="1">
 <li><b>Cómo funciona hoy:</b> <code>PacketPool::create</code> es un <code>switch</code> que devuelve <code>std::make_shared&lt;T&gt;()</code> para ~37 IDs (<code>PacketPool.cpp:74-161</code>); <code>Network::dispatchSingle</code> bloquea el <code>weak_ptr</code> del jugador, decodifica y llama <code>Player::handleDataPacket</code>, que re-abre un switch y hace <code>dynamic_cast&lt;T*&gt;</code> por caso (<code>PlayerNetwork.cpp:224,230,236,241,249,288…</code>).</li>
@@ -197,7 +197,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Riesgo de compatibilidad:</b> nulo (interno).</li>
 <li><b>Archivos:</b> <code>PacketPool.cpp/.h</code>, <code>Network.cpp:163-266</code>, <code>PlayerNetwork.cpp:205-700</code>, <code><a class="el" href="DataPacket_8h_source.html">DataPacket.h</a></code>.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md81"></a>
+<h2><a class="anchor" id="autotoc_md64"></a>
 3.2 H2 — Sistema de eventos con coste por disparo heredado del bus de the reference</h2>
 <ol type="1">
 <li><b>Hoy:</b> <code>fire&lt;T&gt;</code> construye <code>std::type_index</code>, bloquea <code>map_mtx_</code>, busca la lista; si hay listeners, <code>HandlerList::dispatch</code> <b>copia cada <code>std::function</code> a un vector nuevo</b> bajo su mutex, hace un <code>dynamic_cast&lt;Cancellable*&gt;</code> y ejecuta con try/catch por listener (<code><a class="el" href="EventManager_8h_source.html">EventManager.h</a>:118-125</code>, <code>EventManager.cpp:43-77</code>, <code>HandlerList.cpp:96-137</code>).</li>
@@ -210,7 +210,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Riesgo:</b> bajo; la API <code>listen&lt;T&gt;(owner, fn, prio, ignoreCancelled)</code> para plugins/Lua no cambia.</li>
 <li><b>Archivos:</b> <code>event/EventManager.{h,cpp}</code>, <code>event/HandlerList.{h,cpp}</code>, <code>plugin/BindingsEvents.cpp</code>.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md82"></a>
+<h2><a class="anchor" id="autotoc_md65"></a>
 3.3 H3 — &lt;tt&gt;playersSnapshot()&lt;/tt&gt;: copia de la lista de jugadores por difusión</h2>
 <ol type="1">
 <li><b>Hoy:</b> cada difusión copia <code>vector&lt;shared_ptr&lt;Player&gt;&gt;</code> bajo <code>players_mtx_</code> (<code>Server.cpp:716-719</code>).</li>
@@ -223,7 +223,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Riesgo:</b> bajo; los sitios cross-thread ya están marshalled al principal.</li>
 <li><b>Archivos:</b> <code>Server.{h,cpp}:716-719</code> y los ~25 call sites (<code>PlayerTick.cpp:82,198,225,329,353,482,528,825,918,1004</code>, <code>PlayerNetwork.cpp:373</code>, <code>PlayerStats.cpp:210,267,299</code>, <code>World.cpp:640,654,681,709,870</code>, <code>PlayerBlocks.cpp:226,304</code>, <code>TileFurnace.cpp:143</code>).</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md83"></a>
+<h2><a class="anchor" id="autotoc_md66"></a>
 3.4 H4 — Virtualización FullChunk/WorldProvider que nadie más usa</h2>
 <ol type="1">
 <li><b>Hoy:</b> <code>mcp_chunk_t</code> plano + <code>FullChunk</code> abstracto + <code>ChunkAdapter</code> que hace borrow/own del puntero (<code><a class="el" href="FullChunk_8h_source.html">FullChunk.h</a>:44-90</code>, <code><a class="el" href="ChunkAdapter_8h_source.html">ChunkAdapter.h</a>:46-115</code>); cada carga de disco pasa por <code>dynamic_cast&lt;ChunkAdapter*&gt;</code> (<code>ChunkManager.cpp:73-81,234-249</code>).</li>
@@ -236,7 +236,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Riesgo:</b> bajo; los consumidores de <code>FullChunk</code> son pocos y locales.</li>
 <li><b>Archivos:</b> <code><a class="el" href="FullChunk_8h_source.html">world/format/FullChunk.h</a></code>, <code>ChunkAdapter.{h,cpp}</code>, <code>ChunkManager.cpp</code>.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md84"></a>
+<h2><a class="anchor" id="autotoc_md67"></a>
 3.5 H5 — Scheduler genérico de the reference usado como cola de ticks de bloque</h2>
 <ol type="1">
 <li><b>Hoy:</b> no existe cola de scheduled-block-ticks; <code>LiquidFlow::scheduleTick</code> encola <b>una tarea heap</b> (<code>shared_ptr&lt;CallbackTask&gt;</code> + <code>std::function</code> + nodo <code>TaskHandler</code>) por celda líquida, y <code>ServerScheduler</code> escanea <code>handlers_</code> linealmente cada tick con tope 64 tareas/10 ms (<code>LiquidFlow.cpp:365-376</code>, <code>ServerScheduler.cpp:238-247</code>, <code><a class="el" href="ServerScheduler_8h_source.html">ServerScheduler.h</a>:88</code>).</li>
@@ -249,7 +249,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Riesgo:</b> medio — gobierna el flujo de agua; exige regresión de líquidos.</li>
 <li><b>Archivos:</b> <code>block/LiquidFlow.cpp:365-376</code>, <code>scheduler/ServerScheduler.{h,cpp}</code>, <code>world/World.cpp:357-469</code>.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md85"></a>
+<h2><a class="anchor" id="autotoc_md68"></a>
 3.6 H6 — &lt;tt&gt;Player&lt;/tt&gt; god-class: 84 miembros, 3 bases, 3 mutex, split puramente organizativo</h2>
 <ol type="1">
 <li><b>Hoy:</b> <code>Player : IPlayer, Human, PermissibleBase, enable_shared_from_this</code> (<code><a class="el" href="Player_8h_source.html">Player.h</a>:83-86</code>); 84 miembros propios (<code><a class="el" href="Player_8h_source.html">Player.h</a>:667-801</code>); los 14 archivos de <code>player/*.cpp</code> son definiciones de miembros de la misma clase (sin friend struct; <code><a class="el" href="PlayerInternal_8h_source.html">PlayerInternal.h</a></code> solo guarda <code>kEyeHeight</code>).</li>
@@ -262,7 +262,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Riesgo:</b> bajo si es incremental.</li>
 <li><b>Archivos:</b> <code><a class="el" href="Player_8h_source.html">Player.h</a></code>, <code><a class="el" href="Human_8h_source.html">entity/Human.h</a></code>, <code><a class="el" href="Entity_8h_source.html">entity/Entity.h</a></code>, <code>player/*.cpp</code>.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md86"></a>
+<h2><a class="anchor" id="autotoc_md69"></a>
 3.7 H7 — Dos registros de sesión paralelos (herencia + migración a medias)</h2>
 <ol type="1">
 <li><b>Hoy:</b> raklib mantiene su índice O(1) por endpoint (<code>map_key/map_ptr</code>, <code><a class="el" href="SessionManager_8h_source.html">SessionManager.h</a>:74-75</code>) y la capa C++ mantiene otro mapa por <code>"ip:port"</code> string con <code>weak_ptr</code> (<code><a class="el" href="Network_8h_source.html">Network.h</a>:106</code>), con clave construida vía <code>std::ostringstream</code> <b>por paquete entrante</b> (<code>Network.cpp:65-69</code>).</li>
@@ -275,7 +275,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Riesgo:</b> medio-alto: toca ciclo de vida de sesiones; requiere harness de churn/timeout en verde.</li>
 <li><b>Archivos:</b> <code>Network.{h,cpp}</code>, <code>RakLibInterface.{h,cpp}</code>, <code>raklib/ServerHandler.{h,cpp}</code>, <code>raklib/SessionManager.{h,cpp}</code>.</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md87"></a>
+<h2><a class="anchor" id="autotoc_md70"></a>
 3.8 Herencia evaluada y &lt;strong&gt;correcta&lt;/strong&gt; (no tocar)</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -297,7 +297,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Snapshot-then-mutate en scheduler/eventos/tiles   </td><td class="markdownTableBodyNone">Correcto como disciplina transversal   </td><td class="markdownTableBodyNone"><code>ServerScheduler.cpp:238-294</code>, <code>HandlerList.cpp:102-112</code>, <code>World.cpp:721-729</code>   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md88"></a>
+<h2><a class="anchor" id="autotoc_md71"></a>
 3.9 Ausencias heredadas (huecos funcionales que the reference sí tiene)</h2>
 <ul>
 <li><b>Random ticks:</b> cero implementaciones en el árbol (grep <code>randomTick</code> = 0). the reference los usa para cultivos, fuego, brotes. Impacto de gameplay, no de arquitectura.</li>
@@ -305,11 +305,11 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Subsistemas scaffolding muertos heredados de the reference:</b> <code>QueryHandler</code> (hook <code>onRawPacket</code> es no-op, <code>RakLibInterface.cpp:438-444</code>), <code>RCON</code> (stub sin socket, <code><a class="el" href="RCONInstance_8h_source.html">RCONInstance.h</a>:25-58</code>), <code>CompressBatchedTask</code> (nunca construido, <code>CompressBatchedTask.cpp:32</code>), <code><a class="el" href="AsyncWorker_8h_source.html">AsyncWorker.h</a></code> (autodeclarado sin uso, <code><a class="el" href="AsyncWorker_8h_source.html">AsyncWorker.h</a>:25-31</code>), <code>Entity::tick</code> + las 4 clases de entidad con <code>.cpp</code> vacíos (<code>EntityArrow.cpp:23-24</code> etc.), <code>MemoryManager::shouldGc()</code>/<code>runGc()</code> nunca llamados (<code>MemoryManager.cpp:62-66</code>), campos <code>send_queue_*</code> de sesión nunca escritos (<code><a class="el" href="Session_8h_source.html">Session.h</a>:223-226</code>). La decisión cablear-o-borrar está en §15.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md90"></a>
+<h1><a class="anchor" id="autotoc_md73"></a>
 4. EVALUACIÓN DEL APROVECHAMIENTO DE C++</h1>
 <p><b>Censo de idioms (grep propio sobre <code>src/</code>):</b> <code>constexpr</code> 754 · <code>std::make_shared</code> 272 · <code>std::make_unique</code> 186 · <code>std::shared_ptr</code> 174 · <code>std::unique_ptr</code> 70 · <code>std::mutex</code> 206 · <code>std::atomic</code> 36 · <code>virtual</code> 403 · <code>dynamic_cast</code> 33 · <code>std::unordered_map</code> 64 · **<code>std::string_view</code> 0 · <code>std::span</code> 0 · concepts 0 · ranges 0 · <code>std::variant</code> 0 · <code>jthread</code> 0 · <code>if constexpr</code> 1** (<code>BindingsEvents.cpp:125</code>).</p>
 <p>Lectura honesta: <b>C++20 es el estándar de compilación, no el idioma del código.</b> El estilo dominante es "C con clases" arriba y "C literal" abajo (raklib). Por dimensión:</p>
-<h2><a class="anchor" id="autotoc_md91"></a>
+<h2><a class="anchor" id="autotoc_md74"></a>
 4.1 Gestión de memoria</h2>
 <ul>
 <li><b>RAII:</b> correcto en toda la capa C++ (contenedores propietarios; préstamos crudos inventariados en <code>docs/audits/ownership-map.md</code>). La excepción es raklib: ~30 sitios malloc/calloc/realloc/free con convención create/destroy (<code>Session.cpp:38/85</code>, <code>SessionManager.cpp:58/70</code>, <code>ServerHandler.cpp:30/35</code>) — funcionalmente sano tras las auditorías previas, pero sin garantía <em>de tipo</em>: el UAF de §12.1 demuestra que la convención no basta.</li>
@@ -318,7 +318,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Pools/arenas:</b> <b>no existe ninguno</b> en <code>src/</code> (grep: sin <code>arena</code>, <code>object_pool</code>, allocator propio). La única reutilización real son los buffers de stack de raklib (<code>Session.cpp:439,459</code>) y el ring del logger.</li>
 <li><b>Churn por tick confirmado:</b> snapshot de tiles por mundo (<code>World.cpp:1822-1838</code>), snapshot de 4 tipos de entidad (<code>World.cpp:721-729</code> etc.), snapshot de pickups por jugador hasta 32 pasadas (<code>PlayerTick.cpp:766-767</code>), <code>CallbackTask</code> heap por celda líquida (H5), paquete heap por sub-paquete (H1), temp 1 MiB por batch entrante (<code>BatchPacket.cpp:81-82</code>), ~10 strings por jugador cada 10 ticks para diagnósticos (<code>Server.cpp:605-635</code>).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md92"></a>
+<h2><a class="anchor" id="autotoc_md75"></a>
 4.2 Estructuras de datos</h2>
 <ul>
 <li><b>La más costosa:</b> <code>World::getBlockId/setBlock/getBlockData</code> → <code>ChunkManager::getChunkIfLoaded</code> = <code>std::scoped_lock</code> + hash <code>unordered_map&lt;ChunkKey,mcp_chunk_t*&gt;</code> <b>por celda</b> (<code>ChunkManager.cpp:58-62</code>, <code>World.cpp:254-260</code>). Consumidores calientes: física de ítems (7 lookups/ítem/tick, <code>World.cpp:755-761</code>), vecinos de líquidos (<code>LiquidFlow.cpp:396-399</code>), BFS de luz, rescan de heightmap. Justificación por patrón de acceso: el patrón es <em>ráfaga localizada</em> (bucles sobre celdas vecinas del mismo chunk) → handle cacheado/<code>ChunkView</code> es el cambio correcto; cambiar de contenedor sin tocar el patrón no arregla nada.</li>
@@ -326,22 +326,22 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <li><b>Cuestionables:</b> <code>CompoundTag</code> con <code>vector</code> + búsqueda lineal por nombre (<code>CompoundTag.cpp:99-107</code>) con cientos de tags por chunk; <code>BaseInventory</code> con <code>unordered_map&lt;int,ItemStack&gt;</code> para slots fijos 0..53 (<code><a class="el" href="BaseInventory_8h_source.html">BaseInventory.h</a>:110</code>); <code>handlers_</code> del scheduler escaneado O(n) por tick (<code>ServerScheduler.cpp:238-245</code>); <code>order_delivered[64]</code> escaneado por paquete ordenado (<code>SessionManager.cpp:984-999</code>); dedup de <code>pending_</code> de luz con scan lineal (<code>LightEngine.cpp:301-304</code>); LRU de terrain-cache con scan O(512) al tope (<code>VgenSource.cpp:391-399</code>); LRU de regiones O(8) por acceso (<code>Anvil.cpp:325-329</code>).</li>
 <li><b>No confirmadas sin medir:</b> los <code>unordered_map</code> de sesiones/regiones no muestran rehash problemático a escala actual (512 sesiones, 8 regiones abiertas) — cambiarlos sin perfil sería moda, no ingeniería.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md93"></a>
+<h2><a class="anchor" id="autotoc_md76"></a>
 4.3 Diseño orientado a datos</h2>
 <ul>
 <li><b>Ya es DOD donde importa:</b> <code>mcp_chunk_t</code> (§2), secciones raw de 10.256 B (<code>ChunkSection.cpp:34-59</code>), serializador de wire que repackea columnas (<code>Chunk.cpp:764-921</code>), slots de luz, bitmap de retransmisión. <b>No imponer ECS al resto</b>: las entidades actuales son 4 structs POD en mapas (<code><a class="el" href="World_8h_source.html">World.h</a>:514-526</code>) — <em>más</em> data-oriented que una jerarquía ECS; su problema real es la ausencia de culling espacial (<code>World.cpp:738</code> es el único gate) y el fanout por <code>playersSnapshot()</code>.</li>
 <li><b>Dónde aportaría algo real:</b> índice espacial por chunk (buckets de entidades/ítems por chunk + conjunto de viewers por chunk) para pickups y difusión; tiles por chunk en vez de mapa global (<code><a class="el" href="World_8h_source.html">World.h</a>:529-530</code> hoy, escaneado linealmente por chunk enviado, <code>World.cpp:1916-1931</code>).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md94"></a>
+<h2><a class="anchor" id="autotoc_md77"></a>
 4.4 Templates y cómputo en compilación</h2>
 <ul>
 <li><code>constexpr</code> 754 apariciones concentradas en tablas (bien). Oportunidades concretas y baratas: tablas <code>constexpr</code> de propiedades de bloque (opacidad/emisión/bbox) indexadas por id para eliminar el virtual del BFS de luz y del rescan de heightmap (<code>Block.cpp:32-50</code> es virtual por celda hoy); <code>if constexpr</code> en despacho de eventos cancelables; <code>enum class</code> para reliability/canales. <b>No</b> recomendado: CRTP generalizado ni math con templates genéricos — el coste actual no está ahí.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md95"></a>
+<h2><a class="anchor" id="autotoc_md78"></a>
 4.5 NBT: el caso de estudio del "a medio camino"</h2>
 <p>La reescritura (<code>d8647d5</code>) es segura (ownership con <code>TagGuard</code>/<code>NbtPtr</code>, caps de profundidad 128 y overflow-check en IntArray, <code>NBT.cpp:45,60-62,184-187</code>) pero la API sigue siendo C con clases: <code>Tag*</code> + free functions (<code><a class="el" href="CompoundTag_8h_source.html">CompoundTag.h</a>:60-96</code>), <code>std::string name</code> <b>en cada tag</b> (incluidos elementos de lista), árbol de punteros crudos con <code>new</code> por tag, búsqueda lineal, y la capa de I/O pasa por <code>mcp_bstream_t</code> que <b>copia todo el input</b> (<code>BinaryStream.cpp:53-61</code>) y hace otra copia al escribir (<code>NBT.cpp:252-264</code>). Ruta caliente: cada chunk guardado/cargado en autosave (64 chunks/tick, <code>Server.cpp:760-763</code>). Un <code>std::variant</code> plano o un arena por parseo eliminaría el churn; con el preserve-insertion-order actual, un índice hash pequeño por compound basta para el lookup.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md97"></a>
+<h1><a class="anchor" id="autotoc_md80"></a>
 5. ANÁLISIS DE MEMORIA</h1>
 <p><b>Presupuesto estructural (por inspección, sin benchmark):</b></p>
 <table class="markdownTable">
@@ -374,7 +374,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 </ol>
 <p><b>Lo que NO recomendaría sin perfil:</b> cambiar la representación de sección (paleta/compresión) — rompería el trío generador/Anvil/wire que hoy comparte layout; ni un allocator global propio — el churn está localizado en sitios concretos.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md99"></a>
+<h1><a class="anchor" id="autotoc_md82"></a>
 6. ANÁLISIS DE ESTRUCTURAS DE DATOS</h1>
 <p>(Resumen ejecutivo con el patrón de acceso como criterio; detalle en §4.2.)</p>
 <table class="markdownTable">
@@ -404,27 +404,27 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <td class="markdownTableBodyNone"><code>mcp_chunk_t</code> arrays planos   </td><td class="markdownTableBodyNone">Secuencial/memcpy   </td><td class="markdownTableBodyNone">Sí (DOD)   </td><td class="markdownTableBodyNone">—   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md101"></a>
+<h1><a class="anchor" id="autotoc_md84"></a>
 7. ANÁLISIS DE RENDIMIENTO</h1>
 <p>Clasificación: <b>[C]</b> confirmada por inspección con evidencia · <b>[P]</b> probable, requiere profiling · <b>[H]</b> hipotética, requiere benchmarking. No se afirmará ningún número de mejora sin medir.</p>
-<h2><a class="anchor" id="autotoc_md102"></a>
+<h2><a class="anchor" id="autotoc_md85"></a>
 7.1 Ruta interactiva (bloque colocado/roto)</h2>
 <p><b>[C] El mayor coste interactivo: relight 31³ por setBlock.</b> <code>World::setBlock</code> (<code>World.cpp:322-343</code>) ejecuta en cadena: lookup mutex+hash (:325) → escritura + posible alloc de sección (<code>Chunk.cpp:170-188</code>) → <b>rescan completo de la columna de heightmap (256 niveles con llamada virtual al registro por nivel</b>, <code>Chunk.cpp:278-294</code>) → <code>light_.relightAround(x,y,z,15)</code> = clear+reseed+BFS de una caja 31×31×31 con <code>std::deque&lt;Cell&gt;</code> (<code>LightEngine.cpp:174-274</code>; el propio código documenta que la versión con hash map medía "decenas de ms por relight", <code>LightEngine.cpp:62-69</code>) → chequeo de caída (:332-337) → despertar de líquidos vecinos (:340-341). Explosiones multiplican: <code>Explosion.cpp:48-77</code> llama setBlock en bucle sobre la esfera. La eliminación (light removal) incremental — en vez de recomputar la región — es la corrección estructural.</p>
 <p><b>[C] Sin fast path de chunk:</b> cada uno de los ~7 getBlockId de la física de un ítem (<code>World.cpp:755-761</code>) repite mutex+hash (<code>World.cpp:254-260</code>). Los bucles de líquidos igual (<code>LiquidFlow.cpp:396-399</code>).</p>
 <p><b>[C] Scheduler difiere líquidos:</b> tope <code>MAX_TASKS_PER_TICK=64</code> + <code>CallbackTask</code> heap por celda (<code><a class="el" href="ServerScheduler_8h_source.html">ServerScheduler.h</a>:88</code>, <code>LiquidFlow.cpp:365-376</code>) — una ráfaga de líquidos se procesa a 64 celdas/tick con alloc por celda.</p>
-<h2><a class="anchor" id="autotoc_md103"></a>
+<h2><a class="anchor" id="autotoc_md86"></a>
 7.2 Ruta de red</h2>
 <p><b>[C] Copias inbound:</b> payload batchado = 5 copias (recvfrom→stack, <code>assign</code> a evento, vector <code>compressed</code>, temp 1 MiB de inflate, <code>payload_.assign</code>) + copias por campo de string (<code>DataPacket.cpp:158-186</code>). Detalle completo en §9.2. <b>[C] Copias outbound:</b> ≈4 copias completas por batch (body→<code>payload_</code> con prefijo, salida zlib→<code>batchBody</code>, <code>wire</code>, <code>action.data</code>) + memcpy por fragmento + malloc+memcpy de recuperación por datagrama fiable (§9.3). <b>[C] Temp de 1 MiB cero-inicializado por batch entrante</b> aunque lleguen 200 bytes (<code>BatchPacket.cpp:81-82,99-100</code>), con copia extra a <code>payload_</code> (:85,107). <b>[C] <code>sessionKey()</code> con <code>std::ostringstream</code> por paquete</b> (<code>Network.cpp:65-69</code>, usada en :173,:186,:331) + <code>ip+":"+to_string(port)</code> por decode (:196) + <code>sscanf</code> de IP por acción saliente en el hilo RakLib (<code>RakLibInterface.cpp:193</code>). <b>[C] <code>Diagnostics::recordPacket</code> siempre activo:</b> mutex global + <code>snprintf</code> + string + deque por cada paquete in/out (<code>Diagnostics.cpp:230-239</code>, sitios <code>PlayerNetwork.cpp:127-128,217-218</code>) — un solo candado compartido por todos los jugadores. <b>[C] zlib síncrono en el hilo principal</b> por jugador por flush (nivel 2, <code>BatchPacket.cpp:50-53</code>; flush ≥1×/tick/jugador con tráfico, <code>Server.cpp:637-651</code>). La tarea asíncrona existente (<code>CompressBatchedTask</code>, nivel 7) está muerta — diseñada y nunca conectada. <b>[P] <code>outbound_mtx_</code> retenido durante los <code>sendto</code></b> en el hilo RakLib (<code>RakLibInterface.cpp:187-244</code>): un <code>sendto</code> lento bloquea a los productores del hilo principal. Requiere medición para cuantificar, pero el patrón lock-sobre-syscall es incorrecto por construcción. <b>[P] Login: 1 MiB resize + base64 en el hilo principal</b> (<code>LoginPacket.cpp:151-160,249,309-312</code>). <b>[H] Rehash de <code>Network::sessions_</code> con muchos joins;</b> contenido de SO_RCVBUF a alta concurrencia (<code>UDPServerSocket.cpp:82-90</code>).</p>
-<h2><a class="anchor" id="autotoc_md104"></a>
+<h2><a class="anchor" id="autotoc_md87"></a>
 7.3 Ruta de guardado/mundo</h2>
 <p><b>[C] <code>flushDirty()</code>/<code>flushDirtyBudget()</code> retienen <code>mtx_</code> del mundo durante toda la E/S</b> (<code>ChunkManager.cpp:374-397,410-444</code>; reconocido por el autor en :399-409): mientras drena, todo <code>getBlockId</code>, <code>setBlock</code> e instalación de chunks generados se bloquea. <b>[C] Re-serialización completa por guardado:</b> <code>anvil_chunk_encode</code> recorre 4096 bytes por sección para detectar vacías, copia bloques/data/luz a <code>ByteArrayTag</code>, convierte biomas, <b>re-parsea cada blob NBT de tile (LE) y lo re-escribe (BE)</b> por cada guardado (<code>AnvilChunkCodec.cpp:98-107,184-215</code>) + copia a <code>job.nbt</code> (<code>Anvil.cpp:438</code>) + zlib + fwrite con <code>fflush</code> por chunk (<code>AnvilRegionLoader.cpp:301-320</code>). <b>[C] Generación: ≥3 conversiones completas de 32.768 bloques por chunk</b> (buffer→virtual→sink→virtual→sink, <code>VgenSource.cpp:341-361,468-506,508-551,674</code>) + wire serialize 66 KB en el hilo principal (3 chunks/tick, <code>PlayerTick.cpp:625-676</code>, <code>Chunk.cpp:764-921</code>). <b>[C] Fase de estructuras:</b> por chunk poblado se escanean 289 candidatos × 3 features con <code>setSeed</code> que reinicializa el estado de 624 palabras del Mersenne cada vez (<code>LargeFeature.cpp:39-53</code>, <code><a class="el" href="world_2generator_2vgen_2Random_8h_source.html">vgen/Random.h</a>:61-67</code>) y <code>postProcess</code> escana linealmente <b>toda</b> la caché de estructuras bajo <code>cacheMutex</code> — que además <b>serializa a todos los workers</b> de generación (<code>StructureFeature.cpp:57-111</code>). <b>[P] Noise sin caché de vecindad:</b> los 7 campos de ruido recomputan las regiones 3D por chunk sin reutilizar bordes entre vecinos (<code>VgenSource.cpp:112-243</code>) — vanilla-fiel, dominante en coste de generación; aprovechable solo con cache de columnas compartidas (complejo).</p>
-<h2><a class="anchor" id="autotoc_md105"></a>
+<h2><a class="anchor" id="autotoc_md88"></a>
 7.4 Ruta de entidades/juego</h2>
 <p><b>[C] <code>playersSnapshot()</code> por difusión, amplificado por ítem móvil</b> (H3, <code>World.cpp:870</code>, ~11 llamadas/tick por flecha). <b>[C] Pickups: hasta 32 pasadas/tick</b> copiando la lista completa de ítems por pasada (<code>PlayerTick.cpp:766-767</code>). <b>[C] Tiles: snapshot completo del mapa por mundo por tick</b> aunque ninguno esté activo (<code>World.cpp:1822-1838</code>); furnace hace <b>2 scans lineales de 336 recetas por lookup</b> por tick con input (<code>CraftingManager.cpp:2666-2731</code>, <code>TileFurnace.cpp:110-112</code>). <b>[C] Scan de espiral de chunks bajo <code>chunks_mtx_</code> cada tick</b> incluso en estado estable (<code>PlayerTick.cpp:636-643</code> — vd² hashes/tick; el propio comentario lo reconoce). <b>[C] Crafting <code>matchShaped/Shapeless</code> lineal sobre 336 recetas</b> (<code>CraftingManager.cpp:2638-2731</code>). <b>[P] Contención de <code>players_mtx_</code>/<code>batch_mtx_</code> a alta población; <code>malloc_trim(0)</code> en hilo principal cada 10 s (<code>MemoryManager.cpp:129-133</code>) como fuente de micro-hitches.**</b></p>
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md107"></a>
+<h1><a class="anchor" id="autotoc_md90"></a>
 8. ARQUITECTURA MULTIHILO Y CONCURRENCIA</h1>
 <p><b> <b>Modelo global:</b> un solo dueño por dato (estado de juego = hilo principal; estado raklib = hilo RakLib; I/O Anvil = su worker), handoff por colas con mutex. Es el modelo correcto para un servidor de juego con estado coherente por tick, y está bien ejecutado: sin <code>condvar</code> se paga sondeo (10 ms/50 ms), pero se evitan los errores típicos de locking fino. Las 5 carreras/órdenes de apagado encontradas por la auditoría previa (A6, L1, L2, L3) están corregidas y verificadas en código actual.</b></p>
 <p><b><b>Hallazgos:</b></b></p>
@@ -442,22 +442,22 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md109"></a>
+<h1><a class="anchor" id="autotoc_md92"></a>
 9. AUDITORÍA DE NETWORKING</h1>
 <p><b> </b></p>
-<h2><a class="anchor" id="autotoc_md110"></a>
+<h2><a class="anchor" id="autotoc_md93"></a>
 9.1 Hilos y puentes</h2>
 <p><b> Hilo RakLib a 100 Hz dueño exclusivo de UDP y del estado de sesiones (<code><a class="el" href="Session_8h_source.html">Session.h</a>:409-410</code>); dos colas con mutex hacia/desde el principal (<code><a class="el" href="RakLibInterface_8h_source.html">RakLibInterface.h</a>:156-161</code>); inbound se entrega por copia (<code>event.data.assign</code>, <code>RakLibInterface.cpp:431</code>) y el hilo principal drena 1×/tick moviendo los eventos fuera del lock (:299-306 — correcto). Sin condvars (sondeo 10 ms/50 ms).</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md111"></a>
+<h2><a class="anchor" id="autotoc_md94"></a>
 9.2 Ruta de recepción (con conteo de copias)</h2>
 <p><b> <code>recvfrom</code>→stack 1500 B (<code>UDPServerSocket.cpp:134-153</code>, <code>SessionManager.cpp:2216</code>) → parse cero-copia de headers/records (<code>SessionManager.cpp:676-808</code>) → dedup FNV-1a in-place (:831-839) → callback → <b>copia ②</b> <code>event.data.assign</code> (<code>RakLibInterface.cpp:431</code>) → principal: strip 0xFE por puntero (<code>Network.cpp:106-109</code>) → <code>BatchPacket::decode</code>: <b>copia ③</b> <code>compressed</code> (:75-76), <b>copia ④</b> temp 1 MiB (:81-85) o streaming con chunks de 16 KB (:112-149), <b>copia ⑤</b> <code>payload_.assign</code> (:85) → sub-paquetes: <code>make_shared</code> + decodificación con <code>readString</code>→<code>assign</code> por campo (<code>DataPacket.cpp:158-186</code>) → handler. <b>Total: 5 copias de buffer + churn por campo.</b> Los límites anti-bomba están en su sitio (1 MiB fijo + streaming 8 MiB, :81,:117).</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md112"></a>
+<h2><a class="anchor" id="autotoc_md95"></a>
 9.3 Ruta de envío</h2>
 <p><b> <code>sendPacket</code>→<code>writePacket</code> a vector nuevo (<code>PlayerNetwork.cpp:93-110</code>) → <code>sendEncodedBody</code> push bajo <code>batch_mtx_</code> con umbral 32 KB (:115-141) → flush por tick o umbral con <b>swap</b> (sin copia, pero pierde capacidad, :143-162) → <code>BatchPacket::encode</code>: <code>compress2</code> nivel 2 + <code>wire=[0xFE][0x06][batch]</code> (copias, <code>BatchPacket.cpp:50-86</code>) → <code>sendRawPacket</code> copia a la cola (<code>RakLibInterface.cpp:355-373</code>) → hilo RakLib: <code>sscanf</code> IP (:193), <code>mcp_rak_session_manager_send_encapsulated</code> (O(1) find, backlog si &gt;512 inflight, <code>SessionManager.cpp:267-317</code>) → <code>mcp_rak_session_send_payload</code> con datagramas en stack y <b>malloc+memcpy por datagrama fiable al recovery ring</b> (<code>Session.cpp:417-510,384-386</code>) → <code>sendto</code> por datagrama (<code>UDPServerSocket.cpp:155-165</code>). Sin <code>sendmmsg</code>, sin coalescing.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md113"></a>
+<h2><a class="anchor" id="autotoc_md96"></a>
 9.4 Fiabilidad raklib (post-migración)</h2>
 <p><b></p><ul>
 <li><b>Índice O(1)</b> open-addressing con backward-shift (<code>SessionManager.cpp:115-169</code>) — pero <code>ServerHandler</code> sigue haciendo <b>scans lineales</b> para <code>send_encapsulated</code> y <code>close_session</code> (<code>ServerHandler.cpp:55-61,76-86</code>).</li>
@@ -468,32 +468,32 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 </ul>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md114"></a>
+<h2><a class="anchor" id="autotoc_md97"></a>
 9.5 Capa de protocolo MCPE</h2>
 <p><b> <code>PacketPool</code> switch con <code>make_shared</code> por sub-paquete (§3.1); <code>PacketReader</code> no-propietario con bounds-check (bien); <code>PacketWriter</code> push_back sin reserve (mal); <code>BatchPacket</code> con doble path zlib/deflate + streaming y techo 8 MiB (bien); excepciones de decode contenidas en <code>Network.cpp:252-266</code> y por-handler en <code>PlayerNetwork.cpp:685-714</code> (bien). <code>LoginPacket</code> 1 MiB resize + caps (R6). Validación hostil previa (R1–R10) presente.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md115"></a>
+<h2><a class="anchor" id="autotoc_md98"></a>
 9.6 Inmutable por compatibilidad protocolo 84 (no tocar)</h2>
 <p><b> Handshake offline 0x01/0x02→0x1c, 0x05-0x08, 0x09/0x10/0x13/0x15; magic 16 bytes; framing 0x84 + seq LE24; flags <code>(reliability&amp;7)&lt;&lt;5</code> + split 0x10; orden de campos LE24/BE; ACK 0xc0/NACK 0xa0; capa MCPE: prefijo 0xFE, IDs 0x01-0x41, BATCH 0x06 con longitudes u32 BE, zlib (aceptando raw deflate), gramática MOTD <code>"MCPE;name;84;0.15.10;online;max"</code>, MTU ≤1492. Todo lo interno (colas, buffers, hilos, compresión interna) es libre.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md116"></a>
+<h2><a class="anchor" id="autotoc_md99"></a>
 9.7 RCON y Query</h2>
 <p><b> Ambos muertos: RCON sin socket ni thread (<code><a class="el" href="RCONInstance_8h_source.html">RCONInstance.h</a>:25-58</code>), Query con hook no-op y mapa de challenges que crecería sin acotar si se cablea tal cual (<code><a class="el" href="QueryHandler_8h_source.html">QueryHandler.h</a>:67</code>). Decisión requerida: implementar o eliminar (§15, B-8).</b></p>
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md118"></a>
+<h1><a class="anchor" id="autotoc_md101"></a>
 10. AUDITORÍA DEL MOTOR DE MUNDO</h1>
 <p><b> </b></p>
-<h2><a class="anchor" id="autotoc_md119"></a>
+<h2><a class="anchor" id="autotoc_md102"></a>
 10.1 Representación</h2>
 <p><b> <code>mcp_chunk_t</code> (16 secciones lazy, biomas 256 B, heightmap 256 i32, blobs NBT de tiles) + <code>mcp_chunk_section_t</code> de 10.256 B raw (4096 blocks + 3 nibble-arrays de 2048; XZY <code>(x&amp;15)|((z&amp;15)&lt;&lt;4)|((y&amp;15)&lt;&lt;8)</code>, <code><a class="el" href="ChunkSection_8h_source.html">ChunkSection.h</a>:43-67</code>). Sin paleta ni compresión — el formato es a la vez memoria, disco y wire. <b>Correcto para 0.15</b> (§3.8); ~165,6 KB/chunk residente.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md120"></a>
+<h2><a class="anchor" id="autotoc_md103"></a>
 10.2 Acceso y mutación</h2>
 <p><b> Lectura O(1) con mutex+hash por celda (§7.1). Escritura = cadena completa de §7.1 incluido relight 31³. X/Z sin bounds-check explícito en el primitivo (mask <code>&amp;15</code> implícito por contrato; Y sí chequeado en todas las rutas, <code>Chunk.cpp:154-241</code>).</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md121"></a>
+<h2><a class="anchor" id="autotoc_md104"></a>
 10.3 Iluminación (doble motor)</h2>
 <p><b></p><ul>
 <li>Generación: <code>mcp_chunk_propagate_sky_light</code> en el worker, BFS con ring malloc'd sobre <code>[0,maxTop]</code> (<code>Chunk.cpp:457-581</code>).</li>
@@ -501,46 +501,46 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 </ul>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md122"></a>
+<h2><a class="anchor" id="autotoc_md105"></a>
 10.4 Generación</h2>
 <p><b> <code>VgenSource</code> (port de MCPE 1.0.0 <code>RandomLevelSource</code>): 7 campos de ruido sin caché de vecindad; terrain-cache LRU 512 × ~68 KB con evicción O(n) (<code>VgenSource.cpp:366-406</code>); spill queue para escrituras entre-chunks (<code>VgenSource.cpp:408-463</code>); estructuras con 289 candidatos × reseeds y caché global sin purga serializada por mutex (§7.3); biomas por stack de capas estilo Java (<code>newbiome/</code>). Threading correcto (tarea stateless por chunk, instalación con <code>scoped_lock(mtx_, pending_mtx_)</code> y protección del caso ya-existe, <code>ChunkManager.cpp:262-299</code>).</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md123"></a>
+<h2><a class="anchor" id="autotoc_md106"></a>
 10.5 Almacenamiento</h2>
 <p><b> Anvil: async writer con backpressure (§5), zlib nivel 1 medido, re-serialización completa por guardado (§7.3), solo 8 secciones persistidas (<code>ANVIL_SECTIONS 8</code>, <code>AnvilChunkCodec.cpp:44-45</code>), caps de decompresión 64 MiB (R9/R10 presentes). <b>LevelDB = stub confirmado</b> (<code>LevelDB.cpp:86-102</code>, "Phase 12+" nunca llegó) — el README lo anuncia como soporte real: <b>drift documental</b>.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md124"></a>
+<h2><a class="anchor" id="autotoc_md107"></a>
 10.6 Tiles y entidades</h2>
 <p><b> Tiles en mapa global del mundo (<code><a class="el" href="World_8h_source.html">World.h</a>:529-530</code>) con hidratación lazy que <b>escanea 32.768 celdas por chunk</b> la primera vez (<code>World.cpp:1996-2025</code>) y <code>getTilesInChunk</code> escanea el mapa mundial por chunk enviado (<code>World.cpp:1916-1931</code>); tick copia todo el mapa por mundo por tick (§7.4). Entidades: 4 tipos struct en mapas globales, tick de todo lo cargado sin culling de distancia (solo chunk cargado, <code>World.cpp:738</code>), física por <code>collisionBoxes</code> de fuerza bruta + virtual por bloque (<code>World.cpp:262-297</code>). <b>No hay merge de ítems</b> (funcionalidad vanilla ausente) ni índice espacial.</b></p>
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md126"></a>
+<h1><a class="anchor" id="autotoc_md109"></a>
 11. AUDITORÍA DE EVENTOS, PLUGINS Y COMANDOS</h1>
 <p><b> </b></p>
-<h2><a class="anchor" id="autotoc_md127"></a>
+<h2><a class="anchor" id="autotoc_md110"></a>
 11.1 Eventos</h2>
 <p><b> Implementación, coste por fire y comparación con the reference: §3.2. Cobertura: 27 clases concretas, <b>26 realmente disparadas</b> en 26 sitios (grep <code>fire|call</code>); solo <code>BlockUpdateEvent</code> existe como base de <code>DoorToggleEvent</code>. Los eventos de gameplay calientes: <code>PlayerMoveEvent</code> por paquete de movimiento (<code>PlayerTick.cpp:145</code>), <code>BlockBreak/Place</code> por acción (<code>PlayerBlocks.cpp:243,1038,1281</code>), <code>InventoryClick</code> por click (<code>PlayerNetwork.cpp:447,480,514</code>).</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md128"></a>
+<h2><a class="anchor" id="autotoc_md111"></a>
 11.2 Plugins Lua</h2>
 <p><b> Ciclo de vida correcto y aislado (una VM por plugin, <code>lua_close</code> en disable, listeners desregistrados y tareas canceladas, <code>LuaPlugin.cpp:398-467</code>); límites por hook de instrucciones con re-armado anti-sworrida de pcall y circuit-breaker con disable diferido al siguiente tick (<code>LuaPlugin.cpp:473-581</code>) — diseño maduro. <b>Coste por evento por plugin escuchando:</b> tabla nueva + closure de cancelación + 5-15 campos + <code>pcall</code> + readback (<code>BindingsEvents.cpp:100-133</code>) — inevitable para la semántica de tabla Lua, y el registro usa refs de registry (sin <code>lua_getfield</code> global por fire: correcto). El puente es el multiplicador: un plugin escuchando <code>PlayerMoveEvent</code> de los 20 Hz × jugadores.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md129"></a>
+<h2><a class="anchor" id="autotoc_md112"></a>
 11.3 Comandos y permisos</h2>
 <p><b> Port fiel de la referencia de la era, rutas frías; consola marshalled al hilo principal (L3). Costes menores: <code>utils::split</code> con allocs por token (<code>SimpleCommandMap.cpp:75-79</code>), <code>PermissibleBase::hasPermission</code> con substrings por nivel de wildcard (<code>PermissibleBase.cpp:25-42</code>). 17 comandos / 20 registros (<code>Defaults.cpp:44-66</code>). Sin hallazgos relevantes de rendimiento.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md130"></a>
+<h2><a class="anchor" id="autotoc_md113"></a>
 11.4 ¿La API obliga a estructuras ineficientes al motor?</h2>
 <p><b> <b>No.</b> La frontera está bien tirada: los plugins tocan <code>Player</code>/<code>World</code>/<code>Tile</code> OOP y copias de seguridad semántica (<code>shared_ptr</code> tiles, snapshots), mientras el motor interno ya es plano (<code>mcp_chunk_t</code>, structs de entidad). La separación API pública / implementación interna pedida por el enunciado <b>ya existe de facto</b>; el coste remanente (§3.2, §11.1) es del despacho interno, no de la API.</b></p>
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md132"></a>
+<h1><a class="anchor" id="autotoc_md115"></a>
 12. SEGURIDAD Y ESTABILIDAD</h1>
 <p><b> Clasificación: <b>[confirmado]</b> = reproducible por lectura del código con ruta completa; <b>[riesgo]</b> = patrón peligroso sin ruta de explotación demostrada aquí.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md133"></a>
+<h2><a class="anchor" id="autotoc_md116"></a>
 12.1 🔴 CRÍTICA [confirmado] — Use-after-free en el índice de sesiones tras kick</h2>
 <p><b></p><ul>
 <li><b>Dónde:</b> <code>mcp_server_handler_close_session</code> (<code>src/network/raklib/ServerHandler.cpp:72-87</code>).</li>
@@ -552,23 +552,23 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 </ul>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md134"></a>
+<h2><a class="anchor" id="autotoc_md117"></a>
 12.2 🟠 [confirmado] — Bug de corrección: daño ambiental en el mundo equivocado</h2>
 <p><b> <code>Player::tickHungerAndDamage</code> resuelve <code>lvl = srv_-&gt;getDefaultWorld()</code> en vez del mundo actual del jugador (<code>PlayerStats.cpp:407</code>): un jugador en el Nether recibe daño/ahogamiento/lava según los <b>bloques del overworld en sus coordenadas</b>. También significa que los chequeos de bloque leen chunks posiblemente no cargados de otro mundo. Corrección: <code>getWorld()</code> del propio jugador.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md135"></a>
+<h2><a class="anchor" id="autotoc_md118"></a>
 12.3 🟠 [confirmado] — Anti-flood declarado y nunca aplicado</h2>
 <p><b> <code>MCP_SM_PACKET_LIMIT = 250</code> y los campos <code>ip_sec_buf/ip_sec_cnt</code> existen (<code><a class="el" href="SessionManager_8h_source.html">SessionManager.h</a>:36,62-66</code>) y se resetean (<code>SessionManager.cpp:2221</code>) pero <b>nunca se incrementan ni se comprueban</b>: no hay límite por IP real. Una IP puede sostener 512 sesiones de handshake durante la ventana de timeout (memoria, no crecimiento ilimitado — R1 acota el total). Decisión: aplicar el límite o borrar el código muerto.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md136"></a>
+<h2><a class="anchor" id="autotoc_md119"></a>
 12.4 Endurecimiento verificado en su sitio (positivo)</h2>
 <p><b> Caps R1–R10 (sesiones 512, NBT depth 128, batch 8 MiB, login 8 MiB, playerlist 65535, offline-dat 16 MiB, anvil 64 MiB, pad-refuse), P1 (try/catch en decode), P2 (truncado 65535), P3 (crash dump en hijo fork), A1/A2 (split/realloc), L1–L5 (logger latch, join de red, consola marshalled, recovery accounting, getChunkIfLoaded en block-break). Todo verificado presente en el árbol actual con las líneas citadas por <code>docs/audits/memory-audit.md</code> y re-lectura puntual propia.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md137"></a>
+<h2><a class="anchor" id="autotoc_md120"></a>
 12.5 Superficie C restante (riesgo de clase, no hallazgo puntual)</h2>
 <p><b> Raklib conserva: 30 funciones <code>mcp_*</code>, 8 PODs, 30 sitios malloc-family, 64 casts C-style, <code>qsort</code>, ~35 <code>#define</code>, init/destroy manual (§9.4). El aislamiento por hilo hace la concurrencia segura, pero el error de §12.1 demuestra el punto: <b>la convención create/destroy no impide olvidar una mitad del contrato</b> (aquí, "mapa y array deben permanecer coherentes"). La conversión a RAII (dueño único por sesión) eliminaría la clase de error, no solo el bug.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md138"></a>
+<h2><a class="anchor" id="autotoc_md121"></a>
 12.6 Otros riesgos menores</h2>
 <p><b></p><ul>
 <li><b>[riesgo]</b> <code>World::getBlockId</code> sin mundo: la ruta de daño ambiental de §12.2 puede leer chunks de otro mundo a través del mismo patrón (y devuelve 0/aire si no está cargado — silencioso).</li>
@@ -581,10 +581,10 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md140"></a>
+<h1><a class="anchor" id="autotoc_md123"></a>
 13. COMPILACIÓN Y OPTIMIZACIÓN DEL BINARIO</h1>
 <p><b> </b></p>
-<h2><a class="anchor" id="autotoc_md141"></a>
+<h2><a class="anchor" id="autotoc_md124"></a>
 13.1 Configuración actual (verificada en &lt;tt&gt;CMakeLists.txt&lt;/tt&gt; y cache de build)</h2>
 <p><b></p><ul>
 <li>C++20 REQUIRED (<code>:34-35</code>); <code>CMAKE_C_STANDARD 23</code> + glob `src//*.c<code>**muertos** (cero</code>.c<code>en</code>src/<code>; el C es solo</code>third_party/lua<code>con C99,</code>:94-96<code>). Comentario obsoleto:</code>:113<code>cita</code>src/utils/ThreadPort.c<code>(el archivo es</code>.cpp<code>).</code></li>
@@ -594,7 +594,7 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 </ul>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md142"></a>
+<h2><a class="anchor" id="autotoc_md125"></a>
 13.2 Evaluación</h2>
 <p><b></p><ul>
 <li>El pipeline es sano y multiplataforma; el gap real es <b>calidad, no configuración</b>: nada de CI corre los 28 harness Python ni los checks C++ — y 5 de 6 wrappers <code>run_*.sh</code> están rotos contra el árbol actual (compilan <code>src/nbt/NBT.c</code>, <code>src/logger/AsyncMainLogger.c</code>, <code>src/world/format/Chunk.c</code>… que ya no existen; <code>run_gen_perf.sh</code> referencia el generador antiguo <code>Normal.cpp</code> eliminado). <code>tools/gen_perf.cpp</code> incluye headers muertos (<code>tools/gen_perf.cpp:11,16</code>) y por tanto no compila.</li>
@@ -606,11 +606,11 @@ $(document).ready(function(){initNavTree('md_docs_audits_CURSESTONE_ARCHITECTURE
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md144"></a>
+<h1><a class="anchor" id="autotoc_md127"></a>
 14. PROPUESTAS DE REDISEÑO</h1>
 <p><b> Cada propuesta incluye los 12 campos del encargo. Ninguna toca el wire-format de protocolo 84.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md145"></a>
+<h2><a class="anchor" id="autotoc_md128"></a>
 R1 — Handle de chunk / &lt;tt&gt;ChunkView&lt;/tt&gt; para rutas calientes</h2>
 <p><b></p><ol type="1">
 <li><b>Componente:</b> acceso a bloques (World/ChunkManager + consumidores).</li>
@@ -628,7 +628,7 @@ R1 — Handle de chunk / &lt;tt&gt;ChunkView&lt;/tt&gt; para rutas calientes</h2
 </ol>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md146"></a>
+<h2><a class="anchor" id="autotoc_md129"></a>
 R2 — Luz incremental (light removal/addition queue)</h2>
 <p><b></p><ol type="1">
 <li><b>Componente:</b> <code>LightEngine</code>.</li>
@@ -646,7 +646,7 @@ R2 — Luz incremental (light removal/addition queue)</h2>
 </ol>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md147"></a>
+<h2><a class="anchor" id="autotoc_md130"></a>
 R3 — Presupuesto de E/S fuera del mutex de chunks</h2>
 <p><b></p><ol type="1">
 <li><b>Componente:</b> <code>ChunkManager</code> guardado/descarga.</li>
@@ -664,7 +664,7 @@ R3 — Presupuesto de E/S fuera del mutex de chunks</h2>
 </ol>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md148"></a>
+<h2><a class="anchor" id="autotoc_md131"></a>
 R4 — Anti-churn de red (pools de buffers + writer con reserve + move)</h2>
 <p><b></p><ol type="1">
 <li><b>Componente:</b> capa de paquetes (in/out).</li>
@@ -682,7 +682,7 @@ R4 — Anti-churn de red (pools de buffers + writer con reserve + move)</h2>
 </ol>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md149"></a>
+<h2><a class="anchor" id="autotoc_md132"></a>
 R5 — Índice espacial de viewers y entidades por chunk</h2>
 <p><b></p><ol type="1">
 <li><b>Componente:</b> difusión y simulación de entidades (World).</li>
@@ -700,7 +700,7 @@ R5 — Índice espacial de viewers y entidades por chunk</h2>
 </ol>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md150"></a>
+<h2><a class="anchor" id="autotoc_md133"></a>
 R6 — Cola dedicada de ticks de bloque (liquids) por mundo</h2>
 <p><b></p><ol type="1">
 <li><b>Componente:</b> simulación de líquidos / scheduler.</li>
@@ -718,7 +718,7 @@ R6 — Cola dedicada de ticks de bloque (liquids) por mundo</h2>
 </ol>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md151"></a>
+<h2><a class="anchor" id="autotoc_md134"></a>
 R7 — Consolidación raklib: RAII real y un solo registro de sesiones</h2>
 <p><b></p><ol type="1">
 <li><b>Componente:</b> <code>network/raklib</code> + puente.</li>
@@ -736,13 +736,13 @@ R7 — Consolidación raklib: RAII real y un solo registro de sesiones</h2>
 </ol>
 <p></b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md152"></a>
+<h2><a class="anchor" id="autotoc_md135"></a>
 R8 — Quitar o cablear los scaffolds muertos (higiene)</h2>
 <p><b> <code>QueryHandler</code> (hook no-op), <code>RCON</code> stub, <code>CompressBatchedTask</code> (cablearlo como worker de compresión sería la vía natural de R4; si no, borrar), <code><a class="el" href="AsyncWorker_8h_source.html">AsyncWorker.h</a></code>, <code>Entity::tick</code> + clases de entidad vacías, <code>send_queue_*</code>, <code>shouldGc/runGc</code>, <code>Color.cpp</code> vacío, <code>LevelDB</code> stub (o se anuncia como stub en README, o se implementa). Cada pieza es pequeña; la decisión es política: <b>cablear lo que el roadmap quiere, borrar lo demás</b> (misma política que ya aplicó <code>f25e966</code>).</b></p>
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md154"></a>
+<h1><a class="anchor" id="autotoc_md137"></a>
 15. LISTADO PRIORIZADO DE MEJORAS</h1>
 <p><b> Prioridades: <b>CRÍTICA</b> (seguridad/estabilidad/bloquea desarrollo) · <b>ALTA</b> (rendimiento/memoria/escalabilidad importantes) · <b>MEDIA</b> (beneficio relevante no urgente) · <b>BAJA</b> (limpieza/mantenibilidad).</b></p>
 <p><b></p><table class="markdownTable">
@@ -802,16 +802,16 @@ R8 — Quitar o cablear los scaffolds muertos (higiene)</h2>
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md156"></a>
+<h1><a class="anchor" id="autotoc_md139"></a>
 16. HOJA DE RUTA DE EVOLUCIÓN</h1>
 <p><b> <b>Fase 0 — Red de seguridad (prerrequisito de todo).</b> Arreglar los 6 <code>run_*.sh</code> + <code>gen_perf.cpp</code>, añadir job CI que compile Release y corra los 4 harness de red + <code>memory_audit_checks.py</code> bajo build con ASan nocturna. <em>Por qué primero:</em> todo el resto se apoya en poder verificar sin regresión. Sin dependencias. (Ítem 18.) <b>Fase 1 — Correcciones fundamentales.</b> UAF del índice de sesiones (#1), mundo equivocado (#2), <code>sendto</code> fuera del lock (#6), <code>ServerHandler</code> O(1) (#13), anti-flood aplicar/quitar (#14), purga de estado muerto (#19-20) y limpieza CMake/docs (#21). Todo de riesgo bajo/medio-bajo. <em>Completa antes de Fase 2:</em> nada de optimización sobre un UAF. <b>Fase 2 — Optimización de componentes principales.</b> R3 (E/S fuera del mutex) → R4 (churn de red, piezas independientes) → R1 (ChunkView) → R6 (cola de líquidos) → #12 (caché de estructuras) → #15-17 (NBT, tiles, crafting). Cada uno con su micro-benchmark y harness. <em>Dependencias internas:</em> R1 antes de R2; R3 independiente. <b>Fase 3 — Rediseño arquitectónico.</b> R2 (luz incremental, algorítmicamente difícil) y R5 (índice espacial de viewers/entidades), R7 fases (b-c) (raklib RAII + registro único de sesiones), decisión definitiva sobre Query/RCON/LevelDB (R8). <em>Requiere:</em> Fase 2 estable en CI; para R7, suite de churn/timeout en verde. <b>Fase 4 — Rendimiento avanzado.</b> Arena de NBT profunda, pools de buffers de paquete (si el churn residual lo justifica tras Fase 2), <code>-flto</code> (+PGO experimental) y <code>-march</code> opt-in, presupuesto de relight paralelo por chunks, revisión de falsos compartimientos. <em>Requiere:</em> Fase 3 completada y mediciones; nada aquí "porque sí". <b>Fase 5 — Concurrencia y escalabilidad.</b> Condvar en el puente raklib (matar el sondeo), revisar contención de <code>players_mtx_</code>/<code>batch_mtx_</code> a 50+ jugadores, build TSan en CI, mover compresión de batch a worker (<code>CompressBatchedTask</code> revivido o eliminado según Fase 2), generar terreno con bordes compartidos si el perfil lo sostiene. <em>Requiere:</em> Fases 2-4; TSan antes de añadir locks nuevos. <b>Fase 6 — Consolidación.</b> Benchmarks reproducibles en repo (<code>gen_perf</code> arreglado + uno de tick con N bots), regresión de wire como gate de CI, documentación de arquitectura actualizada (<code>.claude/rules</code> regenerados), versión del informe de auditoría re-ejecutada.</b></p>
 <p><b></p><hr  />
 <p></b></p>
 <p><b></b></p>
-<h1><a class="anchor" id="autotoc_md158"></a>
+<h1><a class="anchor" id="autotoc_md141"></a>
 17. EVALUACIÓN FINAL</h1>
 <p><b> </b></p>
-<h2><a class="anchor" id="autotoc_md159"></a>
+<h2><a class="anchor" id="autotoc_md142"></a>
 17.1 Respuestas explícitas a las preguntas del encargo</h2>
 <p><b> <b>¿CurseStone es realmente un motor diseñado para C++ o sigue siendo una recreación demasiado literal de la referencia de la era-MP?</b> Es un híbrido avanzado. El núcleo de datos (chunks, luz, E/S, raklib) ya es un motor propio con decisiones de C++ (planos, un-dueño, acotado); la capa de juego conserva la <em>forma</em> de the reference (objeto por paquete, evento por movimiento, snapshot por difusión, scheduler-genérico-como-block-ticks). La recreación literal ya no está en las clases —está en los <em>hábitos de asignación y despacho</em>.</b></p>
 <p><b><b>¿Qué decisiones de the reference se reproducen innecesariamente?</b> H1 (objeto heap + <code>dynamic_cast</code> por paquete), H2 (despacho de eventos con copia por fire en ruta de 20 Hz), H3 (snapshot global por difusión), H5 (scheduler genérico como cola de bloques), H7 (mapa string de sesiones duplicando el índice O(1)), y el scaffolding muerto (Query/RCON/CompressBatchedTask).</b></p>
@@ -827,7 +827,7 @@ R8 — Quitar o cablear los scaffolds muertos (higiene)</h2>
 <p><b><b>¿Cuáles son las 10 mejoras más importantes?</b> Ver síntesis al final de §15.</b></p>
 <p><b><b>¿Qué arquitectura debería tener CurseStone a largo plazo?</b> La que ya apunta: <b>un hilo de simulación dueño del mundo</b>, con I/O y cómputo pesado (generación, compresión, guardado, luz en presupuesto) en workers; datos del mundo en estructuras planas con handles/cache de bucle; red con un solo registro de sesiones RAII y buffers reutilizados; despacho de eventos sin copia; y una API de plugins OOP estable <b>encima</b> de un motor data-oriented — que es exactamente la separación API/interna que el encargo pide y que este árbol ya tiene a medias.</b></p>
 <p><b></b></p>
-<h2><a class="anchor" id="autotoc_md160"></a>
+<h2><a class="anchor" id="autotoc_md143"></a>
 17.2 Diagnóstico honesto final</h2>
 <p><b> CurseStone está <b>mejor de lo que su historial de puerto haría esperar</b> y peor de lo que su flag C++20 promete. Las decisiones duras ya tomadas (un-dueño por dato, presupuestos por tick, backpressure acotada, caps hostiles, harness de wire real) son las correctas y son las difíciles de cambiar después; el trabajo restante es mayoritariamente <em>local, medible y de bajo riesgo</em> — salvo dos piezas algorítmicas (luz incremental, índice espacial) que valen el esfuerzo porque atacan los dos techos reales del motor. El bug de sesiones (#1) debe arreglarse antes de cualquier otra cosa: es una línea, tiene test de regresión natural, y no hay arquitectura que compense un UAF en el camino del kick.</b></p>
 <p><b></p><hr  />

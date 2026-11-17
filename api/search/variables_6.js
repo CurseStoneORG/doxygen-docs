@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['generator_1626',['generator',['../structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c',1,'cursestone::world::WorldConfig']]],
-  ['getaddress_1627',['getAddress',['../structCsPlayerApi.html#a9089f90b9f36840bb824750a62ddd13e',1,'CsPlayerApi']]],
-  ['getblock_1628',['getBlock',['../structCsWorldApi.html#a1aa41b71be5afe3c33c95b2a37eb1e7c',1,'CsWorldApi']]],
-  ['getblockmeta_1629',['getBlockMeta',['../structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f',1,'CsWorldApi']]],
-  ['getexperiencelevel_1630',['getExperienceLevel',['../structCsPlayerApi.html#a1752661c1493f2d0a2ebfd408cebb707',1,'CsPlayerApi']]],
-  ['getgamemode_1631',['getGamemode',['../structCsPlayerApi.html#a4535518b05131599bf5df4b6677f421c',1,'CsPlayerApi']]],
-  ['gethealth_1632',['getHealth',['../structCsPlayerApi.html#aeba1c33bea464e17a96674bbaea7e83c',1,'CsPlayerApi']]],
-  ['getspawnpoint_1633',['getSpawnPoint',['../structCsPlayerApi.html#a73e5ab6a42492c529c55b2cf710dbd96',1,'CsPlayerApi']]],
-  ['getweather_1634',['getWeather',['../structCsWorldApi.html#a62261493a35b1533a55a9fa342962c12',1,'CsWorldApi']]],
-  ['giveitem_1635',['giveItem',['../structCsPlayerApi.html#afa26c1c6c4c9e842a5b40cce55ef5847',1,'CsPlayerApi']]]
+  ['generator_1621',['generator',['../structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c',1,'cursestone::world::WorldConfig']]],
+  ['getaddress_1622',['getAddress',['../structCsPlayerApi.html#a9089f90b9f36840bb824750a62ddd13e',1,'CsPlayerApi']]],
+  ['getblock_1623',['getBlock',['../structCsWorldApi.html#a1aa41b71be5afe3c33c95b2a37eb1e7c',1,'CsWorldApi']]],
+  ['getblockmeta_1624',['getBlockMeta',['../structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f',1,'CsWorldApi']]],
+  ['getexperiencelevel_1625',['getExperienceLevel',['../structCsPlayerApi.html#a1752661c1493f2d0a2ebfd408cebb707',1,'CsPlayerApi']]],
+  ['getgamemode_1626',['getGamemode',['../structCsPlayerApi.html#a4535518b05131599bf5df4b6677f421c',1,'CsPlayerApi']]],
+  ['gethealth_1627',['getHealth',['../structCsPlayerApi.html#aeba1c33bea464e17a96674bbaea7e83c',1,'CsPlayerApi']]],
+  ['getspawnpoint_1628',['getSpawnPoint',['../structCsPlayerApi.html#a73e5ab6a42492c529c55b2cf710dbd96',1,'CsPlayerApi']]],
+  ['getweather_1629',['getWeather',['../structCsWorldApi.html#a62261493a35b1533a55a9fa342962c12',1,'CsWorldApi']]],
+  ['giveitem_1630',['giveItem',['../structCsPlayerApi.html#afa26c1c6c4c9e842a5b40cce55ef5847',1,'CsPlayerApi']]]
 ];
