@@ -168,11 +168,50 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a7249412c78ac54ab090813a30353fc33">removeFloatingText</a> )(const char *world, int64_t id)</td></tr>
 <tr class="memdesc:a7249412c78ac54ab090813a30353fc33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Despawns a floating text; false for unknown ids. <br /></td></tr>
 <tr class="separator:a7249412c78ac54ab090813a30353fc33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1725b09c5bebe8d584995b861ad9c8a"><td class="memItemLeft" align="right" valign="top">int64_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#ac1725b09c5bebe8d584995b861ad9c8a">spawnEntity</a> )(const char *world, int32_t type, double x, double y, double z, float yaw, float pitch)</td></tr>
+<tr class="memdesc:ac1725b09c5bebe8d584995b861ad9c8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns one standing mob (no AI, no physics, zero per-tick cost).  <a href="structCsWorldApi.html#ac1725b09c5bebe8d584995b861ad9c8a">More...</a><br /></td></tr>
+<tr class="separator:ac1725b09c5bebe8d584995b861ad9c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e48655b66e53780f7609169276be6cd"><td class="memItemLeft" align="right" valign="top"><a id="a9e48655b66e53780f7609169276be6cd"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a9e48655b66e53780f7609169276be6cd">moveEntity</a> )(const char *world, int64_t id, double x, double y, double z, float yaw, float pitch)</td></tr>
+<tr class="memdesc:a9e48655b66e53780f7609169276be6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Repositions a standing mob; false for unknown ids. <br /></td></tr>
+<tr class="separator:a9e48655b66e53780f7609169276be6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cde88018e4fc5689df88f0a4a819833"><td class="memItemLeft" align="right" valign="top"><a id="a4cde88018e4fc5689df88f0a4a819833"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a4cde88018e4fc5689df88f0a4a819833">removeEntity</a> )(const char *world, int64_t id)</td></tr>
+<tr class="memdesc:a4cde88018e4fc5689df88f0a4a819833"><td class="mdescLeft">&#160;</td><td class="mdescRight">Despawns a standing mob; false for unknown ids. <br /></td></tr>
+<tr class="separator:a4cde88018e4fc5689df88f0a4a819833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b60215334aa5f519efbba2549e1064"><td class="memItemLeft" align="right" valign="top"><a id="ae7b60215334aa5f519efbba2549e1064"></a>
+bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#ae7b60215334aa5f519efbba2549e1064">getEntity</a> )(const char *world, int64_t id, int32_t *outType, double outPos[3], float outRot[2])</td></tr>
+<tr class="memdesc:ae7b60215334aa5f519efbba2549e1064"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a mob back: network id, feet position, outRot yaw/pitch. <br /></td></tr>
+<tr class="separator:ae7b60215334aa5f519efbba2549e1064"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d264e6af4224889d17082151a0561e"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#ae2d264e6af4224889d17082151a0561e">entityTypeFromName</a> )(const char *name, int32_t *outId)</td></tr>
+<tr class="memdesc:ae2d264e6af4224889d17082151a0561e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Entity network id from a name ("zombie", "cow", ...); false when unknown.  <a href="structCsWorldApi.html#ae2d264e6af4224889d17082151a0561e">More...</a><br /></td></tr>
+<tr class="separator:ae2d264e6af4224889d17082151a0561e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8dc6a8f7e0e01f3ec852b4bfed74da"><td class="memItemLeft" align="right" valign="top"><a id="a1c8dc6a8f7e0e01f3ec852b4bfed74da"></a>
+const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a1c8dc6a8f7e0e01f3ec852b4bfed74da">entityTypeName</a> )(int32_t type)</td></tr>
+<tr class="memdesc:a1c8dc6a8f7e0e01f3ec852b4bfed74da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Canonical lowercase name for a network id; NULL when unknown. <br /></td></tr>
+<tr class="separator:a1c8dc6a8f7e0e01f3ec852b4bfed74da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
 <p>First argument is the world name; the call fails (0 / false) for worlds that are not loaded. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="ae2d264e6af4224889d17082151a0561e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2d264e6af4224889d17082151a0561e">&#9670;&nbsp;</a></span>entityTypeFromName</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::entityTypeFromName) (const char *name, int32_t *outId)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Entity network id from a name ("zombie", "cow", ...); false when unknown. </p>
+<p>Case-insensitive, aliases included. </p>
+
+</div>
+</div>
 <a id="a1aa41b71be5afe3c33c95b2a37eb1e7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1aa41b71be5afe3c33c95b2a37eb1e7c">&#9670;&nbsp;</a></span>getBlock</h2>
 
@@ -232,6 +271,29 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 
 <p>Break burst + dig sound on a block (LevelEvent 2001, the one protocol-84 event that carries both). </p>
 <p>id 0..255, meta 0..15. </p>
+
+</div>
+</div>
+<a id="ac1725b09c5bebe8d584995b861ad9c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1725b09c5bebe8d584995b861ad9c8a">&#9670;&nbsp;</a></span>spawnEntity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int64_t(* CsWorldApi::spawnEntity) (const char *world, int32_t type, double x, double y, double z, float yaw, float pitch)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Spawns one standing mob (no AI, no physics, zero per-tick cost). </p>
+<p><code>type</code> is a protocol-84 network id from <a class="el" href="structCsWorldApi.html#ae2d264e6af4224889d17082151a0561e" title="Entity network id from a name (&quot;zombie&quot;, &quot;cow&quot;, ...); false when unknown.">entityTypeFromName()</a>; ids outside the registry fail because the 0.15.10 client has no verified renderer for them. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">y</td><td>feet position; <code>yaw/<code>pitch</code> spawn</code> rotation. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the entity id for move/remove/get, or -1 for an invalid type/position or at the per-world cap (256/world). </dd></dl>
 
 </div>
 </div>

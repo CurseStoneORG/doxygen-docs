@@ -153,28 +153,29 @@ var NAVTREE =
     ] ],
     [ "CurseStone Plugin API", "md_docs_PLUGINS.html", [
       [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md146", [
-        [ "Particles", "md_docs_PLUGINS.html#autotoc_md147", null ]
+        [ "Particles", "md_docs_PLUGINS.html#autotoc_md147", null ],
+        [ "Entities (standing mobs)", "md_docs_PLUGINS.html#autotoc_md148", null ]
       ] ],
-      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md148", [
-        [ "Structure", "md_docs_PLUGINS.html#autotoc_md149", null ],
-        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md150", null ],
-        [ "Building", "md_docs_PLUGINS.html#autotoc_md151", null ],
-        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md152", null ],
-        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md153", null ],
-        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md154", null ],
-        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md155", null ]
+      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md149", [
+        [ "Structure", "md_docs_PLUGINS.html#autotoc_md150", null ],
+        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md151", null ],
+        [ "Building", "md_docs_PLUGINS.html#autotoc_md152", null ],
+        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md153", null ],
+        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md154", null ],
+        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md155", null ],
+        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md156", null ]
       ] ],
-      [ "Commands", "md_docs_PLUGINS.html#autotoc_md156", null ],
-      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md157", null ]
+      [ "Commands", "md_docs_PLUGINS.html#autotoc_md157", null ],
+      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md158", null ]
     ] ],
     [ "CurseStone Comment and Documentation Style Guide", "md_docs_STYLE_COMMENTS.html", [
-      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md165", null ],
-      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md166", null ],
-      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md167", null ],
-      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md168", null ],
-      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md169", null ],
-      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md170", null ],
-      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md171", null ]
+      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md166", null ],
+      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md167", null ],
+      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md168", null ],
+      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md169", null ],
+      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md170", null ],
+      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md171", null ],
+      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md172", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -208,37 +209,37 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"AddDeepOceanLayer_8h_source.html",
-"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4ad6950e0ea45910943d6175203892d75e",
-"ContainerSetSlotPacket_8h_source.html",
-"InventoryHolder_8h_source.html",
-"ItemConstants_8h.html#a92bd921079faa86a73d23fbcb1a2e365",
-"ItemIds_8h.html#a3e000ec119790a8d8275720ada569223a48cd38bf55354a67d150641a404b91e5",
-"MiniJson_8h_source.html",
-"Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26a46b26370168d91c688aba639d1460e96",
-"Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6eada45f682f1e7ea342b29ad4d076a76ab",
-"classcursestone_1_1Player.html#a95670272004bd5f9781da54990919f59",
-"classcursestone_1_1block_1_1BlockDiamond.html",
-"classcursestone_1_1entity_1_1Human.html#a5f8f372ece47455cbe4d6a71eb01ad24",
-"classcursestone_1_1inventory_1_1BaseInventory.html#a0304371ac04671e327634e2d21463ec8",
-"classcursestone_1_1item_1_1ItemCoal.html#a5b49cfb1382a2370a97a865b85804eaf",
-"classcursestone_1_1item_1_1ItemSugarcane.html#a51b589492f38ec134197f04d303e1413",
-"classcursestone_1_1network_1_1protocol_1_1BatchPacket.html",
-"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#a313236139452ae5c882241762027a17d",
-"classcursestone_1_1plugin_1_1LuaPlugin.html#a6e4d0fa1e6a94c97d53797d41388f338",
-"classcursestone_1_1world_1_1ChunkManager.html#ab548a188a727ee70c3edcc54f01291fa",
-"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a950b782d8db9f7656c08686155643c7c",
-"classvgen_1_1Biome.html#a00d99626cc557c10cf79850ba5a9c27d",
-"classvgen_1_1BlockSource.html#a9cb99ce6683ffc4f52fea1f6ec4f8af9",
-"classvgen_1_1FoliageColor.html",
-"classvgen_1_1MineshaftCorridor.html#aeffd8f350db9f3e3926c53ececa14ff1",
-"classvgen_1_1PieceWeight.html#aaacc671155af99d45b1344385ab83c0c",
-"classvgen_1_1StructurePiece.html#a043896780752cadf041b2c53c9340232",
-"dir_dcc86cc43749e6e9f9624b9a1c0040e3.html",
-"structCsPlayerApi.html#ae55c3681438c95e7214e64ae3bb4577a",
-"structcursestone_1_1network_1_1protocol_1_1SetEntityDataPacket_1_1Entry.html",
-"structmcp__hit__result.html#a42cd4c24ea24fbc6c489bb97356fb4bd",
-"structvgen_1_1Brightness.html#aba72e18633dfebe0db861d0f83994bc8"
+"",
+"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4aa788e165e1ad26cb9d0c3a1420695d56",
+"ChunkAdapter_8h_source.html",
+"Info_8h.html#a03238211d6b6c109ba78a7ff61518692",
+"ItemConstants_8h.html#a621225bb310062b9fe17cd326b171867",
+"ItemConstants_8h.html#af64c4f623296688a9e78c30b8c8990c2",
+"ListTag_8cpp.html#a683eaf829edf975c7f587f55f2afd546",
+"RakLibInterface_8h.html#ae28792cf5ae018a6d48247e0e6c7309c",
+"TextColor_8h.html#ae8131db133ff4bd9bc078b3a50a15c06",
+"classcursestone_1_1Player.html#a2d60b6a14750ca6159fd3f20f69dae1e",
+"classcursestone_1_1StatusCommand.html#ac8c7218c601c3b1b708fd3578e9fdbef",
+"classcursestone_1_1diagnostics_1_1Diagnostics.html",
+"classcursestone_1_1event_1_1player_1_1PlayerDeathEvent.html#ae0747354707f1b1a7c708a2c3d4e63d5",
+"classcursestone_1_1item_1_1Item.html#a12376047d2e923fe5fb18491cabf8b82",
+"classcursestone_1_1item_1_1ItemPickaxeWooden.html",
+"classcursestone_1_1network_1_1RakLibInterface.html#a562a9e49aaedefaf83e9eb4147fbee18",
+"classcursestone_1_1network_1_1protocol_1_1LoginPacket.html#a388671626bce707fc480fb239e57e0e6",
+"classcursestone_1_1network_1_1protocol_1_1UpdateAttributesPacket.html#ad4004d58e423e7be1d495702751ccc9b",
+"classcursestone_1_1tile_1_1TileFurnace.html#ac1114a60ad80199eca290ce2f8fdb4ac",
+"classcursestone_1_1world_1_1format_1_1ChunkAdapter.html#a797b7ae3e8c9682243f7555e0a0fefda",
+"classcursestone_1_1world_1_1particle_1_1HugeExplodeParticle.html#a31247aebdf69b71b58e084ac0427510f",
+"classvgen_1_1BiomeDecorator.html#ad3f218e68d56dc3ed3943ffabf1bff18",
+"classvgen_1_1DownfallLayer.html#a0233ffdff007e428b55627e44ab2db84",
+"classvgen_1_1ListTag.html#a388ded6115a7061f78768f34cf05c90a",
+"classvgen_1_1NBStairsRoom.html#ad785032e4b7484e1dd0414b648bc98a1",
+"classvgen_1_1SmallTemple.html#a8db5f83c6a6e6a669f14411ad7f5a111",
+"classvgen_1_1VoronoiZoom.html#a98169e610964d0ab6eb60c17d9474a9a",
+"namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0",
+"structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a50023ff7640267fd64ebdba744d50f31",
+"structcursestone_1_1world_1_1WorldConfig.html#ae517570f00449b4641925a221f82fe6b",
+"structmcp__send__slot.html#a0f8b024bf996070808f706195d81a0a8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

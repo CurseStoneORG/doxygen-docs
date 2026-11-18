@@ -486,6 +486,7 @@ var annotated_dup =
         [ "SplashPotionEntity", "structcursestone_1_1world_1_1SplashPotionEntity.html", "structcursestone_1_1world_1_1SplashPotionEntity" ],
         [ "DroppedItem", "structcursestone_1_1world_1_1DroppedItem.html", "structcursestone_1_1world_1_1DroppedItem" ],
         [ "FallingBlockEntity", "structcursestone_1_1world_1_1FallingBlockEntity.html", "structcursestone_1_1world_1_1FallingBlockEntity" ],
+        [ "MobEntity", "structcursestone_1_1world_1_1MobEntity.html", "structcursestone_1_1world_1_1MobEntity" ],
         [ "WorldConfig", "structcursestone_1_1world_1_1WorldConfig.html", "structcursestone_1_1world_1_1WorldConfig" ],
         [ "World", "classcursestone_1_1world_1_1World.html", "classcursestone_1_1world_1_1World" ]
       ] ],

@@ -613,6 +613,7 @@ var hierarchy =
     [ "cursestone::MemoryManager", "classcursestone_1_1MemoryManager.html", null ],
     [ "cursestone::world::generator::MersenneRandom", "classcursestone_1_1world_1_1generator_1_1MersenneRandom.html", null ],
     [ "vgen::MineshaftData", "structvgen_1_1MineshaftData.html", null ],
+    [ "cursestone::world::MobEntity", "structcursestone_1_1world_1_1MobEntity.html", null ],
     [ "vgen::MobSpawnUtils", "classvgen_1_1MobSpawnUtils.html", null ],
     [ "cursestone::network::protocol::SetEntityMotionPacket::Motion", "structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html", null ],
     [ "cursestone::physics::MotionResult", "structcursestone_1_1physics_1_1MotionResult.html", null ],

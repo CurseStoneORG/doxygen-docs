@@ -178,6 +178,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>handleBlockBreak</b> 
 <tr class="memitem:a2328c7add9613022236ef48b549efb9c"><td class="memItemLeft" align="right" valign="top"><a id="a2328c7add9613022236ef48b549efb9c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>handleBlockPlace</b> (int x, int y, int z, uint8_t face, int16_t heldItemId, uint8_t heldCount, uint16_t heldDamage, float fx=0.5f, float fy=0.5f, float fz=0.5f)</td></tr>
 <tr class="separator:a2328c7add9613022236ef48b549efb9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bb79def18b4817f7b92cc997b490bd9"><td class="memItemLeft" align="right" valign="top"><a id="a3bb79def18b4817f7b92cc997b490bd9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>handleSpawnEggUse</b> (<a class="el" href="classcursestone_1_1world_1_1World.html">world::World</a> *lvl, int placeX, int placeY, int placeZ, uint16_t eggAux, uint8_t face)</td></tr>
+<tr class="separator:a3bb79def18b4817f7b92cc997b490bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7c76de956f4d07d5d07e93ea9cb28d7"><td class="memItemLeft" align="right" valign="top"><a id="ac7c76de956f4d07d5d07e93ea9cb28d7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>handlePlayerAction</b> (int action, int x, int y, int z, int face)</td></tr>
 <tr class="separator:ac7c76de956f4d07d5d07e93ea9cb28d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -283,6 +286,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isTrackingChunk</b> (
 <tr class="memitem:aef8475622efc96f9a9237549967550ac"><td class="memItemLeft" align="right" valign="top"><a id="aef8475622efc96f9a9237549967550ac"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>canSeeBlock</b> (int32_t cx, int32_t cz) const</td></tr>
 <tr class="separator:aef8475622efc96f9a9237549967550ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23db085552e268bcd03a4597d71f1118"><td class="memItemLeft" align="right" valign="top"><a id="a23db085552e268bcd03a4597d71f1118"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>knowsMob</b> (int64_t eid) const</td></tr>
+<tr class="separator:a23db085552e268bcd03a4597d71f1118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f796c760624cff2da5015f63b31f7ff"><td class="memItemLeft" align="right" valign="top"><a id="a6f796c760624cff2da5015f63b31f7ff"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>rememberMob</b> (int64_t eid)</td></tr>
+<tr class="separator:a6f796c760624cff2da5015f63b31f7ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba94993c95acc515e7eef5c9dca6a885"><td class="memItemLeft" align="right" valign="top"><a id="aba94993c95acc515e7eef5c9dca6a885"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>clearKnownMobs</b> ()</td></tr>
+<tr class="separator:aba94993c95acc515e7eef5c9dca6a885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ab2e99279b57b4c3491e401d3e6ca68"><td class="memItemLeft" align="right" valign="top"><a id="a1ab2e99279b57b4c3491e401d3e6ca68"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendPacket</b> (const std::shared_ptr&lt; <a class="el" href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">network::protocol::DataPacket</a> &gt; &amp;p, bool ordered=false)</td></tr>
 <tr class="separator:a1ab2e99279b57b4c3491e401d3e6ca68"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -310,6 +322,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>doFirstSpawn</b> ()</
 <tr class="memitem:a700c99595b9a9323c679d3f7e8572bea"><td class="memItemLeft" align="right" valign="top"><a id="a700c99595b9a9323c679d3f7e8572bea"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendChunksAroundSpawn</b> ()</td></tr>
 <tr class="separator:a700c99595b9a9323c679d3f7e8572bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2368e644d389083dff5b2b703cf93275"><td class="memItemLeft" align="right" valign="top"><a id="a2368e644d389083dff5b2b703cf93275"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>settleJoinPosition</b> ()</td></tr>
+<tr class="separator:a2368e644d389083dff5b2b703cf93275"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ef1204fe4fda369e633d48b4f8fa42f"><td class="memItemLeft" align="right" valign="top"><a id="a6ef1204fe4fda369e633d48b4f8fa42f"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>spawned</b> () const</td></tr>
 <tr class="separator:a6ef1204fe4fda369e633d48b4f8fa42f"><td class="memSeparator" colspan="2">&#160;</td></tr>

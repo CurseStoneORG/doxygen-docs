@@ -274,6 +274,41 @@ var namespacecursestone =
       [ "kMaxPlayerSnapshot", "Diagnostics_8h.html#a2546b18e8ce46757035afde454a90523", null ]
     ] ],
     [ "entity", null, [
+      [ "EntityTypeId", null, [
+        [ "BAT", "EntityTypes_8h.html#ac827326c46989075182f421f4b9d4036", null ],
+        [ "BLAZE", "EntityTypes_8h.html#aa6a80a0e43bd7500b3e2822cf4de9a80", null ],
+        [ "CHICKEN", "EntityTypes_8h.html#a9a4a93c02b6b0c3dd1a4c8d821ca4f49", null ],
+        [ "COW", "EntityTypes_8h.html#ad9a97ee746cdb8e9bcec28cef9ab671c", null ],
+        [ "CREEPER", "EntityTypes_8h.html#a9ce879c4a9d0f486d7381f4aee668b03", null ],
+        [ "DONKEY", "EntityTypes_8h.html#a90c604d25faa8927b86f8e5c6fb37080", null ],
+        [ "ENDERMAN", "EntityTypes_8h.html#aa94f6daa96c8fac5093deca653912aae", null ],
+        [ "GHAST", "EntityTypes_8h.html#a416c702ecf6b2dd1319e4c740a1a3bb8", null ],
+        [ "HORSE", "EntityTypes_8h.html#a784fbbbe201762d831eba0bc687db240", null ],
+        [ "HUSK", "EntityTypes_8h.html#aa0b4640984b57c2277af35c4c0fc2e8d", null ],
+        [ "LAVA_SLIME", "EntityTypes_8h.html#a4d8f857c373cecd67b5312079ecac86f", null ],
+        [ "MAGMA_CUBE", "EntityTypes_8h.html#a6cb400edbef5b3cc7d9d3eaa1597d1af", null ],
+        [ "MOOSHROOM", "EntityTypes_8h.html#adb153cf7600377fa4efc131976ff6c5b", null ],
+        [ "MULE", "EntityTypes_8h.html#ac11161e7e861251b819b3929cac0e897", null ],
+        [ "OCELOT", "EntityTypes_8h.html#ab30cd4403abe44a42c120603aa5ef99c", null ],
+        [ "PIG", "EntityTypes_8h.html#a1165e90f30b281df60355a2f0585ad61", null ],
+        [ "RABBIT", "EntityTypes_8h.html#ac9f9c9de237f0529d66925a4e6756afb", null ],
+        [ "SHEEP", "EntityTypes_8h.html#a81987c0998cb1530b99dd21ee70b0b12", null ],
+        [ "SILVERFISH", "EntityTypes_8h.html#a93726aee4f881501fed380494add248d", null ],
+        [ "SKELETON", "EntityTypes_8h.html#a5b74f641c5ff1a2e8c16dc928b8784cf", null ],
+        [ "SKELETON_HORSE", "EntityTypes_8h.html#abcaa0abb0d414c4279769fd954b5b9f9", null ],
+        [ "SLIME", "EntityTypes_8h.html#a4f9f9d2cdf4e0b49038b6255d2689cac", null ],
+        [ "SPIDER", "EntityTypes_8h.html#a8c9d1e8b67f8d66c432d3116209056df", null ],
+        [ "SQUID", "EntityTypes_8h.html#a1191fac895d8004970fc019fa75a74d8", null ],
+        [ "STRAY", "EntityTypes_8h.html#a49677d8bab75157e568d6215cfc6b42b", null ],
+        [ "VILLAGER", "EntityTypes_8h.html#a51d90b37f33b8e89a0af4f41b1d1201f", null ],
+        [ "WITCH", "EntityTypes_8h.html#ab77e4e6a73b40e5e8b7e9c128c72f600", null ],
+        [ "WITHER_SKELETON", "EntityTypes_8h.html#ae8df74011a6bd9cec0ed33e071c6621e", null ],
+        [ "WOLF", "EntityTypes_8h.html#a45a5952ff6e779bbdba0d09dee90ce7a", null ],
+        [ "ZOMBIE", "EntityTypes_8h.html#a5ef74f397cc6f7cdc59b504e453ed71a", null ],
+        [ "ZOMBIE_HORSE", "EntityTypes_8h.html#a62291ab10d6deec724bf47d0b5ba45c4", null ],
+        [ "ZOMBIE_PIGMAN", "EntityTypes_8h.html#ab71062a0327544ccc14a28854d44bceb", null ],
+        [ "ZOMBIE_VILLAGER", "EntityTypes_8h.html#a958cdc52f93053cd583c999860b292ab", null ]
+      ] ],
       [ "Attribute", "classcursestone_1_1entity_1_1Attribute.html", "classcursestone_1_1entity_1_1Attribute" ],
       [ "Effect", "classcursestone_1_1entity_1_1Effect.html", "classcursestone_1_1entity_1_1Effect" ],
       [ "Entity", "classcursestone_1_1entity_1_1Entity.html", "classcursestone_1_1entity_1_1Entity" ],
@@ -313,7 +348,10 @@ var namespacecursestone =
         [ "EFF_HEALTH_BOOST", "Effect_8h.html#a8838c0d1a6070e90c5a456a1ca1719ada936849621d42d8ffec0c8d3f4b0576c3", null ],
         [ "EFF_ABSORPTION", "Effect_8h.html#a8838c0d1a6070e90c5a456a1ca1719adae31c8196879abdf8401fcf5233850fd5", null ],
         [ "EFF_SATURATION", "Effect_8h.html#a8838c0d1a6070e90c5a456a1ca1719adab2a1c0e47f7b79ed15332f116572f0d3", null ]
-      ] ]
+      ] ],
+      [ "isValidMobType", "EntityTypes_8cpp.html#aa159f262335d2a819818ee66aa1a0cfd", null ],
+      [ "mobTypeFromName", "EntityTypes_8cpp.html#a929a53aa6e1741168adaeab5c98cbe3f", null ],
+      [ "mobTypeName", "EntityTypes_8cpp.html#ad037de8019f46a5cf6b150f681607a4d", null ]
     ] ],
     [ "event", null, [
       [ "block", null, [
@@ -1610,6 +1648,7 @@ var namespacecursestone =
       [ "SplashPotionEntity", "structcursestone_1_1world_1_1SplashPotionEntity.html", "structcursestone_1_1world_1_1SplashPotionEntity" ],
       [ "DroppedItem", "structcursestone_1_1world_1_1DroppedItem.html", "structcursestone_1_1world_1_1DroppedItem" ],
       [ "FallingBlockEntity", "structcursestone_1_1world_1_1FallingBlockEntity.html", "structcursestone_1_1world_1_1FallingBlockEntity" ],
+      [ "MobEntity", "structcursestone_1_1world_1_1MobEntity.html", "structcursestone_1_1world_1_1MobEntity" ],
       [ "WorldConfig", "structcursestone_1_1world_1_1WorldConfig.html", "structcursestone_1_1world_1_1WorldConfig" ],
       [ "World", "classcursestone_1_1world_1_1World.html", "classcursestone_1_1world_1_1World" ],
       [ "itemWithinPickupVolume", "World_8h.html#a55e11e04a6f986e214645a0651f6126c", null ],
