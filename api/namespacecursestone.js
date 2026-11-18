@@ -274,6 +274,24 @@ var namespacecursestone =
       [ "kMaxPlayerSnapshot", "Diagnostics_8h.html#a2546b18e8ce46757035afde454a90523", null ]
     ] ],
     [ "entity", null, [
+      [ "ai", null, [
+        [ "MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", "structcursestone_1_1entity_1_1ai_1_1MobContext" ],
+        [ "Goal", "classcursestone_1_1entity_1_1ai_1_1Goal.html", "classcursestone_1_1entity_1_1ai_1_1Goal" ],
+        [ "WanderGoal", "classcursestone_1_1entity_1_1ai_1_1WanderGoal.html", "classcursestone_1_1entity_1_1ai_1_1WanderGoal" ],
+        [ "LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal" ],
+        [ "IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal" ],
+        [ "MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", "structcursestone_1_1entity_1_1ai_1_1MobIntent" ],
+        [ "MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", "classcursestone_1_1entity_1_1ai_1_1MobBrain" ],
+        [ "MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", "classcursestone_1_1entity_1_1ai_1_1MobAIManager" ],
+        [ "GoalFlags", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310a", [
+          [ "kNoFlag", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa0932618710423128b2436086319dc7bb", null ],
+          [ "kFlagMove", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa3fff5336c7c00e40d2bd48afdb3dc922", null ],
+          [ "kFlagLook", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aaa33192be96046c52b8f54b2a598d37db", null ]
+        ] ],
+        [ "faceYaw", "MobAI_8cpp.html#a44ece5664a5a199c86308c32fbe06ac4", null ],
+        [ "makeMobBrain", "MobAI_8cpp.html#a9a0d110fe97ccc320bd10f8b30e32711", null ],
+        [ "kWanderSpeed", "Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c", null ]
+      ] ],
       [ "EntityTypeId", null, [
         [ "BAT", "EntityTypes_8h.html#ac827326c46989075182f421f4b9d4036", null ],
         [ "BLAZE", "EntityTypes_8h.html#aa6a80a0e43bd7500b3e2822cf4de9a80", null ],

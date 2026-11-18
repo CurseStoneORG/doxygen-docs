@@ -46,6 +46,7 @@ var classcursestone_1_1Player =
     [ "flushPendingPackets", "classcursestone_1_1Player.html#a45fd0a96856b22794b758f5287b338b3", null ],
     [ "foodExhaustion", "classcursestone_1_1Player.html#a38a364fe999df5280c70fc5a3b227112", null ],
     [ "foodSaturation", "classcursestone_1_1Player.html#adfb606d7b156484e9045446dbe5754c0", null ],
+    [ "forgetMob", "classcursestone_1_1Player.html#aad8bceaa1ad1b4318bf92e3f0a60060d", null ],
     [ "gamemode", "classcursestone_1_1Player.html#a2a5cea64feaebb5ec3309fca61bcbf0f", null ],
     [ "getAddress", "classcursestone_1_1Player.html#a3fbe1199b25187756b01f71879938d74", null ],
     [ "getAllowFlight", "classcursestone_1_1Player.html#aadb7b1114e2ee14d71237fecc09ac71c", null ],

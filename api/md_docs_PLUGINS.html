@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('md_docs_PLUGINS.html',''); initResizab
 <li><b>C++ plugins are file plugins</b>: drop the compiled <code>.so</code> (Linux, Android, macOS) or <code>.dll</code> (Windows) directly into <code>plugins/</code>. No folder, no <code>plugin.yml</code>, nothing else — the server opens the library, reads the descriptor inside it and that is the whole identity.</li>
 </ul>
 <p>The plugin API version is <code>CURSESTONE_API</code> in <code><a class="el" href="CurseStone_8h_source.html">src/CurseStone.h</a></code> (currently <code>1.0.3</code>).</p>
-<h1><a class="anchor" id="autotoc_md146"></a>
+<h1><a class="anchor" id="autotoc_md160"></a>
 Folder plugins (Lua)</h1>
 <div class="fragment"><div class="line"># plugins/MyPlugin/plugin.yml</div>
 <div class="line">name: MyPlugin          # identity; duplicates (case-insensitive) disable all copies</div>
@@ -122,7 +122,7 @@ Folder plugins (Lua)</h1>
 <li><code>data.read/write/exists/delete/list/loadYml/saveYml/loadJson/saveJson</code></li>
 <li><code>plugin.include/import/getResource/saveResource/listResources</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md147"></a>
+<h2><a class="anchor" id="autotoc_md161"></a>
 Particles</h2>
 <p>Protocol 84 has no arbitrary-particle packet; particles travel inside <code>LevelEventPacket</code> world events. The Lua world handles expose the three event shapes the 0.15.10 client actually renders, plus floating text:</p>
 <div class="fragment"><div class="line">local w = server.defaultWorld()</div>
@@ -156,7 +156,7 @@ Particles</h2>
 <p>Full name list: `bubble critical smoke explode white_smoke flame lava large_smoke redstone item_break snowball_poof large_explode huge_explode mob_flame heart terrain town_aura portal water_splash water_wake drip_water drip_lava dust mob_spell mob_spell_ambient mob_spell_instant ink slime rain_splash villager_angry villager_happy enchantment_table<code>. Unknown names / ids return</code>false` and never raise.</p>
 <p>Sample plugin: <code>plugins/SpawnProtection/</code>.</p>
 <p>A folder whose <code>main</code> points at a <code>.so</code>/<code>.dll</code> is <b>not</b> loaded: native plugins are bare files now, and the log explains the migration (move the library into <code>plugins/</code>, delete the manifest).</p>
-<h2><a class="anchor" id="autotoc_md148"></a>
+<h2><a class="anchor" id="autotoc_md162"></a>
 Entities (standing mobs)</h2>
 <p>World handles expose the mob registry the creative spawn eggs use. A spawned mob has no AI and no physics: it spawns exactly where the caller puts it and stays there. Cost is three packets in its whole lifetime — one AddEntityPacket on spawn, one MoveEntityPacket per move, one RemoveEntityPacket on removal — with no per-tick entry in the world loop, and viewers that stream its chunk later (joins, walk-ins) receive it from the chunk stream, deduplicated per client.</p>
 <div class="fragment"><div class="line">local w = server.defaultWorld()</div>
@@ -170,9 +170,9 @@ Entities (standing mobs)</h2>
 <div class="line">w.entityTypes()                                   -- name -&gt; protocol-84 id map</div>
 </div><!-- fragment --><p><code>type</code> accepts the canonical lowercase names — `chicken cow pig sheep wolf villager mooshroom squid rabbit bat ocelot horse donkey mule skeleton_horse zombie_horse zombie creeper skeleton spider zombie_pigman slime enderman silverfish ghast lava_slime magma_cube blaze zombie_villager witch stray husk wither_skeleton` — or their protocol-84 network id (10..48 range above; on this protocol the spawn egg aux value IS the id). Common aliases (<code>mushroom_cow</code>, <code>pigman</code>, <code>cat</code>, <code>magma</code>, ...) resolve too. Unknown names/ids, out-of-height positions and the per-world cap (256) return <code>false</code> and never raise. Every id in the registry has its own egg in the 0.15.10 creative inventory, which is what makes the client's renderer for it client-verified — ids outside the registry never reach the wire.</p>
 <p>Entity ids do not survive restarts, like floating text ids.</p>
-<h1><a class="anchor" id="autotoc_md149"></a>
+<h1><a class="anchor" id="autotoc_md163"></a>
 File plugins (C++ via .so / .dll)</h1>
-<h2><a class="anchor" id="autotoc_md150"></a>
+<h2><a class="anchor" id="autotoc_md164"></a>
 Structure</h2>
 <p>The final plugin is ONE file, named after the plugin:</p>
 <div class="fragment"><div class="line">plugins/</div>
@@ -191,7 +191,7 @@ Structure</h2>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>);</div>
 <div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:498</div></div>
 </div><!-- fragment --><p><code><a class="el" href="NativeAPI_8h_source.html">src/plugin/NativeAPI.h</a></code> is the complete SDK header — copy it (or point <code>-I</code> at the server <code>src/</code>) and compile against it. The plugin links nothing: the entire server surface arrives as function-pointer groups in the <code>CsPluginApi*</code> handed to <code>onLoad</code>.</p>
-<h2><a class="anchor" id="autotoc_md151"></a>
+<h2><a class="anchor" id="autotoc_md165"></a>
 Minimal complete plugin</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;plugin/NativeAPI.h&quot;</span></div>
 <div class="line"> </div>
@@ -240,7 +240,7 @@ Minimal complete plugin</h2>
 <div class="ttc" id="astructCsPluginDesc_html"><div class="ttname"><a href="structCsPluginDesc.html">CsPluginDesc</a></div><div class="ttdoc">Static plugin metadata returned by the vtable's desc hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:117</div></div>
 <div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:200</div></div>
 </div><!-- fragment --><p><code>onLoad</code> / <code>desc</code> are required; the other hooks may be <code>NULL</code>. The descriptor is the manifest: keep <code>name</code> non-empty and unique, and set <code>api</code> to the <code>CURSESTONE_API</code> you built against (an empty value means "this SDK"; an incompatible claim refuses the load).</p>
-<h2><a class="anchor" id="autotoc_md152"></a>
+<h2><a class="anchor" id="autotoc_md166"></a>
 Building</h2>
 <div class="fragment"><div class="line"># Linux / macOS / Android NDK</div>
 <div class="line">c++ -shared -fPIC -O2 -I&lt;repo&gt;/src -o MyPlugin.so src/MyPlugin.cpp</div>
@@ -252,10 +252,10 @@ Building</h2>
 <div class="line">target_include_directories(MyPlugin PRIVATE &lt;repo&gt;/src)</div>
 <div class="line">set_target_properties(MyPlugin PROPERTIES PREFIX &quot;&quot;)   # MyPlugin.so, not libMyPlugin.so</div>
 </div><!-- fragment --><p>For Android use the NDK toolchain (<code>-DANDROID_ABI=arm64-v8a</code> and friends); for MSVC make sure the platform matches the server build (x64 vs x86).</p>
-<h2><a class="anchor" id="autotoc_md153"></a>
+<h2><a class="anchor" id="autotoc_md167"></a>
 Data folder</h2>
 <p>Every loaded plugin gets <code>&lt;server&gt;/data_pl/&lt;stem&gt;/</code> created at load. The <code>data.*</code> group is jailed to it: relative paths only, no <code>..</code>, no backslashes. The Lua sandbox uses the same root, keyed by folder name.</p>
-<h2><a class="anchor" id="autotoc_md154"></a>
+<h2><a class="anchor" id="autotoc_md168"></a>
 Rules and guarantees</h2>
 <ul>
 <li><b>ABI version</b>: <code>CS_PLUGIN_ABI_VERSION</code> (currently 1) is checked right after the entry lookup; a mismatch refuses the library with a clear log line. It only moves when an existing field changes meaning, type or order — new surface is appended to the end of the group structs.</li>
@@ -266,7 +266,7 @@ Rules and guarantees</h2>
 <li><b>Permissions</b> mirror the Lua <code>commands.register</code> vocabulary: <code>NULL</code>/<code>""</code> = public, <code>"op"</code> = operators + console, any other string = permission node.</li>
 <li><b>String ownership</b>: strings handed OUT by the API are valid only until the callback returns; buffers the plugin fills are caller-owned.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md155"></a>
+<h2><a class="anchor" id="autotoc_md169"></a>
 API reference (native)</h2>
 <p>All functions return <code>bool</code>/<code>int</code> failure markers (<code>false</code> / <code>-1</code> / <code>0</code>) instead of raising anything; invalid arguments never crash the server.</p>
 <p><b>log</b> (context-bound)</p>
@@ -429,16 +429,16 @@ API reference (native)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>free(ptr)</code>   </td><td class="markdownTableBodyNone">releases <code>readFile</code> buffers across allocator boundaries   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md156"></a>
+<h2><a class="anchor" id="autotoc_md170"></a>
 Versioning</h2>
 <p><code>CS_PLUGIN_ABI_VERSION</code> stays at 1 while fields are only appended; the server's plugin API version (<code>CURSESTONE_API</code>, currently <code>1.0.3</code>) only moves at release time, not per change.</p>
-<h1><a class="anchor" id="autotoc_md157"></a>
+<h1><a class="anchor" id="autotoc_md171"></a>
 Commands</h1>
 <ul>
 <li><code>/plugins</code> — lists every plugin; native ones show a <code>[C++]</code> tag.</li>
 <li><code>/plugins reload</code> — disables, unloads (dtor runs <code>onUnload</code>, library closed) and re-scans the folder (folders for Lua, bare files for C++), all on the main thread.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md158"></a>
+<h1><a class="anchor" id="autotoc_md172"></a>
 Reference implementation</h1>
 <p><code>plugins/HelloNative/</code> — build with the <code>cursestone-example-plugin</code> CMake target or the one-liner above, then drop the produced <code>HelloNative.so</code> / <code>HelloNative.dll</code> directly into <code>plugins/</code>. </p>
 </div></div><!-- contents -->

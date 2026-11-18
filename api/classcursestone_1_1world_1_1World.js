@@ -27,6 +27,7 @@ var classcursestone_1_1world_1_1World =
     [ "chunks", "classcursestone_1_1world_1_1World.html#a9f67dbbc61d836a9ffc36626f28d86fc", null ],
     [ "collectDroppedItems", "classcursestone_1_1world_1_1World.html#a4a72ff7d411191d3372c9cea7fb79d04", null ],
     [ "collisionBoxes", "classcursestone_1_1world_1_1World.html#af1b4ad7a802995814b9801f015481fb9", null ],
+    [ "collisionBoxes", "classcursestone_1_1world_1_1World.html#a8d30a31622d292fd585b24a4aa507f53", null ],
     [ "config", "classcursestone_1_1world_1_1World.html#aa963b6ff4068185c8a03ca98db191036", null ],
     [ "dimension", "classcursestone_1_1world_1_1World.html#ae4b2e3241f8fa81d91580925b3399a8f", null ],
     [ "doWeatherTick", "classcursestone_1_1world_1_1World.html#a34225db7289cc7e5bca20ab6e40cb2ef", null ],

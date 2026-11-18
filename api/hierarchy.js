@@ -119,6 +119,7 @@ var hierarchy =
     [ "vgen::BlockVolume", "classvgen_1_1BlockVolume.html", null ],
     [ "vgen::BoundingBox", "classvgen_1_1BoundingBox.html", null ],
     [ "vgen::Brightness", "structvgen_1_1Brightness.html", null ],
+    [ "cursestone::entity::ai::MobBrain::BroadcastCache", "structcursestone_1_1entity_1_1ai_1_1MobBrain_1_1BroadcastCache.html", null ],
     [ "vgen::buffer_span< T >", "classvgen_1_1buffer__span.html", null ],
     [ "vgen::buffer_span_mut< T >", "classvgen_1_1buffer__span__mut.html", null ],
     [ "vgen::buffer_span_mut< vgen::BlockID >", "classvgen_1_1buffer__span__mut.html", null ],
@@ -424,6 +425,11 @@ var hierarchy =
       [ "cursestone::world::generator::Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", null ],
       [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
     ] ],
+    [ "cursestone::entity::ai::Goal", "classcursestone_1_1entity_1_1ai_1_1Goal.html", [
+      [ "cursestone::entity::ai::IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", null ],
+      [ "cursestone::entity::ai::LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html", null ],
+      [ "cursestone::entity::ai::WanderGoal", "classcursestone_1_1entity_1_1ai_1_1WanderGoal.html", null ]
+    ] ],
     [ "cursestone::event::HandlerList", "classcursestone_1_1event_1_1HandlerList.html", null ],
     [ "std::hash<::vgen::ChunkPos >", "structstd_1_1hash_3_1_1vgen_1_1ChunkPos_01_4.html", null ],
     [ "std::hash<::vgen::FullBlock >", "structstd_1_1hash_3_1_1vgen_1_1FullBlock_01_4.html", null ],
@@ -614,7 +620,11 @@ var hierarchy =
     [ "cursestone::MemoryManager", "classcursestone_1_1MemoryManager.html", null ],
     [ "cursestone::world::generator::MersenneRandom", "classcursestone_1_1world_1_1generator_1_1MersenneRandom.html", null ],
     [ "vgen::MineshaftData", "structvgen_1_1MineshaftData.html", null ],
+    [ "cursestone::entity::ai::MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", null ],
+    [ "cursestone::entity::ai::MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", null ],
+    [ "cursestone::entity::ai::MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", null ],
     [ "cursestone::world::MobEntity", "structcursestone_1_1world_1_1MobEntity.html", null ],
+    [ "cursestone::entity::ai::MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", null ],
     [ "vgen::MobSpawnUtils", "classvgen_1_1MobSpawnUtils.html", null ],
     [ "cursestone::entity::mobs::MobType", "structcursestone_1_1entity_1_1mobs_1_1MobType.html", [
       [ "cursestone::entity::mobs::Bat", "structcursestone_1_1entity_1_1mobs_1_1Bat.html", null ],

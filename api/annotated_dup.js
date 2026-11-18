@@ -71,6 +71,16 @@ var annotated_dup =
         [ "Diagnostics", "classcursestone_1_1diagnostics_1_1Diagnostics.html", "classcursestone_1_1diagnostics_1_1Diagnostics" ]
       ] ],
       [ "entity", null, [
+        [ "ai", null, [
+          [ "MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", "structcursestone_1_1entity_1_1ai_1_1MobContext" ],
+          [ "Goal", "classcursestone_1_1entity_1_1ai_1_1Goal.html", "classcursestone_1_1entity_1_1ai_1_1Goal" ],
+          [ "WanderGoal", "classcursestone_1_1entity_1_1ai_1_1WanderGoal.html", "classcursestone_1_1entity_1_1ai_1_1WanderGoal" ],
+          [ "LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal" ],
+          [ "IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal" ],
+          [ "MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", "structcursestone_1_1entity_1_1ai_1_1MobIntent" ],
+          [ "MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", "classcursestone_1_1entity_1_1ai_1_1MobBrain" ],
+          [ "MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", "classcursestone_1_1entity_1_1ai_1_1MobAIManager" ]
+        ] ],
         [ "mobs", null, [
           [ "Bat", "structcursestone_1_1entity_1_1mobs_1_1Bat.html", null ],
           [ "Blaze", "structcursestone_1_1entity_1_1mobs_1_1Blaze.html", null ],
