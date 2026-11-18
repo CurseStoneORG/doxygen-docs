@@ -797,6 +797,7 @@ var annotated_dup =
     [ "mcp_bstream", "structmcp__bstream.html", "structmcp__bstream" ],
     [ "mcp_chunk", "structmcp__chunk.html", "structmcp__chunk" ],
     [ "mcp_chunk_section", "structmcp__chunk__section.html", "structmcp__chunk__section" ],
+    [ "mcp_chunk_wire_snapshot", "structmcp__chunk__wire__snapshot.html", "structmcp__chunk__wire__snapshot" ],
     [ "mcp_color", "structmcp__color.html", "structmcp__color" ],
     [ "mcp_cond", "structmcp__cond.html", "structmcp__cond" ],
     [ "mcp_encapsulated_header", "structmcp__encapsulated__header.html", "structmcp__encapsulated__header" ],

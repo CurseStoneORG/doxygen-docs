@@ -590,6 +590,7 @@ var hierarchy =
     [ "mcp_bstream", "structmcp__bstream.html", null ],
     [ "mcp_chunk", "structmcp__chunk.html", null ],
     [ "mcp_chunk_section", "structmcp__chunk__section.html", null ],
+    [ "mcp_chunk_wire_snapshot", "structmcp__chunk__wire__snapshot.html", null ],
     [ "mcp_color", "structmcp__color.html", null ],
     [ "mcp_cond", "structmcp__cond.html", null ],
     [ "mcp_encapsulated_header", "structmcp__encapsulated__header.html", null ],

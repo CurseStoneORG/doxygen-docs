@@ -1,5 +1,7 @@
 var NAVTREEINDEX25 =
 {
+"classvgen_1_1SavannaTreeFeature.html":[8,0,2,78],
+"classvgen_1_1SavannaTreeFeature.html#a61d011f5c689460e65cec8e447f9fb82":[8,0,2,78,1],
 "classvgen_1_1SavannaTreeFeature.html#a849cb1f208fcc7d39e88e85f5fecc557":[8,0,2,78,0],
 "classvgen_1_1ScatteredFeaturePiece.html":[8,0,2,142],
 "classvgen_1_1ScatteredFeaturePiece.html#a00b341b773316d4a80b5c7d7de350569":[8,0,2,142,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX25 =
 "classvgen_1_1TwoRoomHouse.html#a0dd9827de60d58793e61b45dc9e6fcfe":[8,0,2,166,4],
 "classvgen_1_1TwoRoomHouse.html#a1a0919b5d3fa89d14f5593176e906e32":[8,0,2,166,0],
 "classvgen_1_1TwoRoomHouse.html#a2d3205f4259e19a47d6cd7fc70b05571":[8,0,2,166,7],
-"classvgen_1_1TwoRoomHouse.html#a3ac4cc1c0e0e2f7bee386239d3d9e1ea":[8,0,2,166,2],
-"classvgen_1_1TwoRoomHouse.html#a5607179e13851ebd92185943b182caab":[8,0,2,166,1],
-"classvgen_1_1TwoRoomHouse.html#a725f06c8720b5054d3606195bccbac49":[8,0,2,166,3]
+"classvgen_1_1TwoRoomHouse.html#a3ac4cc1c0e0e2f7bee386239d3d9e1ea":[8,0,2,166,2]
 };

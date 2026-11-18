@@ -1,5 +1,7 @@
 var NAVTREEINDEX17 =
 {
+"classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html#af62f3dce315d97e3df6b15cab749b139":[8,0,0,9,0,47,3],
+"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html":[8,0,0,9,0,48],
 "classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a00b3fe7826397bb4cc08847df2cdeca9":[8,0,0,9,0,48,5],
 "classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a3a9f62c27facafb78905f8f94c16013e":[8,0,0,9,0,48,3],
 "classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a907739c8b51b538f0694de56d756fdd4":[8,0,0,9,0,48,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX17 =
 "classcursestone_1_1tile_1_1Nameable.html#aac9591662cfbb0b82cdb320d2a7d96ed":[8,0,0,14,1,1],
 "classcursestone_1_1tile_1_1Spawnable.html":[8,0,0,14,2],
 "classcursestone_1_1tile_1_1Spawnable.html#a0e82b2864bed8944d192c330247c96c5":[8,0,0,14,2,0],
-"classcursestone_1_1tile_1_1Spawnable.html#a7ccf643c7476a4834b118f014b8f8f4d":[8,0,0,14,2,1],
-"classcursestone_1_1tile_1_1Tile.html":[8,0,0,14,3],
-"classcursestone_1_1tile_1_1Tile.html#a2ae732d980717a54f615bbda69e62d7f":[8,0,0,14,3,5]
+"classcursestone_1_1tile_1_1Spawnable.html#a7ccf643c7476a4834b118f014b8f8f4d":[8,0,0,14,2,1]
 };

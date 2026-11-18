@@ -1,5 +1,7 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1Layer.html#ae171cc9935368745ac647721e0104a24":[8,0,2,100,8],
+"classvgen_1_1LayerData.html":[8,0,2,99],
 "classvgen_1_1LayerData.html#a00037d753c54af19bb5e70351343d84e":[8,0,2,99,1],
 "classvgen_1_1LayerData.html#a6fd1fc856f2b71fb8af9cb225a42547a":[8,0,2,99,2],
 "classvgen_1_1LayerData.html#a9a115e793dca5a168b8266f73c0ab4d2":[8,0,2,99,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1NBCastleEntrance.html#afc6c01076c7693d9a7cb837a62d88ca3":[8,0,2,132,1],
 "classvgen_1_1NBCastleSmallCorridorCrossingPiece.html":[8,0,2,135],
 "classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a5c1c21f65c40adda85a730e8267d4367":[8,0,2,135,1],
-"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a81c3d1d27fdfb9358a829fe6e9f01a63":[8,0,2,135,2],
-"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a848183464c79de396fa325bec375ed12":[8,0,2,135,3],
-"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#ad983b7b445d3a93def561a2f24596208":[8,0,2,135,4]
+"classvgen_1_1NBCastleSmallCorridorCrossingPiece.html#a81c3d1d27fdfb9358a829fe6e9f01a63":[8,0,2,135,2]
 };

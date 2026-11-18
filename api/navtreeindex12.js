@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html#a158affed0ffbd8ca39504a8f9a9ab59b":[8,0,0,3,2,0,3],
+"classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html#a556e7314e96617ec3cc8c43ecf9fcedf":[8,0,0,3,2,0,5],
 "classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html#a6a0889c52c4d0135815a3f29f818e8da":[8,0,0,3,2,0,1],
 "classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html#a740e366503e35ef9c85aa6bd847b9f9f":[8,0,0,3,2,0,4],
 "classcursestone_1_1event_1_1inventory_1_1CraftItemEvent.html#aea1e9139a55bf7717f8ccecd781e96f0":[8,0,0,3,2,0,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a2f168d8694af764abba9fd3e98f27e55":[8,0,0,4,9,15],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a413512eb6911e3e86b6590c94bb2e0e7":[8,0,0,4,9,16],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a4986b2839aa5d3475ebdde3e371a7f2d":[8,0,0,4,9,14],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#a5e5d0a9d1b8b31b63c9f379911a44194":[8,0,0,4,9,21],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#a65eaf8aa12f23db4c93256b5f4f1c465":[8,0,0,4,9,27],
-"classcursestone_1_1inventory_1_1PlayerInventory.html#a68b8fefd136054aa35e1a945fc4bb63b":[8,0,0,4,9,5]
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a5e5d0a9d1b8b31b63c9f379911a44194":[8,0,0,4,9,21]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a65eaf8aa12f23db4c93256b5f4f1c465":[8,0,0,4,9,27],
+"classcursestone_1_1inventory_1_1PlayerInventory.html#a68b8fefd136054aa35e1a945fc4bb63b":[8,0,0,4,9,5],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a716156da51526e1a7573f9ec473c9417":[8,0,0,4,9,8],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a755b0b7d998ab384d567b4d86951a332":[8,0,0,4,9,28],
 "classcursestone_1_1inventory_1_1PlayerInventory.html#a79472f92bfe0636f83e63535ac67cac2":[8,0,0,4,9,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1item_1_1ItemIronBoots.html#a2cea809e344ce91ddbf40fe998319ab0":[8,0,0,5,51,0],
 "classcursestone_1_1item_1_1ItemIronBoots.html#ae720535820e055764fa53cd553d2d550":[8,0,0,5,51,1],
 "classcursestone_1_1item_1_1ItemIronChestplate.html":[8,0,0,5,52],
-"classcursestone_1_1item_1_1ItemIronChestplate.html#a4a2a40e179b77272fe28dcda036405de":[8,0,0,5,52,0],
-"classcursestone_1_1item_1_1ItemIronChestplate.html#ab3eb1166d71d38145d3b43be2c47ebc0":[8,0,0,5,52,1],
-"classcursestone_1_1item_1_1ItemIronHelmet.html":[8,0,0,5,53]
+"classcursestone_1_1item_1_1ItemIronChestplate.html#a4a2a40e179b77272fe28dcda036405de":[8,0,0,5,52,0]
 };

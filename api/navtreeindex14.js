@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1item_1_1ItemIronChestplate.html#ab3eb1166d71d38145d3b43be2c47ebc0":[8,0,0,5,52,1],
+"classcursestone_1_1item_1_1ItemIronHelmet.html":[8,0,0,5,53],
 "classcursestone_1_1item_1_1ItemIronHelmet.html#a4d0409bcd9fc73d6c7d2b8b60483542d":[8,0,0,5,53,1],
 "classcursestone_1_1item_1_1ItemIronHelmet.html#ae5bbb54e9071eec9d372e31e68401cd0":[8,0,0,5,53,0],
 "classcursestone_1_1item_1_1ItemIronIngot.html":[8,0,0,5,54],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1network_1_1CompressBatchedTask.html":[8,0,0,9,2],
 "classcursestone_1_1network_1_1CompressBatchedTask.html#a2494114a3801ae49b313b9163093349a":[8,0,0,9,2,2],
 "classcursestone_1_1network_1_1CompressBatchedTask.html#a63a0bc7af4e18c209be3f9e11c722c4d":[8,0,0,9,2,1],
-"classcursestone_1_1network_1_1CompressBatchedTask.html#a7171613819bac810207ab33dcc3a081b":[8,0,0,9,2,3],
-"classcursestone_1_1network_1_1CompressBatchedTask.html#ab5831a6ee2730ca324598a20911cca17":[8,0,0,9,2,0],
-"classcursestone_1_1network_1_1Network.html":[8,0,0,9,3]
+"classcursestone_1_1network_1_1CompressBatchedTask.html#a7171613819bac810207ab33dcc3a081b":[8,0,0,9,2,3]
 };

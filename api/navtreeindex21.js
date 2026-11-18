@@ -1,5 +1,7 @@
 var NAVTREEINDEX21 =
 {
+"classvgen_1_1BiomeDecorator.html#a35a4160150b3adb34c8a1c495851d7ca":[8,0,2,2,18],
+"classvgen_1_1BiomeDecorator.html#a3f1d287473205a464252e05c1ce2d8aa":[8,0,2,2,67],
 "classvgen_1_1BiomeDecorator.html#a42ac9b298330134cdc36d8442864757c":[8,0,2,2,7],
 "classvgen_1_1BiomeDecorator.html#a44e99f492a2f1473b1744f77bed65b4d":[8,0,2,2,57],
 "classvgen_1_1BiomeDecorator.html#a4baba93581bbf4f3905e9c799b7b8a47":[8,0,2,2,58],
@@ -247,7 +249,5 @@ var NAVTREEINDEX21 =
 "classvgen_1_1DesertBiome.html":[8,0,2,4],
 "classvgen_1_1DesertBiome.html#a973e40952663ca6088f8c23760c06220":[8,0,2,4,1],
 "classvgen_1_1DesertBiome.html#acfd14e0be73bf8c95a370e79497c8c0a":[8,0,2,4,0],
-"classvgen_1_1DesertPyramidPiece.html":[8,0,2,143],
-"classvgen_1_1DesertPyramidPiece.html#a09e711cae1873a5165ada968823194c3":[8,0,2,143,2],
-"classvgen_1_1DesertPyramidPiece.html#a8b4070ff883ca7fa173ffbf21d4e36e1":[8,0,2,143,3]
+"classvgen_1_1DesertPyramidPiece.html":[8,0,2,143]
 };
