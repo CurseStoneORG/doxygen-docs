@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['kickcommand_1289',['KickCommand',['../classcursestone_1_1KickCommand.html',1,'cursestone']]],
-  ['killcommand_1290',['KillCommand',['../classcursestone_1_1KillCommand.html',1,'cursestone']]]
+  ['kickcommand_1339',['KickCommand',['../classcursestone_1_1KickCommand.html',1,'cursestone']]],
+  ['killcommand_1340',['KillCommand',['../classcursestone_1_1KillCommand.html',1,'cursestone']]]
 ];

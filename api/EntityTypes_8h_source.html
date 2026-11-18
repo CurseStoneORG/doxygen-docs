@@ -108,74 +108,81 @@ $(document).ready(function(){initNavTree('EntityTypes_8h_source.html',''); initR
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneORG/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// EntityTypes — the protocol-84 entity network id registry for the mobs</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// CurseStone spawns. On this protocol the spawn egg aux value IS the</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// entity network id, so one table serves the eggs, the Lua API and the</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// native API: every id listed here has its own spawn egg in the 0.15.10</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// creative inventory, which makes the client&#39;s renderer for it</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// client-verified — ids outside the table never reach the wire.</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// The ids follow the era reference Entity network constants (they are</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// the same values the current Bedrock ActorType enum keeps for these</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// mobs). 41 and 42 are BOTH magma cubes: 41 is the legacy &quot;Lava Slime&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// id from the Nether update era, 42 the renamed id; the creative</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// inventory carries an egg for each, and the client renders both.</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>cursestone::entity {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Protocol-84 network ids of the supported mobs.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">namespace </span>EntityTypeId {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;constexpr int32_t CHICKEN = 10;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;constexpr int32_t COW = 11;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;constexpr int32_t PIG = 12;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;constexpr int32_t SHEEP = 13;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;constexpr int32_t WOLF = 14;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;constexpr int32_t VILLAGER = 15;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;constexpr int32_t MOOSHROOM = 16;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;constexpr int32_t SQUID = 17;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;constexpr int32_t RABBIT = 18;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;constexpr int32_t BAT = 19;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;constexpr int32_t OCELOT = 22;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;constexpr int32_t HORSE = 23;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;constexpr int32_t DONKEY = 24;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;constexpr int32_t MULE = 25;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;constexpr int32_t SKELETON_HORSE = 26;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;constexpr int32_t ZOMBIE_HORSE = 27;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;constexpr int32_t ZOMBIE = 32;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;constexpr int32_t CREEPER = 33;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;constexpr int32_t SKELETON = 34;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;constexpr int32_t SPIDER = 35;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;constexpr int32_t ZOMBIE_PIGMAN = 36;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;constexpr int32_t SLIME = 37;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;constexpr int32_t ENDERMAN = 38;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;constexpr int32_t SILVERFISH = 39;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;constexpr int32_t GHAST = 40;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;constexpr int32_t LAVA_SLIME = 41;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;constexpr int32_t MAGMA_CUBE = 42;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;constexpr int32_t BLAZE = 43;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;constexpr int32_t ZOMBIE_VILLAGER = 44;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;constexpr int32_t WITCH = 45;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;constexpr int32_t STRAY = 46;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;constexpr int32_t HUSK = 47;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;constexpr int32_t WITHER_SKELETON = 48;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;} <span class="comment">// namespace EntityTypeId</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// Returns true when @p id maps to a mob the 0.15.10 client renders.</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">bool</span> isValidMobType(int32_t <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// Canonical lowercase name (&quot;chicken&quot;, &quot;zombie_pigman&quot;, ...) for a</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">// registry id, or nullptr for ids outside the registry.</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* mobTypeName(int32_t <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// Resolves a mob type by name, case-insensitively. Accepts the canonical</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// lowercase names plus the common aliases (&quot;snowman&quot;, &quot;mushroom_cow&quot;,</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">// &quot;pigman&quot;). Returns false and leaves @p outId untouched when unknown.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keywordtype">bool</span> mobTypeFromName(<span class="keyword">const</span> std::string&amp; name, int32_t* outId);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// EntityTypes — the protocol-84 entity network id registry for the mobs</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// CurseStone spawns. On this protocol the spawn egg aux value IS the</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// entity network id, so one table serves the eggs, the Lua API and the</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// native API: every id listed here has its own spawn egg in the 0.15.10</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// creative inventory, which makes the client&#39;s renderer for it</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// client-verified — ids outside the table never reach the wire.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// The id space itself lives one header per mob in mobs/ (MobList.h is the</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// index), mirroring the particle split: a mob&#39;s file is the single</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// authority for its id, name, aliases and kind, and this registry</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// aggregates them. The EntityTypeId constants below are stable aliases so</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// existing callers keep spelling ids as EntityTypeId::CHICKEN.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// The ids follow the era reference Entity network constants (they are</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// the same values the current Bedrock ActorType enum keeps for these</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// mobs). 41 and 42 are BOTH magma cubes: 41 is the legacy &quot;Lava Slime&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">// id from the Nether update era, 42 the renamed id; the creative</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// inventory carries an egg for each, and the client renders both.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;mobs/MobList.h&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">namespace </span>cursestone::entity {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// Protocol-84 network ids of the supported mobs, aliased from the per-mob</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// headers in mobs/.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">namespace </span>EntityTypeId {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;constexpr int32_t CHICKEN = mobs::Chicken::kId;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;constexpr int32_t COW = mobs::Cow::kId;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;constexpr int32_t PIG = mobs::Pig::kId;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;constexpr int32_t SHEEP = mobs::Sheep::kId;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;constexpr int32_t WOLF = mobs::Wolf::kId;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;constexpr int32_t VILLAGER = mobs::Villager::kId;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;constexpr int32_t MOOSHROOM = mobs::Mooshroom::kId;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;constexpr int32_t SQUID = mobs::Squid::kId;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;constexpr int32_t RABBIT = mobs::Rabbit::kId;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;constexpr int32_t BAT = mobs::Bat::kId;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;constexpr int32_t OCELOT = mobs::Ocelot::kId;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;constexpr int32_t HORSE = mobs::Horse::kId;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;constexpr int32_t DONKEY = mobs::Donkey::kId;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;constexpr int32_t MULE = mobs::Mule::kId;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;constexpr int32_t SKELETON_HORSE = mobs::SkeletonHorse::kId;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;constexpr int32_t ZOMBIE_HORSE = mobs::ZombieHorse::kId;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;constexpr int32_t ZOMBIE = mobs::Zombie::kId;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;constexpr int32_t CREEPER = mobs::Creeper::kId;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;constexpr int32_t SKELETON = mobs::Skeleton::kId;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;constexpr int32_t SPIDER = mobs::Spider::kId;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;constexpr int32_t ZOMBIE_PIGMAN = mobs::ZombiePigman::kId;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;constexpr int32_t SLIME = mobs::Slime::kId;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;constexpr int32_t ENDERMAN = mobs::Enderman::kId;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;constexpr int32_t SILVERFISH = mobs::Silverfish::kId;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;constexpr int32_t GHAST = mobs::Ghast::kId;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;constexpr int32_t LAVA_SLIME = mobs::LavaSlime::kId;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;constexpr int32_t MAGMA_CUBE = mobs::MagmaCube::kId;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;constexpr int32_t BLAZE = mobs::Blaze::kId;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;constexpr int32_t ZOMBIE_VILLAGER = mobs::ZombieVillager::kId;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;constexpr int32_t WITCH = mobs::Witch::kId;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;constexpr int32_t STRAY = mobs::Stray::kId;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;constexpr int32_t HUSK = mobs::Husk::kId;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;constexpr int32_t WITHER_SKELETON = mobs::WitherSkeleton::kId;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;} <span class="comment">// namespace EntityTypeId</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">using</span> MobKind = mobs::MobKind;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;} <span class="comment">// namespace cursestone::entity</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keywordtype">bool</span> isValidMobType(int32_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span>* mobTypeName(int32_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keywordtype">bool</span> mobTypeFromName(<span class="keyword">const</span> std::string&amp; name, int32_t* outId);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;MobKind mobTypeKind(int32_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;} <span class="comment">// namespace cursestone::entity</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
