@@ -233,8 +233,36 @@ Measurements</h2>
 <li>Protocol-84 bot matrix (<code>test/bot</code>): <code>login</code>, <code>chunks</code>, <code>move</code>, <code>malformed</code> all PASS on the new build.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md190"></a>
-Pre-existing observation (not a regression, not fixed here)</h2>
-<p>With N simultaneous joins (tested at N = 3 and N = 8), only ONE of the clients streams its full view within the window while the others stay at 0-4 chunks — reproduced byte-for-byte on the build BEFORE this change (8-bot storm: 1/8 spawned, 289 chunks total, 52 tick-thread jiffies on both builds). The single-player flow is unaffected. This predates the async encode pipeline and deserves its own investigation (first-spawn gating vs. the shared generation dedup are the likely suspects); it is listed here so it is not mistaken for a side effect of this change. </p>
+Simultaneous joins: the "single-streamer" observation, root-caused</h2>
+<p>The §7 measurements noted that with N simultaneous joins only ONE client streamed its full view while the others stayed at 0-4 chunks. That observation was an artifact of the TEST HARNESS, not a server defect.</p>
+<p>Root cause: every bot instance sent the same hardcoded client UUID (<code>123e4567-e89b-12d3-a456-426614174000</code>). The server's duplicate-session kick (<code>PlayerLogin.cpp</code>, "logged in from another location") — correct vanilla behavior for the same identity logging in twice — therefore kicked every earlier login mid-stream as the wave connected. The kicked sessions were closed server-side; the bots never noticed and sat through the window counting 0-4 chunks. The only surviving session was the last to log in, which is exactly the observed "1 of N streams" pattern. Reproduced deterministically: 8 bots with distinct usernames but the shared UUID → 7 kicks, 1 spawn, 289 chunks total, TPS 20/20.</p>
+<p>Fix: <code>test/bot/Bot.cpp</code> derives each bot's UUID deterministically from its username (FNV-1a, v4-shaped). The server's duplicate-identity kick is unchanged — it is correct behavior and real 0.15.10 clients never share a UUID.</p>
+<h2><a class="anchor" id="autotoc_md191"></a>
+Multi-player concurrency verification (server unchanged)</h2>
+<p>With per-bot identities, all of the suspicion targets below were checked in code AND under load; no server change was needed:</p>
+<ul>
+<li><b>First-spawn gate</b> — <code>awaiting_first_spawn_</code>, the <code>FIRST_SPAWN_CHUNK_THRESHOLD = 9</code> check and <code>doFirstSpawn()</code> are all per-player state (<code>Player</code> members, guarded by <code>spawned_.exchange</code>). Nothing in the gate takes a server/world-wide lock; one player's first spawn cannot block another's.</li>
+<li><b>Generation dedup</b> — <code>ChunkManager::pending_</code> is keyed by chunk, not by requester: the first caller submits one worker task, every other player's stream loop just polls again next tick. There is no per-requester callback to lose; <code>PendingGuard</code> (RAII) clears <code>pending_</code> on every failure path, and the install callback never replaces an already-resident chunk.</li>
+<li><b>ChunkManager shared requests</b> — <code>getChunkOrRequestAsync</code> never blocks and never runs disk/generation on the calling thread; a nullptr means "retry next tick", for each player independently.</li>
+<li><b>Per-player streaming state</b> — <code>chunk_queue_</code>, <code>used_chunks_</code>, <code>client_chunk_radius_</code>, <code>awaiting_first_spawn_</code> and the encode pipeline (<code>shared_ptr</code>, orphan-safe resets on spawn-ack re-stream, disconnect, teleport) are all <code>Player</code> members. The only shared resource is the AsyncPool queue itself — FIFO, unbounded, no drops.</li>
+<li><b>Workers never mutate the world</b> — <code>LightEngine::onChunkAdded</code> and <code>World::queueLiquidWake</code> are queue-only under leaf mutexes; the install callbacks enqueue, the main thread drains.</li>
+</ul>
+<p>Load matrix (protocol-84 bots, seed 12345, <code>chunks</code> scenario unless noted, distinct usernames/UUIDs):</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Load   </th><th class="markdownTableHeadNone">Result    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">2, 4, 8 simultaneous joins   </td><td class="markdownTableBodyNone">all login + spawn + 289/289 chunks each; spawn ≈ 1.5 s; TPS 20/20 (peak MSPT 12.3 ms at N=8)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">16 simultaneous joins   </td><td class="markdownTableBodyNone">16/16 spawn + 289/289 chunks; spawn 1.0-1.7 s; TPS 20/20, peak MSPT 21.0 ms    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Staggered: 8 joins 12 s into another player's <code>move</code> march   </td><td class="markdownTableBodyNone">marcher unaffected (306 chunks, no starvation), 8/8 late spawns, 0 kicks    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">16 bots marching to 16 different destinations (<code>move</code> + <code>--goto</code>, disjoint chunk regions)   </td><td class="markdownTableBodyNone">16/16 spawn + 306/306 chunks; peak MSPT 23.7 ms during the join+generation burst, then ≈ 0.15 ms steady    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">16-bot storm on the ASan+UBSan build   </td><td class="markdownTableBodyNone">zero new findings; only the pre-existing signed-wrap notices in <code>vgen/newbiome/Layer.cpp</code>   </td></tr>
+</table>
+<p>The spawn-time and MSPT figures above were sampled through the console <code>status</code> command every 5 s and per-bot client timestamps. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
