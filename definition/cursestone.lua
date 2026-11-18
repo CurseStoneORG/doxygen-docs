@@ -1,11 +1,12 @@
 --[[
-CurseStone Lua API 1.0.2 - LuaLS type definitions
+CurseStone Lua API 1.0.3 - LuaLS type definitions
 Generated for CurseStone, MCPE 0.15.x server (protocol 84).
 Place inside your plugin folder (e.g. plugins/MyPlugin/definition/)
 or point "workspace.library" at this file. See README.md.
 
 References:
-  https://github.com/CurseStoneTeam/CurseStone.readthedocs.io (docs/plugins/)
+  https://cursestoneorg.github.io/docs/ (plugin guide, API 1.0.3)
+  https://github.com/CurseStoneORG/docs (site source)
 ]]
 
 ---@alias CurseStoneEventName
@@ -25,6 +26,9 @@ References:
 ---| '"DoorToggle"'
 ---| '"EntityDamage"'
 ---| '"EntityDamageByEntity"'
+---| '"InventoryOpen"'
+---| '"InventoryClick"'
+---| '"InventoryClose"'
 
 ---@alias CurseStoneInteractAction
 ---| '"left_click_block"'
@@ -139,12 +143,26 @@ References:
 ---@class CurseStone.DamageByEntityEvent : CurseStone.DamageEvent
 ---@field damager string Player name, "eid:<id>" or "unknown"
 
+---@class CurseStone.InventoryOpenEvent : CurseStone.CancelableEvent
+---@field inventory string Name of the opened inventory (chest/furnace window)
+
+---@class CurseStone.InventoryClickEvent : CurseStone.CancelableEvent
+---@field inventory string Name of the clicked inventory
+---@field slot integer Clicked slot (container and player inventory)
+---@field item_id integer
+---@field item_meta integer
+---@field item_count integer
+
+---@class CurseStone.InventoryCloseEvent
+---@field player string Player name
+---@field inventory string Name of the closed inventory (client close, replaced window, quit)
+
 --==============================================================================
 -- plugin: info about the plugin itself
 --==============================================================================
 
 ---@class CurseStone.Plugin
----@field api string Server plugin API version (e.g. "1.0.2")
+---@field api string Server plugin API version (e.g. "1.0.3")
 ---@field name string Plugin name from the manifest
 ---@field author string Author from the manifest
 ---@field version string Plugin version
@@ -283,6 +301,17 @@ References:
 ---@field setMotion fun(self: CurseStone.PlayerHandle, x: number, y: number, z: number)
 ---@field kill fun(self: CurseStone.PlayerHandle): boolean
 
+---Mob record returned by world:getEntity / world:getEntities.
+---@class CurseStone.MobRecord
+---@field id integer Entity id (does not survive restarts)
+---@field type integer Protocol-84 network id
+---@field name string Canonical mob name ("zombie", "cow", ...)
+---@field x number Feet position
+---@field y number
+---@field z number
+---@field yaw number
+---@field pitch number
+
 ---World handle from server.getWorld / server.loadWorld / server.defaultWorld /
 ---player.getWorld. tostring(handle) reads "world(name)". Methods return
 ---nil/false after the world unloads; they never error.
@@ -297,6 +326,48 @@ References:
 ---@field getSpawn fun(self: CurseStone.WorldHandle): number, number, number Spawn coordinates x, y, z
 ---@field getPlayers fun(self: CurseStone.WorldHandle): string[] Names of the players inside the world
 ---@field unload fun(self: CurseStone.WorldHandle): boolean Unloads the world. false if it is the default world or the unload is cancelled
+
+--- New in API 1.0.3: particles (protocol-84 LevelEventPacket shapes)
+
+---Spawns one particle. type is a name ("flame", "heart", "terrain", ... see
+---the docs for the 32 names) or a raw id 1..32. data is the packed payload
+---(scale/lifetime/ARGB/packing per family). Payloads the client cannot
+---render return false instead of being broadcast.
+---@field spawnParticle fun(self: CurseStone.WorldHandle, x: number, y: number, z: number, type: string|integer, data?: integer): boolean
+
+---Block-break burst + dig sound at a block (LevelEvent 2001). id 0..255,
+---meta 0..15.
+---@field spawnBlockParticles fun(self: CurseStone.WorldHandle, x: integer, y: integer, z: integer, blockId: integer, meta?: integer): boolean
+
+---Splash-potion shatter: colored swirl + glass smash sound (LevelEvent
+---2002). rgb is 0xRRGGBB.
+---@field spawnSplashParticles fun(self: CurseStone.WorldHandle, x: number, y: number, z: number, rgb: integer): boolean
+
+---New in API 1.0.3: floating text (invisible item-entity carrier whose
+---nametag is the text; protocol 84 has no text particle). ttl in ticks:
+---> 0 despawns automatically, 0 keeps it until removeFloatingText.
+---Returns the entity id, or nil at the per-world cap (128). Ids do not
+---survive restarts.
+---@field spawnFloatingText fun(self: CurseStone.WorldHandle, x: number, y: number, z: number, text: string, ttl?: integer): integer|nil
+---@field moveFloatingText fun(self: CurseStone.WorldHandle, id: integer, x: number, y: number, z: number): boolean
+---@field removeFloatingText fun(self: CurseStone.WorldHandle, id: integer): boolean
+
+--- New in API 1.0.3: standing mobs (no AI, no physics, zero per-tick cost;
+--- one AddEntityPacket on spawn, one MoveEntityPacket per move, one
+--- RemoveEntityPacket on despawn; per-world cap of 256; ids do not survive
+--- restarts)
+
+---Spawns a standing mob. type is a canonical name ("zombie", "cow", ...)
+---or a protocol-84 network id. Returns the entity id, or false on invalid
+---type/position or cap reached.
+---@field spawnEntity fun(self: CurseStone.WorldHandle, type: string|integer, x: number, y: number, z: number, yaw?: number, pitch?: number): integer|boolean
+---Repositions a mob; yaw/pitch optional (keeps the current rotation).
+---@field moveEntity fun(self: CurseStone.WorldHandle, id: integer, x: number, y: number, z: number, yaw?: number, pitch?: number): boolean
+---@field removeEntity fun(self: CurseStone.WorldHandle, id: integer): boolean Despawns. false for unknown ids
+---Returns {id, type, name, x, y, z, yaw, pitch} or nil.
+---@field getEntity fun(self: CurseStone.WorldHandle, id: integer): CurseStone.MobRecord|nil
+---@field getEntities fun(self: CurseStone.WorldHandle): CurseStone.MobRecord[] All standing mobs in the world
+---@field entityTypes fun(self: CurseStone.WorldHandle): { [string]: integer } Map name -> protocol-84 id for the 33 supported mobs
 
 --==============================================================================
 -- plugin table (returned by the entry script)
