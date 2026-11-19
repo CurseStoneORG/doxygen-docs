@@ -1,9 +1,5 @@
 var NAVTREEINDEX24 =
 {
-"classvgen_1_1MineshaftStairs.html#a6935aaf2cc59178081134fb8c15581b4":[10,0,2,121,1],
-"classvgen_1_1MineshaftStairs.html#a79da581caccbc54232381a93f8536d64":[10,0,2,121,0],
-"classvgen_1_1MineshaftStairs.html#ab1675e68c4d64083ba2d36b175d7aba8":[10,0,2,121,4],
-"classvgen_1_1MineshaftStart.html":[10,0,2,115],
 "classvgen_1_1MineshaftStart.html#a44eda5a6f99c802a9c424b6a5fb83e70":[10,0,2,115,2],
 "classvgen_1_1MineshaftStart.html#a6d81b019d1d95b9a75f04f5801cb6aeb":[10,0,2,115,4],
 "classvgen_1_1MineshaftStart.html#aaae8f8dc0171fb75edd571392777edd0":[10,0,2,115,0],
@@ -249,5 +245,9 @@ var NAVTREEINDEX24 =
 "classvgen_1_1Random.html#a4db9661e613267a24cd0c2e39811273a":[10,0,2,112,7],
 "classvgen_1_1Random.html#a6305462bf83cab016c0bad3e9631ed26":[10,0,2,112,4],
 "classvgen_1_1Random.html#a63eca866db99a3b5a76b96be89879ec3":[10,0,2,112,23],
-"classvgen_1_1Random.html#a709ef53b3e784292e3f18718d1b309d0":[10,0,2,112,0]
+"classvgen_1_1Random.html#a709ef53b3e784292e3f18718d1b309d0":[10,0,2,112,0],
+"classvgen_1_1Random.html#a756334299c601c81abd8b480d4e3e47d":[10,0,2,112,24],
+"classvgen_1_1Random.html#a812fd2da220d31f95e94a1290516944d":[10,0,2,112,11],
+"classvgen_1_1Random.html#a8a72a594a1dae0a0600f11e3c1f10167":[10,0,2,112,17],
+"classvgen_1_1Random.html#a8d66ce3113b1b99445d0858b8147eb3d":[10,0,2,112,6]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"classvgen_1_1StructurePiece.html#afd1e5385f1838d1c0183d30673dca682":[10,0,2,150,34],
-"classvgen_1_1StructureStart.html":[10,0,2,151],
-"classvgen_1_1StructureStart.html#a24218108f89d40f5761b0fe850259357":[10,0,2,151,11],
-"classvgen_1_1StructureStart.html#a29a50e57e8f75b1ce31284f34536dcb2":[10,0,2,151,2],
 "classvgen_1_1StructureStart.html#a303721a53f5c9d6ed4b74ff681aa555a":[10,0,2,151,16],
 "classvgen_1_1StructureStart.html#a34831f19982593b1c8c1f1d12074423f":[10,0,2,151,8],
 "classvgen_1_1StructureStart.html#a398046de601bef2ce47226368d881c6c":[10,0,2,151,1],
@@ -249,5 +245,9 @@ var NAVTREEINDEX26 =
 "functions_x.html":[10,3,0,20],
 "functions_y.html":[10,3,0,21],
 "functions_z.html":[10,3,0,22],
-"globals.html":[11,1,0]
+"globals.html":[11,1,0],
+"globals_defs.html":[11,1,3],
+"globals_func.html":[11,1,1],
+"globals_type.html":[11,1,2],
+"hierarchy.html":[10,2]
 };

@@ -1,9 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"globals_defs.html":[11,1,3],
-"globals_func.html":[11,1,1],
-"globals_type.html":[11,1,2],
-"hierarchy.html":[10,2],
 "index.html":[],
 "index.html#autotoc_md0":[0],
 "index.html#autotoc_md2":[0,0],
@@ -247,7 +243,11 @@ var NAVTREEINDEX27 =
 "structCsEvent.html#af962a18e01d445094cc870046559e02f":[10,0,7,23],
 "structCsEventApi.html":[10,0,8],
 "structCsEventApi.html#a6844033708e6c95c014dbb04b545b7f9":[10,0,8,0],
-"structCsLogApi.html":[10,0,9],
-"structCsLogApi.html#a3c6e1c31b1d7f31e3f7216f44c3d603e":[10,0,9,0],
-"structCsLogApi.html#a4a07616768b3015e748840053deb6ac3":[10,0,9,2]
+"structCsFloatingTextInfo.html":[10,0,9],
+"structCsFloatingTextInfo.html#a0a807e46ffe477b0dab84efab6f56507":[10,0,9,1],
+"structCsFloatingTextInfo.html#a3ff5a08862a541ee92631fbc71261e14":[10,0,9,0],
+"structCsFloatingTextInfo.html#a5e0f878d97cd7f558fa97d5792aee309":[10,0,9,4],
+"structCsFloatingTextInfo.html#a7ec09e1c1fd76a7bf456a731dcc19db3":[10,0,9,3],
+"structCsFloatingTextInfo.html#aca4c8e50e98a88752178ef683b10ae3c":[10,0,9,2],
+"structCsLogApi.html":[10,0,10]
 };

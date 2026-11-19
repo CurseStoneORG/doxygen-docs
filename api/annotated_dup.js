@@ -796,6 +796,7 @@ var annotated_dup =
     [ "CsDataApi", "structCsDataApi.html", "structCsDataApi" ],
     [ "CsEvent", "structCsEvent.html", "structCsEvent" ],
     [ "CsEventApi", "structCsEventApi.html", "structCsEventApi" ],
+    [ "CsFloatingTextInfo", "structCsFloatingTextInfo.html", "structCsFloatingTextInfo" ],
     [ "CsLogApi", "structCsLogApi.html", "structCsLogApi" ],
     [ "CsPlayerApi", "structCsPlayerApi.html", "structCsPlayerApi" ],
     [ "CsPluginApi", "structCsPluginApi.html", "structCsPluginApi" ],

@@ -204,6 +204,7 @@ var hierarchy =
     [ "CsDataApi", "structCsDataApi.html", null ],
     [ "CsEvent", "structCsEvent.html", null ],
     [ "CsEventApi", "structCsEventApi.html", null ],
+    [ "CsFloatingTextInfo", "structCsFloatingTextInfo.html", null ],
     [ "CsLogApi", "structCsLogApi.html", null ],
     [ "CsPlayerApi", "structCsPlayerApi.html", null ],
     [ "CsPluginApi", "structCsPluginApi.html", null ],

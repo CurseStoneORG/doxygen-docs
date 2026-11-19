@@ -6,6 +6,7 @@ var structCsWorldApi =
     [ "getBlock", "structCsWorldApi.html#a1aa41b71be5afe3c33c95b2a37eb1e7c", null ],
     [ "getBlockMeta", "structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f", null ],
     [ "getEntity", "structCsWorldApi.html#ae7b60215334aa5f519efbba2549e1064", null ],
+    [ "getFloatingTexts", "structCsWorldApi.html#a8fa34b790edc24fcc7b655d29b6572b3", null ],
     [ "getSpawn", "structCsWorldApi.html#a4ade25eb0c9ef1b8e55a9f95c5f1a8b3", null ],
     [ "getTime", "structCsWorldApi.html#ae91d488de968ca3797ada5647c7fbac3", null ],
     [ "getWeather", "structCsWorldApi.html#a62261493a35b1533a55a9fa342962c12", null ],

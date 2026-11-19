@@ -1,5 +1,8 @@
 var NAVTREEINDEX29 =
 {
+"structcursestone_1_1entity_1_1mobs_1_1Horse.html":[10,0,0,2,1,8],
+"structcursestone_1_1entity_1_1mobs_1_1Husk.html":[10,0,0,2,1,9],
+"structcursestone_1_1entity_1_1mobs_1_1LavaSlime.html":[10,0,0,2,1,10],
 "structcursestone_1_1entity_1_1mobs_1_1MagmaCube.html":[10,0,0,2,1,11],
 "structcursestone_1_1entity_1_1mobs_1_1MobType.html":[10,0,0,2,1,12],
 "structcursestone_1_1entity_1_1mobs_1_1Mooshroom.html":[10,0,0,2,1,13],
@@ -246,8 +249,5 @@ var NAVTREEINDEX29 =
 "structcursestone_1_1world_1_1MobEntity.html#a9b3589b1c12315fbb94f123bed54cb29":[10,0,0,17,14,4],
 "structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html":[10,0,0,17,8,0],
 "structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a15873f5407402ac523179436e9b22414":[10,0,0,17,8,0,0],
-"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a58bc262e37b4ee7756de0a6bebbf7e00":[10,0,0,17,8,0,1],
-"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a8d07fa2e32550b46291e7c334ae7afaf":[10,0,0,17,8,0,3],
-"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#ae3979b9e5af0fcf478af31c275c48944":[10,0,0,17,8,0,2],
-"structcursestone_1_1world_1_1SplashPotionEntity.html":[10,0,0,17,11]
+"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a58bc262e37b4ee7756de0a6bebbf7e00":[10,0,0,17,8,0,1]
 };

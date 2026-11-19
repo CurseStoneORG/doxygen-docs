@@ -280,18 +280,18 @@ var NAVTREEINDEX =
 "classcursestone_1_1scheduler_1_1AsyncWorker.html#ac9a933122c207d7fd1bdeec318e959f5",
 "classcursestone_1_1world_1_1World.html#a299933da0df76fdf2a1fb5c9414dce78",
 "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html#a906dd6585d1ac4460f9214b66d9abbd7",
-"classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187a745e3db6a7ffd50e1a72b39482f0882d",
-"classvgen_1_1BlockVolume.html#ad37c226a2541693d7fadfc0696744576",
-"classvgen_1_1ITerrainFeed.html#afbe34da375bd4c8e2c333c739f485862",
-"classvgen_1_1MineshaftStairs.html#a6935aaf2cc59178081134fb8c15581b4",
-"classvgen_1_1Random.html#a756334299c601c81abd8b480d4e3e47d",
-"classvgen_1_1StructurePiece.html#afd1e5385f1838d1c0183d30673dca682",
-"globals_defs.html",
-"structCsLogApi.html#a5bf0abf47ea3e68ef54b4ef8b33ec71d",
-"structcursestone_1_1entity_1_1mobs_1_1MagmaCube.html",
-"structcursestone_1_1world_1_1SplashPotionEntity.html#a144b6a283bdd4eab3e98fa17564080ba",
-"structmcp__rak__session.html#aeac8c8db64adaa8dc9237e564f6d48fa",
-"structvgen_1_1Vec2.html#af435b7b3dedb207eb7d8ea27d71cb9d4"
+"classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187adcff87209fd5bdee180f2ef39d1239e5",
+"classvgen_1_1BookHouse.html#a040d63e5781e54927fb75ee377b9ea7a",
+"classvgen_1_1IceBiome.html#a08682b64a20f56bdb1a00e8dc1700081",
+"classvgen_1_1MineshaftStart.html#a44eda5a6f99c802a9c424b6a5fb83e70",
+"classvgen_1_1Random.html#a999c3a5d04116cba5277e497dde3bf92",
+"classvgen_1_1StructureStart.html#a303721a53f5c9d6ed4b74ff681aa555a",
+"index.html",
+"structCsLogApi.html#a3c6e1c31b1d7f31e3f7216f44c3d603e",
+"structcursestone_1_1entity_1_1mobs_1_1Horse.html",
+"structcursestone_1_1world_1_1PortalRegistry_1_1Portal.html#a8d07fa2e32550b46291e7c334ae7afaf",
+"structmcp__rak__session.html#adec4aa8b578dd82a6b86d7fdbffa750d",
+"structvgen_1_1Vec2.html#a6297a3aeb8c02a4128a8e1d04ddad956"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

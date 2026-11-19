@@ -137,22 +137,23 @@ Particles</h2>
 <div class="line">-- splash-potion shatter: colored swirl + glass smash sound (2002)</div>
 <div class="line">w.spawnSplashParticles(x, y, z, 0xFF0000)   -- 0xRRGGBB</div>
 <div class="line"> </div>
-<div class="line">-- floating text (FloatingTextParticle): one invisible item-entity</div>
-<div class="line">-- carrier per line, nametag = line text (protocol 84 has no text</div>
-<div class="line">-- particle). &#39;\n&#39; splits lines: the first line is the title carrier at</div>
-<div class="line">-- the requested position, every following line renders 0.28 below the</div>
-<div class="line">-- previous. Returns the entity id, or nil at the per-world cap</div>
-<div class="line">-- (128/world).</div>
+<div class="line">-- floating text (FloatingTextParticle): ONE invisible fake-player</div>
+<div class="line">-- carrier whose nametag is the whole text (this client era draws</div>
+<div class="line">-- nametags only on player entities, and protocol 84 has no text</div>
+<div class="line">-- particle). &#39;\n&#39; splits the title line from the body lines and the</div>
+<div class="line">-- client stacks them itself, so a text costs one entity no matter how</div>
+<div class="line">-- many lines it carries. Returns the entity id, or nil at the per-world</div>
+<div class="line">-- cap (128/world).</div>
 <div class="line">local id = w.spawnFloatingText(x, y, z, &quot;Welcome\n§7to the hub&quot;, 200)</div>
-<div class="line">w.moveFloatingText(id, x, y + 1, z)         -- one MoveEntityPacket per line</div>
-<div class="line">w.setFloatingText(id, &quot;New title\n§anew body&quot;) -- changed lines only resync</div>
+<div class="line">w.moveFloatingText(id, x, y + 1, z)         -- one MovePlayerPacket</div>
+<div class="line">w.setFloatingText(id, &quot;New title\n§anew body&quot;) -- one metadata packet resyncs</div>
 <div class="line">for _, t in ipairs(w.getFloatingTexts()) do  -- {id,x,y,z,text}</div>
 <div class="line">end</div>
-<div class="line">w.removeFloatingText(id)                    -- one RemoveEntityPacket per line</div>
-</div><!-- fragment --><p><code>spawnFloatingText(x, y, z, text, [ttlTicks])</code>: <code>ttlTicks &gt; 0</code> despawns automatically after that many ticks, <code>0</code> keeps the text until <code>removeFloatingText</code> (entity ids do not survive restarts). Every line is capped at 128 chars and a text renders at most 8 lines (title + 7 body).</p>
-<p><code>setFloatingText(id, text)</code> replaces the content with the same multi-line model. The change is diffed per line: only lines whose text moved emit one SetEntityDataPacket to the viewers, extra lines despawn, missing lines spawn — an animated title costs two packets per step, not a respawn.</p>
+<div class="line">w.removeFloatingText(id)                    -- one RemoveEntityPacket</div>
+</div><!-- fragment --><p><code>spawnFloatingText(x, y, z, text, [ttlTicks])</code>: <code>ttlTicks &gt; 0</code> despawns automatically after that many ticks, <code>0</code> keeps the text until <code>removeFloatingText</code> (entity ids do not survive restarts). The whole text is capped at 512 chars; the invisible carrier hangs 1.62 below the text line so the nametag anchor lands at the requested spot.</p>
+<p><code>setFloatingText(id, text)</code> replaces the content with the same multi-line model. Only the nametag moves on the wire: one SetEntityDataPacket resyncs every viewer — an animated title costs one packet per step, not a respawn.</p>
 <p><code>getFloatingTexts()</code> returns <code>{id,x,y,z,text}</code> tables ordered by entity id (<code>text</code> is the full text with <code>\n</code> separators).</p>
-<p>Viewer churn reconciles once per second: players that join or walk into render range receive the text, players that walk out or quit stop rendering it — the same canSeeBlock audience every other world broadcast uses. Between syncs the only per-tick cost of a text is none: spawn, move, re-text and removal are the only packet moments.</p>
+<p>Viewer churn reconciles once per second: players that join or walk into render range receive the text, players that walk out, quit or switch worlds stop rendering it — the same canSeeBlock audience every other world broadcast uses. Between syncs the only per-tick cost of a text is none: spawn, move, re-text and removal are the only packet moments.</p>
 <p><code>data</code> payload per particle family (each particle type owns its packing in its own file under <code>src/world/particle/</code>):</p>
 <ul>
 <li><code>smoke</code>, <code>white_smoke</code>, <code>ink</code>, <code>critical</code>, <code>heart</code>, <code>redstone</code> — scale / lifetime integer (<code>0</code> is the client default)</li>
@@ -199,7 +200,7 @@ Structure</h2>
 </ul>
 <p>The library exports ONE symbol:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>);</div>
-<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:503</div></div>
+<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:526</div></div>
 </div><!-- fragment --><p><code><a class="el" href="NativeAPI_8h_source.html">src/plugin/NativeAPI.h</a></code> is the complete SDK header — copy it (or point <code>-I</code> at the server <code>src/</code>) and compile against it. The plugin links nothing: the entire server surface arrives as function-pointer groups in the <code>CsPluginApi*</code> handed to <code>onLoad</code>.</p>
 <h2><a class="anchor" id="autotoc_md175"></a>
 Minimal complete plugin</h2>
@@ -246,7 +247,7 @@ Minimal complete plugin</h2>
 <div class="ttc" id="astructCsCommandSender_html"><div class="ttname"><a href="structCsCommandSender.html">CsCommandSender</a></div><div class="ttdoc">Who ran a plugin command.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:131</div></div>
 <div class="ttc" id="astructCsEvent_html"><div class="ttname"><a href="structCsEvent.html">CsEvent</a></div><div class="ttdoc">Event snapshot passed to native listeners.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:157</div></div>
 <div class="ttc" id="astructCsEvent_html_a64fe453976f4600d9cf333630035d518"><div class="ttname"><a href="structCsEvent.html#a64fe453976f4600d9cf333630035d518">CsEvent::player</a></div><div class="ttdeci">const char * player</div><div class="ttdoc">Player name, or &quot;&quot; when the event has none.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:159</div></div>
-<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:478</div></div>
+<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:501</div></div>
 <div class="ttc" id="astructCsPluginDesc_html"><div class="ttname"><a href="structCsPluginDesc.html">CsPluginDesc</a></div><div class="ttdoc">Static plugin metadata returned by the vtable's desc hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:117</div></div>
 <div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:200</div></div>
 </div><!-- fragment --><p><code>onLoad</code> / <code>desc</code> are required; the other hooks may be <code>NULL</code>. The descriptor is the manifest: keep <code>name</code> non-empty and unique, and set <code>api</code> to the <code>CURSESTONE_API</code> you built against (an empty value means "this SDK"; an incompatible claim refuses the load).</p>
@@ -406,24 +407,26 @@ API reference (native)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>spawnSplashParticles(world, x, y, z, rgb)</code>   </td><td class="markdownTableBodyNone">splash shatter (LevelEvent 2002); <code>rgb</code> 0xRRGGBB    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>spawnFloatingText(world, x, y, z, text, ttlTicks)</code>   </td><td class="markdownTableBodyNone">floating text (invisible item-entity carrier per line, nametag = line); <code>\n</code> splits title + body lines; entity id, or -1 at the cap; ttl 0 = until removed    </td></tr>
+<td class="markdownTableBodyNone"><code>spawnFloatingText(world, x, y, z, text, ttlTicks)</code>   </td><td class="markdownTableBodyNone">floating text (one invisible fake-player carrier, nametag = the whole text; <code>\n</code> stacks title + body lines client-side); entity id, or -1 at the cap; ttl 0 = until removed    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>moveFloatingText(world, id, x, y, z)</code>   </td><td class="markdownTableBodyNone">repositions a floating text    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>setFloatingText(world, id, text)</code>   </td><td class="markdownTableBodyNone">re-texts a floating text (per-line diff); false for unknown ids    </td></tr>
+<td class="markdownTableBodyNone"><code>setFloatingText(world, id, text)</code>   </td><td class="markdownTableBodyNone">re-texts a floating text (one metadata packet); false for unknown ids    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>removeFloatingText(world, id)</code>   </td><td class="markdownTableBodyNone">despawns a floating text; 0 for unknown ids    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>getFloatingTexts(world, out, max)</code>   </td><td class="markdownTableBodyNone">copies <code>{id, x, y, z, text}</code> snapshots (ordered by id) into a <code><a class="el" href="structCsFloatingTextInfo.html" title="One floating-text snapshot for getFloatingTexts().">CsFloatingTextInfo</a></code> array; returns how many were written    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>spawnEntity(world, type, x, y, z, yaw, pitch)</code>   </td><td class="markdownTableBodyNone">standing mob (no AI, zero per-tick cost); entity id, or -1 for an invalid type/position or at the cap; y is feet    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>moveEntity(world, id, x, y, z, yaw, pitch)</code>   </td><td class="markdownTableBodyNone">repositions a standing mob    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>removeEntity(world, id)</code>   </td><td class="markdownTableBodyNone">despawns a standing mob; 0 for unknown ids    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>getEntity(world, id, outType, outPos[3], outRot[2])</code>   </td><td class="markdownTableBodyNone">reads a mob back (type, feet position, yaw/pitch)    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>entityTypeFromName(name, outId)</code> / <code>entityTypeName(type)</code>   </td><td class="markdownTableBodyNone">the shared mob registry, same names the Lua <code>entityTypes()</code> maps    </td></tr>
+<td class="markdownTableBodyNone"><code>getEntity(world, id, outType, outPos[3], outRot[2])</code>   </td><td class="markdownTableBodyNone">reads a mob back (type, feet position, yaw/pitch)    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>entityTypeFromName(name, outId)</code> / <code>entityTypeName(type)</code>   </td><td class="markdownTableBodyNone">the shared mob registry, same names the Lua <code>entityTypes()</code> maps    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>playerCount(world)</code>   </td><td class="markdownTableBodyNone">players currently in that world   </td></tr>
 </table>
 <p><b>data</b> (context-bound; jailed to <code>data_pl/&lt;stem&gt;</code>)</p>

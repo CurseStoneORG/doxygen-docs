@@ -83,7 +83,6 @@ $(document).ready(function(){initNavTree('classcursestone_1_1world_1_1particle_1
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle-members.html">List of all members</a>  </div>
@@ -92,7 +91,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1world_1_1particle_1
 </div><!--header-->
 <div class="contents">
 
-<p>A persistent, multi-line floating text rendered through invisible client-side carriers, owned by the world like every other particle.  
+<p>A persistent floating text rendered through one invisible client-side fake player, owned by the world like every other particle.  
  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="FloatingTextParticle_8h_source.html">FloatingTextParticle.h</a>&gt;</code></p>
@@ -100,7 +99,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1world_1_1particle_1
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abdaffa66b93785867033eb6e7b4e943e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#abdaffa66b93785867033eb6e7b4e943e">FloatingTextParticle</a> (int64_t <a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a4297cb785564c80362e1f57222dc2bed">id</a>, double x, double y, double z)</td></tr>
-<tr class="memdesc:abdaffa66b93785867033eb6e7b4e943e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds one floating text at <code>pos</code> with an empty title line.  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#abdaffa66b93785867033eb6e7b4e943e">More...</a><br /></td></tr>
+<tr class="memdesc:abdaffa66b93785867033eb6e7b4e943e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds one floating text at <code>pos</code> with an empty text.  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#abdaffa66b93785867033eb6e7b4e943e">More...</a><br /></td></tr>
 <tr class="separator:abdaffa66b93785867033eb6e7b4e943e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab18ed601b365f370f21097fe3435dac9"><td class="memItemLeft" align="right" valign="top"><a id="ab18ed601b365f370f21097fe3435dac9"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FloatingTextParticle</b> (const <a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html">FloatingTextParticle</a> &amp;)=delete</td></tr>
@@ -110,7 +109,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a48198cd7da86e0caefc527bb88638c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4297cb785564c80362e1f57222dc2bed"><td class="memItemLeft" align="right" valign="top"><a id="a4297cb785564c80362e1f57222dc2bed"></a>
 int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a4297cb785564c80362e1f57222dc2bed">id</a> () const</td></tr>
-<tr class="memdesc:a4297cb785564c80362e1f57222dc2bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime entity id of the title carrier (the external handle). <br /></td></tr>
+<tr class="memdesc:a4297cb785564c80362e1f57222dc2bed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runtime entity id of the carrier (the external handle). <br /></td></tr>
 <tr class="separator:a4297cb785564c80362e1f57222dc2bed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a662dbb72e83df50bddf3e4aedc693d72"><td class="memItemLeft" align="right" valign="top"><a id="a662dbb72e83df50bddf3e4aedc693d72"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>x</b> () const</td></tr>
@@ -121,42 +120,26 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>y</b> () const</td>
 <tr class="memitem:a5a6336fd7f3e8a6cfb50667badc180e3"><td class="memItemLeft" align="right" valign="top"><a id="a5a6336fd7f3e8a6cfb50667badc180e3"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>z</b> () const</td></tr>
 <tr class="separator:a5a6336fd7f3e8a6cfb50667badc180e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e3be6b549d64c25831330861a45f01e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a9e3be6b549d64c25831330861a45f01e">setText</a> (std::string <a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a27796207e7de236d701ff7909d65e9e6">text</a>)</td></tr>
+<tr class="memitem:a9e3be6b549d64c25831330861a45f01e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a9e3be6b549d64c25831330861a45f01e">setText</a> (std::string <a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#aa344a95d0e835a76a479b594b650766d">text</a>)</td></tr>
 <tr class="memdesc:a9e3be6b549d64c25831330861a45f01e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the whole text.  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a9e3be6b549d64c25831330861a45f01e">More...</a><br /></td></tr>
 <tr class="separator:a9e3be6b549d64c25831330861a45f01e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17939fa7dde22b6629df04316ef1342e"><td class="memItemLeft" align="right" valign="top"><a id="a17939fa7dde22b6629df04316ef1342e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a17939fa7dde22b6629df04316ef1342e">setTitle</a> (std::string <a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a78689eb8f537d7e45ef1b12afe18a047">title</a>)</td></tr>
-<tr class="memdesc:a17939fa7dde22b6629df04316ef1342e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the title (line 0) and keeps the body lines. <br /></td></tr>
-<tr class="separator:a17939fa7dde22b6629df04316ef1342e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f7d8754f134417eacf455a2a4c735fc"><td class="memItemLeft" align="right" valign="top"><a id="a3f7d8754f134417eacf455a2a4c735fc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a3f7d8754f134417eacf455a2a4c735fc">setLine</a> (size_t index, std::string <a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a27796207e7de236d701ff7909d65e9e6">text</a>)</td></tr>
-<tr class="memdesc:a3f7d8754f134417eacf455a2a4c735fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces one line by index (0 = title); out-of-range is a no-op. <br /></td></tr>
-<tr class="separator:a3f7d8754f134417eacf455a2a4c735fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27796207e7de236d701ff7909d65e9e6"><td class="memItemLeft" align="right" valign="top"><a id="a27796207e7de236d701ff7909d65e9e6"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a27796207e7de236d701ff7909d65e9e6">text</a> () const</td></tr>
-<tr class="memdesc:a27796207e7de236d701ff7909d65e9e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The full text, lines joined with '<br  />
-'. <br /></td></tr>
-<tr class="separator:a27796207e7de236d701ff7909d65e9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a78689eb8f537d7e45ef1b12afe18a047"><td class="memItemLeft" align="right" valign="top"><a id="a78689eb8f537d7e45ef1b12afe18a047"></a>
-const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a78689eb8f537d7e45ef1b12afe18a047">title</a> () const</td></tr>
-<tr class="memdesc:a78689eb8f537d7e45ef1b12afe18a047"><td class="mdescLeft">&#160;</td><td class="mdescRight">The title line (line 0). <br /></td></tr>
-<tr class="separator:a78689eb8f537d7e45ef1b12afe18a047"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2fea17d9c82c67f127bd1df383bf705a"><td class="memItemLeft" align="right" valign="top"><a id="a2fea17d9c82c67f127bd1df383bf705a"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a2fea17d9c82c67f127bd1df383bf705a">lineCount</a> () const</td></tr>
-<tr class="memdesc:a2fea17d9c82c67f127bd1df383bf705a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of lines currently rendered (title included). <br /></td></tr>
-<tr class="separator:a2fea17d9c82c67f127bd1df383bf705a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa344a95d0e835a76a479b594b650766d"><td class="memItemLeft" align="right" valign="top"><a id="aa344a95d0e835a76a479b594b650766d"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#aa344a95d0e835a76a479b594b650766d">text</a> () const</td></tr>
+<tr class="memdesc:aa344a95d0e835a76a479b594b650766d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The full text, exactly as set (with '<br  />
+' separators). <br /></td></tr>
+<tr class="separator:aa344a95d0e835a76a479b594b650766d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19106d53309c8b079c16a109fe33d3f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a19106d53309c8b079c16a109fe33d3f8">spawnTo</a> (<a class="el" href="classcursestone_1_1Player.html">Player</a> &amp;viewer)</td></tr>
-<tr class="memdesc:a19106d53309c8b079c16a109fe33d3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the spawn packets (one AddEntityPacket per line) to one player and records them as an active viewer.  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a19106d53309c8b079c16a109fe33d3f8">More...</a><br /></td></tr>
+<tr class="memdesc:a19106d53309c8b079c16a109fe33d3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the spawn pair (AddPlayerPacket + metadata) to one player and records them as an active viewer.  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a19106d53309c8b079c16a109fe33d3f8">More...</a><br /></td></tr>
 <tr class="separator:a19106d53309c8b079c16a109fe33d3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ed81e9d2f3cc0d03509cd33590f2a4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a4ed81e9d2f3cc0d03509cd33590f2a4e">despawnFrom</a> (<a class="el" href="classcursestone_1_1Player.html">Player</a> &amp;viewer)</td></tr>
-<tr class="memdesc:a4ed81e9d2f3cc0d03509cd33590f2a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one RemoveEntityPacket per line to one player and drops them from the viewer set.  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a4ed81e9d2f3cc0d03509cd33590f2a4e">More...</a><br /></td></tr>
+<tr class="memdesc:a4ed81e9d2f3cc0d03509cd33590f2a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends one RemoveEntityPacket to one player and drops them from the viewer set.  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a4ed81e9d2f3cc0d03509cd33590f2a4e">More...</a><br /></td></tr>
 <tr class="separator:a4ed81e9d2f3cc0d03509cd33590f2a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65382d8a1eb0a0fc84a111426ca777bf"><td class="memItemLeft" align="right" valign="top"><a id="a65382d8a1eb0a0fc84a111426ca777bf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a65382d8a1eb0a0fc84a111426ca777bf">despawnFromAll</a> (<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> &amp;world)</td></tr>
 <tr class="memdesc:a65382d8a1eb0a0fc84a111426ca777bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Despawns the text from every viewer of <code>world</code>. <br /></td></tr>
 <tr class="separator:a65382d8a1eb0a0fc84a111426ca777bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48d298879ad6eee97d24254f8e623d53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a48d298879ad6eee97d24254f8e623d53">syncViewers</a> (<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> &amp;world)</td></tr>
-<tr class="memdesc:a48d298879ad6eee97d24254f8e623d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconciles the viewer set with the current chunk-based audience of <code>world</code> (spawn to walk-ins, despawn from walk-outs, retire quit players).  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a48d298879ad6eee97d24254f8e623d53">More...</a><br /></td></tr>
+<tr class="memdesc:a48d298879ad6eee97d24254f8e623d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconciles the viewer set with the current chunk-based audience of <code>world</code> (spawn to walk-ins, despawn from walk-outs, world switches and quit players).  <a href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a48d298879ad6eee97d24254f8e623d53">More...</a><br /></td></tr>
 <tr class="separator:a48d298879ad6eee97d24254f8e623d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a481c8a567c9699918df4783cec8689ea"><td class="memItemLeft" align="right" valign="top"><a id="a481c8a567c9699918df4783cec8689ea"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a481c8a567c9699918df4783cec8689ea">viewerCount</a> () const</td></tr>
@@ -164,7 +147,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <tr class="separator:a481c8a567c9699918df4783cec8689ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a783554f44eb8af43fc0d91ac5af1f91b"><td class="memItemLeft" align="right" valign="top"><a id="a783554f44eb8af43fc0d91ac5af1f91b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a783554f44eb8af43fc0d91ac5af1f91b">setPosition</a> (<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> &amp;world, double x, double y, double z)</td></tr>
-<tr class="memdesc:a783554f44eb8af43fc0d91ac5af1f91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the whole text: one MoveEntityPacket per line to every active viewer, and the prebuilt spawn packets follow the new position so later viewers spawn in place. <br /></td></tr>
+<tr class="memdesc:a783554f44eb8af43fc0d91ac5af1f91b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the text: one MovePlayerPacket to every active viewer, and the cached spawn pair follows the new position so later viewers spawn in place. <br /></td></tr>
 <tr class="separator:a783554f44eb8af43fc0d91ac5af1f91b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62254e5062b1195e25d081bd74082cf1"><td class="memItemLeft" align="right" valign="top"><a id="a62254e5062b1195e25d081bd74082cf1"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a62254e5062b1195e25d081bd74082cf1">close</a> (<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> &amp;world)</td></tr>
@@ -180,21 +163,16 @@ Static Public Attributes</h2></td></tr>
 static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>kViewerSyncTicks</b> = 20</td></tr>
 <tr class="separator:a483fd9b2ab10d6da9c625d96cf0c9a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a498169dda6f47d6d046800c6b61ed5a1"><td class="memItemLeft" align="right" valign="top"><a id="a498169dda6f47d6d046800c6b61ed5a1"></a>
-static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>kCarrierDrop</b> = 0.75f</td></tr>
+static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>kCarrierDrop</b> = 1.62f</td></tr>
 <tr class="separator:a498169dda6f47d6d046800c6b61ed5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1159396108500d8f37a7df69959f7a87"><td class="memItemLeft" align="right" valign="top"><a id="a1159396108500d8f37a7df69959f7a87"></a>
-static constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>kLineSpacing</b> = 0.28f</td></tr>
-<tr class="separator:a1159396108500d8f37a7df69959f7a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace1eeeea0131bc8000a197cc5c2968d9"><td class="memItemLeft" align="right" valign="top"><a id="ace1eeeea0131bc8000a197cc5c2968d9"></a>
-static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>kMaxLines</b> = 8</td></tr>
-<tr class="separator:ace1eeeea0131bc8000a197cc5c2968d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af71f4a32f9dfe7b900026b6fee6ad715"><td class="memItemLeft" align="right" valign="top"><a id="af71f4a32f9dfe7b900026b6fee6ad715"></a>
-static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>kMaxLineChars</b> = 128</td></tr>
-<tr class="separator:af71f4a32f9dfe7b900026b6fee6ad715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a982995203db413b504623c5d6032aeb3"><td class="memItemLeft" align="right" valign="top"><a id="a982995203db413b504623c5d6032aeb3"></a>
+static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>kMaxTextChars</b> = 512</td></tr>
+<tr class="separator:a982995203db413b504623c5d6032aeb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A persistent, multi-line floating text rendered through invisible client-side carriers, owned by the world like every other particle. </p>
-<p>The text model is a list of lines: line 0 is the title carried by the entity id the world hands out, lines 1..n are body carriers rendered below it. The class tracks which players currently render the text and reconciles that set with the chunk-based audience every second, so a player that joins or walks into range receives the text exactly like a player that was in range at spawn time. </p>
+<div class="textblock"><p>A persistent floating text rendered through one invisible client-side fake player, owned by the world like every other particle. </p>
+<p>The text model is one string: '<br  />
+' splits it into the title line and body lines, and the client renders that stack above the carrier. The class tracks which players currently render the text and reconciles that set with the chunk-based audience every second, so a player that joins, walks into range or returns from another world receives the text exactly like a player that was in range at spawn time. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abdaffa66b93785867033eb6e7b4e943e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdaffa66b93785867033eb6e7b4e943e">&#9670;&nbsp;</a></span>FloatingTextParticle()</h2>
@@ -234,7 +212,7 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>kM
       </table>
 </div><div class="memdoc">
 
-<p>Builds one floating text at <code>pos</code> with an empty title line. </p>
+<p>Builds one floating text at <code>pos</code> with an empty text. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>runtime entity id of the carrier; doubles as the handle every <a class="el" href="classcursestone_1_1world_1_1World.html">World</a> API call takes. </td></tr>
@@ -261,7 +239,7 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>kM
       </table>
 </div><div class="memdoc">
 
-<p>Sends one RemoveEntityPacket per line to one player and drops them from the viewer set. </p>
+<p>Sends one RemoveEntityPacket to one player and drops them from the viewer set. </p>
 <p>Idempotent. </p>
 
 </div>
@@ -284,8 +262,8 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>kM
 
 <p>Replaces the whole text. </p>
 <p>'<br  />
-' splits it into lines: the first line is the title, every following line is a body carrier.</p>
-<p>The change is diffed per line: only lines whose text moved emit one SetEntityDataPacket to the active viewers, extra lines despawn, missing lines spawn. Lines are clamped to kMaxLines and kMaxLineChars. </p>
+' splits it into the title line and the body lines the client stacks below it.</p>
+<p>One SetEntityDataPacket reaches the active viewers (the spawn metadata never changed); the text is clamped to kMaxTextChars. </p>
 
 </div>
 </div>
@@ -305,7 +283,7 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>kM
       </table>
 </div><div class="memdoc">
 
-<p>Sends the spawn packets (one AddEntityPacket per line) to one player and records them as an active viewer. </p>
+<p>Sends the spawn pair (AddPlayerPacket + metadata) to one player and records them as an active viewer. </p>
 <p>Idempotent: a player that already renders the text receives nothing. </p>
 
 </div>
@@ -326,7 +304,7 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>kM
       </table>
 </div><div class="memdoc">
 
-<p>Reconciles the viewer set with the current chunk-based audience of <code>world</code> (spawn to walk-ins, despawn from walk-outs, retire quit players). </p>
+<p>Reconciles the viewer set with the current chunk-based audience of <code>world</code> (spawn to walk-ins, despawn from walk-outs, world switches and quit players). </p>
 <p>Call once per kViewerSyncTicks. </p>
 
 </div>

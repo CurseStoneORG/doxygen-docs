@@ -158,7 +158,7 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 <tr class="memdesc:a0230605d345ccc36048cd9d707efb798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Splash-potion shatter (LevelEvent 2002): colored swirl + glass smash sound.  <a href="structCsWorldApi.html#a0230605d345ccc36048cd9d707efb798">More...</a><br /></td></tr>
 <tr class="separator:a0230605d345ccc36048cd9d707efb798"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a583f83052b69476cdc9dcc54f216dbdc"><td class="memItemLeft" align="right" valign="top">int64_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc">spawnFloatingText</a> )(const char *world, double x, double y, double z, const char *text, int32_t ttlTicks)</td></tr>
-<tr class="memdesc:a583f83052b69476cdc9dcc54f216dbdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a floating text: an invisible item-entity carrier whose only visible part is its nametag (protocol 84 has no text particle).  <a href="structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc">More...</a><br /></td></tr>
+<tr class="memdesc:a583f83052b69476cdc9dcc54f216dbdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a floating text: an invisible fake-player carrier whose only visible part is its nametag (protocol 84 has no text particle and this client era draws nametags only on player entities).  <a href="structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc">More...</a><br /></td></tr>
 <tr class="separator:a583f83052b69476cdc9dcc54f216dbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0106f853b1cc6ce23f2fbc73e93246fa"><td class="memItemLeft" align="right" valign="top"><a id="a0106f853b1cc6ce23f2fbc73e93246fa"></a>
 bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a0106f853b1cc6ce23f2fbc73e93246fa">moveFloatingText</a> )(const char *world, int64_t id, double x, double y, double z)</td></tr>
@@ -192,8 +192,11 @@ const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="separator:a1c8dc6a8f7e0e01f3ec852b4bfed74da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4873894f316b3a3045537728a60ca10c"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c">setFloatingText</a> )(const char *world, int64_t id, const char *text)</td></tr>
 <tr class="memdesc:a4873894f316b3a3045537728a60ca10c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces a floating text's content; '<br  />
-' splits it into title + body lines and only changed lines reach the wire.  <a href="structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c">More...</a><br /></td></tr>
+' splits it into title + body lines and one SetEntityDataPacket resyncs the viewers.  <a href="structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c">More...</a><br /></td></tr>
 <tr class="separator:a4873894f316b3a3045537728a60ca10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fa34b790edc24fcc7b655d29b6572b3"><td class="memItemLeft" align="right" valign="top">int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a8fa34b790edc24fcc7b655d29b6572b3">getFloatingTexts</a> )(const char *world, <a class="el" href="structCsFloatingTextInfo.html">CsFloatingTextInfo</a> *out, int32_t max)</td></tr>
+<tr class="memdesc:a8fa34b790edc24fcc7b655d29b6572b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies every floating text of <code>world</code> into <code>out</code> (at most <code>max</code> entries, ordered by entity id), mirroring the Lua world.getFloatingTexts().  <a href="structCsWorldApi.html#a8fa34b790edc24fcc7b655d29b6572b3">More...</a><br /></td></tr>
+<tr class="separator:a8fa34b790edc24fcc7b655d29b6572b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
@@ -246,6 +249,23 @@ const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
+<a id="a8fa34b790edc24fcc7b655d29b6572b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fa34b790edc24fcc7b655d29b6572b3">&#9670;&nbsp;</a></span>getFloatingTexts</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t(* CsWorldApi::getFloatingTexts) (const char *world, <a class="el" href="structCsFloatingTextInfo.html">CsFloatingTextInfo</a> *out, int32_t max)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Copies every floating text of <code>world</code> into <code>out</code> (at most <code>max</code> entries, ordered by entity id), mirroring the Lua world.getFloatingTexts(). </p>
+<dl class="section return"><dt>Returns</dt><dd>how many entries were written; 0 for an unknown world, a NULL buffer or a non-positive <code>max</code>. </dd></dl>
+
+</div>
+</div>
 <a id="a62261493a35b1533a55a9fa342962c12"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62261493a35b1533a55a9fa342962c12">&#9670;&nbsp;</a></span>getWeather</h2>
 
@@ -274,7 +294,7 @@ const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </div><div class="memdoc">
 
 <p>Replaces a floating text's content; '<br  />
-' splits it into title + body lines and only changed lines reach the wire. </p>
+' splits it into title + body lines and one SetEntityDataPacket resyncs the viewers. </p>
 <p>False for unknown ids. </p>
 
 </div>
@@ -331,8 +351,9 @@ const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
       </table>
 </div><div class="memdoc">
 
-<p>Spawns a floating text: an invisible item-entity carrier whose only visible part is its nametag (protocol 84 has no text particle). </p>
-<p>One spawn packet, zero per-tick cost.</p>
+<p>Spawns a floating text: an invisible fake-player carrier whose only visible part is its nametag (protocol 84 has no text particle and this client era draws nametags only on player entities). </p>
+<p>'<br  />
+' splits the title line from the body lines the client stacks. One spawn pair, zero per-tick cost.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ttlTicks</td><td>&gt; 0 despawns automatically after that many ticks; 0 keeps it until <a class="el" href="structCsWorldApi.html#a7249412c78ac54ab090813a30353fc33" title="Despawns a floating text; false for unknown ids.">removeFloatingText()</a>. Entity ids do not survive server restarts. </td></tr>
