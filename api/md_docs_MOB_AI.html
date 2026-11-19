@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('md_docs_MOB_AI.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Design document for CurseStone's entity AI system. Written <b>before</b> the implementation it describes; the implementation status lives in section 9. The architecture keeps every world mutation on the main thread, budgets the AI work per tick, gates updates on player presence and leaves the public plugin surface untouched.</p>
-<h1><a class="anchor" id="autotoc_md146"></a>
+<h1><a class="anchor" id="autotoc_md156"></a>
 1. Starting point (facts about the current tree)</h1>
 <p>Mobs are lightweight server records, not ticking entities:</p>
 <ul>
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('md_docs_MOB_AI.html',''); initResizabl
 <li>Behavior families: the per-mob headers in <code>src/entity/mobs/</code> declare a <code>MobKind</code> (Passive / Neutral / Hostile / Water / Ambient), exposed as <code>entity::mobTypeKind(id)</code>.</li>
 <li><code>docs/THREADING.md</code>, Lesson 4 already calls for exactly two things when AI lands: a drained update budget and render-distance gating.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md147"></a>
+<h1><a class="anchor" id="autotoc_md157"></a>
 2. Design goals and constraints</h1>
 <ol type="1">
 <li><b>Public surface unchanged.</b> <code>MobEntity</code>, <code>spawnMob/moveMob/ removeMob/mob/mobs/mobCount</code>, the Lua table shapes and the native ABI stay byte-for-byte compatible. AI is added <em>around</em> them, never instead of them.</li>
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('md_docs_MOB_AI.html',''); initResizabl
 <li><b>Per-mob scalability.</b> Behaviors are independent, composable goals with priority + mutex flags; a mob's brain is a goal list assembled from its <code>MobKind</code>. Adding a behavior must not touch the manager or the world.</li>
 <li><b>Calculation vs. mutation.</b> Goals read an immutable snapshot (<code>MobContext</code>) and write <em>intent</em> into their own brain. Only the actuation step turns intent into physics, record updates and packets — on the main thread.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md148"></a>
+<h1><a class="anchor" id="autotoc_md158"></a>
 3. Components</h1>
 <div class="fragment"><div class="line">src/entity/ai/</div>
 <div class="line">  Goal.h          Goal interface: flags(), priority(), canStart(),</div>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('md_docs_MOB_AI.html',''); initResizabl
 <div class="line">                  (immutable inputs), brain assembly per mob kind</div>
 <div class="line">  MobAIManager.h/.cpp  Per-world driver: sensing, cadence, budget,</div>
 <div class="line">                  actuation through World::moveMob</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md149"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md159"></a>
 Goal</h2>
 <p>One behavior = one object, stateless across mobs, state inside its brain slot. Selection rules:</p>
 <ul>
@@ -127,13 +127,13 @@ Goal</h2>
 <li><code>flags()</code> — mutex bits (<code>kFlagMove</code>, <code>kFlagLook</code>): a running goal blocks starting another goal with an overlapping bit (a mob cannot wander and panic-move at the same time).</li>
 <li><code>canStart(ctx)</code> is evaluated only on the mob's think cadence; <code>tick(ctx, brain)</code> runs on think ticks while the goal is active; <code>shouldContinue(ctx)</code> decides when to release it.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md150"></a>
+<h2><a class="anchor" id="autotoc_md160"></a>
 MobBrain</h2>
 <p>All per-mob dynamic state lives here (keyed by eid in the manager): the owned goal list, which goals are active, movement intent (direction, speed, jump request, look yaw), physics carry-over (<code>motion_y</code>, <code>on_ground</code>), timers and a per-brain RNG. The brain never touches <code>World</code>, <code>Player</code> or packets — it only <em>decides</em>.</p>
-<h2><a class="anchor" id="autotoc_md151"></a>
+<h2><a class="anchor" id="autotoc_md161"></a>
 MobContext</h2>
 <p>The read-only input snapshot a goal may see: own position/rotation, own kind, nearest-player distance and position, whether any player is in range at all, and the current tick. It contains no pointers into mutable world state, so a future off-thread thinker can consume the same struct unchanged.</p>
-<h2><a class="anchor" id="autotoc_md152"></a>
+<h2><a class="anchor" id="autotoc_md162"></a>
 MobAIManager</h2>
 <p>One instance per <code>World</code> (owned by the world, driven from <code>World::tick()</code>). Per tick:</p>
 <div class="fragment"><div class="line">tick(world, currentTick):</div>
@@ -154,7 +154,7 @@ MobAIManager</h2>
 <div class="line">    if elapsed &gt; kMobBudgetMs: advance cursor and leave the rest</div>
 <div class="line">                                        for the next tick</div>
 </div><!-- fragment --><p>Actuation calls the existing <code>World::moveMob()</code>, so chunk re-indexing and <code>MoveEntityPacket</code> broadcast reuse the tested path (a send threshold skips moves smaller than 0.0005 blocks, matching dropped items).</p>
-<h1><a class="anchor" id="autotoc_md153"></a>
+<h1><a class="anchor" id="autotoc_md163"></a>
 4. Cadences and budgets</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -171,14 +171,14 @@ MobAIManager</h2>
 <td class="markdownTableBodyNone">gravity / jump   </td><td class="markdownTableBodyNone">0.08 / 0.42   </td><td class="markdownTableBodyNone">Matches the era entity model   </td></tr>
 </table>
 <p>Staggering means a 1024-mob world thinks 100 goals per tick on average, not 1024 — the think step stays inside the budget even before it is measured.</p>
-<h1><a class="anchor" id="autotoc_md154"></a>
+<h1><a class="anchor" id="autotoc_md164"></a>
 5. Activation gate</h1>
 <p>Gate = at least one spawned, connected, non-removal player in the same world whose chunk is within the world's view distance (Chebyshev) of the mob's chunk. Frozen mobs: no think, no physics, no packets — the client keeps the last pose it received, which is also what vanilla renders for entities outside ticking range. The gate runs per mob per tick; with the per-tick player snapshot it is a handful of integer comparisons per mob.</p>
-<h1><a class="anchor" id="autotoc_md155"></a>
+<h1><a class="anchor" id="autotoc_md165"></a>
 6. Threading contract (now and later)</h1>
 <p>Stage 1: everything on the main thread, inside the budget. The manager is the only component allowed to convert intent into world mutation.</p>
 <p>The reserved seam for phase 2+ is <b>async sensing/steering for far mobs</b>: goal logic reads only <code>MobContext</code>, so a worker can evaluate goals over immutable copies and hand back intents for the main thread to apply (the same snapshot-then-actuate shape the chunk encoder uses). What will <em>never</em> move: <code>MobEntity</code> records, chunk data, packet sends, plugin callbacks — they stay main-thread by contract, matching <code>docs/THREADING.md</code> Lesson 1.</p>
-<h1><a class="anchor" id="autotoc_md156"></a>
+<h1><a class="anchor" id="autotoc_md166"></a>
 7. Compatibility contract</h1>
 <ul>
 <li><code>MobEntity</code> struct and all existing functions keep their signatures and semantics; plugins that call <code>moveEntity</code> fight nothing — the AI re-paths from the record's current position on its next think.</li>
@@ -186,7 +186,7 @@ MobAIManager</h2>
 <li><code>kMaxMobs</code> rises 256 → 1024. The AI phase must validate 500-entity behavior, which the old cap made impossible; the cap still bounds memory and the round-robin pass.</li>
 <li>Water and Ambient kinds (squid, bat) stay static in stage 1; their movement models differ enough to deserve their own pass.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md157"></a>
+<h1><a class="anchor" id="autotoc_md167"></a>
 8. Stage roadmap</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -200,7 +200,7 @@ MobAIManager</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">Async steering for far mobs on the reserved seam; per-kind physics sizes   </td><td class="markdownTableBodyNone">After stage 3 proves the intent format   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md158"></a>
+<h1><a class="anchor" id="autotoc_md168"></a>
 9. Implementation status</h1>
 <p>Implemented and verified in stage 1 (see commit history):</p>
 <ul>

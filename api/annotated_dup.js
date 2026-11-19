@@ -68,7 +68,8 @@ var annotated_dup =
         [ "PacketRecord", "structcursestone_1_1diagnostics_1_1PacketRecord.html", "structcursestone_1_1diagnostics_1_1PacketRecord" ],
         [ "ErrorRecord", "structcursestone_1_1diagnostics_1_1ErrorRecord.html", "structcursestone_1_1diagnostics_1_1ErrorRecord" ],
         [ "PlayerSnapshot", "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html", "structcursestone_1_1diagnostics_1_1PlayerSnapshot" ],
-        [ "Diagnostics", "classcursestone_1_1diagnostics_1_1Diagnostics.html", "classcursestone_1_1diagnostics_1_1Diagnostics" ]
+        [ "Diagnostics", "classcursestone_1_1diagnostics_1_1Diagnostics.html", "classcursestone_1_1diagnostics_1_1Diagnostics" ],
+        [ "PacketForensics", "classcursestone_1_1diagnostics_1_1PacketForensics.html", "classcursestone_1_1diagnostics_1_1PacketForensics" ]
       ] ],
       [ "entity", null, [
         [ "ai", null, [
@@ -359,6 +360,7 @@ var annotated_dup =
           [ "MoveEntityPacket", "classcursestone_1_1network_1_1protocol_1_1MoveEntityPacket.html", "classcursestone_1_1network_1_1protocol_1_1MoveEntityPacket" ],
           [ "MovePlayerPacket", "classcursestone_1_1network_1_1protocol_1_1MovePlayerPacket.html", "classcursestone_1_1network_1_1protocol_1_1MovePlayerPacket" ],
           [ "PacketPool", "classcursestone_1_1network_1_1protocol_1_1PacketPool.html", "classcursestone_1_1network_1_1protocol_1_1PacketPool" ],
+          [ "SanitizeViolation", "structcursestone_1_1network_1_1protocol_1_1SanitizeViolation.html", "structcursestone_1_1network_1_1protocol_1_1SanitizeViolation" ],
           [ "PlayerActionPacket", "classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html", "classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket" ],
           [ "PlayerListPacket", "classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html", "classcursestone_1_1network_1_1protocol_1_1PlayerListPacket" ],
           [ "PlayStatusPacket", "classcursestone_1_1network_1_1protocol_1_1PlayStatusPacket.html", "classcursestone_1_1network_1_1protocol_1_1PlayStatusPacket" ],

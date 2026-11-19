@@ -1,6 +1,7 @@
 var classcursestone_1_1diagnostics_1_1Diagnostics =
 [
     [ "busy", "classcursestone_1_1diagnostics_1_1Diagnostics.html#aab2ada4b8054fe7a5e2ecbde5d4e2b8e", null ],
+    [ "dumpDir", "classcursestone_1_1diagnostics_1_1Diagnostics.html#a39f126d4fb2a2daa61be23d575cc7feb", null ],
     [ "lastErrorSummary", "classcursestone_1_1diagnostics_1_1Diagnostics.html#afd79aae3e8fed06fc2cd2ce310b9bff5", null ],
     [ "recordPacket", "classcursestone_1_1diagnostics_1_1Diagnostics.html#ad5b2784c9158aac681454ce94badbc30", null ],
     [ "renderContext", "classcursestone_1_1diagnostics_1_1Diagnostics.html#a77d3d26a33877b0c26f22962c7fc368c", null ],

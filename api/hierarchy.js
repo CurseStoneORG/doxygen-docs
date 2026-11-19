@@ -436,6 +436,7 @@ var hierarchy =
     [ "std::hash<::vgen::Pos >", "structstd_1_1hash_3_1_1vgen_1_1Pos_01_4.html", null ],
     [ "vgen::HellRandomLevelSource", "classvgen_1_1HellRandomLevelSource.html", null ],
     [ "vgen::ImprovedNoise", "classvgen_1_1ImprovedNoise.html", null ],
+    [ "cursestone::diagnostics::PacketForensics::InboundRecord", "structcursestone_1_1diagnostics_1_1PacketForensics_1_1InboundRecord.html", null ],
     [ "cursestone::world::generator::INeighborBlockSink", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html", [
       [ "cursestone::world::ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html", null ]
     ] ],
@@ -676,6 +677,8 @@ var hierarchy =
     [ "vgen::OldLogBlock", "classvgen_1_1OldLogBlock.html", null ],
     [ "cursestone::world::generator::object::OreGenerator", "classcursestone_1_1world_1_1generator_1_1object_1_1OreGenerator.html", null ],
     [ "cursestone::world::generator::object::OreVein", "structcursestone_1_1world_1_1generator_1_1object_1_1OreVein.html", null ],
+    [ "cursestone::diagnostics::PacketForensics::OutboundRecord", "structcursestone_1_1diagnostics_1_1PacketForensics_1_1OutboundRecord.html", null ],
+    [ "cursestone::diagnostics::PacketForensics", "classcursestone_1_1diagnostics_1_1PacketForensics.html", null ],
     [ "cursestone::PacketLogEntry", "structcursestone_1_1PacketLogEntry.html", null ],
     [ "cursestone::network::protocol::PacketPool", "classcursestone_1_1network_1_1protocol_1_1PacketPool.html", null ],
     [ "cursestone::network::protocol::PacketReader", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html", null ],
@@ -757,6 +760,7 @@ var hierarchy =
     [ "vgen::RotatedPillarBlock", "classvgen_1_1RotatedPillarBlock.html", null ],
     [ "vgen::SandBlock", "classvgen_1_1SandBlock.html", null ],
     [ "vgen::SandStoneBlock", "classvgen_1_1SandStoneBlock.html", null ],
+    [ "cursestone::network::protocol::SanitizeViolation", "structcursestone_1_1network_1_1protocol_1_1SanitizeViolation.html", null ],
     [ "vgen::ScopedProfile", "structvgen_1_1ScopedProfile.html", null ],
     [ "cursestone::Server", "classcursestone_1_1Server.html", null ],
     [ "cursestone::scheduler::ServerScheduler", "classcursestone_1_1scheduler_1_1ServerScheduler.html", null ],
