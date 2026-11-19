@@ -115,7 +115,7 @@ Folder plugins (Lua)</h1>
 <li><code>log.info/warn/error(msg)</code></li>
 <li><code>server.broadcast(msg)</code>, <code>server.players()</code>, <code>server.getPlayer(name)</code></li>
 <li><code>player.*</code> — message, tip, popup, kick, teleport, teleportWorld, getWorld, isOp, getHealth, setHealth, setPermission, hasPermission, giveItem, setNameTag, getNameTag, setDisplayName, getDisplayName, getPosition, getRotation, setRotation, setMotion, kill</li>
-<li><code>server.getWorld(name)</code> / <code>server.loadWorld(name, gen)</code> / <code>server.defaultWorld()</code> — world handles with <code>name</code>, <code>seed</code>, <code>dimension</code>, <code>getTime</code>, <code>setTime</code>, <code>getBlock</code>, <code>setBlock</code>, <code>getSpawn</code>, <code>getPlayers</code>, <code>spawnParticle</code>, <code>spawnBlockParticles</code>, <code>spawnSplashParticles</code>, <code>spawnFloatingText</code>, <code>moveFloatingText</code>, <code>setFloatingText</code>, <code>getFloatingTexts</code>, <code>removeFloatingText</code>, <code>spawnEntity</code>, <code>moveEntity</code>, <code>removeEntity</code>, <code>getEntity</code>, <code>getEntities</code>, <code>entityTypes</code>, <code>unload</code></li>
+<li><code>server.getWorld(name)</code> / <code>server.loadWorld(name, gen)</code> / <code>server.defaultWorld()</code> — world handles with <code>name</code>, <code>seed</code>, <code>dimension</code>, <code>getTime</code>, <code>setTime</code>, <code>getBlock</code>, <code>setBlock</code>, <code>getSpawn</code>, <code>getPlayers</code>, <code>spawnParticle</code>, <code>spawnBlockParticles</code>, <code>spawnSplashParticles</code>, <code>spawnFloatingText</code>, <code>moveFloatingText</code>, <code>setFloatingText</code>, <code>setFloatingTextTitle</code>, <code>setFloatingTextBody</code>, <code>setFloatingTextVisible</code>, <code>setFloatingTextFollow</code>, <code>setFloatingTextFollowPlayer</code>, <code>setFloatingTextViewers</code>, <code>getFloatingTexts</code>, <code>removeFloatingText</code>, <code>spawnEntity</code>, <code>moveEntity</code>, <code>removeEntity</code>, <code>getEntity</code>, <code>getEntities</code>, <code>entityTypes</code>, <code>unload</code></li>
 <li><code>commands.register(name, opts, fn)</code>, <code>commands.reply(sender, msg)</code></li>
 <li><code>events.on(name, fn)</code> — PlayerJoin, PlayerQuit, PlayerChat, PlayerMove, PlayerDropItem, PlayerItemHeld, BlockBreak, BlockPlace, EntityDamage, EntityDamageByEntity, PlayerDeath, PlayerRespawn, PlayerBedEnter (alias <code>PlayerSleepInBed</code>), PlayerBedLeave, DoorToggle, PlayerInteract, InventoryOpen, InventoryClick, InventoryClose</li>
 <li><code>scheduler.later/every/cancel</code></li>
@@ -140,20 +140,52 @@ Particles</h2>
 <div class="line">-- floating text (FloatingTextParticle): ONE invisible fake-player</div>
 <div class="line">-- carrier whose nametag is the whole text (this client era draws</div>
 <div class="line">-- nametags only on player entities, and protocol 84 has no text</div>
-<div class="line">-- particle). &#39;\n&#39; splits the title line from the body lines and the</div>
-<div class="line">-- client stacks them itself, so a text costs one entity no matter how</div>
-<div class="line">-- many lines it carries. Returns the entity id, or nil at the per-world</div>
-<div class="line">-- cap (128/world).</div>
+<div class="line">-- particle). The Genisys tag model: the first &#39;\n&#39; line is the TITLE</div>
+<div class="line">-- and the rest the BODY, and the client stacks them itself, so a text</div>
+<div class="line">-- costs one entity no matter how many lines it carries. Returns the</div>
+<div class="line">-- entity id, or nil at the per-world cap (128/world).</div>
 <div class="line">local id = w.spawnFloatingText(x, y, z, &quot;Welcome\n§7to the hub&quot;, 200)</div>
 <div class="line">w.moveFloatingText(id, x, y + 1, z)         -- one MovePlayerPacket</div>
 <div class="line">w.setFloatingText(id, &quot;New title\n§anew body&quot;) -- one metadata packet resyncs</div>
-<div class="line">for _, t in ipairs(w.getFloatingTexts()) do  -- {id,x,y,z,text}</div>
+<div class="line">w.setFloatingTextTitle(id, &quot;Top&quot;)           -- Genisys setTitle: one metadata packet</div>
+<div class="line">w.setFloatingTextBody(id, &quot;§7lines below&quot;)  -- Genisys setText: one metadata packet</div>
+<div class="line">w.setFloatingTextVisible(id, false)         -- hide: one Remove per viewer</div>
+<div class="line">w.setFloatingTextVisible(id, true)          -- show: the audience re-arms now</div>
+<div class="line">w.setFloatingTextFollow(id, entityEid)      -- tag rides above an entity/mob</div>
+<div class="line">w.setFloatingTextFollowPlayer(id, &quot;Steve&quot;)  -- tag rides above a player</div>
+<div class="line">w.setFloatingTextViewers(id, {&quot;Steve&quot;})     -- allow list; nil = everyone</div>
+<div class="line">for _, t in ipairs(w.getFloatingTexts()) do -- {id,x,y,z,text,title,body,visible,follow}</div>
 <div class="line">end</div>
 <div class="line">w.removeFloatingText(id)                    -- one RemoveEntityPacket</div>
-</div><!-- fragment --><p><code>spawnFloatingText(x, y, z, text, [ttlTicks])</code>: <code>ttlTicks &gt; 0</code> despawns automatically after that many ticks, <code>0</code> keeps the text until <code>removeFloatingText</code> (entity ids do not survive restarts). The whole text is capped at 512 chars; the invisible carrier hangs 1.62 below the text line so the nametag anchor lands at the requested spot.</p>
-<p><code>setFloatingText(id, text)</code> replaces the content with the same multi-line model. Only the nametag moves on the wire: one SetEntityDataPacket resyncs every viewer — an animated title costs one packet per step, not a respawn.</p>
-<p><code>getFloatingTexts()</code> returns <code>{id,x,y,z,text}</code> tables ordered by entity id (<code>text</code> is the full text with <code>\n</code> separators).</p>
+</div><!-- fragment --><p><code>spawnFloatingText(x, y, z, text, [ttlTicks])</code>: <code>ttlTicks &gt; 0</code> despawns automatically after that many ticks, <code>0</code> keeps the text until <code>removeFloatingText</code> (entity ids do not survive restarts). The title is capped at 128 chars and the whole pair at 512; the invisible carrier hangs 1.62 below the text line so the nametag anchor lands at the requested spot.</p>
+<p><code>setFloatingText(id, text)</code> replaces the content with the same multi-line model (first line = title, rest = body). Only the nametag moves on the wire: one SetEntityDataPacket resyncs every viewer — an animated title costs one packet per step, not a respawn. <code>setFloatingTextTitle</code> / <code>setFloatingTextBody</code> replace one half of the Genisys pair and cost at most the same one metadata packet.</p>
+<p><code>getFloatingTexts()</code> returns <code>{id,x,y,z,text,title,body,visible,follow}</code> tables ordered by entity id (<code>text</code> is the whole nametag with <code>\n</code> separators; <code>follow</code> is the anchored entity id or 0).</p>
+<h3><a class="anchor" id="autotoc_md172"></a>
+Tag types (all ride the same one-carrier model)</h3>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Type   </th><th class="markdownTableHeadNone">Call   </th><th class="markdownTableHeadNone">Wire cost    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Static   </td><td class="markdownTableBodyNone"><code>spawnFloatingText</code> (default)   </td><td class="markdownTableBodyNone">one fixed spawn pair    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Follower   </td><td class="markdownTableBodyNone"><code>setFloatingTextFollow(id, eid)</code> / <code>...FollowPlayer(id, name)</code>   </td><td class="markdownTableBodyNone">one MovePlayerPacket only when the target moves past 0.15 blocks; auto-removed when the target despawns    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Filtered   </td><td class="markdownTableBodyNone"><code>setFloatingTextViewers(id, {"A", "B"})</code> (nil = everyone)   </td><td class="markdownTableBodyNone">none — only listed players are ever served    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Hidden   </td><td class="markdownTableBodyNone"><code>setFloatingTextVisible(id, false)</code> / <code>true</code>   </td><td class="markdownTableBodyNone">one Remove per viewer to hide; the show re-arms immediately    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Expiring   </td><td class="markdownTableBodyNone"><code>spawnFloatingText(..., ttlTicks)</code>   </td><td class="markdownTableBodyNone">none — the scheduler despawns it   </td></tr>
+</table>
 <p>Viewer churn reconciles once per second: players that join or walk into render range receive the text, players that walk out, quit or switch worlds stop rendering it — the same canSeeBlock audience every other world broadcast uses. Between syncs the only per-tick cost of a text is none: spawn, move, re-text and removal are the only packet moments.</p>
+<h3><a class="anchor" id="autotoc_md173"></a>
+Why this cannot hurt the FPS</h3>
+<ul>
+<li>One text = one entity whose only visible part is its nametag: the client cost is a player nametag, and the 128/world cap bounds the worst case.</li>
+<li>Every packet is cached per text and shared by every viewer — a re-text is ONE metadata packet for everyone, a move ONE move packet.</li>
+<li>Spawn faces rebuild lazily (dirty flag): a stream of moves or re-texts never rebuilds what no viewer is reading.</li>
+<li>Follower texts resync past a 0.15-block threshold only; a still target costs zero packets per tick.</li>
+<li>The follow pass and the viewer sync touch only their subset: a world without floating texts pays nothing, and follow texts cost nothing while their target stands still.</li>
+</ul>
 <p><code>data</code> payload per particle family (each particle type owns its packing in its own file under <code>src/world/particle/</code>):</p>
 <ul>
 <li><code>smoke</code>, <code>white_smoke</code>, <code>ink</code>, <code>critical</code>, <code>heart</code>, <code>redstone</code> — scale / lifetime integer (<code>0</code> is the client default)</li>
@@ -167,7 +199,7 @@ Particles</h2>
 <p>Sample plugin: <code>plugins/SpawnProtection/</code>.</p>
 <p>Test plugin for the floating text API: <code>plugins/FloatingTextDemo/</code> drives every call through the <code>/ft</code> command.</p>
 <p>A folder whose <code>main</code> points at a <code>.so</code>/<code>.dll</code> is <b>not</b> loaded: native plugins are bare files now, and the log explains the migration (move the library into <code>plugins/</code>, delete the manifest).</p>
-<h2><a class="anchor" id="autotoc_md172"></a>
+<h2><a class="anchor" id="autotoc_md174"></a>
 Entities (standing mobs)</h2>
 <p>World handles expose the mob registry the creative spawn eggs use. A spawned mob has no AI and no physics: it spawns exactly where the caller puts it and stays there. Cost is three packets in its whole lifetime — one AddEntityPacket on spawn, one MoveEntityPacket per move, one RemoveEntityPacket on removal — with no per-tick entry in the world loop, and viewers that stream its chunk later (joins, walk-ins) receive it from the chunk stream, deduplicated per client.</p>
 <div class="fragment"><div class="line">local w = server.defaultWorld()</div>
@@ -181,9 +213,9 @@ Entities (standing mobs)</h2>
 <div class="line">w.entityTypes()                                   -- name -&gt; protocol-84 id map</div>
 </div><!-- fragment --><p><code>type</code> accepts the canonical lowercase names — `chicken cow pig sheep wolf villager mooshroom squid rabbit bat ocelot horse donkey mule skeleton_horse zombie_horse zombie creeper skeleton spider zombie_pigman slime enderman silverfish ghast lava_slime magma_cube blaze zombie_villager witch stray husk wither_skeleton` — or their protocol-84 network id (10..48 range above; on this protocol the spawn egg aux value IS the id). Common aliases (<code>mushroom_cow</code>, <code>pigman</code>, <code>cat</code>, <code>magma</code>, ...) resolve too. Unknown names/ids, out-of-height positions and the per-world cap (256) return <code>false</code> and never raise. Every id in the registry has its own egg in the 0.15.10 creative inventory, which is what makes the client's renderer for it client-verified — ids outside the registry never reach the wire.</p>
 <p>Entity ids do not survive restarts, like floating text ids.</p>
-<h1><a class="anchor" id="autotoc_md173"></a>
+<h1><a class="anchor" id="autotoc_md175"></a>
 File plugins (C++ via .so / .dll)</h1>
-<h2><a class="anchor" id="autotoc_md174"></a>
+<h2><a class="anchor" id="autotoc_md176"></a>
 Structure</h2>
 <p>The final plugin is ONE file, named after the plugin:</p>
 <div class="fragment"><div class="line">plugins/</div>
@@ -200,9 +232,9 @@ Structure</h2>
 </ul>
 <p>The library exports ONE symbol:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>);</div>
-<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:526</div></div>
+<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:573</div></div>
 </div><!-- fragment --><p><code><a class="el" href="NativeAPI_8h_source.html">src/plugin/NativeAPI.h</a></code> is the complete SDK header — copy it (or point <code>-I</code> at the server <code>src/</code>) and compile against it. The plugin links nothing: the entire server surface arrives as function-pointer groups in the <code>CsPluginApi*</code> handed to <code>onLoad</code>.</p>
-<h2><a class="anchor" id="autotoc_md175"></a>
+<h2><a class="anchor" id="autotoc_md177"></a>
 Minimal complete plugin</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;plugin/NativeAPI.h&quot;</span></div>
 <div class="line"> </div>
@@ -247,11 +279,11 @@ Minimal complete plugin</h2>
 <div class="ttc" id="astructCsCommandSender_html"><div class="ttname"><a href="structCsCommandSender.html">CsCommandSender</a></div><div class="ttdoc">Who ran a plugin command.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:131</div></div>
 <div class="ttc" id="astructCsEvent_html"><div class="ttname"><a href="structCsEvent.html">CsEvent</a></div><div class="ttdoc">Event snapshot passed to native listeners.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:157</div></div>
 <div class="ttc" id="astructCsEvent_html_a64fe453976f4600d9cf333630035d518"><div class="ttname"><a href="structCsEvent.html#a64fe453976f4600d9cf333630035d518">CsEvent::player</a></div><div class="ttdeci">const char * player</div><div class="ttdoc">Player name, or &quot;&quot; when the event has none.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:159</div></div>
-<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:501</div></div>
+<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:548</div></div>
 <div class="ttc" id="astructCsPluginDesc_html"><div class="ttname"><a href="structCsPluginDesc.html">CsPluginDesc</a></div><div class="ttdoc">Static plugin metadata returned by the vtable's desc hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:117</div></div>
 <div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:200</div></div>
 </div><!-- fragment --><p><code>onLoad</code> / <code>desc</code> are required; the other hooks may be <code>NULL</code>. The descriptor is the manifest: keep <code>name</code> non-empty and unique, and set <code>api</code> to the <code>CURSESTONE_API</code> you built against (an empty value means "this SDK"; an incompatible claim refuses the load).</p>
-<h2><a class="anchor" id="autotoc_md176"></a>
+<h2><a class="anchor" id="autotoc_md178"></a>
 Building</h2>
 <div class="fragment"><div class="line"># Linux / macOS / Android NDK</div>
 <div class="line">c++ -shared -fPIC -O2 -I&lt;repo&gt;/src -o MyPlugin.so src/MyPlugin.cpp</div>
@@ -263,10 +295,10 @@ Building</h2>
 <div class="line">target_include_directories(MyPlugin PRIVATE &lt;repo&gt;/src)</div>
 <div class="line">set_target_properties(MyPlugin PROPERTIES PREFIX &quot;&quot;)   # MyPlugin.so, not libMyPlugin.so</div>
 </div><!-- fragment --><p>For Android use the NDK toolchain (<code>-DANDROID_ABI=arm64-v8a</code> and friends); for MSVC make sure the platform matches the server build (x64 vs x86).</p>
-<h2><a class="anchor" id="autotoc_md177"></a>
+<h2><a class="anchor" id="autotoc_md179"></a>
 Data folder</h2>
 <p>Every loaded plugin gets <code>&lt;server&gt;/data_pl/&lt;stem&gt;/</code> created at load. The <code>data.*</code> group is jailed to it: relative paths only, no <code>..</code>, no backslashes. The Lua sandbox uses the same root, keyed by folder name.</p>
-<h2><a class="anchor" id="autotoc_md178"></a>
+<h2><a class="anchor" id="autotoc_md180"></a>
 Rules and guarantees</h2>
 <ul>
 <li><b>ABI version</b>: <code>CS_PLUGIN_ABI_VERSION</code> (currently 1) is checked right after the entry lookup; a mismatch refuses the library with a clear log line. It only moves when an existing field changes meaning, type or order — new surface is appended to the end of the group structs.</li>
@@ -277,7 +309,7 @@ Rules and guarantees</h2>
 <li><b>Permissions</b> mirror the Lua <code>commands.register</code> vocabulary: <code>NULL</code>/<code>""</code> = public, <code>"op"</code> = operators + console, any other string = permission node.</li>
 <li><b>String ownership</b>: strings handed OUT by the API are valid only until the callback returns; buffers the plugin fills are caller-owned.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md179"></a>
+<h2><a class="anchor" id="autotoc_md181"></a>
 API reference (native)</h2>
 <p>All functions return <code>bool</code>/<code>int</code> failure markers (<code>false</code> / <code>-1</code> / <code>0</code>) instead of raising anything; invalid arguments never crash the server.</p>
 <p><b>log</b> (context-bound)</p>
@@ -407,15 +439,27 @@ API reference (native)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>spawnSplashParticles(world, x, y, z, rgb)</code>   </td><td class="markdownTableBodyNone">splash shatter (LevelEvent 2002); <code>rgb</code> 0xRRGGBB    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>spawnFloatingText(world, x, y, z, text, ttlTicks)</code>   </td><td class="markdownTableBodyNone">floating text (one invisible fake-player carrier, nametag = the whole text; <code>\n</code> stacks title + body lines client-side); entity id, or -1 at the cap; ttl 0 = until removed    </td></tr>
+<td class="markdownTableBodyNone"><code>spawnFloatingText(world, x, y, z, text, ttlTicks)</code>   </td><td class="markdownTableBodyNone">floating text (one invisible fake-player carrier; first <code>\n</code> line = title, rest = body, client-side stacked); entity id, or -1 at the cap; ttl 0 = until removed    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>moveFloatingText(world, id, x, y, z)</code>   </td><td class="markdownTableBodyNone">repositions a floating text    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>setFloatingText(world, id, text)</code>   </td><td class="markdownTableBodyNone">re-texts a floating text (one metadata packet); false for unknown ids    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>removeFloatingText(world, id)</code>   </td><td class="markdownTableBodyNone">despawns a floating text; 0 for unknown ids    </td></tr>
+<td class="markdownTableBodyNone"><code>setFloatingTextTitle(world, id, title)</code>   </td><td class="markdownTableBodyNone">Genisys setTitle: replaces the top line; one metadata packet    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>setFloatingTextBody(world, id, text)</code>   </td><td class="markdownTableBodyNone">Genisys setText: replaces the body lines; one metadata packet    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>setFloatingTextVisible(world, id, visible)</code>   </td><td class="markdownTableBodyNone">hide (one Remove per viewer) / show (re-arm now)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>setFloatingTextFollow(world, id, targetEid)</code>   </td><td class="markdownTableBodyNone">anchor over one entity/player (0 = fixed spot); one move packet past the threshold, auto-remove on target loss    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>setFloatingTextViewers(world, id, names, count)</code>   </td><td class="markdownTableBodyNone">viewer allow list (NULL/0 = everyone); dropped viewers despawn at once    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>removeFloatingText(world, id)</code>   </td><td class="markdownTableBodyNone">despawns a floating text; 0 for unknown ids    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>getFloatingTexts(world, out, max)</code>   </td><td class="markdownTableBodyNone">copies <code>{id, x, y, z, text}</code> snapshots (ordered by id) into a <code><a class="el" href="structCsFloatingTextInfo.html" title="One floating-text snapshot for getFloatingTexts().">CsFloatingTextInfo</a></code> array; returns how many were written    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>getFloatingTextEx(world, id, out)</code>   </td><td class="markdownTableBodyNone">one-text snapshot with the Genisys pair separated (<code><a class="el" href="structCsFloatingTextInfoEx.html" title="One floating-text snapshot with the Genisys tag pair separated: title (top line) and text (body) trav...">CsFloatingTextInfoEx</a></code>: title, body, visible, follow, viewers)    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>spawnEntity(world, type, x, y, z, yaw, pitch)</code>   </td><td class="markdownTableBodyNone">standing mob (no AI, zero per-tick cost); entity id, or -1 for an invalid type/position or at the cap; y is feet    </td></tr>
 <tr class="markdownTableRowEven">
@@ -444,16 +488,16 @@ API reference (native)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>free(ptr)</code>   </td><td class="markdownTableBodyNone">releases <code>readFile</code> buffers across allocator boundaries   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md180"></a>
+<h2><a class="anchor" id="autotoc_md182"></a>
 Versioning</h2>
 <p><code>CS_PLUGIN_ABI_VERSION</code> stays at 1 while fields are only appended; the server's plugin API version (<code>CURSESTONE_API</code>, currently <code>1.0.3</code>) only moves at release time, not per change.</p>
-<h1><a class="anchor" id="autotoc_md181"></a>
+<h1><a class="anchor" id="autotoc_md183"></a>
 Commands</h1>
 <ul>
 <li><code>/plugins</code> — lists every plugin; native ones show a <code>[C++]</code> tag.</li>
 <li><code>/plugins reload</code> — disables, unloads (dtor runs <code>onUnload</code>, library closed) and re-scans the folder (folders for Lua, bare files for C++), all on the main thread.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md182"></a>
+<h1><a class="anchor" id="autotoc_md184"></a>
 Reference implementation</h1>
 <p><code>plugins/HelloNative/</code> — build with the <code>cursestone-example-plugin</code> CMake target or the one-liner above, then drop the produced <code>HelloNative.so</code> / <code>HelloNative.dll</code> directly into <code>plugins/</code>. </p>
 </div></div><!-- contents -->

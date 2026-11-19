@@ -197,6 +197,25 @@ const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <tr class="memitem:a8fa34b790edc24fcc7b655d29b6572b3"><td class="memItemLeft" align="right" valign="top">int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a8fa34b790edc24fcc7b655d29b6572b3">getFloatingTexts</a> )(const char *world, <a class="el" href="structCsFloatingTextInfo.html">CsFloatingTextInfo</a> *out, int32_t max)</td></tr>
 <tr class="memdesc:a8fa34b790edc24fcc7b655d29b6572b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies every floating text of <code>world</code> into <code>out</code> (at most <code>max</code> entries, ordered by entity id), mirroring the Lua world.getFloatingTexts().  <a href="structCsWorldApi.html#a8fa34b790edc24fcc7b655d29b6572b3">More...</a><br /></td></tr>
 <tr class="separator:a8fa34b790edc24fcc7b655d29b6572b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb82df9dfb8add86f36bd87a7f0f6809"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#afb82df9dfb8add86f36bd87a7f0f6809">setFloatingTextTitle</a> )(const char *world, int64_t id, const char *title)</td></tr>
+<tr class="memdesc:afb82df9dfb8add86f36bd87a7f0f6809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces only the title line (the Genisys setTitle); one SetEntityDataPacket resyncs the viewers.  <a href="structCsWorldApi.html#afb82df9dfb8add86f36bd87a7f0f6809">More...</a><br /></td></tr>
+<tr class="separator:afb82df9dfb8add86f36bd87a7f0f6809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aefa308f8496a3b761cdfac99c63b5a"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a4aefa308f8496a3b761cdfac99c63b5a">setFloatingTextBody</a> )(const char *world, int64_t id, const char *text)</td></tr>
+<tr class="memdesc:a4aefa308f8496a3b761cdfac99c63b5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces only the body lines (the Genisys setText); one SetEntityDataPacket resyncs the viewers.  <a href="structCsWorldApi.html#a4aefa308f8496a3b761cdfac99c63b5a">More...</a><br /></td></tr>
+<tr class="separator:a4aefa308f8496a3b761cdfac99c63b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adec6c45deb058f34f3bb4ed558f7574b"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#adec6c45deb058f34f3bb4ed558f7574b">setFloatingTextVisible</a> )(const char *world, int64_t id, int visible)</td></tr>
+<tr class="memdesc:adec6c45deb058f34f3bb4ed558f7574b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visibility toggle: hide despawns the text from its viewers, show re-arms the audience.  <a href="structCsWorldApi.html#adec6c45deb058f34f3bb4ed558f7574b">More...</a><br /></td></tr>
+<tr class="separator:adec6c45deb058f34f3bb4ed558f7574b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6944cafbb8ac14fc6513b9c5c7b0f623"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a6944cafbb8ac14fc6513b9c5c7b0f623">setFloatingTextFollow</a> )(const char *world, int64_t id, int64_t targetEid)</td></tr>
+<tr class="memdesc:a6944cafbb8ac14fc6513b9c5c7b0f623"><td class="mdescLeft">&#160;</td><td class="mdescRight">Anchors the text over one entity or player (0 = fixed spot again); the budgeted follow pass keeps it there past a movement threshold and auto-removes the tag when the target despawns.  <a href="structCsWorldApi.html#a6944cafbb8ac14fc6513b9c5c7b0f623">More...</a><br /></td></tr>
+<tr class="separator:a6944cafbb8ac14fc6513b9c5c7b0f623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e302af85e8a471bca9273e25ba4ed53"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a7e302af85e8a471bca9273e25ba4ed53">setFloatingTextViewers</a> )(const char *world, int64_t id, const char *const *names, int32_t count)</td></tr>
+<tr class="memdesc:a7e302af85e8a471bca9273e25ba4ed53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the viewer allow list: only these player names render the text; NULL / zero count restores "everyone".  <a href="structCsWorldApi.html#a7e302af85e8a471bca9273e25ba4ed53">More...</a><br /></td></tr>
+<tr class="separator:a7e302af85e8a471bca9273e25ba4ed53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa656a8709076f56755d1b89db3f9323a"><td class="memItemLeft" align="right" valign="top"><a id="aa656a8709076f56755d1b89db3f9323a"></a>
+int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#aa656a8709076f56755d1b89db3f9323a">getFloatingTextEx</a> )(const char *world, int64_t id, <a class="el" href="structCsFloatingTextInfoEx.html">CsFloatingTextInfoEx</a> *out)</td></tr>
+<tr class="memdesc:aa656a8709076f56755d1b89db3f9323a"><td class="mdescLeft">&#160;</td><td class="mdescRight">One-text snapshot with the Genisys pair separated; false for unknown ids or a NULL buffer. <br /></td></tr>
+<tr class="separator:aa656a8709076f56755d1b89db3f9323a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
@@ -295,6 +314,92 @@ const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 <p>Replaces a floating text's content; '<br  />
 ' splits it into title + body lines and one SetEntityDataPacket resyncs the viewers. </p>
+<p>False for unknown ids. </p>
+
+</div>
+</div>
+<a id="a4aefa308f8496a3b761cdfac99c63b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aefa308f8496a3b761cdfac99c63b5a">&#9670;&nbsp;</a></span>setFloatingTextBody</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::setFloatingTextBody) (const char *world, int64_t id, const char *text)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replaces only the body lines (the Genisys setText); one SetEntityDataPacket resyncs the viewers. </p>
+<p>False for unknown ids. </p>
+
+</div>
+</div>
+<a id="a6944cafbb8ac14fc6513b9c5c7b0f623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6944cafbb8ac14fc6513b9c5c7b0f623">&#9670;&nbsp;</a></span>setFloatingTextFollow</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::setFloatingTextFollow) (const char *world, int64_t id, int64_t targetEid)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Anchors the text over one entity or player (0 = fixed spot again); the budgeted follow pass keeps it there past a movement threshold and auto-removes the tag when the target despawns. </p>
+<p>False for unknown ids. </p>
+
+</div>
+</div>
+<a id="afb82df9dfb8add86f36bd87a7f0f6809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb82df9dfb8add86f36bd87a7f0f6809">&#9670;&nbsp;</a></span>setFloatingTextTitle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::setFloatingTextTitle) (const char *world, int64_t id, const char *title)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replaces only the title line (the Genisys setTitle); one SetEntityDataPacket resyncs the viewers. </p>
+<p>False for unknown ids. </p>
+
+</div>
+</div>
+<a id="a7e302af85e8a471bca9273e25ba4ed53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e302af85e8a471bca9273e25ba4ed53">&#9670;&nbsp;</a></span>setFloatingTextViewers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::setFloatingTextViewers) (const char *world, int64_t id, const char *const  *names, int32_t count)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replaces the viewer allow list: only these player names render the text; NULL / zero count restores "everyone". </p>
+<p>Armed viewers that fell out despawn immediately.</p>
+<dl class="section return"><dt>Returns</dt><dd>false for unknown ids or a count without names. </dd></dl>
+
+</div>
+</div>
+<a id="adec6c45deb058f34f3bb4ed558f7574b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adec6c45deb058f34f3bb4ed558f7574b">&#9670;&nbsp;</a></span>setFloatingTextVisible</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::setFloatingTextVisible) (const char *world, int64_t id, int visible)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Visibility toggle: hide despawns the text from its viewers, show re-arms the audience. </p>
 <p>False for unknown ids. </p>
 
 </div>

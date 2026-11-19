@@ -299,15 +299,39 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>moveFloatingText</b> 
 <tr class="memitem:af34b77f2aa99ca55bc46e26dfad19aba"><td class="memItemLeft" align="right" valign="top"><a id="af34b77f2aa99ca55bc46e26dfad19aba"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFloatingText</b> (int64_t id, std::string text)</td></tr>
 <tr class="separator:af34b77f2aa99ca55bc46e26dfad19aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae753efa62a670171a1a636be45122901"><td class="memItemLeft" align="right" valign="top"><a id="ae753efa62a670171a1a636be45122901"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFloatingTextTitle</b> (int64_t id, std::string title)</td></tr>
+<tr class="separator:ae753efa62a670171a1a636be45122901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c90fecb755f899a6d82bbc8209b50e"><td class="memItemLeft" align="right" valign="top"><a id="a73c90fecb755f899a6d82bbc8209b50e"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFloatingTextBody</b> (int64_t id, std::string body)</td></tr>
+<tr class="separator:a73c90fecb755f899a6d82bbc8209b50e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d6c3ad6f41a586f2146fe6dba94ef5"><td class="memItemLeft" align="right" valign="top"><a id="a88d6c3ad6f41a586f2146fe6dba94ef5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFloatingTextVisible</b> (int64_t id, bool visible)</td></tr>
+<tr class="separator:a88d6c3ad6f41a586f2146fe6dba94ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8621bc7f70eb220b1365f10e8d69947b"><td class="memItemLeft" align="right" valign="top"><a id="a8621bc7f70eb220b1365f10e8d69947b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFloatingTextFollow</b> (int64_t id, int64_t targetEid)</td></tr>
+<tr class="separator:a8621bc7f70eb220b1365f10e8d69947b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b47584ab09e87bd2edf532b87e5b488"><td class="memItemLeft" align="right" valign="top"><a id="a9b47584ab09e87bd2edf532b87e5b488"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFloatingTextFollowPlayer</b> (int64_t id, const std::string &amp;name)</td></tr>
+<tr class="separator:a9b47584ab09e87bd2edf532b87e5b488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3573eb1da2007caebb2313f1be2cfe43"><td class="memItemLeft" align="right" valign="top"><a id="a3573eb1da2007caebb2313f1be2cfe43"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFloatingTextViewers</b> (int64_t id, std::vector&lt; std::string &gt; names)</td></tr>
+<tr class="separator:a3573eb1da2007caebb2313f1be2cfe43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a787c1f9fc17d12b74aabcda0f07bae47"><td class="memItemLeft" align="right" valign="top"><a id="a787c1f9fc17d12b74aabcda0f07bae47"></a>
 std::vector&lt; <a class="el" href="structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot.html">FloatingTextSnapshot</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>floatingTexts</b> () const</td></tr>
 <tr class="separator:a787c1f9fc17d12b74aabcda0f07bae47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e4d5f151817f3b91e815780ee155e7"><td class="memItemLeft" align="right" valign="top"><a id="af6e4d5f151817f3b91e815780ee155e7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>floatingText</b> (int64_t id, <a class="el" href="structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot.html">FloatingTextSnapshot</a> &amp;out) const</td></tr>
+<tr class="separator:af6e4d5f151817f3b91e815780ee155e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a934bc88e98af1a910e1f8319760fe72b"><td class="memItemLeft" align="right" valign="top"><a id="a934bc88e98af1a910e1f8319760fe72b"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>removeFloatingText</b> (int64_t id)</td></tr>
 <tr class="separator:a934bc88e98af1a910e1f8319760fe72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52f9527f21b3aedbe498cd86acf82296"><td class="memItemLeft" align="right" valign="top"><a id="a52f9527f21b3aedbe498cd86acf82296"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>tickFloatingTexts</b> (uint64_t current_tick)</td></tr>
 <tr class="separator:a52f9527f21b3aedbe498cd86acf82296"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5da6ff40681378436e13432ebb093664"><td class="memItemLeft" align="right" valign="top"><a id="a5da6ff40681378436e13432ebb093664"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>tickFollowTexts</b> (uint64_t current_tick)</td></tr>
+<tr class="separator:a5da6ff40681378436e13432ebb093664"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbf19dda59430ace4f71e6b93281cd64"><td class="memItemLeft" align="right" valign="top"><a id="acbf19dda59430ace4f71e6b93281cd64"></a>
 int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>spawnMob</b> (int32_t type, double x, double y, double z, float yaw=0.0f, float pitch=0.0f)</td></tr>
 <tr class="separator:acbf19dda59430ace4f71e6b93281cd64"><td class="memSeparator" colspan="2">&#160;</td></tr>
