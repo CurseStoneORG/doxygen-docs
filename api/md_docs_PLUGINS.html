@@ -115,9 +115,9 @@ Folder plugins (Lua)</h1>
 <li><code>log.info/warn/error(msg)</code></li>
 <li><code>server.broadcast(msg)</code>, <code>server.players()</code>, <code>server.getPlayer(name)</code></li>
 <li><code>player.*</code> — message, tip, popup, kick, teleport, teleportWorld, getWorld, isOp, getHealth, setHealth, setPermission, hasPermission, giveItem, setNameTag, getNameTag, setDisplayName, getDisplayName, getPosition, getRotation, setRotation, setMotion, kill</li>
-<li><code>server.getWorld(name)</code> / <code>server.loadWorld(name, gen)</code> / <code>server.defaultWorld()</code> — world handles with <code>name</code>, <code>seed</code>, <code>dimension</code>, <code>getTime</code>, <code>setTime</code>, <code>getBlock</code>, <code>setBlock</code>, <code>getSpawn</code>, <code>getPlayers</code>, <code>spawnParticle</code>, <code>spawnBlockParticles</code>, <code>spawnSplashParticles</code>, <code>spawnFloatingText</code>, <code>moveFloatingText</code>, <code>setFloatingText</code>, <code>setFloatingTextTitle</code>, <code>setFloatingTextBody</code>, <code>setFloatingTextVisible</code>, <code>setFloatingTextFollow</code>, <code>setFloatingTextFollowPlayer</code>, <code>setFloatingTextViewers</code>, <code>getFloatingTexts</code>, <code>removeFloatingText</code>, <code>spawnEntity</code>, <code>moveEntity</code>, <code>removeEntity</code>, <code>getEntity</code>, <code>getEntities</code>, <code>entityTypes</code>, <code>unload</code></li>
+<li><code>server.getWorld(name)</code> / <code>server.loadWorld(name, gen, [seed])</code> / <code>server.unloadWorld(name)</code> / <code>server.isWorldLoaded(name)</code> / <code>server.defaultWorld()</code> — world handles with <code>name</code>, <code>seed</code>, <code>dimension</code>, <code>generator</code>, <code>isDefault</code>, <code>getTime</code>, <code>setTime</code>, <code>getBlock</code>, <code>setBlock</code>, <code>getSpawn</code>, <code>setSpawn</code>, <code>getPlayers</code>, <code>playerCount</code>, <code>isChunkLoaded</code> (chunk coords), <code>chunkCount</code>, <code>save</code>, <code>spawnParticle</code>, <code>spawnBlockParticles</code>, <code>spawnSplashParticles</code>, <code>spawnFloatingText</code>, <code>moveFloatingText</code>, <code>setFloatingText</code>, <code>setFloatingTextTitle</code>, <code>setFloatingTextBody</code>, <code>setFloatingTextVisible</code>, <code>setFloatingTextFollow</code>, <code>setFloatingTextFollowPlayer</code>, <code>setFloatingTextViewers</code>, <code>getFloatingTexts</code>, <code>removeFloatingText</code>, <code>spawnEntity</code>, <code>moveEntity</code>, <code>removeEntity</code>, <code>getEntity</code>, <code>getEntities</code>, <code>entityTypes</code>, <code>unload</code>. World names must be 1..64 letters, digits, <code>_</code> or <code>-</code> (they become directory names); generators are <code>normal</code>, <code>flat</code>, <code>nether</code>, <code>void</code> or <code>empty</code> (case-insensitive). New secondary worlds persist in <code>worlds/worlds.manifest</code> and reload on the next boot; unloading removes the entry.</li>
 <li><code>commands.register(name, opts, fn)</code>, <code>commands.reply(sender, msg)</code></li>
-<li><code>events.on(name, fn)</code> — PlayerJoin, PlayerQuit, PlayerChat, PlayerMove, PlayerDropItem, PlayerItemHeld, BlockBreak, BlockPlace, EntityDamage, EntityDamageByEntity, PlayerDeath, PlayerRespawn, PlayerBedEnter (alias <code>PlayerSleepInBed</code>), PlayerBedLeave, DoorToggle, PlayerInteract, InventoryOpen, InventoryClick, InventoryClose</li>
+<li><code>events.on(name, fn)</code> — PlayerJoin, PlayerQuit, PlayerChat, PlayerMove, PlayerDropItem, PlayerItemHeld, BlockBreak, BlockPlace, EntityDamage, EntityDamageByEntity, PlayerDeath, PlayerRespawn, PlayerBedEnter (alias <code>PlayerSleepInBed</code>), PlayerBedLeave, DoorToggle, PlayerInteract, InventoryOpen, InventoryClick, InventoryClose, WorldLoad (e.world name, e.dimension), WorldUnload (cancellable, e.world name)</li>
 <li><code>scheduler.later/every/cancel</code></li>
 <li><code>data.read/write/exists/delete/list/loadYml/saveYml/loadJson/saveJson</code></li>
 <li><code>plugin.include/import/getResource/saveResource/listResources</code></li>
@@ -232,7 +232,7 @@ Structure</h2>
 </ul>
 <p>The library exports ONE symbol:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>);</div>
-<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:573</div></div>
+<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:580</div></div>
 </div><!-- fragment --><p><code><a class="el" href="NativeAPI_8h_source.html">src/plugin/NativeAPI.h</a></code> is the complete SDK header — copy it (or point <code>-I</code> at the server <code>src/</code>) and compile against it. The plugin links nothing: the entire server surface arrives as function-pointer groups in the <code>CsPluginApi*</code> handed to <code>onLoad</code>.</p>
 <h2><a class="anchor" id="autotoc_md177"></a>
 Minimal complete plugin</h2>
@@ -279,7 +279,7 @@ Minimal complete plugin</h2>
 <div class="ttc" id="astructCsCommandSender_html"><div class="ttname"><a href="structCsCommandSender.html">CsCommandSender</a></div><div class="ttdoc">Who ran a plugin command.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:131</div></div>
 <div class="ttc" id="astructCsEvent_html"><div class="ttname"><a href="structCsEvent.html">CsEvent</a></div><div class="ttdoc">Event snapshot passed to native listeners.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:157</div></div>
 <div class="ttc" id="astructCsEvent_html_a64fe453976f4600d9cf333630035d518"><div class="ttname"><a href="structCsEvent.html#a64fe453976f4600d9cf333630035d518">CsEvent::player</a></div><div class="ttdeci">const char * player</div><div class="ttdoc">Player name, or &quot;&quot; when the event has none.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:159</div></div>
-<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:548</div></div>
+<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:555</div></div>
 <div class="ttc" id="astructCsPluginDesc_html"><div class="ttname"><a href="structCsPluginDesc.html">CsPluginDesc</a></div><div class="ttdoc">Static plugin metadata returned by the vtable's desc hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:117</div></div>
 <div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:200</div></div>
 </div><!-- fragment --><p><code>onLoad</code> / <code>desc</code> are required; the other hooks may be <code>NULL</code>. The descriptor is the manifest: keep <code>name</code> non-empty and unique, and set <code>api</code> to the <code>CURSESTONE_API</code> you built against (an empty value means "this SDK"; an incompatible claim refuses the load).</p>
@@ -369,7 +369,9 @@ API reference (native)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>worldCount()</code> / <code>worldNameAt(idx, out, cap)</code> / <code>worldExists(name)</code>   </td><td class="markdownTableBodyNone">loaded-world queries    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>loadWorld(name, generator)</code> / <code>unloadWorld(name)</code>   </td><td class="markdownTableBodyNone">unload fails for the default world   </td></tr>
+<td class="markdownTableBodyNone"><code>loadWorld(name, generator)</code> / <code>unloadWorld(name)</code>   </td><td class="markdownTableBodyNone">unload fails for the default world; names/generators are validated, new worlds persist in the manifest    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>defaultWorldName(out, cap)</code>   </td><td class="markdownTableBodyNone">default (spawn) world name — batch 9   </td></tr>
 </table>
 <p><b>player</b> (context-free; every call fails for offline players)</p>
 <table class="markdownTable">
@@ -429,48 +431,50 @@ API reference (native)</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>isChunkLoaded(world, cx, cz)</code>   </td><td class="markdownTableBodyNone">chunk-residency probe    </td></tr>
 <tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>chunkCount(world) -&gt; int</code>   </td><td class="markdownTableBodyNone">resident chunks (cache size), -1 unloaded — batch 9    </td></tr>
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>save(world)</code>   </td><td class="markdownTableBodyNone">persists dirty chunks + level.dat; costly — schedule it, do not spam it    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>spawnItem(world, x, y, z, id, count, meta)</code>   </td><td class="markdownTableBodyNone">visible drop; count 1..64    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>spawnParticle(world, x, y, z, type, data)</code>   </td><td class="markdownTableBodyNone">one generic particle, <code>type</code> = <code>CsParticleType</code> 1..32; see the Lua particles table for <code>data</code> packing; unrenderable payloads return 0, never broadcast    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>spawnBlockParticles(world, x, y, z, blockId, meta)</code>   </td><td class="markdownTableBodyNone">break burst + dig sound (LevelEvent 2001)    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>spawnSplashParticles(world, x, y, z, rgb)</code>   </td><td class="markdownTableBodyNone">splash shatter (LevelEvent 2002); <code>rgb</code> 0xRRGGBB    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>spawnFloatingText(world, x, y, z, text, ttlTicks)</code>   </td><td class="markdownTableBodyNone">floating text (one invisible fake-player carrier; first <code>\n</code> line = title, rest = body, client-side stacked); entity id, or -1 at the cap; ttl 0 = until removed    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>moveFloatingText(world, id, x, y, z)</code>   </td><td class="markdownTableBodyNone">repositions a floating text    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>setFloatingText(world, id, text)</code>   </td><td class="markdownTableBodyNone">re-texts a floating text (one metadata packet); false for unknown ids    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>setFloatingTextTitle(world, id, title)</code>   </td><td class="markdownTableBodyNone">Genisys setTitle: replaces the top line; one metadata packet    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>setFloatingTextBody(world, id, text)</code>   </td><td class="markdownTableBodyNone">Genisys setText: replaces the body lines; one metadata packet    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>setFloatingTextVisible(world, id, visible)</code>   </td><td class="markdownTableBodyNone">hide (one Remove per viewer) / show (re-arm now)    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>setFloatingTextFollow(world, id, targetEid)</code>   </td><td class="markdownTableBodyNone">anchor over one entity/player (0 = fixed spot); one move packet past the threshold, auto-remove on target loss    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>setFloatingTextViewers(world, id, names, count)</code>   </td><td class="markdownTableBodyNone">viewer allow list (NULL/0 = everyone); dropped viewers despawn at once    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>removeFloatingText(world, id)</code>   </td><td class="markdownTableBodyNone">despawns a floating text; 0 for unknown ids    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>getFloatingTexts(world, out, max)</code>   </td><td class="markdownTableBodyNone">copies <code>{id, x, y, z, text}</code> snapshots (ordered by id) into a <code><a class="el" href="structCsFloatingTextInfo.html" title="One floating-text snapshot for getFloatingTexts().">CsFloatingTextInfo</a></code> array; returns how many were written    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>getFloatingTextEx(world, id, out)</code>   </td><td class="markdownTableBodyNone">one-text snapshot with the Genisys pair separated (<code><a class="el" href="structCsFloatingTextInfoEx.html" title="One floating-text snapshot with the Genisys tag pair separated: title (top line) and text (body) trav...">CsFloatingTextInfoEx</a></code>: title, body, visible, follow, viewers)    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>spawnEntity(world, type, x, y, z, yaw, pitch)</code>   </td><td class="markdownTableBodyNone">standing mob (no AI, zero per-tick cost); entity id, or -1 for an invalid type/position or at the cap; y is feet    </td></tr>
-<tr class="markdownTableRowEven">
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>moveEntity(world, id, x, y, z, yaw, pitch)</code>   </td><td class="markdownTableBodyNone">repositions a standing mob    </td></tr>
-<tr class="markdownTableRowOdd">
+<tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>removeEntity(world, id)</code>   </td><td class="markdownTableBodyNone">despawns a standing mob; 0 for unknown ids    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>getEntity(world, id, outType, outPos[3], outRot[2])</code>   </td><td class="markdownTableBodyNone">reads a mob back (type, feet position, yaw/pitch)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>entityTypeFromName(name, outId)</code> / <code>entityTypeName(type)</code>   </td><td class="markdownTableBodyNone">the shared mob registry, same names the Lua <code>entityTypes()</code> maps    </td></tr>
+<td class="markdownTableBodyNone"><code>getEntity(world, id, outType, outPos[3], outRot[2])</code>   </td><td class="markdownTableBodyNone">reads a mob back (type, feet position, yaw/pitch)    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>entityTypeFromName(name, outId)</code> / <code>entityTypeName(type)</code>   </td><td class="markdownTableBodyNone">the shared mob registry, same names the Lua <code>entityTypes()</code> maps    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>playerCount(world)</code>   </td><td class="markdownTableBodyNone">players currently in that world   </td></tr>
 </table>
 <p><b>data</b> (context-bound; jailed to <code>data_pl/&lt;stem&gt;</code>)</p>

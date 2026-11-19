@@ -1,5 +1,11 @@
 var NAVTREEINDEX27 =
 {
+"dir_643474ab3c5c7b996cb15120629b455b.html":[11,0,0,21,0,0],
+"dir_6529efee17c292744d14dbbb7c153173.html":[11,0,0,21,1,2,5],
+"dir_68267d1309a1af8e8297ef4c3efbcdba.html":[11,0,0],
+"dir_6826d79532171ff2338799cfd298b875.html":[11,0,0,21],
+"dir_78bddaf1db31ade9186eb646c67bcd03.html":[11,0,0,10,2],
+"dir_80087b544e3581ca2035f1422dcce657.html":[11,0,0,6,0],
 "dir_8250e12e5a19acb8ece30f1703b6dc16.html":[11,0,0,12],
 "dir_89b83965c6898b51aa120c543735ed0a.html":[11,0,0,10,0],
 "dir_8aa3e05b3c778144162028379a6046fd.html":[11,0,0,5],
@@ -238,16 +244,10 @@ var NAVTREEINDEX27 =
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md98":[3,8,5],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md99":[3,8,6],
 "namespacecursestone.html":[9,0,0],
-"namespacecursestone.html#a1c8c3fee428f4c665f076f22f4b0ac7c":[9,0,0,55],
-"namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5":[9,0,0,61],
-"namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa":[9,0,0,58],
-"namespacecursestone.html#a8c184c5b29406134bd48d0f71345bb3e":[9,0,0,56],
-"namespacecursestone.html#a9ff205cb621b43c64560c1d0fe4a7907":[9,0,0,57],
-"namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223":[9,0,0,60],
-"namespacecursestone.html#adec485e08dd2b6fe4a06b0549e970f1a":[9,0,0,59],
-"namespacecursestone_1_1utils.html":[9,0,0,17],
-"namespacecursestone_1_1utils.html#a419f94d4e820fe780a0e546cbb9c053c":[9,0,0,17,9],
-"namespacecursestone_1_1utils.html#a5645fe9cf148a69e62272a15dfc57795":[9,0,0,17,7],
-"namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0":[9,0,0,17,13],
-"namespacecursestone_1_1utils.html#a7b1ae3b94627cc7ab1067eb816f92563":[9,0,0,17,8]
+"namespacecursestone.html#a1c8c3fee428f4c665f076f22f4b0ac7c":[9,0,0,56],
+"namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5":[9,0,0,63],
+"namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa":[9,0,0,59],
+"namespacecursestone.html#a8c184c5b29406134bd48d0f71345bb3e":[9,0,0,57],
+"namespacecursestone.html#a9ff205cb621b43c64560c1d0fe4a7907":[9,0,0,58],
+"namespacecursestone.html#acf0f9dd15f903db5bb07e72a03e57bc6":[9,0,0,62]
 };

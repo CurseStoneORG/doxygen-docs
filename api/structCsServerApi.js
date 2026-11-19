@@ -4,6 +4,7 @@ var structCsServerApi =
     [ "broadcastPopup", "structCsServerApi.html#aad3bbabad1bb8cf92c49e6614fbfa56a", null ],
     [ "broadcastTip", "structCsServerApi.html#a41733668dc002ab213a66f3bdc9991ef", null ],
     [ "currentTick", "structCsServerApi.html#afa3898086985e277ca35afe8172382e2", null ],
+    [ "defaultWorldName", "structCsServerApi.html#ac4304f5f46250463b230239a24af0b7b", null ],
     [ "difficulty", "structCsServerApi.html#a94703bd3c1a6c9dc80e7f1034589cdc9", null ],
     [ "dispatchCommand", "structCsServerApi.html#a104973de2412c3dff8f10f71cafbe2e6", null ],
     [ "isBanned", "structCsServerApi.html#aee78779277daf1a94a9a8f1a69b43adb", null ],

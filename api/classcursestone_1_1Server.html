@@ -176,12 +176,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>broadcastMessage</b> 
 <tr class="memitem:ad7f9ca7cae0ef787fd0a094d0e6bdd0e"><td class="memItemLeft" align="right" valign="top"><a id="ad7f9ca7cae0ef787fd0a094d0e6bdd0e"></a>
 <a class="el" href="classcursestone_1_1network_1_1Network.html">network::Network</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getNetwork</b> () const</td></tr>
 <tr class="separator:ad7f9ca7cae0ef787fd0a094d0e6bdd0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b261a0ca53391d20529f4a03a265b76"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a5b261a0ca53391d20529f4a03a265b76">loadWorld</a> (const std::string &amp;name, const std::string &amp;generator)</td></tr>
-<tr class="memdesc:a5b261a0ca53391d20529f4a03a265b76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a world or returns the existing world with the given name.  <a href="classcursestone_1_1Server.html#a5b261a0ca53391d20529f4a03a265b76">More...</a><br /></td></tr>
-<tr class="separator:a5b261a0ca53391d20529f4a03a265b76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60a5feed3025345459780e4f1ced978c"><td class="memItemLeft" align="right" valign="top"><a id="a60a5feed3025345459780e4f1ced978c"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c">unloadWorld</a> (const std::string &amp;name)</td></tr>
-<tr class="memdesc:a60a5feed3025345459780e4f1ced978c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads a world after moving its players to the default world and saving its chunks. <br /></td></tr>
+<tr class="memitem:a12d418e168c8b49f755bb7cfef700674"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a12d418e168c8b49f755bb7cfef700674">loadWorld</a> (const std::string &amp;name, const std::string &amp;generator, int64_t seed=0)</td></tr>
+<tr class="memdesc:a12d418e168c8b49f755bb7cfef700674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a world or returns the existing world with the given name.  <a href="classcursestone_1_1Server.html#a12d418e168c8b49f755bb7cfef700674">More...</a><br /></td></tr>
+<tr class="separator:a12d418e168c8b49f755bb7cfef700674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60a5feed3025345459780e4f1ced978c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c">unloadWorld</a> (const std::string &amp;name)</td></tr>
+<tr class="memdesc:a60a5feed3025345459780e4f1ced978c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unloads a world after moving its players to the default world and saving its chunks.  <a href="classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c">More...</a><br /></td></tr>
 <tr class="separator:a60a5feed3025345459780e4f1ced978c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1794d2af7c3c7724c5c16892ee6360fa"><td class="memItemLeft" align="right" valign="top"><a id="a1794d2af7c3c7724c5c16892ee6360fa"></a>
 std::vector&lt; <a class="el" href="classcursestone_1_1world_1_1World.html">World</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1Server.html#a1794d2af7c3c7724c5c16892ee6360fa">getWorlds</a> () const</td></tr>
@@ -342,8 +341,8 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classcursestone_1_1Server.html" title="Server singleton for startup, ticking, and shutdown.">Server</a> singleton for startup, ticking, and shutdown. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5b261a0ca53391d20529f4a03a265b76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b261a0ca53391d20529f4a03a265b76">&#9670;&nbsp;</a></span>loadWorld()</h2>
+<a id="a12d418e168c8b49f755bb7cfef700674"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d418e168c8b49f755bb7cfef700674">&#9670;&nbsp;</a></span>loadWorld()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +357,13 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>generator</em>&#160;</td>
+          <td class="paramname"><em>generator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>seed</em> = <code>0</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -369,7 +374,7 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
 </div><div class="memdoc">
 
 <p>Loads a world or returns the existing world with the given name. </p>
-<dl class="section return"><dt>Returns</dt><dd>A borrowed world pointer, or nullptr on failure. </dd></dl>
+<p>The name must be filesystem-safe (letters, digits, '_', '-', 1..64 chars); the generator is one of normal/flat/nether/void/empty (case-insensitive). A seed of 0 derives one from the clock; a non-zero seed pins generation. Every newly created secondary world is recorded in worlds/worlds.manifest so it reloads after a restart. </p><dl class="section return"><dt>Returns</dt><dd>A borrowed world pointer, or nullptr on failure. </dd></dl>
 
 </div>
 </div>
@@ -447,6 +452,27 @@ static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160
 
 <p>Starts the server. </p>
 <p>Called from CurseStone.cpp. </p>
+
+</div>
+</div>
+<a id="a60a5feed3025345459780e4f1ced978c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60a5feed3025345459780e4f1ced978c">&#9670;&nbsp;</a></span>unloadWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool cursestone::Server::unloadWorld </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unloads a world after moving its players to the default world and saving its chunks. </p>
+<p>Removes the world from the manifest (it stays unloaded after restarts). </p>
 
 </div>
 </div>

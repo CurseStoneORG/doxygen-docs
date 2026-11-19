@@ -562,6 +562,7 @@ var annotated_dup =
       [ "VersionCommand", "classcursestone_1_1VersionCommand.html", "classcursestone_1_1VersionCommand" ],
       [ "WeatherCommand", "classcursestone_1_1WeatherCommand.html", "classcursestone_1_1WeatherCommand" ],
       [ "WorkbenchCommand", "classcursestone_1_1WorkbenchCommand.html", "classcursestone_1_1WorkbenchCommand" ],
+      [ "WorldsCommand", "classcursestone_1_1WorldsCommand.html", "classcursestone_1_1WorldsCommand" ],
       [ "SimpleCommandMap", "classcursestone_1_1SimpleCommandMap.html", "classcursestone_1_1SimpleCommandMap" ],
       [ "CrashDump", "classcursestone_1_1CrashDump.html", "classcursestone_1_1CrashDump" ],
       [ "IPlayer", "classcursestone_1_1IPlayer.html", "classcursestone_1_1IPlayer" ],

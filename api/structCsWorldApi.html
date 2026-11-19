@@ -216,11 +216,31 @@ const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#aa656a8709076f56755d1b89db3f9323a">getFloatingTextEx</a> )(const char *world, int64_t id, <a class="el" href="structCsFloatingTextInfoEx.html">CsFloatingTextInfoEx</a> *out)</td></tr>
 <tr class="memdesc:aa656a8709076f56755d1b89db3f9323a"><td class="mdescLeft">&#160;</td><td class="mdescRight">One-text snapshot with the Genisys pair separated; false for unknown ids or a NULL buffer. <br /></td></tr>
 <tr class="separator:aa656a8709076f56755d1b89db3f9323a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a85590f91999889d8dc5f4e67c2cb76"><td class="memItemLeft" align="right" valign="top">int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a4a85590f91999889d8dc5f4e67c2cb76">chunkCount</a> )(const char *world)</td></tr>
+<tr class="memdesc:a4a85590f91999889d8dc5f4e67c2cb76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chunks currently resident in <code>world's</code> memory cache (the live cache size the eviction pass drains), or -1 for an unloaded world.  <a href="structCsWorldApi.html#a4a85590f91999889d8dc5f4e67c2cb76">More...</a><br /></td></tr>
+<tr class="separator:a4a85590f91999889d8dc5f4e67c2cb76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
 <p>First argument is the world name; the call fails (0 / false) for worlds that are not loaded. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4a85590f91999889d8dc5f4e67c2cb76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a85590f91999889d8dc5f4e67c2cb76">&#9670;&nbsp;</a></span>chunkCount</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t(* CsWorldApi::chunkCount) (const char *world)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Chunks currently resident in <code>world's</code> memory cache (the live cache size the eviction pass drains), or -1 for an unloaded world. </p>
+<p>Cache/cost probe for status surfaces. </p>
+
+</div>
+</div>
 <a id="ae2d264e6af4224889d17082151a0561e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2d264e6af4224889d17082151a0561e">&#9670;&nbsp;</a></span>entityTypeFromName</h2>
 

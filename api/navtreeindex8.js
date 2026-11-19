@@ -191,6 +191,7 @@ var NAVTREEINDEX8 =
 "World_8h.html#ac63f610c4b47dbb78b0ba331c47d633d":[9,0,0,19,25],
 "World_8h.html#af4e88e25975b1bdabaf9c25301af0a13":[9,0,0,19,21],
 "World_8h_source.html":[11,0,0,21,11],
+"WorldsCommand_8h_source.html":[11,0,0,1,0,18],
 "ZombieHorse_8h_source.html":[11,0,0,3,1,33],
 "ZombiePigman_8h_source.html":[11,0,0,3,1,34],
 "ZombieVillager_8h_source.html":[11,0,0,3,1,35],
@@ -233,9 +234,9 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1ConsoleCommandSender.html#a21ef3f7f59965966afd093c0a16f93cb":[10,0,0,22,2],
 "classcursestone_1_1ConsoleCommandSender.html#a2d26bb3896422460ee08d0ccb0a7dcea":[10,0,0,22,1],
 "classcursestone_1_1ConsoleCommandSender.html#a60e1156b1f32236a580bb9cae6f4371c":[10,0,0,22,0],
-"classcursestone_1_1CrashDump.html":[10,0,0,42],
-"classcursestone_1_1CrashDump.html#a32ccf26c27501ff4546b5078b059928f":[10,0,0,42,0],
-"classcursestone_1_1CrashDump.html#aeb01e8070fbf83e59e9a17ab14c3eb24":[10,0,0,42,1],
+"classcursestone_1_1CrashDump.html":[10,0,0,43],
+"classcursestone_1_1CrashDump.html#a32ccf26c27501ff4546b5078b059928f":[10,0,0,43,0],
+"classcursestone_1_1CrashDump.html#aeb01e8070fbf83e59e9a17ab14c3eb24":[10,0,0,43,1],
 "classcursestone_1_1DeopCommand.html":[10,0,0,23],
 "classcursestone_1_1DeopCommand.html#a9d5784c57e8f7cccbdbd831d6ed1a429":[10,0,0,23,0],
 "classcursestone_1_1DeopCommand.html#afa5c33350ab5ec418f74ac521122874d":[10,0,0,23,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1HelpCommand.html":[10,0,0,26],
 "classcursestone_1_1HelpCommand.html#a15ada2cbb8eb0eeaab1117b1a827e09a":[10,0,0,26,0],
 "classcursestone_1_1HelpCommand.html#a1f485658a65b65818107a7e945741105":[10,0,0,26,1],
-"classcursestone_1_1IPlayer.html":[10,0,0,43],
-"classcursestone_1_1IPlayer.html#a57b684c992c8d9575001fb4cae49f0fc":[10,0,0,43,1]
+"classcursestone_1_1IPlayer.html":[10,0,0,44]
 };

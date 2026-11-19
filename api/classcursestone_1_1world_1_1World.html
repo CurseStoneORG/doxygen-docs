@@ -353,6 +353,9 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>mobCount</b> ()</td
 <tr class="memitem:a3352eefc9984ae4dd905c6ed596df796"><td class="memItemLeft" align="right" valign="top"><a id="a3352eefc9984ae4dd905c6ed596df796"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendMobsInChunk</b> (int32_t cx, int32_t cz, <a class="el" href="classcursestone_1_1Player.html">Player</a> *viewer)</td></tr>
 <tr class="separator:a3352eefc9984ae4dd905c6ed596df796"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af26ff5a24ede2e136dbed5a9020a4a14"><td class="memItemLeft" align="right" valign="top"><a id="af26ff5a24ede2e136dbed5a9020a4a14"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>despawnEntitiesFor</b> (<a class="el" href="classcursestone_1_1Player.html">Player</a> *viewer)</td></tr>
+<tr class="separator:af26ff5a24ede2e136dbed5a9020a4a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28b4bbda54d03f34c9ddd74a09af655e"><td class="memItemLeft" align="right" valign="top"><a id="a28b4bbda54d03f34c9ddd74a09af655e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>spawnFallingBlock</b> (int32_t bx, int32_t by, int32_t bz)</td></tr>
 <tr class="separator:a28b4bbda54d03f34c9ddd74a09af655e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -416,9 +419,12 @@ std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1tile_
 <tr class="memitem:a6bd86724206e0f10e15b50acfdd727ae"><td class="memItemLeft" align="right" valign="top"><a id="a6bd86724206e0f10e15b50acfdd727ae"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>invalidateTileHydration</b> (int32_t cx, int32_t cz)</td></tr>
 <tr class="separator:a6bd86724206e0f10e15b50acfdd727ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a228ca692a04d7c3f8c83e62267b8556e"><td class="memItemLeft" align="right" valign="top"><a id="a228ca692a04d7c3f8c83e62267b8556e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>unloadDistantChunks</b> (const std::vector&lt; <a class="el" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">ChunkViewer</a> &gt; &amp;viewers, int32_t margin=4)</td></tr>
-<tr class="separator:a228ca692a04d7c3f8c83e62267b8556e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab85550122384accc138c60880a9c9db9"><td class="memItemLeft" align="right" valign="top"><a id="ab85550122384accc138c60880a9c9db9"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>unloadDistantChunks</b> (const std::vector&lt; <a class="el" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">ChunkViewer</a> &gt; &amp;viewers, int32_t margin=4, size_t max_chunks=0)</td></tr>
+<tr class="separator:ab85550122384accc138c60880a9c9db9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0401a3229892d7faa2c27a167a866ff"><td class="memItemLeft" align="right" valign="top"><a id="ad0401a3229892d7faa2c27a167a866ff"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>chunkCount</b> () const</td></tr>
+<tr class="separator:ad0401a3229892d7faa2c27a167a866ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>

@@ -1,5 +1,14 @@
 var NAVTREEINDEX29 =
 {
+"structcursestone_1_1TickSample.html#a07191825b7112159653490c07b43e190":[10,0,0,50,0],
+"structcursestone_1_1TickSample.html#a0c64e9f01bd45123efc2eeafd867568b":[10,0,0,50,2],
+"structcursestone_1_1TickSample.html#a374b7dd64e07123b7d417d0a4010a24c":[10,0,0,50,4],
+"structcursestone_1_1TickSample.html#a390b64ee0cd939ee93dce5375b902c90":[10,0,0,50,6],
+"structcursestone_1_1TickSample.html#a6dd584ccf0069b75f68b53f1b2752fc3":[10,0,0,50,3],
+"structcursestone_1_1TickSample.html#a98062abe28bfd1d1161570dd1cd2e9f8":[10,0,0,50,1],
+"structcursestone_1_1TickSample.html#ae4b7db981623779eb1ba541c7261019d":[10,0,0,50,5],
+"structcursestone_1_1block_1_1BlockMiningRule.html":[10,0,0,0,34],
+"structcursestone_1_1block_1_1BlockMiningRule.html#a5b07f0b7448f94e461310cdd8a0de77b":[10,0,0,0,34,1],
 "structcursestone_1_1block_1_1BlockMiningRule.html#a6dfd81f6489047f2cbc1d09745a04f43":[10,0,0,0,34,0],
 "structcursestone_1_1block_1_1BlockMiningRule.html#aaa4aeb4ee7537aa9189205acd3a16d8e":[10,0,0,0,34,2],
 "structcursestone_1_1block_1_1BlockOrientation.html":[10,0,0,0,37],
@@ -240,14 +249,5 @@ var NAVTREEINDEX29 =
 "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a0ca23a57ee0ad30b6eee82baad86bc91":[10,0,0,12,6,0,3],
 "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a29cf5bef9d7282bcd01bf3287673d835":[10,0,0,12,6,0,4],
 "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#a86f4082a70998f5f0af7784b03c72b1a":[10,0,0,12,6,0,1],
-"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#aeae39e41227323c186a8ec6805055b16":[10,0,0,12,6,0,0],
-"structcursestone_1_1utils_1_1Config_1_1Node.html":[10,0,0,15,1,0],
-"structcursestone_1_1utils_1_1Config_1_1Node.html#a4d9b1c3dfa6e1935ec6b082902a540db":[10,0,0,15,1,0,0],
-"structcursestone_1_1utils_1_1Config_1_1Node.html#a4d9b1c3dfa6e1935ec6b082902a540dba46f3ea056caa3126b91f3f70beea068c":[10,0,0,15,1,0,0,2],
-"structcursestone_1_1utils_1_1Config_1_1Node.html#a4d9b1c3dfa6e1935ec6b082902a540dba4ee29ca12c7d126654bd0e5275de6135":[10,0,0,15,1,0,0,1],
-"structcursestone_1_1utils_1_1Config_1_1Node.html#a4d9b1c3dfa6e1935ec6b082902a540dbaf60357a8d17e45793298323f1b372a74":[10,0,0,15,1,0,0,0],
-"structcursestone_1_1utils_1_1Config_1_1Node.html#a5ea90de24b4b82c006091b1e1f1d39dc":[10,0,0,15,1,0,1],
-"structcursestone_1_1utils_1_1Config_1_1Node.html#a6303ff62013e79a682563c7de2263071":[10,0,0,15,1,0,4],
-"structcursestone_1_1utils_1_1Config_1_1Node.html#ac4aaddac8c21682d94b9276ac3e3069a":[10,0,0,15,1,0,3],
-"structcursestone_1_1utils_1_1Config_1_1Node.html#ae6f95d910b13039332dd5a60190ab3aa":[10,0,0,15,1,0,2]
+"structcursestone_1_1plugin_1_1PluginManager_1_1Info.html#aeae39e41227323c186a8ec6805055b16":[10,0,0,12,6,0,0]
 };

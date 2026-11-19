@@ -1,5 +1,15 @@
 var NAVTREEINDEX31 =
 {
+"structmcp__logger.html#aa7674bc32d9b510b6bfb19d71a7ae8af":[10,0,30,0],
+"structmcp__logger.html#ab6926272d6bf7b5d7e927d2026842b27":[10,0,30,3],
+"structmcp__logger.html#ab6beb2ee095c950a5b989242916e7511":[10,0,30,5],
+"structmcp__logger.html#ac014ce56189d8dd0ae242184472fc754":[10,0,30,8],
+"structmcp__logger.html#ac8f08d1e42bf510fcdb8c77a3b2da8b7":[10,0,30,9],
+"structmcp__logger.html#ae291da8fbb584073e5f2097195f16b5d":[10,0,30,1],
+"structmcp__main__logger.html":[10,0,31],
+"structmcp__main__logger.html#a5ebcbc18e30bae4e77137ed83ad16d60":[10,0,31,1],
+"structmcp__main__logger.html#a9d3464822ba7dcc800b3ef6e742a2714":[10,0,31,3],
+"structmcp__main__logger.html#ac324e8e55f06612005b5a7e776afa5ac":[10,0,31,2],
 "structmcp__main__logger.html#ad435843adf088f2ef5a4ed993ba26339":[10,0,31,0],
 "structmcp__mutex.html":[10,0,32],
 "structmcp__mutex.html#a7f138f3572ccbdff6d9c2550f8824677":[10,0,32,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX31 =
 "structvgen_1_1ChunkBlockPos.html#a0b7b54ab40099e8be9f1e608144ef62d":[10,0,2,192,14],
 "structvgen_1_1ChunkBlockPos.html#a1c87bab22fba1f55022e7ee3a7361470":[10,0,2,192,11],
 "structvgen_1_1ChunkBlockPos.html#a2a35b395fbad087e0d4bef1639155f87":[10,0,2,192,7],
-"structvgen_1_1ChunkBlockPos.html#a55d68c06c55cdf1060e2db25e7f7076e":[10,0,2,192,4],
-"structvgen_1_1ChunkBlockPos.html#a8615e6a63ffadc1fd06844fb9c70fba6":[10,0,2,192,9],
-"structvgen_1_1ChunkBlockPos.html#a98cd9051e5bb6f44ca13a3fc9df48795":[10,0,2,192,5],
-"structvgen_1_1ChunkBlockPos.html#aa47f454d871f0847a0cbc9f065df3fc7":[10,0,2,192,1],
-"structvgen_1_1ChunkBlockPos.html#aa7fe0fdeb4f47573e1d9c790aed8d95a":[10,0,2,192,13],
-"structvgen_1_1ChunkBlockPos.html#abd5d20a82a4705beb104c1f1c27c2837":[10,0,2,192,6],
-"structvgen_1_1ChunkBlockPos.html#acbc8db256e8cf7a8fb5c1761849e382a":[10,0,2,192,8],
-"structvgen_1_1ChunkBlockPos.html#ad17a3a44f7ebda6bdb6a9c084440f640":[10,0,2,192,12],
-"structvgen_1_1ChunkBlockPos.html#aea05cc230d57dc0c5adea5824a217992":[10,0,2,192,2],
-"structvgen_1_1ChunkBlockPos.html#aed1f194f228c4fe3620621546105932e":[10,0,2,192,3],
-"structvgen_1_1ChunkPos.html":[10,0,2,191]
+"structvgen_1_1ChunkBlockPos.html#a55d68c06c55cdf1060e2db25e7f7076e":[10,0,2,192,4]
 };

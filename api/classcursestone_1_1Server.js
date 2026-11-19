@@ -39,7 +39,7 @@ var classcursestone_1_1Server =
     [ "isOp", "classcursestone_1_1Server.html#ad2a55b55ba02898ba62b169d75d8c587", null ],
     [ "isRunning", "classcursestone_1_1Server.html#aab46dceda4b23078969d5dd9f6b54130", null ],
     [ "keepInventory", "classcursestone_1_1Server.html#a19946472a671ad3c619a5da242506202", null ],
-    [ "loadWorld", "classcursestone_1_1Server.html#a5b261a0ca53391d20529f4a03a265b76", null ],
+    [ "loadWorld", "classcursestone_1_1Server.html#a12d418e168c8b49f755bb7cfef700674", null ],
     [ "matchPlayer", "classcursestone_1_1Server.html#ac2da8678cca88b4f13236b1e2384286c", null ],
     [ "maxPlayers", "classcursestone_1_1Server.html#ad3e9f2be0ae337f9109f7847a8508c9e", null ],
     [ "netherEnabled", "classcursestone_1_1Server.html#ae494121ba6503d753feef574aa266b41", null ],

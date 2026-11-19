@@ -1,5 +1,6 @@
 var structCsWorldApi =
 [
+    [ "chunkCount", "structCsWorldApi.html#a4a85590f91999889d8dc5f4e67c2cb76", null ],
     [ "dimension", "structCsWorldApi.html#a08711b3cacbd23ef9f465adee405aa1b", null ],
     [ "entityTypeFromName", "structCsWorldApi.html#ae2d264e6af4224889d17082151a0561e", null ],
     [ "entityTypeName", "structCsWorldApi.html#a1c8dc6a8f7e0e01f3ec852b4bfed74da", null ],

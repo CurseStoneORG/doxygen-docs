@@ -1757,6 +1757,7 @@ var namespacecursestone =
     [ "VersionCommand", "classcursestone_1_1VersionCommand.html", "classcursestone_1_1VersionCommand" ],
     [ "WeatherCommand", "classcursestone_1_1WeatherCommand.html", "classcursestone_1_1WeatherCommand" ],
     [ "WorkbenchCommand", "classcursestone_1_1WorkbenchCommand.html", "classcursestone_1_1WorkbenchCommand" ],
+    [ "WorldsCommand", "classcursestone_1_1WorldsCommand.html", "classcursestone_1_1WorldsCommand" ],
     [ "SimpleCommandMap", "classcursestone_1_1SimpleCommandMap.html", "classcursestone_1_1SimpleCommandMap" ],
     [ "CrashDump", "classcursestone_1_1CrashDump.html", "classcursestone_1_1CrashDump" ],
     [ "IPlayer", "classcursestone_1_1IPlayer.html", "classcursestone_1_1IPlayer" ],
@@ -1775,5 +1776,6 @@ var namespacecursestone =
     [ "makePoseFlagEntry", "namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa", null ],
     [ "poseFlagByte", "namespacecursestone.html#adec485e08dd2b6fe4a06b0549e970f1a", null ],
     [ "registerDefaultCommands", "namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223", null ],
+    [ "kChunkEvictPerPass", "namespacecursestone.html#acf0f9dd15f903db5bb07e72a03e57bc6", null ],
     [ "kEyeHeight", "namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5", null ]
 ];
