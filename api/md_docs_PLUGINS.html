@@ -138,6 +138,8 @@ re-loads" window. For WorldEdit-style volume work use the bulk write:</p>
 </div><!-- fragment --><ul>
 <li><code>commands.register(name, opts, fn)</code>, <code>commands.reply(sender, msg)</code></li>
 <li><code>events.on(name, fn)</code> — PlayerJoin, PlayerQuit, PlayerChat, PlayerMove, PlayerDropItem, PlayerItemHeld, BlockBreak, BlockPlace, EntityDamage, EntityDamageByEntity, PlayerDeath, PlayerRespawn, PlayerBedEnter (alias <code>PlayerSleepInBed</code>), PlayerBedLeave, DoorToggle, PlayerInteract, InventoryOpen, InventoryClick, InventoryClose, WorldLoad (e.world name, e.dimension), WorldUnload (cancellable, e.world name)</li>
+</ul>
+<p><code>PlayerInteract</code> fires for every tap on a block, before the server acts — <code>e.action</code> is <code>left_click_block</code>, <code>right_click_block</code>, <code>left_click_air</code> or <code>right_click_air</code>; cancelling swallows the vanilla behavior (no break, no placement, no chest open). The left-hand event covers every break gesture: the desktop <code>START_BREAK</code> action packet fires it whatever face the client reports, and a creative-mode touch tap — which reaches the server as a bare <code>RemoveBlockPacket</code> with no face at all — fires it too (<code>e.face</code> is -1 then), so wand-style tools work identically on phones and desktops. A removal the client already announced with <code>START_BREAK</code> fires it once (the <code>START_BREAK</code> path), never twice.</p><ul>
 <li><code>scheduler.later/every/cancel</code></li>
 <li><code>data.read/write/exists/delete/list/loadYml/saveYml/loadJson/saveJson</code></li>
 <li><code>plugin.include/import/getResource/saveResource/listResources</code></li>
