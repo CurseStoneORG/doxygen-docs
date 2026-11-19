@@ -117,6 +117,7 @@ var hierarchy =
     [ "vgen::BlockSource", "classvgen_1_1BlockSource.html", null ],
     [ "vgen::BlockStateRef", "classvgen_1_1BlockStateRef.html", null ],
     [ "vgen::BlockVolume", "classvgen_1_1BlockVolume.html", null ],
+    [ "cursestone::world::World::BlockWrite", "structcursestone_1_1world_1_1World_1_1BlockWrite.html", null ],
     [ "vgen::BoundingBox", "classvgen_1_1BoundingBox.html", null ],
     [ "vgen::Brightness", "structvgen_1_1Brightness.html", null ],
     [ "cursestone::entity::ai::MobBrain::BroadcastCache", "structcursestone_1_1entity_1_1ai_1_1MobBrain_1_1BroadcastCache.html", null ],
@@ -882,6 +883,7 @@ var hierarchy =
       [ "cursestone::tile::TileSpawner", "classcursestone_1_1tile_1_1TileSpawner.html", null ]
     ] ],
     [ "vgen::TorchBlock", "classvgen_1_1TorchBlock.html", null ],
+    [ "cursestone::world::TouchedCell", "structcursestone_1_1world_1_1TouchedCell.html", null ],
     [ "cursestone::world::generator::VanillaNoise", "classcursestone_1_1world_1_1generator_1_1VanillaNoise.html", null ],
     [ "vgen::Vec2", "structvgen_1_1Vec2.html", null ],
     [ "cursestone::math::Vec3", "structcursestone_1_1math_1_1Vec3.html", null ],

@@ -531,6 +531,7 @@ var annotated_dup =
         [ "Location", "classcursestone_1_1world_1_1Location.html", "classcursestone_1_1world_1_1Location" ],
         [ "PortalRegistry", "classcursestone_1_1world_1_1PortalRegistry.html", "classcursestone_1_1world_1_1PortalRegistry" ],
         [ "Position", "classcursestone_1_1world_1_1Position.html", "classcursestone_1_1world_1_1Position" ],
+        [ "TouchedCell", "structcursestone_1_1world_1_1TouchedCell.html", "structcursestone_1_1world_1_1TouchedCell" ],
         [ "ArrowEntity", "structcursestone_1_1world_1_1ArrowEntity.html", "structcursestone_1_1world_1_1ArrowEntity" ],
         [ "SplashPotionEntity", "structcursestone_1_1world_1_1SplashPotionEntity.html", "structcursestone_1_1world_1_1SplashPotionEntity" ],
         [ "DroppedItem", "structcursestone_1_1world_1_1DroppedItem.html", "structcursestone_1_1world_1_1DroppedItem" ],

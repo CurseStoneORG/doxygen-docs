@@ -222,6 +222,12 @@ int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <tr class="memitem:a57ff853ef34e0c44807cb6113f4b9b6a"><td class="memItemLeft" align="right" valign="top">int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a57ff853ef34e0c44807cb6113f4b9b6a">fillBlocks</a> )(const char *world, int32_t x1, int32_t y1, int32_t z1, int32_t x2, int32_t y2, int32_t z2, int32_t id, int32_t meta)</td></tr>
 <tr class="memdesc:a57ff853ef34e0c44807cb6113f4b9b6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vanilla-shaped /fill bulk write between two corners (any order; Y clamped into the world).  <a href="structCsWorldApi.html#a57ff853ef34e0c44807cb6113f4b9b6a">More...</a><br /></td></tr>
 <tr class="separator:a57ff853ef34e0c44807cb6113f4b9b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a116f56214502ad89134b246a2432ceac"><td class="memItemLeft" align="right" valign="top">int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a116f56214502ad89134b246a2432ceac">setBlocks</a> )(const char *world, const int32_t *cells, int32_t cellCount)</td></tr>
+<tr class="memdesc:a116f56214502ad89134b246a2432ceac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bulk cell-list write: <code>cells</code> holds 5 int32 per cell (x, y, z, id, meta).  <a href="structCsWorldApi.html#a116f56214502ad89134b246a2432ceac">More...</a><br /></td></tr>
+<tr class="separator:a116f56214502ad89134b246a2432ceac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cffbe73369b697551e74d6e836027b6"><td class="memItemLeft" align="right" valign="top">int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a3cffbe73369b697551e74d6e836027b6">getBlocks</a> )(const char *world, int32_t x1, int32_t y1, int32_t z1, int32_t x2, int32_t y2, int32_t z2, int32_t *out, int32_t outCap)</td></tr>
+<tr class="memdesc:a3cffbe73369b697551e74d6e836027b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bulk region read: fills <code>out</code> with (id, meta) int32 pairs, row-major in the y -&gt; x -&gt; z order fillBlocks iterates; <code>outCap</code> is the int32 capacity of <code>out</code> (2 slots per cell are needed).  <a href="structCsWorldApi.html#a3cffbe73369b697551e74d6e836027b6">More...</a><br /></td></tr>
+<tr class="separator:a3cffbe73369b697551e74d6e836027b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
@@ -309,6 +315,23 @@ int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 </div>
 </div>
+<a id="a3cffbe73369b697551e74d6e836027b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cffbe73369b697551e74d6e836027b6">&#9670;&nbsp;</a></span>getBlocks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t(* CsWorldApi::getBlocks) (const char *world, int32_t x1, int32_t y1, int32_t z1, int32_t x2, int32_t y2, int32_t z2, int32_t *out, int32_t outCap)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bulk region read: fills <code>out</code> with (id, meta) int32 pairs, row-major in the y -&gt; x -&gt; z order fillBlocks iterates; <code>outCap</code> is the int32 capacity of <code>out</code> (2 slots per cell are needed). </p>
+<p>Cold chunks are made resident first, so a snapshot before a fill never sees phantom air. Returns the cells read, -1 when the region exceeds the cap or the buffer is too small. </p>
+
+</div>
+</div>
 <a id="a8fa34b790edc24fcc7b655d29b6572b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fa34b790edc24fcc7b655d29b6572b3">&#9670;&nbsp;</a></span>getFloatingTexts</h2>
 
@@ -338,6 +361,23 @@ int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>0 clear / 1 rain / 2 thunder, or -1 for unloaded worlds. </dd></dl>
+
+</div>
+</div>
+<a id="a116f56214502ad89134b246a2432ceac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a116f56214502ad89134b246a2432ceac">&#9670;&nbsp;</a></span>setBlocks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t(* CsWorldApi::setBlocks) (const char *world, const int32_t *cells, int32_t cellCount)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bulk cell-list write: <code>cells</code> holds 5 int32 per cell (x, y, z, id, meta). </p>
+<p>Later entries override earlier ones for the same cell; out-of-world cells and invalid id/meta are skipped. Same residency contract and viewer refresh as fillBlocks. Returns the cells actually written, -1 when <code>cellCount</code> exceeds the 32768-cell cap. </p>
 
 </div>
 </div>

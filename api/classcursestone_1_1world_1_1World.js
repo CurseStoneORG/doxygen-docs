@@ -1,5 +1,6 @@
 var classcursestone_1_1world_1_1World =
 [
+    [ "BlockWrite", "structcursestone_1_1world_1_1World_1_1BlockWrite.html", "structcursestone_1_1world_1_1World_1_1BlockWrite" ],
     [ "ChunkViewer", "structcursestone_1_1world_1_1World_1_1ChunkViewer.html", "structcursestone_1_1world_1_1World_1_1ChunkViewer" ],
     [ "FloatingTextSnapshot", "structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot.html", "structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot" ],
     [ "WeatherState", "classcursestone_1_1world_1_1World.html#a7c390f5e8ab751509f3508b58c9bb455", [
@@ -66,6 +67,7 @@ var classcursestone_1_1world_1_1World =
     [ "processLiquidWakes", "classcursestone_1_1world_1_1World.html#a08a701317220d034393ae481345a6ee2", null ],
     [ "provider", "classcursestone_1_1world_1_1World.html#a6d9360b0687ba34016d9b48a6f1e68c8", null ],
     [ "queueLiquidWake", "classcursestone_1_1world_1_1World.html#a4ebfb2a65dfc4af908d37337c43d546e", null ],
+    [ "readBlockRegion", "classcursestone_1_1world_1_1World.html#af6064c6842d8946e957e8e025f3efab6", null ],
     [ "registerLoader", "classcursestone_1_1world_1_1World.html#a816ae5b097bd1204fd07c53845151646", null ],
     [ "removeDroppedItem", "classcursestone_1_1world_1_1World.html#a4ead555a393108d9a87cc331da5fbe28", null ],
     [ "removeFloatingText", "classcursestone_1_1world_1_1World.html#a934bc88e98af1a910e1f8319760fe72b", null ],
@@ -78,6 +80,7 @@ var classcursestone_1_1world_1_1World =
     [ "sendMobsInChunk", "classcursestone_1_1world_1_1World.html#a3352eefc9984ae4dd905c6ed596df796", null ],
     [ "sendWeatherTo", "classcursestone_1_1world_1_1World.html#aa2420abb9a37767ed5401050c982a635", null ],
     [ "setBlock", "classcursestone_1_1world_1_1World.html#af19d0e99acc34eef7d8e8425cd068200", null ],
+    [ "setBlocks", "classcursestone_1_1world_1_1World.html#ae304bc4c85fa59b0a04bf7fa78c931d2", null ],
     [ "setFloatingText", "classcursestone_1_1world_1_1World.html#af34b77f2aa99ca55bc46e26dfad19aba", null ],
     [ "setFloatingTextBody", "classcursestone_1_1world_1_1World.html#a73c90fecb755f899a6d82bbc8209b50e", null ],
     [ "setFloatingTextFollow", "classcursestone_1_1world_1_1World.html#a8621bc7f70eb220b1365f10e8d69947b", null ],
