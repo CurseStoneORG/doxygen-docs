@@ -217,7 +217,7 @@ $(document).ready(function(){initNavTree('Chunk_8h_source.html',''); initResizab
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keywordtype">void</span> mcp_chunk_recalculate_height_map_column(<a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* c, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> z);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">// Global sky light: every allocated section&#39;s sky nibbles are filled</span></div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">// with 15 (Aquamarine populateSkyLight / setAllBlockSkyLight(15)</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">// with 15 (the populateSkyLight / setAllBlockSkyLight(15) reference</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">// semantics — no shadows anywhere, caves included). Unallocated</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// sections already read 15 through mcp_chunk_get_sky_light. Marks the</span></div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">// chunk light_populated but never dirty.</span></div>

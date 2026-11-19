@@ -145,7 +145,7 @@ Design — three layers</h1>
 <li><code>timeout</code> → the client stopped answering <b>entirely</b> (5 s RakNet sweep): the process is gone — device crash, OOM kill, or dead uplink;</li>
 <li><code>bad batch</code>, kicks, etc. → server-side closes.</li>
 </ul>
-<p>For every non-clean close the old code wrote a generic report. It now builds a PMMP-style dump instead:</p>
+<p>For every non-clean close the old code wrote a generic report. It now builds a self-contained forensics dump instead:</p>
 <ul>
 <li>classification ("client went silent — suspected client crash / dead
   uplink" for timeouts);</li>

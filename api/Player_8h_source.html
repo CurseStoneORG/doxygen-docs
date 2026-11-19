@@ -250,7 +250,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    }</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// Logs packet-handler errors and kicks the player with details.</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">void</span> handlePacketError(uint8_t pid, <span class="keyword">const</span> std::string&amp; what);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Logs a PacketSanitizer violation in PMMP style (packet name, field,</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// Logs a PacketSanitizer violation in forensics-report style (packet name, field,</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">// offending value, offset, hex dump) and records it in Diagnostics;</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="comment">// the packet has already been dropped by sendEncodedBody. Rate-limits</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="comment">// the crashdumps/ report file so a runaway producer cannot flood disk.</span></div>
