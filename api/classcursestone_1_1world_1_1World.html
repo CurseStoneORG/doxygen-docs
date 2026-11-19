@@ -98,6 +98,8 @@ $(document).ready(function(){initNavTree('classcursestone_1_1world_1_1World.html
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1world_1_1World_1_1ChunkViewer.html">ChunkViewer</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot.html">FloatingTextSnapshot</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -294,9 +296,18 @@ int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>spawnFloatingText<
 <tr class="memitem:a07caa1e1a96327f8a7bc19d053dd8e1c"><td class="memItemLeft" align="right" valign="top"><a id="a07caa1e1a96327f8a7bc19d053dd8e1c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>moveFloatingText</b> (int64_t id, double x, double y, double z)</td></tr>
 <tr class="separator:a07caa1e1a96327f8a7bc19d053dd8e1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af34b77f2aa99ca55bc46e26dfad19aba"><td class="memItemLeft" align="right" valign="top"><a id="af34b77f2aa99ca55bc46e26dfad19aba"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setFloatingText</b> (int64_t id, std::string text)</td></tr>
+<tr class="separator:af34b77f2aa99ca55bc46e26dfad19aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787c1f9fc17d12b74aabcda0f07bae47"><td class="memItemLeft" align="right" valign="top"><a id="a787c1f9fc17d12b74aabcda0f07bae47"></a>
+std::vector&lt; <a class="el" href="structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot.html">FloatingTextSnapshot</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>floatingTexts</b> () const</td></tr>
+<tr class="separator:a787c1f9fc17d12b74aabcda0f07bae47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a934bc88e98af1a910e1f8319760fe72b"><td class="memItemLeft" align="right" valign="top"><a id="a934bc88e98af1a910e1f8319760fe72b"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>removeFloatingText</b> (int64_t id)</td></tr>
 <tr class="separator:a934bc88e98af1a910e1f8319760fe72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f9527f21b3aedbe498cd86acf82296"><td class="memItemLeft" align="right" valign="top"><a id="a52f9527f21b3aedbe498cd86acf82296"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>tickFloatingTexts</b> (uint64_t current_tick)</td></tr>
+<tr class="separator:a52f9527f21b3aedbe498cd86acf82296"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acbf19dda59430ace4f71e6b93281cd64"><td class="memItemLeft" align="right" valign="top"><a id="acbf19dda59430ace4f71e6b93281cd64"></a>
 int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>spawnMob</b> (int32_t type, double x, double y, double z, float yaw=0.0f, float pitch=0.0f)</td></tr>
 <tr class="separator:acbf19dda59430ace4f71e6b93281cd64"><td class="memSeparator" colspan="2">&#160;</td></tr>

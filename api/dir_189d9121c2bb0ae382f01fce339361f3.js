@@ -8,6 +8,7 @@ var dir_189d9121c2bb0ae382f01fce339361f3 =
     [ "EnchantmentTableParticle.h", "EnchantmentTableParticle_8h_source.html", null ],
     [ "ExplodeParticle.h", "ExplodeParticle_8h_source.html", null ],
     [ "FlameParticle.h", "FlameParticle_8h_source.html", null ],
+    [ "FloatingTextParticle.h", "FloatingTextParticle_8h_source.html", null ],
     [ "GenericParticle.h", "GenericParticle_8h_source.html", null ],
     [ "HeartParticle.h", "HeartParticle_8h_source.html", null ],
     [ "HugeExplodeParticle.h", "HugeExplodeParticle_8h_source.html", null ],

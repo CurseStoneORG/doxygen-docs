@@ -18,6 +18,7 @@ var structCsWorldApi =
     [ "save", "structCsWorldApi.html#ac68c330dd79ba27065ed1db675bc151a", null ],
     [ "seed", "structCsWorldApi.html#a6406841d44d0a222457eb9fbde28ad3d", null ],
     [ "setBlock", "structCsWorldApi.html#ae4e920cbb7c6c719be92554d99c8fb59", null ],
+    [ "setFloatingText", "structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c", null ],
     [ "setSpawnPoint", "structCsWorldApi.html#a00f720c52bb241d41b3aebe6b04f49a5", null ],
     [ "setTime", "structCsWorldApi.html#a3a9065f743f11e82a9d4d92fafe5e97d", null ],
     [ "setWeather", "structCsWorldApi.html#a7c5627238a7d3ad5ad1bc54431453782", null ],

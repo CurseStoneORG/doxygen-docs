@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"classcursestone_1_1IPlayer.html#a7bb50c2ae28ca169ec9b56f081829199":[10,0,0,43,4],
 "classcursestone_1_1IPlayer.html#a824ddc5f0cde1c77902ce09764b3b23e":[10,0,0,43,2],
 "classcursestone_1_1IPlayer.html#a8e83cd8ca61c41087e3c579c340ead02":[10,0,0,43,0],
 "classcursestone_1_1IPlayer.html#ab038b86060f8e35478436e967012722f":[10,0,0,43,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "classcursestone_1_1Server.html#a1794d2af7c3c7724c5c16892ee6360fa":[10,0,0,48,32],
 "classcursestone_1_1Server.html#a19946472a671ad3c619a5da242506202":[10,0,0,48,38],
 "classcursestone_1_1Server.html#a1aab2754b141f53c8e05459967a83fcc":[10,0,0,48,11],
-"classcursestone_1_1Server.html#a1fe66b328025b7551c7908401c628ae0":[10,0,0,48,22],
-"classcursestone_1_1Server.html#a2324ebf78ec7d7832b6075e2c28f4a54":[10,0,0,48,34]
+"classcursestone_1_1Server.html#a1fe66b328025b7551c7908401c628ae0":[10,0,0,48,22]
 };

@@ -410,6 +410,8 @@ var hierarchy =
       [ "vgen::WaterlilyFeature", "classvgen_1_1WaterlilyFeature.html", null ]
     ] ],
     [ "cursestone::world::generator::FlatLayer", "structcursestone_1_1world_1_1generator_1_1FlatLayer.html", null ],
+    [ "cursestone::world::particle::FloatingTextParticle", "classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html", null ],
+    [ "cursestone::world::World::FloatingTextSnapshot", "structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot.html", null ],
     [ "vgen::FlowerBlock", "classvgen_1_1FlowerBlock.html", null ],
     [ "vgen::FoliageColor", "classvgen_1_1FoliageColor.html", null ],
     [ "cursestone::utils::FreeDeleter", "structcursestone_1_1utils_1_1FreeDeleter.html", null ],

@@ -1,19 +1,20 @@
 var NAVTREEINDEX3 =
 {
+"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa3fff5336c7c00e40d2bd48afdb3dc922":[9,0,0,2,0,8,1],
 "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aaa33192be96046c52b8f54b2a598d37db":[9,0,0,2,0,8,2],
 "Goal_8h_source.html":[11,0,0,3,0,0],
 "Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c":[9,0,0,2,0,11],
 "Goals_8h_source.html":[11,0,0,3,0,1],
 "GroundBushFeature_8h_source.html":[11,0,0,21,1,2,1,11],
 "HandlerList_8h_source.html":[11,0,0,4,9],
-"HeartParticle_8h_source.html":[11,0,0,21,3,9],
+"HeartParticle_8h_source.html":[11,0,0,21,3,10],
 "HellFireFeature_8h_source.html":[11,0,0,21,1,2,1,12],
 "HellRandomLevelSource_8h_source.html":[11,0,0,21,1,2,6,0],
 "HellSpringFeature_8h_source.html":[11,0,0,21,1,2,1,13],
 "HelpCommand_8h_source.html":[11,0,0,1,0,3],
 "HitResult_8h_source.html":[11,0,0,8,1],
 "Horse_8h_source.html":[11,0,0,3,1,8],
-"HugeExplodeParticle_8h_source.html":[11,0,0,21,3,10],
+"HugeExplodeParticle_8h_source.html":[11,0,0,21,3,11],
 "HugeMushroomFeature_8h_source.html":[11,0,0,21,1,2,1,14],
 "Human_8h_source.html":[11,0,0,3,10],
 "Husk_8h_source.html":[11,0,0,3,1,9],
@@ -87,7 +88,7 @@ var NAVTREEINDEX3 =
 "Info_8h.html#afcd7c5d14e973f4e7257e2bf1219f008":[9,0,0,9,0,89],
 "Info_8h.html#afea34d84c0dae356ccfdea6994cbc84c":[9,0,0,9,0,71],
 "Info_8h_source.html":[11,0,0,10,0,23],
-"InkParticle_8h_source.html":[11,0,0,21,3,11],
+"InkParticle_8h_source.html":[11,0,0,21,3,12],
 "InstallerLang_8h_source.html":[11,0,0,19,1],
 "Installer_8h_source.html":[11,0,0,19,0],
 "IntArrayTag_8cpp.html#a4816e2055fdab64517a557a29aca58fa":[9,0,0,8,28],
@@ -127,7 +128,7 @@ var NAVTREEINDEX3 =
 "ItemBlock_8h_source.html":[11,0,0,6,13],
 "ItemBow_8h_source.html":[11,0,0,6,14],
 "ItemBread_8h_source.html":[11,0,0,6,15],
-"ItemBreakParticle_8h_source.html":[11,0,0,21,3,12],
+"ItemBreakParticle_8h_source.html":[11,0,0,21,3,13],
 "ItemBucket_8h_source.html":[11,0,0,6,16],
 "ItemCarrot_8h_source.html":[11,0,0,6,17],
 "ItemCoal_8h_source.html":[11,0,0,6,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "ItemConstants_8h.html#a509a656dd1ebfa8d8606ca3b79be7890":[9,0,0,5,458],
 "ItemConstants_8h.html#a51c5f9e0962e3754520d9465b8dba60d":[9,0,0,5,218],
 "ItemConstants_8h.html#a51d05a2270f7da33df8653dce1fdfc76":[9,0,0,5,199],
-"ItemConstants_8h.html#a5302d1aa7de3795c58e124aa54216474":[9,0,0,5,269],
-"ItemConstants_8h.html#a541a5f4c52f4378040363170dfa74ceb":[9,0,0,5,276]
+"ItemConstants_8h.html#a5302d1aa7de3795c58e124aa54216474":[9,0,0,5,269]
 };

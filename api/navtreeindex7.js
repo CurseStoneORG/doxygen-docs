@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"PathSafe_8h_source.html":[11,0,0,14,8],
 "PerlinSimplexNoise_8h_source.html":[11,0,0,21,1,2,5,2],
 "PermissibleBase_8h_source.html":[11,0,0,11,4],
 "Permissible_8h_source.html":[11,0,0,11,3],
@@ -36,7 +37,7 @@ var NAVTREEINDEX7 =
 "PluginBase_8h_source.html":[11,0,0,14,9],
 "PluginManager_8h_source.html":[11,0,0,14,10],
 "PluginsCommand_8h_source.html":[11,0,0,1,0,8],
-"PortalParticle_8h_source.html":[11,0,0,21,3,24],
+"PortalParticle_8h_source.html":[11,0,0,21,3,25],
 "PortalRegistry_8h_source.html":[11,0,0,21,9],
 "Position_8h_source.html":[11,0,0,21,10],
 "Projectile_8h_source.html":[11,0,0,3,12],
@@ -45,7 +46,7 @@ var NAVTREEINDEX7 =
 "RCONInstance_8h_source.html":[11,0,0,10,3,1],
 "RCON_8h_source.html":[11,0,0,10,3,0],
 "Rabbit_8h_source.html":[11,0,0,3,1,19],
-"RainSplashParticle_8h_source.html":[11,0,0,21,3,25],
+"RainSplashParticle_8h_source.html":[11,0,0,21,3,26],
 "RakLibInterface_8h.html#a9e476cafc2a2e81f35fa257844ddc058":[9,0,0,9,11],
 "RakLibInterface_8h.html#a9e476cafc2a2e81f35fa257844ddc058a4265ba577a46ac6e0c31b50c952c86df":[9,0,0,9,11,1],
 "RakLibInterface_8h.html#a9e476cafc2a2e81f35fa257844ddc058af4a5016fbe87121c512654ade353d3c3":[9,0,0,9,11,0],
@@ -73,7 +74,7 @@ var NAVTREEINDEX7 =
 "RedstoneManager_8cpp.html#ad113dcaa6d6b8c9c8630344bdf91d851":[9,0,0,13,7],
 "RedstoneManager_8cpp.html#ad170bfe888ef5c26fba252f9f4746e50":[9,0,0,13,6],
 "RedstoneManager_8h_source.html":[11,0,0,15,0],
-"RedstoneParticle_8h_source.html":[11,0,0,21,3,26],
+"RedstoneParticle_8h_source.html":[11,0,0,21,3,27],
 "ReedsFeature_8h_source.html":[11,0,0,21,1,2,1,28],
 "RegionHillsLayer_8h_source.html":[11,0,0,21,1,2,3,13],
 "RegisteredListener_8h_source.html":[11,0,0,4,10],
@@ -119,12 +120,12 @@ var NAVTREEINDEX7 =
 "SimplexNoise_8h_source.html":[11,0,0,21,1,2,5,3],
 "SkeletonHorse_8h_source.html":[11,0,0,3,1,23],
 "Skeleton_8h_source.html":[11,0,0,3,1,22],
-"SlimeParticle_8h_source.html":[11,0,0,21,3,27],
+"SlimeParticle_8h_source.html":[11,0,0,21,3,28],
 "Slime_8h_source.html":[11,0,0,3,1,24],
-"SmokeParticle_8h_source.html":[11,0,0,21,3,28],
+"SmokeParticle_8h_source.html":[11,0,0,21,3,29],
 "SmoothLayer_8h_source.html":[11,0,0,21,1,2,3,19],
 "SmoothZoomLayer_8h_source.html":[11,0,0,21,1,2,3,20],
-"SnowballPoofParticle_8h_source.html":[11,0,0,21,3,29],
+"SnowballPoofParticle_8h_source.html":[11,0,0,21,3,30],
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26":[9,0,0,19,3,2],
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26a0ef1ff1c34d6f69ab1f1a99cd27a8c55":[9,0,0,19,3,2,13],
 "Sound_8h.html#ad5a8efb437405ffe6ca62fed11276c26a17d52e63c2e638bdb4c3a3df0a68c8ad":[9,0,0,19,3,2,16],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bada379f2fff04ba953e627c3a65f33b8ef4":[9,0,0,8,14,2],
 "Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bada453269b0fb89149f86b467fc61a40c09":[9,0,0,8,14,1],
 "Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bada81ae6a43e3213f41480b0fb65786c355":[9,0,0,8,14,11],
-"Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bada87689037f35b17ae3f32d07e1ce8e77f":[9,0,0,8,14,7],
-"Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bada9ae48843818e3d413822c1e7507fa5e7":[9,0,0,8,14,3]
+"Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bada87689037f35b17ae3f32d07e1ce8e77f":[9,0,0,8,14,7]
 };

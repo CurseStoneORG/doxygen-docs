@@ -1,6 +1,7 @@
 var classcursestone_1_1world_1_1World =
 [
     [ "ChunkViewer", "structcursestone_1_1world_1_1World_1_1ChunkViewer.html", "structcursestone_1_1world_1_1World_1_1ChunkViewer" ],
+    [ "FloatingTextSnapshot", "structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot.html", "structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot" ],
     [ "WeatherState", "classcursestone_1_1world_1_1World.html#a7c390f5e8ab751509f3508b58c9bb455", [
       [ "WEATHER_CLEAR", "classcursestone_1_1world_1_1World.html#a7c390f5e8ab751509f3508b58c9bb455a8a84a30f86940a307ab1d4cc05804b17", null ],
       [ "WEATHER_RAIN", "classcursestone_1_1world_1_1World.html#a7c390f5e8ab751509f3508b58c9bb455abe81a552a4a4c2529e4cc6f68a1f18aa", null ],
@@ -35,6 +36,7 @@ var classcursestone_1_1world_1_1World =
     [ "dropItemAt", "classcursestone_1_1world_1_1World.html#aa226b6e7a5d1409109c1dba1b0c4c9ac", null ],
     [ "droppedItem", "classcursestone_1_1world_1_1World.html#a96544ede3cedd1025d39eef7646622f5", null ],
     [ "droppedItems", "classcursestone_1_1world_1_1World.html#a3fc476422a77feda847aea52a5b18647", null ],
+    [ "floatingTexts", "classcursestone_1_1world_1_1World.html#a787c1f9fc17d12b74aabcda0f07bae47", null ],
     [ "flushLightForChunk", "classcursestone_1_1world_1_1World.html#aacb7c89b0940fcc9c405e38f02d7a6cb", null ],
     [ "generator", "classcursestone_1_1world_1_1World.html#af5bc73a71483e4a85dd26797091a52bc", null ],
     [ "getBlockData", "classcursestone_1_1world_1_1World.html#a1ecbceacc98d77768c3809655b6324ab", null ],
@@ -71,6 +73,7 @@ var classcursestone_1_1world_1_1World =
     [ "sendMobsInChunk", "classcursestone_1_1world_1_1World.html#a3352eefc9984ae4dd905c6ed596df796", null ],
     [ "sendWeatherTo", "classcursestone_1_1world_1_1World.html#aa2420abb9a37767ed5401050c982a635", null ],
     [ "setBlock", "classcursestone_1_1world_1_1World.html#af19d0e99acc34eef7d8e8425cd068200", null ],
+    [ "setFloatingText", "classcursestone_1_1world_1_1World.html#af34b77f2aa99ca55bc46e26dfad19aba", null ],
     [ "setFurnaceFlame", "classcursestone_1_1world_1_1World.html#ab5982568f10c6456e7a9bc373255f436", null ],
     [ "setSleepTicks", "classcursestone_1_1world_1_1World.html#aed2cddff1ea689d8e367a43183f50ac3", null ],
     [ "setSpawn", "classcursestone_1_1world_1_1World.html#a8472a9ee81cb175f10b15c6be154700f", null ],
@@ -88,6 +91,7 @@ var classcursestone_1_1world_1_1World =
     [ "tickArrows", "classcursestone_1_1world_1_1World.html#a447564455626c6b88cb87d4ac92ebd06", null ],
     [ "tickDroppedItems", "classcursestone_1_1world_1_1World.html#a85c5023a23dacd0369dc9f410155d3a7", null ],
     [ "tickFallingBlocks", "classcursestone_1_1world_1_1World.html#aaeb37b776e72f68f27f84814af0ec05b", null ],
+    [ "tickFloatingTexts", "classcursestone_1_1world_1_1World.html#a52f9527f21b3aedbe498cd86acf82296", null ],
     [ "tickSplashPotions", "classcursestone_1_1world_1_1World.html#aaa0624b007be46807836defc0887dde5", null ],
     [ "tickTiles", "classcursestone_1_1world_1_1World.html#a9443380e0e3fb5a1c20825f075409343", null ],
     [ "time", "classcursestone_1_1world_1_1World.html#aee96755f96eb2616f5ba078bb8142f80", null ],

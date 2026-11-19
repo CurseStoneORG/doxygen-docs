@@ -232,6 +232,7 @@ var NAVTREEINDEX2 =
 "FlameParticle_8h_source.html":[11,0,0,21,3,7],
 "Flat_8h_source.html":[11,0,0,21,1,4],
 "FloatTag_8h_source.html":[11,0,0,9,0,5],
+"FloatingTextParticle_8h_source.html":[11,0,0,21,3,8],
 "FlowerFeature_8h_source.html":[11,0,0,21,1,2,1,9],
 "FoliageColor_8h_source.html":[11,0,0,21,1,2,10],
 "ForestBiome_8h_source.html":[11,0,0,21,1,2,0,8],
@@ -242,12 +243,11 @@ var NAVTREEINDEX2 =
 "GamemodeCommand_8h_source.html":[11,0,0,1,0,1],
 "GenerationTask_8h_source.html":[11,0,0,21,1,5],
 "Generator_8h_source.html":[11,0,0,21,1,6],
-"GenericParticle_8h_source.html":[11,0,0,21,3,8],
+"GenericParticle_8h_source.html":[11,0,0,21,3,9],
 "GenericSound_8h_source.html":[11,0,0,21,4,0],
 "Ghast_8h_source.html":[11,0,0,3,1,7],
 "GiveCommand_8h_source.html":[11,0,0,1,0,2],
 "GlowStoneFeature_8h_source.html":[11,0,0,21,1,2,1,10],
 "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310a":[9,0,0,2,0,8],
-"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa0932618710423128b2436086319dc7bb":[9,0,0,2,0,8,0],
-"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa3fff5336c7c00e40d2bd48afdb3dc922":[9,0,0,2,0,8,1]
+"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa0932618710423128b2436086319dc7bb":[9,0,0,2,0,8,0]
 };

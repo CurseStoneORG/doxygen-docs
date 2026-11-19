@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1item_1_1ItemDiamondHelmet.html#a22d549ee132e6266f9532fb0e4614845":[10,0,0,5,28,0],
 "classcursestone_1_1item_1_1ItemDiamondHelmet.html#ad85c66a91a299a90c7008a8fb41b01bc":[10,0,0,5,28,1],
 "classcursestone_1_1item_1_1ItemDiamondLeggings.html":[10,0,0,5,29],
 "classcursestone_1_1item_1_1ItemDiamondLeggings.html#a079ec14546f678e3e9b655d4b0ea4a81":[10,0,0,5,29,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1item_1_1ItemWheatSeeds.html#a199f45e78eb65929089a3069ab5112a7":[10,0,0,5,101,1],
 "classcursestone_1_1item_1_1ItemWheatSeeds.html#ad0d091e5974b3f414d555959fc5e540a":[10,0,0,5,101,0],
 "classcursestone_1_1item_1_1enchantment_1_1Enchantment.html":[10,0,0,5,0,0],
-"classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#a94476487df485fed720917015a912ced":[10,0,0,5,0,0,1],
-"classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#a9e85a31c4c6b7a86d186aa7d26e4ea20":[10,0,0,5,0,0,0]
+"classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#a94476487df485fed720917015a912ced":[10,0,0,5,0,0,1]
 };

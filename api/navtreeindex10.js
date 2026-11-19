@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"classcursestone_1_1Server.html#a2324ebf78ec7d7832b6075e2c28f4a54":[10,0,0,48,34],
 "classcursestone_1_1Server.html#a2795f440110adef0be95b3207e3169ab":[10,0,0,48,58],
 "classcursestone_1_1Server.html#a3025620cad66c5fd9bcef5bcfd315f7e":[10,0,0,48,7],
 "classcursestone_1_1Server.html#a34b54c13de06f685cf70abc410dd325a":[10,0,0,48,19],
@@ -248,6 +249,5 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1block_1_1BlockNetherrack.html":[10,0,0,0,35],
 "classcursestone_1_1block_1_1BlockNetherrack.html#a75b3adb8f062193c6a66237a7c31c3c4":[10,0,0,0,35,1],
 "classcursestone_1_1block_1_1BlockNetherrack.html#a851ec60368b39bcb803e93517e1b9f85":[10,0,0,0,35,0],
-"classcursestone_1_1block_1_1BlockObsidian.html":[10,0,0,0,36],
-"classcursestone_1_1block_1_1BlockObsidian.html#a2371dba8a662015cea685741f746f2e6":[10,0,0,0,36,1]
+"classcursestone_1_1block_1_1BlockObsidian.html":[10,0,0,0,36]
 };

@@ -190,6 +190,10 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a1c8dc6a8f7e0e01f3ec852b4bfed74da">entityTypeName</a> )(int32_t type)</td></tr>
 <tr class="memdesc:a1c8dc6a8f7e0e01f3ec852b4bfed74da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Canonical lowercase name for a network id; NULL when unknown. <br /></td></tr>
 <tr class="separator:a1c8dc6a8f7e0e01f3ec852b4bfed74da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4873894f316b3a3045537728a60ca10c"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c">setFloatingText</a> )(const char *world, int64_t id, const char *text)</td></tr>
+<tr class="memdesc:a4873894f316b3a3045537728a60ca10c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces a floating text's content; '<br  />
+' splits it into title + body lines and only changed lines reach the wire.  <a href="structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c">More...</a><br /></td></tr>
+<tr class="separator:a4873894f316b3a3045537728a60ca10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
@@ -254,6 +258,24 @@ const char *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
       </table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>0 clear / 1 rain / 2 thunder, or -1 for unloaded worlds. </dd></dl>
+
+</div>
+</div>
+<a id="a4873894f316b3a3045537728a60ca10c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4873894f316b3a3045537728a60ca10c">&#9670;&nbsp;</a></span>setFloatingText</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::setFloatingText) (const char *world, int64_t id, const char *text)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Replaces a floating text's content; '<br  />
+' splits it into title + body lines and only changed lines reach the wire. </p>
+<p>False for unknown ids. </p>
 
 </div>
 </div>

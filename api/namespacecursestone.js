@@ -1610,6 +1610,7 @@ var namespacecursestone =
         [ "EnchantmentTableParticle", "classcursestone_1_1world_1_1particle_1_1EnchantmentTableParticle.html", "classcursestone_1_1world_1_1particle_1_1EnchantmentTableParticle" ],
         [ "ExplodeParticle", "classcursestone_1_1world_1_1particle_1_1ExplodeParticle.html", "classcursestone_1_1world_1_1particle_1_1ExplodeParticle" ],
         [ "FlameParticle", "classcursestone_1_1world_1_1particle_1_1FlameParticle.html", "classcursestone_1_1world_1_1particle_1_1FlameParticle" ],
+        [ "FloatingTextParticle", "classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html", "classcursestone_1_1world_1_1particle_1_1FloatingTextParticle" ],
         [ "GenericParticle", "classcursestone_1_1world_1_1particle_1_1GenericParticle.html", "classcursestone_1_1world_1_1particle_1_1GenericParticle" ],
         [ "HeartParticle", "classcursestone_1_1world_1_1particle_1_1HeartParticle.html", "classcursestone_1_1world_1_1particle_1_1HeartParticle" ],
         [ "HugeExplodeParticle", "classcursestone_1_1world_1_1particle_1_1HugeExplodeParticle.html", "classcursestone_1_1world_1_1particle_1_1HugeExplodeParticle" ],

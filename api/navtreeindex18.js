@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"classcursestone_1_1plugin_1_1NativePlugin.html#a5c7430338e356752b5662ecc5f9930c1":[10,0,0,12,4,14],
 "classcursestone_1_1plugin_1_1NativePlugin.html#a8e65d29b0b1932d0e753e42110297b96":[10,0,0,12,4,8],
 "classcursestone_1_1plugin_1_1NativePlugin.html#aa2a6c4333918de165a4e84b5443765d5":[10,0,0,12,4,4],
 "classcursestone_1_1plugin_1_1NativePlugin.html#ab908ae67722a9676062f7e8442900d61":[10,0,0,12,4,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "classcursestone_1_1world_1_1Location.html#a0e43bb2fdfe93aa556cd130905e868a2":[10,0,0,17,7,1],
 "classcursestone_1_1world_1_1Location.html#a7c6bc818810ca955e957cebb2ff18ed4":[10,0,0,17,7,0],
 "classcursestone_1_1world_1_1Location.html#aa9c3c79f3a734a3a0d0d681a8d7843f7":[10,0,0,17,7,5],
-"classcursestone_1_1world_1_1Location.html#ac0e4c6fe4c3916d911877ea0581554e3":[10,0,0,17,7,3],
-"classcursestone_1_1world_1_1Location.html#ad2ac1639d8f16da349474b161386aa2d":[10,0,0,17,7,6]
+"classcursestone_1_1world_1_1Location.html#ac0e4c6fe4c3916d911877ea0581554e3":[10,0,0,17,7,3]
 };
