@@ -17,6 +17,5 @@ var dir_3bb61118b712c682ac18a1a005592738 =
     [ "TimeCommand.h", "TimeCommand_8h_source.html", null ],
     [ "VersionCommand.h", "VersionCommand_8h_source.html", null ],
     [ "WeatherCommand.h", "WeatherCommand_8h_source.html", null ],
-    [ "WorkbenchCommand.h", "WorkbenchCommand_8h_source.html", null ],
-    [ "WorldsCommand.h", "WorldsCommand_8h_source.html", null ]
+    [ "WorkbenchCommand.h", "WorkbenchCommand_8h_source.html", null ]
 ];

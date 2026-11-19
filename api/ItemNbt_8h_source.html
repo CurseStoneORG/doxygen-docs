@@ -185,7 +185,13 @@ $(document).ready(function(){initNavTree('ItemNbt_8h_source.html',''); initResiz
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// yields an empty blob (an unnamed item has no NBT at all).</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;std::string buildDisplayNbt(<span class="keyword">const</span> std::string&amp; name);</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// Extracts the visible name back out of a buildDisplayNbt() blob — the</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// exact inverse, so plugins can identify custom-named tools (a</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// WorldEdit-style brush stick) through the item they hold. Returns &quot;&quot;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment">// when the blob is empty or does not carry the {display:{Name}} shape.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;std::string readDisplayName(<span class="keyword">const</span> std::string&amp; nbt);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;} <span class="comment">// namespace cursestone::item</span></div>
 <div class="ttc" id="aclasscursestone_1_1nbt_1_1Tag_html"><div class="ttname"><a href="classcursestone_1_1nbt_1_1Tag.html">cursestone::nbt::Tag</a></div><div class="ttdef"><b>Definition:</b> Tag.h:65</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

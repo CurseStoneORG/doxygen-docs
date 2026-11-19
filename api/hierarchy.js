@@ -175,7 +175,6 @@ var hierarchy =
       [ "cursestone::VersionCommand", "classcursestone_1_1VersionCommand.html", null ],
       [ "cursestone::WeatherCommand", "classcursestone_1_1WeatherCommand.html", null ],
       [ "cursestone::WorkbenchCommand", "classcursestone_1_1WorkbenchCommand.html", null ],
-      [ "cursestone::WorldsCommand", "classcursestone_1_1WorldsCommand.html", null ],
       [ "cursestone::plugin::LuaCommand", "classcursestone_1_1plugin_1_1LuaCommand.html", null ],
       [ "cursestone::plugin::NativeCommand", "classcursestone_1_1plugin_1_1NativeCommand.html", null ]
     ] ],

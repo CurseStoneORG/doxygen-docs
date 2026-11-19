@@ -21,6 +21,5 @@ var searchData=
   ['worldloadevent_1759',['WorldLoadEvent',['../classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html',1,'cursestone::event::world']]],
   ['worldprovider_1760',['WorldProvider',['../classcursestone_1_1world_1_1format_1_1WorldProvider.html',1,'cursestone::world::format']]],
   ['worldprovidermanager_1761',['WorldProviderManager',['../classcursestone_1_1world_1_1format_1_1WorldProviderManager.html',1,'cursestone::world::format']]],
-  ['worldscommand_1762',['WorldsCommand',['../classcursestone_1_1WorldsCommand.html',1,'cursestone']]],
-  ['worldunloadevent_1763',['WorldUnloadEvent',['../classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html',1,'cursestone::event::world']]]
+  ['worldunloadevent_1762',['WorldUnloadEvent',['../classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html',1,'cursestone::event::world']]]
 ];

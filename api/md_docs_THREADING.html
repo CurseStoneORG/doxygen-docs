@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('md_docs_THREADING.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Investigation notes, written after reviewing the historical threaded PHP server's changelog (1.0.7 → 1.1.4) against CurseStone's current threading. That server is PHP-based, so every change it shipped has a PHP-core shape (workers from the PHP thread extension, <code>AsyncTask</code>); the notes below translate the <em>ideas</em> into CurseStone's C++ reality and mark what we already have, what is worth adopting and what to avoid — with the reasons the historical design itself found out the hard way.</p>
-<h1><a class="anchor" id="autotoc_md201"></a>
+<h1><a class="anchor" id="autotoc_md202"></a>
 1. CurseStone threading snapshot (current tree)</h1>
 <p>Facts verified against the code, not aspirations:</p>
 <table class="markdownTable">
@@ -115,7 +115,7 @@ $(document).ready(function(){initNavTree('md_docs_THREADING.html',''); initResiz
 <td class="markdownTableBodyNone">Entities (mobs)   </td><td class="markdownTableBodyNone">No AI, no tick — a standing mob costs one <code>AddEntityPacket</code> on spawn and nothing per tick.   </td></tr>
 </table>
 <p>Threads that exist: main tick, RakLib, Anvil writer, AsyncPool (N workers), scheduler AsyncWorker, console <code>CommandReader</code>, workbench watchdog, shutdown watchdog. None of them is named (<code>pthread_setname</code>).</p>
-<h1><a class="anchor" id="autotoc_md202"></a>
+<h1><a class="anchor" id="autotoc_md203"></a>
 2. The historical thread moves and their outcomes</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -136,21 +136,21 @@ $(document).ready(function(){initNavTree('md_docs_THREADING.html',''); initResiz
 <td class="markdownTableBodyNone">Mobs tick only when a player is within render distance, stop when none   </td><td class="markdownTableBodyNone">1.1.1   </td><td class="markdownTableBodyNone">Kept   </td></tr>
 </table>
 <p>The two reverts are the most valuable entries in the whole list.</p>
-<h1><a class="anchor" id="autotoc_md203"></a>
+<h1><a class="anchor" id="autotoc_md204"></a>
 3. Lessons, applied to CurseStone</h1>
-<h2><a class="anchor" id="autotoc_md204"></a>
+<h2><a class="anchor" id="autotoc_md205"></a>
 Lesson 1 — thread I/O, not game state</h2>
 <p>The historical design's kept moves thread <em>I/O or isolated work</em>: chunk generation, disk writes, packet encoding, compression. Its reverted moves thread <em>game state</em>: the world provider before a storage boundary existed (1.1.3 beta) and entity movement (1.1.0 → 1.1.3). Both reverts came back to the main thread.</p>
 <p>CurseStone already matches the kept side: generation and disk loads run on workers behind <code>ChunkManager</code>, saves run on the Anvil writer, RakLib owns the sockets. The reverted side is also already avoided: entity movement never left the main thread and must not — with mobs currently not ticking at all, there is nothing to gain and the coordination cost the historical design measured is what we would pay.</p>
-<h2><a class="anchor" id="autotoc_md205"></a>
+<h2><a class="anchor" id="autotoc_md206"></a>
 Lesson 2 — extract the storage boundary BEFORE threading the provider</h2>
 <p>The historical design tried the async provider first (1.1.3 beta), hit "a large
 amount of bugs and inexplicable behaviors", reverted, extracted <code>ChunkStorage</code> out of <code>Level</code>, and only then reimplemented the multithreaded provider successfully (1.1.4). The boundary was the prerequisite, not the optimization.</p>
 <p>CurseStone's <code>ChunkManager</code> was designed as exactly that boundary from the start (workers produce chunks, one install callback owns every transition onto the main thread), which is why our async load+generate path did not need a revert. Keep the rule when extending: workers may <em>produce</em> chunk data, only the main thread may <em>install</em> it.</p>
-<h2><a class="anchor" id="autotoc_md206"></a>
+<h2><a class="anchor" id="autotoc_md207"></a>
 Lesson 3 — budget small stateful work instead of threading it</h2>
 <p>The historical water/lava lag fix (1.1.2) was not a thread — it was a per-second update cap. CurseStone already does the same for light (<code>drainLightPending(budget, max_ms)</code>) and liquid wakes (<code>processLiquidWakes(budget)</code>). Any future stateful per-block or per-tile catch-up should follow the same pattern before anyone reaches for a worker.</p>
-<h2><a class="anchor" id="autotoc_md207"></a>
+<h2><a class="anchor" id="autotoc_md208"></a>
 Lesson 4 — entity ticking needs a budget and a radius the day AI lands</h2>
 <p>Two historical changes matter the moment mobs start ticking:</p>
 <ul>
@@ -159,24 +159,24 @@ Lesson 4 — entity ticking needs a budget and a radius the day AI lands</h2>
   this chunk" is O(chunks in range) — the gating is nearly free to implement on top of the existing index.</li>
 </ul>
 <p>Designing AI with these two from the first commit avoids rework.</p>
-<h2><a class="anchor" id="autotoc_md208"></a>
+<h2><a class="anchor" id="autotoc_md209"></a>
 Lesson 5 — name your threads</h2>
 <p>The historical design made every thread visible by name in htop (1.0.9). CurseStone creates at least eight threads and none is named, which makes <code>htop</code>, <code>perf</code> and crash dumps harder to read than they need to be. <code>pthread_setname_np()</code> per thread (POSIX only — guard for Windows) is a few lines total and zero risk. This is the cheapest item in this file and is recommended as the first one to pick up.</p>
-<h1><a class="anchor" id="autotoc_md209"></a>
+<h1><a class="anchor" id="autotoc_md210"></a>
 4. What is still worth adopting (ranked)</h1>
 <ol type="1">
 <li><b>Named threads</b> (<code>pthread_setname_np</code> on RakLib, Anvil writer, AsyncPool workers, CommandReader, watchdogs). Trivial, observability only, directly from the historical 1.0.9 design. — <b>IMPLEMENTED, see §7.</b></li>
 <li><b>Chunk network serialization off the tick thread.</b> This is the remaining historical-design win. <code>mcp_chunk_network_serialize</code> runs inline in the stream path for up to 4 chunks per tick on the main thread. A chunk is an immutable snapshot the moment it is selected for streaming, so its serialization can ride the AsyncPool with <code>onCompletion</code> on the main thread (the scheduler already provides that shape). One caveat to design for: AsyncPool completion order is not submission order, and chunk packets to one client are ordered on the wire — tag each job with a per-player sequence number and have the completion callback enqueue in sequence order (a small reordering buffer), or dedicate one encode worker per player. — <b>IMPLEMENTED, see §7</b> (snapshot + sequence reorder buffer, as designed here).</li>
 <li><b>Entity update budget + render-distance gating</b> when AI lands (historical 1.1.4 / 1.1.1 moves). Cheap to build on the chunk-indexed mob registry; expensive to retrofit later.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md210"></a>
+<h1><a class="anchor" id="autotoc_md211"></a>
 5. What NOT to adopt</h1>
 <ul>
 <li><b>Threading entity movement</b> — the historical design shipped it (1.1.0) and reverted it as inefficient (1.1.3). CurseStone has nothing to gain while mobs do not tick, and player movement is main-thread state.</li>
 <li><b>Re-attempting an async world provider without the storage boundary</b> — already the CurseStone design, but the rule matters for future work on tile/entity persistence: produce on workers, install on main.</li>
 <li><b>PHP-core-specific items</b> (OPcache/JIT boot fixes, <code>/status</code> RAM per PHP files, PHP thread extension upgrades) have no C++ counterpart worth translating.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md211"></a>
+<h1><a class="anchor" id="autotoc_md212"></a>
 6. Status against the historical kept list</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -200,13 +200,13 @@ Lesson 5 — name your threads</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Chunk encode off-thread   </td><td class="markdownTableBodyNone"><b>Implemented</b> — §7 (snapshot + per-player reorder buffer)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md212"></a>
+<h1><a class="anchor" id="autotoc_md213"></a>
 7. Implementation status (named threads + async chunk encode)</h1>
 <p>Both §4 items 1 and 2 are implemented in the tree. No public API changed — the Lua and native plugin surfaces are untouched.</p>
-<h2><a class="anchor" id="autotoc_md213"></a>
+<h2><a class="anchor" id="autotoc_md214"></a>
 Named threads</h2>
 <p><code>mcp_set_thread_name()</code> in <code><a class="el" href="ThreadPort_8h.html" title="Cross-platform mutex, condition variable and thread handle.">utils/ThreadPort.h</a></code>: POSIX uses <code>pthread_setname_np(pthread_self(), ...)</code>, Windows resolves <code>SetThreadDescription</code> dynamically (a no-op on pre-1607 Windows so the binary still loads), and names are truncated to the Linux 15-byte limit. Applied to every thread the server creates: <code>CS-Main</code> (tick loop), <code>CS-RakLib</code>, <code>CS-Anvil</code>, <code>CS-Pool-N</code> (AsyncPool workers), <code>CS-SchedAsync</code> (scheduler worker), <code>CS-Console</code>, <code>CS-Workbench</code>, <code>CS-Shutdown</code>. Verified live: <code>htop</code>/<code>/proc/&lt;pid&gt;/task/*/comm</code> now show these names, which is also how the tick-thread CPU numbers below were measured.</p>
-<h2><a class="anchor" id="autotoc_md214"></a>
+<h2><a class="anchor" id="autotoc_md215"></a>
 Async chunk encode</h2>
 <p>The stream loop (<code>Player::onUpdate</code>) no longer runs the wire transposition inline. Per chunk, on the tick thread:</p>
 <ol type="1">
@@ -223,7 +223,7 @@ Async chunk encode</h2>
 <li>Slots are only appended/popped on the main thread; workers only fill their own slot's fields under the pipeline mutex. The pipeline mutex is leaf-locked (never held while taking world or player locks).</li>
 <li>The outstanding-encode cap (24 per player) bounds the reorder buffer and the wire buffers (~24 x 83 KB worst case per player); a saturated or stopped pool falls back to an inline encode, so single-threaded boots and tests keep working.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md215"></a>
+<h2><a class="anchor" id="autotoc_md216"></a>
 Measurements</h2>
 <ul>
 <li>Offline (<code>tools/chunk_serialize_bench.cpp</code>, 400 iters, 8 allocated sections): live serialize <b>0.082 ms/chunk</b> on the calling thread; the new path costs the tick thread <b>0.003 ms/chunk</b> (snapshot only) and the worker <b>0.081 ms/chunk</b> — a 96% reduction of the main-thread serialize cost, ~0.08 ms saved per chunk streamed.</li>
@@ -232,12 +232,12 @@ Measurements</h2>
 <li>ASan+UBSan full session (<code>scripts/cs_build_asan.sh</code>, login → stream 289 chunks → clean shutdown): <b>zero findings in the touched files</b>. The only UBSan reports are the pre-existing signed-hash-overflow notices inside the world generator (<code>vgen/**</code>), untouched here.</li>
 <li>Protocol-84 bot matrix (<code>test/bot</code>): <code>login</code>, <code>chunks</code>, <code>move</code>, <code>malformed</code> all PASS on the new build.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md216"></a>
+<h2><a class="anchor" id="autotoc_md217"></a>
 Simultaneous joins: the "single-streamer" observation, root-caused</h2>
 <p>The §7 measurements noted that with N simultaneous joins only ONE client streamed its full view while the others stayed at 0-4 chunks. That observation was an artifact of the TEST HARNESS, not a server defect.</p>
 <p>Root cause: every bot instance sent the same hardcoded client UUID (<code>123e4567-e89b-12d3-a456-426614174000</code>). The server's duplicate-session kick (<code>PlayerLogin.cpp</code>, "logged in from another location") — correct vanilla behavior for the same identity logging in twice — therefore kicked every earlier login mid-stream as the wave connected. The kicked sessions were closed server-side; the bots never noticed and sat through the window counting 0-4 chunks. The only surviving session was the last to log in, which is exactly the observed "1 of N streams" pattern. Reproduced deterministically: 8 bots with distinct usernames but the shared UUID → 7 kicks, 1 spawn, 289 chunks total, TPS 20/20.</p>
 <p>Fix: <code>test/bot/Bot.cpp</code> derives each bot's UUID deterministically from its username (FNV-1a, v4-shaped). The server's duplicate-identity kick is unchanged — it is correct behavior and real 0.15.10 clients never share a UUID.</p>
-<h2><a class="anchor" id="autotoc_md217"></a>
+<h2><a class="anchor" id="autotoc_md218"></a>
 Multi-player concurrency verification (server unchanged)</h2>
 <p>With per-bot identities, all of the suspicion targets below were checked in code AND under load; no server change was needed:</p>
 <ul>
@@ -263,7 +263,7 @@ Multi-player concurrency verification (server unchanged)</h2>
 <td class="markdownTableBodyNone">16-bot storm on the ASan+UBSan build   </td><td class="markdownTableBodyNone">zero new findings; only the pre-existing signed-wrap notices in <code>vgen/newbiome/Layer.cpp</code>   </td></tr>
 </table>
 <p>The spawn-time and MSPT figures above were sampled through the console <code>status</code> command every 5 s and per-bot client timestamps.</p>
-<h1><a class="anchor" id="autotoc_md218"></a>
+<h1><a class="anchor" id="autotoc_md219"></a>
 8. Mob AI (added after the join-storm study)</h1>
 <p>THREADING.md Lesson 4 ("entity ticking needs a budget and a radius the
 day AI lands") is implemented in <code>src/entity/ai/</code> and documented in <code>docs/MOB_AI.md</code>. The threading shape, verified against the code:</p>

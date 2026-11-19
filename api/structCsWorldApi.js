@@ -4,6 +4,7 @@ var structCsWorldApi =
     [ "dimension", "structCsWorldApi.html#a08711b3cacbd23ef9f465adee405aa1b", null ],
     [ "entityTypeFromName", "structCsWorldApi.html#ae2d264e6af4224889d17082151a0561e", null ],
     [ "entityTypeName", "structCsWorldApi.html#a1c8dc6a8f7e0e01f3ec852b4bfed74da", null ],
+    [ "fillBlocks", "structCsWorldApi.html#a57ff853ef34e0c44807cb6113f4b9b6a", null ],
     [ "getBlock", "structCsWorldApi.html#a1aa41b71be5afe3c33c95b2a37eb1e7c", null ],
     [ "getBlockMeta", "structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f", null ],
     [ "getEntity", "structCsWorldApi.html#ae7b60215334aa5f519efbba2549e1064", null ],
