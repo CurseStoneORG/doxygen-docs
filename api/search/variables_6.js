@@ -1,17 +1,17 @@
 var searchData=
 [
-  ['generator_1901',['generator',['../structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c',1,'cursestone::world::WorldConfig']]],
-  ['getaddress_1902',['getAddress',['../structCsPlayerApi.html#a9089f90b9f36840bb824750a62ddd13e',1,'CsPlayerApi']]],
-  ['getblock_1903',['getBlock',['../structCsWorldApi.html#a1aa41b71be5afe3c33c95b2a37eb1e7c',1,'CsWorldApi']]],
-  ['getblockmeta_1904',['getBlockMeta',['../structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f',1,'CsWorldApi']]],
-  ['getblocks_1905',['getBlocks',['../structCsWorldApi.html#a3cffbe73369b697551e74d6e836027b6',1,'CsWorldApi']]],
-  ['getentity_1906',['getEntity',['../structCsWorldApi.html#ae7b60215334aa5f519efbba2549e1064',1,'CsWorldApi']]],
-  ['getexperiencelevel_1907',['getExperienceLevel',['../structCsPlayerApi.html#a1752661c1493f2d0a2ebfd408cebb707',1,'CsPlayerApi']]],
-  ['getfloatingtextex_1908',['getFloatingTextEx',['../structCsWorldApi.html#aa656a8709076f56755d1b89db3f9323a',1,'CsWorldApi']]],
-  ['getfloatingtexts_1909',['getFloatingTexts',['../structCsWorldApi.html#a8fa34b790edc24fcc7b655d29b6572b3',1,'CsWorldApi']]],
-  ['getgamemode_1910',['getGamemode',['../structCsPlayerApi.html#a4535518b05131599bf5df4b6677f421c',1,'CsPlayerApi']]],
-  ['gethealth_1911',['getHealth',['../structCsPlayerApi.html#aeba1c33bea464e17a96674bbaea7e83c',1,'CsPlayerApi']]],
-  ['getspawnpoint_1912',['getSpawnPoint',['../structCsPlayerApi.html#a73e5ab6a42492c529c55b2cf710dbd96',1,'CsPlayerApi']]],
-  ['getweather_1913',['getWeather',['../structCsWorldApi.html#a62261493a35b1533a55a9fa342962c12',1,'CsWorldApi']]],
-  ['giveitem_1914',['giveItem',['../structCsPlayerApi.html#afa26c1c6c4c9e842a5b40cce55ef5847',1,'CsPlayerApi']]]
+  ['generator_1909',['generator',['../structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c',1,'cursestone::world::WorldConfig']]],
+  ['getaddress_1910',['getAddress',['../structCsPlayerApi.html#a9089f90b9f36840bb824750a62ddd13e',1,'CsPlayerApi']]],
+  ['getblock_1911',['getBlock',['../structCsWorldApi.html#a1aa41b71be5afe3c33c95b2a37eb1e7c',1,'CsWorldApi']]],
+  ['getblockmeta_1912',['getBlockMeta',['../structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f',1,'CsWorldApi']]],
+  ['getblocks_1913',['getBlocks',['../structCsWorldApi.html#a3cffbe73369b697551e74d6e836027b6',1,'CsWorldApi']]],
+  ['getentity_1914',['getEntity',['../structCsWorldApi.html#ae7b60215334aa5f519efbba2549e1064',1,'CsWorldApi']]],
+  ['getexperiencelevel_1915',['getExperienceLevel',['../structCsPlayerApi.html#a1752661c1493f2d0a2ebfd408cebb707',1,'CsPlayerApi']]],
+  ['getfloatingtextex_1916',['getFloatingTextEx',['../structCsWorldApi.html#aa656a8709076f56755d1b89db3f9323a',1,'CsWorldApi']]],
+  ['getfloatingtexts_1917',['getFloatingTexts',['../structCsWorldApi.html#a8fa34b790edc24fcc7b655d29b6572b3',1,'CsWorldApi']]],
+  ['getgamemode_1918',['getGamemode',['../structCsPlayerApi.html#a4535518b05131599bf5df4b6677f421c',1,'CsPlayerApi']]],
+  ['gethealth_1919',['getHealth',['../structCsPlayerApi.html#aeba1c33bea464e17a96674bbaea7e83c',1,'CsPlayerApi']]],
+  ['getspawnpoint_1920',['getSpawnPoint',['../structCsPlayerApi.html#a73e5ab6a42492c529c55b2cf710dbd96',1,'CsPlayerApi']]],
+  ['getweather_1921',['getWeather',['../structCsWorldApi.html#a62261493a35b1533a55a9fa342962c12',1,'CsWorldApi']]],
+  ['giveitem_1922',['giveItem',['../structCsPlayerApi.html#afa26c1c6c4c9e842a5b40cce55ef5847',1,'CsPlayerApi']]]
 ];

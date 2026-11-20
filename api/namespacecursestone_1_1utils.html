@@ -140,8 +140,9 @@ Variables</h2></td></tr>
 <tr class="memitem:a6e5678992d5c297c2f1e82b84e4cfbb0"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0">kDefaultServerProperties</a></td></tr>
 <tr class="memdesc:a6e5678992d5c297c2f1e82b84e4cfbb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Basic settings (network, players, gameplay, world name and seed).  <a href="namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0">More...</a><br /></td></tr>
 <tr class="separator:a6e5678992d5c297c2f1e82b84e4cfbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad226ae8dd23b9117aaa285c7ad6acf50"><td class="memItemLeft" align="right" valign="top">const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1utils.html#ad226ae8dd23b9117aaa285c7ad6acf50">kDefaultCursestoneYml</a></td></tr>
-<tr class="memdesc:ad226ae8dd23b9117aaa285c7ad6acf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advanced settings (workers, autosave, memory, world format/generator).  <a href="namespacecursestone_1_1utils.html#ad226ae8dd23b9117aaa285c7ad6acf50">More...</a><br /></td></tr>
+<tr class="memitem:ad226ae8dd23b9117aaa285c7ad6acf50"><td class="memItemLeft" align="right" valign="top"><a id="ad226ae8dd23b9117aaa285c7ad6acf50"></a>
+const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1utils.html#ad226ae8dd23b9117aaa285c7ad6acf50">kDefaultCursestoneYml</a></td></tr>
+<tr class="memdesc:ad226ae8dd23b9117aaa285c7ad6acf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advanced settings (workers, autosave, memory, world format/generator). <br /></td></tr>
 <tr class="separator:ad226ae8dd23b9117aaa285c7ad6acf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -201,51 +202,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ad226ae8dd23b9117aaa285c7ad6acf50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad226ae8dd23b9117aaa285c7ad6acf50">&#9670;&nbsp;</a></span>kDefaultCursestoneYml</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char *const cursestone::utils::kDefaultCursestoneYml</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    <span class="stringliteral">&quot;# CurseStone advanced configuration.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;# Basic settings live in server.properties; the motd below overrides\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;# the one defined there when it is set.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;settings:\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  motd: \&quot;pon tu motd\&quot;    # The server name shown in the client list.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  async-workers: 4       # Async task pool threads.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  autosave-ticks: 6000   # 6000 ticks = 5 minutes at 20 TPS.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  debug-mode: false      # true = show ALL debug in the console: packet\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;                         # traces ([PKT]), RakNet diagnostics ([NET], ACK\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;                         # health), hexdumps and verbose gameplay traces.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;                         # false = clean console with only real messages.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  plugin-instruction-limit: 1000000 # Lua instructions per call (0 = unlimited).\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  plugin-time-limit-ms: 100         # Milliseconds per call (0 = unlimited).\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  plugin-max-errors: 10             # Consecutive errors before disabling (0 = never).\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;gameplay:\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  keep-inventory: false  # true = players keep their items when they die.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  bed-spawn: true        # true = sleeping or tapping a bed sets the respawn\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;                         # point there; breaking that bed restores the world spawn.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;world:\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  format: \&quot;anvil\&quot;        # anvil | leveldb\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  generator: \&quot;normal\&quot;    # normal | flat | nether | void\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;memory:\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  max-mb: 512            # Garbage collector memory budget in MB.\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;  gc-interval-ticks: 200 # GC interval in ticks (200 = 10 seconds at 20 TPS).\n&quot;</span></div>
-</div><!-- fragment -->
-<p>Advanced settings (workers, autosave, memory, world format/generator). </p>
-
-</div>
-</div>
 <a id="a6e5678992d5c297c2f1e82b84e4cfbb0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6e5678992d5c297c2f1e82b84e4cfbb0">&#9670;&nbsp;</a></span>kDefaultServerProperties</h2>
 

@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"dir_4b989aa9d0a5c735a1c456b39ba0f91c.html":[11,0,0,21,1,2],
 "dir_4bd3bd4cdf138ad29edb61d8aa883928.html":[11,0,0,4,0],
 "dir_6365e742f4b848e0c96a15491af34394.html":[11,0,0,21,1,2,1],
 "dir_643474ab3c5c7b996cb15120629b455b.html":[11,0,0,21,0,0],
@@ -36,8 +37,8 @@ var NAVTREEINDEX27 =
 "dir_fc4c7f03e1a69a98c370fae55a743828.html":[11,0,0,10],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[11,0,0,7],
 "files.html":[11,0],
-"functions.html":[10,3,0,0],
 "functions.html":[10,3,0],
+"functions.html":[10,3,0,0],
 "functions_b.html":[10,3,0,1],
 "functions_c.html":[10,3,0,2],
 "functions_d.html":[10,3,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md99":[3,8,6],
 "namespacecursestone.html":[9,0,0],
 "namespacecursestone.html#a1c8c3fee428f4c665f076f22f4b0ac7c":[9,0,0,55],
-"namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5":[9,0,0,62],
-"namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa":[9,0,0,58]
+"namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5":[9,0,0,62]
 };

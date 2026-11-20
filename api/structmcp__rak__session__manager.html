@@ -119,15 +119,69 @@ uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>bind_port</b></td
 <tr class="memitem:a1733ca4cfba098b5576c3a5db5a223ef"><td class="memItemLeft" align="right" valign="top"><a id="a1733ca4cfba098b5576c3a5db5a223ef"></a>
 char&#160;</td><td class="memItemRight" valign="bottom"><b>server_name</b> [256]</td></tr>
 <tr class="separator:a1733ca4cfba098b5576c3a5db5a223ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a207fda0e35ca3fd30248257a9e5998e0"><td class="memItemLeft" align="right" valign="top"><a id="a207fda0e35ca3fd30248257a9e5998e0"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>ip_sec_buf</b> [64][4]</td></tr>
-<tr class="separator:a207fda0e35ca3fd30248257a9e5998e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f5ce75dba9ad9ca24a932c94bd6c201"><td class="memItemLeft" align="right" valign="top"><a id="a3f5ce75dba9ad9ca24a932c94bd6c201"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ip_sec_cnt</b> [64]</td></tr>
-<tr class="separator:a3f5ce75dba9ad9ca24a932c94bd6c201"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adba1bdfb51c9193dd28854869a8d6a47"><td class="memItemLeft" align="right" valign="top"><a id="adba1bdfb51c9193dd28854869a8d6a47"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>ip_sec_n</b></td></tr>
-<tr class="separator:adba1bdfb51c9193dd28854869a8d6a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e43f32864ec1e61af0574574669ef8"><td class="memItemLeft" align="right" valign="top"><a id="a99e43f32864ec1e61af0574574669ef8"></a>
+<a class="el" href="structmcp__traffic__limits.html">mcp_traffic_limits_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>traffic</b></td></tr>
+<tr class="separator:a99e43f32864ec1e61af0574574669ef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae24f2f4454d9264e163df7e4ddea28e"><td class="memItemLeft" align="right" valign="top"><a id="aae24f2f4454d9264e163df7e4ddea28e"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>tick_id</b></td></tr>
+<tr class="separator:aae24f2f4454d9264e163df7e4ddea28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d8875183f419efde1f13efcd881395a"><td class="memItemLeft" align="right" valign="top"><a id="a8d8875183f419efde1f13efcd881395a"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>last_drain_count</b></td></tr>
+<tr class="separator:a8d8875183f419efde1f13efcd881395a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e230f6d28ff66af1f8735d9145a0fd4"><td class="memItemLeft" align="right" valign="top"><a id="a3e230f6d28ff66af1f8735d9145a0fd4"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_gate_paced</b></td></tr>
+<tr class="separator:a3e230f6d28ff66af1f8735d9145a0fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4900bf7e7080f7790123118c2335b477"><td class="memItemLeft" align="right" valign="top"><a id="a4900bf7e7080f7790123118c2335b477"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_gate_budget</b></td></tr>
+<tr class="separator:a4900bf7e7080f7790123118c2335b477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bd5da843a48910e7229ea13f20a67fc"><td class="memItemLeft" align="right" valign="top"><a id="a5bd5da843a48910e7229ea13f20a67fc"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_untracked</b></td></tr>
+<tr class="separator:a5bd5da843a48910e7229ea13f20a67fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4c50e619411e670495c67afb085dcc"><td class="memItemLeft" align="right" valign="top"><a id="a7b4c50e619411e670495c67afb085dcc"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_data_pkts</b></td></tr>
+<tr class="separator:a7b4c50e619411e670495c67afb085dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c705d7cb1cc1190e3fe2094b090b63f"><td class="memItemLeft" align="right" valign="top"><a id="a4c705d7cb1cc1190e3fe2094b090b63f"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_unconn_pkts</b></td></tr>
+<tr class="separator:a4c705d7cb1cc1190e3fe2094b090b63f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5343b45240d148ac4943aa50e6d8728f"><td class="memItemLeft" align="right" valign="top"><a id="a5343b45240d148ac4943aa50e6d8728f"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_seq_drop</b></td></tr>
+<tr class="separator:a5343b45240d148ac4943aa50e6d8728f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49fb6143c9805efb3fab35826732f58a"><td class="memItemLeft" align="right" valign="top"><a id="a49fb6143c9805efb3fab35826732f58a"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_dup_drop</b></td></tr>
+<tr class="separator:a49fb6143c9805efb3fab35826732f58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae432019192c453c9a67dc8c1fbdfff85"><td class="memItemLeft" align="right" valign="top"><a id="ae432019192c453c9a67dc8c1fbdfff85"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_game_fwd</b></td></tr>
+<tr class="separator:ae432019192c453c9a67dc8c1fbdfff85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37e4e1c31450c190728770d2fded7ad"><td class="memItemLeft" align="right" valign="top"><a id="ae37e4e1c31450c190728770d2fded7ad"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_tick_us</b></td></tr>
+<tr class="separator:ae37e4e1c31450c190728770d2fded7ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53b640bbf0a1405798716edacd3753ea"><td class="memItemLeft" align="right" valign="top"><a id="a53b640bbf0a1405798716edacd3753ea"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>diag_pause_us</b></td></tr>
+<tr class="separator:a53b640bbf0a1405798716edacd3753ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2703eef300e854e60b7ab582613ee09b"><td class="memItemLeft" align="right" valign="top"><a id="a2703eef300e854e60b7ab582613ee09b"></a>
+uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>ep_key</b> [MCP_TRAFFIC_EP_SIZE]</td></tr>
+<tr class="separator:a2703eef300e854e60b7ab582613ee09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d8a37452a8c7b76ce27ed761f02cea1"><td class="memItemLeft" align="right" valign="top"><a id="a6d8a37452a8c7b76ce27ed761f02cea1"></a>
+<a class="el" href="structmcp__traffic__ep.html">mcp_traffic_ep_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ep_val</b> [MCP_TRAFFIC_EP_SIZE]</td></tr>
+<tr class="separator:a6d8a37452a8c7b76ce27ed761f02cea1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a741f109a28266b3e9cd540c992171f03"><td class="memItemLeft" align="right" valign="top"><a id="a741f109a28266b3e9cd540c992171f03"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>ep_count</b></td></tr>
+<tr class="separator:a741f109a28266b3e9cd540c992171f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee5d293759ab7647d1a3450221d8999b"><td class="memItemLeft" align="right" valign="top"><a id="aee5d293759ab7647d1a3450221d8999b"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ep_sweep_tick</b></td></tr>
+<tr class="separator:aee5d293759ab7647d1a3450221d8999b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4f7ffa9e6bf9b18672823d66b49d3cc"><td class="memItemLeft" align="right" valign="top"><a id="ae4f7ffa9e6bf9b18672823d66b49d3cc"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ip_key</b> [MCP_TRAFFIC_IP_SIZE]</td></tr>
+<tr class="separator:ae4f7ffa9e6bf9b18672823d66b49d3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae37eedd17a3e1d28652b344eace6d2"><td class="memItemLeft" align="right" valign="top"><a id="aeae37eedd17a3e1d28652b344eace6d2"></a>
+<a class="el" href="structmcp__traffic__ip.html">mcp_traffic_ip_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>ip_val</b> [MCP_TRAFFIC_IP_SIZE]</td></tr>
+<tr class="separator:aeae37eedd17a3e1d28652b344eace6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b41ec1a8094571198e587024e0d3840"><td class="memItemLeft" align="right" valign="top"><a id="a3b41ec1a8094571198e587024e0d3840"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>ip_count</b></td></tr>
+<tr class="separator:a3b41ec1a8094571198e587024e0d3840"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bfdc7e994b0e28f33d6ccefbc12ccdb"><td class="memItemLeft" align="right" valign="top"><a id="a3bfdc7e994b0e28f33d6ccefbc12ccdb"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ip_sweep_tick</b></td></tr>
+<tr class="separator:a3bfdc7e994b0e28f33d6ccefbc12ccdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5dadc3758d693226a5cc68d00850a98"><td class="memItemLeft" align="right" valign="top"><a id="ae5dadc3758d693226a5cc68d00850a98"></a>
 uint64_t&#160;</td><td class="memItemRight" valign="bottom"><b>map_key</b> [MCP_SM_MAP_SIZE]</td></tr>
 <tr class="separator:ae5dadc3758d693226a5cc68d00850a98"><td class="memSeparator" colspan="2">&#160;</td></tr>

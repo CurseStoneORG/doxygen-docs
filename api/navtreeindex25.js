@@ -1,5 +1,6 @@
 var NAVTREEINDEX25 =
 {
+"classvgen_1_1OreFeature.html#a73c9de6dbbff6882c65af448d04f58c9":[10,0,2,72,0],
 "classvgen_1_1OreFeature.html#ac6cf0279a221fbc29db71f53c3b7ecd4":[10,0,2,72,1],
 "classvgen_1_1PerlinNoise.html":[10,0,2,170],
 "classvgen_1_1PerlinNoise.html#a1401a31c8b7bc63533e981c6d1326cd1":[10,0,2,170,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX25 =
 "classvgen_1_1StraightRoad.html":[10,0,2,168],
 "classvgen_1_1StraightRoad.html#a0a71ff0917fcf8b4d9515308962824c8":[10,0,2,168,1],
 "classvgen_1_1StraightRoad.html#a223e88c4eb891ba3cded914f30a28569":[10,0,2,168,3],
-"classvgen_1_1StraightRoad.html#a52b0f0caf4849b80e79b9ae8f895d66c":[10,0,2,168,6],
-"classvgen_1_1StraightRoad.html#a8b64fe7f120cf53f591dd8777f6590f9":[10,0,2,168,2]
+"classvgen_1_1StraightRoad.html#a52b0f0caf4849b80e79b9ae8f895d66c":[10,0,2,168,6]
 };

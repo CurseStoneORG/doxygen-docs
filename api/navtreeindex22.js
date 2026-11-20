@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"classvgen_1_1BlockSelector.html#ad4dd7612ca279ac9257362a68a3090eb":[10,0,2,148,1],
 "classvgen_1_1BlockSelector.html#aec3deb25f12d4e46f722866efed955df":[10,0,2,148,3],
 "classvgen_1_1BlockSource.html":[10,0,2,206],
 "classvgen_1_1BlockSource.html#a02e3be642f7ab1fef71bbedf8c1dc42e":[10,0,2,206,17],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "classvgen_1_1Feature.html#a8a8cb6fb1d1e4f3a365d6c3b2ae20e83":[10,0,2,55,6],
 "classvgen_1_1Feature.html#ae7c16a40033309c6ca223284ffb98e91":[10,0,2,55,2],
 "classvgen_1_1Feature.html#ae983fa8dc21445864b8c637d78be6285":[10,0,2,55,3],
-"classvgen_1_1FixedBiomeSource.html":[10,0,2,6],
-"classvgen_1_1FixedBiomeSource.html#a0852c8468985c52432446b558e706be0":[10,0,2,6,7]
+"classvgen_1_1FixedBiomeSource.html":[10,0,2,6]
 };

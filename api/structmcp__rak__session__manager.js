@@ -1,10 +1,26 @@
 var structmcp__rak__session__manager =
 [
     [ "bind_port", "structmcp__rak__session__manager.html#a656552ac0ee21785adb99d0e9c4cbfd4", null ],
+    [ "diag_data_pkts", "structmcp__rak__session__manager.html#a7b4c50e619411e670495c67afb085dcc", null ],
+    [ "diag_dup_drop", "structmcp__rak__session__manager.html#a49fb6143c9805efb3fab35826732f58a", null ],
+    [ "diag_game_fwd", "structmcp__rak__session__manager.html#ae432019192c453c9a67dc8c1fbdfff85", null ],
+    [ "diag_gate_budget", "structmcp__rak__session__manager.html#a4900bf7e7080f7790123118c2335b477", null ],
+    [ "diag_gate_paced", "structmcp__rak__session__manager.html#a3e230f6d28ff66af1f8735d9145a0fd4", null ],
+    [ "diag_pause_us", "structmcp__rak__session__manager.html#a53b640bbf0a1405798716edacd3753ea", null ],
+    [ "diag_seq_drop", "structmcp__rak__session__manager.html#a5343b45240d148ac4943aa50e6d8728f", null ],
+    [ "diag_tick_us", "structmcp__rak__session__manager.html#ae37e4e1c31450c190728770d2fded7ad", null ],
+    [ "diag_unconn_pkts", "structmcp__rak__session__manager.html#a4c705d7cb1cc1190e3fe2094b090b63f", null ],
+    [ "diag_untracked", "structmcp__rak__session__manager.html#a5bd5da843a48910e7229ea13f20a67fc", null ],
+    [ "ep_count", "structmcp__rak__session__manager.html#a741f109a28266b3e9cd540c992171f03", null ],
+    [ "ep_key", "structmcp__rak__session__manager.html#a2703eef300e854e60b7ab582613ee09b", null ],
+    [ "ep_sweep_tick", "structmcp__rak__session__manager.html#aee5d293759ab7647d1a3450221d8999b", null ],
+    [ "ep_val", "structmcp__rak__session__manager.html#a6d8a37452a8c7b76ce27ed761f02cea1", null ],
     [ "instance", "structmcp__rak__session__manager.html#a3015a909556d0a5ccd2378273eaf5667", null ],
-    [ "ip_sec_buf", "structmcp__rak__session__manager.html#a207fda0e35ca3fd30248257a9e5998e0", null ],
-    [ "ip_sec_cnt", "structmcp__rak__session__manager.html#a3f5ce75dba9ad9ca24a932c94bd6c201", null ],
-    [ "ip_sec_n", "structmcp__rak__session__manager.html#adba1bdfb51c9193dd28854869a8d6a47", null ],
+    [ "ip_count", "structmcp__rak__session__manager.html#a3b41ec1a8094571198e587024e0d3840", null ],
+    [ "ip_key", "structmcp__rak__session__manager.html#ae4f7ffa9e6bf9b18672823d66b49d3cc", null ],
+    [ "ip_sweep_tick", "structmcp__rak__session__manager.html#a3bfdc7e994b0e28f33d6ccefbc12ccdb", null ],
+    [ "ip_val", "structmcp__rak__session__manager.html#aeae37eedd17a3e1d28652b344eace6d2", null ],
+    [ "last_drain_count", "structmcp__rak__session__manager.html#a8d8875183f419efde1f13efcd881395a", null ],
     [ "map_key", "structmcp__rak__session__manager.html#ae5dadc3758d693226a5cc68d00850a98", null ],
     [ "map_ptr", "structmcp__rak__session__manager.html#ad8b9edfa8157268c749fc9fb609cbf25", null ],
     [ "mtu", "structmcp__rak__session__manager.html#a541fb7b5f33e74c302948a0c7d79e956", null ],
@@ -13,5 +29,7 @@ var structmcp__rak__session__manager =
     [ "session_capacity", "structmcp__rak__session__manager.html#a7620451afae01a36e37b639e0a23e0ca", null ],
     [ "session_count", "structmcp__rak__session__manager.html#a0515316316b45844047165046e4a35b4", null ],
     [ "sessions", "structmcp__rak__session__manager.html#af8b1ad63d145334630260e7065fcce88", null ],
-    [ "socket", "structmcp__rak__session__manager.html#ab4e1047c27dafbce3ca047d4f56557e0", null ]
+    [ "socket", "structmcp__rak__session__manager.html#ab4e1047c27dafbce3ca047d4f56557e0", null ],
+    [ "tick_id", "structmcp__rak__session__manager.html#aae24f2f4454d9264e163df7e4ddea28e", null ],
+    [ "traffic", "structmcp__rak__session__manager.html#a99e43f32864ec1e61af0574574669ef8", null ]
 ];

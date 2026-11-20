@@ -1,5 +1,6 @@
 var NAVTREEINDEX19 =
 {
+"classcursestone_1_1world_1_1Location.html#a7c6bc818810ca955e957cebb2ff18ed4":[10,0,0,17,7,0],
 "classcursestone_1_1world_1_1Location.html#aa9c3c79f3a734a3a0d0d681a8d7843f7":[10,0,0,17,7,5],
 "classcursestone_1_1world_1_1Location.html#ac0e4c6fe4c3916d911877ea0581554e3":[10,0,0,17,7,3],
 "classcursestone_1_1world_1_1Location.html#ad2ac1639d8f16da349474b161386aa2d":[10,0,0,17,7,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX19 =
 "classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a950b782d8db9f7656c08686155643c7c":[10,0,0,17,0,0,3,7],
 "classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#ab88668533e961dace0263766d1ec13a6":[10,0,0,17,0,0,3,2],
 "classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#ad1b21c264d1422d24c52106f717713b4":[10,0,0,17,0,0,3,8],
-"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#ae3e88baef3a7173d8c24d2316c33eafc":[10,0,0,17,0,0,3,6],
-"classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html":[10,0,0,17,0,1,0]
+"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#ae3e88baef3a7173d8c24d2316c33eafc":[10,0,0,17,0,0,3,6]
 };

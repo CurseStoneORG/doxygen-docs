@@ -121,7 +121,7 @@ $(document).ready(function(){initNavTree('SessionManager_8h_source.html',''); in
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define MCP_SM_PACKET_LIMIT 250 </span><span class="comment">// max packets per IP per tick (anti-flood)</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define MCP_SM_PACKET_LIMIT 250 </span><span class="comment">// default datagram budget per endpoint per recv sweep</span></div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define MCP_SM_PORT_CHECKING true</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">// Hard cap on live sessions. Each mcp_rak_session_t is a few hundred KB of</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">// fixed arrays (recv/reliable windows, recovery ring, split slots, order</span></div>
@@ -134,78 +134,207 @@ $(document).ready(function(){initNavTree('SessionManager_8h_source.html',''); in
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#define MCP_SM_MAP_BITS 10</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#define MCP_SM_MAP_SIZE (1u &lt;&lt; MCP_SM_MAP_BITS)</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structmcp__rak__session__manager.html">   49</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a> {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="structmcp__udp__socket.html">mcp_udp_socket_t</a> socket;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="structmcp__server__instance.html">mcp_server_instance_t</a>* instance; <span class="comment">// not owned</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>** sessions;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">size_t</span> session_count;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">size_t</span> session_capacity;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    int64_t server_id;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    uint16_t mtu;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    uint16_t bind_port; <span class="comment">// remembered for CLIENT_HANDSHAKE check</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// MOTD / server name (UNCONNECTED_PONG)</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">char</span> server_name[256];</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// Anti-flood counters (per IP, cleared each tick)</span></div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="comment">// Simple implementation: just count total packets from ip</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    uint8_t ip_sec_buf[64][4]; <span class="comment">// last 64 IPs seen this tick</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    uint32_t ip_sec_cnt[64];</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">size_t</span> ip_sec_n;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// O(1) endpoint -&gt; session index (open addressing, linear probe).</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// Plain arrays keep the struct memset()-able. Slots hold</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// (endpoint_key, session*); key 0 with ptr NULL means empty.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// 1024 slots for at most MCP_SM_MAX_SESSIONS (512) sessions keeps the</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">// load factor at 0.5, so probes stay short; the previous find() was a</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="comment">// linear scan over every session on every datagram.</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    uint64_t map_key[MCP_SM_MAP_SIZE];</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* map_ptr[MCP_SM_MAP_SIZE];</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;} <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_init(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, int64_t server_id, uint16_t mtu,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                  <a class="code" href="structmcp__server__instance.html">mcp_server_instance_t</a>* instance);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_destroy(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keywordtype">int</span> mcp_rak_session_manager_bind(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> <span class="keywordtype">char</span>* host, uint16_t port);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_tick(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">// Set the MOTD string (embedded in UNCONNECTED_PONG).</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_set_name(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* mcp_rak_session_manager_get_or_create(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                                         <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* mcp_rak_session_manager_find(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4],</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;                                                uint16_t port);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">// Tear down the session for (ip, port), if any, keeping the owner array and</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment">// the O(1) endpoint index coherent: the index entry is erased with the exact</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment">// (key, pointer) pair, the session is destroyed and freed, and the owner</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment">// array is compacted with a swap-remove. The session is located by scanning</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment">// the owner array — never the endpoint index — so a stale index entry can</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">// never cause the wrong (or a reused) session to be destroyed.</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// Returns true if a session was found and torn down; false if there was no</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">// session for that endpoint (safe no-op).</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_manager_close(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4],</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                                   uint16_t port);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;ssize_t mcp_rak_session_manager_send(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len,</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                                     <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">// Send an encapsulated MCPE packet through an established session.</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">// order_channel is only meaningful when reliability is one of the</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">// *_ORDERED variants; RakNet supports up to 32 independent ordering</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">// channels (0-31) so ordered traffic on one channel never blocks</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">// packets sent on a different channel.</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_manager_send_encapsulated(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4],</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                                               uint16_t port, <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> plen,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                                               uint8_t reliability, uint8_t order_channel);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="ttc" id="astructmcp__rak__session__manager_html"><div class="ttname"><a href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:49</div></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// =========================================================================</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">// Traffic pacing tables</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// =========================================================================</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// Every datagram that enters the manager crosses two fixed-size, O(1)</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// open-addressing tables BEFORE any parsing happens:</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">//   * endpoint table (key = ip:port) — a per-sweep datagram budget. A</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">//     source that exceeds it has its excess datagrams dropped right at the</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">//     recv loop; three consecutive over-budget sweeps start pacing the</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//     endpoint. This is what keeps one noisy source from consuming the</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">//     whole per-sweep drain cap.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">//   * source-IP table (key = ip) — per-SECOND budgets for the unconnected</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//     packet classes (0x01/0x02 pings, 0x05/0x07 handshake requests, fresh</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">//     session creations) and for concurrent sessions per IP. These are the</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">//     vectors that cost server work without ever authenticating: pings</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//     cost a reply, handshake storms cost session allocations, and both</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">//     arrive from ports that rotate faster than any per-endpoint state can</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">//     track. Over budget -&gt; the packet is dropped and the source strikes</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">//     once; when strikes reach the limit the source is PACED: every</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">//     unconnected datagram from it is silently ignored for a hold that</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//     doubles per repeat offense up to the ceiling. Established sessions</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">//     NEVER cross these per-IP budgets (their datagrams are dispatched by</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">//     endpoint before the budget check), so one abusive source on a shared</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="comment">//     NAT can never starve the players behind the same IP, and an honest</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//     in-game client cannot pace itself out by talking to its own server.</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">// Both tables live in fixed arrays inside the manager (memset()-able, zero</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">// allocation on the hot path). Entries expire after expire_ms idle and the</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">// whole set is swept once per second by the manager tick: idle entries are</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">// evicted (backward-shift, like the session index) and strikes decay after</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">// ten quiet seconds. When pacing is disabled the recv loop skips the whole</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">// gate: disabled costs literally nothing.</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// The budgets are operator-tunable from cursestone.yml (traffic.* keys are</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment">// read by Server::loadConfig and applied through</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">// mcp_rak_session_manager_apply_limits before the socket binds).</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="structmcp__traffic__limits.html">   86</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__traffic__limits.html">mcp_traffic_limits</a> {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> enabled;                    <span class="comment">// master switch (traffic.pacing)</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    uint32_t max_packets_per_tick;   <span class="comment">// datagrams per endpoint per sweep (0 = off)</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    uint32_t max_pings_per_sec;      <span class="comment">// 0x01/0x02 per source IP per second</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    uint32_t max_handshakes_per_sec; <span class="comment">// 0x05/0x07 per source IP per second</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    uint32_t max_new_sessions_per_sec; <span class="comment">// fresh sessions per source IP per second</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    uint32_t max_sessions_per_ip;    <span class="comment">// concurrent sessions from one source IP</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    uint32_t strikes_before_pacing;  <span class="comment">// budget overflows before pacing starts</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    uint32_t hold_ms;                <span class="comment">// first pacing hold</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    uint32_t hold_max_ms;            <span class="comment">// escalation ceiling (doubles per offense)</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    uint32_t expire_ms;              <span class="comment">// idle table-entry lifetime</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;} <a class="code" href="structmcp__traffic__limits.html">mcp_traffic_limits_t</a>;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="structmcp__traffic__ep.html">   99</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__traffic__ep.html">mcp_traffic_ep</a> {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    uint32_t pkt_cnt;            <span class="comment">// datagrams seen in the current sweep</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    uint32_t tick_id;            <span class="comment">// sweep id pkt_cnt belongs to (lazy reset)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    uint32_t over_ticks;         <span class="comment">// consecutive over-budget sweeps</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    uint8_t strikes;             <span class="comment">// budget overflows since the last quiet decade</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    uint8_t pad[3];</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    uint64_t paced_until_ms;     <span class="comment">// while now &lt; this, every datagram is dropped</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    uint64_t last_violation_ms;  <span class="comment">// last strike (drives strike decay)</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    uint64_t last_seen_ms;       <span class="comment">// drives idle eviction</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;} <a class="code" href="structmcp__traffic__ep.html">mcp_traffic_ep_t</a>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="structmcp__traffic__ip.html">  110</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__traffic__ip.html">mcp_traffic_ip</a> {</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    uint32_t ping_cnt;          <span class="comment">// pings in the current 1 s window</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    uint32_t hs_cnt;            <span class="comment">// handshake requests in the current window</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    uint32_t ns_cnt;            <span class="comment">// fresh sessions in the current window</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    uint8_t strikes;            <span class="comment">// budget overflows since the last quiet decade</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    uint8_t pad[3];</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    uint64_t ping_win_ms;       <span class="comment">// window start (lazy 1 s reset per counter)</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    uint64_t hs_win_ms;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    uint64_t ns_win_ms;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    uint64_t paced_until_ms;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    uint64_t last_violation_ms;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    uint64_t last_seen_ms;      <span class="comment">// drives idle eviction</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;} <a class="code" href="structmcp__traffic__ip.html">mcp_traffic_ip_t</a>;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">// Table sizes (power of two). The endpoint table must absorb every distinct</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">// source a scan can throw at us between sweeps; 4096 covers the 512-per-sweep</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">// drain cap with room for the honest population. The IP table is smaller</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment">// because a second-window budget saturates long before thousands of</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">// distinct IPs matter.</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#define MCP_TRAFFIC_EP_BITS 12</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#define MCP_TRAFFIC_EP_SIZE (1u &lt;&lt; MCP_TRAFFIC_EP_BITS)</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#define MCP_TRAFFIC_IP_BITS 10</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#define MCP_TRAFFIC_IP_SIZE (1u &lt;&lt; MCP_TRAFFIC_IP_BITS)</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">// Full-table sweep cadence in ticks (eviction + strike decay). The RakLib</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="comment">// thread ticks at ~100 Hz, so 100 = once per second.</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#define MCP_TRAFFIC_SWEEP_TICKS 100</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="structmcp__rak__session__manager.html">  138</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a> {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="structmcp__udp__socket.html">mcp_udp_socket_t</a> socket;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <a class="code" href="structmcp__server__instance.html">mcp_server_instance_t</a>* instance; <span class="comment">// not owned</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>** sessions;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">size_t</span> session_count;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">size_t</span> session_capacity;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    int64_t server_id;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    uint16_t mtu;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    uint16_t bind_port; <span class="comment">// remembered for CLIENT_HANDSHAKE check</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// MOTD / server name (UNCONNECTED_PONG)</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">char</span> server_name[256];</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="comment">// Traffic pacing (see the block comment above mcp_traffic_limits_t).</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="comment">// The limits are copied in once at startup, before the socket binds, so</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    <span class="comment">// the recv loop reads them lock-free. Both tables replace the old</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="comment">// per-tick &quot;last 64 IPs&quot; scratch arrays, which were only ever reset and</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// never actually consulted.</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <a class="code" href="structmcp__traffic__limits.html">mcp_traffic_limits_t</a> traffic;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    uint32_t tick_id;   <span class="comment">// incremented each tick; drives lazy per-entry resets</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    uint32_t last_drain_count; <span class="comment">// datagrams the last recv sweep processed</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                               <span class="comment">// (0 = socket ran dry: the RakLib thread may</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                               <span class="comment">// sleep its full idle cadence)</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="comment">// Debug-mode pacing diagnostics (printed once per second by the tick).</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    uint64_t diag_gate_paced;   <span class="comment">// datagrams dropped: endpoint paced</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    uint64_t diag_gate_budget;  <span class="comment">// datagrams dropped: over the sweep budget</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    uint64_t diag_untracked;    <span class="comment">// datagrams served with no table slot (fail open)</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    uint64_t diag_data_pkts;    <span class="comment">// datagrams dispatched as DATA/ACK/NACK</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    uint64_t diag_unconn_pkts;  <span class="comment">// datagrams dispatched to handle_unconnected</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    uint64_t diag_seq_drop;     <span class="comment">// DATA datagrams dropped: out of the seq window</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    uint64_t diag_dup_drop;     <span class="comment">// DATA datagrams dropped: duplicate slot</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    uint64_t diag_game_fwd;     <span class="comment">// encapsulated payloads forwarded to the game layer</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    uint32_t diag_tick_us;      <span class="comment">// last loop iteration: time spent in the tick</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    uint32_t diag_pause_us;     <span class="comment">// last loop iteration: time spent paused</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="comment">// Per-endpoint table: key = sm_ep_key(ip, port) (stored +1, 0 = empty).</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    uint64_t ep_key[MCP_TRAFFIC_EP_SIZE];</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <a class="code" href="structmcp__traffic__ep.html">mcp_traffic_ep_t</a> ep_val[MCP_TRAFFIC_EP_SIZE];</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">size_t</span> ep_count;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    uint32_t ep_sweep_tick; <span class="comment">// last emergency-sweep tick (throttles to 1/tick)</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">// Per-source-IP table: key = ip in host byte order (0 = empty; 0.0.0.0</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// is never a datagram source).</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    uint32_t ip_key[MCP_TRAFFIC_IP_SIZE];</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <a class="code" href="structmcp__traffic__ip.html">mcp_traffic_ip_t</a> ip_val[MCP_TRAFFIC_IP_SIZE];</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">size_t</span> ip_count;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    uint32_t ip_sweep_tick;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160; </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="comment">// O(1) endpoint -&gt; session index (open addressing, linear probe).</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="comment">// Plain arrays keep the struct memset()-able. Slots hold</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="comment">// (endpoint_key, session*); key 0 with ptr NULL means empty.</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">// 1024 slots for at most MCP_SM_MAX_SESSIONS (512) sessions keeps the</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// load factor at 0.5, so probes stay short; the previous find() was a</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="comment">// linear scan over every session on every datagram.</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    uint64_t map_key[MCP_SM_MAP_SIZE];</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* map_ptr[MCP_SM_MAP_SIZE];</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;} <a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_init(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, int64_t server_id, uint16_t mtu,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                                  <a class="code" href="structmcp__server__instance.html">mcp_server_instance_t</a>* instance);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_destroy(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keywordtype">int</span> mcp_rak_session_manager_bind(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> <span class="keywordtype">char</span>* host, uint16_t port);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_tick(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">// Set the MOTD string (embedded in UNCONNECTED_PONG).</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_set_name(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> <span class="keywordtype">char</span>* name);</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">// Install the traffic pacing limits (cursestone.yml traffic.* keys, mapped</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">// by Server::loadConfig). Call BEFORE bind/start: the recv loop reads the</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">// copy without any synchronization. Passing NULL keeps the built-in defaults</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">// with pacing DISABLED.</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keywordtype">void</span> mcp_rak_session_manager_apply_limits(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                                          <span class="keyword">const</span> <a class="code" href="structmcp__traffic__limits.html">mcp_traffic_limits_t</a>* limits);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* mcp_rak_session_manager_get_or_create(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm,</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                                                         <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<a class="code" href="structmcp__rak__session.html">mcp_rak_session_t</a>* mcp_rak_session_manager_find(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4],</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                                                uint16_t port);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">// Tear down the session for (ip, port), if any, keeping the owner array and</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">// the O(1) endpoint index coherent: the index entry is erased with the exact</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">// (key, pointer) pair, the session is destroyed and freed, and the owner</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">// array is compacted with a swap-remove. The session is located by scanning</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">// the owner array — never the endpoint index — so a stale index entry can</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">// never cause the wrong (or a reused) session to be destroyed.</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">// Returns true if a session was found and torn down; false if there was no</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">// session for that endpoint (safe no-op).</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_manager_close(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4],</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                                   uint16_t port);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;ssize_t mcp_rak_session_manager_send(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len,</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                                     <span class="keyword">const</span> uint8_t ip[4], uint16_t port);</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160; </div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">// Send an encapsulated MCPE packet through an established session.</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">// order_channel is only meaningful when reliability is one of the</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">// *_ORDERED variants; RakNet supports up to 32 independent ordering</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">// channels (0-31) so ordered traffic on one channel never blocks</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">// packets sent on a different channel.</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="keywordtype">bool</span> mcp_rak_session_manager_send_encapsulated(<a class="code" href="structmcp__rak__session__manager.html">mcp_rak_session_manager_t</a>* sm, <span class="keyword">const</span> uint8_t ip[4],</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;                                               uint16_t port, <span class="keyword">const</span> uint8_t* payload, <span class="keywordtype">size_t</span> plen,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                                               uint8_t reliability, uint8_t order_channel);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160; </div>
+<div class="ttc" id="astructmcp__rak__session__manager_html"><div class="ttname"><a href="structmcp__rak__session__manager.html">mcp_rak_session_manager</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:138</div></div>
 <div class="ttc" id="astructmcp__rak__session_html"><div class="ttname"><a href="structmcp__rak__session.html">mcp_rak_session</a></div><div class="ttdef"><b>Definition:</b> Session.h:197</div></div>
 <div class="ttc" id="astructmcp__server__instance_html"><div class="ttname"><a href="structmcp__server__instance.html">mcp_server_instance</a></div><div class="ttdef"><b>Definition:</b> ServerInstance.h:33</div></div>
+<div class="ttc" id="astructmcp__traffic__ep_html"><div class="ttname"><a href="structmcp__traffic__ep.html">mcp_traffic_ep</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:99</div></div>
+<div class="ttc" id="astructmcp__traffic__ip_html"><div class="ttname"><a href="structmcp__traffic__ip.html">mcp_traffic_ip</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:110</div></div>
+<div class="ttc" id="astructmcp__traffic__limits_html"><div class="ttname"><a href="structmcp__traffic__limits.html">mcp_traffic_limits</a></div><div class="ttdef"><b>Definition:</b> SessionManager.h:86</div></div>
 <div class="ttc" id="astructmcp__udp__socket_html"><div class="ttname"><a href="structmcp__udp__socket.html">mcp_udp_socket</a></div><div class="ttdef"><b>Definition:</b> UDPServerSocket.h:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa":[9,0,0,58],
 "namespacecursestone.html#a8c184c5b29406134bd48d0f71345bb3e":[9,0,0,56],
 "namespacecursestone.html#a9ff205cb621b43c64560c1d0fe4a7907":[9,0,0,57],
 "namespacecursestone.html#acf0f9dd15f903db5bb07e72a03e57bc6":[9,0,0,61],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "structcursestone_1_1PlayerConfig.html#a84455ee0fe7cc08df6da4431c4ac68c7":[10,0,0,46,6],
 "structcursestone_1_1PlayerConfig.html#a99985729fcd247ff5086c101f4241359":[10,0,0,46,4],
 "structcursestone_1_1PlayerConfig.html#acd6e04904b3cfc72c5bdad4e2f7c4d7b":[10,0,0,46,3],
-"structcursestone_1_1PlayerConfig.html#ad8ff13d51f4871bb7a753891bc540a0a":[10,0,0,46,0],
-"structcursestone_1_1PlayerConfig.html#af0e6546f091f7ef3aaf1756569b6d46b":[10,0,0,46,5]
+"structcursestone_1_1PlayerConfig.html#ad8ff13d51f4871bb7a753891bc540a0a":[10,0,0,46,0]
 };

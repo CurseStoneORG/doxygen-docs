@@ -1,5 +1,6 @@
 var classcursestone_1_1Server =
 [
+    [ "TrafficLimits", "structcursestone_1_1Server_1_1TrafficLimits.html", "structcursestone_1_1Server_1_1TrafficLimits" ],
     [ "addOp", "classcursestone_1_1Server.html#a9a73e044bff7710ea6d72bb9d9bacc4e", null ],
     [ "addPlayer", "classcursestone_1_1Server.html#a3fd37b70cc574808cd9b1478052d386f", null ],
     [ "allocateEid", "classcursestone_1_1Server.html#a522e43ad1c94a4c99fe946c4ae5ceefb", null ],
@@ -71,6 +72,7 @@ var classcursestone_1_1Server =
     [ "tick", "classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1", null ],
     [ "tickAutosaveDrain", "classcursestone_1_1Server.html#a7673ab8ef5d0eca0a444dc098c2f4001", null ],
     [ "titleTick", "classcursestone_1_1Server.html#a92f0a3debd4a44cd5127ad1506362c2f", null ],
+    [ "trafficLimits", "classcursestone_1_1Server.html#a1e3f4ee216c935f73a139afd58b40968", null ],
     [ "unloadWorld", "classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c", null ],
     [ "updatePlayerListData", "classcursestone_1_1Server.html#a9dd0837a68676babd120479b816995a2", null ],
     [ "viewDistance", "classcursestone_1_1Server.html#abdf88db0404bb62e29f28ca2bf6d6aee", null ],
