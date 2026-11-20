@@ -269,6 +269,8 @@ var hierarchy =
       [ "cursestone::network::protocol::UseItemPacket", "classcursestone_1_1network_1_1protocol_1_1UseItemPacket.html", null ]
     ] ],
     [ "cursestone::permission::DefaultPermissions", "classcursestone_1_1permission_1_1DefaultPermissions.html", null ],
+    [ "cursestone::diagnostics::DiagEngine", "classcursestone_1_1diagnostics_1_1DiagEngine.html", null ],
+    [ "cursestone::diagnostics::Diagnostic", "structcursestone_1_1diagnostics_1_1Diagnostic.html", null ],
     [ "cursestone::diagnostics::Diagnostics", "classcursestone_1_1diagnostics_1_1Diagnostics.html", null ],
     [ "vgen::Dimension", "classvgen_1_1Dimension.html", null ],
     [ "vgen::Direction", "classvgen_1_1Direction.html", null ],

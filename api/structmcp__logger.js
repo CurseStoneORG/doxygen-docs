@@ -9,6 +9,7 @@ var structmcp__logger =
     [ "log", "structmcp__logger.html#a08cb1c0479a0b3363931710faf48a196", null ],
     [ "log_exception", "structmcp__logger.html#a2af49c858c36d80abe6e578a775eaf49", null ],
     [ "notice", "structmcp__logger.html#ac014ce56189d8dd0ae242184472fc754", null ],
+    [ "raw", "structmcp__logger.html#a494d127038691a857627d53e79a057f6", null ],
     [ "shutdown", "structmcp__logger.html#ac8f08d1e42bf510fcdb8c77a3b2da8b7", null ],
     [ "warn", "structmcp__logger.html#a899833f71578dddc96b5101c57070944", null ]
 ];

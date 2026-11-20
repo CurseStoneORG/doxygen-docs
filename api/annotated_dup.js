@@ -65,6 +65,8 @@ var annotated_dup =
         [ "LiquidFlow", "classcursestone_1_1block_1_1LiquidFlow.html", null ]
       ] ],
       [ "diagnostics", null, [
+        [ "Diagnostic", "structcursestone_1_1diagnostics_1_1Diagnostic.html", "structcursestone_1_1diagnostics_1_1Diagnostic" ],
+        [ "DiagEngine", "classcursestone_1_1diagnostics_1_1DiagEngine.html", null ],
         [ "PacketRecord", "structcursestone_1_1diagnostics_1_1PacketRecord.html", "structcursestone_1_1diagnostics_1_1PacketRecord" ],
         [ "ErrorRecord", "structcursestone_1_1diagnostics_1_1ErrorRecord.html", "structcursestone_1_1diagnostics_1_1ErrorRecord" ],
         [ "PlayerSnapshot", "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html", "structcursestone_1_1diagnostics_1_1PlayerSnapshot" ],

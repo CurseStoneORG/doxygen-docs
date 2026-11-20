@@ -154,7 +154,7 @@ Design — three layers</h1>
 <li>the inbound tail (what the client last managed to send);</li>
 <li>the global <code>Diagnostics</code> context (server version, tick, players, recent errors, recent packets) via the existing <code>writeReport</code> machinery.</li>
 </ul>
-<p>Console output is a single self-sufficient error line — <code>[CLIENT-LOST]</code> with the last-outbound summary and the dump path — so an operator reading the log sees the suspect packet without opening the dump.</p>
+<p>Console output is a CurseStone Diagnostic Engine block (E5002, see docs/DIAGNOSTIC_ENGINE.md): the tagged header line, the classification and the last-outbound summary as <code>note:</code> lines, a <code>help:</code> line, and the dump path — an operator reading the log sees the suspect packet without opening the dump.</p>
 <h1><a class="anchor" id="autotoc_md151"></a>
 How to read a &lt;tt&gt;client-lost&lt;/tt&gt; dump</h1>
 <ol type="1">
@@ -192,7 +192,7 @@ Verification</h1>
 <p>Two layers of tests guard this system (run them after touching any of the files above):</p>
 <ol type="1">
 <li>Unit — <code>tools/packet_sanitizer_check.cpp</code>: every packet family's REAL encoder output must pass clean, and every violation class must be caught. Includes the creative-catalog regression case (windowid 0x79 legitimately carries ~566 slots; the absurd-count pre-filter sits at 2048 — this exact false positive fired on the first live run and was fixed by that measurement).</li>
-<li>End-to-end — <code>tools/client_crash_forensics_check.py</code>: a fake client logs in and spawns, then goes totally silent (crash signature). The check asserts the <code>[CLIENT-LOST]</code> console line, the CLIENT CRASH classification, and a valid report pair under <code>crashdumps/</code> with the per-client wire tail. The pre-existing <code>tools/session_timeout_check.py</code> keeps reaping behavior unchanged. </li>
+<li>End-to-end — <code>tools/client_crash_forensics_check.py</code>: a fake client logs in and spawns, then goes totally silent (crash signature). The check asserts the <code>error[E5002]</code> diagnostic block (client lost), the CLIENT CRASH classification, and a valid report pair under <code>crashdumps/</code> with the per-client wire tail. The pre-existing <code>tools/session_timeout_check.py</code> keeps reaping behavior unchanged. </li>
 </ol>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

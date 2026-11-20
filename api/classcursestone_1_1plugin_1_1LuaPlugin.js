@@ -19,7 +19,7 @@ var classcursestone_1_1plugin_1_1LuaPlugin =
     [ "L", "classcursestone_1_1plugin_1_1LuaPlugin.html#a911864feed97b5d990f6de4bfab99aa7", null ],
     [ "load", "classcursestone_1_1plugin_1_1LuaPlugin.html#aa1673af6b71c6de79203ee26c6ebde66", null ],
     [ "name", "classcursestone_1_1plugin_1_1LuaPlugin.html#a497c3ae372a79c48df3918d5a8982c0b", null ],
-    [ "pcall", "classcursestone_1_1plugin_1_1LuaPlugin.html#ad6c88730b66f71f0d5cdeba8954aac5a", null ],
+    [ "pcall", "classcursestone_1_1plugin_1_1LuaPlugin.html#acacd60f64efe29d5af4faeaa6c214170", null ],
     [ "releaseTask", "classcursestone_1_1plugin_1_1LuaPlugin.html#af2a9d3a77bb6235bbd9cf23c92b5bd89", null ],
     [ "resourcesDir", "classcursestone_1_1plugin_1_1LuaPlugin.html#acac27af06111c7b0dfc8af12c0b26786", null ],
     [ "version", "classcursestone_1_1plugin_1_1LuaPlugin.html#a6e4d0fa1e6a94c97d53797d41388f338", null ]

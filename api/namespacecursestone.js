@@ -264,11 +264,19 @@ var namespacecursestone =
       [ "T_NONE", "BlockMining_8h.html#a463b88185ed174d57c2fdea01dbe706c", null ]
     ] ],
     [ "diagnostics", null, [
+      [ "Diagnostic", "structcursestone_1_1diagnostics_1_1Diagnostic.html", "structcursestone_1_1diagnostics_1_1Diagnostic" ],
+      [ "DiagEngine", "classcursestone_1_1diagnostics_1_1DiagEngine.html", null ],
       [ "PacketRecord", "structcursestone_1_1diagnostics_1_1PacketRecord.html", "structcursestone_1_1diagnostics_1_1PacketRecord" ],
       [ "ErrorRecord", "structcursestone_1_1diagnostics_1_1ErrorRecord.html", "structcursestone_1_1diagnostics_1_1ErrorRecord" ],
       [ "PlayerSnapshot", "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html", "structcursestone_1_1diagnostics_1_1PlayerSnapshot" ],
       [ "Diagnostics", "classcursestone_1_1diagnostics_1_1Diagnostics.html", "classcursestone_1_1diagnostics_1_1Diagnostics" ],
       [ "PacketForensics", "classcursestone_1_1diagnostics_1_1PacketForensics.html", "classcursestone_1_1diagnostics_1_1PacketForensics" ],
+      [ "DiagSeverity", "DiagnosticEngine_8h.html#a974eea8c39611044878b75c41f8cd200", [
+        [ "Note", "DiagnosticEngine_8h.html#a974eea8c39611044878b75c41f8cd200a3b0649c72650c313a357338dcdfb64ec", null ],
+        [ "Warn", "DiagnosticEngine_8h.html#a974eea8c39611044878b75c41f8cd200a56525ae64d370c0b448ac0d60710ef17", null ],
+        [ "Error", "DiagnosticEngine_8h.html#a974eea8c39611044878b75c41f8cd200a902b0d55fddef6f8d651fe1035b7d4bd", null ],
+        [ "Fatal", "DiagnosticEngine_8h.html#a974eea8c39611044878b75c41f8cd200a882384ec38ce8d9582b57e70861730e4", null ]
+      ] ],
       [ "json_escape", "Diagnostics_8cpp.html#aae15b47170081cc2c12ca681685979cc", null ],
       [ "kMaxErrorRecords", "Diagnostics_8h.html#ae331f20f1d75cbedec685d0ba9fe7413", null ],
       [ "kMaxPacketRecords", "Diagnostics_8h.html#ad98ba60e1d9543032d8fbf09a73fecca", null ],

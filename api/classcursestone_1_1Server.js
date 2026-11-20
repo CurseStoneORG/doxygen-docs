@@ -69,6 +69,7 @@ var classcursestone_1_1Server =
     [ "setPropertyString", "classcursestone_1_1Server.html#a0aca0453c7f4088f30cf0be0e99ad119", null ],
     [ "shutdown", "classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31", null ],
     [ "start", "classcursestone_1_1Server.html#aa146861aee07ae4819af202d0f37ac80", null ],
+    [ "startFailed", "classcursestone_1_1Server.html#a52afa181b6df9d23e40966f11970d598", null ],
     [ "tick", "classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1", null ],
     [ "tickAutosaveDrain", "classcursestone_1_1Server.html#a7673ab8ef5d0eca0a444dc098c2f4001", null ],
     [ "titleTick", "classcursestone_1_1Server.html#a92f0a3debd4a44cd5127ad1506362c2f", null ],

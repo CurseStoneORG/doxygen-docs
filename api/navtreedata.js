@@ -163,73 +163,82 @@ var NAVTREE =
       [ "Extension points", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md153", null ],
       [ "Verification", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md154", null ]
     ] ],
+    [ "CurseStone Diagnostic Engine", "md_docs_DIAGNOSTIC_ENGINE.html", [
+      [ "Identity", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md156", null ],
+      [ "Message levels", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md157", null ],
+      [ "Startup stages", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md158", null ],
+      [ "Diagnostics", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md159", null ],
+      [ "Diagnostic codes", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md160", null ],
+      [ "Configuration", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md161", null ],
+      [ "Performance notes", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md162", null ]
+    ] ],
     [ "Mob AI architecture", "md_docs_MOB_AI.html", [
-      [ "1. Starting point (facts about the current tree)", "md_docs_MOB_AI.html#autotoc_md156", null ],
-      [ "2. Design goals and constraints", "md_docs_MOB_AI.html#autotoc_md157", null ],
-      [ "3. Components", "md_docs_MOB_AI.html#autotoc_md158", [
-        [ "Goal", "md_docs_MOB_AI.html#autotoc_md159", null ],
-        [ "MobBrain", "md_docs_MOB_AI.html#autotoc_md160", null ],
-        [ "MobContext", "md_docs_MOB_AI.html#autotoc_md161", null ],
-        [ "MobAIManager", "md_docs_MOB_AI.html#autotoc_md162", null ]
+      [ "1. Starting point (facts about the current tree)", "md_docs_MOB_AI.html#autotoc_md164", null ],
+      [ "2. Design goals and constraints", "md_docs_MOB_AI.html#autotoc_md165", null ],
+      [ "3. Components", "md_docs_MOB_AI.html#autotoc_md166", [
+        [ "Goal", "md_docs_MOB_AI.html#autotoc_md167", null ],
+        [ "MobBrain", "md_docs_MOB_AI.html#autotoc_md168", null ],
+        [ "MobContext", "md_docs_MOB_AI.html#autotoc_md169", null ],
+        [ "MobAIManager", "md_docs_MOB_AI.html#autotoc_md170", null ]
       ] ],
-      [ "4. Cadences and budgets", "md_docs_MOB_AI.html#autotoc_md163", null ],
-      [ "5. Activation gate", "md_docs_MOB_AI.html#autotoc_md164", null ],
-      [ "6. Threading contract (now and later)", "md_docs_MOB_AI.html#autotoc_md165", null ],
-      [ "7. Compatibility contract", "md_docs_MOB_AI.html#autotoc_md166", null ],
-      [ "8. Stage roadmap", "md_docs_MOB_AI.html#autotoc_md167", null ],
-      [ "9. Implementation status", "md_docs_MOB_AI.html#autotoc_md168", null ]
+      [ "4. Cadences and budgets", "md_docs_MOB_AI.html#autotoc_md171", null ],
+      [ "5. Activation gate", "md_docs_MOB_AI.html#autotoc_md172", null ],
+      [ "6. Threading contract (now and later)", "md_docs_MOB_AI.html#autotoc_md173", null ],
+      [ "7. Compatibility contract", "md_docs_MOB_AI.html#autotoc_md174", null ],
+      [ "8. Stage roadmap", "md_docs_MOB_AI.html#autotoc_md175", null ],
+      [ "9. Implementation status", "md_docs_MOB_AI.html#autotoc_md176", null ]
     ] ],
     [ "CurseStone Plugin API", "md_docs_PLUGINS.html", [
-      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md170", [
-        [ "Building blocks from plugins", "md_docs_PLUGINS.html#autotoc_md171", null ],
-        [ "Particles", "md_docs_PLUGINS.html#autotoc_md172", [
-          [ "Tag types (all ride the same one-carrier model)", "md_docs_PLUGINS.html#autotoc_md173", null ],
-          [ "Why this cannot hurt the FPS", "md_docs_PLUGINS.html#autotoc_md174", null ]
+      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md178", [
+        [ "Building blocks from plugins", "md_docs_PLUGINS.html#autotoc_md179", null ],
+        [ "Particles", "md_docs_PLUGINS.html#autotoc_md180", [
+          [ "Tag types (all ride the same one-carrier model)", "md_docs_PLUGINS.html#autotoc_md181", null ],
+          [ "Why this cannot hurt the FPS", "md_docs_PLUGINS.html#autotoc_md182", null ]
         ] ],
-        [ "Entities (standing mobs)", "md_docs_PLUGINS.html#autotoc_md175", null ]
+        [ "Entities (standing mobs)", "md_docs_PLUGINS.html#autotoc_md183", null ]
       ] ],
-      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md176", [
-        [ "Structure", "md_docs_PLUGINS.html#autotoc_md177", null ],
-        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md178", null ],
-        [ "Building", "md_docs_PLUGINS.html#autotoc_md179", null ],
-        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md180", null ],
-        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md181", null ],
-        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md182", null ],
-        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md183", null ]
+      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md184", [
+        [ "Structure", "md_docs_PLUGINS.html#autotoc_md185", null ],
+        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md186", null ],
+        [ "Building", "md_docs_PLUGINS.html#autotoc_md187", null ],
+        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md188", null ],
+        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md189", null ],
+        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md190", null ],
+        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md191", null ]
       ] ],
-      [ "Commands", "md_docs_PLUGINS.html#autotoc_md184", null ],
-      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md185", null ]
+      [ "Commands", "md_docs_PLUGINS.html#autotoc_md192", null ],
+      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md193", null ]
     ] ],
     [ "CurseStone Comment and Documentation Style Guide", "md_docs_STYLE_COMMENTS.html", [
-      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md194", null ],
-      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md195", null ],
-      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md196", null ],
-      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md197", null ],
-      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md198", null ],
-      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md199", null ],
-      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md200", null ]
+      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md202", null ],
+      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md203", null ],
+      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md204", null ],
+      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md205", null ],
+      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md206", null ],
+      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md207", null ],
+      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md208", null ]
     ] ],
     [ "Threading notes: what the historical thread moves mean for CurseStone", "md_docs_THREADING.html", [
-      [ "1. CurseStone threading snapshot (current tree)", "md_docs_THREADING.html#autotoc_md202", null ],
-      [ "2. The historical thread moves and their outcomes", "md_docs_THREADING.html#autotoc_md203", null ],
-      [ "3. Lessons, applied to CurseStone", "md_docs_THREADING.html#autotoc_md204", [
-        [ "Lesson 1 — thread I/O, not game state", "md_docs_THREADING.html#autotoc_md205", null ],
-        [ "Lesson 2 — extract the storage boundary BEFORE threading the provider", "md_docs_THREADING.html#autotoc_md206", null ],
-        [ "Lesson 3 — budget small stateful work instead of threading it", "md_docs_THREADING.html#autotoc_md207", null ],
-        [ "Lesson 4 — entity ticking needs a budget and a radius the day AI lands", "md_docs_THREADING.html#autotoc_md208", null ],
-        [ "Lesson 5 — name your threads", "md_docs_THREADING.html#autotoc_md209", null ]
+      [ "1. CurseStone threading snapshot (current tree)", "md_docs_THREADING.html#autotoc_md210", null ],
+      [ "2. The historical thread moves and their outcomes", "md_docs_THREADING.html#autotoc_md211", null ],
+      [ "3. Lessons, applied to CurseStone", "md_docs_THREADING.html#autotoc_md212", [
+        [ "Lesson 1 — thread I/O, not game state", "md_docs_THREADING.html#autotoc_md213", null ],
+        [ "Lesson 2 — extract the storage boundary BEFORE threading the provider", "md_docs_THREADING.html#autotoc_md214", null ],
+        [ "Lesson 3 — budget small stateful work instead of threading it", "md_docs_THREADING.html#autotoc_md215", null ],
+        [ "Lesson 4 — entity ticking needs a budget and a radius the day AI lands", "md_docs_THREADING.html#autotoc_md216", null ],
+        [ "Lesson 5 — name your threads", "md_docs_THREADING.html#autotoc_md217", null ]
       ] ],
-      [ "4. What is still worth adopting (ranked)", "md_docs_THREADING.html#autotoc_md210", null ],
-      [ "5. What NOT to adopt", "md_docs_THREADING.html#autotoc_md211", null ],
-      [ "6. Status against the historical kept list", "md_docs_THREADING.html#autotoc_md212", null ],
-      [ "7. Implementation status (named threads + async chunk encode)", "md_docs_THREADING.html#autotoc_md213", [
-        [ "Named threads", "md_docs_THREADING.html#autotoc_md214", null ],
-        [ "Async chunk encode", "md_docs_THREADING.html#autotoc_md215", null ],
-        [ "Measurements", "md_docs_THREADING.html#autotoc_md216", null ],
-        [ "Simultaneous joins: the \"single-streamer\" observation, root-caused", "md_docs_THREADING.html#autotoc_md217", null ],
-        [ "Multi-player concurrency verification (server unchanged)", "md_docs_THREADING.html#autotoc_md218", null ]
+      [ "4. What is still worth adopting (ranked)", "md_docs_THREADING.html#autotoc_md218", null ],
+      [ "5. What NOT to adopt", "md_docs_THREADING.html#autotoc_md219", null ],
+      [ "6. Status against the historical kept list", "md_docs_THREADING.html#autotoc_md220", null ],
+      [ "7. Implementation status (named threads + async chunk encode)", "md_docs_THREADING.html#autotoc_md221", [
+        [ "Named threads", "md_docs_THREADING.html#autotoc_md222", null ],
+        [ "Async chunk encode", "md_docs_THREADING.html#autotoc_md223", null ],
+        [ "Measurements", "md_docs_THREADING.html#autotoc_md224", null ],
+        [ "Simultaneous joins: the \"single-streamer\" observation, root-caused", "md_docs_THREADING.html#autotoc_md225", null ],
+        [ "Multi-player concurrency verification (server unchanged)", "md_docs_THREADING.html#autotoc_md226", null ]
       ] ],
-      [ "8. Mob AI (added after the join-storm study)", "md_docs_THREADING.html#autotoc_md219", null ]
+      [ "8. Mob AI (added after the join-storm study)", "md_docs_THREADING.html#autotoc_md227", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -266,36 +275,36 @@ var NAVTREEINDEX =
 "",
 "BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4aa303f9c8c5cfeb537e1dfa4f6de73ee5",
 "CallbackTask_8h_source.html",
-"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa3fff5336c7c00e40d2bd48afdb3dc922",
-"ItemConstants_8h.html#a541a5f4c52f4378040363170dfa74ceb",
-"ItemConstants_8h.html#aea7934159afe2ea25e81101bb454b7f3",
-"ItemTool_8h_source.html",
-"PathSafe_8h.html#afbd058607f6a3e530dfbf7929da1752a",
-"Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bada87689037f35b17ae3f32d07e1ce8e77f",
-"classcursestone_1_1IPlayer.html",
-"classcursestone_1_1Server.html#a19946472a671ad3c619a5da242506202",
-"classcursestone_1_1block_1_1BlockNetherrack.html#a75b3adb8f062193c6a66237a7c31c3c4",
-"classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ab4481f2aa10d53403c826844173b75e8",
-"classcursestone_1_1inventory_1_1BaseInventory.html#acc19564ff7c63641588d91b4c1ac0362",
-"classcursestone_1_1item_1_1ItemDiamondChestplate.html#a0d38703f7e1d5f0a25ee5c2a228934db",
-"classcursestone_1_1item_1_1ItemWheatSeeds.html#ad0d091e5974b3f414d555959fc5e540a",
-"classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a35ad8a95cf53099585d195fee4bca683",
-"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a4ba160a97d778696c44623b60117e15a",
-"classcursestone_1_1plugin_1_1NativePlugin.html#a27cfd77e5b72e3364c1ca09cb2012b4f",
-"classcursestone_1_1world_1_1Location.html#a7c6bc818810ca955e957cebb2ff18ed4",
-"classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html",
-"classvgen_1_1AddDeepOceanLayer.html#a8cc84f23ad28bf60e4ee65562fdd92b2",
-"classvgen_1_1BlockSelector.html#ad4dd7612ca279ac9257362a68a3090eb",
-"classvgen_1_1FixedBiomeSource.html#a0852c8468985c52432446b558e706be0",
-"classvgen_1_1MesaBiome.html#a1f5997dc0705b68618eaf5ea37a5a518",
-"classvgen_1_1OreFeature.html#a73c9de6dbbff6882c65af448d04f58c9",
-"classvgen_1_1StraightRoad.html#a8b64fe7f120cf53f591dd8777f6590f9",
-"dir_4b989aa9d0a5c735a1c456b39ba0f91c.html",
-"namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa",
-"structcursestone_1_1PlayerConfig.html#af0e6546f091f7ef3aaf1756569b6d46b",
-"structcursestone_1_1physics_1_1MotionResult.html#a1530b943f1981d039ee4445ea3b0ac78",
-"structmcp__color.html#abc8d248017c1b27838a88690bcbc4adf",
-"structmcp__vector2.html#acfb262cc6fe37eb4951fba3029e4661d"
+"GenericSound_8h_source.html",
+"ItemConstants_8h.html#a5049084cefc5e1110424a321275d4869",
+"ItemConstants_8h.html#ae945024672b3a6b6bcb5f4bab37003cf",
+"ItemTool_8h.html#ad98170e4808c3723c83f90ec6e369d7b",
+"ParticleId_8h.html#a3501b3294d6ee49ada484ce78be541f9",
+"Tag_8h.html#aa0faad98933cd8d5cf7e36fedd33c4c7",
+"classcursestone_1_1GiveCommand.html",
+"classcursestone_1_1Server.html#a0aca0453c7f4088f30cf0be0e99ad119",
+"classcursestone_1_1block_1_1BlockLog.html",
+"classcursestone_1_1entity_1_1ai_1_1MobBrain.html",
+"classcursestone_1_1inventory_1_1BaseInventory.html#a9a63d105b46690be296a9e542c67955f",
+"classcursestone_1_1item_1_1ItemCookie.html#a911352fab9f0411b555e7b3062ef9087",
+"classcursestone_1_1item_1_1ItemTool.html#aab1306e5392d3d7b0614618ec5e60421",
+"classcursestone_1_1network_1_1protocol_1_1BlockEventPacket.html#a5a9c131443ca69c5678908bc115350a2",
+"classcursestone_1_1network_1_1protocol_1_1PacketReader.html#ae19883b05a85f078f46b13a56494a0a4",
+"classcursestone_1_1plugin_1_1NativeCommand.html#ab139f75a3c2c2c2ae5e0c484a484da6aa7457cdd15d09bfc6c4dbb5d2b6f87390",
+"classcursestone_1_1world_1_1LightEngine.html",
+"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html",
+"classcursestone_1_1world_1_1sound_1_1GenericSound.html",
+"classvgen_1_1Block.html#ae4a95ea0fc47384e7ef98f7b5bdaaa09",
+"classvgen_1_1Farmland.html#a555df94d6da861f77d625972f23b389f",
+"classvgen_1_1MegaTreeFeature.html#a511d9ce8e41afecd2847e54a40b4ab04",
+"classvgen_1_1OldLeafBlock.html#a06664580313b7381f14a6ecc2cb81f80a4ddf4cb005260f1c5b21adca4d27c4ab",
+"classvgen_1_1StoneSlabBlock.html#a34a1f9530c1c648a92be367439c47447a2ff4ab1d379832d3edee28194fb4e7b2",
+"dir_322957a17f4a13f0540f6057743b152b.html",
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md80",
+"structcursestone_1_1DisconnectDump.html#aab9df7aa9276a65d9c4398dc752eb5d3",
+"structcursestone_1_1network_1_1protocol_1_1SanitizeViolation.html#a621c650f38b17aad0725bf341e89ef2c",
+"structmcp__chunk.html#a76f738658547dac867a1428dd9b33e0e",
+"structmcp__traffic__ep.html#af42f85c96e07c5073a2e49d61644cfa2"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
