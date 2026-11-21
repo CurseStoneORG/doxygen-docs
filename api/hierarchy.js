@@ -339,6 +339,7 @@ var hierarchy =
       ] ],
       [ "cursestone::event::block::BlockPlaceEvent", "classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html", null ],
       [ "cursestone::event::entity::EntityDamageEvent", "classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html", null ],
+      [ "cursestone::event::entity::EntityDeathEvent", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html", null ],
       [ "cursestone::event::entity::EntityEvent", "classcursestone_1_1event_1_1entity_1_1EntityEvent.html", [
         [ "cursestone::event::entity::EntityPortalEnterEvent", "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html", null ]
       ] ],

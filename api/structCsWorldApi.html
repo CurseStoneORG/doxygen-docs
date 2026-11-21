@@ -228,6 +228,22 @@ int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <tr class="memitem:a3cffbe73369b697551e74d6e836027b6"><td class="memItemLeft" align="right" valign="top">int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a3cffbe73369b697551e74d6e836027b6">getBlocks</a> )(const char *world, int32_t x1, int32_t y1, int32_t z1, int32_t x2, int32_t y2, int32_t z2, int32_t *out, int32_t outCap)</td></tr>
 <tr class="memdesc:a3cffbe73369b697551e74d6e836027b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bulk region read: fills <code>out</code> with (id, meta) int32 pairs, row-major in the y -&gt; x -&gt; z order fillBlocks iterates; <code>outCap</code> is the int32 capacity of <code>out</code> (2 slots per cell are needed).  <a href="structCsWorldApi.html#a3cffbe73369b697551e74d6e836027b6">More...</a><br /></td></tr>
 <tr class="separator:a3cffbe73369b697551e74d6e836027b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa426a23fea910e7fa281b9b4529b0c96"><td class="memItemLeft" align="right" valign="top">double(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#aa426a23fea910e7fa281b9b4529b0c96">getEntityHealth</a> )(const char *world, int64_t id)</td></tr>
+<tr class="memdesc:aa426a23fea910e7fa281b9b4529b0c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Current health of a standing mob, or -1 for an unknown id.  <a href="structCsWorldApi.html#aa426a23fea910e7fa281b9b4529b0c96">More...</a><br /></td></tr>
+<tr class="separator:aa426a23fea910e7fa281b9b4529b0c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affdac19038eab8d5cd762e3e171e6470"><td class="memItemLeft" align="right" valign="top"><a id="affdac19038eab8d5cd762e3e171e6470"></a>
+double(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#affdac19038eab8d5cd762e3e171e6470">getEntityMaxHealth</a> )(const char *world, int64_t id)</td></tr>
+<tr class="memdesc:affdac19038eab8d5cd762e3e171e6470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Health ceiling of a standing mob, or -1 for an unknown id. <br /></td></tr>
+<tr class="separator:affdac19038eab8d5cd762e3e171e6470"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01cb61b41df215292790d9e601eeb3c5"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a01cb61b41df215292790d9e601eeb3c5">setEntityHealth</a> )(const char *world, int64_t id, double hp)</td></tr>
+<tr class="memdesc:a01cb61b41df215292790d9e601eeb3c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Direct health write, clamped into [0, maxHealth].  <a href="structCsWorldApi.html#a01cb61b41df215292790d9e601eeb3c5">More...</a><br /></td></tr>
+<tr class="separator:a01cb61b41df215292790d9e601eeb3c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee152b3cf2734ee2c194b1b18832c41"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a4ee152b3cf2734ee2c194b1b18832c41">setEntityMaxHealth</a> )(const char *world, int64_t id, double max)</td></tr>
+<tr class="memdesc:a4ee152b3cf2734ee2c194b1b18832c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Raises the health ceiling; the current health follows down when it exceeds it.  <a href="structCsWorldApi.html#a4ee152b3cf2734ee2c194b1b18832c41">More...</a><br /></td></tr>
+<tr class="separator:a4ee152b3cf2734ee2c194b1b18832c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ac577cbbbe19d4340623dd22ee6aa0"><td class="memItemLeft" align="right" valign="top">int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsWorldApi.html#a21ac577cbbbe19d4340623dd22ee6aa0">damageEntity</a> )(const char *world, int64_t id, double amount, const char *cause)</td></tr>
+<tr class="memdesc:a21ac577cbbbe19d4340623dd22ee6aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Damages a standing mob through the full cancellable pipeline (EntityDamageByEntity without a damager object, hurt flash, era knockback only for attacker-driven hits).  <a href="structCsWorldApi.html#a21ac577cbbbe19d4340623dd22ee6aa0">More...</a><br /></td></tr>
+<tr class="separator:a21ac577cbbbe19d4340623dd22ee6aa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>World queries. </p>
@@ -247,6 +263,30 @@ int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 <p>Chunks currently resident in <code>world's</code> memory cache (the live cache size the eviction pass drains), or -1 for an unloaded world. </p>
 <p>Cache/cost probe for status surfaces. </p>
+
+</div>
+</div>
+<a id="a21ac577cbbbe19d4340623dd22ee6aa0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ac577cbbbe19d4340623dd22ee6aa0">&#9670;&nbsp;</a></span>damageEntity</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t(* CsWorldApi::damageEntity) (const char *world, int64_t id, double amount, const char *cause)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Damages a standing mob through the full cancellable pipeline (EntityDamageByEntity without a damager object, hurt flash, era knockback only for attacker-driven hits). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amount</td><td>damage to apply (&gt;= 0). </td></tr>
+    <tr><td class="paramname">cause</td><td>one of the lowercase names the damage events emit ("entity_attack", "fall", ...), or NULL = "custom". </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 cancelled (plugin or dying body), 1 hurt, 2 killed, -1 unknown mob. </dd></dl>
 
 </div>
 </div>
@@ -332,6 +372,23 @@ int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 </div>
 </div>
+<a id="aa426a23fea910e7fa281b9b4529b0c96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa426a23fea910e7fa281b9b4529b0c96">&#9670;&nbsp;</a></span>getEntityHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double(* CsWorldApi::getEntityHealth) (const char *world, int64_t id)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Current health of a standing mob, or -1 for an unknown id. </p>
+<p>Mobs carry vanilla-shaped health (see entityTypeFromName). </p>
+
+</div>
+</div>
 <a id="a8fa34b790edc24fcc7b655d29b6572b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fa34b790edc24fcc7b655d29b6572b3">&#9670;&nbsp;</a></span>getFloatingTexts</h2>
 
@@ -378,6 +435,40 @@ int32_t(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 <p>Bulk cell-list write: <code>cells</code> holds 5 int32 per cell (x, y, z, id, meta). </p>
 <p>Later entries override earlier ones for the same cell; out-of-world cells and invalid id/meta are skipped. Same residency contract and viewer refresh as fillBlocks. Returns the cells actually written, -1 when <code>cellCount</code> exceeds the 32768-cell cap. </p>
+
+</div>
+</div>
+<a id="a01cb61b41df215292790d9e601eeb3c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01cb61b41df215292790d9e601eeb3c5">&#9670;&nbsp;</a></span>setEntityHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::setEntityHealth) (const char *world, int64_t id, double hp)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Direct health write, clamped into [0, maxHealth]. </p>
+<p>No damage event fires; reaching zero runs the death sequence (drops, EntityDeath, death animation, delayed despawn). </p><dl class="section return"><dt>Returns</dt><dd>false for an unknown or already-dying mob. </dd></dl>
+
+</div>
+</div>
+<a id="a4ee152b3cf2734ee2c194b1b18832c41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ee152b3cf2734ee2c194b1b18832c41">&#9670;&nbsp;</a></span>setEntityMaxHealth</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsWorldApi::setEntityMaxHealth) (const char *world, int64_t id, double max)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Raises the health ceiling; the current health follows down when it exceeds it. </p>
+<p>False for unknown or dying mobs. </p>
 
 </div>
 </div>

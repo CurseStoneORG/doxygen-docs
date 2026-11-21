@@ -143,6 +143,7 @@ var annotated_dup =
         [ "entity", null, [
           [ "EntityDamageByEntityEvent", "classcursestone_1_1event_1_1entity_1_1EntityDamageByEntityEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityDamageByEntityEvent" ],
           [ "EntityDamageEvent", "classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityDamageEvent" ],
+          [ "EntityDeathEvent", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent" ],
           [ "EntityEvent", "classcursestone_1_1event_1_1entity_1_1EntityEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityEvent" ],
           [ "EntityPortalEnterEvent", "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent" ]
         ] ],

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['viewercount_1878',['viewerCount',['../classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a481c8a567c9699918df4783cec8689ea',1,'cursestone::world::particle::FloatingTextParticle']]],
-  ['visible_1879',['visible',['../classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#aafe4cd6a713a4ef0c5e98a4c9b0e664d',1,'cursestone::world::particle::FloatingTextParticle']]]
+  ['unloadworld_1888',['unloadWorld',['../classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c',1,'cursestone::Server']]],
+  ['uptimeseconds_1889',['uptimeSeconds',['../classcursestone_1_1diagnostics_1_1Diagnostics.html#accfdc792e34e30754118862e7ce79df4',1,'cursestone::diagnostics::Diagnostics']]]
 ];

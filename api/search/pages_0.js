@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['contributing_20to_20cursestone_2024',['Contributing to CurseStone',['../md_CONTRIBUTING.html',1,'']]],
-  ['crash_20diagnostics_20—_20client_2dside_20crash_20forensics_2025',['Crash Diagnostics — client-side crash forensics',['../md_docs_CRASH_DIAGNOSTICS.html',1,'']]],
-  ['cursestone_20comment_20and_20documentation_20style_20guide_2026',['CurseStone Comment and Documentation Style Guide',['../md_docs_STYLE_COMMENTS.html',1,'']]],
-  ['cursestone_20diagnostic_20engine_2027',['CurseStone Diagnostic Engine',['../md_docs_DIAGNOSTIC_ENGINE.html',1,'']]],
-  ['cursestone_20plugin_20api_2028',['CurseStone Plugin API',['../md_docs_PLUGINS.html',1,'']]],
-  ['cursestone_20—_20auditorÍa_20arquitectÓnica_20completa_20_28c_2b_2b_20nativo_29_2029',['CURSESTONE — AUDITORÍA ARQUITECTÓNICA COMPLETA (C++ NATIVO)',['../md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html',1,'']]],
-  ['cómo_20compilar_20cursestone_2030',['Cómo compilar CurseStone',['../md_docs_BUILDING.html',1,'']]]
+  ['contributing_20to_20cursestone_2042',['Contributing to CurseStone',['../md_CONTRIBUTING.html',1,'']]],
+  ['crash_20diagnostics_20—_20client_2dside_20crash_20forensics_2043',['Crash Diagnostics — client-side crash forensics',['../md_docs_CRASH_DIAGNOSTICS.html',1,'']]],
+  ['cursestone_20comment_20and_20documentation_20style_20guide_2044',['CurseStone Comment and Documentation Style Guide',['../md_docs_STYLE_COMMENTS.html',1,'']]],
+  ['cursestone_20diagnostic_20engine_2045',['CurseStone Diagnostic Engine',['../md_docs_DIAGNOSTIC_ENGINE.html',1,'']]],
+  ['cursestone_20plugin_20api_2046',['CurseStone Plugin API',['../md_docs_PLUGINS.html',1,'']]],
+  ['cursestone_20—_20auditorÍa_20arquitectÓnica_20completa_20_28c_2b_2b_20nativo_29_2047',['CURSESTONE — AUDITORÍA ARQUITECTÓNICA COMPLETA (C++ NATIVO)',['../md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html',1,'']]],
+  ['cómo_20compilar_20cursestone_2048',['Cómo compilar CurseStone',['../md_docs_BUILDING.html',1,'']]]
 ];

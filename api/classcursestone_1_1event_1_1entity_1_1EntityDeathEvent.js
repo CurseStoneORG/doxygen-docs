@@ -1,7 +1,9 @@
 var classcursestone_1_1event_1_1entity_1_1EntityDeathEvent =
 [
-    [ "EntityDeathEvent", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#af9fc1f157e2416781427e66b4e24240f", null ],
+    [ "EntityDeathEvent", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#aadaccbd3c36ca039082a8a07b841608e", null ],
     [ "eventName", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#a19743f5f6832ebb1799bcbab2bf4d8d8", null ],
-    [ "amount", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#a795c52f4067e9234f0d05b5bde8e3b74", null ],
-    [ "entity", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#a17976b276c42a292d3cb20ee25c5b6dd", null ]
+    [ "cause", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#a366f7794ad15f4b84c6579dcd11fd1d6", null ],
+    [ "damager", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#a0a05bd9e1c0e72a512caebe88b925e84", null ],
+    [ "victimEid", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#aaac84ddd9815fff5e5531c6b5b6dedc7", null ],
+    [ "victimType", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html#a155ec2b604a8c9f3de8bfe7955aed334", null ]
 ];

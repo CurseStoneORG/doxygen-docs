@@ -91,32 +91,31 @@ $(document).ready(function(){initNavTree('classcursestone_1_1event_1_1entity_1_1
 </div><!--header-->
 <div class="contents">
 
-<p>Inherits <a class="el" href="classcursestone_1_1event_1_1Event.html">cursestone::event::Event</a>, and <a class="el" href="classcursestone_1_1event_1_1Cancellable.html">cursestone::event::Cancellable</a>.</p>
+<p>Inherits <a class="el" href="classcursestone_1_1event_1_1Event.html">cursestone::event::Event</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af9fc1f157e2416781427e66b4e24240f"><td class="memItemLeft" align="right" valign="top"><a id="af9fc1f157e2416781427e66b4e24240f"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EntityDeathEvent</b> (<a class="el" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a> *e=nullptr)</td></tr>
-<tr class="separator:af9fc1f157e2416781427e66b4e24240f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadaccbd3c36ca039082a8a07b841608e"><td class="memItemLeft" align="right" valign="top"><a id="aadaccbd3c36ca039082a8a07b841608e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>EntityDeathEvent</b> (int64_t eid, int32_t type, DamageCause c, <a class="el" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a> *d=nullptr)</td></tr>
+<tr class="separator:aadaccbd3c36ca039082a8a07b841608e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a19743f5f6832ebb1799bcbab2bf4d8d8"><td class="memItemLeft" align="right" valign="top"><a id="a19743f5f6832ebb1799bcbab2bf4d8d8"></a>
 const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>eventName</b> () const override</td></tr>
 <tr class="separator:a19743f5f6832ebb1799bcbab2bf4d8d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classcursestone_1_1event_1_1Cancellable"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcursestone_1_1event_1_1Cancellable')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcursestone_1_1event_1_1Cancellable.html">cursestone::event::Cancellable</a></td></tr>
-<tr class="memitem:a70b3a5b65b82e505858d9d856d6daea5 inherit pub_methods_classcursestone_1_1event_1_1Cancellable"><td class="memItemLeft" align="right" valign="top"><a id="a70b3a5b65b82e505858d9d856d6daea5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCancelled</b> () const</td></tr>
-<tr class="separator:a70b3a5b65b82e505858d9d856d6daea5 inherit pub_methods_classcursestone_1_1event_1_1Cancellable"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bb4f55476780a206550e28e15641dbb inherit pub_methods_classcursestone_1_1event_1_1Cancellable"><td class="memItemLeft" align="right" valign="top"><a id="a6bb4f55476780a206550e28e15641dbb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setCancelled</b> (bool c=true)</td></tr>
-<tr class="separator:a6bb4f55476780a206550e28e15641dbb inherit pub_methods_classcursestone_1_1event_1_1Cancellable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a17976b276c42a292d3cb20ee25c5b6dd"><td class="memItemLeft" align="right" valign="top"><a id="a17976b276c42a292d3cb20ee25c5b6dd"></a>
-<a class="el" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>entity</b></td></tr>
-<tr class="separator:a17976b276c42a292d3cb20ee25c5b6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a795c52f4067e9234f0d05b5bde8e3b74"><td class="memItemLeft" align="right" valign="top"><a id="a795c52f4067e9234f0d05b5bde8e3b74"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>amount</b> = 0.0f</td></tr>
-<tr class="separator:a795c52f4067e9234f0d05b5bde8e3b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaac84ddd9815fff5e5531c6b5b6dedc7"><td class="memItemLeft" align="right" valign="top"><a id="aaac84ddd9815fff5e5531c6b5b6dedc7"></a>
+int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>victimEid</b> = 0</td></tr>
+<tr class="separator:aaac84ddd9815fff5e5531c6b5b6dedc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a155ec2b604a8c9f3de8bfe7955aed334"><td class="memItemLeft" align="right" valign="top"><a id="a155ec2b604a8c9f3de8bfe7955aed334"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>victimType</b> = 0</td></tr>
+<tr class="separator:a155ec2b604a8c9f3de8bfe7955aed334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366f7794ad15f4b84c6579dcd11fd1d6"><td class="memItemLeft" align="right" valign="top"><a id="a366f7794ad15f4b84c6579dcd11fd1d6"></a>
+DamageCause&#160;</td><td class="memItemRight" valign="bottom"><b>cause</b> = DamageCause::CUSTOM</td></tr>
+<tr class="separator:a366f7794ad15f4b84c6579dcd11fd1d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a05bd9e1c0e72a512caebe88b925e84"><td class="memItemLeft" align="right" valign="top"><a id="a0a05bd9e1c0e72a512caebe88b925e84"></a>
+<a class="el" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>damager</b> = nullptr</td></tr>
+<tr class="separator:a0a05bd9e1c0e72a512caebe88b925e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/event/entity/<a class="el" href="EntityDeathEvent_8h_source.html">EntityDeathEvent.h</a></li>

@@ -97,9 +97,9 @@ $(document).ready(function(){initNavTree('classcursestone_1_1event_1_1entity_1_1
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a38dd638b3c4ac842a7ebbd7b03926008"><td class="memItemLeft" align="right" valign="top"><a id="a38dd638b3c4ac842a7ebbd7b03926008"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>EntityDamageEvent</b> (<a class="el" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a> *e=nullptr, float amt=0.0f, DamageCause c=DamageCause::CUSTOM)</td></tr>
-<tr class="separator:a38dd638b3c4ac842a7ebbd7b03926008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac157c1e463805a1e432430b221334228"><td class="memItemLeft" align="right" valign="top"><a id="ac157c1e463805a1e432430b221334228"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>EntityDamageEvent</b> (<a class="el" href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a> *e=nullptr, float amt=0.0f, DamageCause c=DamageCause::CUSTOM, int64_t mobEid=0, int32_t mobType=0)</td></tr>
+<tr class="separator:ac157c1e463805a1e432430b221334228"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acde1a78723f44b10da39012cb20245fa"><td class="memItemLeft" align="right" valign="top"><a id="acde1a78723f44b10da39012cb20245fa"></a>
 const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>eventName</b> () const override</td></tr>
 <tr class="separator:acde1a78723f44b10da39012cb20245fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -122,6 +122,12 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>amount</b> = 0.0f</t
 <tr class="memitem:a5f69ddc3711e94ac1790a44c7b5e80ad"><td class="memItemLeft" align="right" valign="top"><a id="a5f69ddc3711e94ac1790a44c7b5e80ad"></a>
 DamageCause&#160;</td><td class="memItemRight" valign="bottom"><b>cause</b> = DamageCause::CUSTOM</td></tr>
 <tr class="separator:a5f69ddc3711e94ac1790a44c7b5e80ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44cf32d254e54c93c24c1e3093689ed0"><td class="memItemLeft" align="right" valign="top"><a id="a44cf32d254e54c93c24c1e3093689ed0"></a>
+int64_t&#160;</td><td class="memItemRight" valign="bottom"><b>victimEid</b> = 0</td></tr>
+<tr class="separator:a44cf32d254e54c93c24c1e3093689ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1529f6c34e67ae26356b21055c697f4"><td class="memItemLeft" align="right" valign="top"><a id="af1529f6c34e67ae26356b21055c697f4"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>victimType</b> = 0</td></tr>
+<tr class="separator:af1529f6c34e67ae26356b21055c697f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/event/entity/<a class="el" href="EntityDamageEvent_8h_source.html">EntityDamageEvent.h</a></li>

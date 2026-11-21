@@ -1,5 +1,7 @@
 var NAVTREEINDEX3 =
 {
+"Generator_8h_source.html":[12,0,0,21,1,6],
+"GenericParticle_8h_source.html":[12,0,0,21,3,9],
 "GenericSound_8h_source.html":[12,0,0,21,4,0],
 "Ghast_8h_source.html":[12,0,0,3,1,7],
 "GiveCommand_8h_source.html":[12,0,0,1,0,2],
@@ -9,7 +11,7 @@ var NAVTREEINDEX3 =
 "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa3fff5336c7c00e40d2bd48afdb3dc922":[10,0,0,2,0,8,1],
 "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aaa33192be96046c52b8f54b2a598d37db":[10,0,0,2,0,8,2],
 "Goal_8h_source.html":[12,0,0,3,0,0],
-"Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c":[10,0,0,2,0,11],
+"Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c":[10,0,0,2,0,12],
 "Goals_8h_source.html":[12,0,0,3,0,1],
 "GroundBushFeature_8h_source.html":[12,0,0,21,1,2,1,11],
 "HandlerList_8h_source.html":[12,0,0,4,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX3 =
 "ItemConstants_8h.html#a4c0c5407f2bf72bc520238dfc3b95149":[10,0,0,5,492],
 "ItemConstants_8h.html#a4c7f739a69f13c91f2de7eb8e7eb4947":[10,0,0,5,206],
 "ItemConstants_8h.html#a4d17843553bdffba597608415d38e176":[10,0,0,5,194],
-"ItemConstants_8h.html#a4d4ad4c786c394f888330be9ab2f885c":[10,0,0,5,134],
-"ItemConstants_8h.html#a4ddc69f31b835097fd0747a789f8f5c4":[10,0,0,5,267],
-"ItemConstants_8h.html#a4e27a646a583d0e3265891c57dcfe0ff":[10,0,0,5,122]
+"ItemConstants_8h.html#a4d4ad4c786c394f888330be9ab2f885c":[10,0,0,5,134]
 };

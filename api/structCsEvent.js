@@ -6,6 +6,7 @@ var structCsEvent =
     [ "cancelled", "structCsEvent.html#ab41533c7dc8ce276a95b226e35c3601f", null ],
     [ "cause", "structCsEvent.html#a5d54481846ee77c813ca6c4db0000b77", null ],
     [ "damager", "structCsEvent.html#a0bcdbee53f20f97ecf5dd8a7ee819442", null ],
+    [ "entityType", "structCsEvent.html#ac72aabdddb738c54e061adf01275d599", null ],
     [ "face", "structCsEvent.html#a92ad806499582b32c91fbe267554ad4a", null ],
     [ "fromX", "structCsEvent.html#aecd1c63d70c489f48d2c568a7d46a892", null ],
     [ "fromY", "structCsEvent.html#ad049fc5bb10c48285baccb7d81068b3e", null ],

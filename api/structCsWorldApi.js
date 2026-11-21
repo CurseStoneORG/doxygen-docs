@@ -1,6 +1,7 @@
 var structCsWorldApi =
 [
     [ "chunkCount", "structCsWorldApi.html#a4a85590f91999889d8dc5f4e67c2cb76", null ],
+    [ "damageEntity", "structCsWorldApi.html#a21ac577cbbbe19d4340623dd22ee6aa0", null ],
     [ "dimension", "structCsWorldApi.html#a08711b3cacbd23ef9f465adee405aa1b", null ],
     [ "entityTypeFromName", "structCsWorldApi.html#ae2d264e6af4224889d17082151a0561e", null ],
     [ "entityTypeName", "structCsWorldApi.html#a1c8dc6a8f7e0e01f3ec852b4bfed74da", null ],
@@ -9,6 +10,8 @@ var structCsWorldApi =
     [ "getBlockMeta", "structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f", null ],
     [ "getBlocks", "structCsWorldApi.html#a3cffbe73369b697551e74d6e836027b6", null ],
     [ "getEntity", "structCsWorldApi.html#ae7b60215334aa5f519efbba2549e1064", null ],
+    [ "getEntityHealth", "structCsWorldApi.html#aa426a23fea910e7fa281b9b4529b0c96", null ],
+    [ "getEntityMaxHealth", "structCsWorldApi.html#affdac19038eab8d5cd762e3e171e6470", null ],
     [ "getFloatingTextEx", "structCsWorldApi.html#aa656a8709076f56755d1b89db3f9323a", null ],
     [ "getFloatingTexts", "structCsWorldApi.html#a8fa34b790edc24fcc7b655d29b6572b3", null ],
     [ "getSpawn", "structCsWorldApi.html#a4ade25eb0c9ef1b8e55a9f95c5f1a8b3", null ],
@@ -24,6 +27,8 @@ var structCsWorldApi =
     [ "seed", "structCsWorldApi.html#a6406841d44d0a222457eb9fbde28ad3d", null ],
     [ "setBlock", "structCsWorldApi.html#ae4e920cbb7c6c719be92554d99c8fb59", null ],
     [ "setBlocks", "structCsWorldApi.html#a116f56214502ad89134b246a2432ceac", null ],
+    [ "setEntityHealth", "structCsWorldApi.html#a01cb61b41df215292790d9e601eeb3c5", null ],
+    [ "setEntityMaxHealth", "structCsWorldApi.html#a4ee152b3cf2734ee2c194b1b18832c41", null ],
     [ "setFloatingText", "structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c", null ],
     [ "setFloatingTextBody", "structCsWorldApi.html#a4aefa308f8496a3b761cdfac99c63b5a", null ],
     [ "setFloatingTextFollow", "structCsWorldApi.html#a6944cafbb8ac14fc6513b9c5c7b0f623", null ],

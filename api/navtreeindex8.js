@@ -1,5 +1,8 @@
 var NAVTREEINDEX8 =
 {
+"SwampTreeFeature_8h_source.html":[12,0,0,21,1,2,1,34],
+"Synth_8h_source.html":[12,0,0,21,1,0,3],
+"Tag_8h.html#a9d859c5c76e1de5dd3710b1f9dc21db0":[10,0,0,8,38],
 "Tag_8h.html#aa0faad98933cd8d5cf7e36fedd33c4c7":[10,0,0,8,43],
 "Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bad":[10,0,0,8,14],
 "Tag_8h.html#aae09dea55e2a658d1f2c8055183d2bada34b49989e8164caa6f2cf5e04bf3f5ae":[10,0,0,8,14,9],
@@ -246,8 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1CrashDump.html":[11,0,0,42],
 "classcursestone_1_1CrashDump.html#a32ccf26c27501ff4546b5078b059928f":[11,0,0,42,0],
 "classcursestone_1_1CrashDump.html#aeb01e8070fbf83e59e9a17ab14c3eb24":[11,0,0,42,1],
-"classcursestone_1_1DeopCommand.html":[11,0,0,23],
-"classcursestone_1_1DeopCommand.html#a9d5784c57e8f7cccbdbd831d6ed1a429":[11,0,0,23,0],
-"classcursestone_1_1DeopCommand.html#afa5c33350ab5ec418f74ac521122874d":[11,0,0,23,1],
-"classcursestone_1_1GamemodeCommand.html":[11,0,0,24]
+"classcursestone_1_1DeopCommand.html":[11,0,0,23]
 };

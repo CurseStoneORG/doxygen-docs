@@ -1,5 +1,8 @@
 var NAVTREEINDEX9 =
 {
+"classcursestone_1_1DeopCommand.html#a9d5784c57e8f7cccbdbd831d6ed1a429":[11,0,0,23,0],
+"classcursestone_1_1DeopCommand.html#afa5c33350ab5ec418f74ac521122874d":[11,0,0,23,1],
+"classcursestone_1_1GamemodeCommand.html":[11,0,0,24],
 "classcursestone_1_1GamemodeCommand.html#a44179184671edf1cb5ac6f7af8a9af9a":[11,0,0,24,1],
 "classcursestone_1_1GamemodeCommand.html#a45506fcc24de53ad44530c39a0a9ccfb":[11,0,0,24,0],
 "classcursestone_1_1GiveCommand.html":[11,0,0,25],
@@ -246,8 +249,5 @@ var NAVTREEINDEX9 =
 "classcursestone_1_1PluginsCommand.html#a2f1cfe32a43fb5dba942c5b85ea21fed":[11,0,0,31,1],
 "classcursestone_1_1PluginsCommand.html#ae406c5d7ac3bff63e511b718b044d9e5":[11,0,0,31,0],
 "classcursestone_1_1SaveCommand.html":[11,0,0,32],
-"classcursestone_1_1SaveCommand.html#a541407c4b8964ccc5cc6c834590ffa7a":[11,0,0,32,1],
-"classcursestone_1_1SaveCommand.html#a6718903d03c9d64075c7d5ed4bfb602c":[11,0,0,32,0],
-"classcursestone_1_1SayCommand.html":[11,0,0,33],
-"classcursestone_1_1SayCommand.html#a4c2364013f02da128e32326e989248a4":[11,0,0,33,0]
+"classcursestone_1_1SaveCommand.html#a541407c4b8964ccc5cc6c834590ffa7a":[11,0,0,32,1]
 };

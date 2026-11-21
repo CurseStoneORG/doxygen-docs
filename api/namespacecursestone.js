@@ -299,6 +299,7 @@ var namespacecursestone =
         ] ],
         [ "faceYaw", "MobAI_8cpp.html#a44ece5664a5a199c86308c32fbe06ac4", null ],
         [ "makeMobBrain", "MobAI_8cpp.html#a9a0d110fe97ccc320bd10f8b30e32711", null ],
+        [ "kKnockbackStop", "MobAI_8h.html#a7ce1b1e325edafdaab6adaa29fca78d6", null ],
         [ "kWanderSpeed", "Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c", null ]
       ] ],
       [ "EntityTypeId", null, [
@@ -422,6 +423,7 @@ var namespacecursestone =
         [ "EFF_SATURATION", "Effect_8h.html#a8838c0d1a6070e90c5a456a1ca1719adab2a1c0e47f7b79ed15332f116572f0d3", null ]
       ] ],
       [ "isValidMobType", "EntityTypes_8cpp.html#aa159f262335d2a819818ee66aa1a0cfd", null ],
+      [ "mobMaxHealth", "EntityTypes_8cpp.html#ac853a216f7be2107791fa0726322035e", null ],
       [ "mobTypeFromName", "EntityTypes_8cpp.html#a929a53aa6e1741168adaeab5c98cbe3f", null ],
       [ "mobTypeKind", "EntityTypes_8cpp.html#ab3b92b56af494fe99181c1411c32d8a6", null ],
       [ "mobTypeName", "EntityTypes_8cpp.html#ad037de8019f46a5cf6b150f681607a4d", null ]
@@ -438,6 +440,7 @@ var namespacecursestone =
       [ "entity", null, [
         [ "EntityDamageByEntityEvent", "classcursestone_1_1event_1_1entity_1_1EntityDamageByEntityEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityDamageByEntityEvent" ],
         [ "EntityDamageEvent", "classcursestone_1_1event_1_1entity_1_1EntityDamageEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityDamageEvent" ],
+        [ "EntityDeathEvent", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityDeathEvent" ],
         [ "EntityEvent", "classcursestone_1_1event_1_1entity_1_1EntityEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityEvent" ],
         [ "EntityPortalEnterEvent", "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent.html", "classcursestone_1_1event_1_1entity_1_1EntityPortalEnterEvent" ],
         [ "DamageCause", "EntityDamageEvent_8h.html#a8d24cddd45c24516815ae09edb2678bc", [

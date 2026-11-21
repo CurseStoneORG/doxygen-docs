@@ -355,6 +355,21 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>moveMob</b> (int64_t 
 <tr class="memitem:ae2956e7881fcc13cb66037c0692b37e1"><td class="memItemLeft" align="right" valign="top"><a id="ae2956e7881fcc13cb66037c0692b37e1"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>removeMob</b> (int64_t id)</td></tr>
 <tr class="separator:ae2956e7881fcc13cb66037c0692b37e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae71a1bf61ab21f547de9432c0bab829c"><td class="memItemLeft" align="right" valign="top"><a id="ae71a1bf61ab21f547de9432c0bab829c"></a>
+entity::DamageApply&#160;</td><td class="memItemRight" valign="bottom"><b>damageMob</b> (int64_t eid, float amount, <a class="el" href="classcursestone_1_1entity_1_1Entity.html">entity::Entity</a> *damager=nullptr, event::entity::DamageCause cause=event::entity::DamageCause::ENTITY_ATTACK)</td></tr>
+<tr class="separator:ae71a1bf61ab21f547de9432c0bab829c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace663b83e12c79967d3de6fe9b7dbb90"><td class="memItemLeft" align="right" valign="top"><a id="ace663b83e12c79967d3de6fe9b7dbb90"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setMobHealth</b> (int64_t eid, float hp)</td></tr>
+<tr class="separator:ace663b83e12c79967d3de6fe9b7dbb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5fabf748b96b190502dfa43ca732674"><td class="memItemLeft" align="right" valign="top"><a id="ad5fabf748b96b190502dfa43ca732674"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>setMobMaxHealth</b> (int64_t eid, float max)</td></tr>
+<tr class="separator:ad5fabf748b96b190502dfa43ca732674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4deaee102b94c8382b763673d6e97312"><td class="memItemLeft" align="right" valign="top"><a id="a4deaee102b94c8382b763673d6e97312"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>tickMobDeaths</b> (uint64_t current_tick)</td></tr>
+<tr class="separator:a4deaee102b94c8382b763673d6e97312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addad7d0c37a076496cfdbd700e40ae9b"><td class="memItemLeft" align="right" valign="top"><a id="addad7d0c37a076496cfdbd700e40ae9b"></a>
+std::mutex &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>mobMutex</b> ()</td></tr>
+<tr class="separator:addad7d0c37a076496cfdbd700e40ae9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7251b5b3ba72804d7048b4c8b33aa4e"><td class="memItemLeft" align="right" valign="top"><a id="ad7251b5b3ba72804d7048b4c8b33aa4e"></a>
 <a class="el" href="structcursestone_1_1world_1_1MobEntity.html">MobEntity</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mob</b> (int64_t eid)</td></tr>
 <tr class="separator:ad7251b5b3ba72804d7048b4c8b33aa4e"><td class="memSeparator" colspan="2">&#160;</td></tr>

@@ -140,7 +140,7 @@ re-loads" window. For WorldEdit-style volume work use the bulk write:</p>
 <li><code>commands.registerAlias(alias, target)</code> — a shortcut: typing <code>/alias</code> dispatches <code>/target</code>. <code>target</code> is <code>"command"</code> or <code>"command with fixed
   args"</code>; whatever the sender typed is appended after the fixed ones (<code>commands.registerAlias("gmc", "gamemode 1")</code> turns <code>/gmc survival</code> into <code>/gamemode 1 survival</code>). Real commands always win — a name taken by a command or another alias is rejected (returns <code>false</code>), the target command's permission still gates the call, and the alias dies with the plugin (<code>/plugins reload</code> or unload drops it and may re-register it). The software itself ships the same kind of shortcuts as native aliases (<code>/ver</code>, <code>/about</code> → <code>/version</code>; <code>/pl</code> → <code>/plugins</code>; <code>/?</code> → <code>/help</code>; <code>/tp</code> → <code>/teleport</code>; <code>/gm</code> → <code>/gamemode</code>) — plugins can never unregister those, and an alias name that collides with one is rejected.</li>
 <li><code>commands.unregisterAlias(alias)</code> — removes ONE alias THIS plugin registered earlier (onDisable-time cleanup, or re-pointing a shortcut). Native aliases and other plugins' aliases are out of reach; returns <code>true</code> only when an owned alias existed and is now gone.</li>
-<li><code>events.on(name, fn)</code> — PlayerJoin, PlayerQuit, PlayerChat, PlayerMove, PlayerDropItem, PlayerItemHeld, BlockBreak, BlockPlace, EntityDamage, EntityDamageByEntity, PlayerDeath, PlayerRespawn, PlayerBedEnter (alias <code>PlayerSleepInBed</code>), PlayerBedLeave, DoorToggle, PlayerInteract, InventoryOpen, InventoryClick, InventoryClose, WorldLoad (e.world name, e.dimension), WorldUnload (cancellable, e.world name)</li>
+<li><code>events.on(name, fn)</code> — PlayerJoin, PlayerQuit, PlayerChat, PlayerMove, PlayerDropItem, PlayerItemHeld, BlockBreak, BlockPlace, EntityDamage, EntityDamageByEntity, EntityDeath, PlayerDeath, PlayerRespawn, PlayerBedEnter (alias <code>PlayerSleepInBed</code>), PlayerBedLeave, DoorToggle, PlayerInteract, InventoryOpen, InventoryClick, InventoryClose, WorldLoad (e.world name, e.dimension), WorldUnload (cancellable, e.world name)</li>
 </ul>
 <p><code>PlayerInteract</code> fires for every tap on a block, before the server acts — <code>e.action</code> is <code>left_click_block</code>, <code>right_click_block</code>, <code>left_click_air</code> or <code>right_click_air</code>; cancelling swallows the vanilla behavior (no break, no placement, no chest open). The left-hand event covers every break gesture: the desktop <code>START_BREAK</code> action packet fires it whatever face the client reports, and a creative-mode touch tap — which reaches the server as a bare <code>RemoveBlockPacket</code> with no face at all — fires it too (<code>e.face</code> is -1 then), so wand-style tools work identically on phones and desktops. A removal the client already announced with <code>START_BREAK</code> fires it once (the <code>START_BREAK</code> path), never twice.</p><ul>
 <li><code>scheduler.later/every/cancel</code></li>
@@ -229,18 +229,37 @@ Entities (standing mobs)</h2>
 <p>World handles expose the mob registry the creative spawn eggs use. A spawned mob has no AI and no physics: it spawns exactly where the caller puts it and stays there. Cost is three packets in its whole lifetime — one AddEntityPacket on spawn, one MoveEntityPacket per move, one RemoveEntityPacket on removal — with no per-tick entry in the world loop, and viewers that stream its chunk later (joins, walk-ins) receive it from the chunk stream, deduplicated per client.</p>
 <div class="fragment"><div class="line">local w = server.defaultWorld()</div>
 <div class="line"> </div>
-<div class="line">local eid = w.spawnEntity(&quot;zombie&quot;, x, y, z)      -- name or raw id (see below)</div>
-<div class="line">w.spawnEntity(&quot;cow&quot;, x, y, z, 90.0)               -- + yaw</div>
-<div class="line">w.moveEntity(eid, x, y + 1, z)                    -- one MoveEntityPacket</div>
-<div class="line">local e = w.getEntity(eid)                        -- {id,type,name,x,y,z,yaw,pitch}</div>
-<div class="line">for _, m in ipairs(w.getEntities()) do ... end    -- every standing mob</div>
-<div class="line">w.removeEntity(eid)                               -- despawn</div>
-<div class="line">w.entityTypes()                                   -- name -&gt; protocol-84 id map</div>
+<div class="line">local eid = w:spawnEntity(&quot;zombie&quot;, x, y, z)      -- name or raw id (see below)</div>
+<div class="line">w:spawnEntity(&quot;cow&quot;, x, y, z, 90.0)               -- + yaw</div>
+<div class="line">w:moveEntity(eid, x, y + 1, z)                    -- one MoveEntityPacket</div>
+<div class="line">local e = w:getEntity(eid)                        -- {id,type,name,x,y,z,yaw,pitch}</div>
+<div class="line">for _, m in ipairs(w:getEntities()) do ... end    -- every standing mob</div>
+<div class="line">w:removeEntity(eid)                               -- despawn</div>
+<div class="line">w:entityTypes()                                   -- name -&gt; protocol-84 id map</div>
 </div><!-- fragment --><p><code>type</code> accepts the canonical lowercase names — `chicken cow pig sheep wolf villager mooshroom squid rabbit bat ocelot horse donkey mule skeleton_horse zombie_horse zombie creeper skeleton spider zombie_pigman slime enderman silverfish ghast lava_slime magma_cube blaze zombie_villager witch stray husk wither_skeleton` — or their protocol-84 network id (10..48 range above; on this protocol the spawn egg aux value IS the id). Common aliases (<code>mushroom_cow</code>, <code>pigman</code>, <code>cat</code>, <code>magma</code>, ...) resolve too. Unknown names/ids, out-of-height positions and the per-world cap (256) return <code>false</code> and never raise. Every id in the registry has its own egg in the 0.15.10 creative inventory, which is what makes the client's renderer for it client-verified — ids outside the registry never reach the wire.</p>
 <p>Entity ids do not survive restarts, like floating text ids.</p>
-<h1><a class="anchor" id="autotoc_md184"></a>
+<h3><a class="anchor" id="autotoc_md184"></a>
+Mob combat and health</h3>
+<p>Mobs carry vanilla-shaped health (each registry id has its era max — a zombie 20, a rabbit 3) and take damage through one pipeline used by every source: player melee (InteractPacket), arrows, and the plugin <code>damageEntity</code> call. Each hit fires the cancellable <code>EntityDamage</code> / <code>EntityDamageByEntity</code> events (mob victims surface as <code>e.entity = "eid:N"</code> plus <code>e.entityName</code>/<code>e.entityType</code>, player victims as their name), broadcasts the red hurt flash to the chunk viewers, applies era knockback (a client motion packet plus a server-side AI carry-over) when an attacker drives the hit, and a lethal blow runs the death sequence: <code>EntityDeathEvent</code>, the vanilla drop table (rotten flesh, beef, feathers, gunpowder, ...), the death animation for ~1 second, then the record despawns. Dying bodies take no further damage and reject direct health writes; death itself is not cancellable — cancel the damage event instead.</p>
+<div class="fragment"><div class="line">local eid = w:spawnEntity(&quot;zombie&quot;, x, y, z)</div>
+<div class="line">print(w:getEntityHealth(eid), w:getEntityMaxHealth(eid))   -- 20  20</div>
+<div class="line">w:setEntityMaxHealth(eid, 40)                              -- raises the ceiling</div>
+<div class="line">print(w:damageEntity(eid, 5))                              -- &quot;hurt&quot; | &quot;killed&quot; | &quot;cancelled&quot;</div>
+<div class="line">w:setEntityHealth(eid, 1)                                  -- direct write, clamped</div>
+<div class="line">w:damageEntity(eid, 999)                                   -- &quot;killed&quot; → drops + death anim</div>
+<div class="line"> </div>
+<div class="line">events.on(&quot;EntityDamageByEntity&quot;, function(e)</div>
+<div class="line">  if e.entityName == &quot;zombie&quot; and e.amount &gt; 5 then</div>
+<div class="line">    e.cancel()                    -- the hit never lands: no flash, no knockback</div>
+<div class="line">  end</div>
+<div class="line">end)</div>
+<div class="line">events.on(&quot;EntityDeath&quot;, function(e)</div>
+<div class="line">  print(e.entity .. &quot; (&quot; .. e.entityName .. &quot;) died by &quot; .. e.cause)</div>
+<div class="line">end)</div>
+</div><!-- fragment --><p><code>damageEntity</code>'s cause argument accepts the lowercase names the damage events emit (<code>"fall"</code>, <code>"projectile"</code>, ...), a numeric <code>events.CAUSE</code> constant, or nothing for <code>"entity_attack"</code>.</p>
+<h1><a class="anchor" id="autotoc_md185"></a>
 File plugins (C++ via .so / .dll)</h1>
-<h2><a class="anchor" id="autotoc_md185"></a>
+<h2><a class="anchor" id="autotoc_md186"></a>
 Structure</h2>
 <p>The final plugin is ONE file, named after the plugin:</p>
 <div class="fragment"><div class="line">plugins/</div>
@@ -257,9 +276,9 @@ Structure</h2>
 </ul>
 <p>The library exports ONE symbol:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>);</div>
-<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:630</div></div>
+<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:660</div></div>
 </div><!-- fragment --><p><code><a class="el" href="NativeAPI_8h_source.html">src/plugin/NativeAPI.h</a></code> is the complete SDK header — copy it (or point <code>-I</code> at the server <code>src/</code>) and compile against it. The plugin links nothing: the entire server surface arrives as function-pointer groups in the <code>CsPluginApi*</code> handed to <code>onLoad</code>.</p>
-<h2><a class="anchor" id="autotoc_md186"></a>
+<h2><a class="anchor" id="autotoc_md187"></a>
 Minimal complete plugin</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;plugin/NativeAPI.h&quot;</span></div>
 <div class="line"> </div>
@@ -300,15 +319,15 @@ Minimal complete plugin</h2>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line">} <span class="comment">// extern &quot;C&quot;</span></div>
-<div class="ttc" id="astructCsCommandApi_html_ac6e2956c7aa58f601d16d68c1737cb0d"><div class="ttname"><a href="structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d">CsCommandApi::reply</a></div><div class="ttdeci">void(* reply)(const CsCommandSender *sender, const char *msg)</div><div class="ttdoc">Answers the sender: console -&gt; log, player -&gt; chat message.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:217</div></div>
+<div class="ttc" id="astructCsCommandApi_html_ac6e2956c7aa58f601d16d68c1737cb0d"><div class="ttname"><a href="structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d">CsCommandApi::reply</a></div><div class="ttdeci">void(* reply)(const CsCommandSender *sender, const char *msg)</div><div class="ttdoc">Answers the sender: console -&gt; log, player -&gt; chat message.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:220</div></div>
 <div class="ttc" id="astructCsCommandSender_html"><div class="ttname"><a href="structCsCommandSender.html">CsCommandSender</a></div><div class="ttdoc">Who ran a plugin command.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:131</div></div>
 <div class="ttc" id="astructCsEvent_html"><div class="ttname"><a href="structCsEvent.html">CsEvent</a></div><div class="ttdoc">Event snapshot passed to native listeners.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:157</div></div>
 <div class="ttc" id="astructCsEvent_html_a64fe453976f4600d9cf333630035d518"><div class="ttname"><a href="structCsEvent.html#a64fe453976f4600d9cf333630035d518">CsEvent::player</a></div><div class="ttdeci">const char * player</div><div class="ttdoc">Player name, or &quot;&quot; when the event has none.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:159</div></div>
-<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:605</div></div>
+<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:635</div></div>
 <div class="ttc" id="astructCsPluginDesc_html"><div class="ttname"><a href="structCsPluginDesc.html">CsPluginDesc</a></div><div class="ttdoc">Static plugin metadata returned by the vtable's desc hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:117</div></div>
-<div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:200</div></div>
+<div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:203</div></div>
 </div><!-- fragment --><p><code>onLoad</code> / <code>desc</code> are required; the other hooks may be <code>NULL</code>. The descriptor is the manifest: keep <code>name</code> non-empty and unique, and set <code>api</code> to the <code>CURSESTONE_API</code> you built against (an empty value means "this SDK"; an incompatible claim refuses the load).</p>
-<h2><a class="anchor" id="autotoc_md187"></a>
+<h2><a class="anchor" id="autotoc_md188"></a>
 Building</h2>
 <div class="fragment"><div class="line"># Linux / macOS / Android NDK</div>
 <div class="line">c++ -shared -fPIC -O2 -I&lt;repo&gt;/src -o MyPlugin.so src/MyPlugin.cpp</div>
@@ -320,10 +339,10 @@ Building</h2>
 <div class="line">target_include_directories(MyPlugin PRIVATE &lt;repo&gt;/src)</div>
 <div class="line">set_target_properties(MyPlugin PROPERTIES PREFIX &quot;&quot;)   # MyPlugin.so, not libMyPlugin.so</div>
 </div><!-- fragment --><p>For Android use the NDK toolchain (<code>-DANDROID_ABI=arm64-v8a</code> and friends); for MSVC make sure the platform matches the server build (x64 vs x86).</p>
-<h2><a class="anchor" id="autotoc_md188"></a>
+<h2><a class="anchor" id="autotoc_md189"></a>
 Data folder</h2>
 <p>Every loaded plugin gets <code>&lt;server&gt;/data_pl/&lt;stem&gt;/</code> created at load. The <code>data.*</code> group is jailed to it: relative paths only, no <code>..</code>, no backslashes. The Lua sandbox uses the same root, keyed by folder name.</p>
-<h2><a class="anchor" id="autotoc_md189"></a>
+<h2><a class="anchor" id="autotoc_md190"></a>
 Rules and guarantees</h2>
 <ul>
 <li><b>ABI version</b>: <code>CS_PLUGIN_ABI_VERSION</code> (currently 1) is checked right after the entry lookup; a mismatch refuses the library with a clear log line. It only moves when an existing field changes meaning, type or order — new surface is appended to the end of the group structs.</li>
@@ -334,7 +353,7 @@ Rules and guarantees</h2>
 <li><b>Permissions</b> mirror the Lua <code>commands.register</code> vocabulary: <code>NULL</code>/<code>""</code> = public, <code>"op"</code> = operators + console, any other string = permission node.</li>
 <li><b>String ownership</b>: strings handed OUT by the API are valid only until the callback returns; buffers the plugin fills are caller-owned.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md190"></a>
+<h2><a class="anchor" id="autotoc_md191"></a>
 API reference (native)</h2>
 <p>All functions return <code>bool</code>/<code>int</code> failure markers (<code>false</code> / <code>-1</code> / <code>0</code>) instead of raising anything; invalid arguments never crash the server.</p>
 <p><b>log</b> (context-bound)</p>
@@ -373,7 +392,7 @@ API reference (native)</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Function   </th><th class="markdownTableHeadNone">Notes    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>on(api, eventName, fn, ud) -&gt; bool</code>   </td><td class="markdownTableBodyNone"><code>false</code> on unknown names; writable fields: <code>message</code>, <code>amount</code>, <code>cancelled</code>   </td></tr>
+<td class="markdownTableBodyNone"><code>on(api, eventName, fn, ud) -&gt; bool</code>   </td><td class="markdownTableBodyNone"><code>false</code> on unknown names; writable fields: <code>message</code>, <code>amount</code>, <code>cancelled</code>; mob damage/death events carry <code>entityType</code> (canonical mob name, "" for players)   </td></tr>
 </table>
 <p><b>server</b> (context-free)</p>
 <table class="markdownTable">
@@ -508,8 +527,14 @@ API reference (native)</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><code>getEntity(world, id, outType, outPos[3], outRot[2])</code>   </td><td class="markdownTableBodyNone">reads a mob back (type, feet position, yaw/pitch)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>entityTypeFromName(name, outId)</code> / <code>entityTypeName(type)</code>   </td><td class="markdownTableBodyNone">the shared mob registry, same names the Lua <code>entityTypes()</code> maps    </td></tr>
+<td class="markdownTableBodyNone"><code>getEntityHealth(world, id)</code> / <code>getEntityMaxHealth(world, id)</code>   </td><td class="markdownTableBodyNone">mob health, or -1 for an unknown id    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>setEntityHealth(world, id, hp)</code> / <code>setEntityMaxHealth(world, id, max)</code>   </td><td class="markdownTableBodyNone">direct writes (clamped); zero health runs the death sequence; false for unknown/dying mobs    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>damageEntity(world, id, amount, cause)</code>   </td><td class="markdownTableBodyNone">full cancellable pipeline; 0 cancelled, 1 hurt, 2 killed, -1 unknown mob; cause NULL = "custom"    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>entityTypeFromName(name, outId)</code> / <code>entityTypeName(type)</code>   </td><td class="markdownTableBodyNone">the shared mob registry, same names the Lua <code>entityTypes()</code> maps    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>playerCount(world)</code>   </td><td class="markdownTableBodyNone">players currently in that world   </td></tr>
 </table>
 <p><b>data</b> (context-bound; jailed to <code>data_pl/&lt;stem&gt;</code>)</p>
@@ -527,16 +552,16 @@ API reference (native)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>free(ptr)</code>   </td><td class="markdownTableBodyNone">releases <code>readFile</code> buffers across allocator boundaries   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md191"></a>
+<h2><a class="anchor" id="autotoc_md192"></a>
 Versioning</h2>
 <p><code>CS_PLUGIN_ABI_VERSION</code> stays at 1 while fields are only appended; the server's plugin API version (<code>CURSESTONE_API</code>, currently <code>1.0.3</code>) only moves at release time, not per change.</p>
-<h1><a class="anchor" id="autotoc_md192"></a>
+<h1><a class="anchor" id="autotoc_md193"></a>
 Commands</h1>
 <ul>
 <li><code>/plugins</code> — lists every plugin; native ones show a <code>[C++]</code> tag.</li>
 <li><code>/plugins reload</code> — disables, unloads (dtor runs <code>onUnload</code>, library closed) and re-scans the folder (folders for Lua, bare files for C++), all on the main thread.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md193"></a>
+<h1><a class="anchor" id="autotoc_md194"></a>
 Reference implementation</h1>
 <p><code>plugins/HelloNative/</code> — build with the <code>cursestone-example-plugin</code> CMake target or the one-liner above, then drop the produced <code>HelloNative.so</code> / <code>HelloNative.dll</code> directly into <code>plugins/</code>. </p>
 </div></div><!-- contents -->
