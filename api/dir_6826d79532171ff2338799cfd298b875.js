@@ -9,7 +9,7 @@ var dir_6826d79532171ff2338799cfd298b875 =
     [ "Explosion.h", "Explosion_8h_source.html", null ],
     [ "LightEngine.h", "LightEngine_8h_source.html", null ],
     [ "Location.h", "Location_8h_source.html", null ],
-    [ "MobPersistence.h", "MobPersistence_8h_source.html", null ],
+    [ "MobChunkCodec.h", "MobChunkCodec_8h_source.html", null ],
     [ "PortalRegistry.h", "PortalRegistry_8h_source.html", null ],
     [ "Position.h", "Position_8h_source.html", null ],
     [ "World.h", "World_8h_source.html", null ]

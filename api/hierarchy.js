@@ -634,10 +634,10 @@ var hierarchy =
     [ "vgen::MineshaftData", "structvgen_1_1MineshaftData.html", null ],
     [ "cursestone::entity::ai::MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", null ],
     [ "cursestone::entity::ai::MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", null ],
+    [ "cursestone::world::MobChunkCodec", "classcursestone_1_1world_1_1MobChunkCodec.html", null ],
     [ "cursestone::entity::ai::MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", null ],
     [ "cursestone::world::MobEntity", "structcursestone_1_1world_1_1MobEntity.html", null ],
     [ "cursestone::entity::ai::MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", null ],
-    [ "cursestone::world::MobPersistence", "classcursestone_1_1world_1_1MobPersistence.html", null ],
     [ "vgen::MobSpawnUtils", "classvgen_1_1MobSpawnUtils.html", null ],
     [ "cursestone::entity::mobs::MobType", "structcursestone_1_1entity_1_1mobs_1_1MobType.html", [
       [ "cursestone::entity::mobs::Bat", "structcursestone_1_1entity_1_1mobs_1_1Bat.html", null ],

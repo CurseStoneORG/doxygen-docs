@@ -1726,7 +1726,7 @@ var namespacecursestone =
       [ "LightEngine", "classcursestone_1_1world_1_1LightEngine.html", "classcursestone_1_1world_1_1LightEngine" ],
       [ "Location", "classcursestone_1_1world_1_1Location.html", "classcursestone_1_1world_1_1Location" ],
       [ "PersistedMob", "structcursestone_1_1world_1_1PersistedMob.html", "structcursestone_1_1world_1_1PersistedMob" ],
-      [ "MobPersistence", "classcursestone_1_1world_1_1MobPersistence.html", null ],
+      [ "MobChunkCodec", "classcursestone_1_1world_1_1MobChunkCodec.html", null ],
       [ "PortalRegistry", "classcursestone_1_1world_1_1PortalRegistry.html", "classcursestone_1_1world_1_1PortalRegistry" ],
       [ "Position", "classcursestone_1_1world_1_1Position.html", "classcursestone_1_1world_1_1Position" ],
       [ "TouchedCell", "structcursestone_1_1world_1_1TouchedCell.html", "structcursestone_1_1world_1_1TouchedCell" ],
