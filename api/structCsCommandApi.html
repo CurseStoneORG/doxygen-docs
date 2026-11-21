@@ -107,6 +107,9 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 <tr class="memitem:a41e24e5260d580f855e99b2c9f42e748"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsCommandApi.html#a41e24e5260d580f855e99b2c9f42e748">addAlias</a> )(<a class="el" href="structCsPluginApi.html">CsPluginApi</a> *api, const char *alias, const char *target)</td></tr>
 <tr class="memdesc:a41e24e5260d580f855e99b2c9f42e748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a shortcut: typing /alias dispatches /target.  <a href="structCsCommandApi.html#a41e24e5260d580f855e99b2c9f42e748">More...</a><br /></td></tr>
 <tr class="separator:a41e24e5260d580f855e99b2c9f42e748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a331127cb256408caee19db7b74a5f810"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsCommandApi.html#a331127cb256408caee19db7b74a5f810">removeAlias</a> )(<a class="el" href="structCsPluginApi.html">CsPluginApi</a> *api, const char *alias)</td></tr>
+<tr class="memdesc:a331127cb256408caee19db7b74a5f810"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes an alias previously registered by THIS plugin (addAlias).  <a href="structCsCommandApi.html#a331127cb256408caee19db7b74a5f810">More...</a><br /></td></tr>
+<tr class="separator:a331127cb256408caee19db7b74a5f810"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Command registration. </p>
@@ -132,6 +135,23 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 
 <p>Registers a shortcut: typing /alias dispatches /target. </p>
 <p>target may be "command" or "command with fixed args"; whatever the sender types is appended after the fixed arguments. Names are case- insensitive; real commands always win. The alias dies with the plugin; the target command's permission still gates the call. </p><dl class="section return"><dt>Returns</dt><dd>false when the alias name is taken, empty, or self-targeted. </dd></dl>
+
+</div>
+</div>
+<a id="a331127cb256408caee19db7b74a5f810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a331127cb256408caee19db7b74a5f810">&#9670;&nbsp;</a></span>removeAlias</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsCommandApi::removeAlias) (<a class="el" href="structCsPluginApi.html">CsPluginApi</a> *api, const char *alias)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Removes an alias previously registered by THIS plugin (addAlias). </p>
+<p>The software's native aliases and other plugins' aliases cannot be dropped through it. </p><dl class="section return"><dt>Returns</dt><dd>true when an owned alias existed and is now gone. </dd></dl>
 
 </div>
 </div>

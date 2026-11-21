@@ -222,9 +222,10 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1CommandMap.html#a47583f794077bb3a9f688a141ef49c37":[11,0,0,19,1],
 "classcursestone_1_1CommandMap.html#a4c52073b2bf863dd2cec5d2adc850384":[11,0,0,19,5],
 "classcursestone_1_1CommandMap.html#a5b787bf933585e92026d84eb7b5219bf":[11,0,0,19,2],
+"classcursestone_1_1CommandMap.html#a7e8ce8a3eb4efa7d11f1f70bc84a7b2f":[11,0,0,19,7],
 "classcursestone_1_1CommandMap.html#a8d089a8e28843bca5062c0819c13fdf8":[11,0,0,19,0],
 "classcursestone_1_1CommandMap.html#aadf5ce7f878e30a1aad51a85dcbef6d8":[11,0,0,19,6],
-"classcursestone_1_1CommandMap.html#adc413a8821cc5bc948cdfce58de7246f":[11,0,0,19,7],
+"classcursestone_1_1CommandMap.html#adc413a8821cc5bc948cdfce58de7246f":[11,0,0,19,8],
 "classcursestone_1_1CommandReader.html":[11,0,0,20],
 "classcursestone_1_1CommandReader.html#a0d8c449194a1dc93c3eb6bbe7d79497a":[11,0,0,20,0],
 "classcursestone_1_1CommandReader.html#a4455ae31f51c6d1fa57c31d62f475555":[11,0,0,20,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1DeopCommand.html":[11,0,0,23],
 "classcursestone_1_1DeopCommand.html#a9d5784c57e8f7cccbdbd831d6ed1a429":[11,0,0,23,0],
 "classcursestone_1_1DeopCommand.html#afa5c33350ab5ec418f74ac521122874d":[11,0,0,23,1],
-"classcursestone_1_1GamemodeCommand.html":[11,0,0,24],
-"classcursestone_1_1GamemodeCommand.html#a2aad2605f6be7027da688bc5c776a480":[11,0,0,24,0]
+"classcursestone_1_1GamemodeCommand.html":[11,0,0,24]
 };

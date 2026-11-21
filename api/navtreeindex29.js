@@ -1,5 +1,8 @@
 var NAVTREEINDEX29 =
 {
+"structasync__log__entry__t.html#a402087082892e6a5d3d7554fa4f6fd9c":[11,0,3,2],
+"structasync__log__entry__t.html#a72ba622164dc4af23d484b2338431d84":[11,0,3,0],
+"structasync__log__entry__t.html#ac182e29d2aa66beba315c0e2ced57aef":[11,0,3,3],
 "structasync__log__entry__t.html#ac3071d025abacd5cabae25065c44e1b4":[11,0,3,1],
 "structcursestone_1_1DisconnectDump.html":[11,0,0,51],
 "structcursestone_1_1DisconnectDump.html#a00aef07fafeb94f1716e7ee78263d484":[11,0,0,51,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX29 =
 "structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#a5ed234d41f65b3055c77de78106ba98d":[11,0,0,9,0,15,5],
 "structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#a768fe352556e1958df20ef743b6e2b7e":[11,0,0,9,0,15,0],
 "structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#aa8b7b6dda64e7d9d2215c756644f283f":[11,0,0,9,0,15,1],
-"structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#ab7783ab11a4387b37915884ddbbbc51b":[11,0,0,9,0,15,9],
-"structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#ac0d3a4ae6c2a1a98cf5e1005219b4ec5":[11,0,0,9,0,15,3],
-"structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#acd405c1120764ea343f579843a0beac6":[11,0,0,9,0,15,4],
-"structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#acf6a3798d84238b9452d03dc0f78d36a":[11,0,0,9,0,15,6]
+"structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#ab7783ab11a4387b37915884ddbbbc51b":[11,0,0,9,0,15,9]
 };

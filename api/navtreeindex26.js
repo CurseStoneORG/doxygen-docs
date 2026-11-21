@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"classvgen_1_1StoneBlock.html#a25a94dba2008937b7591260dd7e43d36a69701d0dd6460e9d082d593ddcb0beaf":[11,0,2,32,0,3],
 "classvgen_1_1StoneBlock.html#a25a94dba2008937b7591260dd7e43d36a7562201f32b70cc000ea79f053e45cf0":[11,0,2,32,0,1],
 "classvgen_1_1StoneBlock.html#a25a94dba2008937b7591260dd7e43d36a7fc8a5c47905569f11a32a1a201c00c6":[11,0,2,32,0,4],
 "classvgen_1_1StoneBlock.html#a25a94dba2008937b7591260dd7e43d36adc2a7a68c1e92bf8befa85d0d52a8ae6":[11,0,2,32,0,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX26 =
 "classvgen_1_1buffer__span__mut.html#a2b86d4b3f32e7464ce7b2e95f25ac587":[11,0,2,182,6],
 "classvgen_1_1buffer__span__mut.html#a7f4a60886d538313a486fd17755640cb":[11,0,2,182,1],
 "classvgen_1_1buffer__span__mut.html#a82bf6d466dc64878f1054507b146b28a":[11,0,2,182,3],
-"classvgen_1_1buffer__span__mut.html#a8670a51e1db41f1645118406e132d251":[11,0,2,182,0],
-"classvgen_1_1buffer__span__mut.html#aed22cfcf604bb6f031d9cdb13adb4850":[11,0,2,182,5]
+"classvgen_1_1buffer__span__mut.html#a8670a51e1db41f1645118406e132d251":[11,0,2,182,0]
 };

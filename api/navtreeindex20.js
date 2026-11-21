@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#abd6bb702f69428f985ed8bb426612abf":[11,0,0,17,0,0,0,20],
 "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#abe1802ccc7e21ce239480644b6952fc7":[11,0,0,17,0,0,0,14],
 "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#ac1a0712ae732a6bd9c21cedef1a4bffb":[11,0,0,17,0,0,0,9],
 "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#ac7dee57a66d1df06e19c0aec0ec3d75f":[11,0,0,17,0,0,0,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "classcursestone_1_1world_1_1particle_1_1TownAuraParticle.html":[11,0,0,17,2,29],
 "classcursestone_1_1world_1_1particle_1_1TownAuraParticle.html#a1ea2ebef46b0f29f7e6dd0f5df30c072":[11,0,0,17,2,29,0],
 "classcursestone_1_1world_1_1particle_1_1VillagerAngryParticle.html":[11,0,0,17,2,30],
-"classcursestone_1_1world_1_1particle_1_1VillagerAngryParticle.html#a4a7d81b3f0d1218d88c49690a6a9de5d":[11,0,0,17,2,30,0],
-"classcursestone_1_1world_1_1particle_1_1VillagerHappyParticle.html":[11,0,0,17,2,31]
+"classcursestone_1_1world_1_1particle_1_1VillagerAngryParticle.html#a4a7d81b3f0d1218d88c49690a6a9de5d":[11,0,0,17,2,30,0]
 };

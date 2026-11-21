@@ -1,12 +1,13 @@
 var NAVTREEINDEX9 =
 {
 "classcursestone_1_1GamemodeCommand.html#a44179184671edf1cb5ac6f7af8a9af9a":[11,0,0,24,1],
+"classcursestone_1_1GamemodeCommand.html#a45506fcc24de53ad44530c39a0a9ccfb":[11,0,0,24,0],
 "classcursestone_1_1GiveCommand.html":[11,0,0,25],
 "classcursestone_1_1GiveCommand.html#a62e5218b584951fe12eef657ba02b0ea":[11,0,0,25,0],
 "classcursestone_1_1GiveCommand.html#a9dbe68a35506f0e70769c39e8404cf0b":[11,0,0,25,1],
 "classcursestone_1_1HelpCommand.html":[11,0,0,26],
-"classcursestone_1_1HelpCommand.html#a15ada2cbb8eb0eeaab1117b1a827e09a":[11,0,0,26,0],
 "classcursestone_1_1HelpCommand.html#a1f485658a65b65818107a7e945741105":[11,0,0,26,1],
+"classcursestone_1_1HelpCommand.html#a5ac84df04460902334068b70510c1dea":[11,0,0,26,0],
 "classcursestone_1_1IPlayer.html":[11,0,0,43],
 "classcursestone_1_1IPlayer.html#a57b684c992c8d9575001fb4cae49f0fc":[11,0,0,43,1],
 "classcursestone_1_1IPlayer.html#a7bb50c2ae28ca169ec9b56f081829199":[11,0,0,43,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "classcursestone_1_1SaveCommand.html#a541407c4b8964ccc5cc6c834590ffa7a":[11,0,0,32,1],
 "classcursestone_1_1SaveCommand.html#a6718903d03c9d64075c7d5ed4bfb602c":[11,0,0,32,0],
 "classcursestone_1_1SayCommand.html":[11,0,0,33],
-"classcursestone_1_1SayCommand.html#a4c2364013f02da128e32326e989248a4":[11,0,0,33,0],
-"classcursestone_1_1SayCommand.html#ac35db63b9fc498b251fa21e5d0800880":[11,0,0,33,1]
+"classcursestone_1_1SayCommand.html#a4c2364013f02da128e32326e989248a4":[11,0,0,33,0]
 };

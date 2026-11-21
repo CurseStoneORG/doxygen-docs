@@ -1,5 +1,8 @@
 var NAVTREEINDEX30 =
 {
+"structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#ac0d3a4ae6c2a1a98cf5e1005219b4ec5":[11,0,0,9,0,15,3],
+"structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#acd405c1120764ea343f579843a0beac6":[11,0,0,9,0,15,4],
+"structcursestone_1_1network_1_1protocol_1_1CraftingEntry.html#acf6a3798d84238b9452d03dc0f78d36a":[11,0,0,9,0,15,6],
 "structcursestone_1_1network_1_1protocol_1_1PlayerListPacket_1_1Entry.html":[11,0,0,9,0,38,0],
 "structcursestone_1_1network_1_1protocol_1_1PlayerListPacket_1_1Entry.html#a90aad2240135fe35afc2c96ef7cf12e8":[11,0,0,9,0,38,0,4],
 "structcursestone_1_1network_1_1protocol_1_1PlayerListPacket_1_1Entry.html#ad3035d16887fcf71460ba963d73996af":[11,0,0,9,0,38,0,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX30 =
 "structmcp__bstream.html#a5bf122f52c73b559b0abca15a7c378cb":[11,0,22,1],
 "structmcp__bstream.html#a75685e7a0f49b6d496b3ba9eff480a16":[11,0,22,4],
 "structmcp__bstream.html#a931ada0b379e0fc6691d9538a0d25212":[11,0,22,2],
-"structmcp__bstream.html#ac46b2c8f8521a3104ac92c78f98879ca":[11,0,22,3],
-"structmcp__bstream.html#ad5d155cbc87ef72265e6e067e0d2f4e7":[11,0,22,0],
-"structmcp__bstream.html#afa74249fd7b802661067ed5b2d6ade03":[11,0,22,5],
-"structmcp__chunk.html":[11,0,23]
+"structmcp__bstream.html#ac46b2c8f8521a3104ac92c78f98879ca":[11,0,22,3]
 };

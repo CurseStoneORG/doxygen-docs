@@ -7,5 +7,6 @@ var classcursestone_1_1SimpleCommandMap =
     [ "registerAlias", "classcursestone_1_1SimpleCommandMap.html#a16c59bc859caedde3054a02d1506a46c", null ],
     [ "registerCommand", "classcursestone_1_1SimpleCommandMap.html#a1030c57566373eff7d3b390672f73dcb", null ],
     [ "size", "classcursestone_1_1SimpleCommandMap.html#ad274dd70c91353686298417d318cf39e", null ],
+    [ "unregisterAlias", "classcursestone_1_1SimpleCommandMap.html#a85bb5b8687d6386d174368beeea20243", null ],
     [ "unregisterByOwner", "classcursestone_1_1SimpleCommandMap.html#a7338d45586aa60041a477059caa96ad2", null ]
 ];

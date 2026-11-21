@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#abad2a40da348ba5ca572e39b995ea246":[11,0,0,2,0,3,0],
+"classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#add131a435d1a9b1f876059094eba0d78":[11,0,0,2,0,3,3],
 "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#af3b8dd39548b2ee396f001ad0482e3d2":[11,0,0,2,0,3,4],
 "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html":[11,0,0,2,0,7],
 "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#a74b3a86d07b13d497a3ff6a997d7398b":[11,0,0,2,0,7,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1inventory_1_1BaseInventory.html#a42ee1dae14ed5b7e39f4e3452d65de41":[11,0,0,4,0,28],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a4755f3673484ab431cfdc1282ab598f9":[11,0,0,4,0,12],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a4cf3b764f129a698f5c8ed2e11d861a2":[11,0,0,4,0,9],
-"classcursestone_1_1inventory_1_1BaseInventory.html#a4d611c25a4d570790059e9c29f02e10d":[11,0,0,4,0,11],
-"classcursestone_1_1inventory_1_1BaseInventory.html#a6d4915d3be2fcda5c893cf3cb12a4fa8":[11,0,0,4,0,17],
-"classcursestone_1_1inventory_1_1BaseInventory.html#a73988c595b72f4cbc22399fd4803f437":[11,0,0,4,0,6]
+"classcursestone_1_1inventory_1_1BaseInventory.html#a4d611c25a4d570790059e9c29f02e10d":[11,0,0,4,0,11]
 };

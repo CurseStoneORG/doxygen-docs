@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1item_1_1ItemCookedPorkchop.html":[11,0,0,5,22],
+"classcursestone_1_1item_1_1ItemCookedPorkchop.html#adf717131aec96155f2c7b80d3f45a119":[11,0,0,5,22,0],
 "classcursestone_1_1item_1_1ItemCookedPorkchop.html#af6f82808203bc34b5bcd1bc4a8af56a0":[11,0,0,5,22,1],
 "classcursestone_1_1item_1_1ItemCookedRabbit.html":[11,0,0,5,23],
 "classcursestone_1_1item_1_1ItemCookedRabbit.html#a2fcff4fdecc9e7261e5982fd6cf7906d":[11,0,0,5,23,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1item_1_1ItemSwordIron.html#a340ba55fd49410e56c09c6cf65a370e5":[11,0,0,5,96,1],
 "classcursestone_1_1item_1_1ItemSwordIron.html#a9add654cad682db74f74e347a8f08b88":[11,0,0,5,96,0],
 "classcursestone_1_1item_1_1ItemSwordStone.html":[11,0,0,5,97],
-"classcursestone_1_1item_1_1ItemSwordStone.html#a417f53f0e11748bd40cc71fd773ce578":[11,0,0,5,97,1],
-"classcursestone_1_1item_1_1ItemSwordStone.html#ad43019a42b53f3bfe747351fb4f4b797":[11,0,0,5,97,0],
-"classcursestone_1_1item_1_1ItemSwordWooden.html":[11,0,0,5,98]
+"classcursestone_1_1item_1_1ItemSwordStone.html#a417f53f0e11748bd40cc71fd773ce578":[11,0,0,5,97,1]
 };

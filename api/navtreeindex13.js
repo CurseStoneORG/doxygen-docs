@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1inventory_1_1BaseInventory.html#a6d4915d3be2fcda5c893cf3cb12a4fa8":[11,0,0,4,0,17],
+"classcursestone_1_1inventory_1_1BaseInventory.html#a73988c595b72f4cbc22399fd4803f437":[11,0,0,4,0,6],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a76ef6be32023d17f8280d3f1223f2729":[11,0,0,4,0,20],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a8151fcbde713d059a2a86a3872af5619":[11,0,0,4,0,1],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a81828e98f1a34c41761bc492207d65f2":[11,0,0,4,0,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1item_1_1ItemCookedFish.html#a8be535756c49d639897d6915b1788453":[11,0,0,5,20,2],
 "classcursestone_1_1item_1_1ItemCookedMutton.html":[11,0,0,5,21],
 "classcursestone_1_1item_1_1ItemCookedMutton.html#a1e4f6866e1316d61cd65113d038b2563":[11,0,0,5,21,0],
-"classcursestone_1_1item_1_1ItemCookedMutton.html#a8b50434f55e2d49e1b21bbd951286393":[11,0,0,5,21,1],
-"classcursestone_1_1item_1_1ItemCookedPorkchop.html":[11,0,0,5,22],
-"classcursestone_1_1item_1_1ItemCookedPorkchop.html#adf717131aec96155f2c7b80d3f45a119":[11,0,0,5,22,0]
+"classcursestone_1_1item_1_1ItemCookedMutton.html#a8b50434f55e2d49e1b21bbd951286393":[11,0,0,5,21,1]
 };

@@ -1786,6 +1786,7 @@ var namespacecursestone =
     [ "makePoseFlagEntry", "namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa", null ],
     [ "poseFlagByte", "namespacecursestone.html#adec485e08dd2b6fe4a06b0549e970f1a", null ],
     [ "registerDefaultCommands", "namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223", null ],
+    [ "kAliasMaxHops", "namespacecursestone.html#a08616ce2930cc3b86aad970233b13d7f", null ],
     [ "kChunkEvictPerPass", "namespacecursestone.html#acf0f9dd15f903db5bb07e72a03e57bc6", null ],
     [ "kEyeHeight", "namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5", null ]
 ];

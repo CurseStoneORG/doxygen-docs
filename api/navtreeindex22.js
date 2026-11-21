@@ -1,5 +1,6 @@
 var NAVTREEINDEX22 =
 {
+"classvgen_1_1Block.html#a3472e5e37fb2f406e545268d67318d30":[11,0,2,24,7],
 "classvgen_1_1Block.html#a5319c1c8d5b71fa24f97645c025a4307":[11,0,2,24,13],
 "classvgen_1_1Block.html#a5b393c842570448f68ad55fba530c7e6":[11,0,2,24,9],
 "classvgen_1_1Block.html#a8786b00b0ae4392ddc901959b990e26f":[11,0,2,24,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX22 =
 "classvgen_1_1FancyTreeFeature.html#a981fb9ef48abfa1fe820cf881350966e":[11,0,2,54,6],
 "classvgen_1_1FancyTreeFeature.html#aada77537489235f4ea92127c55021fa2":[11,0,2,54,15],
 "classvgen_1_1FancyTreeFeature.html#ab3bea636b9b97112ad151a776606db3d":[11,0,2,54,11],
-"classvgen_1_1FancyTreeFeature.html#adb3d93f84d5df16eb0972497a4bf4859":[11,0,2,54,5],
-"classvgen_1_1FancyTreeFeature_1_1FoliageCoords.html":[11,0,2,54,0]
+"classvgen_1_1FancyTreeFeature.html#adb3d93f84d5df16eb0972497a4bf4859":[11,0,2,54,5]
 };

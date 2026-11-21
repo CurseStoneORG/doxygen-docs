@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1FancyTreeFeature_1_1FoliageCoords.html":[11,0,2,54,0],
 "classvgen_1_1FancyTreeFeature_1_1FoliageCoords.html#a3942413389f6889cd6e34aed9498a1c8":[11,0,2,54,0,1],
 "classvgen_1_1FancyTreeFeature_1_1FoliageCoords.html#a951834d2869ea43d9628e4b5ef150769":[11,0,2,54,0,0],
 "classvgen_1_1Farmland.html":[11,0,2,164],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1MegaPineTreeFeature.html":[11,0,2,67],
 "classvgen_1_1MegaPineTreeFeature.html#a57c37d16f4b66a0d49c169ce2fa63f22":[11,0,2,67,1],
 "classvgen_1_1MegaPineTreeFeature.html#a63fe3440a5469c2a1c932aee3585d92c":[11,0,2,67,2],
-"classvgen_1_1MegaPineTreeFeature.html#a670d002c783677ad8d73e847feaee416":[11,0,2,67,0],
-"classvgen_1_1MegaPineTreeFeature.html#a8f56dc1ec62d013da02767d9fc45af9e":[11,0,2,67,3]
+"classvgen_1_1MegaPineTreeFeature.html#a670d002c783677ad8d73e847feaee416":[11,0,2,67,0]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX10 =
 {
+"classcursestone_1_1SayCommand.html#ac35db63b9fc498b251fa21e5d0800880":[11,0,0,33,1],
 "classcursestone_1_1Server.html":[11,0,0,48],
 "classcursestone_1_1Server.html#a06573a1b487acbd04e39356c9847278c":[11,0,0,48,34],
 "classcursestone_1_1Server.html#a0700c0a481cbd3fabcbe426445bf8d31":[11,0,0,48,67],
@@ -83,7 +84,8 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1SimpleCommandMap.html#a13db4e95f9aba25de7a82ed0dec148d7":[11,0,0,41,1],
 "classcursestone_1_1SimpleCommandMap.html#a16c59bc859caedde3054a02d1506a46c":[11,0,0,41,4],
 "classcursestone_1_1SimpleCommandMap.html#a299340313ee5480ed351e4cd31218f3e":[11,0,0,41,0],
-"classcursestone_1_1SimpleCommandMap.html#a7338d45586aa60041a477059caa96ad2":[11,0,0,41,7],
+"classcursestone_1_1SimpleCommandMap.html#a7338d45586aa60041a477059caa96ad2":[11,0,0,41,8],
+"classcursestone_1_1SimpleCommandMap.html#a85bb5b8687d6386d174368beeea20243":[11,0,0,41,7],
 "classcursestone_1_1SimpleCommandMap.html#ab0d8151068f979b2581527ede303af72":[11,0,0,41,2],
 "classcursestone_1_1SimpleCommandMap.html#ad1f8c3e3e77320ce7016973be1e8f5d3":[11,0,0,41,3],
 "classcursestone_1_1SimpleCommandMap.html#ad274dd70c91353686298417d318cf39e":[11,0,0,41,6],
@@ -94,7 +96,7 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1StopCommand.html#a066c9a5e2d5114500a76e8b02751cb96":[11,0,0,35,0],
 "classcursestone_1_1StopCommand.html#aa1170768ec56c0b506468e4af4104e5e":[11,0,0,35,1],
 "classcursestone_1_1TeleportCommand.html":[11,0,0,36],
-"classcursestone_1_1TeleportCommand.html#a3655ceac66e5b64251a7590f132025fc":[11,0,0,36,0],
+"classcursestone_1_1TeleportCommand.html#a02ceba3ebfe862418a71103a9fff089c":[11,0,0,36,0],
 "classcursestone_1_1TeleportCommand.html#ab1c9635f95569f0b52f98cd6c6112503":[11,0,0,36,1],
 "classcursestone_1_1TimeCommand.html":[11,0,0,37],
 "classcursestone_1_1TimeCommand.html#a4aca7af96c12dcb88dd7703b284951f9":[11,0,0,37,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX10 =
 "classcursestone_1_1block_1_1BlockLeaves.html":[11,0,0,0,30],
 "classcursestone_1_1block_1_1BlockLeaves.html#a05a481d574e42f00ab1e7aa0a70aa637":[11,0,0,0,30,0],
 "classcursestone_1_1block_1_1BlockLeaves.html#abdc392ddc4aa11a2d98b49c6ac74ce0e":[11,0,0,0,30,1],
-"classcursestone_1_1block_1_1BlockLiquid.html":[11,0,0,0,31],
-"classcursestone_1_1block_1_1BlockLiquid.html#a247d9e06481465aa023cb6cce31b5c0c":[11,0,0,0,31,7],
-"classcursestone_1_1block_1_1BlockLiquid.html#a7160ec91c36de55e684aa9e6fb7a1ba2":[11,0,0,0,31,0]
+"classcursestone_1_1block_1_1BlockLiquid.html":[11,0,0,0,31]
 };

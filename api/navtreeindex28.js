@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md70":[3,2,7],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md71":[3,2,8],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md73":[3,3],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md74":[3,3,0],
@@ -24,12 +25,13 @@ var NAVTREEINDEX28 =
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md98":[3,8,5],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md99":[3,8,6],
 "namespacecursestone.html":[10,0,0],
+"namespacecursestone.html#a08616ce2930cc3b86aad970233b13d7f":[10,0,0,61],
 "namespacecursestone.html#a1c8c3fee428f4c665f076f22f4b0ac7c":[10,0,0,55],
-"namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5":[10,0,0,62],
+"namespacecursestone.html#a579636b8cbd07e50ea33d835c38b20d5":[10,0,0,63],
 "namespacecursestone.html#a754f903e8c9fc1e27eb09492df12a5fa":[10,0,0,58],
 "namespacecursestone.html#a8c184c5b29406134bd48d0f71345bb3e":[10,0,0,56],
 "namespacecursestone.html#a9ff205cb621b43c64560c1d0fe4a7907":[10,0,0,57],
-"namespacecursestone.html#acf0f9dd15f903db5bb07e72a03e57bc6":[10,0,0,61],
+"namespacecursestone.html#acf0f9dd15f903db5bb07e72a03e57bc6":[10,0,0,62],
 "namespacecursestone.html#ad95da57fc03b5aca9e60e25013fd7223":[10,0,0,60],
 "namespacecursestone.html#adec485e08dd2b6fe4a06b0549e970f1a":[10,0,0,59],
 "namespacecursestone_1_1utils.html":[10,0,0,17],
@@ -51,9 +53,10 @@ var NAVTREEINDEX28 =
 "noise_2PerlinNoise_8h_source.html":[12,0,0,21,1,0,2],
 "pages.html":[],
 "structCsCommandApi.html":[11,0,4],
+"structCsCommandApi.html#a331127cb256408caee19db7b74a5f810":[11,0,4,2],
 "structCsCommandApi.html#a41e24e5260d580f855e99b2c9f42e748":[11,0,4,1],
 "structCsCommandApi.html#a81f089702aec0a15046613c77c781ddb":[11,0,4,0],
-"structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d":[11,0,4,2],
+"structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d":[11,0,4,3],
 "structCsCommandSender.html":[11,0,5],
 "structCsCommandSender.html#a41b37b7964e59c6ac1f00b2b339751f7":[11,0,5,0],
 "structCsCommandSender.html#a44d8d88e190de4b5dd6d9e9c0ebd1064":[11,0,5,2],
@@ -246,8 +249,5 @@ var NAVTREEINDEX28 =
 "structLightNode.html#a9ae5b9116ef8d2c7f8d70c39ead970da":[11,0,19,1],
 "structLightNode.html#aa51f2e6f2e6f406bc1d3a785b0d8ab22":[11,0,19,0],
 "structLightNode.html#ac8546a87981991ba7d35bfe7ce815b62":[11,0,19,2],
-"structasync__log__entry__t.html":[11,0,3],
-"structasync__log__entry__t.html#a402087082892e6a5d3d7554fa4f6fd9c":[11,0,3,2],
-"structasync__log__entry__t.html#a72ba622164dc4af23d484b2338431d84":[11,0,3,0],
-"structasync__log__entry__t.html#ac182e29d2aa66beba315c0e2ced57aef":[11,0,3,3]
+"structasync__log__entry__t.html":[11,0,3]
 };
