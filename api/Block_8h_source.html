@@ -169,16 +169,17 @@ $(document).ready(function(){initNavTree('Block_8h_source.html',''); initResizab
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">virtual</span> std::string name()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;Block#&quot;</span>) + std::to_string(<span class="keywordtype">id</span>());</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Get the singleton Block instance for a numeric id. Returns the</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// generic BlockStone instance for unknown ids.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1block_1_1Block.html">Block</a>* get(uint8_t <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// Lazily register a singleton.</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> registerBlock(std::unique_ptr&lt;Block&gt; b);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::unique_ptr&lt;Block&gt;&gt;&amp; registry();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// Get the singleton Block instance for a numeric id. Never null:</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// ids no concrete Block was registered for come back as a generic</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// solid flyweight, so callers may dereference the pointer bare.</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">static</span> <a class="code" href="classcursestone_1_1block_1_1Block.html">Block</a>* get(uint8_t <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// Lazily register a singleton.</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> registerBlock(std::unique_ptr&lt;Block&gt; b);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">static</span> std::vector&lt;std::unique_ptr&lt;Block&gt;&gt;&amp; registry();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1block_1_1Block_html"><div class="ttname"><a href="classcursestone_1_1block_1_1Block.html">cursestone::block::Block</a></div><div class="ttdef"><b>Definition:</b> Block.h:35</div></div>
 <div class="ttc" id="astructmcp__aabb_html"><div class="ttname"><a href="structmcp__aabb.html">mcp_aabb</a></div><div class="ttdef"><b>Definition:</b> AxisAlignedBB.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->

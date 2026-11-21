@@ -36,6 +36,7 @@ var hierarchy =
     ] ],
     [ "cursestone::block::Block", "classcursestone_1_1block_1_1Block.html", [
       [ "cursestone::block::BlockAir", "classcursestone_1_1block_1_1BlockAir.html", null ],
+      [ "cursestone::block::BlockPlantLike", "classcursestone_1_1block_1_1BlockPlantLike.html", null ],
       [ "cursestone::block::BlockPortal", "classcursestone_1_1block_1_1BlockPortal.html", null ],
       [ "cursestone::block::BlockSolid", "classcursestone_1_1block_1_1BlockSolid.html", [
         [ "cursestone::block::BlockBedrock", "classcursestone_1_1block_1_1BlockBedrock.html", null ],
@@ -75,6 +76,8 @@ var hierarchy =
         [ "cursestone::block::BlockWood", "classcursestone_1_1block_1_1BlockWood.html", null ],
         [ "cursestone::block::BlockWoodStairs", "classcursestone_1_1block_1_1BlockWoodStairs.html", null ]
       ] ],
+      [ "cursestone::block::BlockSolidLike", "classcursestone_1_1block_1_1BlockSolidLike.html", null ],
+      [ "cursestone::block::BlockThinDecor", "classcursestone_1_1block_1_1BlockThinDecor.html", null ],
       [ "cursestone::block::BlockTransparent", "classcursestone_1_1block_1_1BlockTransparent.html", [
         [ "cursestone::block::BlockChest", "classcursestone_1_1block_1_1BlockChest.html", null ],
         [ "cursestone::block::BlockFire", "classcursestone_1_1block_1_1BlockFire.html", null ],

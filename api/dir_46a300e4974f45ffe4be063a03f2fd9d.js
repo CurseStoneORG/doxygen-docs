@@ -41,6 +41,7 @@ var dir_46a300e4974f45ffe4be063a03f2fd9d =
     [ "BlockOrientation.h", "BlockOrientation_8h_source.html", null ],
     [ "BlockPlanks.h", "BlockPlanks_8h_source.html", null ],
     [ "BlockPortal.h", "BlockPortal_8h_source.html", null ],
+    [ "BlockProfiles.h", "BlockProfiles_8h_source.html", null ],
     [ "BlockRedstoneOre.h", "BlockRedstoneOre_8h_source.html", null ],
     [ "BlockRegistry.h", "BlockRegistry_8h_source.html", null ],
     [ "BlockSand.h", "BlockSand_8h_source.html", null ],
