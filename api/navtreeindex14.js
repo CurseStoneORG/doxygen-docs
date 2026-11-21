@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1item_1_1ItemCarrot.html":[11,0,0,5,17],
 "classcursestone_1_1item_1_1ItemCarrot.html#adc4c2fb8d846e0cefc411a58b42777b6":[11,0,0,5,17,1],
 "classcursestone_1_1item_1_1ItemCarrot.html#ae6bce24f1587f8de3064d81220d5c48e":[11,0,0,5,17,0],
 "classcursestone_1_1item_1_1ItemCoal.html":[11,0,0,5,18],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1item_1_1ItemSteak.html#adc74f2c73f5573a7ad249a9fa9e5f29a":[11,0,0,5,90,1],
 "classcursestone_1_1item_1_1ItemStick.html":[11,0,0,5,91],
 "classcursestone_1_1item_1_1ItemStick.html#a7cf47c46ae7f6d5d45a2558b2f01336d":[11,0,0,5,91,0],
-"classcursestone_1_1item_1_1ItemStick.html#af7d896c6558fa5977ad13137ac8fb8ee":[11,0,0,5,91,1],
-"classcursestone_1_1item_1_1ItemSugar.html":[11,0,0,5,92]
+"classcursestone_1_1item_1_1ItemStick.html#af7d896c6558fa5977ad13137ac8fb8ee":[11,0,0,5,91,1]
 };

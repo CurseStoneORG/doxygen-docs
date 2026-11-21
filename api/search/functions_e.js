@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['rungc_1864',['runGc',['../classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8',1,'cursestone::MemoryManager']]],
-  ['runtickloop_1865',['runTickLoop',['../classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131',1,'cursestone::Server']]]
+  ['rungc_1868',['runGc',['../classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8',1,'cursestone::MemoryManager']]],
+  ['runtickloop_1869',['runTickLoop',['../classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131',1,'cursestone::Server']]]
 ];

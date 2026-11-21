@@ -1,5 +1,6 @@
 var NAVTREEINDEX16 =
 {
+"classcursestone_1_1network_1_1protocol_1_1AnimatePacket.html#a6daa72a933f4fbae6790631973fa51a9":[11,0,0,9,0,4,3],
 "classcursestone_1_1network_1_1protocol_1_1AnimatePacket.html#a9ba7034e49c15f2ba9049a8ce4e68ac8":[11,0,0,9,0,4,4],
 "classcursestone_1_1network_1_1protocol_1_1AnimatePacket.html#ae449ea0d23439dc0977627d7d0e685c9":[11,0,0,9,0,4,1],
 "classcursestone_1_1network_1_1protocol_1_1AnimatePacket.html#aff22eeb9455eacd40705c3cf02318006":[11,0,0,9,0,4,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX16 =
 "classcursestone_1_1network_1_1protocol_1_1MovePlayerPacket.html#ac3d2f5b00e3f5f2801b259054efc2126":[11,0,0,9,0,34,6],
 "classcursestone_1_1network_1_1protocol_1_1MovePlayerPacket.html#aecf7448c952c6c154b207542b29d5ce0":[11,0,0,9,0,34,4],
 "classcursestone_1_1network_1_1protocol_1_1PacketPool.html":[11,0,0,9,0,35],
-"classcursestone_1_1network_1_1protocol_1_1PacketPool.html#a2c6644522bea86b4711941a45af40ded":[11,0,0,9,0,35,0],
-"classcursestone_1_1network_1_1protocol_1_1PacketReader.html":[11,0,0,9,0,19]
+"classcursestone_1_1network_1_1protocol_1_1PacketPool.html#a2c6644522bea86b4711941a45af40ded":[11,0,0,9,0,35,0]
 };

@@ -77,6 +77,7 @@ var classcursestone_1_1world_1_1World =
     [ "removeTile", "classcursestone_1_1world_1_1World.html#ad7741e56e8fba169e3c180400d986d05", null ],
     [ "save", "classcursestone_1_1world_1_1World.html#a83b6165da70c748e738a03551925d650", null ],
     [ "saveBudget", "classcursestone_1_1world_1_1World.html#a9a6e66c6c32588007c6e8493a1e70a0e", null ],
+    [ "saveMobs", "classcursestone_1_1world_1_1World.html#a423cde9fcdd7b382b3748b259da00c9a", null ],
     [ "savePortals", "classcursestone_1_1world_1_1World.html#a29500e53e8677e83596233b389250052", null ],
     [ "seed", "classcursestone_1_1world_1_1World.html#a299933da0df76fdf2a1fb5c9414dce78", null ],
     [ "sendMobsInChunk", "classcursestone_1_1world_1_1World.html#a3352eefc9984ae4dd905c6ed596df796", null ],

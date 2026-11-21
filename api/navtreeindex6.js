@@ -131,6 +131,7 @@ var NAVTREEINDEX6 =
 "MobKind_8h.html#acadf18975331a13f92578833d0993bd6af80bc338b6146b566004a046f8137c85":[10,0,0,2,2,34,1],
 "MobKind_8h_source.html":[12,0,0,3,1,12],
 "MobList_8h_source.html":[12,0,0,3,1,13],
+"MobPersistence_8h_source.html":[12,0,0,21,9],
 "MobSpawnUtils_8h_source.html":[12,0,0,21,1,2,0,13],
 "MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66e":[10,0,2,229],
 "MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea080a546abcbea74459f27ba33313993d":[10,0,2,229,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38ad05c382df4e600a69e91dff0d219d837":[10,0,0,19,2,36,8],
 "ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38ae448e1576d317febef6bd8e0e235e3cd":[10,0,0,19,2,36,10],
 "ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38ae60de770e851e5424b46471497a0ef97":[10,0,0,19,2,36,16],
-"ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38ae9ed8a70873bd735c202a2158ab60d1c":[10,0,0,19,2,36,11],
-"ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38aeebfd08de538c5ac5807a5f5583f5afa":[10,0,0,19,2,36,31]
+"ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38ae9ed8a70873bd735c202a2158ab60d1c":[10,0,0,19,2,36,11]
 };

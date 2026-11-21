@@ -637,6 +637,7 @@ var hierarchy =
     [ "cursestone::entity::ai::MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", null ],
     [ "cursestone::world::MobEntity", "structcursestone_1_1world_1_1MobEntity.html", null ],
     [ "cursestone::entity::ai::MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", null ],
+    [ "cursestone::world::MobPersistence", "classcursestone_1_1world_1_1MobPersistence.html", null ],
     [ "vgen::MobSpawnUtils", "classvgen_1_1MobSpawnUtils.html", null ],
     [ "cursestone::entity::mobs::MobType", "structcursestone_1_1entity_1_1mobs_1_1MobType.html", [
       [ "cursestone::entity::mobs::Bat", "structcursestone_1_1entity_1_1mobs_1_1Bat.html", null ],
@@ -740,6 +741,7 @@ var hierarchy =
     ] ],
     [ "cursestone::permission::Permission", "classcursestone_1_1permission_1_1Permission.html", null ],
     [ "cursestone::permission::PermissionAttachment", "classcursestone_1_1permission_1_1PermissionAttachment.html", null ],
+    [ "cursestone::world::PersistedMob", "structcursestone_1_1world_1_1PersistedMob.html", null ],
     [ "vgen::PieceWeight", "classvgen_1_1PieceWeight.html", null ],
     [ "vgen::Facing::Plane", "classvgen_1_1Facing_1_1Plane.html", null ],
     [ "cursestone::PlayerConfig", "structcursestone_1_1PlayerConfig.html", null ],

@@ -223,7 +223,18 @@ MobAIManager</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">500   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">0.51 ms   </td><td class="markdownTableBodyNone">1.7%   </td><td class="markdownTableBodyNone">+0.49   </td><td class="markdownTableBodyNone">500/500   </td></tr>
 </table>
-<p>Reading: at 500 wandering mobs the AI pass costs ~0.5 ms of the 50 ms tick budget (~1 µs per mob per tick, think stagger included), TPS holds at 20 and the server process stays under 2% of one core. The maximum vertical drift the client observed for any mob was 0.92 blocks in every run — the sweep integration keeps mobs on the ground; nothing fell through terrain. The remaining headroom is the budget contract: if a population ever pushed the pass past 2 ms, mobs would slow down before the tick does. </p>
+<p>Reading: at 500 wandering mobs the AI pass costs ~0.5 ms of the 50 ms tick budget (~1 µs per mob per tick, think stagger included), TPS holds at 20 and the server process stays under 2% of one core. The maximum vertical drift the client observed for any mob was 0.92 blocks in every run — the sweep integration keeps mobs on the ground; nothing fell through terrain. The remaining headroom is the budget contract: if a population ever pushed the pass past 2 ms, mobs would slow down before the tick does.</p>
+<h1><a class="anchor" id="autotoc_md177"></a>
+10. Mob persistence</h1>
+<p>Mob records used to be memory-only: a restart wiped every mob the eggs or the plugin API had spawned. The persistence seam closes that gap with one file per world, mirroring the portal registry's shape:</p>
+<ul>
+<li><b>File</b>: <code>worlds/&lt;world&gt;/mobs.dat</code> (<a class="el" href="MobPersistence_8h_source.html">world/MobPersistence.h</a>/.cpp). Plain text, one mob per line: <code>type x y z yaw pitch health max_health</code> — the protocol-84 network id, feet position at centimeter resolution, both health values. Tolerant load (missing file, malformed rows and non-finite numbers are skipped, one bad row never costs the rest), atomic write (tmp + rename).</li>
+<li><b>Save points</b>: <code>World::save()</code> — shutdown, <code>/save</code>, world unload — and the <code>write_level_data</code> pass of <code>World::saveBudget()</code> (the autosave's level-dat step). Dying bodies (death window open) and dead health values are skipped, so a restart never resurrects a corpse.</li>
+<li><b>Restore</b>: <code>World::restoreMobs()</code> runs from the world constructor, before any player, viewer, plugin or AI pass can exist. Records are registered straight into <code>mobs_</code> / <code>mobs_by_chunk_</code> — no packets (no viewers yet; the chunk stream's <code>sendMobsInChunk</code> re-adds each mob to the viewers that arrive later), no chunk forcing (a mob in an unloaded chunk stays frozen until a player streams its chunk, the same rule the AI gate applies).</li>
+<li><b>Identity</b>: eids are runtime ids and are allocated fresh on boot, so a restored world never collides with the login-time player id space; plugins re-resolve entities after a restart. Type validity, the health ceiling (registry fallback) and the per-world cap (<code>kMaxMobs</code>) are enforced at restore exactly as at spawn time.</li>
+<li><b>Cost</b>: one small text rewrite per save point (worst case ~60 KB at the 1024-mob cap) and one file read per boot. Zero per-tick cost.</li>
+</ul>
+<p>Verified end to end by <code>tools/mob_persistence_check.py</code>: three boots over one runtime — spawn 3 sheep, hurt one, <code>/save</code>, stop; boot 2 sees the 3 bodies back at their saved positions with the hurt sheep's 5 hp; clear + <code>/save</code> + stop; boot 3 sees none (an emptied world must not resurrect its old mobs). </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#acdb4449b9cce211e1d51f96b33f883ff":[11,0,0,2,0,4,3],
 "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html":[11,0,0,2,0,3],
 "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a0ea9557b40ffba7d5fa6407329f72220":[11,0,0,2,0,3,2],
 "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a9a9d6ff6c58a79d3e384cdabbacdeda8":[11,0,0,2,0,3,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html#a11e5360f85210f34118d1c007818b9b6":[11,0,0,3,4,1,1],
 "classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html#a478f7f2e2893335e09a8901b80860ce0":[11,0,0,3,4,1,0],
 "classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html#a9cd464a7f98b65f324efac34f09a304a":[11,0,0,3,4,1,3],
-"classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html#af672c1316051513e249e967c43dda992":[11,0,0,3,4,1,4],
-"classcursestone_1_1event_1_1world_1_1WorldUnloadEvent.html":[11,0,0,3,4,2]
+"classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html#af672c1316051513e249e967c43dda992":[11,0,0,3,4,1,4]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38aeebfd08de538c5ac5807a5f5583f5afa":[10,0,0,19,2,36,31],
 "ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38af0f7334629ba3fdbdb86e5af4336992c":[10,0,0,19,2,36,18],
 "ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38af13daf8bc31609a518b59898199371bc":[10,0,0,19,2,36,24],
 "ParticleId_8h.html#a05b9231530ad541be3df5658fda9eb38af5042f725a34b4b98cc2f3029e93ce1d":[10,0,0,19,2,36,1],
@@ -48,8 +49,8 @@ var NAVTREEINDEX7 =
 "PluginManager_8h_source.html":[12,0,0,14,10],
 "PluginsCommand_8h_source.html":[12,0,0,1,0,8],
 "PortalParticle_8h_source.html":[12,0,0,21,3,25],
-"PortalRegistry_8h_source.html":[12,0,0,21,9],
-"Position_8h_source.html":[12,0,0,21,10],
+"PortalRegistry_8h_source.html":[12,0,0,21,10],
+"Position_8h_source.html":[12,0,0,21,11],
 "Projectile_8h_source.html":[12,0,0,3,12],
 "PumpkinFeature_8h_source.html":[12,0,0,21,1,2,1,27],
 "QueryHandler_8h_source.html":[12,0,0,10,1,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "StructurePiece_8h.html#a85642d42f611b3db237c384bced33ea4":[10,0,2,221],
 "StructurePiece_8h.html#a8ead72fb1093c273e323866642591b06":[10,0,2,223],
 "StructurePiece_8h_source.html":[12,0,0,21,1,2,4,10],
-"StructureStart_8h_source.html":[12,0,0,21,1,2,4,12],
-"SwampBiome_8h_source.html":[12,0,0,21,1,2,0,20]
+"StructureStart_8h_source.html":[12,0,0,21,1,2,4,12]
 };

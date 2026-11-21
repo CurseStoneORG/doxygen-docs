@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockLeaves.html":[11,0,0,0,30],
 "classcursestone_1_1block_1_1BlockLeaves.html#a05a481d574e42f00ab1e7aa0a70aa637":[11,0,0,0,30,0],
 "classcursestone_1_1block_1_1BlockLeaves.html#abdc392ddc4aa11a2d98b49c6ac74ce0e":[11,0,0,0,30,1],
 "classcursestone_1_1block_1_1BlockLiquid.html":[11,0,0,0,31],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a31c2eb4d47270c55148130e80fe53e76":[11,0,0,2,0,4,1],
 "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a5ef9c26c5b697a9639b738c606a89729":[11,0,0,2,0,4,0],
 "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a6a09b3f5ed25b4432d8e85c5ee9153bc":[11,0,0,2,0,4,5],
-"classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#abc363670c19678ea743b82152cae5009":[11,0,0,2,0,4,6],
-"classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#acdb4449b9cce211e1d51f96b33f883ff":[11,0,0,2,0,4,3]
+"classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#abc363670c19678ea743b82152cae5009":[11,0,0,2,0,4,6]
 };

@@ -1,5 +1,8 @@
 var NAVTREEINDEX26 =
 {
+"classvgen_1_1SpringFeature.html#ae4b1a55bf6992d1a312f64f612a22e6b":[11,0,2,79,1],
+"classvgen_1_1SpruceFeature.html":[11,0,2,80],
+"classvgen_1_1SpruceFeature.html#a72b7f8b42b9d423664ee38bcc998caa9":[11,0,2,80,0],
 "classvgen_1_1SpruceFeature.html#aa0306ae0c8c5fe0facf2f9e739101f6d":[11,0,2,80,1],
 "classvgen_1_1StartPiece.html":[11,0,2,157],
 "classvgen_1_1StartPiece.html#a097828b7dfb08af04ef809ae9406b339":[11,0,2,157,8],
@@ -246,8 +249,5 @@ var NAVTREEINDEX26 =
 "classvgen_1_1WoodBlockTypeShim.html":[11,0,2,37],
 "classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecd":[11,0,2,37,0],
 "classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecda0b77ab9a52c5b7a74f12984d2089f1ed":[11,0,2,37,0,4],
-"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecda0d5079b088aebbde820dfa1e3790cc89":[11,0,2,37,0,1],
-"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecda4ddf4cb005260f1c5b21adca4d27c4ab":[11,0,2,37,0,3],
-"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecda6d5e6e3507013f10c7ca42692fa8e0c6":[11,0,2,37,0,2],
-"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecdaf2b6dcdc344bf345a187b3c6c19af47e":[11,0,2,37,0,0]
+"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecda0d5079b088aebbde820dfa1e3790cc89":[11,0,2,37,0,1]
 };
