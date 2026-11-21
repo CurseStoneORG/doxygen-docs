@@ -268,7 +268,6 @@ var namespacecursestone =
       [ "T_NONE", "BlockMining_8h.html#a463b88185ed174d57c2fdea01dbe706c", null ]
     ] ],
     [ "diagnostics", null, [
-      [ "ChestDebug", "classcursestone_1_1diagnostics_1_1ChestDebug.html", "classcursestone_1_1diagnostics_1_1ChestDebug" ],
       [ "Diagnostic", "structcursestone_1_1diagnostics_1_1Diagnostic.html", "structcursestone_1_1diagnostics_1_1Diagnostic" ],
       [ "DiagEngine", "classcursestone_1_1diagnostics_1_1DiagEngine.html", null ],
       [ "PacketRecord", "structcursestone_1_1diagnostics_1_1PacketRecord.html", "structcursestone_1_1diagnostics_1_1PacketRecord" ],
@@ -1767,7 +1766,6 @@ var namespacecursestone =
     [ "CommandReader", "classcursestone_1_1CommandReader.html", "classcursestone_1_1CommandReader" ],
     [ "CommandSender", "classcursestone_1_1CommandSender.html", "classcursestone_1_1CommandSender" ],
     [ "ConsoleCommandSender", "classcursestone_1_1ConsoleCommandSender.html", "classcursestone_1_1ConsoleCommandSender" ],
-    [ "ChestDebugCommand", "classcursestone_1_1ChestDebugCommand.html", "classcursestone_1_1ChestDebugCommand" ],
     [ "DeopCommand", "classcursestone_1_1DeopCommand.html", "classcursestone_1_1DeopCommand" ],
     [ "GamemodeCommand", "classcursestone_1_1GamemodeCommand.html", "classcursestone_1_1GamemodeCommand" ],
     [ "GiveCommand", "classcursestone_1_1GiveCommand.html", "classcursestone_1_1GiveCommand" ],
