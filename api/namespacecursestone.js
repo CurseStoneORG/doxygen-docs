@@ -1431,6 +1431,11 @@ var namespacecursestone =
         [ "SESSION_OPEN", "RakLibInterface_8h.html#ae28792cf5ae018a6d48247e0e6c7309ca97d7b25f9b3e64e9baf45d587e79aac1", null ],
         [ "SESSION_CLOSE", "RakLibInterface_8h.html#ae28792cf5ae018a6d48247e0e6c7309ca96b30944bb731bfde1292be6bee1582b", null ],
         [ "PACKET_RECEIVED", "RakLibInterface_8h.html#ae28792cf5ae018a6d48247e0e6c7309ca5fd08bec02b2e71cb254823fbed52ef2", null ]
+      ] ],
+      [ "WireStream", "AdvancedSourceInterface_8h.html#a5c77135f822a14f94cd73896c71bf9ee", [
+        [ "Unordered", "AdvancedSourceInterface_8h.html#a5c77135f822a14f94cd73896c71bf9eea288d468c5e0969f26a310773eda65603", null ],
+        [ "LoginOrdered", "AdvancedSourceInterface_8h.html#a5c77135f822a14f94cd73896c71bf9eea7c867cf3264b427455e90728f7964855", null ],
+        [ "ChunkOrdered", "AdvancedSourceInterface_8h.html#a5c77135f822a14f94cd73896c71bf9eea114d8b6eb3e6e9e3bbc77f6a57ccc3d2", null ]
       ] ]
     ] ],
     [ "permission", null, [

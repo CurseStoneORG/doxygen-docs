@@ -1043,35 +1043,43 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> kMaxOutstandingChunkEncodes = 24;</div>
 <div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160; </div>
 <div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;    <span class="keyword">mutable</span> std::mutex batch_mtx_;</div>
-<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_;</div>
-<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_ordered_;</div>
-<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
-<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;    <span class="comment">// Flush batches immediately when they reach 32 KB.</span></div>
-<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
-<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160; </div>
-<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;    <span class="comment">// --- Crash forensics ---</span></div>
-<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;    <span class="comment">// Always-on per-client wire recorder: the last outbound frames (with a</span></div>
-<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;    <span class="comment">// 16-byte payload preview each) and the last inbound pids. A client</span></div>
-<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;    <span class="comment">// crash dump needs &quot;what did THIS client receive last&quot;, which the</span></div>
-<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;    <span class="comment">// global Diagnostics ring cannot answer. Written from the same thread</span></div>
-<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;    <span class="comment">// that owns the batch queues; read at close() time.</span></div>
-<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;    <a class="code" href="classcursestone_1_1diagnostics_1_1PacketForensics.html">diagnostics::PacketForensics</a> net_trace_;</div>
-<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;    <span class="comment">// Rate limiter for the sanitizer&#39;s crashdumps/ report files: one file</span></div>
-<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;    <span class="comment">// per violation burst, console logging stays unlimited.</span></div>
-<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;    uint64_t last_violation_report_ms_ = 0;</div>
-<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160; </div>
-<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    <span class="comment">// Ensures close() cleanup runs only once across threads.</span></div>
-<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;    std::once_flag close_once_;</div>
-<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;    <span class="comment">// Defers player removal to the main server thread.</span></div>
-<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160; </div>
-<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;    <span class="comment">// Checks whether player removal is pending.</span></div>
-<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;        <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire);</div>
-<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;    }</div>
-<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;};</div>
-<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;} <span class="comment">// namespace cursestone</span></div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;    <span class="comment">// Per-WireStream outbound queues (see AdvancedSourceInterface.h). The</span></div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;    <span class="comment">// chunk queue is its own list so FullChunkData and the BlockEntityData</span></div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;    <span class="comment">// of its tiles leave in one FIFO per flush and share one</span></div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;    <span class="comment">// RELIABLE_ORDERED channel: the 0.15 client wipes a chunk&#39;s block</span></div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;    <span class="comment">// actors when the chunk payload arrives, so tile NBT that overtakes its</span></div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;    <span class="comment">// chunk on a reordering network binds an actor the client then</span></div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;    <span class="comment">// destroys — the invisible-chest bug.</span></div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_unordered_; <span class="comment">// channel 1 (RELIABLE)</span></div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_login_;     <span class="comment">// channel 0 (RELIABLE_ORDERED)</span></div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;    std::vector&lt;std::vector&lt;uint8_t&gt;&gt; batch_chunks_;    <span class="comment">// channel 2 (RELIABLE_ORDERED)</span></div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;    <span class="keywordtype">size_t</span> batch_bytes_ = 0;</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;    <span class="comment">// Flush batches immediately when they reach 32 KB.</span></div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;    <span class="keyword">static</span> constexpr <span class="keywordtype">size_t</span> BATCH_FLUSH_BYTES = 32 * 1024;</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160; </div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;    <span class="comment">// --- Crash forensics ---</span></div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;    <span class="comment">// Always-on per-client wire recorder: the last outbound frames (with a</span></div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;    <span class="comment">// 16-byte payload preview each) and the last inbound pids. A client</span></div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;    <span class="comment">// crash dump needs &quot;what did THIS client receive last&quot;, which the</span></div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;    <span class="comment">// global Diagnostics ring cannot answer. Written from the same thread</span></div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;    <span class="comment">// that owns the batch queues; read at close() time.</span></div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;    <a class="code" href="classcursestone_1_1diagnostics_1_1PacketForensics.html">diagnostics::PacketForensics</a> net_trace_;</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;    <span class="comment">// Rate limiter for the sanitizer&#39;s crashdumps/ report files: one file</span></div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;    <span class="comment">// per violation burst, console logging stays unlimited.</span></div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;    uint64_t last_violation_report_ms_ = 0;</div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160; </div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;    <span class="comment">// Ensures close() cleanup runs only once across threads.</span></div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;    std::once_flag close_once_;</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;    <span class="comment">// Defers player removal to the main server thread.</span></div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;    std::atomic&lt;bool&gt; pending_removal_{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160; </div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;    <span class="comment">// Checks whether player removal is pending.</span></div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;    <span class="keywordtype">bool</span> isPendingRemoval()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;        <span class="keywordflow">return</span> pending_removal_.load(std::memory_order_acquire);</div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;    }</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;};</div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;} <span class="comment">// namespace cursestone</span></div>
 <div class="ttc" id="aclasscursestone_1_1IPlayer_html"><div class="ttname"><a href="classcursestone_1_1IPlayer.html">cursestone::IPlayer</a></div><div class="ttdef"><b>Definition:</b> IPlayer.h:29</div></div>
 <div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:98</div></div>
 <div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">Server singleton for startup, ticking, and shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:95</div></div>
@@ -1080,7 +1088,7 @@ $(document).ready(function(){initNavTree('Player_8h_source.html',''); initResiza
 <div class="ttc" id="aclasscursestone_1_1entity_1_1Entity_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Entity.html">cursestone::entity::Entity</a></div><div class="ttdef"><b>Definition:</b> Entity.h:35</div></div>
 <div class="ttc" id="aclasscursestone_1_1entity_1_1Human_html"><div class="ttname"><a href="classcursestone_1_1entity_1_1Human.html">cursestone::entity::Human</a></div><div class="ttdef"><b>Definition:</b> Human.h:33</div></div>
 <div class="ttc" id="aclasscursestone_1_1inventory_1_1Inventory_html"><div class="ttname"><a href="classcursestone_1_1inventory_1_1Inventory.html">cursestone::inventory::Inventory</a></div><div class="ttdef"><b>Definition:</b> Inventory.h:48</div></div>
-<div class="ttc" id="aclasscursestone_1_1network_1_1AdvancedSourceInterface_html"><div class="ttname"><a href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">cursestone::network::AdvancedSourceInterface</a></div><div class="ttdef"><b>Definition:</b> AdvancedSourceInterface.h:40</div></div>
+<div class="ttc" id="aclasscursestone_1_1network_1_1AdvancedSourceInterface_html"><div class="ttname"><a href="classcursestone_1_1network_1_1AdvancedSourceInterface.html">cursestone::network::AdvancedSourceInterface</a></div><div class="ttdef"><b>Definition:</b> AdvancedSourceInterface.h:71</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1BlockEntityDataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1BlockEntityDataPacket.html">cursestone::network::protocol::BlockEntityDataPacket</a></div><div class="ttdef"><b>Definition:</b> BlockEntityDataPacket.h:41</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DataPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DataPacket.html">cursestone::network::protocol::DataPacket</a></div><div class="ttdef"><b>Definition:</b> DataPacket.h:44</div></div>
 <div class="ttc" id="aclasscursestone_1_1network_1_1protocol_1_1DropItemPacket_html"><div class="ttname"><a href="classcursestone_1_1network_1_1protocol_1_1DropItemPacket.html">cursestone::network::protocol::DropItemPacket</a></div><div class="ttdef"><b>Definition:</b> DropItemPacket.h:38</div></div>
