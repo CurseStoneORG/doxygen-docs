@@ -1,5 +1,6 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1item_1_1ItemSteak.html#adc74f2c73f5573a7ad249a9fa9e5f29a":[11,0,0,5,90,1],
 "classcursestone_1_1item_1_1ItemStick.html":[11,0,0,5,91],
 "classcursestone_1_1item_1_1ItemStick.html#a7cf47c46ae7f6d5d45a2558b2f01336d":[11,0,0,5,91,0],
 "classcursestone_1_1item_1_1ItemStick.html#af7d896c6558fa5977ad13137ac8fb8ee":[11,0,0,5,91,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1network_1_1protocol_1_1AdventureSettingsPacket.html#a08dc964dfed70804d07510d5b5c5777b":[11,0,0,9,0,3,4],
 "classcursestone_1_1network_1_1protocol_1_1AdventureSettingsPacket.html#a22d5c77c8f0bc1e394cffc195005506f":[11,0,0,9,0,3,2],
 "classcursestone_1_1network_1_1protocol_1_1AdventureSettingsPacket.html#a4b0eb4ed3c70db7de878549890ba278f":[11,0,0,9,0,3,5],
-"classcursestone_1_1network_1_1protocol_1_1AdventureSettingsPacket.html#a62462bf90f53de42b15aa0a7572c8d33":[11,0,0,9,0,3,3],
-"classcursestone_1_1network_1_1protocol_1_1AdventureSettingsPacket.html#aa67f08067b7f3c1a5ba815537150c04f":[11,0,0,9,0,3,1]
+"classcursestone_1_1network_1_1protocol_1_1AdventureSettingsPacket.html#a62462bf90f53de42b15aa0a7572c8d33":[11,0,0,9,0,3,3]
 };

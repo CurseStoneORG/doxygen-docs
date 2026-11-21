@@ -1,5 +1,7 @@
 var NAVTREEINDEX25 =
 {
+"classvgen_1_1NetherBridgeFeature.html":[11,0,2,122],
+"classvgen_1_1NetherBridgeFeature.html#a2a6c8d2ff03fd2d1c8c761ce8555cb12":[11,0,2,122,2],
 "classvgen_1_1NetherBridgeFeature.html#a518465c10e7b49088563d127a9aa7a51":[11,0,2,122,1],
 "classvgen_1_1NetherBridgeFeature.html#a8c601e36b5c83e41189d0dfcdf7c04fe":[11,0,2,122,3],
 "classvgen_1_1NetherBridgeFeature.html#ac09340da82aefeda9a92025945a5d7d8":[11,0,2,122,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX25 =
 "classvgen_1_1Smithy.html#aa03ab8c8d17d79ed7a9a86c838af54bd":[11,0,2,165,1],
 "classvgen_1_1Smithy.html#ab6b110e13725e45ae0e79ad5298d2dc7":[11,0,2,165,6],
 "classvgen_1_1Smithy.html#ad89c9180cfa9649f56166a1965bdb7af":[11,0,2,165,7],
-"classvgen_1_1Smithy.html#ae3247169300a774ba61e6595f7039ef3":[11,0,2,165,2],
-"classvgen_1_1SmoothLayer.html":[11,0,2,108],
-"classvgen_1_1SmoothLayer.html#a58596e87de2b6be13091eca854f9e38a":[11,0,2,108,1]
+"classvgen_1_1Smithy.html#ae3247169300a774ba61e6595f7039ef3":[11,0,2,165,2]
 };

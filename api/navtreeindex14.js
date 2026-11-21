@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1item_1_1ItemBucket.html#aa4465434bfa18794ed9dd4e2ae69477c":[11,0,0,5,16,1],
 "classcursestone_1_1item_1_1ItemBucket.html#aabd8ba580794d182bb56cd85701c9222":[11,0,0,5,16,3],
 "classcursestone_1_1item_1_1ItemBucket.html#ae581e454c9b3b247fdd3f1fb042c19a1":[11,0,0,5,16,4],
 "classcursestone_1_1item_1_1ItemBucket.html#af0915c047f5680ff3f77876c1e640cf5":[11,0,0,5,16,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1item_1_1ItemSplashPotion.html#af159cb58131ed9f2da52130d63001e59":[11,0,0,5,88,1],
 "classcursestone_1_1item_1_1ItemSplashPotion.html#af2e8fc55f2137213ea4623e2ca207511":[11,0,0,5,88,2],
 "classcursestone_1_1item_1_1ItemSteak.html":[11,0,0,5,90],
-"classcursestone_1_1item_1_1ItemSteak.html#a88d17d3855634ff078c66024e7784f9b":[11,0,0,5,90,0],
-"classcursestone_1_1item_1_1ItemSteak.html#adc74f2c73f5573a7ad249a9fa9e5f29a":[11,0,0,5,90,1]
+"classcursestone_1_1item_1_1ItemSteak.html#a88d17d3855634ff078c66024e7784f9b":[11,0,0,5,90,0]
 };

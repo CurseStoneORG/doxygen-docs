@@ -133,6 +133,7 @@ var classcursestone_1_1Player =
     [ "releaseBow", "classcursestone_1_1Player.html#ac85ed2704f56c3e055011d44bfed5066", null ],
     [ "rememberMob", "classcursestone_1_1Player.html#a6f796c760624cff2da5015f63b31f7ff", null ],
     [ "removeWindow", "classcursestone_1_1Player.html#a340fa82432af18ebb9703857f677367f", null ],
+    [ "resendTrackedTiles", "classcursestone_1_1Player.html#a7ac2c7ddd237a10005bcb4c7bcb63615", null ],
     [ "resetFallDistance", "classcursestone_1_1Player.html#ac673433ec1759655e329f6c1fdef1785", null ],
     [ "resetSpawnToDefault", "classcursestone_1_1Player.html#af8145747b9f013578c27b0b1292cc0df", null ],
     [ "respawn", "classcursestone_1_1Player.html#a10c12c2bd41a4d7961efb24aa200b346", null ],

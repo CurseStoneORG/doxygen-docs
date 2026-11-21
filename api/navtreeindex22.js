@@ -1,5 +1,7 @@
 var NAVTREEINDEX22 =
 {
+"classvgen_1_1BiomeEdgeLayer.html#a6cef3e742d74847cd35c9017ae9a5cc6":[11,0,2,93,0],
+"classvgen_1_1BiomeEdgeLayer.html#a83f5c229a676395c927149f49b7be448":[11,0,2,93,5],
 "classvgen_1_1BiomeEdgeLayer.html#ad89d737aa5925ff72228141e158d0272":[11,0,2,93,1],
 "classvgen_1_1BiomeEdgeLayer.html#af003cbfe48d557d89917e3c3eb474586":[11,0,2,93,3],
 "classvgen_1_1BiomeEdgeLayer.html#afc03014aeb324e5aab4f731ed716d994":[11,0,2,93,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX22 =
 "classvgen_1_1Entity.html#ad50be43950173b52598af45491e7307c":[11,0,2,199,0],
 "classvgen_1_1ExtremeHillsBiome.html":[11,0,2,5],
 "classvgen_1_1ExtremeHillsBiome.html#a611f273cba2c31eec4200e3ba31188ff":[11,0,2,5,4],
-"classvgen_1_1ExtremeHillsBiome.html#ab4f4447d4518245d84183d1b6dbe477e":[11,0,2,5,1],
-"classvgen_1_1ExtremeHillsBiome.html#ac16df27562be3f011c38933808b15654":[11,0,2,5,2],
-"classvgen_1_1ExtremeHillsBiome.html#ae2e1fa34de053d9d3fc9347150066c2c":[11,0,2,5,3]
+"classvgen_1_1ExtremeHillsBiome.html#ab4f4447d4518245d84183d1b6dbe477e":[11,0,2,5,1]
 };

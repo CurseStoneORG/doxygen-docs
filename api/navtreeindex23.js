@@ -1,5 +1,7 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1ExtremeHillsBiome.html#ac16df27562be3f011c38933808b15654":[11,0,2,5,2],
+"classvgen_1_1ExtremeHillsBiome.html#ae2e1fa34de053d9d3fc9347150066c2c":[11,0,2,5,3],
 "classvgen_1_1ExtremeHillsBiome.html#aea63986b8ec235fddcde53cccdf7147d":[11,0,2,5,0],
 "classvgen_1_1Facing.html":[11,0,2,46],
 "classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134":[11,0,2,46,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1Material.html#a3a3c523d7631a6ad42611dc15d21fc78":[11,0,2,87,25],
 "classvgen_1_1Material.html#a3b869a373627ed9f10af76b553f7003b":[11,0,2,87,21],
 "classvgen_1_1Material.html#a41450abb397a39edbd306294f9727bbd":[11,0,2,87,15],
-"classvgen_1_1Material.html#a47b627e2089cf3737f0e391edd53bd98":[11,0,2,87,3],
-"classvgen_1_1Material.html#a4ad03eaf9cd8ed6c0c48c9d8bf3fabdc":[11,0,2,87,23],
-"classvgen_1_1Material.html#a4de430198379b937958461e9bf7a8175":[11,0,2,87,2]
+"classvgen_1_1Material.html#a47b627e2089cf3737f0e391edd53bd98":[11,0,2,87,3]
 };

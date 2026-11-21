@@ -1,5 +1,6 @@
 var NAVTREEINDEX17 =
 {
+"classcursestone_1_1network_1_1protocol_1_1MovePlayerPacket.html#ac3d2f5b00e3f5f2801b259054efc2126":[11,0,0,9,0,34,6],
 "classcursestone_1_1network_1_1protocol_1_1MovePlayerPacket.html#aecf7448c952c6c154b207542b29d5ce0":[11,0,0,9,0,34,4],
 "classcursestone_1_1network_1_1protocol_1_1PacketPool.html":[11,0,0,9,0,35],
 "classcursestone_1_1network_1_1protocol_1_1PacketPool.html#a2c6644522bea86b4711941a45af40ded":[11,0,0,9,0,35,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX17 =
 "classcursestone_1_1plugin_1_1LuaCommand.html#a5f1f60bc30cf172309fd41e478f91af5":[11,0,0,12,0,3],
 "classcursestone_1_1plugin_1_1LuaCommand.html#a600951f93224bb4007a0f433df5f873c":[11,0,0,12,0,1],
 "classcursestone_1_1plugin_1_1LuaCommand.html#ab3c67994263813c4ab248e4a35fcad96":[11,0,0,12,0,2],
-"classcursestone_1_1plugin_1_1LuaPlugin.html":[11,0,0,12,2],
-"classcursestone_1_1plugin_1_1LuaPlugin.html#a13db146e48e495b42328da72a2314e93":[11,0,0,12,2,4]
+"classcursestone_1_1plugin_1_1LuaPlugin.html":[11,0,0,12,2]
 };

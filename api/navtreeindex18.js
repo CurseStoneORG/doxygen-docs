@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"classcursestone_1_1plugin_1_1LuaPlugin.html#a13db146e48e495b42328da72a2314e93":[11,0,0,12,2,4],
 "classcursestone_1_1plugin_1_1LuaPlugin.html#a25e215122a7300f98af34e35ee72eb45":[11,0,0,12,2,3],
 "classcursestone_1_1plugin_1_1LuaPlugin.html#a35f62e7bb57b7e254ff6b9d915e488a2":[11,0,0,12,2,2],
 "classcursestone_1_1plugin_1_1LuaPlugin.html#a44dfa4fab570249150b1e59bd62a125c":[11,0,0,12,2,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX18 =
 "classcursestone_1_1wizard_1_1Installer.html#abe71bd6fa0f07922ca581664d65e2685":[11,0,0,16,0,1],
 "classcursestone_1_1wizard_1_1Installer.html#aea742766d2b717669575e790beedc2f6":[11,0,0,16,0,0],
 "classcursestone_1_1wizard_1_1InstallerLang.html":[11,0,0,16,1],
-"classcursestone_1_1wizard_1_1InstallerLang.html#ab5c6d1435dd7446dc05ab4861a07a0a3":[11,0,0,16,1,1],
-"classcursestone_1_1wizard_1_1InstallerLang.html#ad66b2d01fcfcc6c581210857d2b292f2":[11,0,0,16,1,0]
+"classcursestone_1_1wizard_1_1InstallerLang.html#ab5c6d1435dd7446dc05ab4861a07a0a3":[11,0,0,16,1,1]
 };

@@ -1,5 +1,13 @@
 var NAVTREEINDEX32 =
 {
+"structmcp__rak__session.html#a7a7908dbf1c13bc407817a2328fdbb96":[11,0,33,18],
+"structmcp__rak__session.html#a7d34375ccf27de28dccaf1d756bc8f33":[11,0,33,70],
+"structmcp__rak__session.html#a880b105bd844c6ffdeebfc4ff7f94e43":[11,0,33,67],
+"structmcp__rak__session.html#a88146f8f1c54609ce8ad3d845c4a1f06":[11,0,33,46],
+"structmcp__rak__session.html#a88268eb78a37f9bda940f6cfcdaf8adc":[11,0,33,48],
+"structmcp__rak__session.html#a887ad0a49bdd877557523b9e7a297931":[11,0,33,15],
+"structmcp__rak__session.html#a8c25bb19d719d7ae82c3c020cfa5ad49":[11,0,33,20],
+"structmcp__rak__session.html#a927278d0355c004923681a0bdbb65e2f":[11,0,33,39],
 "structmcp__rak__session.html#a9a4c18f604806332450c8c2934c96d37":[11,0,33,75],
 "structmcp__rak__session.html#a9ab2bec9aad228e71c93201abc61c113":[11,0,33,22],
 "structmcp__rak__session.html#a9bc5bbc8c37ced1cc7e42f3ea715dd96":[11,0,33,29],
@@ -241,13 +249,5 @@ var NAVTREEINDEX32 =
 "structvgen_1_1ChunkBlockPos.html#a1c87bab22fba1f55022e7ee3a7361470":[11,0,2,192,11],
 "structvgen_1_1ChunkBlockPos.html#a2a35b395fbad087e0d4bef1639155f87":[11,0,2,192,7],
 "structvgen_1_1ChunkBlockPos.html#a55d68c06c55cdf1060e2db25e7f7076e":[11,0,2,192,4],
-"structvgen_1_1ChunkBlockPos.html#a8615e6a63ffadc1fd06844fb9c70fba6":[11,0,2,192,9],
-"structvgen_1_1ChunkBlockPos.html#a98cd9051e5bb6f44ca13a3fc9df48795":[11,0,2,192,5],
-"structvgen_1_1ChunkBlockPos.html#aa47f454d871f0847a0cbc9f065df3fc7":[11,0,2,192,1],
-"structvgen_1_1ChunkBlockPos.html#aa7fe0fdeb4f47573e1d9c790aed8d95a":[11,0,2,192,13],
-"structvgen_1_1ChunkBlockPos.html#abd5d20a82a4705beb104c1f1c27c2837":[11,0,2,192,6],
-"structvgen_1_1ChunkBlockPos.html#acbc8db256e8cf7a8fb5c1761849e382a":[11,0,2,192,8],
-"structvgen_1_1ChunkBlockPos.html#ad17a3a44f7ebda6bdb6a9c084440f640":[11,0,2,192,12],
-"structvgen_1_1ChunkBlockPos.html#aea05cc230d57dc0c5adea5824a217992":[11,0,2,192,2],
-"structvgen_1_1ChunkBlockPos.html#aed1f194f228c4fe3620621546105932e":[11,0,2,192,3]
+"structvgen_1_1ChunkBlockPos.html#a8615e6a63ffadc1fd06844fb9c70fba6":[11,0,2,192,9]
 };

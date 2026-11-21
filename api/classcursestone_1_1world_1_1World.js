@@ -41,6 +41,7 @@ var classcursestone_1_1world_1_1World =
     [ "dropItemAt", "classcursestone_1_1world_1_1World.html#aa226b6e7a5d1409109c1dba1b0c4c9ac", null ],
     [ "droppedItem", "classcursestone_1_1world_1_1World.html#a96544ede3cedd1025d39eef7646622f5", null ],
     [ "droppedItems", "classcursestone_1_1world_1_1World.html#a3fc476422a77feda847aea52a5b18647", null ],
+    [ "dropResidentTileBlob", "classcursestone_1_1world_1_1World.html#a335b7f96fdb6d337159f7647e171feac", null ],
     [ "evictMobsForChunk", "classcursestone_1_1world_1_1World.html#a6dcb56b9c21ee71a9e4a4c741dfbbc93", null ],
     [ "fillBlocks", "classcursestone_1_1world_1_1World.html#accd6db984a8f2346b713010b8a67d9fe", null ],
     [ "floatingText", "classcursestone_1_1world_1_1World.html#af6e4d5f151817f3b91e815780ee155e7", null ],

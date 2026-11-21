@@ -1,5 +1,13 @@
 var NAVTREEINDEX30 =
 {
+"structcursestone_1_1entity_1_1ai_1_1MobIntent.html#aea607e4930a21163f20f184533d0eb7e":[11,0,0,2,0,5,1],
+"structcursestone_1_1entity_1_1mobs_1_1Bat.html":[11,0,0,2,1,0],
+"structcursestone_1_1entity_1_1mobs_1_1Blaze.html":[11,0,0,2,1,1],
+"structcursestone_1_1entity_1_1mobs_1_1Chicken.html":[11,0,0,2,1,2],
+"structcursestone_1_1entity_1_1mobs_1_1Cow.html":[11,0,0,2,1,3],
+"structcursestone_1_1entity_1_1mobs_1_1Creeper.html":[11,0,0,2,1,4],
+"structcursestone_1_1entity_1_1mobs_1_1Donkey.html":[11,0,0,2,1,5],
+"structcursestone_1_1entity_1_1mobs_1_1Enderman.html":[11,0,0,2,1,6],
 "structcursestone_1_1entity_1_1mobs_1_1Ghast.html":[11,0,0,2,1,7],
 "structcursestone_1_1entity_1_1mobs_1_1Horse.html":[11,0,0,2,1,8],
 "structcursestone_1_1entity_1_1mobs_1_1Husk.html":[11,0,0,2,1,9],
@@ -241,13 +249,5 @@ var NAVTREEINDEX30 =
 "structcursestone_1_1world_1_1MobEntity.html":[11,0,0,17,17],
 "structcursestone_1_1world_1_1MobEntity.html#a0ae1ded4d2ffeeffc88370fd35d057d7":[11,0,0,17,17,9],
 "structcursestone_1_1world_1_1MobEntity.html#a1067bdef360b67065e07412ec7dab78a":[11,0,0,17,17,14],
-"structcursestone_1_1world_1_1MobEntity.html#a1ef7a51bf4e84cb4c818b40c63ec53e5":[11,0,0,17,17,12],
-"structcursestone_1_1world_1_1MobEntity.html#a2113601dde27777a3086537a60e398b5":[11,0,0,17,17,0],
-"structcursestone_1_1world_1_1MobEntity.html#a30269eb94af286061b4ad8a6f1baaa52":[11,0,0,17,17,3],
-"structcursestone_1_1world_1_1MobEntity.html#a3752c4936db38cf8789954f098dfd6e0":[11,0,0,17,17,11],
-"structcursestone_1_1world_1_1MobEntity.html#a73e56cd3d626010f2bc2354e179140a0":[11,0,0,17,17,1],
-"structcursestone_1_1world_1_1MobEntity.html#a8851aa7cf58df25bdb885ac9d804e4c7":[11,0,0,17,17,8],
-"structcursestone_1_1world_1_1MobEntity.html#a8f9f60dfe92e330af55bea4dd2beece3":[11,0,0,17,17,13],
-"structcursestone_1_1world_1_1MobEntity.html#a8fdeba0a3413318fadf1e0a21e591b76":[11,0,0,17,17,2],
-"structcursestone_1_1world_1_1MobEntity.html#a93cbe63d151a848979d653fc88af4a4e":[11,0,0,17,17,5]
+"structcursestone_1_1world_1_1MobEntity.html#a1ef7a51bf4e84cb4c818b40c63ec53e5":[11,0,0,17,17,12]
 };

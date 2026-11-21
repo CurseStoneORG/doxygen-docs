@@ -1,5 +1,7 @@
 var NAVTREEINDEX20 =
 {
+"classcursestone_1_1world_1_1format_1_1WorldProvider.html#a26773ab2b62214be0460e8d48ff9ed20":[11,0,0,17,0,4,15],
+"classcursestone_1_1world_1_1format_1_1WorldProvider.html#a2a1d6d80ba7fcd827fca6ec6b256ad4b":[11,0,0,17,0,4,13],
 "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a389b24125015f886028e6dbf4539652e":[11,0,0,17,0,4,8],
 "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a42bfdbcb06fd7193562a3d8bfae4ac31":[11,0,0,17,0,4,1],
 "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a55018d64521f9387e844a0652f04da5b":[11,0,0,17,0,4,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX20 =
 "classcursestone_1_1world_1_1particle_1_1LargeSmokeParticle.html#a59feaba51599c7089c36edb96e26a857":[11,0,0,17,2,15,0],
 "classcursestone_1_1world_1_1particle_1_1LavaParticle.html":[11,0,0,17,2,16],
 "classcursestone_1_1world_1_1particle_1_1LavaParticle.html#ad9be22ce44373de1e73ee74cad679f98":[11,0,0,17,2,16,0],
-"classcursestone_1_1world_1_1particle_1_1MobFlameParticle.html":[11,0,0,17,2,17],
-"classcursestone_1_1world_1_1particle_1_1MobFlameParticle.html#a7e24450d02bc03f8f1ac5260febc502a":[11,0,0,17,2,17,0],
-"classcursestone_1_1world_1_1particle_1_1MobSpellAmbientParticle.html":[11,0,0,17,2,18]
+"classcursestone_1_1world_1_1particle_1_1MobFlameParticle.html":[11,0,0,17,2,17]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX21 =
 {
+"classcursestone_1_1world_1_1particle_1_1MobFlameParticle.html#a7e24450d02bc03f8f1ac5260febc502a":[11,0,0,17,2,17,0],
+"classcursestone_1_1world_1_1particle_1_1MobSpellAmbientParticle.html":[11,0,0,17,2,18],
 "classcursestone_1_1world_1_1particle_1_1MobSpellAmbientParticle.html#a4cb7149911627fac12d3916972eb7f1f":[11,0,0,17,2,18,0],
 "classcursestone_1_1world_1_1particle_1_1MobSpellInstantParticle.html":[11,0,0,17,2,19],
 "classcursestone_1_1world_1_1particle_1_1MobSpellInstantParticle.html#a55e0c6fc88fac0a1ae4bc14186a7ed8d":[11,0,0,17,2,19,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX21 =
 "classvgen_1_1BiomeDecorator.html#af94ce800a1a18efc4a9f55e668e46460":[11,0,2,2,66],
 "classvgen_1_1BiomeDecorator.html#afe81e6bb96977d679fd663503e6dd6b7":[11,0,2,2,34],
 "classvgen_1_1BiomeEdgeLayer.html":[11,0,2,93],
-"classvgen_1_1BiomeEdgeLayer.html#a00e37a7daac62dc40f904bb1c8f5ce0d":[11,0,2,93,2],
-"classvgen_1_1BiomeEdgeLayer.html#a6cef3e742d74847cd35c9017ae9a5cc6":[11,0,2,93,0],
-"classvgen_1_1BiomeEdgeLayer.html#a83f5c229a676395c927149f49b7be448":[11,0,2,93,5]
+"classvgen_1_1BiomeEdgeLayer.html#a00e37a7daac62dc40f904bb1c8f5ce0d":[11,0,2,93,2]
 };
