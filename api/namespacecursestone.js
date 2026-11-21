@@ -1563,7 +1563,8 @@ var namespacecursestone =
       [ "blockIdForTileId", "TileFactory_8cpp.html#a119048affcd991b29ff4b6eb53b0dd0d", null ],
       [ "createTileForBlock", "TileFactory_8cpp.html#a23e3b9572eeb25b7fb64224e28e0ca0c", null ],
       [ "isTileBlock", "TileFactory_8cpp.html#afec7f1681a393eb6f5d6333c5c4e064a", null ],
-      [ "parseTileBlobHeader", "TileFactory_8cpp.html#a55286fa640b38933679d389495a8a5ed", null ]
+      [ "parseTileBlobHeader", "TileFactory_8cpp.html#a55286fa640b38933679d389495a8a5ed", null ],
+      [ "tileNeedsActorAnnounce", "TileFactory_8cpp.html#ad019a6870b0235493274e4167afad443", null ]
     ] ],
     [ "utils", "namespacecursestone_1_1utils.html", "namespacecursestone_1_1utils" ],
     [ "wizard", null, [

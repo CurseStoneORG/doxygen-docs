@@ -64,6 +64,7 @@ var NAVTREEINDEX8 =
 "TileFactory_8cpp.html#a119048affcd991b29ff4b6eb53b0dd0d":[10,0,0,16,8],
 "TileFactory_8cpp.html#a23e3b9572eeb25b7fb64224e28e0ca0c":[10,0,0,16,9],
 "TileFactory_8cpp.html#a55286fa640b38933679d389495a8a5ed":[10,0,0,16,11],
+"TileFactory_8cpp.html#ad019a6870b0235493274e4167afad443":[10,0,0,16,12],
 "TileFactory_8cpp.html#afec7f1681a393eb6f5d6333c5c4e064a":[10,0,0,16,10],
 "TileFactory_8h_source.html":[12,0,0,17,5],
 "TileFurnace_8h_source.html":[12,0,0,17,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1MemoryManager.html":[11,0,0,44],
 "classcursestone_1_1MemoryManager.html#a3d938f950ed6cf050994288229514dcf":[11,0,0,44,3],
 "classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99":[11,0,0,44,0],
-"classcursestone_1_1MemoryManager.html#a9248cb7c10aa20f389b1640ac687a7bf":[11,0,0,44,5],
-"classcursestone_1_1MemoryManager.html#a943da3645b21bec925346ab85cf99075":[11,0,0,44,4]
+"classcursestone_1_1MemoryManager.html#a9248cb7c10aa20f389b1640ac687a7bf":[11,0,0,44,5]
 };

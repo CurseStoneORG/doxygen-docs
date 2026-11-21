@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134afd7836f1123793a5a1e6b2969e715d09":[11,0,2,46,2,8],
 "classvgen_1_1Facing.html#ad7f9e68badf5c6a4045b89e1245334dc":[11,0,2,46,1],
 "classvgen_1_1Facing_1_1Plane.html":[11,0,2,46,0],
 "classvgen_1_1FancyTreeFeature.html":[11,0,2,54],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a3e9b3ac6f082ec46a2d1d3f1f1647456":[11,0,2,87,0,4],
 "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a5635bf596d97c1c2e7afe481ed060774":[11,0,2,87,0,2],
 "classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a635459702f9817de29e608fa3395637c":[11,0,2,87,0,1],
-"classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a960b44c579bc2f6818d2daaf9e4c16f0":[11,0,2,87,0,0],
-"classvgen_1_1Material.html#a9b1fc1c5d5a12b0e4d5250fe70b8eb26":[11,0,2,87,9]
+"classvgen_1_1Material.html#a972ad87e20e9a42c9314025fc69a8ec9a960b44c579bc2f6818d2daaf9e4c16f0":[11,0,2,87,0,0]
 };

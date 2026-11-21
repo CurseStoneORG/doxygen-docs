@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"classvgen_1_1ZoomLayer.html#aefa4ba1fb2557aa498e41a3d2110e48c":[11,0,2,111,1],
 "classvgen_1_1ZoomLayer.html#af73e73e91e43996218cb365bfab0b496":[11,0,2,111,0],
 "classvgen_1_1buffer__span.html":[11,0,2,183],
 "classvgen_1_1buffer__span.html#a208839495fcc9900408257980059ff16":[11,0,2,183,3],
@@ -74,8 +75,8 @@ var NAVTREEINDEX27 =
 "dir_fc4c7f03e1a69a98c370fae55a743828.html":[12,0,0,10],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[12,0,0,7],
 "files.html":[12,0],
-"functions.html":[11,3,0,0],
 "functions.html":[11,3,0],
+"functions.html":[11,3,0,0],
 "functions_b.html":[11,3,0,1],
 "functions_c.html":[11,3,0,2],
 "functions_d.html":[11,3,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md130":[3,13,2],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md131":[3,13,3],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md132":[3,13,4],
-"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md133":[3,13,5],
-"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md134":[3,13,6]
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md133":[3,13,5]
 };

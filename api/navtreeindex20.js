@@ -1,5 +1,6 @@
 var NAVTREEINDEX20 =
 {
+"classcursestone_1_1world_1_1format_1_1WorldProviderManager.html":[11,0,0,17,0,5],
 "classcursestone_1_1world_1_1format_1_1WorldProviderManager.html#a2e7aa36f22aba06446e11f8f95df62ea":[11,0,0,17,0,5,3],
 "classcursestone_1_1world_1_1format_1_1WorldProviderManager.html#a301823a645d73a74e4ae917a61bb0838":[11,0,0,17,0,5,1],
 "classcursestone_1_1world_1_1format_1_1WorldProviderManager.html#ac72e75390682fd60e529c36c93389c0c":[11,0,0,17,0,5,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX20 =
 "classcursestone_1_1world_1_1particle_1_1Particle.html#a24c02ce63a18e2343d31acc990c012d0":[11,0,0,17,2,21,4],
 "classcursestone_1_1world_1_1particle_1_1Particle.html#a908bc468f31b2fd2972806e3f710d58f":[11,0,0,17,2,21,5],
 "classcursestone_1_1world_1_1particle_1_1Particle.html#ac815ba54c1fd3cef5e5cba107c95150c":[11,0,0,17,2,21,2],
-"classcursestone_1_1world_1_1particle_1_1Particle.html#af0f5a65754dad671770929cd5351412d":[11,0,0,17,2,21,3],
-"classcursestone_1_1world_1_1particle_1_1Particle.html#af329335ba9fab1e85b525df3edef8647":[11,0,0,17,2,21,0]
+"classcursestone_1_1world_1_1particle_1_1Particle.html#af0f5a65754dad671770929cd5351412d":[11,0,0,17,2,21,3]
 };

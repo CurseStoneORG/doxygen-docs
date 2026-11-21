@@ -1,5 +1,6 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1item_1_1ItemCookedFish.html":[11,0,0,5,20],
 "classcursestone_1_1item_1_1ItemCookedFish.html#a26b564a7833fa607e3cca5e9395ef6a3":[11,0,0,5,20,0],
 "classcursestone_1_1item_1_1ItemCookedFish.html#a3ec80512d64c8255643114fc6e94a87f":[11,0,0,5,20,3],
 "classcursestone_1_1item_1_1ItemCookedFish.html#a7a977e1b03125b3a8add37c32453b981":[11,0,0,5,20,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1item_1_1ItemSugarcane.html#ab5c1d572b4d8fae6ed611e0fc3555420":[11,0,0,5,93,1],
 "classcursestone_1_1item_1_1ItemSwordDiamond.html":[11,0,0,5,94],
 "classcursestone_1_1item_1_1ItemSwordDiamond.html#aa92aedcfad9583dd15037a856c99d95f":[11,0,0,5,94,0],
-"classcursestone_1_1item_1_1ItemSwordDiamond.html#ac32233b47bc629457460c560b0aa2a8f":[11,0,0,5,94,1],
-"classcursestone_1_1item_1_1ItemSwordGolden.html":[11,0,0,5,95]
+"classcursestone_1_1item_1_1ItemSwordDiamond.html#ac32233b47bc629457460c560b0aa2a8f":[11,0,0,5,94,1]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md134":[3,13,6],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md135":[3,13,7],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md137":[3,14],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md139":[3,15],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "structCsWorldApi.html#a4ee152b3cf2734ee2c194b1b18832c41":[11,0,18,28],
 "structCsWorldApi.html#a57ff853ef34e0c44807cb6113f4b9b6a":[11,0,18,5],
 "structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc":[11,0,18,40],
-"structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f":[11,0,18,7],
-"structCsWorldApi.html#a62261493a35b1533a55a9fa342962c12":[11,0,18,16]
+"structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f":[11,0,18,7]
 };

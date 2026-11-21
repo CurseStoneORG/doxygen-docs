@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classvgen_1_1Material.html#a9b1fc1c5d5a12b0e4d5250fe70b8eb26":[11,0,2,87,9],
 "classvgen_1_1Material.html#a9b660c372b4aca47b8a71081cddbb42e":[11,0,2,87,7],
 "classvgen_1_1Material.html#aa8a852cea50e76f9422525298c548e9d":[11,0,2,87,10],
 "classvgen_1_1Material.html#ab7f0c047e9934552c73153390ea51115":[11,0,2,87,11],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "classvgen_1_1NetherBridgePiece.html#a3340df4446b38c3d84714a1af1eb0200":[11,0,2,124,16],
 "classvgen_1_1NetherBridgePiece.html#a3b875a77dcaa71ec97973c77cb8275d0":[11,0,2,124,3],
 "classvgen_1_1NetherBridgePiece.html#a4742ac78395bbff7a41787d60bc27551":[11,0,2,124,2],
-"classvgen_1_1NetherBridgePiece.html#a541ff3329fbc1f2085449a5ecbe86d0f":[11,0,2,124,13],
-"classvgen_1_1NetherBridgePiece.html#a5c532aec6d3d497e868e0e3d8c4a2eac":[11,0,2,124,5]
+"classvgen_1_1NetherBridgePiece.html#a541ff3329fbc1f2085449a5ecbe86d0f":[11,0,2,124,13]
 };

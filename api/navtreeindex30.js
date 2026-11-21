@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"structcursestone_1_1math_1_1Vec3.html#aea34094108c3602a0e4d5e3219f0a770":[11,0,0,7,0,9],
 "structcursestone_1_1math_1_1Vec3.html#aed98ae70b82335899e48123b7f69b6fc":[11,0,0,7,0,3],
 "structcursestone_1_1math_1_1Vec3.html#afaa1a6d5e3c82471c93c4d5ccf6f8129":[11,0,0,7,0,10],
 "structcursestone_1_1nbt_1_1CompoundEntry.html":[11,0,0,8,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX30 =
 "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html#ae4653fa4075050b37c8b14c2d5d25906":[11,0,0,17,0,0,2,2],
 "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html":[11,0,0,17,0,1,1],
 "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html#a58b04c057b7465befca25fbb689c3ba2":[11,0,0,17,0,1,1,0],
-"structcursestone_1_1world_1_1generator_1_1FlatLayer.html":[11,0,0,17,1,2],
-"structcursestone_1_1world_1_1generator_1_1FlatLayer.html#a571254bf6753daefbb1a3f1427714f2c":[11,0,0,17,1,2,0]
+"structcursestone_1_1world_1_1generator_1_1FlatLayer.html":[11,0,0,17,1,2]
 };
