@@ -1,5 +1,9 @@
 var NAVTREEINDEX28 =
 {
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md82":[3,5],
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md84":[3,6],
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md85":[3,6,0],
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md86":[3,6,1],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md87":[3,6,2],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md88":[3,6,3],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md90":[3,7],
@@ -245,9 +249,5 @@ var NAVTREEINDEX28 =
 "structasync__log__entry__t.html":[11,0,3],
 "structasync__log__entry__t.html#a402087082892e6a5d3d7554fa4f6fd9c":[11,0,3,2],
 "structasync__log__entry__t.html#a72ba622164dc4af23d484b2338431d84":[11,0,3,0],
-"structasync__log__entry__t.html#ac182e29d2aa66beba315c0e2ced57aef":[11,0,3,3],
-"structasync__log__entry__t.html#ac3071d025abacd5cabae25065c44e1b4":[11,0,3,1],
-"structcursestone_1_1DisconnectDump.html":[11,0,0,51],
-"structcursestone_1_1DisconnectDump.html#a00aef07fafeb94f1716e7ee78263d484":[11,0,0,51,0],
-"structcursestone_1_1DisconnectDump.html#a15ba9d5884d7fbe35bb1090457e4e49c":[11,0,0,51,5]
+"structasync__log__entry__t.html#ac182e29d2aa66beba315c0e2ced57aef":[11,0,3,3]
 };

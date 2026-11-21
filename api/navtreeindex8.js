@@ -55,8 +55,10 @@ var NAVTREEINDEX8 =
 "ThreadPort_8h.html#adc28e4867663fbe22b42d0d2ac6fb492":[12,0,0,18,16,6],
 "ThreadPort_8h_source.html":[12,0,0,18,16],
 "TileChest_8h_source.html":[12,0,0,17,4],
-"TileFactory_8cpp.html#a23e3b9572eeb25b7fb64224e28e0ca0c":[10,0,0,16,8],
-"TileFactory_8cpp.html#afec7f1681a393eb6f5d6333c5c4e064a":[10,0,0,16,9],
+"TileFactory_8cpp.html#a119048affcd991b29ff4b6eb53b0dd0d":[10,0,0,16,8],
+"TileFactory_8cpp.html#a23e3b9572eeb25b7fb64224e28e0ca0c":[10,0,0,16,9],
+"TileFactory_8cpp.html#a55286fa640b38933679d389495a8a5ed":[10,0,0,16,11],
+"TileFactory_8cpp.html#afec7f1681a393eb6f5d6333c5c4e064a":[10,0,0,16,10],
 "TileFactory_8h_source.html":[12,0,0,17,5],
 "TileFurnace_8h_source.html":[12,0,0,17,6],
 "TileSign_8h_source.html":[12,0,0,17,7],
@@ -247,7 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1MemoryManager.html#aaf4f0b13445314bdaed8cf8cfa85e890":[11,0,0,44,8],
 "classcursestone_1_1MemoryManager.html#ab7e45a4aac0260292fc6742fa40b0d99":[11,0,0,44,7],
 "classcursestone_1_1MemoryManager.html#abe6056f1dc8807e76032c33c90b00ee8":[11,0,0,44,6],
-"classcursestone_1_1MemoryManager.html#afa7bf0122101ac4cb54b05d60900b5e9":[11,0,0,44,1],
-"classcursestone_1_1OpCommand.html":[11,0,0,30],
-"classcursestone_1_1OpCommand.html#a005e94790f73f47e97261bf1d9d0963c":[11,0,0,30,0]
+"classcursestone_1_1MemoryManager.html#afa7bf0122101ac4cb54b05d60900b5e9":[11,0,0,44,1]
 };

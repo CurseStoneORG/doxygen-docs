@@ -1,5 +1,9 @@
 var NAVTREEINDEX19 =
 {
+"classcursestone_1_1world_1_1Location.html#aa9c3c79f3a734a3a0d0d681a8d7843f7":[11,0,0,17,7,5],
+"classcursestone_1_1world_1_1Location.html#ac0e4c6fe4c3916d911877ea0581554e3":[11,0,0,17,7,3],
+"classcursestone_1_1world_1_1Location.html#ad2ac1639d8f16da349474b161386aa2d":[11,0,0,17,7,6],
+"classcursestone_1_1world_1_1Location.html#af71ff029718387969e99b6f71b26450a":[11,0,0,17,7,4],
 "classcursestone_1_1world_1_1Location.html#af7500862fe3cc4811c11f299091fc118":[11,0,0,17,7,2],
 "classcursestone_1_1world_1_1Location.html#afe2b7cc45eabd1b99f161a8c4ec11036":[11,0,0,17,7,7],
 "classcursestone_1_1world_1_1MobChunkCodec.html":[11,0,0,17,9],
@@ -245,9 +249,5 @@ var NAVTREEINDEX19 =
 "classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html":[11,0,0,17,0,0,3],
 "classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a225f0d9b99dae1d821205e53984825f6":[11,0,0,17,0,0,3,0],
 "classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a6b4eebc8ae157233c2a72595df6a5afa":[11,0,0,17,0,0,3,1],
-"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a714151fd195a92eb110aa1e334248cde":[11,0,0,17,0,0,3,9],
-"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a73e1aa63dc52dc7fad2bd95bdcac2309":[11,0,0,17,0,0,3,5],
-"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a8400c76450417866ed8e9789fe93eae7":[11,0,0,17,0,0,3,4],
-"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a941c71a5d66caf82eaa7f492e01fdc15":[11,0,0,17,0,0,3,3],
-"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a950b782d8db9f7656c08686155643c7c":[11,0,0,17,0,0,3,7]
+"classcursestone_1_1world_1_1format_1_1anvil_1_1AnvilRegionLoader.html#a714151fd195a92eb110aa1e334248cde":[11,0,0,17,0,0,3,9]
 };

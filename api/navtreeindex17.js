@@ -1,5 +1,7 @@
 var NAVTREEINDEX17 =
 {
+"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a82e2cc66772e97b2b984683cd1b6f722":[11,0,0,9,0,20,12],
+"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a89339aaa7d14268af1640193c27ea71a":[11,0,0,9,0,20,17],
 "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a8b11b28fe6d7ae13b53f2039481332eb":[11,0,0,9,0,20,0],
 "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a92faa940c562f0088d5c5a2aea301e6d":[11,0,0,9,0,20,2],
 "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#aa65490caf9a5d72b1958ca90c247899e":[11,0,0,9,0,20,4],
@@ -247,7 +249,5 @@ var NAVTREEINDEX17 =
 "classcursestone_1_1plugin_1_1NativePlugin.html#a5374bdb7df61ccf236886bd0fdc67078":[11,0,0,12,4,2],
 "classcursestone_1_1plugin_1_1NativePlugin.html#a5c7430338e356752b5662ecc5f9930c1":[11,0,0,12,4,14],
 "classcursestone_1_1plugin_1_1NativePlugin.html#a8e65d29b0b1932d0e753e42110297b96":[11,0,0,12,4,8],
-"classcursestone_1_1plugin_1_1NativePlugin.html#aa2a6c4333918de165a4e84b5443765d5":[11,0,0,12,4,4],
-"classcursestone_1_1plugin_1_1NativePlugin.html#ab908ae67722a9676062f7e8442900d61":[11,0,0,12,4,15],
-"classcursestone_1_1plugin_1_1NativePlugin.html#abd7f5d138511f4507e731b580ff4eacd":[11,0,0,12,4,9]
+"classcursestone_1_1plugin_1_1NativePlugin.html#aa2a6c4333918de165a4e84b5443765d5":[11,0,0,12,4,4]
 };

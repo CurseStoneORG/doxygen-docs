@@ -1,5 +1,7 @@
 var NAVTREEINDEX14 =
 {
+"classcursestone_1_1item_1_1ItemDiamondLeggings.html#a079ec14546f678e3e9b655d4b0ea4a81":[11,0,0,5,29,0],
+"classcursestone_1_1item_1_1ItemDiamondLeggings.html#a77c72fbaecb669f373015eb4ca2cad13":[11,0,0,5,29,1],
 "classcursestone_1_1item_1_1ItemEgg.html":[11,0,0,5,30],
 "classcursestone_1_1item_1_1ItemEgg.html#acc63111fa59e88ec6562574c4a8f6abf":[11,0,0,5,30,0],
 "classcursestone_1_1item_1_1ItemEgg.html#adc7463a0405927420c70c8daf189a72f":[11,0,0,5,30,1],
@@ -247,7 +249,5 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#a94476487df485fed720917015a912ced":[11,0,0,5,0,0,1],
 "classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#a9e85a31c4c6b7a86d186aa7d26e4ea20":[11,0,0,5,0,0,0],
 "classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#ae0bfe4b6dae6b78b826749391367e979":[11,0,0,5,0,0,3],
-"classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#ae41e62327caeae26e7368dad010c87bc":[11,0,0,5,0,0,2],
-"classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html":[11,0,0,5,0,2],
-"classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html#a045f5331080ee9a3c165360689857ccf":[11,0,0,5,0,2,0]
+"classcursestone_1_1item_1_1enchantment_1_1Enchantment.html#ae41e62327caeae26e7368dad010c87bc":[11,0,0,5,0,0,2]
 };

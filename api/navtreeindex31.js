@@ -1,5 +1,9 @@
 var NAVTREEINDEX31 =
 {
+"structmcp__async__logger.html#a609820bfa930d62ba7bb8fbc3ae688f1":[11,0,21,7],
+"structmcp__async__logger.html#a6fa86b821dc651bf240b993723e2f6c6":[11,0,21,0],
+"structmcp__async__logger.html#a6fc3e629da03c21e3174249c68552528":[11,0,21,11],
+"structmcp__async__logger.html#a72d56a96a91bed0a13813898d928bead":[11,0,21,4],
 "structmcp__async__logger.html#a9510415f536d8ee69c233c1def6d8c3d":[11,0,21,3],
 "structmcp__async__logger.html#a9904b26f70f9cb3b39d94f0ced1b9c20":[11,0,21,12],
 "structmcp__async__logger.html#ad14491ee989c4a84152e9457b5121563":[11,0,21,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX31 =
 "structmcp__server__instance.html#adb39ce019acd56f459cd946199427547":[11,0,39,2],
 "structmcp__server__instance.html#affaf073b877848af04e8c027ebc4782f":[11,0,39,4],
 "structmcp__split__store.html":[11,0,40],
-"structmcp__split__store.html#a134dd56c9ce6a9ceafff7b077b4b4533":[11,0,40,8],
-"structmcp__split__store.html#a1555a72b60095a67460e3ceed20c7c15":[11,0,40,5],
-"structmcp__split__store.html#a21ecf71f61ba6b45214ad7ad42c892c2":[11,0,40,7],
-"structmcp__split__store.html#a2e5c41251d1402efc054899321d6721a":[11,0,40,2],
-"structmcp__split__store.html#a3d110920964772deaffe19db48f6ca62":[11,0,40,0]
+"structmcp__split__store.html#a134dd56c9ce6a9ceafff7b077b4b4533":[11,0,40,8]
 };

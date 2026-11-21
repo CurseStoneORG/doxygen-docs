@@ -1,5 +1,7 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ab83dedeebbdc2c7ef5184f2cba47cb8f":[11,0,0,2,0,2,2],
+"classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ad2fd9d63867f0e68d7959d0cc9fd70ba":[11,0,0,2,0,2,5],
 "classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ae8c2a516e3619ba80d873ad5cda4f7b7":[11,0,0,2,0,2,6],
 "classcursestone_1_1event_1_1Cancellable.html":[11,0,0,3,5],
 "classcursestone_1_1event_1_1Cancellable.html#a6bb4f55476780a206550e28e15641dbb":[11,0,0,3,5,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1inventory_1_1BaseInventory.html#acef70ff311afd57740e5d6ea88c434ab":[11,0,0,4,0,31],
 "classcursestone_1_1inventory_1_1BaseInventory.html#ada9298887323cccc1cc3d62d52c1accd":[11,0,0,4,0,2],
 "classcursestone_1_1inventory_1_1BaseInventory.html#add41483dc0ea5b461977c81dde2d6076":[11,0,0,4,0,24],
-"classcursestone_1_1inventory_1_1BaseInventory.html#ae05ff5c5bc3d4f9c7bda3996aa8aaed6":[11,0,0,4,0,25],
-"classcursestone_1_1inventory_1_1BaseInventory.html#aeaeedbd4a8d45c284eb57a305b06de45":[11,0,0,4,0,27],
-"classcursestone_1_1inventory_1_1BaseInventory.html#af30b539b186fb1198917ddf46b5ddb14":[11,0,0,4,0,16]
+"classcursestone_1_1inventory_1_1BaseInventory.html#ae05ff5c5bc3d4f9c7bda3996aa8aaed6":[11,0,0,4,0,25]
 };

@@ -17,5 +17,6 @@ var classcursestone_1_1tile_1_1TileChest =
     [ "size", "classcursestone_1_1tile_1_1TileChest.html#abc3b5d127255b778948f805aae2b5778", null ],
     [ "spawnTo", "classcursestone_1_1tile_1_1TileChest.html#ad1a7a400ea7b1b16615bc432c37eeb9f", null ],
     [ "viewerCount", "classcursestone_1_1tile_1_1TileChest.html#af07f32e64de613a1adea54ecc3aa1245", null ],
-    [ "writeNBT", "classcursestone_1_1tile_1_1TileChest.html#a5f464d96775b59b7fe70f95d457e2528", null ]
+    [ "writeNBT", "classcursestone_1_1tile_1_1TileChest.html#a5f464d96775b59b7fe70f95d457e2528", null ],
+    [ "writeSpawnNBT", "classcursestone_1_1tile_1_1TileChest.html#a880e25dc88ef720f2cf7dbcf2002746f", null ]
 ];

@@ -19,6 +19,7 @@ var classcursestone_1_1world_1_1ChunkManager =
     [ "setGenerator", "classcursestone_1_1world_1_1ChunkManager.html#af38289743ff780b4abb102810cce03ed", null ],
     [ "setOnChunkAdded", "classcursestone_1_1world_1_1ChunkManager.html#a28f9addc12122927969067becfe2c4d4", null ],
     [ "setOnChunkInstalled", "classcursestone_1_1world_1_1ChunkManager.html#a874bf43b3da78cfa924dd195907564fd", null ],
+    [ "setOnSpillTileBlockOverwrite", "classcursestone_1_1world_1_1ChunkManager.html#ab916ae4a6f8a8a4b45a49b1e5387fefa", null ],
     [ "setProvider", "classcursestone_1_1world_1_1ChunkManager.html#af15997dbf7c5447326ab5d33b7db49f6", null ],
     [ "setSpillQueue", "classcursestone_1_1world_1_1ChunkManager.html#a9381425f13d62a002dd00030363b9c21", null ],
     [ "setTileBlobSink", "classcursestone_1_1world_1_1ChunkManager.html#abab339973c36a4db0432f76b45700970", null ],

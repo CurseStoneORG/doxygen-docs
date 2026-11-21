@@ -1,5 +1,7 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1inventory_1_1BaseInventory.html#aeaeedbd4a8d45c284eb57a305b06de45":[11,0,0,4,0,27],
+"classcursestone_1_1inventory_1_1BaseInventory.html#af30b539b186fb1198917ddf46b5ddb14":[11,0,0,4,0,16],
 "classcursestone_1_1inventory_1_1BaseInventory.html#af858c7ab0ab040d7c5b3af269d8ca400":[11,0,0,4,0,3],
 "classcursestone_1_1inventory_1_1ChestInventory.html":[11,0,0,4,1],
 "classcursestone_1_1inventory_1_1ChestInventory.html#a1f0c7d1f7ae85960eb3da20180ea2187":[11,0,0,4,1,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1item_1_1ItemDiamondHelmet.html":[11,0,0,5,28],
 "classcursestone_1_1item_1_1ItemDiamondHelmet.html#a22d549ee132e6266f9532fb0e4614845":[11,0,0,5,28,0],
 "classcursestone_1_1item_1_1ItemDiamondHelmet.html#ad85c66a91a299a90c7008a8fb41b01bc":[11,0,0,5,28,1],
-"classcursestone_1_1item_1_1ItemDiamondLeggings.html":[11,0,0,5,29],
-"classcursestone_1_1item_1_1ItemDiamondLeggings.html#a079ec14546f678e3e9b655d4b0ea4a81":[11,0,0,5,29,0],
-"classcursestone_1_1item_1_1ItemDiamondLeggings.html#a77c72fbaecb669f373015eb4ca2cad13":[11,0,0,5,29,1]
+"classcursestone_1_1item_1_1ItemDiamondLeggings.html":[11,0,0,5,29]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html":[11,0,0,5,0,2],
+"classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html#a045f5331080ee9a3c165360689857ccf":[11,0,0,5,0,2,0],
 "classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html#aa7447ec45e9deb8f97b2640f21debc81":[11,0,0,5,0,2,1],
 "classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html#aad4f9942419279eaa2382e3f8307bf26":[11,0,0,5,0,2,3],
 "classcursestone_1_1item_1_1enchantment_1_1EnchantmentList.html#ac23b6db4b5e30792b1c41837c973fb7b":[11,0,0,5,0,2,2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a804bab03d83e35b2062ca875f1200335":[11,0,0,9,0,8,5],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#a8e774c790b531b52e46ffe35c3796850":[11,0,0,9,0,8,0],
 "classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#abfe1dba2855937555b3df165751d0507":[11,0,0,9,0,8,6],
-"classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#ad290920f3248153574791558bf032da2":[11,0,0,9,0,8,4],
-"classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#af0a15c1f9993b742f4294f53b6297db3":[11,0,0,9,0,8,3],
-"classcursestone_1_1network_1_1protocol_1_1ChunkRadiusUpdatedPacket.html":[11,0,0,9,0,9]
+"classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#ad290920f3248153574791558bf032da2":[11,0,0,9,0,8,4]
 };

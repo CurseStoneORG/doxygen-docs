@@ -128,19 +128,37 @@ $(document).ready(function(){initNavTree('TileFactory_8h_source.html',''); initR
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;Tile.h&quot;</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>cursestone::tile {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">// The tile a block id implies, or nullptr when the block carries no</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// block entity (air, a plain block, a block kind we have no tile for).</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// `pos` is the world position of the block.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;std::shared_ptr&lt;Tile&gt; createTileForBlock(uint8_t blockId, <span class="keyword">const</span> <a class="code" href="classcursestone_1_1world_1_1Position.html">cursestone::world::Position</a>&amp; pos);</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">// True for the block ids createTileForBlock() can build. Used by the</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// chunk scan to skip the switch for every block in the world.</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">bool</span> isTileBlock(uint8_t blockId);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace cursestone::tile</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">namespace </span>cursestone::tile {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">// The tile a block id implies, or nullptr when the block carries no</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// block entity (air, a plain block, a block kind we have no tile for).</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">// `pos` is the world position of the block.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;std::shared_ptr&lt;Tile&gt; createTileForBlock(uint8_t blockId, <span class="keyword">const</span> <a class="code" href="classcursestone_1_1world_1_1Position.html">cursestone::world::Position</a>&amp; pos);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// True for the block ids createTileForBlock() can build. Used by the</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">// chunk scan to skip the switch for every block in the world.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keywordtype">bool</span> isTileBlock(uint8_t blockId);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// The block id a tile compound&#39;s &quot;id&quot; string (&quot;Chest&quot;, &quot;Furnace&quot;, ...)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// must stand on, or 0 when the tile id has no block counterpart. The</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">// inverse of createTileForBlock(): the block↔tile pair is the client&#39;s</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">// render contract (the 0.15 chest model is drawn by the block actor,</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">// which only binds over a chest block), so every seam that moves a tile</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// NBT blob (hydration, structure generation, spill drains) checks the</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">// pair with this before letting the tile through.</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;uint8_t blockIdForTileId(<span class="keyword">const</span> std::string&amp; tileId);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">// Reads the identity header of a serialized tile compound (the</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">// little-endian blob format tile_entities carries and structure</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">// generation queues): id/x/y/z. Returns false when the blob is not a</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">// parseable tile compound. Cheap: one compound walk of the three int</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">// tags plus the id string, no state built.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">bool</span> parseTileBlobHeader(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len, std::string&amp; tileId,</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                         int32_t&amp; x, int32_t&amp; y, int32_t&amp; z);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;} <span class="comment">// namespace cursestone::tile</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1Position_html"><div class="ttname"><a href="classcursestone_1_1world_1_1Position.html">cursestone::world::Position</a></div><div class="ttdef"><b>Definition:</b> Position.h:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
