@@ -104,6 +104,9 @@ bool(*&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> )(<a class=
 void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d">reply</a> )(const <a class="el" href="structCsCommandSender.html">CsCommandSender</a> *sender, const char *msg)</td></tr>
 <tr class="memdesc:ac6e2956c7aa58f601d16d68c1737cb0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Answers the sender: console -&gt; log, player -&gt; chat message. <br /></td></tr>
 <tr class="separator:ac6e2956c7aa58f601d16d68c1737cb0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41e24e5260d580f855e99b2c9f42e748"><td class="memItemLeft" align="right" valign="top">bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structCsCommandApi.html#a41e24e5260d580f855e99b2c9f42e748">addAlias</a> )(<a class="el" href="structCsPluginApi.html">CsPluginApi</a> *api, const char *alias, const char *target)</td></tr>
+<tr class="memdesc:a41e24e5260d580f855e99b2c9f42e748"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a shortcut: typing /alias dispatches /target.  <a href="structCsCommandApi.html#a41e24e5260d580f855e99b2c9f42e748">More...</a><br /></td></tr>
+<tr class="separator:a41e24e5260d580f855e99b2c9f42e748"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Command registration. </p>
@@ -114,7 +117,25 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true when the name was free and the command is live. Names are case-insensitive and stored lowercased. </dd></dl>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a41e24e5260d580f855e99b2c9f42e748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41e24e5260d580f855e99b2c9f42e748">&#9670;&nbsp;</a></span>addAlias</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool(* CsCommandApi::addAlias) (<a class="el" href="structCsPluginApi.html">CsPluginApi</a> *api, const char *alias, const char *target)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Registers a shortcut: typing /alias dispatches /target. </p>
+<p>target may be "command" or "command with fixed args"; whatever the sender types is appended after the fixed arguments. Names are case- insensitive; real commands always win. The alias dies with the plugin; the target command's permission still gates the call. </p><dl class="section return"><dt>Returns</dt><dd>false when the alias name is taken, empty, or self-targeted. </dd></dl>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/plugin/<a class="el" href="NativeAPI_8h_source.html">NativeAPI.h</a></li>
 </ul>
 </div><!-- contents -->

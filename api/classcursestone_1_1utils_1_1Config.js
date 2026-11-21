@@ -7,6 +7,7 @@ var classcursestone_1_1utils_1_1Config =
     [ "getBool", "classcursestone_1_1utils_1_1Config.html#a5ef83389e339e00c8fe8e5fcd4e40ae7", null ],
     [ "getDouble", "classcursestone_1_1utils_1_1Config.html#aea4ead28c200f835441ba5ec067b36e2", null ],
     [ "getInt", "classcursestone_1_1utils_1_1Config.html#aa87d13366d67c84d740746f9feb8b918", null ],
+    [ "getMap", "classcursestone_1_1utils_1_1Config.html#a3a5941e50acb0a19d520a61a36c04941", null ],
     [ "getString", "classcursestone_1_1utils_1_1Config.html#a6e4569491fbe017a66621be34c19223a", null ],
     [ "getStringList", "classcursestone_1_1utils_1_1Config.html#af3eb19c18e355442d45adda44bcbc563", null ],
     [ "loadIni", "classcursestone_1_1utils_1_1Config.html#a5cc8925efa83e8217f6fd3fe27fe3fd5", null ],

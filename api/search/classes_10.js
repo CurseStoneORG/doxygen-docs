@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queryhandler_1626',['QueryHandler',['../classcursestone_1_1network_1_1QueryHandler.html',1,'cursestone::network']]]
+  ['queryhandler_1627',['QueryHandler',['../classcursestone_1_1network_1_1QueryHandler.html',1,'cursestone::network']]]
 ];

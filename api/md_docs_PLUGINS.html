@@ -137,6 +137,8 @@ re-loads" window. For WorldEdit-style volume work use the bulk write:</p>
 <div class="line">-- in the requested state cost reads only; returns cells written, -1 over cap</div>
 </div><!-- fragment --><ul>
 <li><code>commands.register(name, opts, fn)</code>, <code>commands.reply(sender, msg)</code></li>
+<li><code>commands.registerAlias(alias, target)</code> — a shortcut: typing <code>/alias</code> dispatches <code>/target</code>. <code>target</code> is <code>"command"</code> or <code>"command with fixed
+  args"</code>; whatever the sender typed is appended after the fixed ones (<code>commands.registerAlias("gmc", "gamemode 1")</code> turns <code>/gmc survival</code> into <code>/gamemode 1 survival</code>). Real commands always win — a name taken by a command or another alias is rejected (returns <code>false</code>), the target command's permission still gates the call, and the alias dies with the plugin (<code>/plugins reload</code> or unload drops it and may re-register it).</li>
 <li><code>events.on(name, fn)</code> — PlayerJoin, PlayerQuit, PlayerChat, PlayerMove, PlayerDropItem, PlayerItemHeld, BlockBreak, BlockPlace, EntityDamage, EntityDamageByEntity, PlayerDeath, PlayerRespawn, PlayerBedEnter (alias <code>PlayerSleepInBed</code>), PlayerBedLeave, DoorToggle, PlayerInteract, InventoryOpen, InventoryClick, InventoryClose, WorldLoad (e.world name, e.dimension), WorldUnload (cancellable, e.world name)</li>
 </ul>
 <p><code>PlayerInteract</code> fires for every tap on a block, before the server acts — <code>e.action</code> is <code>left_click_block</code>, <code>right_click_block</code>, <code>left_click_air</code> or <code>right_click_air</code>; cancelling swallows the vanilla behavior (no break, no placement, no chest open). The left-hand event covers every break gesture: the desktop <code>START_BREAK</code> action packet fires it whatever face the client reports, and a creative-mode touch tap — which reaches the server as a bare <code>RemoveBlockPacket</code> with no face at all — fires it too (<code>e.face</code> is -1 then), so wand-style tools work identically on phones and desktops. A removal the client already announced with <code>START_BREAK</code> fires it once (the <code>START_BREAK</code> path), never twice.</p><ul>
@@ -254,7 +256,7 @@ Structure</h2>
 </ul>
 <p>The library exports ONE symbol:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>);</div>
-<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:614</div></div>
+<div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:623</div></div>
 </div><!-- fragment --><p><code><a class="el" href="NativeAPI_8h_source.html">src/plugin/NativeAPI.h</a></code> is the complete SDK header — copy it (or point <code>-I</code> at the server <code>src/</code>) and compile against it. The plugin links nothing: the entire server surface arrives as function-pointer groups in the <code>CsPluginApi*</code> handed to <code>onLoad</code>.</p>
 <h2><a class="anchor" id="autotoc_md186"></a>
 Minimal complete plugin</h2>
@@ -301,7 +303,7 @@ Minimal complete plugin</h2>
 <div class="ttc" id="astructCsCommandSender_html"><div class="ttname"><a href="structCsCommandSender.html">CsCommandSender</a></div><div class="ttdoc">Who ran a plugin command.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:131</div></div>
 <div class="ttc" id="astructCsEvent_html"><div class="ttname"><a href="structCsEvent.html">CsEvent</a></div><div class="ttdoc">Event snapshot passed to native listeners.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:157</div></div>
 <div class="ttc" id="astructCsEvent_html_a64fe453976f4600d9cf333630035d518"><div class="ttname"><a href="structCsEvent.html#a64fe453976f4600d9cf333630035d518">CsEvent::player</a></div><div class="ttdeci">const char * player</div><div class="ttdoc">Player name, or &quot;&quot; when the event has none.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:159</div></div>
-<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:589</div></div>
+<div class="ttc" id="astructCsPluginApi_html"><div class="ttname"><a href="structCsPluginApi.html">CsPluginApi</a></div><div class="ttdoc">Root API handed to CurseStonePlugin_vtable's onLoad hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:598</div></div>
 <div class="ttc" id="astructCsPluginDesc_html"><div class="ttname"><a href="structCsPluginDesc.html">CsPluginDesc</a></div><div class="ttdoc">Static plugin metadata returned by the vtable's desc hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:117</div></div>
 <div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:200</div></div>
 </div><!-- fragment --><p><code>onLoad</code> / <code>desc</code> are required; the other hooks may be <code>NULL</code>. The descriptor is the manifest: keep <code>name</code> non-empty and unique, and set <code>api</code> to the <code>CURSESTONE_API</code> you built against (an empty value means "this SDK"; an incompatible claim refuses the load).</p>
@@ -359,6 +361,8 @@ API reference (native)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>add(api, name, description, usage, permission, fn, ud) -&gt; bool</code>   </td><td class="markdownTableBodyNone">permission: <code>NULL</code>/<code>""</code> public, <code>"op"</code>, or a node    </td></tr>
 <tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>addAlias(api, alias, target) -&gt; bool</code>   </td><td class="markdownTableBodyNone">shortcut: <code>/alias</code> dispatches <code>/target</code>; target may carry fixed args, sender's args are appended; the target command's permission applies; dies with the plugin    </td></tr>
+<tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>reply(sender, msg)</code>   </td><td class="markdownTableBodyNone">console → log, player → chat   </td></tr>
 </table>
 <p><b>events</b> (context-bound; names identical to the Lua <code>events.on()</code> list above)</p>
