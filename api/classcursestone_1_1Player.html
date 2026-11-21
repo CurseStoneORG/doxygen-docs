@@ -275,6 +275,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>consumeHeldItem</b> (
 <tr class="memitem:a622db9a9e06885645e3d5baf1acdc642"><td class="memItemLeft" align="right" valign="top"><a id="a622db9a9e06885645e3d5baf1acdc642"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendBlockEntityData</b> (int32_t x, int32_t y, int32_t z, <a class="el" href="classcursestone_1_1tile_1_1Tile.html">tile::Tile</a> &amp;t, <a class="el" href="classcursestone_1_1Player.html">Player</a> *only=nullptr)</td></tr>
 <tr class="separator:a622db9a9e06885645e3d5baf1acdc642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe28c93910c82987f757832fffa29d59"><td class="memItemLeft" align="right" valign="top"><a id="abe28c93910c82987f757832fffa29d59"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sendChestBlockUpdate</b> (int32_t x, int32_t y, int32_t z)</td></tr>
+<tr class="separator:abe28c93910c82987f757832fffa29d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add53fb06470054d44347c19cb606d20d"><td class="memItemLeft" align="right" valign="top"><a id="add53fb06470054d44347c19cb606d20d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>appendTileSpawnPayload</b> (int32_t cx, int32_t cz, std::vector&lt; uint8_t &gt; &amp;blob)</td></tr>
+<tr class="separator:add53fb06470054d44347c19cb606d20d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afddb0a4ca7387c42ed9354917a0839b6"><td class="memItemLeft" align="right" valign="top"><a id="afddb0a4ca7387c42ed9354917a0839b6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendChunkTiles</b> (int32_t cx, int32_t cz)</td></tr>
 <tr class="separator:afddb0a4ca7387c42ed9354917a0839b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -323,6 +329,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendPacket</b> (const
 <tr class="memitem:a4800357ed4cbd318cd31fa39fb125c05"><td class="memItemLeft" align="right" valign="top"><a id="a4800357ed4cbd318cd31fa39fb125c05"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendEncodedBody</b> (std::vector&lt; uint8_t &gt; body, uint8_t pid, bool ordered=false)</td></tr>
 <tr class="separator:a4800357ed4cbd318cd31fa39fb125c05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7448502c387451fae4b63f0badee8b42"><td class="memItemLeft" align="right" valign="top"><a id="a7448502c387451fae4b63f0badee8b42"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sendEncodedBodyOnStream</b> (std::vector&lt; uint8_t &gt; body, uint8_t pid, network::WireStream stream)</td></tr>
+<tr class="separator:a7448502c387451fae4b63f0badee8b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45fd0a96856b22794b758f5287b338b3"><td class="memItemLeft" align="right" valign="top"><a id="a45fd0a96856b22794b758f5287b338b3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>flushPendingPackets</b> ()</td></tr>
 <tr class="separator:a45fd0a96856b22794b758f5287b338b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
