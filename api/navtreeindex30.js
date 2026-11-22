@@ -1,5 +1,7 @@
 var NAVTREEINDEX30 =
 {
+"structcursestone_1_1math_1_1Vec3.html#ae1147593d28728e8ff9686b95bd9d3f2":[11,0,0,7,0,17],
+"structcursestone_1_1math_1_1Vec3.html#ae71406bfe1415f5be7d1a6b7fa094f66":[11,0,0,7,0,12],
 "structcursestone_1_1math_1_1Vec3.html#aea34094108c3602a0e4d5e3219f0a770":[11,0,0,7,0,9],
 "structcursestone_1_1math_1_1Vec3.html#aed98ae70b82335899e48123b7f69b6fc":[11,0,0,7,0,3],
 "structcursestone_1_1math_1_1Vec3.html#afaa1a6d5e3c82471c93c4d5ccf6f8129":[11,0,0,7,0,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX30 =
 "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html#a641f6a32a3050b23d45e3ac1151ac957":[11,0,0,17,0,0,2,1],
 "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html#a89fbaffb0434c4a5b73e5f729b49f1ab":[11,0,0,17,0,0,2,0],
 "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html#ae4653fa4075050b37c8b14c2d5d25906":[11,0,0,17,0,0,2,2],
-"structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html":[11,0,0,17,0,1,1],
-"structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html#a58b04c057b7465befca25fbb689c3ba2":[11,0,0,17,0,1,1,0],
-"structcursestone_1_1world_1_1generator_1_1FlatLayer.html":[11,0,0,17,1,2]
+"structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html":[11,0,0,17,0,1,1]
 };

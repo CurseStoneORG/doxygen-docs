@@ -1475,6 +1475,7 @@ var namespacecursestone =
       [ "bindData", "BindingsData_8cpp.html#a2196abeb8e0c0dedee4c3685861e4fc3", null ],
       [ "bindEvents", "BindingsEvents_8cpp.html#a1b56ff5a2b24870bfbbb3c4be993afbc", null ],
       [ "bindWorld", "BindingsWorld_8cpp.html#ab5b899f5098fc6972a6761d8bca15ec2", null ],
+      [ "pluginLogText", "LuaBindings_8cpp.html#a32c69a6b33ba378393186d4683c6d0e5", null ],
       [ "pushWorldHandle", "BindingsWorld_8cpp.html#afa32faa5c5a247d9203ed89061b4aeb4", null ],
       [ "registerApi", "LuaBindings_8cpp.html#aabad3b3084d4e535f4eacbdabd4e2516", null ],
       [ "sanitizeRelPath", "PathSafe_8h.html#afbd058607f6a3e530dfbf7929da1752a", null ]

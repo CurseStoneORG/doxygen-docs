@@ -1,5 +1,6 @@
 var NAVTREEINDEX18 =
 {
+"classcursestone_1_1plugin_1_1LuaPlugin.html#a9a26ab296cf510b6f629777a0666dd09":[11,0,0,12,2,1],
 "classcursestone_1_1plugin_1_1LuaPlugin.html#aa1673af6b71c6de79203ee26c6ebde66":[11,0,0,12,2,17],
 "classcursestone_1_1plugin_1_1LuaPlugin.html#aafd6205c2d843629c8e63826179ab72d":[11,0,0,12,2,9],
 "classcursestone_1_1plugin_1_1LuaPlugin.html#acaabb27e6d3e1b9b665d465eb2918642":[11,0,0,12,2,15],
@@ -212,13 +213,14 @@ var NAVTREEINDEX18 =
 "classcursestone_1_1utils_1_1Config.html#aec53b127bf18e44eabaec7b96814278d":[11,0,0,15,1,1],
 "classcursestone_1_1utils_1_1Config.html#af3eb19c18e355442d45adda44bcbc563":[11,0,0,15,1,8],
 "classcursestone_1_1utils_1_1MainLogger.html":[11,0,0,15,3],
-"classcursestone_1_1utils_1_1MainLogger.html#a17ef55991f79e5e8afdd30fe542892cc":[11,0,0,15,3,4],
-"classcursestone_1_1utils_1_1MainLogger.html#a26a23c1eaf9a66c9c15e3d496e9e2590":[11,0,0,15,3,2],
-"classcursestone_1_1utils_1_1MainLogger.html#a30ee60fe34e20926a8e6368b2e42c630":[11,0,0,15,3,3],
-"classcursestone_1_1utils_1_1MainLogger.html#a526af40205faeb62f269664f5157afad":[11,0,0,15,3,5],
-"classcursestone_1_1utils_1_1MainLogger.html#a5bd8e52e765c1241507d5292b39bf764":[11,0,0,15,3,6],
-"classcursestone_1_1utils_1_1MainLogger.html#a7ec5df8341bd51924378a9b8168ab224":[11,0,0,15,3,1],
-"classcursestone_1_1utils_1_1MainLogger.html#a96b198a6251225f722bc7f7618a66466":[11,0,0,15,3,0],
+"classcursestone_1_1utils_1_1MainLogger.html#a17ef55991f79e5e8afdd30fe542892cc":[11,0,0,15,3,5],
+"classcursestone_1_1utils_1_1MainLogger.html#a26a23c1eaf9a66c9c15e3d496e9e2590":[11,0,0,15,3,3],
+"classcursestone_1_1utils_1_1MainLogger.html#a30ee60fe34e20926a8e6368b2e42c630":[11,0,0,15,3,4],
+"classcursestone_1_1utils_1_1MainLogger.html#a526af40205faeb62f269664f5157afad":[11,0,0,15,3,6],
+"classcursestone_1_1utils_1_1MainLogger.html#a5bd8e52e765c1241507d5292b39bf764":[11,0,0,15,3,7],
+"classcursestone_1_1utils_1_1MainLogger.html#a5c93c7a79866a51c7ae03fd34f8857e5":[11,0,0,15,3,0],
+"classcursestone_1_1utils_1_1MainLogger.html#a7ec5df8341bd51924378a9b8168ab224":[11,0,0,15,3,2],
+"classcursestone_1_1utils_1_1MainLogger.html#a96b198a6251225f722bc7f7618a66466":[11,0,0,15,3,1],
 "classcursestone_1_1utils_1_1VersionString.html":[11,0,0,15,4],
 "classcursestone_1_1utils_1_1VersionString.html#a315c248926698158f09f172f77a37b9c":[11,0,0,15,4,2],
 "classcursestone_1_1utils_1_1VersionString.html#a355a38112644378c29e37da66d81441c":[11,0,0,15,4,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX18 =
 "classcursestone_1_1world_1_1ChunkManager.html#a53d6eee3e5cfcac486a05b0191a1fc26":[11,0,0,17,4,14],
 "classcursestone_1_1world_1_1ChunkManager.html#a874bf43b3da78cfa924dd195907564fd":[11,0,0,17,4,18],
 "classcursestone_1_1world_1_1ChunkManager.html#a9381425f13d62a002dd00030363b9c21":[11,0,0,17,4,21],
-"classcursestone_1_1world_1_1ChunkManager.html#a95dde0bc4832568043b94864f72098c8":[11,0,0,17,4,11],
-"classcursestone_1_1world_1_1ChunkManager.html#ab06b2f4fcd0103e097d025b297d9c7e6":[11,0,0,17,4,7],
-"classcursestone_1_1world_1_1ChunkManager.html#ab548a188a727ee70c3edcc54f01291fa":[11,0,0,17,4,10]
+"classcursestone_1_1world_1_1ChunkManager.html#a95dde0bc4832568043b94864f72098c8":[11,0,0,17,4,11]
 };

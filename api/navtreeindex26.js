@@ -1,5 +1,7 @@
 var NAVTREEINDEX26 =
 {
+"classvgen_1_1SpruceFeature.html#aa0306ae0c8c5fe0facf2f9e739101f6d":[11,0,2,80,1],
+"classvgen_1_1StartPiece.html":[11,0,2,157],
 "classvgen_1_1StartPiece.html#a097828b7dfb08af04ef809ae9406b339":[11,0,2,157,8],
 "classvgen_1_1StartPiece.html#a13dbb7e02059bfb2fa4d02963483a575":[11,0,2,157,4],
 "classvgen_1_1StartPiece.html#a14066aebeb6e4303617a25835f9a55f6":[11,0,2,157,10],
@@ -247,7 +249,5 @@ var NAVTREEINDEX26 =
 "classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecda0d5079b088aebbde820dfa1e3790cc89":[11,0,2,37,0,1],
 "classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecda4ddf4cb005260f1c5b21adca4d27c4ab":[11,0,2,37,0,3],
 "classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecda6d5e6e3507013f10c7ca42692fa8e0c6":[11,0,2,37,0,2],
-"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecdaf2b6dcdc344bf345a187b3c6c19af47e":[11,0,2,37,0,0],
-"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecdaf6461c76f6c68ac0bbc76385422efb22":[11,0,2,37,0,5],
-"classvgen_1_1ZoomLayer.html":[11,0,2,111]
+"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecdaf2b6dcdc344bf345a187b3c6c19af47e":[11,0,2,37,0,0]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX29 =
 {
+"structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc":[11,0,18,40],
+"structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f":[11,0,18,7],
 "structCsWorldApi.html#a62261493a35b1533a55a9fa342962c12":[11,0,18,16],
 "structCsWorldApi.html#a6406841d44d0a222457eb9fbde28ad3d":[11,0,18,24],
 "structCsWorldApi.html#a6944cafbb8ac14fc6513b9c5c7b0f623":[11,0,18,31],
@@ -247,7 +249,5 @@ var NAVTREEINDEX29 =
 "structcursestone_1_1math_1_1Vec3.html#a674dc123dc230657d0592e04d37049c0":[11,0,0,7,0,5],
 "structcursestone_1_1math_1_1Vec3.html#a84679b02c434b3f9e81545974055cf74":[11,0,0,7,0,14],
 "structcursestone_1_1math_1_1Vec3.html#ab4fcaca93f7b1bc8956efb567bf9964e":[11,0,0,7,0,0],
-"structcursestone_1_1math_1_1Vec3.html#ae02c8ab02cc80896b75d03cdf65747b2":[11,0,0,7,0,6],
-"structcursestone_1_1math_1_1Vec3.html#ae1147593d28728e8ff9686b95bd9d3f2":[11,0,0,7,0,17],
-"structcursestone_1_1math_1_1Vec3.html#ae71406bfe1415f5be7d1a6b7fa094f66":[11,0,0,7,0,12]
+"structcursestone_1_1math_1_1Vec3.html#ae02c8ab02cc80896b75d03cdf65747b2":[11,0,0,7,0,6]
 };

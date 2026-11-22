@@ -1,5 +1,6 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1block_1_1BlockPlantLike.html":[11,0,0,0,40],
 "classcursestone_1_1block_1_1BlockPlantLike.html#a10bfa39ce9b4c3676918662107e86c80":[11,0,0,0,40,6],
 "classcursestone_1_1block_1_1BlockPlantLike.html#a1ecc3c25a6842f816b96d3b67d49da2a":[11,0,0,0,40,2],
 "classcursestone_1_1block_1_1BlockPlantLike.html#a2946d65bb8d4ac4f1fa8d76cc1ad0214":[11,0,0,0,40,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#abad2a40da348ba5ca572e39b995ea246":[11,0,0,2,0,3,0],
 "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#add131a435d1a9b1f876059094eba0d78":[11,0,0,2,0,3,3],
 "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#af3b8dd39548b2ee396f001ad0482e3d2":[11,0,0,2,0,3,4],
-"classcursestone_1_1entity_1_1ai_1_1MobAIManager.html":[11,0,0,2,0,7],
-"classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#a74b3a86d07b13d497a3ff6a997d7398b":[11,0,0,2,0,7,0]
+"classcursestone_1_1entity_1_1ai_1_1MobAIManager.html":[11,0,0,2,0,7]
 };

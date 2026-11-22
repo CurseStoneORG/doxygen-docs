@@ -1,5 +1,7 @@
 var NAVTREEINDEX21 =
 {
+"classcursestone_1_1world_1_1particle_1_1Particle.html#ac815ba54c1fd3cef5e5cba107c95150c":[11,0,0,17,2,21,2],
+"classcursestone_1_1world_1_1particle_1_1Particle.html#af0f5a65754dad671770929cd5351412d":[11,0,0,17,2,21,3],
 "classcursestone_1_1world_1_1particle_1_1Particle.html#af329335ba9fab1e85b525df3edef8647":[11,0,0,17,2,21,0],
 "classcursestone_1_1world_1_1particle_1_1PortalParticle.html":[11,0,0,17,2,22],
 "classcursestone_1_1world_1_1particle_1_1PortalParticle.html#a98a574c152c0bcd8a5d229c1f7d38c3e":[11,0,0,17,2,22,0],
@@ -247,7 +249,5 @@ var NAVTREEINDEX21 =
 "classvgen_1_1BiomeInitLayer.html#af11c7c9f5baad27b55e34936f97d8506":[11,0,2,94,1],
 "classvgen_1_1BiomeSource.html":[11,0,2,3],
 "classvgen_1_1BiomeSource.html#a05a39a0c5f4d69fb72facb95027d49b4":[11,0,2,3,4],
-"classvgen_1_1BiomeSource.html#a602ab0f54e374881056caaa8f02fa720":[11,0,2,3,0],
-"classvgen_1_1BiomeSource.html#a6874b539ac6f09dad30f1ce852f368e1":[11,0,2,3,7],
-"classvgen_1_1BiomeSource.html#a6cc622c0807b80d59d45f75fda5747bf":[11,0,2,3,5]
+"classvgen_1_1BiomeSource.html#a602ab0f54e374881056caaa8f02fa720":[11,0,2,3,0]
 };

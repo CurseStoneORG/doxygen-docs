@@ -1,5 +1,7 @@
 var NAVTREEINDEX28 =
 {
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md132":[3,13,4],
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md133":[3,13,5],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md134":[3,13,6],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md135":[3,13,7],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md137":[3,14],
@@ -247,7 +249,5 @@ var NAVTREEINDEX28 =
 "structCsWorldApi.html#a4aefa308f8496a3b761cdfac99c63b5a":[11,0,18,30],
 "structCsWorldApi.html#a4cde88018e4fc5689df88f0a4a819833":[11,0,18,21],
 "structCsWorldApi.html#a4ee152b3cf2734ee2c194b1b18832c41":[11,0,18,28],
-"structCsWorldApi.html#a57ff853ef34e0c44807cb6113f4b9b6a":[11,0,18,5],
-"structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc":[11,0,18,40],
-"structCsWorldApi.html#a584fffe48b47f7a5c0c7c0230768254f":[11,0,18,7]
+"structCsWorldApi.html#a57ff853ef34e0c44807cb6113f4b9b6a":[11,0,18,5]
 };

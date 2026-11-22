@@ -1,5 +1,7 @@
 var NAVTREEINDEX32 =
 {
+"structmcp__rak__session__manager.html#ae432019192c453c9a67dc8c1fbdfff85":[11,0,34,3],
+"structmcp__rak__session__manager.html#ae4f7ffa9e6bf9b18672823d66b49d3cc":[11,0,34,17],
 "structmcp__rak__session__manager.html#ae5dadc3758d693226a5cc68d00850a98":[11,0,34,21],
 "structmcp__rak__session__manager.html#aeae37eedd17a3e1d28652b344eace6d2":[11,0,34,19],
 "structmcp__rak__session__manager.html#aee5d293759ab7647d1a3450221d8999b":[11,0,34,13],
@@ -247,7 +249,5 @@ var NAVTREEINDEX32 =
 "structvgen_1_1Pos.html#a80a49e269f4c18fd16678109a9712c35":[11,0,2,189,4],
 "structvgen_1_1Pos.html#a9691893cef4b4fe7534101ee0a388a56":[11,0,2,189,7],
 "structvgen_1_1Pos.html#ab41bd2b1b411516204c73b05b364027e":[11,0,2,189,15],
-"structvgen_1_1Pos.html#ab7be3f61d7777f8c1470f49bb1c3ceb3":[11,0,2,189,14],
-"structvgen_1_1Pos.html#af7eaf3d8c6132020c688a1217a3b3491":[11,0,2,189,10],
-"structvgen_1_1ScopedProfile.html":[11,0,2,177]
+"structvgen_1_1Pos.html#ab7be3f61d7777f8c1470f49bb1c3ceb3":[11,0,2,189,14]
 };

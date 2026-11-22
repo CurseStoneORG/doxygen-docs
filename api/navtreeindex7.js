@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"PlayerInternal_8h_source.html":[12,0,0,13,0],
 "PlayerInventory_8h_source.html":[12,0,0,5,9],
 "PlayerItemConsumeEvent_8h_source.html":[12,0,0,4,3,7],
 "PlayerItemHeldEvent_8h_source.html":[12,0,0,4,3,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "TextColor_8h.html#a05bb2f5652082f4c7ebfe336455ac860":[10,0,0,15,10],
 "TextColor_8h.html#a1ab8fab526b2a105546c2d03d02fe63e":[10,0,0,15,26],
 "TextColor_8h.html#a1b0fb73b1fbf0688845f396b34f72cbc":[10,0,0,15,4],
-"TextColor_8h.html#a2145d40d95b44fd0a27b02283446ba4e":[10,0,0,15,0,4],
-"TextColor_8h.html#a23fbe82034bc3f786965bdcdaea83cee":[10,0,0,15,18]
+"TextColor_8h.html#a2145d40d95b44fd0a27b02283446ba4e":[10,0,0,15,0,4]
 };

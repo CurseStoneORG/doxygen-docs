@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"TextColor_8h.html#a23fbe82034bc3f786965bdcdaea83cee":[10,0,0,15,18],
 "TextColor_8h.html#a2abe50c123276023bbfc5972b614a410":[10,0,0,15,12],
 "TextColor_8h.html#a2d3434941e476e525d9a6d6dc0c7f163":[10,0,0,15,24],
 "TextColor_8h.html#a3072faca785227320205f3ed2b29ef56":[10,0,0,15,0,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "classcursestone_1_1ListCommand.html#a54150e52aff6f45829e3446cd2b3e01d":[11,0,0,29,0],
 "classcursestone_1_1MemoryManager.html":[11,0,0,44],
 "classcursestone_1_1MemoryManager.html#a3d938f950ed6cf050994288229514dcf":[11,0,0,44,3],
-"classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99":[11,0,0,44,0],
-"classcursestone_1_1MemoryManager.html#a9248cb7c10aa20f389b1640ac687a7bf":[11,0,0,44,5]
+"classcursestone_1_1MemoryManager.html#a55ee0d4272c1a644342045ba962bab99":[11,0,0,44,0]
 };

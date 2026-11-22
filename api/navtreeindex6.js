@@ -12,8 +12,9 @@ var NAVTREEINDEX6 =
 "LongTag_8h_source.html":[12,0,0,9,0,9],
 "LootChest_8cpp.html#ab6282096730e4445d8324d4852bc80c2":[10,0,2,354],
 "LootChest_8h_source.html":[12,0,0,21,1,2,4,1],
+"LuaBindings_8cpp.html#a32c69a6b33ba378393186d4683c6d0e5":[10,0,0,12,15],
 "LuaBindings_8cpp.html#a3adcabcbb2f602c64c05c44a9efa2e05":[10,0,0,12,9],
-"LuaBindings_8cpp.html#aabad3b3084d4e535f4eacbdabd4e2516":[10,0,0,12,16],
+"LuaBindings_8cpp.html#aabad3b3084d4e535f4eacbdabd4e2516":[10,0,0,12,17],
 "LuaBindings_8h_source.html":[12,0,0,14,0],
 "LuaCommand_8h_source.html":[12,0,0,14,1],
 "LuaPlugin_8h_source.html":[12,0,0,14,2],
@@ -225,7 +226,7 @@ var NAVTREEINDEX6 =
 "ParticleNames_8cpp.html#a6e8aae4786bd8b2864450faeb2e761d6":[10,0,0,19,2,41],
 "ParticleNames_8h_source.html":[12,0,0,21,3,24],
 "Particle_8h_source.html":[12,0,0,21,3,21],
-"PathSafe_8h.html#afbd058607f6a3e530dfbf7929da1752a":[10,0,0,12,17],
+"PathSafe_8h.html#afbd058607f6a3e530dfbf7929da1752a":[10,0,0,12,18],
 "PathSafe_8h_source.html":[12,0,0,14,8],
 "PerlinSimplexNoise_8h_source.html":[12,0,0,21,1,2,5,2],
 "PermissibleBase_8h_source.html":[12,0,0,11,4],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "PlayerDeathEvent_8h_source.html":[12,0,0,4,3,3],
 "PlayerDropItemEvent_8h_source.html":[12,0,0,4,3,4],
 "PlayerEvent_8h_source.html":[12,0,0,4,3,5],
-"PlayerInteractEvent_8h_source.html":[12,0,0,4,3,6],
-"PlayerInternal_8h_source.html":[12,0,0,13,0]
+"PlayerInteractEvent_8h_source.html":[12,0,0,4,3,6]
 };

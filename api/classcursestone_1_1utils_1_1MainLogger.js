@@ -1,5 +1,6 @@
 var classcursestone_1_1utils_1_1MainLogger =
 [
+    [ "chat", "classcursestone_1_1utils_1_1MainLogger.html#a5c93c7a79866a51c7ae03fd34f8857e5", null ],
     [ "critical", "classcursestone_1_1utils_1_1MainLogger.html#a96b198a6251225f722bc7f7618a66466", null ],
     [ "debug", "classcursestone_1_1utils_1_1MainLogger.html#a7ec5df8341bd51924378a9b8168ab224", null ],
     [ "error", "classcursestone_1_1utils_1_1MainLogger.html#a26a23c1eaf9a66c9c15e3d496e9e2590", null ],

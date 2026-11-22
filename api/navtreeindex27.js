@@ -1,5 +1,7 @@
 var NAVTREEINDEX27 =
 {
+"classvgen_1_1WoodBlockTypeShim.html#a06763a11fd2114d79e4972992de43ecdaf6461c76f6c68ac0bbc76385422efb22":[11,0,2,37,0,5],
+"classvgen_1_1ZoomLayer.html":[11,0,2,111],
 "classvgen_1_1ZoomLayer.html#aefa4ba1fb2557aa498e41a3d2110e48c":[11,0,2,111,1],
 "classvgen_1_1ZoomLayer.html#af73e73e91e43996218cb365bfab0b496":[11,0,2,111,0],
 "classvgen_1_1buffer__span.html":[11,0,2,183],
@@ -247,7 +249,5 @@ var NAVTREEINDEX27 =
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md128":[3,13,0],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md129":[3,13,1],
 "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md130":[3,13,2],
-"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md131":[3,13,3],
-"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md132":[3,13,4],
-"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md133":[3,13,5]
+"md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md131":[3,13,3]
 };

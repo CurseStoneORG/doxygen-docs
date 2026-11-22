@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1inventory_1_1BaseInventory.html#a21bd869eb066b8c308140aff330d2b6d":[11,0,0,4,0,23],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a35571337e321a5abe7e1148479baa444":[11,0,0,4,0,37],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a3e13f422b07e07af59aded597b7b8ac8":[11,0,0,4,0,0],
 "classcursestone_1_1inventory_1_1BaseInventory.html#a41ce991075cc404625446be7428ff995":[11,0,0,4,0,33],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1item_1_1ItemCoal.html#a5b49cfb1382a2370a97a865b85804eaf":[11,0,0,5,18,0],
 "classcursestone_1_1item_1_1ItemCoal.html#af2a4722e720c598c422dc3706e14ebb1":[11,0,0,5,18,1],
 "classcursestone_1_1item_1_1ItemCookedChicken.html":[11,0,0,5,19],
-"classcursestone_1_1item_1_1ItemCookedChicken.html#a24e5472bdad40ecbf0523a91baf48f7e":[11,0,0,5,19,0],
-"classcursestone_1_1item_1_1ItemCookedChicken.html#a3f361c28967d40e10197d54c0b9c52fd":[11,0,0,5,19,1]
+"classcursestone_1_1item_1_1ItemCookedChicken.html#a24e5472bdad40ecbf0523a91baf48f7e":[11,0,0,5,19,0]
 };
