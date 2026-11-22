@@ -1,5 +1,6 @@
 var NAVTREEINDEX27 =
 {
+"classvgen_1_1SwampBiome.html#afdcd80db2f956cdea6aeb84a0de3cf63":[11,0,2,21,6],
 "classvgen_1_1SwampTreeFeature.html":[11,0,2,81],
 "classvgen_1_1SwampTreeFeature.html#a0cc4539b29b6472c964d2e39396e65e1":[11,0,2,81,1],
 "classvgen_1_1SwampTreeFeature.html#a8dfc838ac53b98b8a40c08d61d88ab45":[11,0,2,81,0],
@@ -194,8 +195,8 @@ var NAVTREEINDEX27 =
 "dir_fc4c7f03e1a69a98c370fae55a743828.html":[12,0,0,10],
 "dir_ffde1fbcaa8d6b0d34e29c3bddf7a801.html":[12,0,0,7],
 "files.html":[12,0],
-"functions.html":[11,3,0],
 "functions.html":[11,3,0,0],
+"functions.html":[11,3,0],
 "functions_b.html":[11,3,0,1],
 "functions_c.html":[11,3,0,2],
 "functions_d.html":[11,3,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX27 =
 "md_CONTRIBUTING.html#autotoc_md26":[1,5],
 "md_CONTRIBUTING.html#autotoc_md28":[1,6],
 "md_CONTRIBUTING.html#autotoc_md30":[1,7],
-"md_CONTRIBUTING.html#autotoc_md32":[1,8],
-"md_CONTRIBUTING.html#autotoc_md34":[1,9]
+"md_CONTRIBUTING.html#autotoc_md32":[1,8]
 };

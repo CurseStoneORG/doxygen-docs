@@ -1,5 +1,6 @@
 var NAVTREEINDEX29 =
 {
+"structCsFloatingTextInfoEx.html#acf7f02c324acce137b8c0a67c0a7addf":[11,0,10,8],
 "structCsFloatingTextInfoEx.html#ada3432ee580485d307d5659f30435a24":[11,0,10,4],
 "structCsFloatingTextInfoEx.html#af290c5d0c06802d05604b59aad802b3c":[11,0,10,3],
 "structCsFloatingTextInfoEx.html#afbb12313a9d00e827a0e81ef0291e399":[11,0,10,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX29 =
 "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a2198046ef1829e4cd446c01696d11d0d":[11,0,0,1,4,3],
 "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a2398e55d460baac22c97f67df5939b5e":[11,0,0,1,4,10],
 "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a39109bb18953c0aabdd7d7aac8969094":[11,0,0,1,4,4],
-"structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a452c75eab56a869790799128efc06435":[11,0,0,1,4,9],
-"structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a50023ff7640267fd64ebdba744d50f31":[11,0,0,1,4,2]
+"structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a452c75eab56a869790799128efc06435":[11,0,0,1,4,9]
 };

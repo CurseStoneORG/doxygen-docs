@@ -1,5 +1,6 @@
 var NAVTREEINDEX26 =
 {
+"classvgen_1_1RareBiomeSpotLayer.html":[11,0,2,101],
 "classvgen_1_1RareBiomeSpotLayer.html#a73908b5bc7f8d4fd375d82bf6ef0e040":[11,0,2,101,1],
 "classvgen_1_1RareBiomeSpotLayer.html#ad60441f312a3aa1c29a5d1917010305b":[11,0,2,101,0],
 "classvgen_1_1ReedsFeature.html":[11,0,2,75],
@@ -248,6 +249,5 @@ var NAVTREEINDEX26 =
 "classvgen_1_1SwampBiome.html#a4d6e9369297b90bdf8b451e39ea543a5":[11,0,2,21,0],
 "classvgen_1_1SwampBiome.html#a73706fd9c51f1b2761d4b930d4c95161":[11,0,2,21,1],
 "classvgen_1_1SwampBiome.html#ac51af35e6bfe48441ed20fe3d7b83964":[11,0,2,21,2],
-"classvgen_1_1SwampBiome.html#afb3e687e29dddac0cf9cf36df9702d64":[11,0,2,21,4],
-"classvgen_1_1SwampBiome.html#afdcd80db2f956cdea6aeb84a0de3cf63":[11,0,2,21,6]
+"classvgen_1_1SwampBiome.html#afb3e687e29dddac0cf9cf36df9702d64":[11,0,2,21,4]
 };

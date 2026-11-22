@@ -1,5 +1,6 @@
 var NAVTREEINDEX23 =
 {
+"classvgen_1_1BoundingBox.html#a8a01f015bee507a2f66d407fb5604a78":[11,0,2,113,0],
 "classvgen_1_1BoundingBox.html#a932eece3e82910669ecf16ac3d80254f":[11,0,2,113,25],
 "classvgen_1_1BoundingBox.html#aa006380cb7b7c065f322f55b5e5b6574":[11,0,2,113,11],
 "classvgen_1_1BoundingBox.html#ab202a2d3f60d0fd9418bdfa865bbe37b":[11,0,2,113,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "classvgen_1_1IslandLayer.html":[11,0,2,98],
 "classvgen_1_1IslandLayer.html#a41a1432948098de671d9916d4facc48e":[11,0,2,98,0],
 "classvgen_1_1IslandLayer.html#ad8b4d33e7dbd80dfc0610841bba860f6":[11,0,2,98,1],
-"classvgen_1_1JungleBiome.html":[11,0,2,9],
-"classvgen_1_1JungleBiome.html#a286073d5940d954e1169ab7cdf84b85c":[11,0,2,9,0]
+"classvgen_1_1JungleBiome.html":[11,0,2,9]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX12 =
 {
+"classcursestone_1_1entity_1_1Entity.html#affae7324a8b77ae55cd83621748629aa":[11,0,0,2,4,25],
 "classcursestone_1_1entity_1_1EntityArrow.html":[11,0,0,2,5],
 "classcursestone_1_1entity_1_1EntityArrow.html#aa791b01525db5cf72d46a29987cc2d44":[11,0,0,2,5,1],
 "classcursestone_1_1entity_1_1EntityArrow.html#ad2b001886483f371a6d0b729d296cadc":[11,0,0,2,5,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX12 =
 "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html#a9fe6bf9dd98eb0709d3a06d6111ff0e1":[11,0,0,3,3,1,3],
 "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html#aa1083d34004e99a560cdd8fb1ed55e3f":[11,0,0,3,3,1,4],
 "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html#aae7e16efa1c209cf615e44b58990992d":[11,0,0,3,3,1,1],
-"classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html":[11,0,0,3,3,2],
-"classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html#a3bd085c8de05b90defe3b630ee74873d":[11,0,0,3,3,2,3]
+"classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html":[11,0,0,3,3,2]
 };

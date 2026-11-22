@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"NetherBridgeFeature_8h_source.html":[12,0,0,21,1,2,4,4],
 "NetherBridgePieces_8h_source.html":[12,0,0,21,1,2,4,5],
 "Nether_8h_source.html":[12,0,0,21,1,8],
 "Network_8h_source.html":[12,0,0,10,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a3c1fd6e8bda307130c960ae524e9199f":[10,0,2,233,46],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a3fd95f68923610cfdc27e852b81b8a64":[10,0,2,233,51],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a41c4c5fbfcc446e34fab9ed7caf160ce":[10,0,2,233,28],
-"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a4a174fb0d333c1d41bf511f9d04e570d":[10,0,2,233,4],
-"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a4b4455853d7bd17d14f91e4f90a7ad6c":[10,0,2,233,5]
+"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a4a174fb0d333c1d41bf511f9d04e570d":[10,0,2,233,4]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX9 =
 {
+"World_8cpp.html#a2a7c4703a041fddf4633646ca7537d7d":[10,0,0,19,23],
 "World_8cpp.html#a6dcaf8213533f8cd566bad4050723aae":[10,0,0,19,20],
 "World_8cpp.html#abd183b7a4fbd865f35dfacc3ca93f880":[10,0,0,19,27],
 "World_8cpp.html#acc07309ec273bf352813f06196a23ac3":[10,0,0,19,31],
@@ -248,6 +249,5 @@ var NAVTREEINDEX9 =
 "classcursestone_1_1Player.html#ab13205292b02d4641fe40e7a69e4ce35":[11,0,0,47,189],
 "classcursestone_1_1Player.html#ab422a37ff4735ace62589991010b5c03":[11,0,0,47,96],
 "classcursestone_1_1Player.html#ab61dc01439eebd4b54ca451aee7057d2":[11,0,0,47,180],
-"classcursestone_1_1Player.html#ab6779acd55f8afe68d7131463d49e662":[11,0,0,47,5],
-"classcursestone_1_1Player.html#ab6d78072a92c548fd7d9130c43573198":[11,0,0,47,1]
+"classcursestone_1_1Player.html#ab6779acd55f8afe68d7131463d49e662":[11,0,0,47,5]
 };

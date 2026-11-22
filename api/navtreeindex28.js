@@ -1,5 +1,6 @@
 var NAVTREEINDEX28 =
 {
+"md_CONTRIBUTING.html#autotoc_md34":[1,9],
 "md_CONTRIBUTING.html#autotoc_md36":[1,10],
 "md_docs_BUILDING.html":[2],
 "md_docs_BUILDING.html#autotoc_md38":[2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX28 =
 "structCsFloatingTextInfoEx.html#a4e6e809f15d46a55fbd26bfba481157e":[11,0,10,0],
 "structCsFloatingTextInfoEx.html#a4f884cc389f874890842f3563a72d5ed":[11,0,10,7],
 "structCsFloatingTextInfoEx.html#aaaac33dd14e6e727d9403ae1e5e60cda":[11,0,10,5],
-"structCsFloatingTextInfoEx.html#ab7cb6056f3eefe7ccf8025fb80fa7e5b":[11,0,10,2],
-"structCsFloatingTextInfoEx.html#acf7f02c324acce137b8c0a67c0a7addf":[11,0,10,8]
+"structCsFloatingTextInfoEx.html#ab7cb6056f3eefe7ccf8025fb80fa7e5b":[11,0,10,2]
 };

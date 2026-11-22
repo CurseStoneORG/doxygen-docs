@@ -1,5 +1,6 @@
 var NAVTREEINDEX13 =
 {
+"classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html#a3bd085c8de05b90defe3b630ee74873d":[11,0,0,3,3,2,3],
 "classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html#a73456e42ad6e7842c9edf039c6b2da7f":[11,0,0,3,3,2,1],
 "classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html#a9409536d080df163cdb27dd119d2f387":[11,0,0,3,3,2,2],
 "classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html#afbc0bc83c091cd00ed7bbaed75a1ca61":[11,0,0,3,3,2,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1inventory_1_1Recipe.html#ab7bec4c810bace7ec0351e6215a0d13b":[11,0,0,4,10,10],
 "classcursestone_1_1inventory_1_1Recipe.html#add537b84545cea41b2b4a03d84dd03ff":[11,0,0,4,10,3],
 "classcursestone_1_1inventory_1_1Recipe.html#adec871ebf1d924258af2517e3c693b7e":[11,0,0,4,10,18],
-"classcursestone_1_1inventory_1_1Recipe.html#ae0e0125d771e76e254fdf835acfdc19a":[11,0,0,4,10,14],
-"classcursestone_1_1inventory_1_1Recipe.html#ae1f6bdcb32d0d3e49a342d16e3760244":[11,0,0,4,10,15]
+"classcursestone_1_1inventory_1_1Recipe.html#ae0e0125d771e76e254fdf835acfdc19a":[11,0,0,4,10,14]
 };

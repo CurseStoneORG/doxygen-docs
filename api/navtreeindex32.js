@@ -1,5 +1,6 @@
 var NAVTREEINDEX32 =
 {
+"structmcp__logger.html":[11,0,30],
 "structmcp__logger.html#a08cb1c0479a0b3363931710faf48a196":[11,0,30,6],
 "structmcp__logger.html#a2af49c858c36d80abe6e578a775eaf49":[11,0,30,7],
 "structmcp__logger.html#a494d127038691a857627d53e79a057f6":[11,0,30,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX32 =
 "structvgen_1_1BlockID.html#a4572c6f31bd744b5678a4df68e800912":[11,0,2,178,3],
 "structvgen_1_1BlockID.html#a6782558807b1a8fe8011981553fcd39d":[11,0,2,178,4],
 "structvgen_1_1BlockID.html#a99cf73c8be4b5cb632358c1b51940b79":[11,0,2,178,7],
-"structvgen_1_1BlockID.html#a9dd183c879349c5b7b32a55212ba70aa":[11,0,2,178,6],
-"structvgen_1_1BlockID.html#a9f091dbc0d010a179173966dde62b46e":[11,0,2,178,9]
+"structvgen_1_1BlockID.html#a9dd183c879349c5b7b32a55212ba70aa":[11,0,2,178,6]
 };

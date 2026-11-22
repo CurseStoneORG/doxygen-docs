@@ -1,5 +1,6 @@
 var NAVTREEINDEX30 =
 {
+"structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a50023ff7640267fd64ebdba744d50f31":[11,0,0,1,4,2],
 "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#a51329b0e5fcdcec89bf4bc7ad9b4dacd":[11,0,0,1,4,8],
 "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#aa4f7704c61e40e81c214225c85ac19de":[11,0,0,1,4,11],
 "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html#ab30711bb8356b211e1fbc08c20d315c7":[11,0,0,1,4,14],
@@ -248,6 +249,5 @@ var NAVTREEINDEX30 =
 "structcursestone_1_1world_1_1DroppedItem.html#a0822387e7788990e6ce67350feffbec8":[11,0,0,17,15,0],
 "structcursestone_1_1world_1_1DroppedItem.html#a0b91c792560219a062f41afcb2fe2edc":[11,0,0,17,15,11],
 "structcursestone_1_1world_1_1DroppedItem.html#a0fc104ba520d77420cffc3a41505c2fc":[11,0,0,17,15,17],
-"structcursestone_1_1world_1_1DroppedItem.html#a4bc051ea7ce69b77c7b50a78b4c4cfc9":[11,0,0,17,15,8],
-"structcursestone_1_1world_1_1DroppedItem.html#a54f6dce9eb870cddcc69891ea344d537":[11,0,0,17,15,10]
+"structcursestone_1_1world_1_1DroppedItem.html#a4bc051ea7ce69b77c7b50a78b4c4cfc9":[11,0,0,17,15,8]
 };

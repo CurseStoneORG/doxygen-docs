@@ -1626,6 +1626,7 @@ var namespacecursestone =
             [ "mask_crc", "DBFormat_8h.html#a682739f225467012a724fb217ec74957", null ],
             [ "put_var_u32", "DBFormat_8h.html#a1ba3853bebfc75d5446fd250a9138f5e", null ],
             [ "put_var_u64", "DBFormat_8h.html#a75bdb05d1e5565d35fbb0fb77b54bc39", null ],
+            [ "replace_file", "DBFormat_8cpp.html#acdf68cd61c2fa7a3d23273b43d99108b", null ],
             [ "sequence_of", "DBFormat_8h.html#a64ce81ab28e218ec20dd4c1af829d9d7", null ],
             [ "snappy_decompress", "DBFormat_8cpp.html#ad47e7cdbaae5d89003e75a4dd32bc212", null ],
             [ "type_of", "DBFormat_8h.html#a363b8cdaacb420fe2618a834f8b2beb5", null ],

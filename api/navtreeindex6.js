@@ -1,5 +1,6 @@
 var NAVTREEINDEX6 =
 {
+"ItemMelon_8h_source.html":[12,0,0,6,63],
 "ItemMilkBucket_8h_source.html":[12,0,0,6,64],
 "ItemMushroomStew_8h_source.html":[12,0,0,6,65],
 "ItemNbt_8cpp.html#a477e2f504cfdeaa8c85217443c8cf8c6":[10,0,0,5,110],
@@ -248,6 +249,5 @@ var NAVTREEINDEX6 =
 "NativeAPI_8h_source.html":[12,0,0,14,5],
 "NativeCommand_8h_source.html":[12,0,0,14,6],
 "NativePlugin_8h_source.html":[12,0,0,14,7],
-"NeighborChunkIO_8h_source.html":[12,0,0,21,1,7],
-"NetherBridgeFeature_8h_source.html":[12,0,0,21,1,2,4,4]
+"NeighborChunkIO_8h_source.html":[12,0,0,21,1,7]
 };

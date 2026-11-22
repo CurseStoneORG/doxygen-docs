@@ -1,5 +1,6 @@
 var NAVTREEINDEX24 =
 {
+"classvgen_1_1JungleBiome.html#a286073d5940d954e1169ab7cdf84b85c":[11,0,2,9,0],
 "classvgen_1_1JungleBiome.html#a36677765094e38eb2f55c3f5f5c29eb0":[11,0,2,9,3],
 "classvgen_1_1JungleBiome.html#a58130a658ebe1db2b2490da6d96cf681":[11,0,2,9,1],
 "classvgen_1_1JungleBiome.html#acc925ef8ebf752ee80ef9b26da538505":[11,0,2,9,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX24 =
 "classvgen_1_1MonsterRoomFeature.html":[11,0,2,70],
 "classvgen_1_1MonsterRoomFeature.html#a3a24200a8434b91c91798d76afa95b76":[11,0,2,70,1],
 "classvgen_1_1MonsterRoomFeature.html#a8023637b79943738eae9a35c80291f45":[11,0,2,70,0],
-"classvgen_1_1MonsterRoomFeature.html#aa747399078f98ace20b2a896360dd4e5":[11,0,2,70,2],
-"classvgen_1_1MossStoneSelector.html":[11,0,2,144]
+"classvgen_1_1MonsterRoomFeature.html#aa747399078f98ace20b2a896360dd4e5":[11,0,2,70,2]
 };

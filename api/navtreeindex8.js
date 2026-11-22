@@ -1,5 +1,6 @@
 var NAVTREEINDEX8 =
 {
+"StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a4b4455853d7bd17d14f91e4f90a7ad6c":[10,0,2,233,5],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a520f9fec7b5e5f38b03ebf7d46091ccc":[10,0,2,233,33],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a54ac369fda92f7d51350548c0ae46d15":[10,0,2,233,37],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a5808624768c10d7f9bb4f33f46f032f1":[10,0,2,233,31],
@@ -248,6 +249,5 @@ var NAVTREEINDEX8 =
 "WorldProviderManager_8h.html#a4f446c24768512f2d8aeb80a8b456f44":[10,0,0,19,0,6],
 "WorldProviderManager_8h_source.html":[12,0,0,21,0,7],
 "WorldProvider_8h_source.html":[12,0,0,21,0,6],
-"WorldUnloadEvent_8h_source.html":[12,0,0,4,4,2],
-"World_8cpp.html#a2a7c4703a041fddf4633646ca7537d7d":[10,0,0,19,23]
+"WorldUnloadEvent_8h_source.html":[12,0,0,4,4,2]
 };
