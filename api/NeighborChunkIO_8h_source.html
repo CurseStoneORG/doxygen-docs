@@ -126,38 +126,65 @@ $(document).ready(function(){initNavTree('NeighborChunkIO_8h_source.html',''); i
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">namespace </span>cursestone::world::generator {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// Implemented by VgenSource: owns the per-chunk spill queues.</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">ISpillQueue</a> {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">ISpillQueue</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// Store a write for a chunk that is not live yet; replayed by</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="comment">// drainSpills() when that chunk becomes live.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> queueSpill(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz, uint32_t index, uint8_t <span class="keywordtype">id</span>, uint8_t data) = 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// Apply every queued write for (cx, cz) to `chunk` and clear the</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="comment">// queue. Called with the ChunkManager locks held right after the</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="comment">// chunk becomes live, so a write can never land between &quot;queued&quot;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="comment">// and &quot;live&quot;.</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> drainSpills(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk) = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">// Implemented by ChunkManager: delivers a neighbor-aimed write.</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">INeighborBlockSink</a> {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">INeighborBlockSink</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Write into the live chunk when one exists, queue the write</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// otherwise — both under the manager&#39;s locks, so the decision is</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// atomic against concurrent chunk installs.</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> commitNeighborWrite(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz, uint32_t index, uint8_t <span class="keywordtype">id</span>, uint8_t data) = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// Same delivery contract for a tile-entity NBT blob (structure</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// chest) aimed at a neighbor chunk: live chunk gets the blob added</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// to its tile_entities (plus the registry tile via the blob sink),</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// otherwise the blob parks until the chunk installs.</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> commitNeighborTile(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz, <span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; blob) = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// One out-of-center block write, in virtual-volume index form.</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="structcursestone_1_1world_1_1generator_1_1NeighborWrite.html">   42</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structcursestone_1_1world_1_1generator_1_1NeighborWrite.html">NeighborWrite</a> {</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        uint32_t index;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        uint8_t id;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        uint8_t data;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">// Implemented by VgenSource: owns the per-chunk spill queues.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">ISpillQueue</a> {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">ISpillQueue</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="comment">// Store a write for a chunk that is not live yet; replayed by</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="comment">// drainSpills() when that chunk becomes live.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> queueSpill(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz, uint32_t index, uint8_t <span class="keywordtype">id</span>, uint8_t data) = 0;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="comment">// Store a whole batch with ONE queue-lock pass. Entries land in</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="comment">// order and carry the current populate&#39;s rank, exactly like the</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="comment">// per-write path. Default: per-entry queueSpill.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> queueSpillBatch(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                                     <span class="keyword">const</span> std::vector&lt;NeighborWrite&gt;&amp; writes) {</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1generator_1_1NeighborWrite.html">NeighborWrite</a>&amp; w : writes)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                        queueSpill(cx, cz, w.index, w.id, w.data);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="comment">// Apply every queued write for (cx, cz) to `chunk` and clear the</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// queue. Called with the ChunkManager locks held right after the</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="comment">// chunk becomes live, so a write can never land between &quot;queued&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="comment">// and &quot;live&quot;.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> drainSpills(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz, <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk) = 0;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;} <span class="comment">// namespace cursestone::world::generator</span></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1INeighborBlockSink_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">cursestone::world::generator::INeighborBlockSink</a></div><div class="ttdef"><b>Definition:</b> NeighborChunkIO.h:56</div></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1ISpillQueue_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">cursestone::world::generator::ISpillQueue</a></div><div class="ttdef"><b>Definition:</b> NeighborChunkIO.h:42</div></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">// Implemented by ChunkManager: delivers a neighbor-aimed write.</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">   71</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">INeighborBlockSink</a> {</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">INeighborBlockSink</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">// Write into the live chunk when one exists, queue the write</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// otherwise — both under the manager&#39;s locks, so the decision is</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">// atomic against concurrent chunk installs.</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> commitNeighborWrite(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz, uint32_t index, uint8_t <span class="keywordtype">id</span>, uint8_t data) = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// Whole-batch delivery with ONE store-lock pass per target chunk:</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// live chunk applies every cell (idempotent skip per cell, one</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// relight request if anything changed), otherwise the batch parks</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// as ordered spills. Order within the batch is the populate&#39;s</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// program order — identical to the per-write path. Default:</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// per-entry commitNeighborWrite.</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> commitNeighborWriteBatch(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                                              <span class="keyword">const</span> std::vector&lt;NeighborWrite&gt;&amp; writes) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1generator_1_1NeighborWrite.html">NeighborWrite</a>&amp; w : writes)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                        commitNeighborWrite(cx, cz, w.index, w.id, w.data);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// Same delivery contract for a tile-entity NBT blob (structure</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// chest) aimed at a neighbor chunk: live chunk gets the blob added</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">// to its tile_entities (plus the registry tile via the blob sink),</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="comment">// otherwise the blob parks until the chunk installs.</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> commitNeighborTile(<span class="keywordtype">int</span> cx, <span class="keywordtype">int</span> cz, <span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; blob) = 0;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;} <span class="comment">// namespace cursestone::world::generator</span></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1INeighborBlockSink_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html">cursestone::world::generator::INeighborBlockSink</a></div><div class="ttdef"><b>Definition:</b> NeighborChunkIO.h:71</div></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1ISpillQueue_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1ISpillQueue.html">cursestone::world::generator::ISpillQueue</a></div><div class="ttdef"><b>Definition:</b> NeighborChunkIO.h:49</div></div>
+<div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1NeighborWrite_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1NeighborWrite.html">cursestone::world::generator::NeighborWrite</a></div><div class="ttdef"><b>Definition:</b> NeighborChunkIO.h:42</div></div>
 <div class="ttc" id="astructmcp__chunk_html"><div class="ttname"><a href="structmcp__chunk.html">mcp_chunk</a></div><div class="ttdef"><b>Definition:</b> Chunk.h:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

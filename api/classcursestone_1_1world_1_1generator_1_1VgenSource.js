@@ -6,6 +6,7 @@ var classcursestone_1_1world_1_1generator_1_1VgenSource =
     [ "applySpill", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a16e3e862b6f9591c1f5a35070197ce81", null ],
     [ "commitNeighborTile", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#acb83482178491ad7be451039d3ad205f", null ],
     [ "commitNeighborWrite", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a84cea9c23d9bb87781694746c8267d0c", null ],
+    [ "commitNeighborWriteBatch", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#abe7eabd27fdf03233059e81dc356d6f0", null ],
     [ "drainSpills", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#ab2c64c33aa59589465c743d29a476435", null ],
     [ "generate", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a5094952cc8448628a391ddcd25525ae7", null ],
     [ "getDimension", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#aecfb4fca13ee0f3c36fbfb0ba26a86f4", null ],
@@ -13,6 +14,11 @@ var classcursestone_1_1world_1_1generator_1_1VgenSource =
     [ "getSpawn", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a97528ff4014097fe849052c35426cd61", null ],
     [ "name", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a51ae3e179646637277e60a588e624a90", null ],
     [ "populate", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a0dbba35cfff1870591cc186881a2c808", null ],
+    [ "populateMarkDone", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a591a9ebeaad6ebc83e8a3f20275c308d", null ],
+    [ "populateRegister", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#ad4d4aa02b3fe47097e55b6b78afade20", null ],
+    [ "populateTryEnter", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#ac7e7c512f34042f84c2fbf382708c0f1", null ],
+    [ "preparePopulateDeps", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#abf56a9eb2f922ffe351493fbc1a7bc0e", null ],
     [ "queueSpill", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a6ace639ff5a30de171b49d49f93280f6", null ],
+    [ "queueSpillBatch", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a79d28bf5d8d7a8272d875b901cac9fd4", null ],
     [ "setNeighborSink", "classcursestone_1_1world_1_1generator_1_1VgenSource.html#a47f15678ccb63147bbe4348fd0f82702", null ]
 ];

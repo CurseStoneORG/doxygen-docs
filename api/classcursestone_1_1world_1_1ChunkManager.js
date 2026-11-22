@@ -1,9 +1,12 @@
 var classcursestone_1_1world_1_1ChunkManager =
 [
+    [ "LockStats", "structcursestone_1_1world_1_1ChunkManager_1_1LockStats.html", "structcursestone_1_1world_1_1ChunkManager_1_1LockStats" ],
     [ "ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html#ab90c7d59b12f8029b4d6187749142502", null ],
     [ "~ChunkManager", "classcursestone_1_1world_1_1ChunkManager.html#acc508c55f69f6cdb691e0113e73d4210", null ],
+    [ "chunkLockSnap", "classcursestone_1_1world_1_1ChunkManager.html#a28398bc1be790de00732f42f48f16dce", null ],
     [ "commitNeighborTile", "classcursestone_1_1world_1_1ChunkManager.html#af6c8776f47d95408d2f5db77c7ad3b63", null ],
     [ "commitNeighborWrite", "classcursestone_1_1world_1_1ChunkManager.html#ae2747e9f41a538acb558a265875ed97f", null ],
+    [ "commitNeighborWriteBatch", "classcursestone_1_1world_1_1ChunkManager.html#aabb7ce36f88f94dab892c66b89f34f8c", null ],
     [ "count", "classcursestone_1_1world_1_1ChunkManager.html#a4a11db00bd89db6215a39c5d1f987c9a", null ],
     [ "dirtyCount", "classcursestone_1_1world_1_1ChunkManager.html#adfab8701500891c64addea7d4ecb31df", null ],
     [ "flushDirty", "classcursestone_1_1world_1_1ChunkManager.html#a42a6caf7ebe190999c5de02bdcfdd3c9", null ],
@@ -14,6 +17,7 @@ var classcursestone_1_1world_1_1ChunkManager =
     [ "loadedChunkCoords", "classcursestone_1_1world_1_1ChunkManager.html#a95dde0bc4832568043b94864f72098c8", null ],
     [ "markDirty", "classcursestone_1_1world_1_1ChunkManager.html#a30a03eb8645c009b825be1995c315d3e", null ],
     [ "pendingCount", "classcursestone_1_1world_1_1ChunkManager.html#af08f68edc91e544bd1f135ff65ea7903", null ],
+    [ "pendingLockSnap", "classcursestone_1_1world_1_1ChunkManager.html#aecacf37e5263f049a7491ff098cac4f6", null ],
     [ "provider", "classcursestone_1_1world_1_1ChunkManager.html#a53d6eee3e5cfcac486a05b0191a1fc26", null ],
     [ "setChunk", "classcursestone_1_1world_1_1ChunkManager.html#ad1a04a751fac0371d3f46d140e709318", null ],
     [ "setGenerator", "classcursestone_1_1world_1_1ChunkManager.html#af38289743ff780b4abb102810cce03ed", null ],
@@ -23,5 +27,8 @@ var classcursestone_1_1world_1_1ChunkManager =
     [ "setProvider", "classcursestone_1_1world_1_1ChunkManager.html#af15997dbf7c5447326ab5d33b7db49f6", null ],
     [ "setSpillQueue", "classcursestone_1_1world_1_1ChunkManager.html#a9381425f13d62a002dd00030363b9c21", null ],
     [ "setTileBlobSink", "classcursestone_1_1world_1_1ChunkManager.html#abab339973c36a4db0432f76b45700970", null ],
+    [ "spillLockWaitNsSnap", "classcursestone_1_1world_1_1ChunkManager.html#ac35a96a221eae080e19d1043687380ce", null ],
+    [ "spillParkedSnap", "classcursestone_1_1world_1_1ChunkManager.html#aaa791b181438a50cd14bcbac15683e1a", null ],
+    [ "spillWritesSnap", "classcursestone_1_1world_1_1ChunkManager.html#a0886509a236c8ec956ff3679ce5b946b", null ],
     [ "unloadChunk", "classcursestone_1_1world_1_1ChunkManager.html#ac830fcaaf8acd2ff12a7066d0d3b5234", null ]
 ];

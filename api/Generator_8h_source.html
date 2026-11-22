@@ -169,9 +169,29 @@ $(document).ready(function(){initNavTree('Generator_8h_source.html',''); initRes
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// defines its own spawn (Normal, Flat, Nether all differ).</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// The World calls this on first load to set the spawn point.</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="structmcp__vector3.html">mcp_vector3_t</a> getSpawn() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;} <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Deterministic populate ordering (no-ops by default). VgenSource</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// overrides these so concurrent workers reproduce the vanilla chunk</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// order exactly — see vgen/PopulateGate.h for why chunk output is</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// order-sensitive. The default suits generators whose populate does</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">// not depend on neighbour populate order.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">//</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">//   preparePopulateDeps — runs on the generate task: pre-creates the</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">//     structure starts this chunk&#39;s window would claim and records</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">//     the chunks that share them.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="comment">//   populateRegister — claims a gate slot when the request is</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//     accepted (before any task runs).</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">//   populateTryEnter — non-blocking: false means &quot;lower-ranked</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">//     dependencies still running, re-queue and retry&quot;; true means the</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">//     populate turn is held and populateMarkDone MUST follow.</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="comment">//   populateMarkDone — releases the slot (idempotent).</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> preparePopulateDeps(int32_t x, int32_t z) {}</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> populateRegister(int32_t x, int32_t z) {}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> populateTryEnter(int32_t x, int32_t z) { <span class="keywordflow">return</span> <span class="keyword">true</span>; }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> populateMarkDone(int32_t x, int32_t z) {}</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;} <span class="comment">// namespace</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1Generator_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1Generator.html">cursestone::world::generator::Generator</a></div><div class="ttdef"><b>Definition:</b> Generator.h:67</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1generator_1_1GenerationContext_html"><div class="ttname"><a href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">cursestone::world::generator::GenerationContext</a></div><div class="ttdef"><b>Definition:</b> Generator.h:46</div></div>
 <div class="ttc" id="astructmcp__chunk_html"><div class="ttname"><a href="structmcp__chunk.html">mcp_chunk</a></div><div class="ttdef"><b>Definition:</b> Chunk.h:51</div></div>

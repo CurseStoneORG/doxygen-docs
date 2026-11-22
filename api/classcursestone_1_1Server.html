@@ -86,6 +86,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1Server.html',''); i
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classcursestone_1_1Server-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::Server Class Reference</div>  </div>
@@ -141,6 +142,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>getTPS</b> () const</t
 <tr class="memitem:a078ddfabb2582b4b86875da88fa274dd"><td class="memItemLeft" align="right" valign="top"><a id="a078ddfabb2582b4b86875da88fa274dd"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getMSPT</b> () const</td></tr>
 <tr class="separator:a078ddfabb2582b4b86875da88fa274dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0006c4e466b85813c9fb179c85ac5e28"><td class="memItemLeft" align="right" valign="top"><a id="a0006c4e466b85813c9fb179c85ac5e28"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>getMSPTPeak</b> () const</td></tr>
+<tr class="separator:a0006c4e466b85813c9fb179c85ac5e28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a113cdb1bde59dccd494f1e3a62ce01c0"><td class="memItemLeft" align="right" valign="top"><a id="a113cdb1bde59dccd494f1e3a62ce01c0"></a>
 std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1Player.html">Player</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>players</b> ()</td></tr>
 <tr class="separator:a113cdb1bde59dccd494f1e3a62ce01c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -323,6 +327,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>beginAutosaveDrain</b
 <tr class="memitem:a7673ab8ef5d0eca0a444dc098c2f4001"><td class="memItemLeft" align="right" valign="top"><a id="a7673ab8ef5d0eca0a444dc098c2f4001"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>tickAutosaveDrain</b> ()</td></tr>
 <tr class="separator:a7673ab8ef5d0eca0a444dc098c2f4001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7ff7d1be1c9430239ca4f654972b163"><td class="memItemLeft" align="right" valign="top"><a id="ae7ff7d1be1c9430239ca4f654972b163"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>requestFullSave</b> (const std::string &amp;requester)</td></tr>
+<tr class="separator:ae7ff7d1be1c9430239ca4f654972b163"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f308708074721edba9b92a26aa31484"><td class="memItemLeft" align="right" valign="top"><a id="a4f308708074721edba9b92a26aa31484"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>isManualSaveRunning</b> () const</td></tr>
+<tr class="separator:a4f308708074721edba9b92a26aa31484"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1ca18918fabb7f3dbff59feae50af75"><td class="memItemLeft" align="right" valign="top"><a id="ae1ca18918fabb7f3dbff59feae50af75"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>notifySaveRequester</b> (const std::string &amp;msg)</td></tr>
+<tr class="separator:ae1ca18918fabb7f3dbff59feae50af75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6e451648b5b71e31164222fec57362d"><td class="memItemLeft" align="right" valign="top"><a id="aa6e451648b5b71e31164222fec57362d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>runStopWatchdog</b> ()</td></tr>
+<tr class="separator:aa6e451648b5b71e31164222fec57362d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd9e977b824669c1aafb53749af5c691"><td class="memItemLeft" align="right" valign="top"><a id="abd9e977b824669c1aafb53749af5c691"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>saveOfflinePlayerData</b> (const std::string &amp;name, NbtPtr nbt, bool async)</td></tr>
 <tr class="separator:abd9e977b824669c1aafb53749af5c691"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -350,6 +366,18 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a93cf62bb432b74b29fff1e96bfefd7bc"><td class="memItemLeft" align="right" valign="top"><a id="a93cf62bb432b74b29fff1e96bfefd7bc"></a>
 static <a class="el" href="classcursestone_1_1Server.html">Server</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getInstance</b> ()</td></tr>
 <tr class="separator:a93cf62bb432b74b29fff1e96bfefd7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:afb9c44e1eb12b36f750d02193610056c"><td class="memItemLeft" align="right" valign="top"><a id="afb9c44e1eb12b36f750d02193610056c"></a>
+std::thread&#160;</td><td class="memItemRight" valign="bottom"><b>stop_watchdog_</b></td></tr>
+<tr class="separator:afb9c44e1eb12b36f750d02193610056c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b7724709516f4da728163b9274dcd05"><td class="memItemLeft" align="right" valign="top"><a id="a3b7724709516f4da728163b9274dcd05"></a>
+std::atomic&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>stop_watchdog_running_</b> {false}</td></tr>
+<tr class="separator:a3b7724709516f4da728163b9274dcd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93fb35f94d173913ed7970369dac1f13"><td class="memItemLeft" align="right" valign="top"><a id="a93fb35f94d173913ed7970369dac1f13"></a>
+std::atomic&lt; uint64_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>diag_tick_</b> {0}</td></tr>
+<tr class="separator:a93fb35f94d173913ed7970369dac1f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classcursestone_1_1Server.html" title="Server singleton for startup, ticking, and shutdown.">Server</a> singleton for startup, ticking, and shutdown. </p>

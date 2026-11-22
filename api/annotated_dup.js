@@ -399,6 +399,17 @@ var annotated_dup =
         [ "RCONInstance", "classcursestone_1_1network_1_1RCONInstance.html", "classcursestone_1_1network_1_1RCONInstance" ],
         [ "SourceInterface", "classcursestone_1_1network_1_1SourceInterface.html", "classcursestone_1_1network_1_1SourceInterface" ]
       ] ],
+      [ "performance", null, [
+        [ "noise", null, [
+          [ "Params", "structcursestone_1_1performance_1_1noise_1_1Params.html", "structcursestone_1_1performance_1_1noise_1_1Params" ]
+        ] ],
+        [ "GenerationProfiler", "classcursestone_1_1performance_1_1GenerationProfiler.html", "classcursestone_1_1performance_1_1GenerationProfiler" ],
+        [ "ScopedStage", "classcursestone_1_1performance_1_1ScopedStage.html", "classcursestone_1_1performance_1_1ScopedStage" ],
+        [ "PerformanceManager", "classcursestone_1_1performance_1_1PerformanceManager.html", null ],
+        [ "CpuFeatures", "structcursestone_1_1performance_1_1CpuFeatures.html", "structcursestone_1_1performance_1_1CpuFeatures" ],
+        [ "SaveProfiler", "classcursestone_1_1performance_1_1SaveProfiler.html", "classcursestone_1_1performance_1_1SaveProfiler" ],
+        [ "TerrainCache", "classcursestone_1_1performance_1_1TerrainCache.html", "classcursestone_1_1performance_1_1TerrainCache" ]
+      ] ],
       [ "permission", null, [
         [ "BanEntry", "classcursestone_1_1permission_1_1BanEntry.html", "classcursestone_1_1permission_1_1BanEntry" ],
         [ "BanList", "classcursestone_1_1permission_1_1BanList.html", "classcursestone_1_1permission_1_1BanList" ],
@@ -422,6 +433,7 @@ var annotated_dup =
         [ "PluginManager", "classcursestone_1_1plugin_1_1PluginManager.html", "classcursestone_1_1plugin_1_1PluginManager" ]
       ] ],
       [ "scheduler", null, [
+        [ "PoolStats", "structcursestone_1_1scheduler_1_1PoolStats.html", "structcursestone_1_1scheduler_1_1PoolStats" ],
         [ "AsyncPool", "classcursestone_1_1scheduler_1_1AsyncPool.html", "classcursestone_1_1scheduler_1_1AsyncPool" ],
         [ "AsyncWorker", "classcursestone_1_1scheduler_1_1AsyncWorker.html", "classcursestone_1_1scheduler_1_1AsyncWorker" ],
         [ "CallbackTask", "classcursestone_1_1scheduler_1_1CallbackTask.html", "classcursestone_1_1scheduler_1_1CallbackTask" ],
@@ -470,6 +482,7 @@ var annotated_dup =
               [ "TableReader", "classcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1TableReader.html", "classcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1TableReader" ]
             ] ],
             [ "InternalKeyLess", "structcursestone_1_1world_1_1format_1_1leveldb_1_1InternalKeyLess.html", "structcursestone_1_1world_1_1format_1_1leveldb_1_1InternalKeyLess" ],
+            [ "OpenTable", "structcursestone_1_1world_1_1format_1_1leveldb_1_1OpenTable.html", "structcursestone_1_1world_1_1format_1_1leveldb_1_1OpenTable" ],
             [ "DBEngine", "classcursestone_1_1world_1_1format_1_1leveldb_1_1DBEngine.html", "classcursestone_1_1world_1_1format_1_1leveldb_1_1DBEngine" ],
             [ "LevelDB", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB" ],
             [ "LevelDBRegistrar", "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html", "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar" ],
@@ -491,6 +504,7 @@ var annotated_dup =
           [ "GenerationTask", "classcursestone_1_1world_1_1generator_1_1GenerationTask.html", "classcursestone_1_1world_1_1generator_1_1GenerationTask" ],
           [ "GenerationContext", "structcursestone_1_1world_1_1generator_1_1GenerationContext.html", "structcursestone_1_1world_1_1generator_1_1GenerationContext" ],
           [ "Generator", "classcursestone_1_1world_1_1generator_1_1Generator.html", "classcursestone_1_1world_1_1generator_1_1Generator" ],
+          [ "NeighborWrite", "structcursestone_1_1world_1_1generator_1_1NeighborWrite.html", "structcursestone_1_1world_1_1generator_1_1NeighborWrite" ],
           [ "ISpillQueue", "classcursestone_1_1world_1_1generator_1_1ISpillQueue.html", "classcursestone_1_1world_1_1generator_1_1ISpillQueue" ],
           [ "INeighborBlockSink", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink" ],
           [ "Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", "classcursestone_1_1world_1_1generator_1_1Nether" ],
@@ -713,6 +727,9 @@ var annotated_dup =
       [ "SmoothZoomLayer", "classvgen_1_1SmoothZoomLayer.html", "classvgen_1_1SmoothZoomLayer" ],
       [ "VoronoiZoom", "classvgen_1_1VoronoiZoom.html", "classvgen_1_1VoronoiZoom" ],
       [ "ZoomLayer", "classvgen_1_1ZoomLayer.html", "classvgen_1_1ZoomLayer" ],
+      [ "PlainsRefTable", "classvgen_1_1PlainsRefTable.html", "classvgen_1_1PlainsRefTable" ],
+      [ "PlainsRefGuard", "classvgen_1_1PlainsRefGuard.html", "classvgen_1_1PlainsRefGuard" ],
+      [ "PopulateGate", "classvgen_1_1PopulateGate.html", "classvgen_1_1PopulateGate" ],
       [ "Random", "classvgen_1_1Random.html", "classvgen_1_1Random" ],
       [ "BoundingBox", "classvgen_1_1BoundingBox.html", "classvgen_1_1BoundingBox" ],
       [ "MineshaftFeature", "classvgen_1_1MineshaftFeature.html", "classvgen_1_1MineshaftFeature" ],

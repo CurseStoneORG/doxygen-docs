@@ -111,41 +111,50 @@ $(document).ready(function(){initNavTree('vgen_2synth_2ImprovedNoise_8h_source.h
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;vgen/Vanilla.h&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>vgen {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span>Random;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classvgen_1_1ImprovedNoise.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1ImprovedNoise.html">ImprovedNoise</a> {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classvgen_1_1ImprovedNoise.html">ImprovedNoise</a>();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classvgen_1_1ImprovedNoise.html">ImprovedNoise</a>(<a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> _init(<a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">float</span> _getValue(<span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; pos) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> _readArea(<span class="keywordtype">float</span>* buffer, <span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; pos, <span class="keywordtype">int</span> xSize, <span class="keywordtype">int</span> ySize, <span class="keywordtype">int</span> zSize, <span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; s, <span class="keywordtype">float</span> pow) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">int</span> _hashCode() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> _lerp(<span class="keywordtype">float</span> t, <span class="keywordtype">float</span> a, <span class="keywordtype">float</span> b);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> _grad2(<span class="keywordtype">int</span> hash, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> z);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> _grad(<span class="keywordtype">int</span> hash, <span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; p);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">float</span> _calcValues(<span class="keywordtype">float</span> val, <span class="keywordtype">int</span>&amp; index, <span class="keywordtype">float</span>&amp; lerp);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">float</span> _noise(<span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; pos) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> _blendCubeCorners(<span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; origin, <span class="keywordtype">int</span> X, <span class="keywordtype">int</span> Y, <span class="keywordtype">int</span> Z, <span class="keywordtype">float</span> u, <span class="keywordtype">float</span>&amp; vv0, <span class="keywordtype">float</span>&amp; vv1, <span class="keywordtype">float</span>&amp; vv2, <span class="keywordtype">float</span>&amp; vv3) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="structvgen_1_1Vec3.html">Vec3</a> mOrigin;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">int</span> mNoiseMap[512];</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;world/performance/NoiseOptimizer.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>vgen {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">class </span>Random;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classvgen_1_1ImprovedNoise.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvgen_1_1ImprovedNoise.html">ImprovedNoise</a> {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="classvgen_1_1ImprovedNoise.html">ImprovedNoise</a>();</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="classvgen_1_1ImprovedNoise.html">ImprovedNoise</a>(<a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> _init(<a class="code" href="classvgen_1_1Random.html">Random</a>&amp; random);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">float</span> _getValue(<span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; pos) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> _readArea(<span class="keywordtype">float</span>* buffer, <span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; pos, <span class="keywordtype">int</span> xSize, <span class="keywordtype">int</span> ySize, <span class="keywordtype">int</span> zSize, <span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; s, <span class="keywordtype">float</span> pow) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// The verbatim scalar region loop; also the vector kernels&#39; guard</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="comment">// reference (registered before main in ImprovedNoise.cpp).</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> readAreaScalar(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1performance_1_1noise_1_1Params.html">cursestone::performance::noise::Params</a>&amp; p);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">int</span> _hashCode() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">float</span> _lerp(<span class="keywordtype">float</span> t, <span class="keywordtype">float</span> a, <span class="keywordtype">float</span> b);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">float</span> _grad2(<span class="keywordtype">int</span> hash, <span class="keywordtype">float</span> x, <span class="keywordtype">float</span> z);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">float</span> _grad(<span class="keywordtype">int</span> hash, <span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; p);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">float</span> _calcValues(<span class="keywordtype">float</span> val, <span class="keywordtype">int</span>&amp; index, <span class="keywordtype">float</span>&amp; lerp);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">float</span> _noise(<span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; pos) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">static</span> <span class="keywordtype">void</span> _blendCubeCorners(<span class="keyword">const</span> <span class="keywordtype">int</span>* map, <span class="keyword">const</span> <a class="code" href="structvgen_1_1Vec3.html">Vec3</a>&amp; origin, <span class="keywordtype">int</span> X, <span class="keywordtype">int</span> Y, <span class="keywordtype">int</span> Z, <span class="keywordtype">float</span> u, <span class="keywordtype">float</span>&amp; vv0, <span class="keywordtype">float</span>&amp; vv1, <span class="keywordtype">float</span>&amp; vv2, <span class="keywordtype">float</span>&amp; vv3);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;} <span class="comment">// namespace vgen</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="ttc" id="aclassvgen_1_1ImprovedNoise_html"><div class="ttname"><a href="classvgen_1_1ImprovedNoise.html">vgen::ImprovedNoise</a></div><div class="ttdef"><b>Definition:</b> ImprovedNoise.h:31</div></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="structvgen_1_1Vec3.html">Vec3</a> mOrigin;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordtype">int</span> mNoiseMap[512];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="comment">// Float copy of the permutation table for the vector kernels&#39;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="comment">// gather loads (values are exact small integers, so gather + truncate</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="comment">// reproduces mNoiseMap[] exactly).</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordtype">float</span> mNoiseMapF[512];</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;};</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;} <span class="comment">// namespace vgen</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="ttc" id="aclassvgen_1_1ImprovedNoise_html"><div class="ttname"><a href="classvgen_1_1ImprovedNoise.html">vgen::ImprovedNoise</a></div><div class="ttdef"><b>Definition:</b> ImprovedNoise.h:32</div></div>
 <div class="ttc" id="aclassvgen_1_1Random_html"><div class="ttname"><a href="classvgen_1_1Random.html">vgen::Random</a></div><div class="ttdef"><b>Definition:</b> Random.h:49</div></div>
+<div class="ttc" id="astructcursestone_1_1performance_1_1noise_1_1Params_html"><div class="ttname"><a href="structcursestone_1_1performance_1_1noise_1_1Params.html">cursestone::performance::noise::Params</a></div><div class="ttdef"><b>Definition:</b> NoiseOptimizer.h:50</div></div>
 <div class="ttc" id="astructvgen_1_1Vec3_html"><div class="ttname"><a href="structvgen_1_1Vec3.html">vgen::Vec3</a></div><div class="ttdef"><b>Definition:</b> Vanilla.h:369</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

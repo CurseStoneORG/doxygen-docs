@@ -15,6 +15,7 @@ var classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil =
     [ "regionPath", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a264ef6b96e834341c5b4be3677577516", null ],
     [ "saveChunk", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a0c47cab1cddb0353c06b94e034238fff", null ],
     [ "saveLevelData", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#abe1802ccc7e21ce239480644b6952fc7", null ],
+    [ "saveQueueRoom", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a73fbd7552420203b2ee21ade602455a5", null ],
     [ "setCurrentTime", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a934c429cbdec767c6384067e95449c7e", null ],
     [ "setGenerator", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a5db6a2a3164a4cc56788d0b4aa9c118d", null ],
     [ "setSeed", "classcursestone_1_1world_1_1format_1_1anvil_1_1Anvil.html#a20795178d93aa0df26764a967bbcc336", null ],

@@ -198,11 +198,17 @@ virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>getMapEvergree
 float&#160;</td><td class="memItemRight" valign="bottom"><b>getDownfall</b> () const</td></tr>
 <tr class="separator:a69b731aa681263533719a163377b5b02 inherit pub_methods_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4abcd7512415bdb2472435daf652c579 inherit pub_methods_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a4abcd7512415bdb2472435daf652c579"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>decorate</b> (<a class="el" href="classvgen_1_1BlockSource.html">BlockSource</a> *source, <a class="el" href="classvgen_1_1Random.html">Random</a> &amp;random, const <a class="el" href="structvgen_1_1BlockPos.html">BlockPos</a> &amp;origin, bool legacy, float worldLimit)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>decorate</b> (<a class="el" href="classvgen_1_1BlockSource.html">BlockSource</a> *source, <a class="el" href="classvgen_1_1Random.html">Random</a> &amp;random, const <a class="el" href="structvgen_1_1BlockPos.html">BlockPos</a> &amp;origin, bool legacy, float worldLimit)</td></tr>
 <tr class="separator:a4abcd7512415bdb2472435daf652c579 inherit pub_methods_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00d99626cc557c10cf79850ba5a9c27d inherit pub_methods_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a00d99626cc557c10cf79850ba5a9c27d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>buildSurfaceAtDefault</b> (<a class="el" href="classvgen_1_1Random.html">Random</a> &amp;random, <a class="el" href="classvgen_1_1BlockVolume.html">BlockVolume</a> &amp;blocks, const <a class="el" href="structvgen_1_1BlockPos.html">BlockPos</a> &amp;pos, float depthValue, Height seaLevel)</td></tr>
-<tr class="separator:a00d99626cc557c10cf79850ba5a9c27d inherit pub_methods_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bfe71cdcd00076a3e1cea63bb5565d0 inherit pub_methods_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a2bfe71cdcd00076a3e1cea63bb5565d0"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>decorateImpl</b> (<a class="el" href="classvgen_1_1BlockSource.html">BlockSource</a> *source, <a class="el" href="classvgen_1_1Random.html">Random</a> &amp;random, const <a class="el" href="structvgen_1_1BlockPos.html">BlockPos</a> &amp;origin, bool legacy, float worldLimit)</td></tr>
+<tr class="separator:a2bfe71cdcd00076a3e1cea63bb5565d0 inherit pub_methods_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1923aceee96ac45060827e02f342aad0 inherit pub_methods_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a1923aceee96ac45060827e02f342aad0"></a>
+<a class="el" href="classvgen_1_1BiomeDecorator.html">BiomeDecorator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>deco</b> ()</td></tr>
+<tr class="separator:a1923aceee96ac45060827e02f342aad0 inherit pub_methods_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17157a2ea2d867d9251f7045837feec3 inherit pub_methods_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a17157a2ea2d867d9251f7045837feec3"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>buildSurfaceAtDefault</b> (<a class="el" href="classvgen_1_1Random.html">Random</a> &amp;random, <a class="el" href="classvgen_1_1BlockVolume.html">BlockVolume</a> &amp;blocks, const <a class="el" href="structvgen_1_1BlockPos.html">BlockPos</a> &amp;pos, float depthValue, Height seaLevel, <a class="el" href="structvgen_1_1Biome_1_1SurfaceMats.html">SurfaceMats</a> mats)</td></tr>
+<tr class="separator:a17157a2ea2d867d9251f7045837feec3 inherit pub_methods_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f26ebafdede5a59e8f198c7d6655b84 inherit pub_methods_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a6f26ebafdede5a59e8f198c7d6655b84"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>refreshBiome</b> (RandomSeed levelSeed)</td></tr>
 <tr class="separator:a6f26ebafdede5a59e8f198c7d6655b84 inherit pub_methods_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -289,9 +295,9 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>SaveInstanceDa
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInstanceData</b> (LevelStorage &amp;levelData)</td></tr>
 <tr class="separator:a576348c5d58a8cfce103193198e7d4a5 inherit pub_static_methods_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classvgen_1_1Biome"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classvgen_1_1Biome')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classvgen_1_1Biome.html">vgen::Biome</a></td></tr>
-<tr class="memitem:adf4d545b629a9f7141f1a4262ec2b33b inherit pub_attribs_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="adf4d545b629a9f7141f1a4262ec2b33b"></a>
-const Unique&lt; <a class="el" href="classvgen_1_1BiomeDecorator.html">BiomeDecorator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>decorator</b></td></tr>
-<tr class="separator:adf4d545b629a9f7141f1a4262ec2b33b inherit pub_attribs_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c76f013480d6481e85b8f258f1d3e73 inherit pub_attribs_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a4c76f013480d6481e85b8f258f1d3e73"></a>
+Unique&lt; <a class="el" href="classvgen_1_1BiomeDecorator.html">BiomeDecorator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>decorator</b></td></tr>
+<tr class="separator:a4c76f013480d6481e85b8f258f1d3e73 inherit pub_attribs_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa77b4a5f4fc68d854c0dcc9fe124753b inherit pub_attribs_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="aa77b4a5f4fc68d854c0dcc9fe124753b"></a>
 MobList&#160;</td><td class="memItemRight" valign="bottom"><b>_enemies</b></td></tr>
 <tr class="separator:aa77b4a5f4fc68d854c0dcc9fe124753b inherit pub_attribs_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -608,6 +614,9 @@ static <a class="el" href="classvgen_1_1Biome.html">Biome</a> *&#160;</td><td cl
 <tr class="memitem:a5c357380436600c7c032e11638d17c13 inherit pub_static_attribs_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a5c357380436600c7c032e11638d17c13"></a>
 static const MobList&#160;</td><td class="memItemRight" valign="bottom"><b>EMPTY_MOBLIST</b> = MobList()</td></tr>
 <tr class="separator:a5c357380436600c7c032e11638d17c13 inherit pub_static_attribs_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2710c3b6c3ca39556861d21120d70c26 inherit pub_static_attribs_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a2710c3b6c3ca39556861d21120d70c26"></a>
+static thread_local <a class="el" href="classvgen_1_1BiomeDecorator.html">BiomeDecorator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>decoView</b> = nullptr</td></tr>
+<tr class="separator:a2710c3b6c3ca39556861d21120d70c26 inherit pub_static_attribs_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c3c603de2d09ca7a56bdb00763a540e inherit pub_static_attribs_classvgen_1_1Biome"><td class="memItemLeft" align="right" valign="top"><a id="a7c3c603de2d09ca7a56bdb00763a540e"></a>
 static int&#160;</td><td class="memItemRight" valign="bottom"><b>defaultTotalEnemyWeight</b> = 0</td></tr>
 <tr class="separator:a7c3c603de2d09ca7a56bdb00763a540e inherit pub_static_attribs_classvgen_1_1Biome"><td class="memSeparator" colspan="2">&#160;</td></tr>

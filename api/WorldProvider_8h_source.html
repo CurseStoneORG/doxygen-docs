@@ -188,9 +188,20 @@ $(document).ready(function(){initNavTree('WorldProvider_8h_source.html',''); ini
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// the per-tick autosave drain keeps running fully asynchronous.</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> flushPendingSaves() {</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;} <span class="comment">// namespace cursestone::world::format</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="comment">// How many chunk saves the provider can accept RIGHT NOW without</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// blocking the caller (the async save queue&#39;s free capacity).</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="comment">// Providers without a queue answer SIZE_MAX. The budgeted drain and</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">// the eviction path use this to pace themselves: they ask before</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// snapshotting and never block the tick thread on a full queue —</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">// blocked work stays dirty/resident and rides the next tick/pass</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// instead (queue backpressure becomes natural pacing, not a stall).</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">size_t</span> saveQueueRoom()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        <span class="keywordflow">return</span> SIZE_MAX;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;} <span class="comment">// namespace cursestone::world::format</span></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1format_1_1WorldProvider_html"><div class="ttname"><a href="classcursestone_1_1world_1_1format_1_1WorldProvider.html">cursestone::world::format::WorldProvider</a></div><div class="ttdef"><b>Definition:</b> WorldProvider.h:52</div></div>
 <div class="ttc" id="aclasscursestone_1_1world_1_1generator_1_1Generator_html"><div class="ttname"><a href="classcursestone_1_1world_1_1generator_1_1Generator.html">cursestone::world::generator::Generator</a></div><div class="ttdef"><b>Definition:</b> Generator.h:67</div></div>
 <div class="ttc" id="astructmcp__vector3_html"><div class="ttname"><a href="structmcp__vector3.html">mcp_vector3</a></div><div class="ttdef"><b>Definition:</b> Vector3.h:37</div></div>

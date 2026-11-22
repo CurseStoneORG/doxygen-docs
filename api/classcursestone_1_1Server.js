@@ -25,6 +25,7 @@ var classcursestone_1_1Server =
     [ "getIPBans", "classcursestone_1_1Server.html#a556c189f4fd0f43bc462710b92da60d2", null ],
     [ "getMotd", "classcursestone_1_1Server.html#a1fe66b328025b7551c7908401c628ae0", null ],
     [ "getMSPT", "classcursestone_1_1Server.html#a078ddfabb2582b4b86875da88fa274dd", null ],
+    [ "getMSPTPeak", "classcursestone_1_1Server.html#a0006c4e466b85813c9fb179c85ac5e28", null ],
     [ "getNameBans", "classcursestone_1_1Server.html#af32e312fbfceb5b231fa6cb9ad507908", null ],
     [ "getNetwork", "classcursestone_1_1Server.html#ad7f9ca7cae0ef787fd0a094d0e6bdd0e", null ],
     [ "getOfflinePlayerData", "classcursestone_1_1Server.html#a3e56e65d9ba66b928ba9defd1ff348c2", null ],
@@ -37,6 +38,7 @@ var classcursestone_1_1Server =
     [ "getWorldShared", "classcursestone_1_1Server.html#a06573a1b487acbd04e39356c9847278c", null ],
     [ "ip", "classcursestone_1_1Server.html#a2324ebf78ec7d7832b6075e2c28f4a54", null ],
     [ "isAutoSaveEnabled", "classcursestone_1_1Server.html#a4d6704281dd5e34186e051ed6f599b1a", null ],
+    [ "isManualSaveRunning", "classcursestone_1_1Server.html#a4f308708074721edba9b92a26aa31484", null ],
     [ "isOp", "classcursestone_1_1Server.html#ad2a55b55ba02898ba62b169d75d8c587", null ],
     [ "isRunning", "classcursestone_1_1Server.html#aab46dceda4b23078969d5dd9f6b54130", null ],
     [ "keepInventory", "classcursestone_1_1Server.html#a19946472a671ad3c619a5da242506202", null ],
@@ -44,6 +46,7 @@ var classcursestone_1_1Server =
     [ "matchPlayer", "classcursestone_1_1Server.html#ac2da8678cca88b4f13236b1e2384286c", null ],
     [ "maxPlayers", "classcursestone_1_1Server.html#ad3e9f2be0ae337f9109f7847a8508c9e", null ],
     [ "netherEnabled", "classcursestone_1_1Server.html#ae494121ba6503d753feef574aa266b41", null ],
+    [ "notifySaveRequester", "classcursestone_1_1Server.html#ae1ca18918fabb7f3dbff59feae50af75", null ],
     [ "onlineMode", "classcursestone_1_1Server.html#ae078d33c067de10777850e01328493d7", null ],
     [ "onPlayerLogin", "classcursestone_1_1Server.html#aadd0703aa9ce7cbb7c4519d9a62caacb", null ],
     [ "players", "classcursestone_1_1Server.html#a113cdb1bde59dccd494f1e3a62ce01c0", null ],
@@ -54,6 +57,8 @@ var classcursestone_1_1Server =
     [ "removeOp", "classcursestone_1_1Server.html#ae825cca89ef104967a2630c71fd2cd4b", null ],
     [ "removePlayer", "classcursestone_1_1Server.html#a537feba3b5047aaa85f783c6af0b721f", null ],
     [ "removePlayerListData", "classcursestone_1_1Server.html#ae00b2f8b44ebbf38cd4c3615dbdcb71c", null ],
+    [ "requestFullSave", "classcursestone_1_1Server.html#ae7ff7d1be1c9430239ca4f654972b163", null ],
+    [ "runStopWatchdog", "classcursestone_1_1Server.html#aa6e451648b5b71e31164222fec57362d", null ],
     [ "runTickLoop", "classcursestone_1_1Server.html#aab680d3e8e197fb5d19b48983b539131", null ],
     [ "saveAll", "classcursestone_1_1Server.html#a6ef3c80a186b12163c835a40faa80ce8", null ],
     [ "saveOfflinePlayerData", "classcursestone_1_1Server.html#a695ff2c20872486e0cb5f4bcced5dea7", null ],
@@ -77,5 +82,8 @@ var classcursestone_1_1Server =
     [ "unloadWorld", "classcursestone_1_1Server.html#a60a5feed3025345459780e4f1ced978c", null ],
     [ "updatePlayerListData", "classcursestone_1_1Server.html#a9dd0837a68676babd120479b816995a2", null ],
     [ "viewDistance", "classcursestone_1_1Server.html#abdf88db0404bb62e29f28ca2bf6d6aee", null ],
-    [ "whitelistEnabled", "classcursestone_1_1Server.html#ab707ccd6de55c743197c23ebb1e3e46e", null ]
+    [ "whitelistEnabled", "classcursestone_1_1Server.html#ab707ccd6de55c743197c23ebb1e3e46e", null ],
+    [ "diag_tick_", "classcursestone_1_1Server.html#a93fb35f94d173913ed7970369dac1f13", null ],
+    [ "stop_watchdog_", "classcursestone_1_1Server.html#afb9c44e1eb12b36f750d02193610056c", null ],
+    [ "stop_watchdog_running_", "classcursestone_1_1Server.html#a3b7724709516f4da728163b9274dcd05", null ]
 ];

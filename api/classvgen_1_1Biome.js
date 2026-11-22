@@ -1,6 +1,7 @@
 var classvgen_1_1Biome =
 [
     [ "BiomeHeight", "structvgen_1_1Biome_1_1BiomeHeight.html", "structvgen_1_1Biome_1_1BiomeHeight" ],
+    [ "SurfaceMats", "structvgen_1_1Biome_1_1SurfaceMats.html", "structvgen_1_1Biome_1_1SurfaceMats" ],
     [ "BiomeTempCategory", "classvgen_1_1Biome.html#ad7059e61f941e12fd363379020b3796f", [
       [ "OCEAN", "classvgen_1_1Biome.html#ad7059e61f941e12fd363379020b3796fad9a814d4bccfb06b84fe4d4ba6bce6f4", null ],
       [ "COLD", "classvgen_1_1Biome.html#ad7059e61f941e12fd363379020b3796fa3f7ff4daa99912d1b0c8c64340edb9fb", null ],
@@ -33,10 +34,12 @@ var classvgen_1_1Biome =
     [ "adjustDepth", "classvgen_1_1Biome.html#ae4516bebebc86034ee5ef02f8e44e2ce", null ],
     [ "adjustScale", "classvgen_1_1Biome.html#a253d5af13aaedf9ce44f5abb3d502c37", null ],
     [ "buildSurfaceAt", "classvgen_1_1Biome.html#ac0b6b1381a452cbd183364a701837ed1", null ],
-    [ "buildSurfaceAtDefault", "classvgen_1_1Biome.html#a00d99626cc557c10cf79850ba5a9c27d", null ],
+    [ "buildSurfaceAtDefault", "classvgen_1_1Biome.html#a17157a2ea2d867d9251f7045837feec3", null ],
     [ "canHaveSnowfall", "classvgen_1_1Biome.html#abfe699963dd32a190fc4e3fb40769c09", null ],
     [ "clearMobs", "classvgen_1_1Biome.html#abda8dc61c87ce5ccd80abebd669141e1", null ],
+    [ "deco", "classvgen_1_1Biome.html#a1923aceee96ac45060827e02f342aad0", null ],
     [ "decorate", "classvgen_1_1Biome.html#a4abcd7512415bdb2472435daf652c579", null ],
+    [ "decorateImpl", "classvgen_1_1Biome.html#a2bfe71cdcd00076a3e1cea63bb5565d0", null ],
     [ "getBiomeType", "classvgen_1_1Biome.html#a1acdb86887e467c97738a5c46658d234", null ],
     [ "getBirchFoliageColor", "classvgen_1_1Biome.html#adfb239d8bc2348dfc83f8fbc295ffda3", null ],
     [ "getCreatureProbability", "classvgen_1_1Biome.html#af201c460059fa7a03da338187cd1d7c3", null ],
@@ -80,7 +83,7 @@ var classvgen_1_1Biome =
     [ "_enemies", "classvgen_1_1Biome.html#aa77b4a5f4fc68d854c0dcc9fe124753b", null ],
     [ "_friendlies", "classvgen_1_1Biome.html#a9f1cc12f7a448a7fda54e9e064b5551e", null ],
     [ "_waterFriendlies", "classvgen_1_1Biome.html#a811aba35992a22cff7a9f6e4813a1107", null ],
-    [ "decorator", "classvgen_1_1Biome.html#adf4d545b629a9f7141f1a4262ec2b33b", null ],
+    [ "decorator", "classvgen_1_1Biome.html#a4c76f013480d6481e85b8f258f1d3e73", null ],
     [ "mBiomeInfoNoise", "classvgen_1_1Biome.html#a014d8b44c18bce3298caedd732777a7d", null ],
     [ "mBiomeType", "classvgen_1_1Biome.html#a266ba388d3ed9a07f8b7bf280ec5f0d8", null ],
     [ "mDebugMapColor", "classvgen_1_1Biome.html#a250209c9f37f193ff336c4421248ef1c", null ],

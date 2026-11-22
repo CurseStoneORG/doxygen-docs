@@ -12,6 +12,7 @@ var classcursestone_1_1world_1_1format_1_1WorldProvider =
     [ "loadChunk", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#ab559e99b1a4ed35140a4acb9f7be518a", null ],
     [ "saveChunk", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a55018d64521f9387e844a0652f04da5b", null ],
     [ "saveLevelData", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a0b9be76b4322dcaff44baf75c4837b1e", null ],
+    [ "saveQueueRoom", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#ac307a21f02962047ecd87955bbea518f", null ],
     [ "setCurrentTime", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a9960a877434e9d5e1c26620dd3c2f94b", null ],
     [ "setGenerator", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#a2a1d6d80ba7fcd827fca6ec6b256ad4b", null ],
     [ "setSeed", "classcursestone_1_1world_1_1format_1_1WorldProvider.html#af6087f3fb6f4b59a02243c487705ccc4", null ],

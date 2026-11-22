@@ -11,6 +11,7 @@ var dir_4b989aa9d0a5c735a1c456b39ba0f91c =
     [ "Direction.h", "Direction_8h_source.html", null ],
     [ "Facing.h", "Facing_8h_source.html", null ],
     [ "FoliageColor.h", "FoliageColor_8h_source.html", null ],
+    [ "PopulateGate.h", "PopulateGate_8h_source.html", null ],
     [ "Random.h", "world_2generator_2vgen_2Random_8h_source.html", null ],
     [ "Vanilla.h", "Vanilla_8h_source.html", null ],
     [ "VgenSource.h", "VgenSource_8h_source.html", null ],

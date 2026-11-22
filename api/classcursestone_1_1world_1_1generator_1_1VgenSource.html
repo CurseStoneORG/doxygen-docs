@@ -107,6 +107,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>generate</b> (<a clas
 <tr class="memitem:a0dbba35cfff1870591cc186881a2c808"><td class="memItemLeft" align="right" valign="top"><a id="a0dbba35cfff1870591cc186881a2c808"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>populate</b> (<a class="el" href="structcursestone_1_1world_1_1generator_1_1GenerationContext.html">GenerationContext</a> &amp;ctx) override</td></tr>
 <tr class="separator:a0dbba35cfff1870591cc186881a2c808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf56a9eb2f922ffe351493fbc1a7bc0e"><td class="memItemLeft" align="right" valign="top"><a id="abf56a9eb2f922ffe351493fbc1a7bc0e"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>preparePopulateDeps</b> (int32_t x, int32_t z) override</td></tr>
+<tr class="separator:abf56a9eb2f922ffe351493fbc1a7bc0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d4aa02b3fe47097e55b6b78afade20"><td class="memItemLeft" align="right" valign="top"><a id="ad4d4aa02b3fe47097e55b6b78afade20"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>populateRegister</b> (int32_t x, int32_t z) override</td></tr>
+<tr class="separator:ad4d4aa02b3fe47097e55b6b78afade20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7e7c512f34042f84c2fbf382708c0f1"><td class="memItemLeft" align="right" valign="top"><a id="ac7e7c512f34042f84c2fbf382708c0f1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>populateTryEnter</b> (int32_t x, int32_t z) override</td></tr>
+<tr class="separator:ac7e7c512f34042f84c2fbf382708c0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a591a9ebeaad6ebc83e8a3f20275c308d"><td class="memItemLeft" align="right" valign="top"><a id="a591a9ebeaad6ebc83e8a3f20275c308d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>populateMarkDone</b> (int32_t x, int32_t z) override</td></tr>
+<tr class="separator:a591a9ebeaad6ebc83e8a3f20275c308d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97528ff4014097fe849052c35426cd61"><td class="memItemLeft" align="right" valign="top"><a id="a97528ff4014097fe849052c35426cd61"></a>
 <a class="el" href="structmcp__vector3.html">mcp_vector3_t</a>&#160;</td><td class="memItemRight" valign="bottom"><b>getSpawn</b> () const override</td></tr>
 <tr class="separator:a97528ff4014097fe849052c35426cd61"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,6 +131,9 @@ std::shared_ptr&lt; <a class="el" href="classvgen_1_1LevelChunk.html">vgen::Leve
 <tr class="memitem:a84cea9c23d9bb87781694746c8267d0c"><td class="memItemLeft" align="right" valign="top"><a id="a84cea9c23d9bb87781694746c8267d0c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>commitNeighborWrite</b> (int cx, int cz, uint32_t index, uint8_t id, uint8_t data) override</td></tr>
 <tr class="separator:a84cea9c23d9bb87781694746c8267d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe7eabd27fdf03233059e81dc356d6f0"><td class="memItemLeft" align="right" valign="top"><a id="abe7eabd27fdf03233059e81dc356d6f0"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>commitNeighborWriteBatch</b> (int cx, int cz, const std::vector&lt; <a class="el" href="structcursestone_1_1world_1_1generator_1_1NeighborWrite.html">NeighborWrite</a> &gt; &amp;writes) override</td></tr>
+<tr class="separator:abe7eabd27fdf03233059e81dc356d6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb83482178491ad7be451039d3ad205f"><td class="memItemLeft" align="right" valign="top"><a id="acb83482178491ad7be451039d3ad205f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>commitNeighborTile</b> (int cx, int cz, const std::vector&lt; uint8_t &gt; &amp;blob) override</td></tr>
 <tr class="separator:acb83482178491ad7be451039d3ad205f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,6 +149,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>applySpill</b> (<a cl
 <tr class="memitem:a6ace639ff5a30de171b49d49f93280f6"><td class="memItemLeft" align="right" valign="top"><a id="a6ace639ff5a30de171b49d49f93280f6"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>queueSpill</b> (int cx, int cz, uint32_t index, uint8_t id, uint8_t data) override</td></tr>
 <tr class="separator:a6ace639ff5a30de171b49d49f93280f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d28bf5d8d7a8272d875b901cac9fd4"><td class="memItemLeft" align="right" valign="top"><a id="a79d28bf5d8d7a8272d875b901cac9fd4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>queueSpillBatch</b> (int cx, int cz, const std::vector&lt; <a class="el" href="structcursestone_1_1world_1_1generator_1_1NeighborWrite.html">NeighborWrite</a> &gt; &amp;writes) override</td></tr>
+<tr class="separator:a79d28bf5d8d7a8272d875b901cac9fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2c64c33aa59589465c743d29a476435"><td class="memItemLeft" align="right" valign="top"><a id="ab2c64c33aa59589465c743d29a476435"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>drainSpills</b> (int cx, int cz, <a class="el" href="structmcp__chunk.html">mcp_chunk_t</a> *chunk) override</td></tr>
 <tr class="separator:ab2c64c33aa59589465c743d29a476435"><td class="memSeparator" colspan="2">&#160;</td></tr>

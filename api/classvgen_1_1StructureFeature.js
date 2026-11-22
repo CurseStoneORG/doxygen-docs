@@ -12,6 +12,7 @@ var classvgen_1_1StructureFeature =
     [ "isInsideFeature", "classvgen_1_1StructureFeature.html#a2151881a0cccdb7a38a16aa9c936d4de", null ],
     [ "postProcess", "classvgen_1_1StructureFeature.html#ae1f834115811a162622d695b8b3593af", null ],
     [ "postProcessMobsAt", "classvgen_1_1StructureFeature.html#a45e853a974237963badecf8b634eba0b", null ],
+    [ "probeWindowDeps", "classvgen_1_1StructureFeature.html#a3fab10982366bd892887fb0a610a2dac", null ],
     [ "cachedStructures", "classvgen_1_1StructureFeature.html#a6d216491ce660a8e432a54b6c15dcb6a", null ],
     [ "cacheMutex", "classvgen_1_1StructureFeature.html#a7a8dbf87aff09beb2399c8896915b55e", null ],
     [ "cellMemo", "classvgen_1_1StructureFeature.html#ac235b940067e0e5bff8446a55e5faa58", null ],

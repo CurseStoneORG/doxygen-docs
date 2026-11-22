@@ -1438,6 +1438,63 @@ var namespacecursestone =
         [ "ChunkOrdered", "AdvancedSourceInterface_8h.html#a5c77135f822a14f94cd73896c71bf9eea114d8b6eb3e6e9e3bbc77f6a57ccc3d2", null ]
       ] ]
     ] ],
+    [ "performance", null, [
+      [ "noise", null, [
+        [ "Params", "structcursestone_1_1performance_1_1noise_1_1Params.html", "structcursestone_1_1performance_1_1noise_1_1Params" ],
+        [ "initialize", "NoiseOptimizer_8cpp.html#a107b72c4512a6502ae2b963e277bd8dd", null ],
+        [ "readArea2D", "NoiseOptimizer_8cpp.html#a35d2f453d7c189cd8016a483db5ce152", null ],
+        [ "readArea3D", "NoiseOptimizer_8cpp.html#ace4e8fdd392d97c0755030bd87c33c24", null ],
+        [ "region_scalar_2d", "NoiseOptimizer_8cpp.html#a6ea7d4aac3c470d4865a9b5069efd9cd", null ],
+        [ "region_scalar_3d", "NoiseOptimizer_8cpp.html#a53d79b4eb8e683ade7a5235115c911f9", null ],
+        [ "setScalarReference", "NoiseOptimizer_8cpp.html#adf986db002735f7e16be1e46f5023e82", null ]
+      ] ],
+      [ "GenerationProfiler", "classcursestone_1_1performance_1_1GenerationProfiler.html", "classcursestone_1_1performance_1_1GenerationProfiler" ],
+      [ "ScopedStage", "classcursestone_1_1performance_1_1ScopedStage.html", "classcursestone_1_1performance_1_1ScopedStage" ],
+      [ "PerformanceManager", "classcursestone_1_1performance_1_1PerformanceManager.html", null ],
+      [ "CpuFeatures", "structcursestone_1_1performance_1_1CpuFeatures.html", "structcursestone_1_1performance_1_1CpuFeatures" ],
+      [ "SaveProfiler", "classcursestone_1_1performance_1_1SaveProfiler.html", "classcursestone_1_1performance_1_1SaveProfiler" ],
+      [ "TerrainCache", "classcursestone_1_1performance_1_1TerrainCache.html", "classcursestone_1_1performance_1_1TerrainCache" ],
+      [ "SaveStage", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252", [
+        [ "Snapshot", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252ad4e2713d1b1725a1592f9268589f990d", null ],
+        [ "Enqueue", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252a96bf1b732678e7cf773fe37c7841e174", null ],
+        [ "EnqueueBlocked", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252ae0ccff6695f533a5416326d204366433", null ],
+        [ "WorkerPut", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252a326b773412d0368c2c32b77e0677a5fa", null ],
+        [ "EngineFlush", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252af36ed2b2b4fb2868d65251845fd27808", null ],
+        [ "EngineCompact", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252abaea25e01e306006d6e9293cee5f30d4", null ],
+        [ "DrainWait", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252ade217b552b5134a51f787c29b87829c7", null ],
+        [ "EngineFlushCall", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252a96d744548e8db53d2e6db5e57d4cabf9", null ],
+        [ "FullFlushSweep", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252ad6a86d49d63792138a9b9ea4fb3de298", null ],
+        [ "BudgetFlushSweep", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252ae7b0a383a56e175581c1e813c0c5da51", null ],
+        [ "DirtyCount", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252a0785dfd8f0731f5b2435970300a81a13", null ],
+        [ "Count", "SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252ae93f994f01c537c4e2f7d8528c3eb5e9", null ]
+      ] ],
+      [ "Stage", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514e", [
+        [ "Total", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea96b0141273eabab320119c467cdcaf17", null ],
+        [ "TerrainBuild", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eae6fad0d2cab36aeb15c644470f1892a7", null ],
+        [ "Noise", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea9b27ee4c75799bd59f202735ce258699", null ],
+        [ "Surface", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eaaa0d528ba11ea1485d466dfe1ea40819", null ],
+        [ "Caves", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eadfdc9fb752b4e14ddb440a7388716b14", null ],
+        [ "BiomeFill", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea80dbd30995c8288b75c67c0ef6e4bee8", null ],
+        [ "Populate", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea29ecfa641d7d6de614419826a0d3fed3", null ],
+        [ "CopyIn", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eade8ffc3a53241658b21ecbcd03ae336a", null ],
+        [ "CopyOut", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eaaf81d2de71e83dc14c2b0d3a302e1afe", null ],
+        [ "Light", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea9914a0ce04a7b7b6a8e39bec55064b82", null ],
+        [ "Encode", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eaa79a682f66f0f9b8aa2ca16816883717", null ],
+        [ "Snapshot", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ead4e2713d1b1725a1592f9268589f990d", null ],
+        [ "DiskLoad", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea0853f125d44dc0c44dd05015a364659c", null ],
+        [ "Lakes", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ead443e9273c41ec6d54c62e887e11f101", null ],
+        [ "Structures", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea2dec5ee9db863ffb68915b70bce4efe4", null ],
+        [ "Dungeons", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea56ea86b88d0c7be493da388f3640d7e2", null ],
+        [ "Freeze", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea65467087a19145f43129bba42781aea0", null ],
+        [ "Decorate", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea01837a0e910a80ae5ce00b3cfd807935", null ],
+        [ "DecorateOres", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eaac023b79b0ae2fb9fb08c9b6c82446a3", null ],
+        [ "DecorateSurface", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eadc8943e3592f1900bdef34c2582031d7", null ],
+        [ "DecorateTrees", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea91aa3150d01ce2f4c3cb7d8fa94701a9", null ],
+        [ "DecorateMisc", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514ea85d3d3076d80fc0c5fe92f3b22f048bf", null ],
+        [ "Snow", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eab46d3c8ee8032551c011745d587705cc", null ],
+        [ "Count", "GenerationProfiler_8h.html#a066718657a1d927ff2fa00967979514eae93f994f01c537c4e2f7d8528c3eb5e9", null ]
+      ] ]
+    ] ],
     [ "permission", null, [
       [ "BanEntry", "classcursestone_1_1permission_1_1BanEntry.html", "classcursestone_1_1permission_1_1BanEntry" ],
       [ "BanList", "classcursestone_1_1permission_1_1BanList.html", "classcursestone_1_1permission_1_1BanList" ],
@@ -1492,6 +1549,7 @@ var namespacecursestone =
       [ "updateWireAt", "RedstoneManager_8cpp.html#a0fd0f07441251c71898b8e3d4c3d1c53", null ]
     ] ],
     [ "scheduler", null, [
+      [ "PoolStats", "structcursestone_1_1scheduler_1_1PoolStats.html", "structcursestone_1_1scheduler_1_1PoolStats" ],
       [ "AsyncPool", "classcursestone_1_1scheduler_1_1AsyncPool.html", "classcursestone_1_1scheduler_1_1AsyncPool" ],
       [ "AsyncWorker", "classcursestone_1_1scheduler_1_1AsyncWorker.html", "classcursestone_1_1scheduler_1_1AsyncWorker" ],
       [ "CallbackTask", "classcursestone_1_1scheduler_1_1CallbackTask.html", "classcursestone_1_1scheduler_1_1CallbackTask" ],
@@ -1647,6 +1705,7 @@ var namespacecursestone =
             [ "kTypeValue", "DBFormat_8h.html#a632b06472b145d27cb97251267176778", null ]
           ] ],
           [ "InternalKeyLess", "structcursestone_1_1world_1_1format_1_1leveldb_1_1InternalKeyLess.html", "structcursestone_1_1world_1_1format_1_1leveldb_1_1InternalKeyLess" ],
+          [ "OpenTable", "structcursestone_1_1world_1_1format_1_1leveldb_1_1OpenTable.html", "structcursestone_1_1world_1_1format_1_1leveldb_1_1OpenTable" ],
           [ "DBEngine", "classcursestone_1_1world_1_1format_1_1leveldb_1_1DBEngine.html", "classcursestone_1_1world_1_1format_1_1leveldb_1_1DBEngine" ],
           [ "LevelDB", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB" ],
           [ "LevelDBRegistrar", "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html", "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar" ],
@@ -1670,6 +1729,7 @@ var namespacecursestone =
         [ "GenerationTask", "classcursestone_1_1world_1_1generator_1_1GenerationTask.html", "classcursestone_1_1world_1_1generator_1_1GenerationTask" ],
         [ "GenerationContext", "structcursestone_1_1world_1_1generator_1_1GenerationContext.html", "structcursestone_1_1world_1_1generator_1_1GenerationContext" ],
         [ "Generator", "classcursestone_1_1world_1_1generator_1_1Generator.html", "classcursestone_1_1world_1_1generator_1_1Generator" ],
+        [ "NeighborWrite", "structcursestone_1_1world_1_1generator_1_1NeighborWrite.html", "structcursestone_1_1world_1_1generator_1_1NeighborWrite" ],
         [ "ISpillQueue", "classcursestone_1_1world_1_1generator_1_1ISpillQueue.html", "classcursestone_1_1world_1_1generator_1_1ISpillQueue" ],
         [ "INeighborBlockSink", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink.html", "classcursestone_1_1world_1_1generator_1_1INeighborBlockSink" ],
         [ "Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", "classcursestone_1_1world_1_1generator_1_1Nether" ],

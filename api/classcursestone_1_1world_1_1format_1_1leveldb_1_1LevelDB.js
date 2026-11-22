@@ -14,6 +14,7 @@ var classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB =
     [ "loadChunk", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a2639fde4d7d5df100f9291688de24724", null ],
     [ "saveChunk", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#aba95fc476d0b37f788481434a1f206a5", null ],
     [ "saveLevelData", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#aa695db8e07545e6ac2326a56b69d88a7", null ],
+    [ "saveQueueRoom", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#af02151ecf4ac2c37dc2bee9ce59d4704", null ],
     [ "setCurrentTime", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#ab01604f5f842cf30da528ec648f4f35f", null ],
     [ "setGenerator", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a83d215ca4e63b6219dbaef435fbbad9e", null ],
     [ "setSeed", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a5588f5f667687af0926da259fa7be958", null ],

@@ -5,6 +5,7 @@ var classvgen_1_1ITerrainFeed =
     [ "applySpill", "classvgen_1_1ITerrainFeed.html#a10fea918238945d9793e45928ea2d4cb", null ],
     [ "commitNeighborTile", "classvgen_1_1ITerrainFeed.html#a489e423e97e829245e1a2d200cb8b989", null ],
     [ "commitNeighborWrite", "classvgen_1_1ITerrainFeed.html#a6e0a7c09748097e50fa2baf677bcb2e9", null ],
+    [ "commitNeighborWriteBatch", "classvgen_1_1ITerrainFeed.html#a0c3898ca0af83faa4f37215291d37738", null ],
     [ "getDimension", "classvgen_1_1ITerrainFeed.html#a00fb4fd8f8a85258eec28df00543fe23", null ],
     [ "getLevel", "classvgen_1_1ITerrainFeed.html#afbe34da375bd4c8e2c333c739f485862", null ]
 ];

@@ -86,72 +86,71 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="title">CurseStone Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> </p><div align="center"></div><div align="center"> <img src="logo.svg" alt="CurseStone" style="pointer-events: none;" width="160" class="inline"/></div><div align="center"></div><h1><a class="anchor" id="autotoc_md0"></a>
+<div class="textblock"><p><a class="anchor" id="md_README"></a></p><div align="center"></div><div align="center"> <img src="logo.svg" alt="CurseStone" style="pointer-events: none;" width="160" class="inline"/></div><div align="center"></div><h1><a class="anchor" id="autotoc_md0"></a>
 CurseStone</h1>
-<div align="center"> <b>A new foundation for Minecraft: Pocket Edition 0.15.10 servers.</b></div><div align="center"> Open-source server software built with C++20.</div><div align="center"> </div><div align="center"> <a href="https://github.com/CurseStoneORG/CurseStone/actions/workflows/Build.yml"><img src="https://github.com/CurseStoneORG/CurseStone/actions/workflows/Build.yml/badge.svg" alt="Build" style="pointer-events: none;" class="inline"/> </a> <img src="https://img.shields.io/badge/license-LGPL--3.0--or--later-blue" alt="License" class="inline"/> <img src="https://img.shields.io/badge/protocol-84-8A2BE2" alt="Protocol" class="inline"/> </div><div align="center"></div><div align="center"> </div><div align="center"> <a href="https://cursestoneorg.github.io/">Official Website</a> <br  />
+<div align="center"> <b>A new foundation for Minecraft Pocket Edition servers</b></div><div align="center"> Open-source server software developed in C++20</div><div align="center"> </div><div align="center"> <a href="https://github.com/CurseStoneORG/CurseStone/actions/workflows/Build.yml"><img src="https://github.com/CurseStoneORG/CurseStone/actions/workflows/Build.yml/badge.svg" alt="Build" style="pointer-events: none;" class="inline"/> </a> <img src="https://img.shields.io/badge/license-LGPL--3.0--or--later-blue" alt="License" class="inline"/> <img src="https://img.shields.io/badge/protocol-84-8A2BE2" alt="Protocol" class="inline"/> </div><div align="center"></div><div align="center"> </div><div align="center"> <a href="https://cursestoneorg.github.io/">Official Website</a> <br  />
  <a href="https://github.com/CurseStoneORG/CurseStone">GitHub Repository</a> <br  />
- <a href="https://github.com/CurseStoneORG/CurseStone/issues">Issues</a> </div><div align="center"></div><div align="center"></div><hr  />
+ <a href="https://github.com/CurseStoneORG/CurseStone/issues">Issues and Suggestions</a> </div><div align="center"></div><div align="center"></div><hr  />
 <h2><a class="anchor" id="autotoc_md2"></a>
-About</h2>
-<p><b>CurseStone</b> is an open-source server software project built specifically for <b>Minecraft: Pocket Edition 0.15.10</b>.</p>
-<p>Developed in C++20, it aims to provide an independent, extensible and customizable server implementation for one of the most recognizable eras of Minecraft: Pocket Edition.</p>
-<p>The project focuses on preserving compatibility with the original game while providing a foundation for server owners and developers to build their own multiplayer experiences.</p>
+About the Project</h2>
+<p><b>CurseStone</b> is an open-source server software project developed for <b>Minecraft: Pocket Edition</b>.</p>
+<p>Built with C++20, it aims to provide an independent, extensible, and customizable server implementation for one of the most recognizable eras of Minecraft: Pocket Edition.</p>
+<p>The project focuses on preserving compatibility with the original game while providing a foundation for server administrators and developers to create their own multiplayer experiences.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
-Built for its era</h2>
-<p>CurseStone targets the legacy Minecraft: Pocket Edition environment, using <b>protocol 84</b>.</p>
-<p>Rather than following modern Bedrock Edition development, the project remains focused on its original target version, maintaining a clear direction for its architecture and gameplay implementation.</p>
+Designed for Its Era</h2>
+<p>CurseStone is designed for the classic <b>Minecraft: Pocket Edition</b> environment.</p>
+<p>It may be updated to support future versions at some point.</p>
 <h2><a class="anchor" id="autotoc_md4"></a>
-What it offers</h2>
+Features</h2>
 <ul>
-<li><b>Plugin Support</b> — Extend server functionality with an integrated Lua 5.4 runtime or native C++ plugins (.so/.dll).</li>
-<li><b>Vanilla World Generation</b> — Generate worlds using terrain generation systems designed to reproduce the original Minecraft: Pocket Edition 0.15.10 world generation.</li>
-<li><b>World Management</b> — Anvil and LevelDB world storage support.</li>
-<li><b>Terrain Generation</b> — Biomes, procedural terrain, noise-based generation and world populators.</li>
-<li><b>Developer Tools</b> — Runtime profiling, diagnostics and crash dumps.</li>
-<li><b>Cross-Platform</b> — Support for Linux, Windows, macOS and Android through Termux.</li>
-<li><b>Open Source</b> — Explore, modify and contribute to the project's development.</li>
+<li><b>Plugin Support</b> — Extend server functionality through an integrated Lua 5.4 environment or native C++ plugins (.so/.dll).</li>
+<li><b>World Generation</b> — Generates worlds similar to the vanilla <b>Minecraft: Pocket Edition</b> world generation, including vanilla structures and biomes.</li>
+<li><b>World Management</b> — Supports Anvil and LevelDB world formats.</li>
+<li><b>Developer Tools</b> — Runtime profiling, diagnostics, and crash memory dumps.</li>
+<li><b>Cross-Platform</b> — Supports Linux, Windows, and Android.</li>
+<li><b>Open Source</b> — Explore, modify, and contribute to the project's development.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md5"></a>
-Technology</h2>
+Technologies</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Technology   </th><th class="markdownTableHeadNone">Purpose    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">C++20   </td><td class="markdownTableBodyNone">Entire server core: networking, gameplay and low-level systems    </td></tr>
+<td class="markdownTableBodyNone">C++20   </td><td class="markdownTableBodyNone">Complete server core: networking, game mechanics, and low-level systems    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Lua 5.4   </td><td class="markdownTableBodyNone">Plugin scripting (bundled interpreter)    </td></tr>
+<td class="markdownTableBodyNone">Lua 5.4   </td><td class="markdownTableBodyNone">Script-based plugin development (integrated interpreter)    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Native plugin ABI   </td><td class="markdownTableBodyNone">Function-pointer surface for .so/.dll plugins    </td></tr>
+<td class="markdownTableBodyNone">Native Plugin ABI   </td><td class="markdownTableBodyNone">Function-pointer-based interface for .so/.dll plugins    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">CMake   </td><td class="markdownTableBodyNone">Build configuration    </td></tr>
+<td class="markdownTableBodyNone">CMake   </td><td class="markdownTableBodyNone">Build process configuration    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Ninja   </td><td class="markdownTableBodyNone">Build system   </td></tr>
 </table>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Project Status</h2>
-<p>CurseStone is an actively developed project. Its systems and gameplay features continue to evolve, with compatibility for Minecraft: Pocket Edition 0.15.10 remaining the primary target.</p>
-<p>The project aims to preserve the original game's behavior and world generation while progressively expanding its server functionality.</p>
-<p>Not every original game feature is currently implemented. In particular, some gameplay systems, including mob AI and pathfinding, are not yet available.</p>
+<p>CurseStone is an actively developed project. Its systems and gameplay features continue to evolve while maintaining compatibility with Minecraft: Pocket Edition.</p>
+<p>The project aims to preserve the original game's behavior and world generation systems while gradually expanding server functionality.</p>
+<p>Not all features from the original game have been implemented yet. In particular, some gameplay systems, such as mob AI and pathfinding, are not yet available.</p>
 <h2><a class="anchor" id="autotoc_md7"></a>
 Documentation</h2>
 <ul>
 <li><b>Building:</b> <a class="el" href="md_docs_BUILDING.html">docs/BUILDING.md</a></li>
-<li><b>Plugin API (Lua + native C++):</b> <a class="el" href="md_docs_PLUGINS.html">docs/PLUGINS.md</a></li>
-<li><b>Repository docs index:</b> <a class="el" href="/home/runner/work/CurseStone/CurseStone/docs/README.md#md_docs_README">docs/README.md</a></li>
-<li><b>Release notes:</b> changelogs</li>
-<li><b>Online documentation:</b> <a href="https://cursestoneorg.github.io/docs/">https://cursestoneorg.github.io/docs/</a></li>
-<li><b>API reference (Doxygen):</b> <a href="https://cursestoneorg.github.io/doxygen-docs/">https://cursestoneorg.github.io/doxygen-docs/</a></li>
+<li><b>Plugin API (Lua + Native C++):</b> <a class="el" href="md_docs_PLUGINS.html">docs/PLUGINS.md</a></li>
+<li><b>Repository Documentation Index:</b> <a class="el" href="/home/runner/work/CurseStone/CurseStone/docs/README.md#md_docs_README">docs/README.md</a></li>
+<li><b>Release Notes:</b> changelogs</li>
+<li><b>Online Documentation:</b> <a href="https://cursestoneorg.github.io/docs/">https://cursestoneorg.github.io/docs/</a></li>
+<li><b>API Reference (Doxygen):</b> <a href="https://cursestoneorg.github.io/doxygen-docs/">https://cursestoneorg.github.io/doxygen-docs/</a></li>
 </ul>
 <h2><a class="anchor" id="autotoc_md8"></a>
 Contributing</h2>
-<p>CurseStone is open source and contributions are welcome, whether you are interested in server development, plugin creation, testing or improving existing systems.</p>
-<p>Read <a class="el" href="md_CONTRIBUTING.html">CONTRIBUTING.md</a> to get started, and use the <a href="https://github.com/CurseStoneORG/CurseStone/issues">issue tracker</a> to report problems.</p>
+<p>CurseStone is an open-source project, and contributions are welcome, whether you're interested in server development, plugin creation, testing, or improving existing systems.</p>
+<p>Check out <a class="el" href="md_CONTRIBUTING.html">CONTRIBUTING.md</a> to get started, and use the <a href="https://github.com/CurseStoneORG/CurseStone/issues">issue tracker</a> to report bugs or suggest improvements.</p>
 <h2><a class="anchor" id="autotoc_md9"></a>
 License</h2>
-<p>CurseStone is licensed under the <b>GNU Lesser General Public License v3.0 or later (LGPL-3.0-or-later)</b>.</p>
-<p>See the [LICENSE](LICENSE) file for details.</p>
+<p>CurseStone is distributed under the <b>GNU Lesser General Public License, version 3.0 or later (LGPL-3.0-or-later)</b>.</p>
+<p>See the [LICENSE](LICENSE) file for more information.</p>
 <hr  />
-<div align="center"></div><div align="center"> <b>CurseStoneORG</b></div><div align="center"> <em>Built for Minecraft: Pocket Edition 0.15.10.</em></div><div align="center"></div> </div></div><!-- PageDoc -->
+<div align="center"></div><div align="center"> <b>CurseStoneORG</b></div><div align="center"> *Developed and founded by @Dr1xyDev*</div><div align="center"></div> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

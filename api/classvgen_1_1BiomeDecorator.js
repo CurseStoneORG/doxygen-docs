@@ -7,6 +7,7 @@ var classvgen_1_1BiomeDecorator =
     [ "_getRandomSurfacePosition", "classvgen_1_1BiomeDecorator.html#a11300d56b47e2bd27fc1ce7d99eea5f1", null ],
     [ "_getRandomTreePosition", "classvgen_1_1BiomeDecorator.html#af677862cffd78884bda1f2d0b336a583", null ],
     [ "_placeFeature", "classvgen_1_1BiomeDecorator.html#a05b512e737efff96fc138c216597a03a", null ],
+    [ "copyTunableStateFrom", "classvgen_1_1BiomeDecorator.html#aa3a1607d3cc0b6e6499e2cefec851df2", null ],
     [ "decorate", "classvgen_1_1BiomeDecorator.html#a42ac9b298330134cdc36d8442864757c", null ],
     [ "decorateDepthAverage", "classvgen_1_1BiomeDecorator.html#a16e3cf0929147ed942fbca023eef775d", null ],
     [ "decorateDepthSpan", "classvgen_1_1BiomeDecorator.html#aa8192b056a7d4137d1549e30b1babcd8", null ],
