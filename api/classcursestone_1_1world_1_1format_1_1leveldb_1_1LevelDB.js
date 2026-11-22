@@ -2,6 +2,8 @@ var classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB =
 [
     [ "LevelDB", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a7ac3f305d89ff55a9ee31b475cff442a", null ],
     [ "~LevelDB", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#ad65b54e4b7c4d2bf569aaca0ce50888a", null ],
+    [ "dbPath", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a9bebc242f3c6a7e24c584662c417832f", null ],
+    [ "flushPendingSaves", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a7433e38e00b50eee74fb0e09b529f901", null ],
     [ "getCurrentTime", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a02d892ac274e8b71da362de4b73cf46c", null ],
     [ "getGenerator", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a21137df6454487d42aa1ba92b12abbe5", null ],
     [ "getName", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDB.html#a1c270dc6f40e68e255922b218b885916", null ],

@@ -271,6 +271,7 @@ var hierarchy =
       [ "cursestone::network::protocol::UpdateBlockPacket", "classcursestone_1_1network_1_1protocol_1_1UpdateBlockPacket.html", null ],
       [ "cursestone::network::protocol::UseItemPacket", "classcursestone_1_1network_1_1protocol_1_1UseItemPacket.html", null ]
     ] ],
+    [ "cursestone::world::format::leveldb::DBEngine", "classcursestone_1_1world_1_1format_1_1leveldb_1_1DBEngine.html", null ],
     [ "cursestone::permission::DefaultPermissions", "classcursestone_1_1permission_1_1DefaultPermissions.html", null ],
     [ "cursestone::diagnostics::DiagEngine", "classcursestone_1_1diagnostics_1_1DiagEngine.html", null ],
     [ "cursestone::diagnostics::Diagnostic", "structcursestone_1_1diagnostics_1_1Diagnostic.html", null ],
@@ -418,6 +419,7 @@ var hierarchy =
       [ "vgen::VinesFeature", "classvgen_1_1VinesFeature.html", null ],
       [ "vgen::WaterlilyFeature", "classvgen_1_1WaterlilyFeature.html", null ]
     ] ],
+    [ "cursestone::world::format::leveldb::db::FileMeta", "structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1FileMeta.html", null ],
     [ "cursestone::world::generator::FlatLayer", "structcursestone_1_1world_1_1generator_1_1FlatLayer.html", null ],
     [ "cursestone::world::particle::FloatingTextParticle", "classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html", null ],
     [ "cursestone::world::World::FloatingTextSnapshot", "structcursestone_1_1world_1_1World_1_1FloatingTextSnapshot.html", null ],
@@ -454,6 +456,7 @@ var hierarchy =
     [ "cursestone::plugin::PluginManager::Info", "structcursestone_1_1plugin_1_1PluginManager_1_1Info.html", null ],
     [ "cursestone::wizard::Installer", "classcursestone_1_1wizard_1_1Installer.html", null ],
     [ "cursestone::wizard::InstallerLang", "classcursestone_1_1wizard_1_1InstallerLang.html", null ],
+    [ "cursestone::world::format::leveldb::InternalKeyLess", "structcursestone_1_1world_1_1format_1_1leveldb_1_1InternalKeyLess.html", null ],
     [ "cursestone::inventory::Inventory", "classcursestone_1_1inventory_1_1Inventory.html", [
       [ "cursestone::inventory::BaseInventory", "classcursestone_1_1inventory_1_1BaseInventory.html", [
         [ "cursestone::inventory::ChestInventory", "classcursestone_1_1inventory_1_1ChestInventory.html", null ],
@@ -592,12 +595,14 @@ var hierarchy =
     [ "vgen::LeafBlock", "classvgen_1_1LeafBlock.html", null ],
     [ "vgen::Level", "classvgen_1_1Level.html", null ],
     [ "vgen::LevelChunk", "classvgen_1_1LevelChunk.html", null ],
+    [ "cursestone::world::format::leveldb::LevelDBChunkCodec", "classcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBChunkCodec.html", null ],
     [ "cursestone::world::format::leveldb::LevelDBRegistrar", "structcursestone_1_1world_1_1format_1_1leveldb_1_1LevelDBRegistrar.html", null ],
     [ "cursestone::world::LightEngine", "classcursestone_1_1world_1_1LightEngine.html", null ],
     [ "vgen::LightLayer", "structvgen_1_1LightLayer.html", null ],
     [ "LightNode", "structLightNode.html", null ],
     [ "cursestone::block::LiquidFlow", "classcursestone_1_1block_1_1LiquidFlow.html", null ],
     [ "cursestone::world::format::anvil::LocationEntry", "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html", null ],
+    [ "cursestone::world::format::leveldb::db::LogReader", "classcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1LogReader.html", null ],
     [ "cursestone::loot::LootEntry", "structcursestone_1_1loot_1_1LootEntry.html", null ],
     [ "cursestone::loot::LootTable", "structcursestone_1_1loot_1_1LootTable.html", null ],
     [ "cursestone::utils::MainLogger", "classcursestone_1_1utils_1_1MainLogger.html", null ],
@@ -699,6 +704,7 @@ var hierarchy =
     [ "cursestone::network::protocol::PacketReader", "classcursestone_1_1network_1_1protocol_1_1PacketReader.html", null ],
     [ "cursestone::diagnostics::PacketRecord", "structcursestone_1_1diagnostics_1_1PacketRecord.html", null ],
     [ "cursestone::network::protocol::PacketWriter", "classcursestone_1_1network_1_1protocol_1_1PacketWriter.html", null ],
+    [ "cursestone::world::format::leveldb::db::ParsedBlock", "structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1ParsedBlock.html", null ],
     [ "cursestone::world::particle::Particle", "classcursestone_1_1world_1_1particle_1_1Particle.html", [
       [ "cursestone::world::particle::GenericParticle", "classcursestone_1_1world_1_1particle_1_1GenericParticle.html", [
         [ "cursestone::world::particle::BubbleParticle", "classcursestone_1_1world_1_1particle_1_1BubbleParticle.html", null ],
@@ -857,6 +863,8 @@ var hierarchy =
       [ "cursestone::world::generator::ImprovedNoise", "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html", null ],
       [ "cursestone::world::generator::PerlinNoise", "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html", null ]
     ] ],
+    [ "cursestone::world::format::leveldb::db::TableEntry", "structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1TableEntry.html", null ],
+    [ "cursestone::world::format::leveldb::db::TableReader", "classcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1TableReader.html", null ],
     [ "cursestone::nbt::Tag", "classcursestone_1_1nbt_1_1Tag.html", [
       [ "cursestone::nbt::ByteArrayTag", "classcursestone_1_1nbt_1_1ByteArrayTag.html", null ],
       [ "cursestone::nbt::ByteTag", "classcursestone_1_1nbt_1_1ByteTag.html", null ],
@@ -900,6 +908,7 @@ var hierarchy =
     [ "vgen::Vec2", "structvgen_1_1Vec2.html", null ],
     [ "cursestone::math::Vec3", "structcursestone_1_1math_1_1Vec3.html", null ],
     [ "vgen::Vec3", "structvgen_1_1Vec3.html", null ],
+    [ "cursestone::world::format::leveldb::db::VersionEdit", "structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1VersionEdit.html", null ],
     [ "cursestone::utils::VersionString", "classcursestone_1_1utils_1_1VersionString.html", null ],
     [ "vgen::VineBlock", "classvgen_1_1VineBlock.html", null ],
     [ "vgen::WeighedRandom", "classvgen_1_1WeighedRandom.html", null ],
