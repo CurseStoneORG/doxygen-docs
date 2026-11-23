@@ -19,6 +19,7 @@ var classcursestone_1_1entity_1_1ai_1_1MobBrain =
     [ "rng", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ae5c861a1d9dc0c47f90a1181f8627d99", null ],
     [ "setKind", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a8dbdc78a750197c044e49558257606fb", null ],
     [ "setLookIntent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#af3645994c8e561b148dd64502d213d86", null ],
+    [ "setLookIntent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ad8ae7c1e240f7c40302a63792841b6f6", null ],
     [ "setMoveIntent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ab4481f2aa10d53403c826844173b75e8", null ],
     [ "stepThink", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ac3fcbddfda4b01051cf24ae749befa6e", null ],
     [ "wantsJump", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a3c230a915a6173da4af39454437a1425", null ]

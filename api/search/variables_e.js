@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['removealias_2054',['removeAlias',['../structCsCommandApi.html#a331127cb256408caee19db7b74a5f810',1,'CsCommandApi']]],
-  ['removeentity_2055',['removeEntity',['../structCsWorldApi.html#a4cde88018e4fc5689df88f0a4a819833',1,'CsWorldApi']]],
-  ['removefloatingtext_2056',['removeFloatingText',['../structCsWorldApi.html#a7249412c78ac54ab090813a30353fc33',1,'CsWorldApi']]],
-  ['reply_2057',['reply',['../structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d',1,'CsCommandApi']]]
+  ['ondisable_2059',['onDisable',['../structCsPluginVTable.html#a2ac23624e05254ddb16d6fe97e4ae245',1,'CsPluginVTable']]],
+  ['onenable_2060',['onEnable',['../structCsPluginVTable.html#a74773233e9a1e19d8ec24250fa6ffe2e',1,'CsPluginVTable']]],
+  ['onload_2061',['onLoad',['../structCsPluginVTable.html#aa5042763771ff661354399b50e699e44',1,'CsPluginVTable']]],
+  ['onunload_2062',['onUnload',['../structCsPluginVTable.html#a768e79bf885258c4055e9eda2da45dfb',1,'CsPluginVTable']]]
 ];

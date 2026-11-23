@@ -1,6 +1,8 @@
 var structcursestone_1_1entity_1_1ai_1_1MobContext =
 [
     [ "eid", "structcursestone_1_1entity_1_1ai_1_1MobContext.html#a6d13f0120bdeabbfdf78a39a17763472", null ],
+    [ "headInWater", "structcursestone_1_1entity_1_1ai_1_1MobContext.html#a9e6de4b28c040775318936c26a728ae1", null ],
+    [ "inWater", "structcursestone_1_1entity_1_1ai_1_1MobContext.html#ad4fa279dfd88bdc74e4a49b5a57dd16b", null ],
     [ "kind", "structcursestone_1_1entity_1_1ai_1_1MobContext.html#a76e6cace5917bbcf95aab488e3ed6c5f", null ],
     [ "onGround", "structcursestone_1_1entity_1_1ai_1_1MobContext.html#a0e69f99d8b11b3cb6d73df045296b99d", null ],
     [ "playerDist", "structcursestone_1_1entity_1_1ai_1_1MobContext.html#a93dcaf789eacb2d1082f6ead8269318d", null ],

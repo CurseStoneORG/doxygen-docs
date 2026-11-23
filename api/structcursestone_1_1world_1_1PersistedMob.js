@@ -1,5 +1,6 @@
 var structcursestone_1_1world_1_1PersistedMob =
 [
+    [ "head_yaw", "structcursestone_1_1world_1_1PersistedMob.html#aeb0e053f1c4d314471d10e4ba0352476", null ],
     [ "health", "structcursestone_1_1world_1_1PersistedMob.html#a86b3cf5e8b5f31c8eb025d029bbe55c4", null ],
     [ "max_health", "structcursestone_1_1world_1_1PersistedMob.html#a059cae092f07207a885ef98f84bdbd5c", null ],
     [ "pitch", "structcursestone_1_1world_1_1PersistedMob.html#a6a4de47385c9d14e5135e72408e263b5", null ],

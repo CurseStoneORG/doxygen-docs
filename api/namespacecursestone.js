@@ -295,6 +295,8 @@ var namespacecursestone =
         [ "IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal" ],
         [ "MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", "structcursestone_1_1entity_1_1ai_1_1MobIntent" ],
         [ "MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", "classcursestone_1_1entity_1_1ai_1_1MobBrain" ],
+        [ "FacingStep", "structcursestone_1_1entity_1_1ai_1_1FacingStep.html", "structcursestone_1_1entity_1_1ai_1_1FacingStep" ],
+        [ "WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep.html", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep" ],
         [ "MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", "classcursestone_1_1entity_1_1ai_1_1MobAIManager" ],
         [ "GoalFlags", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310a", [
           [ "kNoFlag", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa0932618710423128b2436086319dc7bb", null ],
@@ -303,8 +305,20 @@ var namespacecursestone =
         ] ],
         [ "faceYaw", "MobAI_8cpp.html#a44ece5664a5a199c86308c32fbe06ac4", null ],
         [ "makeMobBrain", "MobAI_8cpp.html#a9a0d110fe97ccc320bd10f8b30e32711", null ],
+        [ "resolveFacing", "MobAI_8cpp.html#aa8a7a2e74e7ba9a0a0d1b47537f6e905", null ],
+        [ "waterVerticalStep", "MobAI_8cpp.html#a16a9c7b159d1877589e0f5d57b80840a", null ],
+        [ "kBodyFollowAngle", "MobAI_8h.html#af8fff187553c0e8f26cfbdf904c849a7", null ],
+        [ "kBodyFollowStep", "MobAI_8h.html#a1e857c3062807b2d6bdf1cc61e89b405", null ],
         [ "kKnockbackStop", "MobAI_8h.html#a7ce1b1e325edafdaab6adaa29fca78d6", null ],
-        [ "kWanderSpeed", "Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c", null ]
+        [ "kMobEyeHeight", "Goals_8h.html#aa8ed23cbf98764a91d09c79837518abb", null ],
+        [ "kPlayerEyeHeight", "Goals_8h.html#a20cdcdc35128d56ce5d44715037ec3b7", null ],
+        [ "kSwimUpBoost", "MobAI_8h.html#aff52aa3d0600a3921b807d2b753ada4b", null ],
+        [ "kWanderSpeed", "Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c", null ],
+        [ "kWaterBuoyancy", "MobAI_8h.html#afad3783f6fdb32d3fc15b4d79c72ec8c", null ],
+        [ "kWaterDrag", "MobAI_8h.html#aecb772108059a0929beb0dd8447d0602", null ],
+        [ "kWaterJumpOut", "MobAI_8h.html#a31c2af09470b92bf32a7ee4dcc9885ea", null ],
+        [ "kWaterMaxRise", "MobAI_8h.html#ab6d7a700d86b98367146aaa342e2643c", null ],
+        [ "kWaterMaxSink", "MobAI_8h.html#ad6a9665bfcf6c7d0ca8c5f586781663b", null ]
       ] ],
       [ "EntityTypeId", null, [
         [ "BAT", "EntityTypes_8h.html#ac827326c46989075182f421f4b9d4036", null ],
@@ -1873,6 +1887,7 @@ var namespacecursestone =
       [ "itemWithinPickupVolume", "World_8h.html#a8d69047032d095c6cfc45e36f4a10c6a", null ],
       [ "sendUpdateBlock", "World_8cpp.html#a2a7c4703a041fddf4633646ca7537d7d", null ],
       [ "kArrowClientFreezeDist", "World_8h.html#a920a524bc23bc911a4902e520e798b56", null ],
+      [ "kHeadYawFollowBody", "World_8h.html#aab0d73345738d0873e62c372deee8577", null ],
       [ "kItemHalfW", "World_8h.html#af4e88e25975b1bdabaf9c25301af0a13", null ],
       [ "kItemHeight", "World_8h.html#a271a80db83df226fc4d66a24a65ab98f", null ],
       [ "kLiquidWakeBudget", "World_8cpp.html#abd183b7a4fbd865f35dfacc3ca93f880", null ],

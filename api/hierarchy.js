@@ -379,6 +379,7 @@ var hierarchy =
     [ "cursestone::event::EventManager", "classcursestone_1_1event_1_1EventManager.html", null ],
     [ "cursestone::world::Explosion", "classcursestone_1_1world_1_1Explosion.html", null ],
     [ "vgen::Facing", "classvgen_1_1Facing.html", null ],
+    [ "cursestone::entity::ai::FacingStep", "structcursestone_1_1entity_1_1ai_1_1FacingStep.html", null ],
     [ "cursestone::world::FallingBlockEntity", "structcursestone_1_1world_1_1FallingBlockEntity.html", null ],
     [ "vgen::Feature", "classvgen_1_1Feature.html", [
       [ "vgen::BlockBlobFeature", "classvgen_1_1BlockBlobFeature.html", null ],
@@ -934,6 +935,7 @@ var hierarchy =
     [ "cursestone::world::format::leveldb::db::VersionEdit", "structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1VersionEdit.html", null ],
     [ "cursestone::utils::VersionString", "classcursestone_1_1utils_1_1VersionString.html", null ],
     [ "vgen::VineBlock", "classvgen_1_1VineBlock.html", null ],
+    [ "cursestone::entity::ai::WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep.html", null ],
     [ "vgen::WeighedRandom", "classvgen_1_1WeighedRandom.html", null ],
     [ "vgen::WeighedRandom::WeighedRandomItem", "classvgen_1_1WeighedRandom_1_1WeighedRandomItem.html", [
       [ "vgen::MobSpawnerData", "classvgen_1_1MobSpawnerData.html", null ]

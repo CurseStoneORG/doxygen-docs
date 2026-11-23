@@ -47,6 +47,7 @@ var classcursestone_1_1Player =
     [ "floatingTake", "classcursestone_1_1Player.html#a32070d52b8aa9a4cfe7f5e67a51c049c", null ],
     [ "flushChunkEncodes", "classcursestone_1_1Player.html#a931caf1d92bda4394a19d4acea59feeb", null ],
     [ "flushPendingPackets", "classcursestone_1_1Player.html#a45fd0a96856b22794b758f5287b338b3", null ],
+    [ "flushUnorderedNow", "classcursestone_1_1Player.html#a8d4b83c26f8f1124861b06a1598507d8", null ],
     [ "foodExhaustion", "classcursestone_1_1Player.html#a38a364fe999df5280c70fc5a3b227112", null ],
     [ "foodSaturation", "classcursestone_1_1Player.html#adfb606d7b156484e9045446dbe5754c0", null ],
     [ "forgetMob", "classcursestone_1_1Player.html#aad8bceaa1ad1b4318bf92e3f0a60060d", null ],

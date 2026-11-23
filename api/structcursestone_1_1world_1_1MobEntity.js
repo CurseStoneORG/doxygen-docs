@@ -4,6 +4,7 @@ var structcursestone_1_1world_1_1MobEntity =
     [ "cz", "structcursestone_1_1world_1_1MobEntity.html#a73e56cd3d626010f2bc2354e179140a0", null ],
     [ "death_tick", "structcursestone_1_1world_1_1MobEntity.html#a8fdeba0a3413318fadf1e0a21e591b76", null ],
     [ "eid", "structcursestone_1_1world_1_1MobEntity.html#a30269eb94af286061b4ad8a6f1baaa52", null ],
+    [ "head_yaw", "structcursestone_1_1world_1_1MobEntity.html#a6353bfa1de87cac1935b5a9f1dfb3ba0", null ],
     [ "health", "structcursestone_1_1world_1_1MobEntity.html#af5024476deb3fdf0dfd2b66f3f8829f1", null ],
     [ "kb_tick", "structcursestone_1_1world_1_1MobEntity.html#a93cbe63d151a848979d653fc88af4a4e", null ],
     [ "kbx", "structcursestone_1_1world_1_1MobEntity.html#abff2aa9ebeb9870419a652aa3a33e719", null ],

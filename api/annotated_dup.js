@@ -85,6 +85,8 @@ var annotated_dup =
           [ "IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal" ],
           [ "MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", "structcursestone_1_1entity_1_1ai_1_1MobIntent" ],
           [ "MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", "classcursestone_1_1entity_1_1ai_1_1MobBrain" ],
+          [ "FacingStep", "structcursestone_1_1entity_1_1ai_1_1FacingStep.html", "structcursestone_1_1entity_1_1ai_1_1FacingStep" ],
+          [ "WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep.html", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep" ],
           [ "MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", "classcursestone_1_1entity_1_1ai_1_1MobAIManager" ]
         ] ],
         [ "mobs", null, [

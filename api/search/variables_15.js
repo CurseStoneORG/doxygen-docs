@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['y_2098',['y',['../classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#abfe1dba2855937555b3df165751d0507',1,'cursestone::network::protocol::ChangeDimensionPacket']]],
-  ['yaw_2099',['yaw',['../structcursestone_1_1entity_1_1ai_1_1MobIntent.html#a000d6750a22020a1e1d9a85b826ada7d',1,'cursestone::entity::ai::MobIntent']]]
+  ['warn_2110',['warn',['../structCsLogApi.html#a4a07616768b3015e748840053deb6ac3',1,'CsLogApi']]],
+  ['whitelistenabled_2111',['whitelistEnabled',['../structCsServerApi.html#ad35c6cedc15128c0911150004fc744e0',1,'CsServerApi']]],
+  ['worldcount_2112',['worldCount',['../structCsServerApi.html#a81b072b17a064542a422c5805d5b7caf',1,'CsServerApi']]],
+  ['worldexists_2113',['worldExists',['../structCsServerApi.html#abe752d34cccc2cbbb6aa203b8fde5450',1,'CsServerApi']]],
+  ['worldnameat_2114',['worldNameAt',['../structCsServerApi.html#abc0c3f8999e7d0910834f17488a4f27e',1,'CsServerApi']]]
 ];

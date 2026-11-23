@@ -153,42 +153,47 @@ $(document).ready(function(){initNavTree('MobChunkCodec_8h_source.html',''); ini
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    int32_t type = 0; <span class="comment">// Protocol-84 network id (entity::EntityTypes).</span></div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">double</span> x = 0.0, y = 0.0, z = 0.0; <span class="comment">// Feet position.</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">float</span> yaw = 0.0f, pitch = 0.0f;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">float</span> health = 0.0f;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">float</span> max_health = 0.0f;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1MobChunkCodec.html">   72</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1MobChunkCodec.html">MobChunkCodec</a> {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">// Serializes one mob as a little-endian NBT compound blob.</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">static</span> std::vector&lt;uint8_t&gt; encodeBlob(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1PersistedMob.html">PersistedMob</a>&amp; mob);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// Head facing, persisted as the optional &quot;HeadYaw&quot; float tag. Rows</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="comment">// saved before the head-sync work (and the legacy mobs.dat lines)</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// decode with head yaw equal to body yaw — the rotation those rows</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="comment">// carried.</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">float</span> head_yaw = 0.0f;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">float</span> health = 0.0f;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">float</span> max_health = 0.0f;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// Parses one blob. Tolerant by contract: a corrupted row must never</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">// cost the chunk its other mobs. Returns false for malformed or</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// out-of-range rows (missing id/Pos, non-finite numbers, world</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="comment">// bounds, dead health values); rotations are wrapped into the wire</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">// ranges so hand-edited data cannot push a weird yaw through the</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// spawn packet.</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> decodeBlob(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len, <a class="code" href="structcursestone_1_1world_1_1PersistedMob.html">PersistedMob</a>* out);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Replaces the chunk&#39;s whole entity list with fresh blobs for</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// `mobs`. Returns true when the on-chunk bytes actually changed —</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// the caller marks the chunk dirty only then, so an unchanged mob</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// roster never triggers a pointless chunk rewrite.</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> writeChunkEntities(<a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                                   <span class="keyword">const</span> std::vector&lt;PersistedMob&gt;&amp; mobs);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// Reads every parsable mob row back out of a chunk&#39;s entity list.</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keyword">static</span> std::vector&lt;PersistedMob&gt; readChunkEntities(<span class="keyword">const</span> <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">// One-time importer for the legacy side file (&quot;&lt;world</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="comment">// dir&gt;/mobs.dat&quot; of builds that persisted mobs outside the region</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// files): same tolerant row-by-row contract the old reader had, so</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="comment">// a hand-corrupted line costs one mob instead of the migration.</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">static</span> std::vector&lt;PersistedMob&gt; loadLegacyMobsDat(<span class="keyword">const</span> std::string&amp; path);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;} <span class="comment">// namespace cursestone::world</span></div>
-<div class="ttc" id="aclasscursestone_1_1world_1_1MobChunkCodec_html"><div class="ttname"><a href="classcursestone_1_1world_1_1MobChunkCodec.html">cursestone::world::MobChunkCodec</a></div><div class="ttdef"><b>Definition:</b> MobChunkCodec.h:72</div></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classcursestone_1_1world_1_1MobChunkCodec.html">   77</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1world_1_1MobChunkCodec.html">MobChunkCodec</a> {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="comment">// Serializes one mob as a little-endian NBT compound blob.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">static</span> std::vector&lt;uint8_t&gt; encodeBlob(<span class="keyword">const</span> <a class="code" href="structcursestone_1_1world_1_1PersistedMob.html">PersistedMob</a>&amp; mob);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Parses one blob. Tolerant by contract: a corrupted row must never</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">// cost the chunk its other mobs. Returns false for malformed or</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="comment">// out-of-range rows (missing id/Pos, non-finite numbers, world</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// bounds, dead health values); rotations are wrapped into the wire</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="comment">// ranges so hand-edited data cannot push a weird yaw through the</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="comment">// spawn packet.</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> decodeBlob(<span class="keyword">const</span> uint8_t* data, <span class="keywordtype">size_t</span> len, <a class="code" href="structcursestone_1_1world_1_1PersistedMob.html">PersistedMob</a>* out);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="comment">// Replaces the chunk&#39;s whole entity list with fresh blobs for</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="comment">// `mobs`. Returns true when the on-chunk bytes actually changed —</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">// the caller marks the chunk dirty only then, so an unchanged mob</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="comment">// roster never triggers a pointless chunk rewrite.</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> writeChunkEntities(<a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk,</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                                   <span class="keyword">const</span> std::vector&lt;PersistedMob&gt;&amp; mobs);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="comment">// Reads every parsable mob row back out of a chunk&#39;s entity list.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">static</span> std::vector&lt;PersistedMob&gt; readChunkEntities(<span class="keyword">const</span> <a class="code" href="structmcp__chunk.html">mcp_chunk_t</a>* chunk);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="comment">// One-time importer for the legacy side file (&quot;&lt;world</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// dir&gt;/mobs.dat&quot; of builds that persisted mobs outside the region</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="comment">// files): same tolerant row-by-row contract the old reader had, so</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">// a hand-corrupted line costs one mob instead of the migration.</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">static</span> std::vector&lt;PersistedMob&gt; loadLegacyMobsDat(<span class="keyword">const</span> std::string&amp; path);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;} <span class="comment">// namespace cursestone::world</span></div>
+<div class="ttc" id="aclasscursestone_1_1world_1_1MobChunkCodec_html"><div class="ttname"><a href="classcursestone_1_1world_1_1MobChunkCodec.html">cursestone::world::MobChunkCodec</a></div><div class="ttdef"><b>Definition:</b> MobChunkCodec.h:77</div></div>
 <div class="ttc" id="astructcursestone_1_1world_1_1PersistedMob_html"><div class="ttname"><a href="structcursestone_1_1world_1_1PersistedMob.html">cursestone::world::PersistedMob</a></div><div class="ttdef"><b>Definition:</b> MobChunkCodec.h:64</div></div>
 <div class="ttc" id="astructmcp__chunk_html"><div class="ttname"><a href="structmcp__chunk.html">mcp_chunk</a></div><div class="ttdef"><b>Definition:</b> Chunk.h:51</div></div>
 </div><!-- fragment --></div><!-- contents -->
