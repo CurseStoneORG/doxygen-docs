@@ -1,5 +1,6 @@
 var classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal =
 [
+    [ "LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a3509aa97d3e55d5083ae727670fd25ad", null ],
     [ "canStart", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#abad2a40da348ba5ca572e39b995ea246", null ],
     [ "flags", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a9a9d6ff6c58a79d3e384cdabbacdeda8", null ],
     [ "priority", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a0ea9557b40ffba7d5fa6407329f72220", null ],

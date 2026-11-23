@@ -288,15 +288,16 @@ var namespacecursestone =
     ] ],
     [ "entity", null, [
       [ "ai", null, [
+        [ "water", "namespacecursestone_1_1entity_1_1ai_1_1water.html", "namespacecursestone_1_1entity_1_1ai_1_1water" ],
         [ "MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", "structcursestone_1_1entity_1_1ai_1_1MobContext" ],
         [ "Goal", "classcursestone_1_1entity_1_1ai_1_1Goal.html", "classcursestone_1_1entity_1_1ai_1_1Goal" ],
         [ "WanderGoal", "classcursestone_1_1entity_1_1ai_1_1WanderGoal.html", "classcursestone_1_1entity_1_1ai_1_1WanderGoal" ],
         [ "LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal" ],
         [ "IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal" ],
+        [ "PanicGoal", "classcursestone_1_1entity_1_1ai_1_1PanicGoal.html", "classcursestone_1_1entity_1_1ai_1_1PanicGoal" ],
         [ "MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", "structcursestone_1_1entity_1_1ai_1_1MobIntent" ],
         [ "MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", "classcursestone_1_1entity_1_1ai_1_1MobBrain" ],
         [ "FacingStep", "structcursestone_1_1entity_1_1ai_1_1FacingStep.html", "structcursestone_1_1entity_1_1ai_1_1FacingStep" ],
-        [ "WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep.html", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep" ],
         [ "MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", "classcursestone_1_1entity_1_1ai_1_1MobAIManager" ],
         [ "GoalFlags", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310a", [
           [ "kNoFlag", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa0932618710423128b2436086319dc7bb", null ],
@@ -304,21 +305,12 @@ var namespacecursestone =
           [ "kFlagLook", "Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aaa33192be96046c52b8f54b2a598d37db", null ]
         ] ],
         [ "faceYaw", "MobAI_8cpp.html#a44ece5664a5a199c86308c32fbe06ac4", null ],
-        [ "makeMobBrain", "MobAI_8cpp.html#a9a0d110fe97ccc320bd10f8b30e32711", null ],
+        [ "makeMobBrain", "MobAI_8cpp.html#aa55a9de28d6a965a2120ed64c5d39ec9", null ],
         [ "resolveFacing", "MobAI_8cpp.html#aa8a7a2e74e7ba9a0a0d1b47537f6e905", null ],
-        [ "waterVerticalStep", "MobAI_8cpp.html#a16a9c7b159d1877589e0f5d57b80840a", null ],
         [ "kBodyFollowAngle", "MobAI_8h.html#af8fff187553c0e8f26cfbdf904c849a7", null ],
         [ "kBodyFollowStep", "MobAI_8h.html#a1e857c3062807b2d6bdf1cc61e89b405", null ],
         [ "kKnockbackStop", "MobAI_8h.html#a7ce1b1e325edafdaab6adaa29fca78d6", null ],
-        [ "kMobEyeHeight", "Goals_8h.html#aa8ed23cbf98764a91d09c79837518abb", null ],
-        [ "kPlayerEyeHeight", "Goals_8h.html#a20cdcdc35128d56ce5d44715037ec3b7", null ],
-        [ "kSwimUpBoost", "MobAI_8h.html#aff52aa3d0600a3921b807d2b753ada4b", null ],
-        [ "kWanderSpeed", "Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c", null ],
-        [ "kWaterBuoyancy", "MobAI_8h.html#afad3783f6fdb32d3fc15b4d79c72ec8c", null ],
-        [ "kWaterDrag", "MobAI_8h.html#aecb772108059a0929beb0dd8447d0602", null ],
-        [ "kWaterJumpOut", "MobAI_8h.html#a31c2af09470b92bf32a7ee4dcc9885ea", null ],
-        [ "kWaterMaxRise", "MobAI_8h.html#ab6d7a700d86b98367146aaa342e2643c", null ],
-        [ "kWaterMaxSink", "MobAI_8h.html#ad6a9665bfcf6c7d0ca8c5f586781663b", null ]
+        [ "kPanicTicks", "Goals_8h.html#ab966786e120761bb26d65d93cf0351ae", null ]
       ] ],
       [ "EntityTypeId", null, [
         [ "BAT", "EntityTypes_8h.html#ac827326c46989075182f421f4b9d4036", null ],
@@ -406,6 +398,7 @@ var namespacecursestone =
       [ "EntityFallingSand", "classcursestone_1_1entity_1_1EntityFallingSand.html", "classcursestone_1_1entity_1_1EntityFallingSand" ],
       [ "EntityItemDrop", "classcursestone_1_1entity_1_1EntityItemDrop.html", "classcursestone_1_1entity_1_1EntityItemDrop" ],
       [ "EntityPrimedTNT", "classcursestone_1_1entity_1_1EntityPrimedTNT.html", "classcursestone_1_1entity_1_1EntityPrimedTNT" ],
+      [ "MobProfile", "structcursestone_1_1entity_1_1MobProfile.html", "structcursestone_1_1entity_1_1MobProfile" ],
       [ "Human", "classcursestone_1_1entity_1_1Human.html", "classcursestone_1_1entity_1_1Human" ],
       [ "Living", "classcursestone_1_1entity_1_1Living.html", "classcursestone_1_1entity_1_1Living" ],
       [ "Projectile", "classcursestone_1_1entity_1_1Projectile.html", "classcursestone_1_1entity_1_1Projectile" ],
@@ -442,6 +435,7 @@ var namespacecursestone =
       ] ],
       [ "isValidMobType", "EntityTypes_8cpp.html#aa159f262335d2a819818ee66aa1a0cfd", null ],
       [ "mobMaxHealth", "EntityTypes_8cpp.html#ac853a216f7be2107791fa0726322035e", null ],
+      [ "mobProfile", "EntityTypes_8cpp.html#a4535583e8a3e08e6c781c377a40e7e03", null ],
       [ "mobTypeFromName", "EntityTypes_8cpp.html#a929a53aa6e1741168adaeab5c98cbe3f", null ],
       [ "mobTypeKind", "EntityTypes_8cpp.html#ab3b92b56af494fe99181c1411c32d8a6", null ],
       [ "mobTypeName", "EntityTypes_8cpp.html#ad037de8019f46a5cf6b150f681607a4d", null ]

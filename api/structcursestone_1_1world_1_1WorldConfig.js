@@ -4,6 +4,7 @@ var structcursestone_1_1world_1_1WorldConfig =
     [ "dimension", "structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a", null ],
     [ "format", "structcursestone_1_1world_1_1WorldConfig.html#a6266fe7a819a9ddbda93a93c2a042e5c", null ],
     [ "generator", "structcursestone_1_1world_1_1WorldConfig.html#a746a342ab93b97d7d694bd01039bf25c", null ],
+    [ "max_mobs", "structcursestone_1_1world_1_1WorldConfig.html#ab746e5b48650530608e13ddb0422b033", null ],
     [ "name", "structcursestone_1_1world_1_1WorldConfig.html#aafccbd9ad72880ffc007f5c9882de6d0", null ],
     [ "seed", "structcursestone_1_1world_1_1WorldConfig.html#a7b4e7bcfb524bc00c43d5f11947fd1f4", null ],
     [ "spawn_x", "structcursestone_1_1world_1_1WorldConfig.html#a9fb0f516099b279cb7c6e02e088e729f", null ],

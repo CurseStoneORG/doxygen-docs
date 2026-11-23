@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"FileWriteTask_8h_source.html":[12,0,0,16,3],
 "FixedBiomeSource_8h_source.html":[12,0,0,21,1,2,0,7],
 "FlameParticle_8h_source.html":[12,0,0,21,3,7],
 "Flat_8h_source.html":[12,0,0,21,1,4],
@@ -46,14 +47,12 @@ var NAVTREEINDEX3 =
 "Ghast_8h_source.html":[12,0,0,3,1,7],
 "GiveCommand_8h_source.html":[12,0,0,1,0,2],
 "GlowStoneFeature_8h_source.html":[12,0,0,21,1,2,1,10],
-"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310a":[10,0,0,2,0,10],
-"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa0932618710423128b2436086319dc7bb":[10,0,0,2,0,10,0],
-"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa3fff5336c7c00e40d2bd48afdb3dc922":[10,0,0,2,0,10,1],
-"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aaa33192be96046c52b8f54b2a598d37db":[10,0,0,2,0,10,2],
+"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310a":[10,0,0,2,0,11],
+"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa0932618710423128b2436086319dc7bb":[10,0,0,2,0,11,0],
+"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aa3fff5336c7c00e40d2bd48afdb3dc922":[10,0,0,2,0,11,1],
+"Goal_8h.html#a55b655a5d2fe4c027c52bbfc827d310aaa33192be96046c52b8f54b2a598d37db":[10,0,0,2,0,11,2],
 "Goal_8h_source.html":[12,0,0,3,0,0],
-"Goals_8h.html#a20cdcdc35128d56ce5d44715037ec3b7":[10,0,0,2,0,19],
-"Goals_8h.html#a788e923b5b49d7c158da1b2fae1e809c":[10,0,0,2,0,21],
-"Goals_8h.html#aa8ed23cbf98764a91d09c79837518abb":[10,0,0,2,0,18],
+"Goals_8h.html#ab966786e120761bb26d65d93cf0351ae":[10,0,0,2,0,18],
 "Goals_8h_source.html":[12,0,0,3,0,1],
 "GroundBushFeature_8h_source.html":[12,0,0,21,1,2,1,11],
 "HandlerList_8h_source.html":[12,0,0,4,9],
@@ -249,5 +248,6 @@ var NAVTREEINDEX3 =
 "ItemConstants_8h.html#a2dfaf0c497e5ae31a3ff685c3c20d50e":[10,0,0,5,387],
 "ItemConstants_8h.html#a2e78f04caf0b3f349a2f1ef8f98aa40f":[10,0,0,5,146],
 "ItemConstants_8h.html#a2ebdc5df4b8e8870d1c00416bd250f4e":[10,0,0,5,278],
-"ItemConstants_8h.html#a2ec4365b3962760d19c9cbc461776a9c":[10,0,0,5,257]
+"ItemConstants_8h.html#a2ec4365b3962760d19c9cbc461776a9c":[10,0,0,5,257],
+"ItemConstants_8h.html#a2f2214f6f3d5ccf7950cecacf2b96b94":[10,0,0,5,518]
 };

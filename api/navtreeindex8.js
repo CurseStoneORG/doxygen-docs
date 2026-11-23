@@ -1,13 +1,5 @@
 var NAVTREEINDEX8 =
 {
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a3cfbf3022c9e476ea09ebc7ce6d81a8f":[10,0,2,235,1],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a459371d3e60dd97b20475c2d722bbba2":[10,0,2,235,0],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a54026e80aeaf32220fe0b10441eaca0d":[10,0,2,235,5],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a64ff06a3760f9cd7c19d86a751a74205":[10,0,2,235,3],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a8009a95d5e2f5c50a19ea062ce852359":[10,0,2,235,2],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15a88183b946cc5f0e8c96b2e66e1c74a7e":[10,0,2,235,7],
-"StructureFeatureType_8h.html#a098ff431d82397a719a9c69977371e15aabc63490c815af81276f930216c8d92b":[10,0,2,235,6],
-"StructureFeatureType_8h_source.html":[12,0,0,21,1,2,4,9],
 "StructureFeature_8h_source.html":[12,0,0,21,1,2,4,8],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04":[10,0,2,236],
 "StructurePieceType_8h.html#a0c806526a04a9ba3ed0e9e08c666cc04a03e76c8730c1c16aee28722b2718c5d7":[10,0,2,236,17],
@@ -249,5 +241,13 @@ var NAVTREEINDEX8 =
 "VgenSource_8h_source.html":[12,0,0,21,1,2,14],
 "VgenTags_8h_source.html":[12,0,0,21,1,2,15],
 "VgenWorld_8h_source.html":[12,0,0,21,1,2,16],
-"VillageFeature_8h_source.html":[12,0,0,21,1,2,4,13]
+"VillageFeature_8h_source.html":[12,0,0,21,1,2,4,13],
+"VillagePieces_8h_source.html":[12,0,0,21,1,2,4,14],
+"VillagerAngryParticle_8h_source.html":[12,0,0,21,3,33],
+"VillagerHappyParticle_8h_source.html":[12,0,0,21,3,34],
+"Villager_8h_source.html":[12,0,0,3,1,28],
+"VinesFeature_8h_source.html":[12,0,0,21,1,2,1,37],
+"VoronoiZoom_8h_source.html":[12,0,0,21,1,2,3,21],
+"WaterSplashParticle_8h_source.html":[12,0,0,21,3,35],
+"WaterWakeParticle_8h_source.html":[12,0,0,21,3,36]
 };

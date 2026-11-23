@@ -1,13 +1,22 @@
 var searchData=
 [
-  ['kaliascount_542',['kAliasCount',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#ab4a4d964d5399b50d48dfe4b2a87227d',1,'cursestone::entity::mobs::MobType']]],
-  ['kaliases_543',['kAliases',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#a8196db77e088d25820a90dda1955347d',1,'cursestone::entity::mobs::MobType']]],
-  ['kdefaultcursestoneyml_544',['kDefaultCursestoneYml',['../namespacecursestone_1_1utils.html#ad226ae8dd23b9117aaa285c7ad6acf50',1,'cursestone::utils']]],
-  ['kdefaultserverproperties_545',['kDefaultServerProperties',['../namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0',1,'cursestone::utils']]],
-  ['kickcommand_546',['KickCommand',['../classcursestone_1_1KickCommand.html',1,'cursestone']]],
-  ['kid_547',['kId',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#ac36b00674585a6786156879e9155e4a5',1,'cursestone::entity::mobs::MobType']]],
-  ['killcommand_548',['KillCommand',['../classcursestone_1_1KillCommand.html',1,'cursestone']]],
-  ['kind_549',['kind',['../structcursestone_1_1entity_1_1ai_1_1MobContext.html#a76e6cace5917bbcf95aab488e3ed6c5f',1,'cursestone::entity::ai::MobContext::kind()'],['../classcursestone_1_1plugin_1_1LuaPlugin.html#acaabb27e6d3e1b9b665d465eb2918642',1,'cursestone::plugin::LuaPlugin::kind()'],['../classcursestone_1_1plugin_1_1NativePlugin.html#a27cfd77e5b72e3364c1ca09cb2012b4f',1,'cursestone::plugin::NativePlugin::kind()'],['../classcursestone_1_1plugin_1_1PluginBase.html#aef7f3f29adf65bf7aab20fcb9c13f9eb',1,'cursestone::plugin::PluginBase::kind()']]],
-  ['kkind_550',['kKind',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#a3b016a68e37df8b17e2122ef33f041d2',1,'cursestone::entity::mobs::MobType']]],
-  ['kname_551',['kName',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#a1f1bb1b97da8b4c3542959c879500a01',1,'cursestone::entity::mobs::MobType']]]
+  ['kaliascount_551',['kAliasCount',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#ab4a4d964d5399b50d48dfe4b2a87227d',1,'cursestone::entity::mobs::MobType']]],
+  ['kaliases_552',['kAliases',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#a8196db77e088d25820a90dda1955347d',1,'cursestone::entity::mobs::MobType']]],
+  ['kdefaultcursestoneyml_553',['kDefaultCursestoneYml',['../namespacecursestone_1_1utils.html#ad226ae8dd23b9117aaa285c7ad6acf50',1,'cursestone::utils']]],
+  ['kdefaultserverproperties_554',['kDefaultServerProperties',['../namespacecursestone_1_1utils.html#a6e5678992d5c297c2f1e82b84e4cfbb0',1,'cursestone::utils']]],
+  ['kfulltierradius_555',['kFullTierRadius',['../classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#a3d9db8c875315275732d06cccbf8d342',1,'cursestone::entity::ai::MobAIManager']]],
+  ['kickcommand_556',['KickCommand',['../classcursestone_1_1KickCommand.html',1,'cursestone']]],
+  ['kid_557',['kId',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#ac36b00674585a6786156879e9155e4a5',1,'cursestone::entity::mobs::MobType']]],
+  ['killcommand_558',['KillCommand',['../classcursestone_1_1KillCommand.html',1,'cursestone']]],
+  ['kind_559',['kind',['../structcursestone_1_1entity_1_1ai_1_1MobContext.html#a76e6cace5917bbcf95aab488e3ed6c5f',1,'cursestone::entity::ai::MobContext::kind()'],['../classcursestone_1_1plugin_1_1LuaPlugin.html#acaabb27e6d3e1b9b665d465eb2918642',1,'cursestone::plugin::LuaPlugin::kind()'],['../classcursestone_1_1plugin_1_1NativePlugin.html#a27cfd77e5b72e3364c1ca09cb2012b4f',1,'cursestone::plugin::NativePlugin::kind()'],['../classcursestone_1_1plugin_1_1PluginBase.html#aef7f3f29adf65bf7aab20fcb9c13f9eb',1,'cursestone::plugin::PluginBase::kind()']]],
+  ['kkind_560',['kKind',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#a3b016a68e37df8b17e2122ef33f041d2',1,'cursestone::entity::mobs::MobType']]],
+  ['kname_561',['kName',['../structcursestone_1_1entity_1_1mobs_1_1MobType.html#a1f1bb1b97da8b4c3542959c879500a01',1,'cursestone::entity::mobs::MobType']]],
+  ['kreducedinterval_562',['kReducedInterval',['../classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#a49b3d89068fe7e36c037da6c257132d5',1,'cursestone::entity::ai::MobAIManager']]],
+  ['ksubmergeband_563',['kSubmergeBand',['../namespacecursestone_1_1entity_1_1ai_1_1water.html#a178efc39e849de8847eb0b7b2018cfd6',1,'cursestone::entity::ai::water']]],
+  ['ksubmergetarget_564',['kSubmergeTarget',['../namespacecursestone_1_1entity_1_1ai_1_1water.html#a1d2aff25d0d1a6b3495637882589d3fd',1,'cursestone::entity::ai::water']]],
+  ['kswimpaddle_565',['kSwimPaddle',['../namespacecursestone_1_1entity_1_1ai_1_1water.html#ac31e4d3c1daedcc8f147ebc147f1581d',1,'cursestone::entity::ai::water']]],
+  ['kwaterdrag_566',['kWaterDrag',['../namespacecursestone_1_1entity_1_1ai_1_1water.html#a2988395d33d5d9f3403da38d56b09ebc',1,'cursestone::entity::ai::water']]],
+  ['kwatergravity_567',['kWaterGravity',['../namespacecursestone_1_1entity_1_1ai_1_1water.html#afd21382245f05b86fdc3b42483f7eea0',1,'cursestone::entity::ai::water']]],
+  ['kwaterjumpout_568',['kWaterJumpOut',['../namespacecursestone_1_1entity_1_1ai_1_1water.html#af574d4cfb813fc2592ba6fe54e616212',1,'cursestone::entity::ai::water']]],
+  ['kwatermaxrise_569',['kWaterMaxRise',['../namespacecursestone_1_1entity_1_1ai_1_1water.html#abc78b8d6d07ea756816b998edfb58621',1,'cursestone::entity::ai::water']]]
 ];

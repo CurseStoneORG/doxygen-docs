@@ -78,15 +78,18 @@ var annotated_dup =
       ] ],
       [ "entity", null, [
         [ "ai", null, [
+          [ "water", "namespacecursestone_1_1entity_1_1ai_1_1water.html", [
+            [ "WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html", "structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep" ]
+          ] ],
           [ "MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", "structcursestone_1_1entity_1_1ai_1_1MobContext" ],
           [ "Goal", "classcursestone_1_1entity_1_1ai_1_1Goal.html", "classcursestone_1_1entity_1_1ai_1_1Goal" ],
           [ "WanderGoal", "classcursestone_1_1entity_1_1ai_1_1WanderGoal.html", "classcursestone_1_1entity_1_1ai_1_1WanderGoal" ],
           [ "LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal" ],
           [ "IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal" ],
+          [ "PanicGoal", "classcursestone_1_1entity_1_1ai_1_1PanicGoal.html", "classcursestone_1_1entity_1_1ai_1_1PanicGoal" ],
           [ "MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", "structcursestone_1_1entity_1_1ai_1_1MobIntent" ],
           [ "MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", "classcursestone_1_1entity_1_1ai_1_1MobBrain" ],
           [ "FacingStep", "structcursestone_1_1entity_1_1ai_1_1FacingStep.html", "structcursestone_1_1entity_1_1ai_1_1FacingStep" ],
-          [ "WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep.html", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep" ],
           [ "MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", "classcursestone_1_1entity_1_1ai_1_1MobAIManager" ]
         ] ],
         [ "mobs", null, [
@@ -132,6 +135,7 @@ var annotated_dup =
         [ "EntityFallingSand", "classcursestone_1_1entity_1_1EntityFallingSand.html", "classcursestone_1_1entity_1_1EntityFallingSand" ],
         [ "EntityItemDrop", "classcursestone_1_1entity_1_1EntityItemDrop.html", "classcursestone_1_1entity_1_1EntityItemDrop" ],
         [ "EntityPrimedTNT", "classcursestone_1_1entity_1_1EntityPrimedTNT.html", "classcursestone_1_1entity_1_1EntityPrimedTNT" ],
+        [ "MobProfile", "structcursestone_1_1entity_1_1MobProfile.html", "structcursestone_1_1entity_1_1MobProfile" ],
         [ "Human", "classcursestone_1_1entity_1_1Human.html", "classcursestone_1_1entity_1_1Human" ],
         [ "Living", "classcursestone_1_1entity_1_1Living.html", "classcursestone_1_1entity_1_1Living" ],
         [ "Projectile", "classcursestone_1_1entity_1_1Projectile.html", "classcursestone_1_1entity_1_1Projectile" ]

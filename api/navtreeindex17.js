@@ -1,5 +1,14 @@
 var NAVTREEINDEX17 =
 {
+"classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#acd3ead414a1df9b1e856e30cced01a39":[11,0,0,9,0,23,3],
+"classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#ad627ebf75183f8a128702eb76ee59457":[11,0,0,9,0,23,0],
+"classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#affae3ccfac5d52e491cb4aaaf79d0931":[11,0,0,9,0,23,2],
+"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html":[11,0,0,9,0,24],
+"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#a148e18bed44e47f81e1118d499741fee":[11,0,0,9,0,24,4],
+"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#a77d6b47fe445de01963e92243bc36ef1":[11,0,0,9,0,24,1],
+"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#a9a86dd8ebbfe3f5f05efa51919e22bb9":[11,0,0,9,0,24,3],
+"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#aa7336c561b570251cf5042604ffd82b9":[11,0,0,9,0,24,6],
+"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#ab8123ebdd138ade3dcda254ffc057bc5":[11,0,0,9,0,24,2],
 "classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#aec99ba06a3229a258a1a43d05ad697fd":[11,0,0,9,0,24,0],
 "classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#aef7710cb2f2c64186ede212579d2b198":[11,0,0,9,0,24,5],
 "classcursestone_1_1network_1_1protocol_1_1FullChunkDataPacket.html":[11,0,0,9,0,25],
@@ -240,14 +249,5 @@ var NAVTREEINDEX17 =
 "classcursestone_1_1network_1_1protocol_1_1SetHealthPacket.html#ac53075e96d149b2bf6aa1b18011e26a8":[11,0,0,9,0,47,0],
 "classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html":[11,0,0,9,0,48],
 "classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html#a0d17f7448fc0ab4988eaa4b25042ce9e":[11,0,0,9,0,48,0],
-"classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html#aa5e5f4c1095a96e5f4d62984e937c10b":[11,0,0,9,0,48,2],
-"classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html#abb71c6e8d2042a43d30ff1868a95f2cd":[11,0,0,9,0,48,1],
-"classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html#af62f3dce315d97e3df6b15cab749b139":[11,0,0,9,0,48,3],
-"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html":[11,0,0,9,0,49],
-"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a00b3fe7826397bb4cc08847df2cdeca9":[11,0,0,9,0,49,5],
-"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a3a9f62c27facafb78905f8f94c16013e":[11,0,0,9,0,49,3],
-"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a907739c8b51b538f0694de56d756fdd4":[11,0,0,9,0,49,1],
-"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#ad4775a77bec098b785414f2dbb18d9eb":[11,0,0,9,0,49,4],
-"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#aeb34b9fead75ff7055ee76c2501508c1":[11,0,0,9,0,49,2],
-"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#af71bc13b35b9c0b790a61793d0cfb12e":[11,0,0,9,0,49,0]
+"classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html#aa5e5f4c1095a96e5f4d62984e937c10b":[11,0,0,9,0,48,2]
 };

@@ -1,5 +1,16 @@
 var NAVTREEINDEX21 =
 {
+"classcursestone_1_1world_1_1generator_1_1EmptyGenerator.html#a72d66c68decadb0c1b5db6a87b1e0292":[11,0,0,18,1,1,1],
+"classcursestone_1_1world_1_1generator_1_1EmptyGenerator.html#a9554af9c315792161de39a730b400325":[11,0,0,18,1,1,2],
+"classcursestone_1_1world_1_1generator_1_1Flat.html":[11,0,0,18,1,3],
+"classcursestone_1_1world_1_1generator_1_1Flat.html#a392d581e06cd76227e1c9d4e7fe6fc99":[11,0,0,18,1,3,2],
+"classcursestone_1_1world_1_1generator_1_1Flat.html#a5806d917b644516ddfd3dd733c547593":[11,0,0,18,1,3,1],
+"classcursestone_1_1world_1_1generator_1_1Flat.html#a62595360a5276563269340cecb95f3ce":[11,0,0,18,1,3,4],
+"classcursestone_1_1world_1_1generator_1_1Flat.html#ac68b0ea55af76dcaee97eb8b2348f91b":[11,0,0,18,1,3,3],
+"classcursestone_1_1world_1_1generator_1_1Flat.html#aefd1601555b336056ec221c66bad2349":[11,0,0,18,1,3,0],
+"classcursestone_1_1world_1_1generator_1_1GenerationTask.html":[11,0,0,18,1,4],
+"classcursestone_1_1world_1_1generator_1_1GenerationTask.html#a2dbb251f9ea1f9e4eff9ed7672efda73":[11,0,0,18,1,4,0],
+"classcursestone_1_1world_1_1generator_1_1GenerationTask.html#a40e16548cafde53763a17fc4e757e9aa":[11,0,0,18,1,4,2],
 "classcursestone_1_1world_1_1generator_1_1GenerationTask.html#ab3188f43ae17e871e8d22f9a4e4c6fcc":[11,0,0,18,1,4,4],
 "classcursestone_1_1world_1_1generator_1_1GenerationTask.html#ac222e12d40b08e8cde6ae3027d3fd356":[11,0,0,18,1,4,1],
 "classcursestone_1_1world_1_1generator_1_1GenerationTask.html#ac22fd4710740fb4e8c080838205379a0":[11,0,0,18,1,4,3],
@@ -238,16 +249,5 @@ var NAVTREEINDEX21 =
 "classvgen_1_1AddEdgeLayer.html#a87341600608605026bb1e89d0de1de41":[11,0,2,89,2],
 "classvgen_1_1AddEdgeLayer.html#aa8f1289f9ee14d78dc8a689d29f8ee23":[11,0,2,89,5],
 "classvgen_1_1AddEdgeLayer.html#aee5f5e9e2ae3fab1a515ffe40d87df9e":[11,0,2,89,1],
-"classvgen_1_1AddEdgeLayer.html#afdd2f9d8b9f350b7757746bbd25f351a":[11,0,2,89,0],
-"classvgen_1_1AddEdgeLayer.html#afdd2f9d8b9f350b7757746bbd25f351aa84ad8e87d75041a630373db069fbcfff":[11,0,2,89,0,1],
-"classvgen_1_1AddEdgeLayer.html#afdd2f9d8b9f350b7757746bbd25f351aaa72e4a34f10af98a9814d865e717399f":[11,0,2,89,0,2],
-"classvgen_1_1AddEdgeLayer.html#afdd2f9d8b9f350b7757746bbd25f351aac7c418f7bb6f3d36e5115e31ceda8a87":[11,0,2,89,0,0],
-"classvgen_1_1AddIslandLayer.html":[11,0,2,90],
-"classvgen_1_1AddIslandLayer.html#ab2217c94ac3e78e82e4eef6a9d42dc90":[11,0,2,90,1],
-"classvgen_1_1AddIslandLayer.html#ab3521ce3826b3eb4e6b125698a67159d":[11,0,2,90,0],
-"classvgen_1_1AddMushroomIslandLayer.html":[11,0,2,91],
-"classvgen_1_1AddMushroomIslandLayer.html#a7803995b68aff45aee1b68f7241ccf97":[11,0,2,91,0],
-"classvgen_1_1AddMushroomIslandLayer.html#a930ef39e450be59df3a76ceed6fdb518":[11,0,2,91,1],
-"classvgen_1_1AddSnowLayer.html":[11,0,2,92],
-"classvgen_1_1AddSnowLayer.html#a352f8eebaafa507c2fa47e88006c3155":[11,0,2,92,1]
+"classvgen_1_1AddEdgeLayer.html#afdd2f9d8b9f350b7757746bbd25f351a":[11,0,2,89,0]
 };

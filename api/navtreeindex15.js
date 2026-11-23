@@ -1,5 +1,14 @@
 var NAVTREEINDEX15 =
 {
+"classcursestone_1_1item_1_1ItemIronChestplate.html#a4a2a40e179b77272fe28dcda036405de":[11,0,0,5,52,0],
+"classcursestone_1_1item_1_1ItemIronChestplate.html#ab3eb1166d71d38145d3b43be2c47ebc0":[11,0,0,5,52,1],
+"classcursestone_1_1item_1_1ItemIronHelmet.html":[11,0,0,5,53],
+"classcursestone_1_1item_1_1ItemIronHelmet.html#a4d0409bcd9fc73d6c7d2b8b60483542d":[11,0,0,5,53,1],
+"classcursestone_1_1item_1_1ItemIronHelmet.html#ae5bbb54e9071eec9d372e31e68401cd0":[11,0,0,5,53,0],
+"classcursestone_1_1item_1_1ItemIronIngot.html":[11,0,0,5,54],
+"classcursestone_1_1item_1_1ItemIronIngot.html#a7c947fc4ab9dc9ec2fe3190bfd29ec8c":[11,0,0,5,54,0],
+"classcursestone_1_1item_1_1ItemIronIngot.html#a80084edd24ab236827e32a4c7fb0fd9e":[11,0,0,5,54,1],
+"classcursestone_1_1item_1_1ItemIronLeggings.html":[11,0,0,5,55],
 "classcursestone_1_1item_1_1ItemIronLeggings.html#a3fea92578a4ec9fe2f8126824f2a4296":[11,0,0,5,55,1],
 "classcursestone_1_1item_1_1ItemIronLeggings.html#af27cefce71060f6df2de704cc00bc0cf":[11,0,0,5,55,0],
 "classcursestone_1_1item_1_1ItemLeather.html":[11,0,0,5,56],
@@ -240,14 +249,5 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1network_1_1AdvancedSourceInterface.html#a3924b2a2e71c0330accc0f5c2714d037":[11,0,0,9,1,1],
 "classcursestone_1_1network_1_1CompressBatchedTask.html":[11,0,0,9,2],
 "classcursestone_1_1network_1_1CompressBatchedTask.html#a2494114a3801ae49b313b9163093349a":[11,0,0,9,2,2],
-"classcursestone_1_1network_1_1CompressBatchedTask.html#a63a0bc7af4e18c209be3f9e11c722c4d":[11,0,0,9,2,1],
-"classcursestone_1_1network_1_1CompressBatchedTask.html#a7171613819bac810207ab33dcc3a081b":[11,0,0,9,2,3],
-"classcursestone_1_1network_1_1CompressBatchedTask.html#ab5831a6ee2730ca324598a20911cca17":[11,0,0,9,2,0],
-"classcursestone_1_1network_1_1Network.html":[11,0,0,9,3],
-"classcursestone_1_1network_1_1Network.html#a34f7a0945e3f35e22347bd9b0c9c48bf":[11,0,0,9,3,2],
-"classcursestone_1_1network_1_1Network.html#a461d12b03eaf70f519aff1f2a6d1b001":[11,0,0,9,3,8],
-"classcursestone_1_1network_1_1Network.html#a57e372631515d3df2a2394e61d626a38":[11,0,0,9,3,1],
-"classcursestone_1_1network_1_1Network.html#a603f5dbe176da67dc194938320a81457":[11,0,0,9,3,6],
-"classcursestone_1_1network_1_1Network.html#a616510f45d76dd0902ece1317ad09f26":[11,0,0,9,3,13],
-"classcursestone_1_1network_1_1Network.html#a775fd7fc2ac0c1f18509856ffd076b87":[11,0,0,9,3,14]
+"classcursestone_1_1network_1_1CompressBatchedTask.html#a63a0bc7af4e18c209be3f9e11c722c4d":[11,0,0,9,2,1]
 };

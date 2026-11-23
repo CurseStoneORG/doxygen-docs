@@ -6,8 +6,11 @@ var classcursestone_1_1entity_1_1ai_1_1MobBrain =
     [ "clearIntent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a6a8cc6dfe0f3638a91202829f74e01c5", null ],
     [ "decayKnockback", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a5d4074d8f9db5b006e892ba89b7f135c", null ],
     [ "dynamic", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d", null ],
+    [ "goals", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a466b8da03c51cb5c115616e36739524e", null ],
     [ "hasKnockback", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#af30d74835594645b007a12093d1f6dfe", null ],
     [ "intent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ad0d0eee7713b88fcc5a449d067ac0012", null ],
+    [ "inWater", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a5c26bf5425e15e882359f16b1f325a3a", null ],
+    [ "inWater", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afd059b4da87c93ddc9cb90a3a03639c2", null ],
     [ "jumpCooldown", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a39d27ca6cd2b70e153eb13e0b3fe3272", null ],
     [ "kind", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#adafeaa6595528fde6fc8c328f0c694bd", null ],
     [ "motionX", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ae48322d1f72c9085c4ed783da375e68c", null ],
@@ -21,6 +24,9 @@ var classcursestone_1_1entity_1_1ai_1_1MobBrain =
     [ "setLookIntent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#af3645994c8e561b148dd64502d213d86", null ],
     [ "setLookIntent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ad8ae7c1e240f7c40302a63792841b6f6", null ],
     [ "setMoveIntent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ab4481f2aa10d53403c826844173b75e8", null ],
+    [ "splashCooldown", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdae1e4faca5b4762b8d0840c4c4cdc5", null ],
+    [ "sprintFlag", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a899a247458514ae959f0f1cf0a54e51f", null ],
+    [ "sprintFlag", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a188315f3d0cd3bfe2efaecd657970468", null ],
     [ "stepThink", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ac3fcbddfda4b01051cf24ae749befa6e", null ],
     [ "wantsJump", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a3c230a915a6173da4af39454437a1425", null ]
 ];

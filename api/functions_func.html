@@ -121,6 +121,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ad73c6ac5623a78027e82b8dc48d3d98b">cursestone::entity::ai::Goal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a5ef9c26c5b697a9639b738c606a89729">cursestone::entity::ai::IdleLookGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#abad2a40da348ba5ca572e39b995ea246">cursestone::entity::ai::LookAtPlayerGoal</a>
+, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#a266e9aa12ad231555387404a9970531e">cursestone::entity::ai::PanicGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ab17ddd14bca99e37a3dfe965e80f2d04">cursestone::entity::ai::WanderGoal</a>
 </li>
 <li>checkLimits()
@@ -194,6 +195,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ac9a81216a3604c920efeee1b45d8aad5">cursestone::entity::ai::Goal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a31c2eb4d47270c55148130e80fe53e76">cursestone::entity::ai::IdleLookGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a9a9d6ff6c58a79d3e384cdabbacdeda8">cursestone::entity::ai::LookAtPlayerGoal</a>
+, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#aae5fc73007a50435a3ba008ad751f5c3">cursestone::entity::ai::PanicGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#a4fef3359b20e0055f4bc5977c92c0916">cursestone::entity::ai::WanderGoal</a>
 </li>
 <li>FloatingTextParticle()
@@ -201,6 +203,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>followTarget()
 : <a class="el" href="classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a3857ee6b11443ed8e64a84589bf728e3">cursestone::world::particle::FloatingTextParticle</a>
+</li>
+<li>forget()
+: <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#ae6b880738fe686b463a2d60d395b8508">cursestone::entity::ai::MobAIManager</a>
 </li>
 </ul>
 
@@ -217,6 +222,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 </li>
 <li>getWorldShared()
 : <a class="el" href="classcursestone_1_1Server.html#a06573a1b487acbd04e39356c9847278c">cursestone::Server</a>
+</li>
+<li>goals()
+: <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a466b8da03c51cb5c115616e36739524e">cursestone::entity::ai::MobBrain</a>
 </li>
 </ul>
 
@@ -276,6 +284,9 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>loadWorld()
 : <a class="el" href="classcursestone_1_1Server.html#a12d418e168c8b49f755bb7cfef700674">cursestone::Server</a>
 </li>
+<li>LookAtPlayerGoal()
+: <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a3509aa97d3e55d5083ae727670fd25ad">cursestone::entity::ai::LookAtPlayerGoal</a>
+</li>
 </ul>
 
 
@@ -306,6 +317,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a645bc150e6c0ae3e9392aa3f6fa1140b">cursestone::entity::ai::Goal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a13c02de1b44f167dba490a264d003211">cursestone::entity::ai::IdleLookGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a0ea9557b40ffba7d5fa6407329f72220">cursestone::entity::ai::LookAtPlayerGoal</a>
+, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#ab835a7ea66050ec9f0c7e7199381029d">cursestone::entity::ai::PanicGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ab83dedeebbdc2c7ef5184f2cba47cb8f">cursestone::entity::ai::WanderGoal</a>
 </li>
 </ul>
@@ -362,6 +374,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 : <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a5b747726de2dde7d06409fc696f7d06e">cursestone::entity::ai::Goal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#acdb4449b9cce211e1d51f96b33f883ff">cursestone::entity::ai::IdleLookGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#add131a435d1a9b1f876059094eba0d78">cursestone::entity::ai::LookAtPlayerGoal</a>
+, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#aaaee1140e3cfc12203e1bbc78698f21e">cursestone::entity::ai::PanicGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#a1b853bc50901feafa1b34a53ef34294f">cursestone::entity::ai::WanderGoal</a>
 </li>
 <li>shouldGc()
@@ -385,6 +398,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 <li>stop()
 : <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ad2eb9c0bd8d64e71dc2a1b683b9906a0">cursestone::entity::ai::Goal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a6a09b3f5ed25b4432d8e85c5ee9153bc">cursestone::entity::ai::IdleLookGoal</a>
+, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#abf9a153d177e6065825f27c0c0c2350e">cursestone::entity::ai::PanicGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ad2fd9d63867f0e68d7959d0cc9fd70ba">cursestone::entity::ai::WanderGoal</a>
 </li>
 <li>syncViewers()
@@ -402,6 +416,7 @@ $(document).ready(function(){initNavTree('functions_func.html',''); initResizabl
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#abc363670c19678ea743b82152cae5009">cursestone::entity::ai::IdleLookGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#af3b8dd39548b2ee396f001ad0482e3d2">cursestone::entity::ai::LookAtPlayerGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#aff08ef3e219e3d0a32e2181a32846c76">cursestone::entity::ai::MobAIManager</a>
+, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#a4dde33d468dd894a4ddac62ed58f1886">cursestone::entity::ai::PanicGoal</a>
 , <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ae8c2a516e3619ba80d873ad5cda4f7b7">cursestone::entity::ai::WanderGoal</a>
 , <a class="el" href="classcursestone_1_1Server.html#a6bb3120c95644d6bbf29a583f6e433a1">cursestone::Server</a>
 </li>

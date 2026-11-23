@@ -1,12 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"classcursestone_1_1block_1_1BlockAir.html#a99f948ec7b99100d4fb0d2b4c5d3325c":[11,0,0,0,1,2],
-"classcursestone_1_1block_1_1BlockAir.html#aa9f06ea4ad66a4478ee0c4a80e464829":[11,0,0,0,1,5],
-"classcursestone_1_1block_1_1BlockAir.html#aac72f803dede93c67be8a72fcbefc054":[11,0,0,0,1,6],
-"classcursestone_1_1block_1_1BlockAir.html#ab238c5e13be207c2628e43f889d9196d":[11,0,0,0,1,1],
-"classcursestone_1_1block_1_1BlockAir.html#ab4ec982a6a2df0741026a14b72f35810":[11,0,0,0,1,7],
-"classcursestone_1_1block_1_1BlockAnvil.html":[11,0,0,0,2],
-"classcursestone_1_1block_1_1BlockAnvil.html#a1e480d42e182934a3969364d3bd4377c":[11,0,0,0,2,1],
 "classcursestone_1_1block_1_1BlockAnvil.html#a740c9a17ae91eb7f75b1565e6db57c8d":[11,0,0,0,2,0],
 "classcursestone_1_1block_1_1BlockBedrock.html":[11,0,0,0,3],
 "classcursestone_1_1block_1_1BlockBedrock.html#a6f298b8494a852fcbb30fb1fd21bfc36":[11,0,0,0,3,3],
@@ -249,5 +242,12 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1entity_1_1Effect.html#a037e7c903dfa2106b0f93710993bce47":[11,0,0,2,3,1],
 "classcursestone_1_1entity_1_1Effect.html#a17f0df9e3b2e7340fc8770e5feedd435":[11,0,0,2,3,0],
 "classcursestone_1_1entity_1_1Effect.html#a8b33031739a57cf16384fa2eb8a50e03":[11,0,0,2,3,5],
-"classcursestone_1_1entity_1_1Effect.html#aa805507c3b2469562cee325ed2c80ae7":[11,0,0,2,3,3]
+"classcursestone_1_1entity_1_1Effect.html#aa805507c3b2469562cee325ed2c80ae7":[11,0,0,2,3,3],
+"classcursestone_1_1entity_1_1Effect.html#aaf3159eb6f2cb0bf23c0b8590f6127c0":[11,0,0,2,3,2],
+"classcursestone_1_1entity_1_1Effect.html#ac1e967498df370cec23c570da849afe0":[11,0,0,2,3,7],
+"classcursestone_1_1entity_1_1Effect.html#aebe9cc23b5a0fb1af3de6baa63144732":[11,0,0,2,3,4],
+"classcursestone_1_1entity_1_1Effect.html#afa91efaa9ba3fe2e53ba2301409c105f":[11,0,0,2,3,6],
+"classcursestone_1_1entity_1_1Entity.html":[11,0,0,2,4],
+"classcursestone_1_1entity_1_1Entity.html#a072fdbf20970a2472e83a6efb5f42088":[11,0,0,2,4,19],
+"classcursestone_1_1entity_1_1Entity.html#a1296458641ddffa370ba21757b0156be":[11,0,0,2,4,26]
 };

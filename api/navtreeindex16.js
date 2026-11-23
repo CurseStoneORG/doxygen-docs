@@ -1,5 +1,14 @@
 var NAVTREEINDEX16 =
 {
+"classcursestone_1_1network_1_1CompressBatchedTask.html#a7171613819bac810207ab33dcc3a081b":[11,0,0,9,2,3],
+"classcursestone_1_1network_1_1CompressBatchedTask.html#ab5831a6ee2730ca324598a20911cca17":[11,0,0,9,2,0],
+"classcursestone_1_1network_1_1Network.html":[11,0,0,9,3],
+"classcursestone_1_1network_1_1Network.html#a34f7a0945e3f35e22347bd9b0c9c48bf":[11,0,0,9,3,2],
+"classcursestone_1_1network_1_1Network.html#a461d12b03eaf70f519aff1f2a6d1b001":[11,0,0,9,3,8],
+"classcursestone_1_1network_1_1Network.html#a57e372631515d3df2a2394e61d626a38":[11,0,0,9,3,1],
+"classcursestone_1_1network_1_1Network.html#a603f5dbe176da67dc194938320a81457":[11,0,0,9,3,6],
+"classcursestone_1_1network_1_1Network.html#a616510f45d76dd0902ece1317ad09f26":[11,0,0,9,3,13],
+"classcursestone_1_1network_1_1Network.html#a775fd7fc2ac0c1f18509856ffd076b87":[11,0,0,9,3,14],
 "classcursestone_1_1network_1_1Network.html#a8e024e37275934a4289371e6880f0673":[11,0,0,9,3,11],
 "classcursestone_1_1network_1_1Network.html#a931ed8332577692d2160f758b7c4b21b":[11,0,0,9,3,16],
 "classcursestone_1_1network_1_1Network.html#a9d7a64c0f04b365a4b5d30d435ac5b49":[11,0,0,9,3,15],
@@ -240,14 +249,5 @@ var NAVTREEINDEX16 =
 "classcursestone_1_1network_1_1protocol_1_1DropItemPacket.html#aeddbbdc683be63f8b00829b603772095":[11,0,0,9,0,22,1],
 "classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html":[11,0,0,9,0,23],
 "classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#a2d5c0f274c28f0637b5b8dbb6d591aba":[11,0,0,9,0,23,4],
-"classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#a73298d242130e79ad0ee74710fceb7eb":[11,0,0,9,0,23,1],
-"classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#acd3ead414a1df9b1e856e30cced01a39":[11,0,0,9,0,23,3],
-"classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#ad627ebf75183f8a128702eb76ee59457":[11,0,0,9,0,23,0],
-"classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#affae3ccfac5d52e491cb4aaaf79d0931":[11,0,0,9,0,23,2],
-"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html":[11,0,0,9,0,24],
-"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#a148e18bed44e47f81e1118d499741fee":[11,0,0,9,0,24,4],
-"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#a77d6b47fe445de01963e92243bc36ef1":[11,0,0,9,0,24,1],
-"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#a9a86dd8ebbfe3f5f05efa51919e22bb9":[11,0,0,9,0,24,3],
-"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#aa7336c561b570251cf5042604ffd82b9":[11,0,0,9,0,24,6],
-"classcursestone_1_1network_1_1protocol_1_1ExplodePacket.html#ab8123ebdd138ade3dcda254ffc057bc5":[11,0,0,9,0,24,2]
+"classcursestone_1_1network_1_1protocol_1_1EntityEventPacket.html#a73298d242130e79ad0ee74710fceb7eb":[11,0,0,9,0,23,1]
 };

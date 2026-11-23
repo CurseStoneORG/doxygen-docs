@@ -85,6 +85,7 @@ $(document).ready(function(){initNavTree('classcursestone_1_1entity_1_1ai_1_1Mob
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classcursestone_1_1entity_1_1ai_1_1MobAIManager-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::entity::ai::MobAIManager Class Reference</div>  </div>
@@ -97,14 +98,28 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a74b3a86d07b13d497a3ff6a997d7398b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff08ef3e219e3d0a32e2181a32846c76"><td class="memItemLeft" align="right" valign="top"><a id="aff08ef3e219e3d0a32e2181a32846c76"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#aff08ef3e219e3d0a32e2181a32846c76">tick</a> (uint64_t current_tick)</td></tr>
-<tr class="memdesc:aff08ef3e219e3d0a32e2181a32846c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">One mob pass: player snapshot, brain GC, then the budgeted round-robin over the world's mobs. <br /></td></tr>
+<tr class="memdesc:aff08ef3e219e3d0a32e2181a32846c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">One mob pass: player snapshot, active-chunk collection, then the budgeted chunk-cursor pass over the active mobs. <br /></td></tr>
 <tr class="separator:aff08ef3e219e3d0a32e2181a32846c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6b880738fe686b463a2d60d395b8508"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#ae6b880738fe686b463a2d60d395b8508">forget</a> (int64_t eid)</td></tr>
+<tr class="memdesc:ae6b880738fe686b463a2d60d395b8508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops one mob's brain (the record is being removed).  <a href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#ae6b880738fe686b463a2d60d395b8508">More...</a><br /></td></tr>
+<tr class="separator:ae6b880738fe686b463a2d60d395b8508"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaef42fb7c968f37d7f0b96188924ca3a"><td class="memItemLeft" align="right" valign="top"><a id="aaef42fb7c968f37d7f0b96188924ca3a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>MobAIManager</b> (const <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html">MobAIManager</a> &amp;)=delete</td></tr>
 <tr class="separator:aaef42fb7c968f37d7f0b96188924ca3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7310c5e6695b15ba7dce9d0dbd4e365"><td class="memItemLeft" align="right" valign="top"><a id="af7310c5e6695b15ba7dce9d0dbd4e365"></a>
 <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html">MobAIManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html">MobAIManager</a> &amp;)=delete</td></tr>
 <tr class="separator:af7310c5e6695b15ba7dce9d0dbd4e365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a3d9db8c875315275732d06cccbf8d342"><td class="memItemLeft" align="right" valign="top"><a id="a3d9db8c875315275732d06cccbf8d342"></a>
+static constexpr int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#a3d9db8c875315275732d06cccbf8d342">kFullTierRadius</a> = 4</td></tr>
+<tr class="memdesc:a3d9db8c875315275732d06cccbf8d342"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chunks. <br /></td></tr>
+<tr class="separator:a3d9db8c875315275732d06cccbf8d342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b3d89068fe7e36c037da6c257132d5"><td class="memItemLeft" align="right" valign="top"><a id="a49b3d89068fe7e36c037da6c257132d5"></a>
+static constexpr uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobAIManager.html#a49b3d89068fe7e36c037da6c257132d5">kReducedInterval</a> = 4</td></tr>
+<tr class="memdesc:a49b3d89068fe7e36c037da6c257132d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ticks. <br /></td></tr>
+<tr class="separator:a49b3d89068fe7e36c037da6c257132d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a74b3a86d07b13d497a3ff6a997d7398b"></a>
@@ -136,6 +151,28 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae6b880738fe686b463a2d60d395b8508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6b880738fe686b463a2d60d395b8508">&#9670;&nbsp;</a></span>forget()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cursestone::entity::ai::MobAIManager::forget </td>
+          <td>(</td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>eid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Drops one mob's brain (the record is being removed). </p>
+<p>The damage/removal paths call this so the brain map never drifts from the record map — no periodic O(mobs) GC pass. </p>
 
 </div>
 </div>

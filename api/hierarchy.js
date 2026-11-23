@@ -446,6 +446,7 @@ var hierarchy =
     [ "cursestone::entity::ai::Goal", "classcursestone_1_1entity_1_1ai_1_1Goal.html", [
       [ "cursestone::entity::ai::IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", null ],
       [ "cursestone::entity::ai::LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html", null ],
+      [ "cursestone::entity::ai::PanicGoal", "classcursestone_1_1entity_1_1ai_1_1PanicGoal.html", null ],
       [ "cursestone::entity::ai::WanderGoal", "classcursestone_1_1entity_1_1ai_1_1WanderGoal.html", null ]
     ] ],
     [ "cursestone::event::HandlerList", "classcursestone_1_1event_1_1HandlerList.html", null ],
@@ -652,6 +653,7 @@ var hierarchy =
     [ "cursestone::entity::ai::MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", null ],
     [ "cursestone::world::MobEntity", "structcursestone_1_1world_1_1MobEntity.html", null ],
     [ "cursestone::entity::ai::MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", null ],
+    [ "cursestone::entity::MobProfile", "structcursestone_1_1entity_1_1MobProfile.html", null ],
     [ "vgen::MobSpawnUtils", "classvgen_1_1MobSpawnUtils.html", null ],
     [ "cursestone::entity::mobs::MobType", "structcursestone_1_1entity_1_1mobs_1_1MobType.html", [
       [ "cursestone::entity::mobs::Bat", "structcursestone_1_1entity_1_1mobs_1_1Bat.html", null ],
@@ -935,7 +937,7 @@ var hierarchy =
     [ "cursestone::world::format::leveldb::db::VersionEdit", "structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1VersionEdit.html", null ],
     [ "cursestone::utils::VersionString", "classcursestone_1_1utils_1_1VersionString.html", null ],
     [ "vgen::VineBlock", "classvgen_1_1VineBlock.html", null ],
-    [ "cursestone::entity::ai::WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1WaterVerticalStep.html", null ],
+    [ "cursestone::entity::ai::water::WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html", null ],
     [ "vgen::WeighedRandom", "classvgen_1_1WeighedRandom.html", null ],
     [ "vgen::WeighedRandom::WeighedRandomItem", "classvgen_1_1WeighedRandom_1_1WeighedRandomItem.html", [
       [ "vgen::MobSpawnerData", "classvgen_1_1MobSpawnerData.html", null ]

@@ -1,13 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"VillagePieces_8h_source.html":[12,0,0,21,1,2,4,14],
-"VillagerAngryParticle_8h_source.html":[12,0,0,21,3,33],
-"VillagerHappyParticle_8h_source.html":[12,0,0,21,3,34],
-"Villager_8h_source.html":[12,0,0,3,1,28],
-"VinesFeature_8h_source.html":[12,0,0,21,1,2,1,37],
-"VoronoiZoom_8h_source.html":[12,0,0,21,1,2,3,21],
-"WaterSplashParticle_8h_source.html":[12,0,0,21,3,35],
-"WaterWakeParticle_8h_source.html":[12,0,0,21,3,36],
 "WaterlilyFeature_8h_source.html":[12,0,0,21,1,2,1,38],
 "WeatherCommand_8h_source.html":[12,0,0,1,0,16],
 "WeighedRandom_8h_source.html":[12,0,0,21,1,2,17],
@@ -249,5 +241,13 @@ var NAVTREEINDEX9 =
 "classcursestone_1_1Player.html#a916b4a2a3e42424a122f6a9634dcb18c":[11,0,0,48,89],
 "classcursestone_1_1Player.html#a9291c0061d6aa737b2e1a7fd3f60c02d":[11,0,0,48,109],
 "classcursestone_1_1Player.html#a92f18b1088b25f75eace6569cf08d603":[11,0,0,48,7],
-"classcursestone_1_1Player.html#a92f5b9bf4460f8a4a975e1da0c4d89c8":[11,0,0,48,161]
+"classcursestone_1_1Player.html#a92f5b9bf4460f8a4a975e1da0c4d89c8":[11,0,0,48,161],
+"classcursestone_1_1Player.html#a931caf1d92bda4394a19d4acea59feeb":[11,0,0,48,45],
+"classcursestone_1_1Player.html#a940e11d1053a8b3a01154fe30a810179":[11,0,0,48,104],
+"classcursestone_1_1Player.html#a94da833438a5645887eddc9b3b9bae29":[11,0,0,48,19],
+"classcursestone_1_1Player.html#a94f44b504fbc7310b837b6045d0af85a":[11,0,0,48,30],
+"classcursestone_1_1Player.html#a94f69e2b85bf92793068dbe5af11e7f8":[11,0,0,48,117],
+"classcursestone_1_1Player.html#a95670272004bd5f9781da54990919f59":[11,0,0,48,62],
+"classcursestone_1_1Player.html#a99bcc1abd4a1ce4bd5da2babffa743d4":[11,0,0,48,116],
+"classcursestone_1_1Player.html#a9c42786ee84d1d6b0788e37b04e725da":[11,0,0,48,32]
 };

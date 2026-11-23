@@ -99,6 +99,8 @@ $(document).ready(function(){initNavTree('classcursestone_1_1entity_1_1ai_1_1Loo
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a3509aa97d3e55d5083ae727670fd25ad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a3509aa97d3e55d5083ae727670fd25ad">LookAtPlayerGoal</a> (bool hostile=false)</td></tr>
+<tr class="separator:a3509aa97d3e55d5083ae727670fd25ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a9d6ff6c58a79d3e384cdabbacdeda8"><td class="memItemLeft" align="right" valign="top"><a id="a9a9d6ff6c58a79d3e384cdabbacdeda8"></a>
 uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a9a9d6ff6c58a79d3e384cdabbacdeda8">flags</a> () const override</td></tr>
 <tr class="memdesc:a9a9d6ff6c58a79d3e384cdabbacdeda8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex bits claimed while this goal runs. <br /></td></tr>
@@ -129,8 +131,41 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Faces a nearby player while one is within look range. </p>
-<p>Claims the LOOK flag with a priority above <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html" title="Glances in a random direction now and then.">IdleLookGoal</a>, so a nearby player always wins the facing decision. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+<p>Claims the LOOK flag with a priority above <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html" title="Glances in a random direction now and then.">IdleLookGoal</a>, so a nearby player always wins the facing decision. Hostile kinds get a longer stare range (the vanilla mobs track players well before melee range); the ranges land in the instance, not in constants, because the goal object is per-brain anyway. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3509aa97d3e55d5083ae727670fd25ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3509aa97d3e55d5083ae727670fd25ad">&#9670;&nbsp;</a></span>LookAtPlayerGoal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">cursestone::entity::ai::LookAtPlayerGoal::LookAtPlayerGoal </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>hostile</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hostile</td><td>true gives the longer hostile stare range. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="abad2a40da348ba5ca572e39b995ea246"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abad2a40da348ba5ca572e39b995ea246">&#9670;&nbsp;</a></span>canStart()</h2>
 

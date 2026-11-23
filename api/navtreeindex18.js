@@ -1,5 +1,14 @@
 var NAVTREEINDEX18 =
 {
+"classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html#abb71c6e8d2042a43d30ff1868a95f2cd":[11,0,0,9,0,48,1],
+"classcursestone_1_1network_1_1protocol_1_1SetPlayerGameTypePacket.html#af62f3dce315d97e3df6b15cab749b139":[11,0,0,9,0,48,3],
+"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html":[11,0,0,9,0,49],
+"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a00b3fe7826397bb4cc08847df2cdeca9":[11,0,0,9,0,49,5],
+"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a3a9f62c27facafb78905f8f94c16013e":[11,0,0,9,0,49,3],
+"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#a907739c8b51b538f0694de56d756fdd4":[11,0,0,9,0,49,1],
+"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#ad4775a77bec098b785414f2dbb18d9eb":[11,0,0,9,0,49,4],
+"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#aeb34b9fead75ff7055ee76c2501508c1":[11,0,0,9,0,49,2],
+"classcursestone_1_1network_1_1protocol_1_1SetSpawnPositionPacket.html#af71bc13b35b9c0b790a61793d0cfb12e":[11,0,0,9,0,49,0],
 "classcursestone_1_1network_1_1protocol_1_1SetTimePacket.html":[11,0,0,9,0,50],
 "classcursestone_1_1network_1_1protocol_1_1SetTimePacket.html#a51f210d5dbb675e18d37d0248729e74b":[11,0,0,9,0,50,2],
 "classcursestone_1_1network_1_1protocol_1_1SetTimePacket.html#a5848535d3237c0536e37540ffdd10f41":[11,0,0,9,0,50,4],
@@ -240,14 +249,5 @@ var NAVTREEINDEX18 =
 "classcursestone_1_1scheduler_1_1Task.html#afcfe724dfffaa0f3e0aaf8bdfc49899f":[11,0,0,14,6,6],
 "classcursestone_1_1scheduler_1_1TaskHandler.html":[11,0,0,14,8],
 "classcursestone_1_1scheduler_1_1TaskHandler.html#a1219baf633896702fbfd1f71a7274ccd":[11,0,0,14,8,0],
-"classcursestone_1_1scheduler_1_1TaskHandler.html#a31d7b52588031400d6017afe0d61bc6e":[11,0,0,14,8,1],
-"classcursestone_1_1scheduler_1_1TaskHandler.html#a4ce69c7b062e35a3d61737d442eb99d4":[11,0,0,14,8,2],
-"classcursestone_1_1scheduler_1_1TaskHandler.html#a98a2eb1dab3ff9558f8fca14da870c8c":[11,0,0,14,8,3],
-"classcursestone_1_1tile_1_1Container.html":[11,0,0,15,0],
-"classcursestone_1_1tile_1_1Container.html#a1f670825eb52a304bfe1d971bbbdb47a":[11,0,0,15,0,6],
-"classcursestone_1_1tile_1_1Container.html#a727382f885b896b3711be2c0bbadaa30":[11,0,0,15,0,5],
-"classcursestone_1_1tile_1_1Container.html#a7c2443e021a8f683225e17584bb567e4":[11,0,0,15,0,3],
-"classcursestone_1_1tile_1_1Container.html#ab734d34839953e70cc7d2f554fc58cc6":[11,0,0,15,0,1],
-"classcursestone_1_1tile_1_1Container.html#ab92a63821d65ae89b38a666a9e4d2b63":[11,0,0,15,0,4],
-"classcursestone_1_1tile_1_1Container.html#abe7cf2561f1535f5b56e9fd1a601b179":[11,0,0,15,0,0]
+"classcursestone_1_1scheduler_1_1TaskHandler.html#a31d7b52588031400d6017afe0d61bc6e":[11,0,0,14,8,1]
 };

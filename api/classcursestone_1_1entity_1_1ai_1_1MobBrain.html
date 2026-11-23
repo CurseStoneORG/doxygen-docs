@@ -160,6 +160,21 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a5d4074d8f9db5b006e892ba89b7f135c">decayKnockback</a> (float friction)</td></tr>
 <tr class="memdesc:a5d4074d8f9db5b006e892ba89b7f135c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies one friction tick (the era ground knockback decay); values under the stop epsilon snap to zero. <br /></td></tr>
 <tr class="separator:a5d4074d8f9db5b006e892ba89b7f135c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c26bf5425e15e882359f16b1f325a3a"><td class="memItemLeft" align="right" valign="top"><a id="a5c26bf5425e15e882359f16b1f325a3a"></a>
+bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>inWater</b> ()</td></tr>
+<tr class="separator:a5c26bf5425e15e882359f16b1f325a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd059b4da87c93ddc9cb90a3a03639c2"><td class="memItemLeft" align="right" valign="top"><a id="afd059b4da87c93ddc9cb90a3a03639c2"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>inWater</b> () const</td></tr>
+<tr class="separator:afd059b4da87c93ddc9cb90a3a03639c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdae1e4faca5b4762b8d0840c4c4cdc5"><td class="memItemLeft" align="right" valign="top"><a id="afdae1e4faca5b4762b8d0840c4c4cdc5"></a>
+int &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>splashCooldown</b> ()</td></tr>
+<tr class="separator:afdae1e4faca5b4762b8d0840c4c4cdc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a899a247458514ae959f0f1cf0a54e51f"><td class="memItemLeft" align="right" valign="top"><a id="a899a247458514ae959f0f1cf0a54e51f"></a>
+bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>sprintFlag</b> ()</td></tr>
+<tr class="separator:a899a247458514ae959f0f1cf0a54e51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a188315f3d0cd3bfe2efaecd657970468"><td class="memItemLeft" align="right" valign="top"><a id="a188315f3d0cd3bfe2efaecd657970468"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>sprintFlag</b> () const</td></tr>
+<tr class="separator:a188315f3d0cd3bfe2efaecd657970468"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dbdc78a750197c044e49558257606fb"><td class="memItemLeft" align="right" valign="top"><a id="a8dbdc78a750197c044e49558257606fb"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setKind</b> (uint8_t kind)</td></tr>
 <tr class="separator:a8dbdc78a750197c044e49558257606fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -169,6 +184,10 @@ uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>kind</b> () const<
 <tr class="memitem:afdcd91c6d41a004e27aa7410a55dc75d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d">dynamic</a> () const</td></tr>
 <tr class="memdesc:afdcd91c6d41a004e27aa7410a55dc75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true when the brain owns behaviors, i.e.  <a href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d">More...</a><br /></td></tr>
 <tr class="separator:afdcd91c6d41a004e27aa7410a55dc75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a466b8da03c51cb5c115616e36739524e"><td class="memItemLeft" align="right" valign="top"><a id="a466b8da03c51cb5c115616e36739524e"></a>
+const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a466b8da03c51cb5c115616e36739524e">goals</a> () const</td></tr>
+<tr class="memdesc:a466b8da03c51cb5c115616e36739524e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only goal list (tests and diagnostics; the brain owns the goals and nothing outside may start them). <br /></td></tr>
+<tr class="separator:a466b8da03c51cb5c115616e36739524e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5c861a1d9dc0c47f90a1181f8627d99"><td class="memItemLeft" align="right" valign="top"><a id="ae5c861a1d9dc0c47f90a1181f8627d99"></a>
 <a class="el" href="structmcp__random.html">mcp_random_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>rng</b> ()</td></tr>
 <tr class="separator:ae5c861a1d9dc0c47f90a1181f8627d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
