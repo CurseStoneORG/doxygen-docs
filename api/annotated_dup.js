@@ -79,6 +79,7 @@ var annotated_dup =
       [ "entity", null, [
         [ "ai", null, [
           [ "water", "namespacecursestone_1_1entity_1_1ai_1_1water.html", [
+            [ "SwimBob", "structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob.html", "structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob" ],
             [ "WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html", "structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep" ]
           ] ],
           [ "MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", "structcursestone_1_1entity_1_1ai_1_1MobContext" ],

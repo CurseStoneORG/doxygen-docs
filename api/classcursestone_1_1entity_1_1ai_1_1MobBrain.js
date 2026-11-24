@@ -28,5 +28,6 @@ var classcursestone_1_1entity_1_1ai_1_1MobBrain =
     [ "sprintFlag", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a899a247458514ae959f0f1cf0a54e51f", null ],
     [ "sprintFlag", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a188315f3d0cd3bfe2efaecd657970468", null ],
     [ "stepThink", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ac3fcbddfda4b01051cf24ae749befa6e", null ],
+    [ "swimPhase", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a2596a55627b40572c76dc21d7fcb3ca7", null ],
     [ "wantsJump", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a3c230a915a6173da4af39454437a1425", null ]
 ];

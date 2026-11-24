@@ -883,6 +883,7 @@ var hierarchy =
       [ "vgen::VillageStart", "classvgen_1_1VillageStart.html", null ]
     ] ],
     [ "vgen::Biome::SurfaceMats", "structvgen_1_1Biome_1_1SurfaceMats.html", null ],
+    [ "cursestone::entity::ai::water::SwimBob", "structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob.html", null ],
     [ "cursestone::world::generator::Synth", "classcursestone_1_1world_1_1generator_1_1Synth.html", [
       [ "cursestone::world::generator::ImprovedNoise", "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html", null ],
       [ "cursestone::world::generator::PerlinNoise", "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html", null ]

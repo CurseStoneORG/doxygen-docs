@@ -96,15 +96,24 @@ $(document).ready(function(){initNavTree('namespacecursestone_1_1entity_1_1ai_1_
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob.html">SwimBob</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One flotation-bob output: the vertical force the hold band applies this tick and the body pitch offset in protocol-84 degrees.  <a href="structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html">WaterVerticalStep</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">One vertical step of the swim model.  <a href="structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8e07821ba6d4c70be514f473738e04b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html">WaterVerticalStep</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a8e07821ba6d4c70be514f473738e04b0">waterVerticalStep</a> (float vy, float submersion, bool head_in_water, bool move_intent, bool wants_jump)</td></tr>
-<tr class="memdesc:a8e07821ba6d4c70be514f473738e04b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the model inputs (.  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a8e07821ba6d4c70be514f473738e04b0">More...</a><br /></td></tr>
-<tr class="separator:a8e07821ba6d4c70be514f473738e04b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2078f76bffad48196295d61c79738f1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob.html">SwimBob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#aa2078f76bffad48196295d61c79738f1">swimBob</a> (float phase)</td></tr>
+<tr class="memdesc:aa2078f76bffad48196295d61c79738f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">The flotation bob at <code>phase</code> (radians).  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#aa2078f76bffad48196295d61c79738f1">More...</a><br /></td></tr>
+<tr class="separator:aa2078f76bffad48196295d61c79738f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56ac1bd49d9757809c802870c6eca0bf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a56ac1bd49d9757809c802870c6eca0bf">bobPhaseStep</a> (float phase)</td></tr>
+<tr class="memdesc:a56ac1bd49d9757809c802870c6eca0bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">One oscillator step: advances the phase by kBobPhaseStep and wraps it into [0, 2*pi).  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a56ac1bd49d9757809c802870c6eca0bf">More...</a><br /></td></tr>
+<tr class="separator:a56ac1bd49d9757809c802870c6eca0bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135c8c9ea104996e90c30088009c0af4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html">WaterVerticalStep</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a135c8c9ea104996e90c30088009c0af4">waterVerticalStep</a> (float vy, float submersion, bool head_in_water, bool move_intent, bool wants_jump, float bob_force)</td></tr>
+<tr class="memdesc:a135c8c9ea104996e90c30088009c0af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the model inputs (.  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a135c8c9ea104996e90c30088009c0af4">More...</a><br /></td></tr>
+<tr class="separator:a135c8c9ea104996e90c30088009c0af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -136,13 +145,72 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><b>kWaterMaxS
 constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#af574d4cfb813fc2592ba6fe54e616212">kWaterJumpOut</a> = 0.30f</td></tr>
 <tr class="memdesc:af574d4cfb813fc2592ba6fe54e616212"><td class="mdescLeft">&#160;</td><td class="mdescRight">The shore-exit hop: a horizontal clip against a bank while swimming spends this as an upward jump so the mob can climb out (the vanilla paddling-against-the-shore hop). <br /></td></tr>
 <tr class="separator:af574d4cfb813fc2592ba6fe54e616212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62589ea9bc82040800696712d13e4347"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a62589ea9bc82040800696712d13e4347">kBobTwoPi</a> = 6.2831853f</td></tr>
+<tr class="memdesc:a62589ea9bc82040800696712d13e4347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flotation bob: the gentle, continuous rocking of a body that floats half in and half out of the water.  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a62589ea9bc82040800696712d13e4347">More...</a><br /></td></tr>
+<tr class="separator:a62589ea9bc82040800696712d13e4347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42e3196533f8491a12a6de075f3ffaad"><td class="memItemLeft" align="right" valign="top"><a id="a42e3196533f8491a12a6de075f3ffaad"></a>
+constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a42e3196533f8491a12a6de075f3ffaad">kBobHz</a> = 0.35f</td></tr>
+<tr class="memdesc:a42e3196533f8491a12a6de075f3ffaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bob cadence: 0.35 Hz — a full rise-and-fall cycle roughly every three seconds, the pace of a relaxed float. <br /></td></tr>
+<tr class="separator:a42e3196533f8491a12a6de075f3ffaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2c34c8955e09c3cc2ee2e659d7476bf"><td class="memItemLeft" align="right" valign="top"><a id="af2c34c8955e09c3cc2ee2e659d7476bf"></a>
+constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#af2c34c8955e09c3cc2ee2e659d7476bf">kBobPhaseStep</a> = <a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a62589ea9bc82040800696712d13e4347">kBobTwoPi</a> * <a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a42e3196533f8491a12a6de075f3ffaad">kBobHz</a> / 20.0f</td></tr>
+<tr class="memdesc:af2c34c8955e09c3cc2ee2e659d7476bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase (radians) the oscillator advances per floating tick: an exact per-tick step, so the only per-tick trig a swimming mob spends is the single sine the bob itself needs. <br /></td></tr>
+<tr class="separator:af2c34c8955e09c3cc2ee2e659d7476bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc9779a6fab48586a0da54bbe7af2545"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#abc9779a6fab48586a0da54bbe7af2545">kBobPitchDeg</a> = 5.0f</td></tr>
+<tr class="memdesc:abc9779a6fab48586a0da54bbe7af2545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rocking amplitude of the body pitch (degrees).  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#abc9779a6fab48586a0da54bbe7af2545">More...</a><br /></td></tr>
+<tr class="separator:abc9779a6fab48586a0da54bbe7af2545"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab72c2dfeb8237714c3bb4f49eb334e15"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#ab72c2dfeb8237714c3bb4f49eb334e15">kBobForce</a> = 0.0022f</td></tr>
+<tr class="memdesc:ab72c2dfeb8237714c3bb4f49eb334e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertical bob force amplitude (blocks/tick^2).  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#ab72c2dfeb8237714c3bb4f49eb334e15">More...</a><br /></td></tr>
+<tr class="separator:ab72c2dfeb8237714c3bb4f49eb334e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Vanilla-era water buoyancy model, stage-2 shape. </p>
-<p>The stage-1 loop (buoyancy every tick plus a paddle whenever the mob moved) integrates to mobs riding ON the water: the paddle never stops pushing up until the head cell clears the surface, so the body skims the waterline and only the soles touch it. The stage-2 model is a hold-band regulator instead: the mob settles where roughly half its body is submerged, gravity pulls it back under the band, the paddle lifts it from below the band, and inside the band no vertical force applies — a true floating equilibrium. </p>
+<p>The stage-1 loop (buoyancy every tick plus a paddle whenever the mob moved) integrates to mobs riding ON the water: the paddle never stops pushing up until the head cell clears the surface, so the body skims the waterline and only the soles touch it. The stage-2 model is a hold-band regulator instead: the mob settles where roughly half its body is submerged, gravity pulls it back under the band, the paddle lifts it from below the band, and inside the band the flotation bob rides — a gentle zero-mean force that rocks the body up and down over the surface instead of freezing the waterline. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a8e07821ba6d4c70be514f473738e04b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e07821ba6d4c70be514f473738e04b0">&#9670;&nbsp;</a></span>waterVerticalStep()</h2>
+<a id="a56ac1bd49d9757809c802870c6eca0bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56ac1bd49d9757809c802870c6eca0bf">&#9670;&nbsp;</a></span>bobPhaseStep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float cursestone::entity::ai::water::bobPhaseStep </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>phase</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>One oscillator step: advances the phase by kBobPhaseStep and wraps it into [0, 2*pi). </p>
+<p>Pure so the water check harness can verify the wrap and the per-tick smoothness bound. </p>
+
+</div>
+</div>
+<a id="aa2078f76bffad48196295d61c79738f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2078f76bffad48196295d61c79738f1">&#9670;&nbsp;</a></span>swimBob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob.html">SwimBob</a> cursestone::entity::ai::water::swimBob </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>phase</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The flotation bob at <code>phase</code> (radians). </p>
+<p>Pure: one sine, so a swimming mob costs a single trig call per tick. </p>
+
+</div>
+</div>
+<a id="a135c8c9ea104996e90c30088009c0af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a135c8c9ea104996e90c30088009c0af4">&#9670;&nbsp;</a></span>waterVerticalStep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,7 +243,13 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>wants_jump</em>&#160;</td>
+          <td class="paramname"><em>wants_jump</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>bob_force</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -194,6 +268,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
     <tr><td class="paramname">head_in_water</td><td>the head cell is water: the paddle always runs (a mob must never hold its head under). </td></tr>
     <tr><td class="paramname">move_intent</td><td>the mob swims somewhere: strokes lift it toward its hold depth, never above it. </td></tr>
     <tr><td class="paramname">wants_jump</td><td>shore hop requested by a bank clip. </td></tr>
+    <tr><td class="paramname">bob_force</td><td>the flotation-bob force for this tick, applied inside the hold band only (outside it the regulator force owns the body). </td></tr>
   </table>
   </dd>
 </dl>
@@ -201,6 +276,81 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ab72c2dfeb8237714c3bb4f49eb334e15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab72c2dfeb8237714c3bb4f49eb334e15">&#9670;&nbsp;</a></span>kBobForce</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float cursestone::entity::ai::water::kBobForce = 0.0022f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Vertical bob force amplitude (blocks/tick^2). </p>
+<p>Sized so the integrated excursion under the water drag lands around a few hundredths of a block: a visible, relaxed float — never a wallow. </p>
+
+</div>
+</div>
+<a id="abc9779a6fab48586a0da54bbe7af2545"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9779a6fab48586a0da54bbe7af2545">&#9670;&nbsp;</a></span>kBobPitchDeg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float cursestone::entity::ai::water::kBobPitchDeg = 5.0f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Rocking amplitude of the body pitch (degrees). </p>
+<p>The wire encodes pitch as a byte (~1.4 degree resolution), so the rocking rides well above that to read on the client. </p>
+
+</div>
+</div>
+<a id="a62589ea9bc82040800696712d13e4347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62589ea9bc82040800696712d13e4347">&#9670;&nbsp;</a></span>kBobTwoPi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr float cursestone::entity::ai::water::kBobTwoPi = 6.2831853f</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flotation bob: the gentle, continuous rocking of a body that floats half in and half out of the water. </p>
+<p>Inside the hold band the regulator applies this instead of no force at all: a zero-mean vertical force shaped like a slow sine (the body rises and falls over the surface) plus a matching pitch component the move packet renders as the rocking model. Excursions stay regulator-owned — anything beyond the band is corrected exactly as before, so equilibrium, sink recovery and the shore hop behave identically; the bob only replaces the frozen waterline inside the band. </p>
+
+</div>
+</div>
 <a id="a178efc39e849de8847eb0b7b2018cfd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a178efc39e849de8847eb0b7b2018cfd6">&#9670;&nbsp;</a></span>kSubmergeBand</h2>
 

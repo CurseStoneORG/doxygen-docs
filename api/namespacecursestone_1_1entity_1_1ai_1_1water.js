@@ -1,7 +1,15 @@
 var namespacecursestone_1_1entity_1_1ai_1_1water =
 [
+    [ "SwimBob", "structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob.html", "structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob" ],
     [ "WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html", "structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep" ],
-    [ "waterVerticalStep", "namespacecursestone_1_1entity_1_1ai_1_1water.html#a8e07821ba6d4c70be514f473738e04b0", null ],
+    [ "bobPhaseStep", "namespacecursestone_1_1entity_1_1ai_1_1water.html#a56ac1bd49d9757809c802870c6eca0bf", null ],
+    [ "swimBob", "namespacecursestone_1_1entity_1_1ai_1_1water.html#aa2078f76bffad48196295d61c79738f1", null ],
+    [ "waterVerticalStep", "namespacecursestone_1_1entity_1_1ai_1_1water.html#a135c8c9ea104996e90c30088009c0af4", null ],
+    [ "kBobForce", "namespacecursestone_1_1entity_1_1ai_1_1water.html#ab72c2dfeb8237714c3bb4f49eb334e15", null ],
+    [ "kBobHz", "namespacecursestone_1_1entity_1_1ai_1_1water.html#a42e3196533f8491a12a6de075f3ffaad", null ],
+    [ "kBobPhaseStep", "namespacecursestone_1_1entity_1_1ai_1_1water.html#af2c34c8955e09c3cc2ee2e659d7476bf", null ],
+    [ "kBobPitchDeg", "namespacecursestone_1_1entity_1_1ai_1_1water.html#abc9779a6fab48586a0da54bbe7af2545", null ],
+    [ "kBobTwoPi", "namespacecursestone_1_1entity_1_1ai_1_1water.html#a62589ea9bc82040800696712d13e4347", null ],
     [ "kSubmergeBand", "namespacecursestone_1_1entity_1_1ai_1_1water.html#a178efc39e849de8847eb0b7b2018cfd6", null ],
     [ "kSubmergeTarget", "namespacecursestone_1_1entity_1_1ai_1_1water.html#a1d2aff25d0d1a6b3495637882589d3fd", null ],
     [ "kSwimPaddle", "namespacecursestone_1_1entity_1_1ai_1_1water.html#ac31e4d3c1daedcc8f147ebc147f1581d", null ],
