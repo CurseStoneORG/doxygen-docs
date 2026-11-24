@@ -84,7 +84,8 @@ $(document).ready(function(){initNavTree('classcursestone_1_1event_1_1player_1_1
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="classcursestone_1_1event_1_1player_1_1PlayerAnimationEvent-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::event::player::PlayerAnimationEvent Class Reference</div>  </div>
@@ -95,9 +96,12 @@ $(document).ready(function(){initNavTree('classcursestone_1_1event_1_1player_1_1
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af889162d10ba48e47386671dde5d9bab"><td class="memItemLeft" align="right" valign="top"><a id="af889162d10ba48e47386671dde5d9bab"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerAnimationEvent</b> (<a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *p, int type)</td></tr>
-<tr class="separator:af889162d10ba48e47386671dde5d9bab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab49f876e7e42f7ad9488b210c2816cd4"><td class="memItemLeft" align="right" valign="top"><a id="ab49f876e7e42f7ad9488b210c2816cd4"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerAnimationEvent</b> (<a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *p, uint32_t animationId)</td></tr>
+<tr class="separator:ab49f876e7e42f7ad9488b210c2816cd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b93bfe4366e07a33e1f92cd32d14fa"><td class="memItemLeft" align="right" valign="top"><a id="a49b93bfe4366e07a33e1f92cd32d14fa"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>animationId</b> () const</td></tr>
+<tr class="separator:a49b93bfe4366e07a33e1f92cd32d14fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95ca72b78657218c06bd14427f9e2e84"><td class="memItemLeft" align="right" valign="top"><a id="a95ca72b78657218c06bd14427f9e2e84"></a>
 const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>eventName</b> () const override</td></tr>
 <tr class="separator:a95ca72b78657218c06bd14427f9e2e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,11 +123,23 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCancelled</b> () co
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setCancelled</b> (bool c=true)</td></tr>
 <tr class="separator:a6bb4f55476780a206550e28e15641dbb inherit pub_methods_classcursestone_1_1event_1_1Cancellable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ae60f966f74f5336f1d06e5aadf9d0f97"><td class="memItemLeft" align="right" valign="top"><a id="ae60f966f74f5336f1d06e5aadf9d0f97"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>animationType</b> = 0</td></tr>
-<tr class="separator:ae60f966f74f5336f1d06e5aadf9d0f97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa2dd0a0d3adae82052a9dc8c556aa644"><td class="memItemLeft" align="right" valign="top"><a id="aa2dd0a0d3adae82052a9dc8c556aa644"></a>
+static const char *&#160;</td><td class="memItemRight" valign="bottom"><b>animationName</b> (uint32_t id)</td></tr>
+<tr class="separator:aa2dd0a0d3adae82052a9dc8c556aa644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:aece11c825bd5f88b36ed730f71e92259"><td class="memItemLeft" align="right" valign="top"><a id="aece11c825bd5f88b36ed730f71e92259"></a>
+static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ANIMATION_SWING_ARM</b> = 1</td></tr>
+<tr class="separator:aece11c825bd5f88b36ed730f71e92259"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af5c71e61b4050b83c09cd6f1d954a7"><td class="memItemLeft" align="right" valign="top"><a id="a2af5c71e61b4050b83c09cd6f1d954a7"></a>
+static constexpr uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>ANIMATION_WAKE_UP</b> = 3</td></tr>
+<tr class="separator:a2af5c71e61b4050b83c09cd6f1d954a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">cursestone::event::player::PlayerEvent</a></td></tr>
 <tr class="memitem:af5d41d4b13b91603025e9d3540054c96 inherit pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent"><td class="memItemLeft" align="right" valign="top"><a id="af5d41d4b13b91603025e9d3540054c96"></a>
 <a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>player</b> = nullptr</td></tr>

@@ -165,20 +165,30 @@ var annotated_dup =
           [ "InventoryOpenEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryOpenEvent.html", "classcursestone_1_1event_1_1inventory_1_1InventoryOpenEvent" ]
         ] ],
         [ "player", null, [
+          [ "PlayerAnimationEvent", "classcursestone_1_1event_1_1player_1_1PlayerAnimationEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerAnimationEvent" ],
           [ "PlayerBedEnterEvent", "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent" ],
           [ "PlayerBedLeaveEvent", "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent" ],
+          [ "PlayerBucketEvent", "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent" ],
+          [ "PlayerBucketFillEvent", "classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent" ],
           [ "PlayerChatEvent", "classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerChatEvent" ],
+          [ "PlayerCreationEvent", "classcursestone_1_1event_1_1player_1_1PlayerCreationEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerCreationEvent" ],
           [ "PlayerDeathEvent", "classcursestone_1_1event_1_1player_1_1PlayerDeathEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerDeathEvent" ],
           [ "PlayerDropItemEvent", "classcursestone_1_1event_1_1player_1_1PlayerDropItemEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerDropItemEvent" ],
           [ "PlayerEvent", "classcursestone_1_1event_1_1player_1_1PlayerEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerEvent" ],
+          [ "PlayerExhaustEvent", "classcursestone_1_1event_1_1player_1_1PlayerExhaustEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerExhaustEvent" ],
+          [ "PlayerGamemodeChangeEvent", "classcursestone_1_1event_1_1player_1_1PlayerGamemodeChangeEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerGamemodeChangeEvent" ],
+          [ "PlayerHungerChangeEvent", "classcursestone_1_1event_1_1player_1_1PlayerHungerChangeEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerHungerChangeEvent" ],
           [ "PlayerInteractEvent", "classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerInteractEvent" ],
           [ "PlayerItemConsumeEvent", "classcursestone_1_1event_1_1player_1_1PlayerItemConsumeEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerItemConsumeEvent" ],
           [ "PlayerItemHeldEvent", "classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent" ],
           [ "PlayerJoinEvent", "classcursestone_1_1event_1_1player_1_1PlayerJoinEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerJoinEvent" ],
           [ "PlayerMoveEvent", "classcursestone_1_1event_1_1player_1_1PlayerMoveEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerMoveEvent" ],
+          [ "PlayerPreLoginEvent", "classcursestone_1_1event_1_1player_1_1PlayerPreLoginEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerPreLoginEvent" ],
           [ "PlayerQuitEvent", "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent" ],
           [ "PlayerRespawnEvent", "classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent" ],
-          [ "PlayerTeleportEvent", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent" ]
+          [ "PlayerTeleportEvent", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent" ],
+          [ "PlayerToggleSneakEvent", "classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent" ],
+          [ "PlayerToggleSprintEvent", "classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent" ]
         ] ],
         [ "world", null, [
           [ "WorldEvent", "classcursestone_1_1event_1_1world_1_1WorldEvent.html", "classcursestone_1_1event_1_1world_1_1WorldEvent" ],

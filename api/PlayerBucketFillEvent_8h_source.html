@@ -96,43 +96,59 @@ $(document).ready(function(){initNavTree('PlayerBucketFillEvent_8h_source.html',
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * CurseStone | Open Source Server Software</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Copyright (C) 2026 CurseStoneTeam</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Copyright (C) 2026 CurseStoneORG</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Developed by CurseStoneTeam.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Developed by CurseStoneORG.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Built for an open and extensible Minecraft server ecosystem.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Licensed under the GNU Lesser General Public License v3.0 or later.</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * You may study, modify, and redistribute this software under its license.</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * License: https://www.gnu.org/licenses/lgpl-3.0.html</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneORG/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// PlayerBucketFillEvent.h — ported from cn.nukkit.event.player.PlayerBucketFillEvent</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;PlayerBucketEvent.h&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">class </span>Player;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">namespace </span>cursestone::event::player {</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">   32</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">PlayerBucketFillEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html">PlayerBucketEvent</a> {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">PlayerBucketFillEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; b, <span class="keywordtype">int</span> bx,</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                          <span class="keywordtype">int</span> by, <span class="keywordtype">int</span> bz, <span class="keywordtype">int</span> f)</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        : <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html">PlayerBucketEvent</a>(p, b, bx, by, bz, f) {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;PlayerBucketFillEvent&quot;</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> n;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;} <span class="comment">// namespace cursestone::event::player</span></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerBucketEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html">cursestone::event::player::PlayerBucketEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerBucketEvent.h:37</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerBucketFillEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">cursestone::event::player::PlayerBucketFillEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerBucketFillEvent.h:32</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// PlayerBucketFillEvent.h — fired when a player with an empty bucket</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// (BUCKET aux 0) is about to scoop a liquid SOURCE cell (the cell must</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">// carry the static liquid form, not a flowing part).</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// Timing: the event runs after the source cell has been identified but</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// BEFORE the world block is removed and BEFORE the held bucket is</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// swapped for the filled variant. Cancelling keeps both the world and</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// the inventory exactly as they were and the client&#39;s target cell is</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// resynced — no partial fill, no lost or duplicated buckets.</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">// This event stays separate from its base PlayerBucketEvent: listeners</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">// registered for the base class see pour operations, this class only</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">// reaches fill listeners (plus any listener registered on the base</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">// through an explicit subclass hook).</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;PlayerBucketEvent.h&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">class </span>Player;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">namespace </span>cursestone::event::player {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">   46</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">PlayerBucketFillEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html">PlayerBucketEvent</a> {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">PlayerBucketFillEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p, <span class="keyword">const</span> <a class="code" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&amp; bucket,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                          int32_t liquidId, int32_t x, int32_t y, int32_t z)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        : <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html">PlayerBucketEvent</a>(p, bucket, liquidId, x, y, z, BucketAction::SCOOP) {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;PlayerBucketFillEvent&quot;</span>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;} <span class="comment">// namespace cursestone::event::player</span></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:101</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerBucketEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html">cursestone::event::player::PlayerBucketEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerBucketEvent.h:52</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerBucketFillEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">cursestone::event::player::PlayerBucketFillEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerBucketFillEvent.h:46</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:28</div></div>
 <div class="ttc" id="astructcursestone_1_1item_1_1ItemStack_html"><div class="ttname"><a href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a></div><div class="ttdef"><b>Definition:</b> ItemStack.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

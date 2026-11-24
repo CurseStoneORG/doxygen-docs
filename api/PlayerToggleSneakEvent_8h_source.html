@@ -96,45 +96,65 @@ $(document).ready(function(){initNavTree('PlayerToggleSneakEvent_8h_source.html'
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span> </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * CurseStone | Open Source Server Software</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Copyright (C) 2026 CurseStoneTeam</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Copyright (C) 2026 CurseStoneORG</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Developed by CurseStoneTeam.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Developed by CurseStoneORG.</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Built for an open and extensible Minecraft server ecosystem.</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Licensed under the GNU Lesser General Public License v3.0 or later.</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * You may study, modify, and redistribute this software under its license.</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * License: https://www.gnu.org/licenses/lgpl-3.0.html</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneTeam/CurseStone</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * Repository: https://github.com/CurseStoneORG/CurseStone</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">// SPDX-License-Identifier: LGPL-3.0-or-later</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// PlayerToggleSneakEvent.h — ported from cn.nukkit.event.player.PlayerToggleSneakEvent</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;PlayerEvent.h&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../Cancellable.h&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">class </span>Player;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">namespace </span>cursestone::event::player {</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html">PlayerToggleSneakEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">PlayerEvent</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> isSneaking = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html">PlayerToggleSneakEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p, <span class="keywordtype">bool</span> sneaking)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        : <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">PlayerEvent</a>(p), isSneaking(sneaking) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;PlayerToggleSneakEvent&quot;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> n;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;} <span class="comment">// namespace cursestone::event::player</span></div>
-<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:86</div></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">// PlayerToggleSneakEvent.h — fired when a player is about to START</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">// sneaking (true) or STOP sneaking (false).</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">// Timing: the event runs before the pose flag changes, so cancelling it</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">// keeps the previous sneak state and the client is resynced with it.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment">// The server already refuses to fire for a no-op toggle (state equal to</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">// the requested one), so listeners never see duplicate transitions.</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">// Sneak and sprint are independent mechanics: this event never overlaps</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">// PlayerToggleSprintEvent.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;PlayerEvent.h&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;../Cancellable.h&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacecursestone.html">cursestone</a> {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keyword">class </span>Player;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span>cursestone::event::player {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html">PlayerToggleSneakEvent</a> : <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">PlayerEvent</a>, <span class="keyword">public</span> <a class="code" href="classcursestone_1_1event_1_1Cancellable.html">Cancellable</a> {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html">PlayerToggleSneakEvent</a>(<a class="code" href="classcursestone_1_1Player.html">cursestone::Player</a>* p, <span class="keywordtype">bool</span> sneaking)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        : <a class="code" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">PlayerEvent</a>(p), sneaking_(sneaking) {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="comment">// The NEW state the toggle is asking for: true = starts sneaking,</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="comment">// false = stops sneaking.</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> isSneaking()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> sneaking_;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">const</span> std::string&amp; eventName()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">static</span> std::string n = <span class="stringliteral">&quot;PlayerToggleSneakEvent&quot;</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> n;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> sneaking_;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;} <span class="comment">// namespace cursestone::event::player</span></div>
+<div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:101</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1Cancellable_html"><div class="ttname"><a href="classcursestone_1_1event_1_1Cancellable.html">cursestone::event::Cancellable</a></div><div class="ttdef"><b>Definition:</b> Cancellable.h:26</div></div>
 <div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">cursestone::event::player::PlayerEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerEvent.h:36</div></div>
-<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html">cursestone::event::player::PlayerToggleSneakEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerToggleSneakEvent.h:33</div></div>
-<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:53</div></div>
+<div class="ttc" id="aclasscursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent_html"><div class="ttname"><a href="classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html">cursestone::event::player::PlayerToggleSneakEvent</a></div><div class="ttdef"><b>Definition:</b> PlayerToggleSneakEvent.h:43</div></div>
+<div class="ttc" id="anamespacecursestone_html"><div class="ttname"><a href="namespacecursestone.html">cursestone</a></div><div class="ttdoc">Writes a crash dump when the server hits a fatal error.</div><div class="ttdef"><b>Definition:</b> Block.cpp:28</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

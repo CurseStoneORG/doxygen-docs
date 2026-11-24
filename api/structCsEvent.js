@@ -2,6 +2,8 @@ var structCsEvent =
 [
     [ "action", "structCsEvent.html#a3c21cd4955084eabb8f3349bf3012539", null ],
     [ "amount", "structCsEvent.html#af07affa85f5121d3bcc40e74a9cd35b4", null ],
+    [ "aux1", "structCsEvent.html#a2dca85dde6fbacce4e9e56c110e0c77f", null ],
+    [ "aux2", "structCsEvent.html#a3918a8202791293cd59b2cc90c1cc076", null ],
     [ "blockId", "structCsEvent.html#ad0149495ed4d46b3b5570a1210cc4032", null ],
     [ "cancelled", "structCsEvent.html#ab41533c7dc8ce276a95b226e35c3601f", null ],
     [ "cause", "structCsEvent.html#a5d54481846ee77c813ca6c4db0000b77", null ],

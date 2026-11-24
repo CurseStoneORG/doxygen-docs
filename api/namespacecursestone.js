@@ -479,20 +479,40 @@ var namespacecursestone =
         [ "InventoryOpenEvent", "classcursestone_1_1event_1_1inventory_1_1InventoryOpenEvent.html", "classcursestone_1_1event_1_1inventory_1_1InventoryOpenEvent" ]
       ] ],
       [ "player", null, [
+        [ "PlayerAnimationEvent", "classcursestone_1_1event_1_1player_1_1PlayerAnimationEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerAnimationEvent" ],
         [ "PlayerBedEnterEvent", "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerBedEnterEvent" ],
         [ "PlayerBedLeaveEvent", "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerBedLeaveEvent" ],
+        [ "PlayerBucketEvent", "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerBucketEvent" ],
+        [ "PlayerBucketFillEvent", "classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent" ],
         [ "PlayerChatEvent", "classcursestone_1_1event_1_1player_1_1PlayerChatEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerChatEvent" ],
+        [ "PlayerCreationEvent", "classcursestone_1_1event_1_1player_1_1PlayerCreationEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerCreationEvent" ],
         [ "PlayerDeathEvent", "classcursestone_1_1event_1_1player_1_1PlayerDeathEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerDeathEvent" ],
         [ "PlayerDropItemEvent", "classcursestone_1_1event_1_1player_1_1PlayerDropItemEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerDropItemEvent" ],
         [ "PlayerEvent", "classcursestone_1_1event_1_1player_1_1PlayerEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerEvent" ],
+        [ "PlayerExhaustEvent", "classcursestone_1_1event_1_1player_1_1PlayerExhaustEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerExhaustEvent" ],
+        [ "PlayerGamemodeChangeEvent", "classcursestone_1_1event_1_1player_1_1PlayerGamemodeChangeEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerGamemodeChangeEvent" ],
+        [ "PlayerHungerChangeEvent", "classcursestone_1_1event_1_1player_1_1PlayerHungerChangeEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerHungerChangeEvent" ],
         [ "PlayerInteractEvent", "classcursestone_1_1event_1_1player_1_1PlayerInteractEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerInteractEvent" ],
         [ "PlayerItemConsumeEvent", "classcursestone_1_1event_1_1player_1_1PlayerItemConsumeEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerItemConsumeEvent" ],
         [ "PlayerItemHeldEvent", "classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent" ],
         [ "PlayerJoinEvent", "classcursestone_1_1event_1_1player_1_1PlayerJoinEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerJoinEvent" ],
         [ "PlayerMoveEvent", "classcursestone_1_1event_1_1player_1_1PlayerMoveEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerMoveEvent" ],
+        [ "PlayerPreLoginEvent", "classcursestone_1_1event_1_1player_1_1PlayerPreLoginEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerPreLoginEvent" ],
         [ "PlayerQuitEvent", "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerQuitEvent" ],
         [ "PlayerRespawnEvent", "classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerRespawnEvent" ],
-        [ "PlayerTeleportEvent", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent" ]
+        [ "PlayerTeleportEvent", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerTeleportEvent" ],
+        [ "PlayerToggleSneakEvent", "classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerToggleSneakEvent" ],
+        [ "PlayerToggleSprintEvent", "classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html", "classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent" ],
+        [ "HungerChangeReason", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdb", [
+          [ "EATING", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdbab604ffc1f7d6e07bfa1b0415a19ce2ea", null ],
+          [ "EXHAUSTION", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba3dc053f371d9ab97f43f45899bee55f5", null ],
+          [ "SATURATION_EFFECT", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba756f6f47c244f59ac11203d5d506a13f", null ],
+          [ "CREATIVE_SYNC", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba8e163cd31844da70efc587e9e4b29173", null ],
+          [ "LOGIN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba4976d7ca80f2cb54c1c7d5c87fb0c7ef", null ],
+          [ "RESPAWN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdbad122da1650c96167bd172487e86c4854", null ],
+          [ "PLUGIN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdbafd87a731781e74f4c784fa78bd4835b3", null ],
+          [ "UNKNOWN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba696b031073e74bf2cb98e5ef201d4aa3", null ]
+        ] ]
       ] ],
       [ "world", null, [
         [ "WorldEvent", "classcursestone_1_1event_1_1world_1_1WorldEvent.html", "classcursestone_1_1event_1_1world_1_1WorldEvent" ],

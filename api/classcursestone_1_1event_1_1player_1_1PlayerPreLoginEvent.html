@@ -84,7 +84,6 @@ $(document).ready(function(){initNavTree('classcursestone_1_1event_1_1player_1_1
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classcursestone_1_1event_1_1player_1_1PlayerPreLoginEvent-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::event::player::PlayerPreLoginEvent Class Reference</div>  </div>
@@ -95,9 +94,24 @@ $(document).ready(function(){initNavTree('classcursestone_1_1event_1_1player_1_1
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2565b455cb2cfb4d43f9ac16c83b5f58"><td class="memItemLeft" align="right" valign="top"><a id="a2565b455cb2cfb4d43f9ac16c83b5f58"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerPreLoginEvent</b> (<a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *p, const std::string &amp;msg=&quot;&quot;)</td></tr>
-<tr class="separator:a2565b455cb2cfb4d43f9ac16c83b5f58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4325a670ab0883e529227e798a1a475"><td class="memItemLeft" align="right" valign="top"><a id="ae4325a670ab0883e529227e798a1a475"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerPreLoginEvent</b> (<a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *p, const std::string &amp;ip, uint16_t port, const std::string &amp;clientId)</td></tr>
+<tr class="separator:ae4325a670ab0883e529227e798a1a475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae3633de47e172688b3b8aaafc2ac05"><td class="memItemLeft" align="right" valign="top"><a id="adae3633de47e172688b3b8aaafc2ac05"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>ip</b> () const</td></tr>
+<tr class="separator:adae3633de47e172688b3b8aaafc2ac05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45255ecfb7f1526cd8d1ed18584afa73"><td class="memItemLeft" align="right" valign="top"><a id="a45255ecfb7f1526cd8d1ed18584afa73"></a>
+uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>port</b> () const</td></tr>
+<tr class="separator:a45255ecfb7f1526cd8d1ed18584afa73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a7284635fc7c95352791ad59256ba6c"><td class="memItemLeft" align="right" valign="top"><a id="a8a7284635fc7c95352791ad59256ba6c"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>clientId</b> () const</td></tr>
+<tr class="separator:a8a7284635fc7c95352791ad59256ba6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdde8946c779b2a4807f20b3a3fec95"><td class="memItemLeft" align="right" valign="top"><a id="a3cdde8946c779b2a4807f20b3a3fec95"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>kickMessage</b> () const</td></tr>
+<tr class="separator:a3cdde8946c779b2a4807f20b3a3fec95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9995d0dc30896cf6850da0d2769d304a"><td class="memItemLeft" align="right" valign="top"><a id="a9995d0dc30896cf6850da0d2769d304a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setKickMessage</b> (const std::string &amp;msg)</td></tr>
+<tr class="separator:a9995d0dc30896cf6850da0d2769d304a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0488e5203761c32453e803c90da76857"><td class="memItemLeft" align="right" valign="top"><a id="a0488e5203761c32453e803c90da76857"></a>
 const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>eventName</b> () const override</td></tr>
 <tr class="separator:a0488e5203761c32453e803c90da76857"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,11 +130,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCancelled</b> () co
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setCancelled</b> (bool c=true)</td></tr>
 <tr class="separator:a6bb4f55476780a206550e28e15641dbb inherit pub_methods_classcursestone_1_1event_1_1Cancellable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:adff0304bdbdfd1683067674a49cc546e"><td class="memItemLeft" align="right" valign="top"><a id="adff0304bdbdfd1683067674a49cc546e"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>message</b></td></tr>
-<tr class="separator:adff0304bdbdfd1683067674a49cc546e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">cursestone::event::player::PlayerEvent</a></td></tr>
 <tr class="memitem:af5d41d4b13b91603025e9d3540054c96 inherit pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent"><td class="memItemLeft" align="right" valign="top"><a id="af5d41d4b13b91603025e9d3540054c96"></a>
 <a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>player</b> = nullptr</td></tr>

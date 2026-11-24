@@ -83,8 +83,8 @@ $(document).ready(function(){initNavTree('classcursestone_1_1event_1_1player_1_1
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classcursestone_1_1event_1_1player_1_1PlayerBucketEvent-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::event::player::PlayerBucketEvent Class Reference</div>  </div>
@@ -92,12 +92,39 @@ $(document).ready(function(){initNavTree('classcursestone_1_1event_1_1player_1_1
 <div class="contents">
 
 <p>Inherits <a class="el" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">cursestone::event::player::PlayerEvent</a>, and <a class="el" href="classcursestone_1_1event_1_1Cancellable.html">cursestone::event::Cancellable</a>.</p>
+
+<p>Inherited by <a class="el" href="classcursestone_1_1event_1_1player_1_1PlayerBucketFillEvent.html">cursestone::event::player::PlayerBucketFillEvent</a>.</p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ae6b8f94f14b46ef411c7092ed8ae1648"><td class="memItemLeft" align="right" valign="top"><a id="ae6b8f94f14b46ef411c7092ed8ae1648"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><b>BucketAction</b> : uint8_t { <b>POUR</b> = 0
+, <b>SCOOP</b> = 1
+ }</td></tr>
+<tr class="separator:ae6b8f94f14b46ef411c7092ed8ae1648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a52a5855afdae94353bec4c9ddecf24f2"><td class="memItemLeft" align="right" valign="top"><a id="a52a5855afdae94353bec4c9ddecf24f2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerBucketEvent</b> (<a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *p, const <a class="el" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> &amp;b, int bx, int by, int bz, int f)</td></tr>
-<tr class="separator:a52a5855afdae94353bec4c9ddecf24f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42dd15281c23a0311ac3b772c504991b"><td class="memItemLeft" align="right" valign="top"><a id="a42dd15281c23a0311ac3b772c504991b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>PlayerBucketEvent</b> (<a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *p, const <a class="el" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> &amp;bucket, int32_t liquidId, int32_t x, int32_t y, int32_t z, BucketAction action)</td></tr>
+<tr class="separator:a42dd15281c23a0311ac3b772c504991b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e04cbdcbed7fb9ac8a2cca668dcc850"><td class="memItemLeft" align="right" valign="top"><a id="a9e04cbdcbed7fb9ac8a2cca668dcc850"></a>
+const <a class="el" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getBucket</b> () const</td></tr>
+<tr class="separator:a9e04cbdcbed7fb9ac8a2cca668dcc850"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab63e89ddd23b7c55baa3570a8ea80e5a"><td class="memItemLeft" align="right" valign="top"><a id="ab63e89ddd23b7c55baa3570a8ea80e5a"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>getLiquidId</b> () const</td></tr>
+<tr class="separator:ab63e89ddd23b7c55baa3570a8ea80e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9847845fe9820db215b9a7f57161b97"><td class="memItemLeft" align="right" valign="top"><a id="aa9847845fe9820db215b9a7f57161b97"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>getBlockX</b> () const</td></tr>
+<tr class="separator:aa9847845fe9820db215b9a7f57161b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe9b015e0a9b2a58a91a38aae5cc7170"><td class="memItemLeft" align="right" valign="top"><a id="abe9b015e0a9b2a58a91a38aae5cc7170"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>getBlockY</b> () const</td></tr>
+<tr class="separator:abe9b015e0a9b2a58a91a38aae5cc7170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02418fc55a74618dd6c57f455a200a0d"><td class="memItemLeft" align="right" valign="top"><a id="a02418fc55a74618dd6c57f455a200a0d"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>getBlockZ</b> () const</td></tr>
+<tr class="separator:a02418fc55a74618dd6c57f455a200a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3f8465782d6cc5bc5a57cb4f0f059dd"><td class="memItemLeft" align="right" valign="top"><a id="af3f8465782d6cc5bc5a57cb4f0f059dd"></a>
+BucketAction&#160;</td><td class="memItemRight" valign="bottom"><b>getAction</b> () const</td></tr>
+<tr class="separator:af3f8465782d6cc5bc5a57cb4f0f059dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aade007fa05fdf06dedde2216197549db"><td class="memItemLeft" align="right" valign="top"><a id="aade007fa05fdf06dedde2216197549db"></a>
 const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>eventName</b> () const override</td></tr>
 <tr class="separator:aade007fa05fdf06dedde2216197549db"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -119,23 +146,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isCancelled</b> () co
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setCancelled</b> (bool c=true)</td></tr>
 <tr class="separator:a6bb4f55476780a206550e28e15641dbb inherit pub_methods_classcursestone_1_1event_1_1Cancellable"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:ab66c42e157b1570caf1a85c12202a118"><td class="memItemLeft" align="right" valign="top"><a id="ab66c42e157b1570caf1a85c12202a118"></a>
-<a class="el" href="structcursestone_1_1item_1_1ItemStack.html">cursestone::item::ItemStack</a>&#160;</td><td class="memItemRight" valign="bottom"><b>bucket</b></td></tr>
-<tr class="separator:ab66c42e157b1570caf1a85c12202a118"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a729d12aa85ba3a8ff716fc7b8a1089bf"><td class="memItemLeft" align="right" valign="top"><a id="a729d12aa85ba3a8ff716fc7b8a1089bf"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>blockX</b> = 0</td></tr>
-<tr class="separator:a729d12aa85ba3a8ff716fc7b8a1089bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad768f4a3e616ee8b18f2e3623f7adbc2"><td class="memItemLeft" align="right" valign="top"><a id="ad768f4a3e616ee8b18f2e3623f7adbc2"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>blockY</b> = 0</td></tr>
-<tr class="separator:ad768f4a3e616ee8b18f2e3623f7adbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ce560169cd66eff956f05d31186581e"><td class="memItemLeft" align="right" valign="top"><a id="a2ce560169cd66eff956f05d31186581e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>blockZ</b> = 0</td></tr>
-<tr class="separator:a2ce560169cd66eff956f05d31186581e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45593968ca0416990ee69c4a229273be"><td class="memItemLeft" align="right" valign="top"><a id="a45593968ca0416990ee69c4a229273be"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>face</b> = 0</td></tr>
-<tr class="separator:a45593968ca0416990ee69c4a229273be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classcursestone_1_1event_1_1player_1_1PlayerEvent.html">cursestone::event::player::PlayerEvent</a></td></tr>
 <tr class="memitem:af5d41d4b13b91603025e9d3540054c96 inherit pub_attribs_classcursestone_1_1event_1_1player_1_1PlayerEvent"><td class="memItemLeft" align="right" valign="top"><a id="af5d41d4b13b91603025e9d3540054c96"></a>
 <a class="el" href="classcursestone_1_1Player.html">cursestone::Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>player</b> = nullptr</td></tr>

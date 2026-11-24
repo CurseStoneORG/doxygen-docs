@@ -149,17 +149,17 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <tr class="memdesc:a62589ea9bc82040800696712d13e4347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flotation bob: the gentle, continuous rocking of a body that floats half in and half out of the water.  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a62589ea9bc82040800696712d13e4347">More...</a><br /></td></tr>
 <tr class="separator:a62589ea9bc82040800696712d13e4347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42e3196533f8491a12a6de075f3ffaad"><td class="memItemLeft" align="right" valign="top"><a id="a42e3196533f8491a12a6de075f3ffaad"></a>
-constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a42e3196533f8491a12a6de075f3ffaad">kBobHz</a> = 0.35f</td></tr>
-<tr class="memdesc:a42e3196533f8491a12a6de075f3ffaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bob cadence: 0.35 Hz — a full rise-and-fall cycle roughly every three seconds, the pace of a relaxed float. <br /></td></tr>
+constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a42e3196533f8491a12a6de075f3ffaad">kBobHz</a> = 0.5f</td></tr>
+<tr class="memdesc:a42e3196533f8491a12a6de075f3ffaad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bob cadence: 0.5 Hz — a full rise-and-fall cycle every two seconds, the lively pace of a vanilla-style float. <br /></td></tr>
 <tr class="separator:a42e3196533f8491a12a6de075f3ffaad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2c34c8955e09c3cc2ee2e659d7476bf"><td class="memItemLeft" align="right" valign="top"><a id="af2c34c8955e09c3cc2ee2e659d7476bf"></a>
 constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#af2c34c8955e09c3cc2ee2e659d7476bf">kBobPhaseStep</a> = <a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a62589ea9bc82040800696712d13e4347">kBobTwoPi</a> * <a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#a42e3196533f8491a12a6de075f3ffaad">kBobHz</a> / 20.0f</td></tr>
 <tr class="memdesc:af2c34c8955e09c3cc2ee2e659d7476bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Phase (radians) the oscillator advances per floating tick: an exact per-tick step, so the only per-tick trig a swimming mob spends is the single sine the bob itself needs. <br /></td></tr>
 <tr class="separator:af2c34c8955e09c3cc2ee2e659d7476bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc9779a6fab48586a0da54bbe7af2545"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#abc9779a6fab48586a0da54bbe7af2545">kBobPitchDeg</a> = 5.0f</td></tr>
+<tr class="memitem:abc9779a6fab48586a0da54bbe7af2545"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#abc9779a6fab48586a0da54bbe7af2545">kBobPitchDeg</a> = 8.0f</td></tr>
 <tr class="memdesc:abc9779a6fab48586a0da54bbe7af2545"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rocking amplitude of the body pitch (degrees).  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#abc9779a6fab48586a0da54bbe7af2545">More...</a><br /></td></tr>
 <tr class="separator:abc9779a6fab48586a0da54bbe7af2545"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab72c2dfeb8237714c3bb4f49eb334e15"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#ab72c2dfeb8237714c3bb4f49eb334e15">kBobForce</a> = 0.0022f</td></tr>
+<tr class="memitem:ab72c2dfeb8237714c3bb4f49eb334e15"><td class="memItemLeft" align="right" valign="top">constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecursestone_1_1entity_1_1ai_1_1water.html#ab72c2dfeb8237714c3bb4f49eb334e15">kBobForce</a> = 0.005f</td></tr>
 <tr class="memdesc:ab72c2dfeb8237714c3bb4f49eb334e15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vertical bob force amplitude (blocks/tick^2).  <a href="namespacecursestone_1_1entity_1_1ai_1_1water.html#ab72c2dfeb8237714c3bb4f49eb334e15">More...</a><br /></td></tr>
 <tr class="separator:ab72c2dfeb8237714c3bb4f49eb334e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -286,7 +286,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr float cursestone::entity::ai::water::kBobForce = 0.0022f</td>
+          <td class="memname">constexpr float cursestone::entity::ai::water::kBobForce = 0.005f</td>
         </tr>
       </table>
   </td>
@@ -297,7 +297,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 
 <p>Vertical bob force amplitude (blocks/tick^2). </p>
-<p>Sized so the integrated excursion under the water drag lands around a few hundredths of a block: a visible, relaxed float — never a wallow. </p>
+<p>Sized so the integrated excursion under the water drag lands around a few hundredths of a block: a clearly visible float with a firm rise-and-fall — never a wallow. </p>
 
 </div>
 </div>
@@ -311,7 +311,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr float cursestone::entity::ai::water::kBobPitchDeg = 5.0f</td>
+          <td class="memname">constexpr float cursestone::entity::ai::water::kBobPitchDeg = 8.0f</td>
         </tr>
       </table>
   </td>
@@ -322,7 +322,7 @@ constexpr float&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 
 <p>Rocking amplitude of the body pitch (degrees). </p>
-<p>The wire encodes pitch as a byte (~1.4 degree resolution), so the rocking rides well above that to read on the client. </p>
+<p>The wire encodes pitch as a byte (~1.4 degree resolution), so the rocking rides well above that to read on the client — 8 degrees gives the nose a clear vanilla-like dip and lift. </p>
 
 </div>
 </div>

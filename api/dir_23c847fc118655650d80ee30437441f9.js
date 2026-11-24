@@ -1,17 +1,27 @@
 var dir_23c847fc118655650d80ee30437441f9 =
 [
+    [ "PlayerAnimationEvent.h", "PlayerAnimationEvent_8h_source.html", null ],
     [ "PlayerBedEnterEvent.h", "PlayerBedEnterEvent_8h_source.html", null ],
     [ "PlayerBedLeaveEvent.h", "PlayerBedLeaveEvent_8h_source.html", null ],
+    [ "PlayerBucketEvent.h", "PlayerBucketEvent_8h_source.html", null ],
+    [ "PlayerBucketFillEvent.h", "PlayerBucketFillEvent_8h_source.html", null ],
     [ "PlayerChatEvent.h", "PlayerChatEvent_8h_source.html", null ],
+    [ "PlayerCreationEvent.h", "PlayerCreationEvent_8h_source.html", null ],
     [ "PlayerDeathEvent.h", "PlayerDeathEvent_8h_source.html", null ],
     [ "PlayerDropItemEvent.h", "PlayerDropItemEvent_8h_source.html", null ],
     [ "PlayerEvent.h", "PlayerEvent_8h_source.html", null ],
+    [ "PlayerExhaustEvent.h", "PlayerExhaustEvent_8h_source.html", null ],
+    [ "PlayerGamemodeChangeEvent.h", "PlayerGamemodeChangeEvent_8h_source.html", null ],
+    [ "PlayerHungerChangeEvent.h", "PlayerHungerChangeEvent_8h_source.html", null ],
     [ "PlayerInteractEvent.h", "PlayerInteractEvent_8h_source.html", null ],
     [ "PlayerItemConsumeEvent.h", "PlayerItemConsumeEvent_8h_source.html", null ],
     [ "PlayerItemHeldEvent.h", "PlayerItemHeldEvent_8h_source.html", null ],
     [ "PlayerJoinEvent.h", "PlayerJoinEvent_8h_source.html", null ],
     [ "PlayerMoveEvent.h", "PlayerMoveEvent_8h_source.html", null ],
+    [ "PlayerPreLoginEvent.h", "PlayerPreLoginEvent_8h_source.html", null ],
     [ "PlayerQuitEvent.h", "PlayerQuitEvent_8h_source.html", null ],
     [ "PlayerRespawnEvent.h", "PlayerRespawnEvent_8h_source.html", null ],
-    [ "PlayerTeleportEvent.h", "PlayerTeleportEvent_8h_source.html", null ]
+    [ "PlayerTeleportEvent.h", "PlayerTeleportEvent_8h_source.html", null ],
+    [ "PlayerToggleSneakEvent.h", "PlayerToggleSneakEvent_8h_source.html", null ],
+    [ "PlayerToggleSprintEvent.h", "PlayerToggleSprintEvent_8h_source.html", null ]
 ];
