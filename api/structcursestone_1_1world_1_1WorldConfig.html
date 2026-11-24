@@ -128,6 +128,12 @@ int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>view_distance</b> 
 size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1world_1_1WorldConfig.html#ab746e5b48650530608e13ddb0422b033">max_mobs</a> = 1000000</td></tr>
 <tr class="memdesc:ab746e5b48650530608e13ddb0422b033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ceiling of the mob record map (the old compile-time kMaxMobs, configurable through the max-mobs property so large-population deployments can raise it; records only exist for resident chunks, so the ceiling bounds worst-case memory, not steady-state cost). <br /></td></tr>
 <tr class="separator:ab746e5b48650530608e13ddb0422b033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf464f32123dd3c7cccab450b0e897ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structcursestone_1_1world_1_1WorldConfig.html#acf464f32123dd3c7cccab450b0e897ed">mob_sim_workers</a> = 0</td></tr>
+<tr class="memdesc:acf464f32123dd3c7cccab450b0e897ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stage-3 parallel mob simulation: worker threads for the mob AI compute team (0 = the sequential single-thread pass, the safe default) and the execution mode (0 sequential, 1 gate validation, 2 parallel — see entity::ai::MobSimMode).  <a href="structcursestone_1_1world_1_1WorldConfig.html#acf464f32123dd3c7cccab450b0e897ed">More...</a><br /></td></tr>
+<tr class="separator:acf464f32123dd3c7cccab450b0e897ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4398d40fc119c638102b6e0a766bc84f"><td class="memItemLeft" align="right" valign="top"><a id="a4398d40fc119c638102b6e0a766bc84f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>mob_sim_mode</b> = 0</td></tr>
+<tr class="separator:a4398d40fc119c638102b6e0a766bc84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae517570f00449b4641925a221f82fe6b"><td class="memItemLeft" align="right" valign="top"><a id="ae517570f00449b4641925a221f82fe6b"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>dataPath</b></td></tr>
 <tr class="separator:ae517570f00449b4641925a221f82fe6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +153,23 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>dataPath</b></
 
 <p><a class="el" href="classcursestone_1_1world_1_1World.html">World</a> dimension: 0 for surface, 1 for Nether. </p>
 <p>Nether generators default to dimension 1 when unset. </p>
+
+</div>
+</div>
+<a id="acf464f32123dd3c7cccab450b0e897ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf464f32123dd3c7cccab450b0e897ed">&#9670;&nbsp;</a></span>mob_sim_workers</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int cursestone::world::WorldConfig::mob_sim_workers = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Stage-3 parallel mob simulation: worker threads for the mob AI compute team (0 = the sequential single-thread pass, the safe default) and the execution mode (0 sequential, 1 gate validation, 2 parallel — see entity::ai::MobSimMode). </p>
+<p>Parsed from server.properties. </p>
 
 </div>
 </div>

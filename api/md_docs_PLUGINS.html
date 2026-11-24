@@ -101,7 +101,7 @@ $(document).ready(function(){initNavTree('md_docs_PLUGINS.html',''); initResizab
 <li><b>C++ plugins are file plugins</b>: drop the compiled <code>.so</code> (Linux, Android, macOS) or <code>.dll</code> (Windows) directly into <code>plugins/</code>. No folder, no <code>plugin.yml</code>, nothing else — the server opens the library, reads the descriptor inside it and that is the whole identity.</li>
 </ul>
 <p>The plugin API version is <code>CURSESTONE_API</code> in <code><a class="el" href="CurseStone_8h_source.html">src/CurseStone.h</a></code> (currently <code>1.0.3</code>).</p>
-<h1><a class="anchor" id="autotoc_md184"></a>
+<h1><a class="anchor" id="autotoc_md185"></a>
 Folder plugins (Lua)</h1>
 <div class="fragment"><div class="line"># plugins/MyPlugin/plugin.yml</div>
 <div class="line">name: MyPlugin          # identity; duplicates (case-insensitive) disable all copies</div>
@@ -117,7 +117,7 @@ Folder plugins (Lua)</h1>
 <li><code>player.*</code> — message, tip, popup, kick, teleport, teleportWorld, getWorld, isOp, getHealth, setHealth, setPermission, hasPermission, giveItem, getHeldItem, setNameTag, getNameTag, setDisplayName, getDisplayName, getPosition, getRotation, setRotation, setMotion, kill</li>
 <li><code>server.getWorld(name)</code> / <code>server.loadWorld(name, gen, [seed])</code> / <code>server.unloadWorld(name)</code> / <code>server.isWorldLoaded(name)</code> / <code>server.defaultWorld()</code> — world handles with <code>name</code>, <code>seed</code>, <code>dimension</code>, <code>generator</code>, <code>isDefault</code>, <code>getTime</code>, <code>setTime</code>, <code>getBlock</code>, <code>getBlockMeta</code>, <code>setBlock</code>, <code>fill</code>, <code>setBlocks</code>, <code>getBlocks</code>, <code>getSpawn</code>, <code>setSpawn</code>, <code>getPlayers</code>, <code>playerCount</code>, <code>isChunkLoaded</code> (chunk coords), <code>chunkCount</code>, <code>save</code>, <code>spawnParticle</code>, <code>spawnBlockParticles</code>, <code>spawnSplashParticles</code>, <code>spawnFloatingText</code>, <code>moveFloatingText</code>, <code>setFloatingText</code>, <code>setFloatingTextTitle</code>, <code>setFloatingTextBody</code>, <code>setFloatingTextVisible</code>, <code>setFloatingTextFollow</code>, <code>setFloatingTextFollowPlayer</code>, <code>setFloatingTextViewers</code>, <code>getFloatingTexts</code>, <code>removeFloatingText</code>, <code>spawnEntity</code>, <code>moveEntity</code>, <code>removeEntity</code>, <code>getEntity</code>, <code>getEntities</code>, <code>entityTypes</code>, <code>unload</code>. World names must be 1..64 letters, digits, <code>_</code> or <code>-</code> (they become directory names); generators are <code>normal</code>, <code>flat</code>, <code>nether</code>, <code>void</code> or <code>empty</code> (case-insensitive). New secondary worlds persist in <code>worlds/worlds.manifest</code> and reload on the next boot; unloading removes the entry.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md185"></a>
+<h2><a class="anchor" id="autotoc_md186"></a>
 Building blocks from plugins</h2>
 <p>Every block write a plugin makes is visible to clients immediately — <code>world.setBlock</code> refreshes all viewers of the cell with one UpdateBlockPacket, so there is no "the block only appears after the chunk
 re-loads" window. For WorldEdit-style volume work use the bulk write:</p>
@@ -147,7 +147,7 @@ re-loads" window. For WorldEdit-style volume work use the bulk write:</p>
 <li><code>data.read/write/exists/delete/list/loadYml/saveYml/loadJson/saveJson</code></li>
 <li><code>plugin.include/import/getResource/saveResource/listResources</code></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md186"></a>
+<h2><a class="anchor" id="autotoc_md187"></a>
 Particles</h2>
 <p>Protocol 84 has no arbitrary-particle packet; particles travel inside <code>LevelEventPacket</code> world events. The Lua world handles expose the three event shapes the 0.15.10 client actually renders, plus floating text:</p>
 <div class="fragment"><div class="line">local w = server.defaultWorld()</div>
@@ -185,7 +185,7 @@ Particles</h2>
 </div><!-- fragment --><p><code>spawnFloatingText(x, y, z, text, [ttlTicks])</code>: <code>ttlTicks &gt; 0</code> despawns automatically after that many ticks, <code>0</code> keeps the text until <code>removeFloatingText</code> (entity ids do not survive restarts). The title is capped at 128 chars and the whole pair at 512; the invisible carrier hangs 1.62 below the text line so the nametag anchor lands at the requested spot.</p>
 <p><code>setFloatingText(id, text)</code> replaces the content with the same multi-line model (first line = title, rest = body). Only the nametag moves on the wire: one SetEntityDataPacket resyncs every viewer — an animated title costs one packet per step, not a respawn. <code>setFloatingTextTitle</code> / <code>setFloatingTextBody</code> replace one half of the Genisys pair and cost at most the same one metadata packet.</p>
 <p><code>getFloatingTexts()</code> returns <code>{id,x,y,z,text,title,body,visible,follow}</code> tables ordered by entity id (<code>text</code> is the whole nametag with <code>\n</code> separators; <code>follow</code> is the anchored entity id or 0).</p>
-<h3><a class="anchor" id="autotoc_md187"></a>
+<h3><a class="anchor" id="autotoc_md188"></a>
 Tag types (all ride the same one-carrier model)</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -202,7 +202,7 @@ Tag types (all ride the same one-carrier model)</h3>
 <td class="markdownTableBodyNone">Expiring   </td><td class="markdownTableBodyNone"><code>spawnFloatingText(..., ttlTicks)</code>   </td><td class="markdownTableBodyNone">none — the scheduler despawns it   </td></tr>
 </table>
 <p>Viewer churn reconciles once per second: players that join or walk into render range receive the text, players that walk out, quit or switch worlds stop rendering it — the same canSeeBlock audience every other world broadcast uses. Between syncs the only per-tick cost of a text is none: spawn, move, re-text and removal are the only packet moments.</p>
-<h3><a class="anchor" id="autotoc_md188"></a>
+<h3><a class="anchor" id="autotoc_md189"></a>
 Why this cannot hurt the FPS</h3>
 <ul>
 <li>One text = one entity whose only visible part is its nametag: the client cost is a player nametag, and the 128/world cap bounds the worst case.</li>
@@ -224,7 +224,7 @@ Why this cannot hurt the FPS</h3>
 <p>Sample plugin: <code>plugins/SpawnProtection/</code>.</p>
 <p>Test plugin for the floating text API: <code>plugins/FloatingTextDemo/</code> drives every call through the <code>/ft</code> command.</p>
 <p>A folder whose <code>main</code> points at a <code>.so</code>/<code>.dll</code> is <b>not</b> loaded: native plugins are bare files now, and the log explains the migration (move the library into <code>plugins/</code>, delete the manifest).</p>
-<h2><a class="anchor" id="autotoc_md189"></a>
+<h2><a class="anchor" id="autotoc_md190"></a>
 Entities (standing mobs)</h2>
 <p>World handles expose the mob registry the creative spawn eggs use. A spawned mob has no AI and no physics: it spawns exactly where the caller puts it and stays there. Cost is three packets in its whole lifetime — one AddEntityPacket on spawn, one MoveEntityPacket per move, one RemoveEntityPacket on removal — with no per-tick entry in the world loop, and viewers that stream its chunk later (joins, walk-ins) receive it from the chunk stream, deduplicated per client.</p>
 <div class="fragment"><div class="line">local w = server.defaultWorld()</div>
@@ -238,7 +238,7 @@ Entities (standing mobs)</h2>
 <div class="line">w:entityTypes()                                   -- name -&gt; protocol-84 id map</div>
 </div><!-- fragment --><p><code>type</code> accepts the canonical lowercase names — `chicken cow pig sheep wolf villager mooshroom squid rabbit bat ocelot horse donkey mule skeleton_horse zombie_horse zombie creeper skeleton spider zombie_pigman slime enderman silverfish ghast lava_slime magma_cube blaze zombie_villager witch stray husk wither_skeleton` — or their protocol-84 network id (10..48 range above; on this protocol the spawn egg aux value IS the id). Common aliases (<code>mushroom_cow</code>, <code>pigman</code>, <code>cat</code>, <code>magma</code>, ...) resolve too. Unknown names/ids, out-of-height positions and the per-world cap (256) return <code>false</code> and never raise. Every id in the registry has its own egg in the 0.15.10 creative inventory, which is what makes the client's renderer for it client-verified — ids outside the registry never reach the wire.</p>
 <p>Entity ids do not survive restarts, like floating text ids — but the mobs themselves do: they are chunk state, stored inside the world's region files (each chunk's <code>Entities</code> NBT list in <code>worlds/&lt;world&gt;/region/r.X.Z.mca</code>). Every full save point (shutdown, <code>/save</code>, world unload, the autosave's level-dat pass) folds the mobs of every changed chunk back into its entity list, and each chunk restores its bodies the moment it loads — at the saved position/rotation with the saved health (a plugin-raised max health survives too). Dying bodies and dead health values are never saved, so a restart cannot resurrect a corpse mid-animation. Because the ids are re-allocated whenever a chunk loads, a plugin must not store an eid across a restart — re-resolve entities through <code>getEntities()</code> / <code>getEntity()</code> instead.</p>
-<h3><a class="anchor" id="autotoc_md190"></a>
+<h3><a class="anchor" id="autotoc_md191"></a>
 Mob combat and health</h3>
 <p>Mobs carry vanilla-shaped health (each registry id has its era max — a zombie 20, a rabbit 3) and take damage through one pipeline used by every source: player melee (InteractPacket), arrows, and the plugin <code>damageEntity</code> call. Each hit fires the cancellable <code>EntityDamage</code> / <code>EntityDamageByEntity</code> events (mob victims surface as <code>e.entity = "eid:N"</code> plus <code>e.entityName</code>/<code>e.entityType</code>, player victims as their name), broadcasts the red hurt flash to the chunk viewers, applies era knockback (a client motion packet plus a server-side AI carry-over) when an attacker drives the hit, and a lethal blow runs the death sequence: <code>EntityDeathEvent</code>, the vanilla drop table (rotten flesh, beef, feathers, gunpowder, ...), the death animation for ~1 second, then the record despawns. Dying bodies take no further damage and reject direct health writes; death itself is not cancellable — cancel the damage event instead.</p>
 <div class="fragment"><div class="line">local eid = w:spawnEntity(&quot;zombie&quot;, x, y, z)</div>
@@ -257,9 +257,9 @@ Mob combat and health</h3>
 <div class="line">  print(e.entity .. &quot; (&quot; .. e.entityName .. &quot;) died by &quot; .. e.cause)</div>
 <div class="line">end)</div>
 </div><!-- fragment --><p><code>damageEntity</code>'s cause argument accepts the lowercase names the damage events emit (<code>"fall"</code>, <code>"projectile"</code>, ...), a numeric <code>events.CAUSE</code> constant, or nothing for <code>"entity_attack"</code>.</p>
-<h1><a class="anchor" id="autotoc_md191"></a>
+<h1><a class="anchor" id="autotoc_md192"></a>
 File plugins (C++ via .so / .dll)</h1>
-<h2><a class="anchor" id="autotoc_md192"></a>
+<h2><a class="anchor" id="autotoc_md193"></a>
 Structure</h2>
 <p>The final plugin is ONE file, named after the plugin:</p>
 <div class="fragment"><div class="line">plugins/</div>
@@ -278,7 +278,7 @@ Structure</h2>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <a class="code" href="structCsPluginVTable.html">CsPluginVTable</a>* CurseStonePlugin_entry(<span class="keywordtype">void</span>);</div>
 <div class="ttc" id="astructCsPluginVTable_html"><div class="ttname"><a href="structCsPluginVTable.html">CsPluginVTable</a></div><div class="ttdoc">The vtable returned by CS_PLUGIN_ENTRY.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:660</div></div>
 </div><!-- fragment --><p><code><a class="el" href="NativeAPI_8h_source.html">src/plugin/NativeAPI.h</a></code> is the complete SDK header — copy it (or point <code>-I</code> at the server <code>src/</code>) and compile against it. The plugin links nothing: the entire server surface arrives as function-pointer groups in the <code>CsPluginApi*</code> handed to <code>onLoad</code>.</p>
-<h2><a class="anchor" id="autotoc_md193"></a>
+<h2><a class="anchor" id="autotoc_md194"></a>
 Minimal complete plugin</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;plugin/NativeAPI.h&quot;</span></div>
 <div class="line"> </div>
@@ -327,7 +327,7 @@ Minimal complete plugin</h2>
 <div class="ttc" id="astructCsPluginDesc_html"><div class="ttname"><a href="structCsPluginDesc.html">CsPluginDesc</a></div><div class="ttdoc">Static plugin metadata returned by the vtable's desc hook.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:117</div></div>
 <div class="ttc" id="astructCsSchedulerApi_html_a33eca3f0a6709dc3c4e898498d990dc7"><div class="ttname"><a href="structCsSchedulerApi.html#a33eca3f0a6709dc3c4e898498d990dc7">CsSchedulerApi::every</a></div><div class="ttdeci">uint64_t(* every)(CsPluginApi *api, int32_t ticks, CsTaskFn fn, void *ud)</div><div class="ttdoc">Repeating; id for cancel().</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:203</div></div>
 </div><!-- fragment --><p><code>onLoad</code> / <code>desc</code> are required; the other hooks may be <code>NULL</code>. The descriptor is the manifest: keep <code>name</code> non-empty and unique, and set <code>api</code> to the <code>CURSESTONE_API</code> you built against (an empty value means "this SDK"; an incompatible claim refuses the load).</p>
-<h2><a class="anchor" id="autotoc_md194"></a>
+<h2><a class="anchor" id="autotoc_md195"></a>
 Building</h2>
 <div class="fragment"><div class="line"># Linux / macOS / Android NDK</div>
 <div class="line">c++ -shared -fPIC -O2 -I&lt;repo&gt;/src -o MyPlugin.so src/MyPlugin.cpp</div>
@@ -339,10 +339,10 @@ Building</h2>
 <div class="line">target_include_directories(MyPlugin PRIVATE &lt;repo&gt;/src)</div>
 <div class="line">set_target_properties(MyPlugin PROPERTIES PREFIX &quot;&quot;)   # MyPlugin.so, not libMyPlugin.so</div>
 </div><!-- fragment --><p>For Android use the NDK toolchain (<code>-DANDROID_ABI=arm64-v8a</code> and friends); for MSVC make sure the platform matches the server build (x64 vs x86).</p>
-<h2><a class="anchor" id="autotoc_md195"></a>
+<h2><a class="anchor" id="autotoc_md196"></a>
 Data folder</h2>
 <p>Every loaded plugin gets <code>&lt;server&gt;/data_pl/&lt;stem&gt;/</code> created at load. The <code>data.*</code> group is jailed to it: relative paths only, no <code>..</code>, no backslashes. The Lua sandbox uses the same root, keyed by folder name.</p>
-<h2><a class="anchor" id="autotoc_md196"></a>
+<h2><a class="anchor" id="autotoc_md197"></a>
 Rules and guarantees</h2>
 <ul>
 <li><b>ABI version</b>: <code>CS_PLUGIN_ABI_VERSION</code> (currently 1) is checked right after the entry lookup; a mismatch refuses the library with a clear log line. It only moves when an existing field changes meaning, type or order — new surface is appended to the end of the group structs.</li>
@@ -353,7 +353,7 @@ Rules and guarantees</h2>
 <li><b>Permissions</b> mirror the Lua <code>commands.register</code> vocabulary: <code>NULL</code>/<code>""</code> = public, <code>"op"</code> = operators + console, any other string = permission node.</li>
 <li><b>String ownership</b>: strings handed OUT by the API are valid only until the callback returns; buffers the plugin fills are caller-owned.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md197"></a>
+<h2><a class="anchor" id="autotoc_md198"></a>
 API reference (native)</h2>
 <p>All functions return <code>bool</code>/<code>int</code> failure markers (<code>false</code> / <code>-1</code> / <code>0</code>) instead of raising anything; invalid arguments never crash the server.</p>
 <p><b>log</b> (context-bound)</p>
@@ -552,16 +552,16 @@ API reference (native)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>free(ptr)</code>   </td><td class="markdownTableBodyNone">releases <code>readFile</code> buffers across allocator boundaries   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md198"></a>
+<h2><a class="anchor" id="autotoc_md199"></a>
 Versioning</h2>
 <p><code>CS_PLUGIN_ABI_VERSION</code> stays at 1 while fields are only appended; the server's plugin API version (<code>CURSESTONE_API</code>, currently <code>1.0.3</code>) only moves at release time, not per change.</p>
-<h1><a class="anchor" id="autotoc_md199"></a>
+<h1><a class="anchor" id="autotoc_md200"></a>
 Commands</h1>
 <ul>
 <li><code>/plugins</code> — lists every plugin; native ones show a <code>[C++]</code> tag.</li>
 <li><code>/plugins reload</code> — disables, unloads (dtor runs <code>onUnload</code>, library closed) and re-scans the folder (folders for Lua, bare files for C++), all on the main thread.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md200"></a>
+<h1><a class="anchor" id="autotoc_md201"></a>
 Reference implementation</h1>
 <p><code>plugins/HelloNative/</code> — build with the <code>cursestone-example-plugin</code> CMake target or the one-liner above, then drop the produced <code>HelloNative.so</code> / <code>HelloNative.dll</code> directly into <code>plugins/</code>. </p>
 </div></div><!-- contents -->

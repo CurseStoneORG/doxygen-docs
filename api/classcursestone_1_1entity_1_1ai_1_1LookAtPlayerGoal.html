@@ -119,6 +119,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:af3b8dd39548b2ee396f001ad0482e3d2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#af3b8dd39548b2ee396f001ad0482e3d2">tick</a> (const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;ctx, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;brain) override</td></tr>
 <tr class="memdesc:af3b8dd39548b2ee396f001ad0482e3d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs on every think tick while the goal is active.  <a href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#af3b8dd39548b2ee396f001ad0482e3d2">More...</a><br /></td></tr>
 <tr class="separator:af3b8dd39548b2ee396f001ad0482e3d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad79fc61c71d6bb58d746a2bb5fc77433"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#ad79fc61c71d6bb58d746a2bb5fc77433">clone</a> () const override</td></tr>
+<tr class="memdesc:ad79fc61c71d6bb58d746a2bb5fc77433"><td class="mdescLeft">&#160;</td><td class="mdescRight">Polymorphic copy.  <a href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#ad79fc61c71d6bb58d746a2bb5fc77433">More...</a><br /></td></tr>
+<tr class="separator:ad79fc61c71d6bb58d746a2bb5fc77433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classcursestone_1_1entity_1_1ai_1_1Goal"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classcursestone_1_1entity_1_1ai_1_1Goal')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">cursestone::entity::ai::Goal</a></td></tr>
 <tr class="memitem:a6a38290a126a27b75740237b54505141 inherit pub_methods_classcursestone_1_1entity_1_1ai_1_1Goal"><td class="memItemLeft" align="right" valign="top"><a id="a6a38290a126a27b75740237b54505141"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a6a38290a126a27b75740237b54505141">start</a> (const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;ctx, class <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;brain)</td></tr>
@@ -204,6 +207,36 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>May consume <code>brain's</code> randomness (per-mob, deterministic on the main thread). </p>
 
 <p>Implements <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ad73c6ac5623a78027e82b8dc48d3d98b">cursestone::entity::ai::Goal</a>.</p>
+
+</div>
+</div>
+<a id="ad79fc61c71d6bb58d746a2bb5fc77433"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad79fc61c71d6bb58d746a2bb5fc77433">&#9670;&nbsp;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a>&gt; cursestone::entity::ai::LookAtPlayerGoal::clone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Polymorphic copy. </p>
+<p>The stage-3 shadow-brain system needs goal objects the worker team may mutate: each shadow brain clones its goal set once, and the clones carry the goal's internal state (targets, timers) so behaviors stay continuous across a sequential/parallel switch. </p>
+
+<p>Implements <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#af3adddc5519a5028da1581b8ea4b6821">cursestone::entity::ai::Goal</a>.</p>
 
 </div>
 </div>

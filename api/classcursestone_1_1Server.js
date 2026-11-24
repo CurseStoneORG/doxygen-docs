@@ -46,6 +46,8 @@ var classcursestone_1_1Server =
     [ "matchPlayer", "classcursestone_1_1Server.html#ac2da8678cca88b4f13236b1e2384286c", null ],
     [ "maxMobs", "classcursestone_1_1Server.html#aa3732b6695b4762aa91894ede6fa4ed5", null ],
     [ "maxPlayers", "classcursestone_1_1Server.html#ad3e9f2be0ae337f9109f7847a8508c9e", null ],
+    [ "mobSimMode", "classcursestone_1_1Server.html#a09148916771ae056d73a17e578e5a7c5", null ],
+    [ "mobSimWorkers", "classcursestone_1_1Server.html#ae9a6a93fd4cb695fd743f2daa03ac0ea", null ],
     [ "netherEnabled", "classcursestone_1_1Server.html#ae494121ba6503d753feef574aa266b41", null ],
     [ "notifySaveRequester", "classcursestone_1_1Server.html#ae1ca18918fabb7f3dbff59feae50af75", null ],
     [ "onlineMode", "classcursestone_1_1Server.html#ae078d33c067de10777850e01328493d7", null ],

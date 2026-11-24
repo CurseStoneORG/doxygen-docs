@@ -229,6 +229,14 @@ const char *const&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <div class="line">                                             <span class="stringliteral">&quot;# chunks players actually have loaded, so this bounds\n&quot;</span></div>
 <div class="line">                                             <span class="stringliteral">&quot;# worst-case memory (~200 bytes per record), not tick cost.\n&quot;</span></div>
 <div class="line">                                             <span class="stringliteral">&quot;max-mobs=1000000\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;# Stage-3 parallel mob simulation: CPU workers for the mob AI\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;# pass (0 = sequential single-thread, the safe default) and how\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;# worker results are used: 0 sequential, 1 gate (workers compute\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;# on snapshots, the sequential result still applies, divergences\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;# are logged), 2 parallel (worker results apply; the sequential\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;# path stays as the automatic fallback).\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;mob-sim-workers=0\n&quot;</span></div>
+<div class="line">                                             <span class="stringliteral">&quot;mob-sim-mode=0\n&quot;</span></div>
 <div class="line">                                             <span class="stringliteral">&quot;world-name=world\n&quot;</span></div>
 <div class="line">                                             <span class="stringliteral">&quot;# Empty or 0 selects a random seed.\n&quot;</span></div>
 <div class="line">                                             <span class="stringliteral">&quot;world-seed=\n&quot;</span></div>

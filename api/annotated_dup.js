@@ -90,7 +90,11 @@ var annotated_dup =
           [ "MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", "structcursestone_1_1entity_1_1ai_1_1MobIntent" ],
           [ "MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", "classcursestone_1_1entity_1_1ai_1_1MobBrain" ],
           [ "FacingStep", "structcursestone_1_1entity_1_1ai_1_1FacingStep.html", "structcursestone_1_1entity_1_1ai_1_1FacingStep" ],
-          [ "MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", "classcursestone_1_1entity_1_1ai_1_1MobAIManager" ]
+          [ "MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", "classcursestone_1_1entity_1_1ai_1_1MobAIManager" ],
+          [ "MobSimCellGrid", "structcursestone_1_1entity_1_1ai_1_1MobSimCellGrid.html", "structcursestone_1_1entity_1_1ai_1_1MobSimCellGrid" ],
+          [ "MobSimInput", "structcursestone_1_1entity_1_1ai_1_1MobSimInput.html", "structcursestone_1_1entity_1_1ai_1_1MobSimInput" ],
+          [ "MobSimOutput", "structcursestone_1_1entity_1_1ai_1_1MobSimOutput.html", "structcursestone_1_1entity_1_1ai_1_1MobSimOutput" ],
+          [ "MobSimWorkers", "classcursestone_1_1entity_1_1ai_1_1MobSimWorkers.html", "classcursestone_1_1entity_1_1ai_1_1MobSimWorkers" ]
         ] ],
         [ "mobs", null, [
           [ "Bat", "structcursestone_1_1entity_1_1mobs_1_1Bat.html", null ],

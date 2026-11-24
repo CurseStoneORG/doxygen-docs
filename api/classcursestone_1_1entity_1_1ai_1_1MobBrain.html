@@ -117,6 +117,13 @@ const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobIntent.html">Mo
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a6a8cc6dfe0f3638a91202829f74e01c5">clearIntent</a> ()</td></tr>
 <tr class="memdesc:a6a8cc6dfe0f3638a91202829f74e01c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops any previously produced intent (start of a think). <br /></td></tr>
 <tr class="separator:a6a8cc6dfe0f3638a91202829f74e01c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cd236de19cafbc637b9f4bc17d80158"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a9cd236de19cafbc637b9f4bc17d80158">adoptFrom</a> (const <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;src, bool copy_broadcast=false)</td></tr>
+<tr class="memdesc:a9cd236de19cafbc637b9f4bc17d80158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deep-copies <code>src's</code> goal set (with each goal's internal state), selection order, active flags and every carry-over field into this brain.  <a href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a9cd236de19cafbc637b9f4bc17d80158">More...</a><br /></td></tr>
+<tr class="separator:a9cd236de19cafbc637b9f4bc17d80158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb25145fe4b9b8692bc2681cf1017e46"><td class="memItemLeft" align="right" valign="top"><a id="abb25145fe4b9b8692bc2681cf1017e46"></a>
+std::unique_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#abb25145fe4b9b8692bc2681cf1017e46">cloneBrain</a> () const</td></tr>
+<tr class="memdesc:abb25145fe4b9b8692bc2681cf1017e46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience: a fresh heap brain carrying this brain's state (same copy contract as adoptFrom). <br /></td></tr>
+<tr class="separator:abb25145fe4b9b8692bc2681cf1017e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4481f2aa10d53403c826844173b75e8"><td class="memItemLeft" align="right" valign="top"><a id="ab4481f2aa10d53403c826844173b75e8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setMoveIntent</b> (double dirX, double dirZ, float speed)</td></tr>
 <tr class="separator:ab4481f2aa10d53403c826844173b75e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -216,6 +223,38 @@ const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classcursestone_1_
 
 <p>Adds a goal; the brain owns it. </p>
 <p>Selection order is priority-descending among goals added so far. </p>
+
+</div>
+</div>
+<a id="a9cd236de19cafbc637b9f4bc17d80158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cd236de19cafbc637b9f4bc17d80158">&#9670;&nbsp;</a></span>adoptFrom()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void cursestone::entity::ai::MobBrain::adoptFrom </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;&#160;</td>
+          <td class="paramname"><em>src</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>copy_broadcast</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deep-copies <code>src's</code> goal set (with each goal's internal state), selection order, active flags and every carry-over field into this brain. </p>
+<p>This is the stage-3 shadow-brain primitive: the worker team's brains are clones that stay behaviorally continuous with the sequential ones.</p>
+<p>The broadcast cache is copied only when <code>copy_broadcast</code> is set: normally it is main-thread wire bookkeeping that must keep tracking the packets the destination brain actually sent, but a fallback sync (shadow -&gt; sequential) must carry it so broadcast gating never regresses. </p>
 
 </div>
 </div>
