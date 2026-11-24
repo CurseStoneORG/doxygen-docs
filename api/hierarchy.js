@@ -654,10 +654,6 @@ var hierarchy =
     [ "cursestone::world::MobEntity", "structcursestone_1_1world_1_1MobEntity.html", null ],
     [ "cursestone::entity::ai::MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", null ],
     [ "cursestone::entity::MobProfile", "structcursestone_1_1entity_1_1MobProfile.html", null ],
-    [ "cursestone::entity::ai::MobSimCellGrid", "structcursestone_1_1entity_1_1ai_1_1MobSimCellGrid.html", null ],
-    [ "cursestone::entity::ai::MobSimInput", "structcursestone_1_1entity_1_1ai_1_1MobSimInput.html", null ],
-    [ "cursestone::entity::ai::MobSimOutput", "structcursestone_1_1entity_1_1ai_1_1MobSimOutput.html", null ],
-    [ "cursestone::entity::ai::MobSimWorkers", "classcursestone_1_1entity_1_1ai_1_1MobSimWorkers.html", null ],
     [ "vgen::MobSpawnUtils", "classvgen_1_1MobSpawnUtils.html", null ],
     [ "cursestone::entity::mobs::MobType", "structcursestone_1_1entity_1_1mobs_1_1MobType.html", [
       [ "cursestone::entity::mobs::Bat", "structcursestone_1_1entity_1_1mobs_1_1Bat.html", null ],

@@ -1,5 +1,17 @@
 var NAVTREEINDEX9 =
 {
+"Vanilla_8h.html#aa022f7a1939b35420cda1a3edc96a9b6":[10,0,2,366],
+"Vanilla_8h.html#aa6e6ded4a32e7dc35d0731c789b41561":[10,0,2,220],
+"Vanilla_8h.html#aa8f6de1d09ce0437fa410ef3ad4201ad":[10,0,2,367],
+"Vanilla_8h.html#aaaf88a72a0fc39ce12b07b85de1e79c0":[10,0,2,225],
+"Vanilla_8h.html#aad92f1e98a318cc8989e19ea79c71fce":[10,0,2,371],
+"Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6e":[10,0,2,230],
+"Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6ea0cc3600069ef2d903e897049c73bbdfc":[10,0,2,230,7],
+"Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6ea59f9f261e44cff40d862ebcce95be7fc":[10,0,2,230,1],
+"Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6ea604d2c0bfa8f96ca4a40d9d637ff668b":[10,0,2,230,9],
+"Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6ea6fcdc090caeade09d0efd6253932b6f5":[10,0,2,230,0],
+"Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6ea7ef2364de697ba8dd15e89d3d47919df":[10,0,2,230,5],
+"Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6ea8be03b97e63a4bf89fa1e218b5123f6d":[10,0,2,230,2],
 "Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6eac0d5865783d5fee6cc9d7dadfc22419d":[10,0,2,230,3],
 "Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6eac3b5e1f7de11d645fb1da6c5415b1fa5":[10,0,2,230,6],
 "Vanilla_8h.html#ab38c6f8bf09588ff098584b3a34b3c6eada45f682f1e7ea342b29ad4d076a76ab":[10,0,2,230,4],
@@ -237,17 +249,5 @@ var NAVTREEINDEX9 =
 "classcursestone_1_1Player.html#a63ba4165de43581499ba188d4cca767e":[11,0,0,48,79],
 "classcursestone_1_1Player.html#a64362ecf60468f8ca3e080d6afaf7b4b":[11,0,0,48,8],
 "classcursestone_1_1Player.html#a65b7ff04ca34157645e4809f1fc2729a":[11,0,0,48,179],
-"classcursestone_1_1Player.html#a679f6337a6c6518a9fb290c2f1feda58":[11,0,0,48,75],
-"classcursestone_1_1Player.html#a692069e00a548385924b2c83a848dcfb":[11,0,0,48,194],
-"classcursestone_1_1Player.html#a6bbe09514f629b81c2a1df3e582b1a90":[11,0,0,48,156],
-"classcursestone_1_1Player.html#a6c8dd0fb95c123c05468d745cd8e3b8e":[11,0,0,48,142],
-"classcursestone_1_1Player.html#a6ef1204fe4fda369e633d48b4f8fa42f":[11,0,0,48,192],
-"classcursestone_1_1Player.html#a6ef7851b97300553615419978656dd2c":[11,0,0,48,42],
-"classcursestone_1_1Player.html#a6f29b85be906eba1868b598a9085a4cf":[11,0,0,48,154],
-"classcursestone_1_1Player.html#a6f694a145c174535e23352a7cc04d640":[11,0,0,48,96],
-"classcursestone_1_1Player.html#a6f796c760624cff2da5015f63b31f7ff":[11,0,0,48,133],
-"classcursestone_1_1Player.html#a700c99595b9a9323c679d3f7e8572bea":[11,0,0,48,146],
-"classcursestone_1_1Player.html#a70b8b7e9ed282e42cd051e4d1f11310f":[11,0,0,48,74],
-"classcursestone_1_1Player.html#a71e74de990fb79fc038fbf249f674a17":[11,0,0,48,71],
-"classcursestone_1_1Player.html#a740d425f04a94ec460372129231664a5":[11,0,0,48,204]
+"classcursestone_1_1Player.html#a679f6337a6c6518a9fb290c2f1feda58":[11,0,0,48,75]
 };

@@ -1,14 +1,5 @@
 var NAVTREEINDEX27 =
 {
-"classvgen_1_1SmallTemple.html#a87f0cded5c0f7f1df1c560d772bb0854":[11,0,2,162,2],
-"classvgen_1_1SmallTemple.html#a8db5f83c6a6e6a669f14411ad7f5a111":[11,0,2,162,7],
-"classvgen_1_1SmallTemple.html#ad57be232a68d780acbf3b906d45addb7":[11,0,2,162,1],
-"classvgen_1_1SmallTemple.html#aee5674fa0cb8c14266641bed3e89d375":[11,0,2,162,6],
-"classvgen_1_1Smithy.html":[11,0,2,168],
-"classvgen_1_1Smithy.html#a134e42196c14e3392893c1137c0d2718":[11,0,2,168,3],
-"classvgen_1_1Smithy.html#a4020a139d40985ab80a787753bea2a41":[11,0,2,168,5],
-"classvgen_1_1Smithy.html#a765c684092a01f45f06627bd37c4293b":[11,0,2,168,4],
-"classvgen_1_1Smithy.html#a9fb78ef6310625b486d46d0f423475c5":[11,0,2,168,0],
 "classvgen_1_1Smithy.html#aa03ab8c8d17d79ed7a9a86c838af54bd":[11,0,2,168,1],
 "classvgen_1_1Smithy.html#ab6b110e13725e45ae0e79ad5298d2dc7":[11,0,2,168,6],
 "classvgen_1_1Smithy.html#ad89c9180cfa9649f56166a1965bdb7af":[11,0,2,168,7],
@@ -249,5 +240,14 @@ var NAVTREEINDEX27 =
 "classvgen_1_1VillageStart.html#a9208769d41e8b83cf3750ad3aca1e9dc":[11,0,2,156,2],
 "classvgen_1_1VillageStart.html#a95bde94a0f60f28ae81a0b358203d150":[11,0,2,156,1],
 "classvgen_1_1VineBlock.html":[11,0,2,26],
-"classvgen_1_1VinesFeature.html":[11,0,2,84]
+"classvgen_1_1VinesFeature.html":[11,0,2,84],
+"classvgen_1_1VinesFeature.html#a6f3054f2db0cc4c946ca50160178339c":[11,0,2,84,0],
+"classvgen_1_1VoronoiZoom.html":[11,0,2,110],
+"classvgen_1_1VoronoiZoom.html#a98169e610964d0ab6eb60c17d9474a9a":[11,0,2,110,0],
+"classvgen_1_1VoronoiZoom.html#af5286b50c8e66fdca0b3d073a889e088":[11,0,2,110,1],
+"classvgen_1_1WaterlilyFeature.html":[11,0,2,85],
+"classvgen_1_1WaterlilyFeature.html#a310246c97ca382eb18e238a9d84d6e8e":[11,0,2,85,0],
+"classvgen_1_1WeighedRandom.html":[11,0,2,210],
+"classvgen_1_1WeighedRandom_1_1WeighedRandomItem.html":[11,0,2,210,0],
+"classvgen_1_1WeighedRandom_1_1WeighedRandomItem.html#a3c05da3d22947868ba2b1e2a6117650a":[11,0,2,210,0,2]
 };

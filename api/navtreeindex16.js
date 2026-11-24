@@ -1,14 +1,5 @@
 var NAVTREEINDEX16 =
 {
-"classcursestone_1_1nbt_1_1FloatTag.html":[11,0,0,8,6],
-"classcursestone_1_1nbt_1_1FloatTag.html#a4e87c21ec095ec0a767b2bf83a5be8d9":[11,0,0,8,6,1],
-"classcursestone_1_1nbt_1_1FloatTag.html#ade24bed385ca3a74453d82b0d6647296":[11,0,0,8,6,0],
-"classcursestone_1_1nbt_1_1FloatTag.html#af30960119d9a766cf863bfa83e554d0a":[11,0,0,8,6,2],
-"classcursestone_1_1nbt_1_1FloatTag.html#af536f1e0fd5ecc6cc41dd6715f41c24e":[11,0,0,8,6,3],
-"classcursestone_1_1nbt_1_1IntArrayTag.html":[11,0,0,8,7],
-"classcursestone_1_1nbt_1_1IntArrayTag.html#a157cd48efc7a9843161de2e45f9a590a":[11,0,0,8,7,2],
-"classcursestone_1_1nbt_1_1IntArrayTag.html#a618e95a9434a763a232aeff84ed74a13":[11,0,0,8,7,3],
-"classcursestone_1_1nbt_1_1IntArrayTag.html#a9c64f25d3d350c767ee0cea33fa80b69":[11,0,0,8,7,4],
 "classcursestone_1_1nbt_1_1IntArrayTag.html#aa33f39a6686373abe081bb2e948ede2c":[11,0,0,8,7,1],
 "classcursestone_1_1nbt_1_1IntArrayTag.html#ae8e5f32ea15fabe9c9049f64a9e90a74":[11,0,0,8,7,0],
 "classcursestone_1_1nbt_1_1IntTag.html":[11,0,0,8,8],
@@ -249,5 +240,14 @@ var NAVTREEINDEX16 =
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html":[11,0,0,9,0,13],
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#a20780c4b338422af4d23053b426d1a19":[11,0,0,9,0,13,0],
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#a56e2444e22fc27d510cd41e1ddfe671b":[11,0,0,9,0,13,1],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#a8525f25c27b5a367162f8ff094264909":[11,0,0,9,0,13,2]
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#a8525f25c27b5a367162f8ff094264909":[11,0,0,9,0,13,2],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#ab2f684015468b34577e55cf921d431f1":[11,0,0,9,0,13,4],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#ab89cd709cdacf0f948cd40ba59d636b7":[11,0,0,9,0,13,5],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#aeb82b1655b0b9d2c48a543210ff475e7":[11,0,0,9,0,13,3],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html":[11,0,0,9,0,14],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a5766c97be28bcfa40e2f0ca77bcb230e":[11,0,0,9,0,14,8],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a667ae0a80ea5ed2f4789cf79defca452":[11,0,0,9,0,14,2],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a6ca6b08bbe70b724b516fb7a21ce2acb":[11,0,0,9,0,14,7],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a6cc543bd88423a23190605b7738e9c21":[11,0,0,9,0,14,4],
+"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a767d1192301cd8d6f3d2ee9035f68b96":[11,0,0,9,0,14,0]
 };

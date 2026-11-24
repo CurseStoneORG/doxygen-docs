@@ -99,9 +99,6 @@ $(document).ready(function(){initNavTree('classcursestone_1_1entity_1_1ai_1_1Goa
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af3adddc5519a5028da1581b8ea4b6821"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#af3adddc5519a5028da1581b8ea4b6821">clone</a> () const =0</td></tr>
-<tr class="memdesc:af3adddc5519a5028da1581b8ea4b6821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Polymorphic copy.  <a href="classcursestone_1_1entity_1_1ai_1_1Goal.html#af3adddc5519a5028da1581b8ea4b6821">More...</a><br /></td></tr>
-<tr class="separator:af3adddc5519a5028da1581b8ea4b6821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9a81216a3604c920efeee1b45d8aad5"><td class="memItemLeft" align="right" valign="top"><a id="ac9a81216a3604c920efeee1b45d8aad5"></a>
 virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ac9a81216a3604c920efeee1b45d8aad5">flags</a> () const</td></tr>
 <tr class="memdesc:ac9a81216a3604c920efeee1b45d8aad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex bits claimed while this goal runs. <br /></td></tr>
@@ -171,36 +168,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <p>May consume <code>brain's</code> randomness (per-mob, deterministic on the main thread). </p>
 
 <p>Implemented in <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#a266e9aa12ad231555387404a9970531e">cursestone::entity::ai::PanicGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a5ef9c26c5b697a9639b738c606a89729">cursestone::entity::ai::IdleLookGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#abad2a40da348ba5ca572e39b995ea246">cursestone::entity::ai::LookAtPlayerGoal</a>, and <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ab17ddd14bca99e37a3dfe965e80f2d04">cursestone::entity::ai::WanderGoal</a>.</p>
-
-</div>
-</div>
-<a id="af3adddc5519a5028da1581b8ea4b6821"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3adddc5519a5028da1581b8ea4b6821">&#9670;&nbsp;</a></span>clone()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a>&gt; cursestone::entity::ai::Goal::clone </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Polymorphic copy. </p>
-<p>The stage-3 shadow-brain system needs goal objects the worker team may mutate: each shadow brain clones its goal set once, and the clones carry the goal's internal state (targets, timers) so behaviors stay continuous across a sequential/parallel switch. </p>
-
-<p>Implemented in <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#ae803459c1cdf0a8cf01dc5a28d9502f2">cursestone::entity::ai::PanicGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a4732fd88b9ef12371071e8925268e22c">cursestone::entity::ai::IdleLookGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#ad79fc61c71d6bb58d746a2bb5fc77433">cursestone::entity::ai::LookAtPlayerGoal</a>, and <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#a9e51e0485f546b817d89aff4a6332611">cursestone::entity::ai::WanderGoal</a>.</p>
 
 </div>
 </div>

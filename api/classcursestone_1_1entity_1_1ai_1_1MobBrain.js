@@ -2,10 +2,8 @@ var classcursestone_1_1entity_1_1ai_1_1MobBrain =
 [
     [ "BroadcastCache", "structcursestone_1_1entity_1_1ai_1_1MobBrain_1_1BroadcastCache.html", "structcursestone_1_1entity_1_1ai_1_1MobBrain_1_1BroadcastCache" ],
     [ "addGoal", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#adc31e3f478ec56b43a451b6cc0b49ff8", null ],
-    [ "adoptFrom", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a9cd236de19cafbc637b9f4bc17d80158", null ],
     [ "broadcast", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a810755718fb1829671bcc5b35168e065", null ],
     [ "clearIntent", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a6a8cc6dfe0f3638a91202829f74e01c5", null ],
-    [ "cloneBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#abb25145fe4b9b8692bc2681cf1017e46", null ],
     [ "decayKnockback", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a5d4074d8f9db5b006e892ba89b7f135c", null ],
     [ "dynamic", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d", null ],
     [ "goals", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a466b8da03c51cb5c115616e36739524e", null ],

@@ -1,14 +1,5 @@
 var NAVTREEINDEX17 =
 {
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#ab2f684015468b34577e55cf921d431f1":[11,0,0,9,0,13,4],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#ab89cd709cdacf0f948cd40ba59d636b7":[11,0,0,9,0,13,5],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetDataPacket.html#aeb82b1655b0b9d2c48a543210ff475e7":[11,0,0,9,0,13,3],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html":[11,0,0,9,0,14],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a5766c97be28bcfa40e2f0ca77bcb230e":[11,0,0,9,0,14,8],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a667ae0a80ea5ed2f4789cf79defca452":[11,0,0,9,0,14,2],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a6ca6b08bbe70b724b516fb7a21ce2acb":[11,0,0,9,0,14,7],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a6cc543bd88423a23190605b7738e9c21":[11,0,0,9,0,14,4],
-"classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a767d1192301cd8d6f3d2ee9035f68b96":[11,0,0,9,0,14,0],
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a78ad8a45885c1a157e7d2cd954073aec":[11,0,0,9,0,14,1],
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a79371f9f2c1e228c4d657f87fb53e800":[11,0,0,9,0,14,9],
 "classcursestone_1_1network_1_1protocol_1_1ContainerSetSlotPacket.html#a88a4ae3cba773341a2c015409024df5a":[11,0,0,9,0,14,5],
@@ -249,5 +240,14 @@ var NAVTREEINDEX17 =
 "classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html#ae17d84093a6be4ff98af3c691c3b44c6":[11,0,0,9,0,37,4],
 "classcursestone_1_1network_1_1protocol_1_1PlayerActionPacket.html#aed40258572b00f159aa1111be3cd8c31":[11,0,0,9,0,37,0],
 "classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html":[11,0,0,9,0,38],
-"classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html#a500ca3c10bc1f758237701cab1b9216b":[11,0,0,9,0,38,1]
+"classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html#a500ca3c10bc1f758237701cab1b9216b":[11,0,0,9,0,38,1],
+"classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html#a9cc5987ee6a81c688a2cb5913a4f195d":[11,0,0,9,0,38,5],
+"classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html#ab2edf1817472961c74af2bd7cf16afd2":[11,0,0,9,0,38,3],
+"classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html#adcc7b6ec87004dd809102f1e745779f2":[11,0,0,9,0,38,4],
+"classcursestone_1_1network_1_1protocol_1_1PlayerListPacket.html#aefe67977e6e86fb7005826cb997546fb":[11,0,0,9,0,38,2],
+"classcursestone_1_1network_1_1protocol_1_1RemoveBlockPacket.html":[11,0,0,9,0,40],
+"classcursestone_1_1network_1_1protocol_1_1RemoveBlockPacket.html#a13084ee740d6557248a43accf3c2d1cf":[11,0,0,9,0,40,3],
+"classcursestone_1_1network_1_1protocol_1_1RemoveBlockPacket.html#a145338bbc89b1b3664ea88e1635119bd":[11,0,0,9,0,40,6],
+"classcursestone_1_1network_1_1protocol_1_1RemoveBlockPacket.html#a30ea0a8ca96d714fc4c067b41287f85d":[11,0,0,9,0,40,0],
+"classcursestone_1_1network_1_1protocol_1_1RemoveBlockPacket.html#a33c1923de453c3098a360ddae0512da3":[11,0,0,9,0,40,5]
 };

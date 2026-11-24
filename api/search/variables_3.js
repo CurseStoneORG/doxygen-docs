@@ -1,13 +1,12 @@
 var searchData=
 [
-  ['damageentity_2093',['damageEntity',['../structCsWorldApi.html#a21ac577cbbbe19d4340623dd22ee6aa0',1,'CsWorldApi']]],
-  ['damager_2094',['damager',['../structCsEvent.html#a0bcdbee53f20f97ecf5dd8a7ee819442',1,'CsEvent']]],
-  ['datadir_2095',['dataDir',['../structCsPluginApi.html#a3991876dff2800184ec8d8c71f81bada',1,'CsPluginApi']]],
-  ['defaultworldname_2096',['defaultWorldName',['../structCsServerApi.html#ac4304f5f46250463b230239a24af0b7b',1,'CsServerApi']]],
-  ['desc_2097',['desc',['../structCsPluginVTable.html#ad10e800e6980e5c6f9bd190eb0732c20',1,'CsPluginVTable']]],
-  ['difficulty_2098',['difficulty',['../structCsServerApi.html#a94703bd3c1a6c9dc80e7f1034589cdc9',1,'CsServerApi']]],
-  ['dimension_2099',['dimension',['../classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#af0a15c1f9993b742f4294f53b6297db3',1,'cursestone::network::protocol::ChangeDimensionPacket::dimension()'],['../structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a',1,'cursestone::world::WorldConfig::dimension()']]],
-  ['dirx_2100',['dirX',['../structcursestone_1_1entity_1_1ai_1_1MobIntent.html#a9d203bf4a3d6715e9e9d0397eb893a25',1,'cursestone::entity::ai::MobIntent']]],
-  ['dispatchcommand_2101',['dispatchCommand',['../structCsServerApi.html#a104973de2412c3dff8f10f71cafbe2e6',1,'CsServerApi']]],
-  ['dz_2102',['dz',['../structcursestone_1_1entity_1_1ai_1_1MobSimOutput.html#afc70240a61082e92f24411600ce05f94',1,'cursestone::entity::ai::MobSimOutput']]]
+  ['damageentity_2027',['damageEntity',['../structCsWorldApi.html#a21ac577cbbbe19d4340623dd22ee6aa0',1,'CsWorldApi']]],
+  ['damager_2028',['damager',['../structCsEvent.html#a0bcdbee53f20f97ecf5dd8a7ee819442',1,'CsEvent']]],
+  ['datadir_2029',['dataDir',['../structCsPluginApi.html#a3991876dff2800184ec8d8c71f81bada',1,'CsPluginApi']]],
+  ['defaultworldname_2030',['defaultWorldName',['../structCsServerApi.html#ac4304f5f46250463b230239a24af0b7b',1,'CsServerApi']]],
+  ['desc_2031',['desc',['../structCsPluginVTable.html#ad10e800e6980e5c6f9bd190eb0732c20',1,'CsPluginVTable']]],
+  ['difficulty_2032',['difficulty',['../structCsServerApi.html#a94703bd3c1a6c9dc80e7f1034589cdc9',1,'CsServerApi']]],
+  ['dimension_2033',['dimension',['../classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html#af0a15c1f9993b742f4294f53b6297db3',1,'cursestone::network::protocol::ChangeDimensionPacket::dimension()'],['../structcursestone_1_1world_1_1WorldConfig.html#a856c8d9cd0cc6fb1919f3d3a804df90a',1,'cursestone::world::WorldConfig::dimension()']]],
+  ['dirx_2034',['dirX',['../structcursestone_1_1entity_1_1ai_1_1MobIntent.html#a9d203bf4a3d6715e9e9d0397eb893a25',1,'cursestone::entity::ai::MobIntent']]],
+  ['dispatchcommand_2035',['dispatchCommand',['../structCsServerApi.html#a104973de2412c3dff8f10f71cafbe2e6',1,'CsServerApi']]]
 ];

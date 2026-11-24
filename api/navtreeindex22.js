@@ -1,14 +1,5 @@
 var NAVTREEINDEX22 =
 {
-"classcursestone_1_1world_1_1particle_1_1MobSpellParticle.html#a83d75090457d3b104a6ccc61e64b1ab6":[11,0,0,18,2,20,0],
-"classcursestone_1_1world_1_1particle_1_1Particle.html":[11,0,0,18,2,21],
-"classcursestone_1_1world_1_1particle_1_1Particle.html#a0cccd8e755b552f819786a465066ae67":[11,0,0,18,2,21,1],
-"classcursestone_1_1world_1_1particle_1_1Particle.html#a24c02ce63a18e2343d31acc990c012d0":[11,0,0,18,2,21,4],
-"classcursestone_1_1world_1_1particle_1_1Particle.html#a908bc468f31b2fd2972806e3f710d58f":[11,0,0,18,2,21,5],
-"classcursestone_1_1world_1_1particle_1_1Particle.html#ac815ba54c1fd3cef5e5cba107c95150c":[11,0,0,18,2,21,2],
-"classcursestone_1_1world_1_1particle_1_1Particle.html#af0f5a65754dad671770929cd5351412d":[11,0,0,18,2,21,3],
-"classcursestone_1_1world_1_1particle_1_1Particle.html#af329335ba9fab1e85b525df3edef8647":[11,0,0,18,2,21,0],
-"classcursestone_1_1world_1_1particle_1_1PortalParticle.html":[11,0,0,18,2,22],
 "classcursestone_1_1world_1_1particle_1_1PortalParticle.html#a98a574c152c0bcd8a5d229c1f7d38c3e":[11,0,0,18,2,22,0],
 "classcursestone_1_1world_1_1particle_1_1RainSplashParticle.html":[11,0,0,18,2,23],
 "classcursestone_1_1world_1_1particle_1_1RainSplashParticle.html#a0220a91aea9540ec8067604d8f17e356":[11,0,0,18,2,23,0],
@@ -249,5 +240,14 @@ var NAVTREEINDEX22 =
 "classvgen_1_1BiomeEdgeLayer.html#a00e37a7daac62dc40f904bb1c8f5ce0d":[11,0,2,93,2],
 "classvgen_1_1BiomeEdgeLayer.html#a6cef3e742d74847cd35c9017ae9a5cc6":[11,0,2,93,0],
 "classvgen_1_1BiomeEdgeLayer.html#a83f5c229a676395c927149f49b7be448":[11,0,2,93,5],
-"classvgen_1_1BiomeEdgeLayer.html#ad89d737aa5925ff72228141e158d0272":[11,0,2,93,1]
+"classvgen_1_1BiomeEdgeLayer.html#ad89d737aa5925ff72228141e158d0272":[11,0,2,93,1],
+"classvgen_1_1BiomeEdgeLayer.html#af003cbfe48d557d89917e3c3eb474586":[11,0,2,93,3],
+"classvgen_1_1BiomeEdgeLayer.html#afc03014aeb324e5aab4f731ed716d994":[11,0,2,93,4],
+"classvgen_1_1BiomeInitLayer.html":[11,0,2,94],
+"classvgen_1_1BiomeInitLayer.html#aa6c52f1dd798ad2bb128c1391dd33248":[11,0,2,94,0],
+"classvgen_1_1BiomeInitLayer.html#af11c7c9f5baad27b55e34936f97d8506":[11,0,2,94,1],
+"classvgen_1_1BiomeSource.html":[11,0,2,3],
+"classvgen_1_1BiomeSource.html#a05a39a0c5f4d69fb72facb95027d49b4":[11,0,2,3,4],
+"classvgen_1_1BiomeSource.html#a602ab0f54e374881056caaa8f02fa720":[11,0,2,3,0],
+"classvgen_1_1BiomeSource.html#a6874b539ac6f09dad30f1ce852f368e1":[11,0,2,3,7]
 };

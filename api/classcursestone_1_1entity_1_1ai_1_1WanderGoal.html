@@ -125,9 +125,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ad2fd9d63867f0e68d7959d0cc9fd70ba">stop</a> () override</td></tr>
 <tr class="memdesc:ad2fd9d63867f0e68d7959d0cc9fd70ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once when the goal deactivates. <br /></td></tr>
 <tr class="separator:ad2fd9d63867f0e68d7959d0cc9fd70ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e51e0485f546b817d89aff4a6332611"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#a9e51e0485f546b817d89aff4a6332611">clone</a> () const override</td></tr>
-<tr class="memdesc:a9e51e0485f546b817d89aff4a6332611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Polymorphic copy.  <a href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#a9e51e0485f546b817d89aff4a6332611">More...</a><br /></td></tr>
-<tr class="separator:a9e51e0485f546b817d89aff4a6332611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Picks a random nearby point and walks to it, then rests. </p>
@@ -171,36 +168,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <p>May consume <code>brain's</code> randomness (per-mob, deterministic on the main thread). </p>
 
 <p>Implements <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ad73c6ac5623a78027e82b8dc48d3d98b">cursestone::entity::ai::Goal</a>.</p>
-
-</div>
-</div>
-<a id="a9e51e0485f546b817d89aff4a6332611"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e51e0485f546b817d89aff4a6332611">&#9670;&nbsp;</a></span>clone()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt;<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a>&gt; cursestone::entity::ai::WanderGoal::clone </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Polymorphic copy. </p>
-<p>The stage-3 shadow-brain system needs goal objects the worker team may mutate: each shadow brain clones its goal set once, and the clones carry the goal's internal state (targets, timers) so behaviors stay continuous across a sequential/parallel switch. </p>
-
-<p>Implements <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#af3adddc5519a5028da1581b8ea4b6821">cursestone::entity::ai::Goal</a>.</p>
 
 </div>
 </div>

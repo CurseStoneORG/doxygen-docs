@@ -1,14 +1,5 @@
 var NAVTREEINDEX23 =
 {
-"classvgen_1_1BiomeEdgeLayer.html#af003cbfe48d557d89917e3c3eb474586":[11,0,2,93,3],
-"classvgen_1_1BiomeEdgeLayer.html#afc03014aeb324e5aab4f731ed716d994":[11,0,2,93,4],
-"classvgen_1_1BiomeInitLayer.html":[11,0,2,94],
-"classvgen_1_1BiomeInitLayer.html#aa6c52f1dd798ad2bb128c1391dd33248":[11,0,2,94,0],
-"classvgen_1_1BiomeInitLayer.html#af11c7c9f5baad27b55e34936f97d8506":[11,0,2,94,1],
-"classvgen_1_1BiomeSource.html":[11,0,2,3],
-"classvgen_1_1BiomeSource.html#a05a39a0c5f4d69fb72facb95027d49b4":[11,0,2,3,4],
-"classvgen_1_1BiomeSource.html#a602ab0f54e374881056caaa8f02fa720":[11,0,2,3,0],
-"classvgen_1_1BiomeSource.html#a6874b539ac6f09dad30f1ce852f368e1":[11,0,2,3,7],
 "classvgen_1_1BiomeSource.html#a6cc622c0807b80d59d45f75fda5747bf":[11,0,2,3,5],
 "classvgen_1_1BiomeSource.html#a7d5f35bef645ba3c7059ba7669739527":[11,0,2,3,10],
 "classvgen_1_1BiomeSource.html#a7da8c28d81ff289b3db01c3ef1acee73":[11,0,2,3,8],
@@ -249,5 +240,14 @@ var NAVTREEINDEX23 =
 "classvgen_1_1ExtremeHillsBiome.html#a9996d41bdf13d6494d870a2233e6952f":[11,0,2,5,2],
 "classvgen_1_1ExtremeHillsBiome.html#ab4f4447d4518245d84183d1b6dbe477e":[11,0,2,5,1],
 "classvgen_1_1ExtremeHillsBiome.html#ae2e1fa34de053d9d3fc9347150066c2c":[11,0,2,5,3],
-"classvgen_1_1ExtremeHillsBiome.html#aea63986b8ec235fddcde53cccdf7147d":[11,0,2,5,0]
+"classvgen_1_1ExtremeHillsBiome.html#aea63986b8ec235fddcde53cccdf7147d":[11,0,2,5,0],
+"classvgen_1_1Facing.html":[11,0,2,46],
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134":[11,0,2,46,2],
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134a1572f998e591caad6257557b6e2fc7db":[11,0,2,46,2,2],
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134a3639a5dbc40e062381cc7f1c0c7b2107":[11,0,2,46,2,6],
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134a4e64ebd5f4c34f1afeabbbeb995c4bf3":[11,0,2,46,2,0],
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134a52d90c3a730fe83bc9a5b56ac783ddd7":[11,0,2,46,2,3],
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134a540e0d1cf7afcf3287f739cb4091a9d4":[11,0,2,46,2,7],
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134a9c1f93bd951b53d5e6a6221a10835c3e":[11,0,2,46,2,5],
+"classvgen_1_1Facing.html#a53fa44ff3ddadda65a532810ce666134ab77ac157c4628d2525dd48fcbffa3846":[11,0,2,46,2,1]
 };

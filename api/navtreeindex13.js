@@ -1,14 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"classcursestone_1_1event_1_1block_1_1BlockEvent.html#a3b57a6fe4fc3aafbbf94786be10a3177":[11,0,0,3,0,1,3],
-"classcursestone_1_1event_1_1block_1_1BlockEvent.html#a559bfe5e88cb017d0c42d5c27a3fbef5":[11,0,0,3,0,1,1],
-"classcursestone_1_1event_1_1block_1_1BlockEvent.html#a75f520481a46ae998ffa3dc3f7b8aeb4":[11,0,0,3,0,1,0],
-"classcursestone_1_1event_1_1block_1_1BlockEvent.html#a9240aa0897403c6f29c959c71ddeb826":[11,0,0,3,0,1,2],
-"classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html":[11,0,0,3,0,2],
-"classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html#a261a636f377cf0441a1c8321a5f35d87":[11,0,0,3,0,2,4],
-"classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html#a93daf6520561a71351a13983966c74da":[11,0,0,3,0,2,2],
-"classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html#ab2283d7f7f61da990dcb5309cbe56fe1":[11,0,0,3,0,2,0],
-"classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html#ab788eeab69b5a31b4dab0b774586cf44":[11,0,0,3,0,2,3],
 "classcursestone_1_1event_1_1block_1_1BlockPlaceEvent.html#abe877d33d63f031e424e9db422d03c0c":[11,0,0,3,0,2,1],
 "classcursestone_1_1event_1_1block_1_1BlockUpdateEvent.html":[11,0,0,3,0,3],
 "classcursestone_1_1event_1_1block_1_1BlockUpdateEvent.html#ab68171a76106ff4e677b9aa62f03be2b":[11,0,0,3,0,3,1],
@@ -249,5 +240,14 @@ var NAVTREEINDEX13 =
 "classcursestone_1_1inventory_1_1DoubleChestInventory.html#a7073d5f296325feee46f70a00735a5c0":[11,0,0,4,4,4],
 "classcursestone_1_1inventory_1_1DoubleChestInventory.html#a7ebdcfe6dad89b7b16bd32303b917608":[11,0,0,4,4,11],
 "classcursestone_1_1inventory_1_1DoubleChestInventory.html#a839113a60d0ef944681f872efc15d644":[11,0,0,4,4,16],
-"classcursestone_1_1inventory_1_1DoubleChestInventory.html#a8b4d92fa3903bbdcd946df2ed644d321":[11,0,0,4,4,17]
+"classcursestone_1_1inventory_1_1DoubleChestInventory.html#a8b4d92fa3903bbdcd946df2ed644d321":[11,0,0,4,4,17],
+"classcursestone_1_1inventory_1_1DoubleChestInventory.html#a9be440929c510dbbf28d361d92ee3b81":[11,0,0,4,4,3],
+"classcursestone_1_1inventory_1_1DoubleChestInventory.html#aa9f019625ed4166511609bba74682db8":[11,0,0,4,4,6],
+"classcursestone_1_1inventory_1_1DoubleChestInventory.html#aac2ad85cf34a14674741c3b4b8f7d210":[11,0,0,4,4,5],
+"classcursestone_1_1inventory_1_1DoubleChestInventory.html#ab529737438601c6d6a8cf3c9b6a033c9":[11,0,0,4,4,2],
+"classcursestone_1_1inventory_1_1DoubleChestInventory.html#ab799678d3e26fdb1a1d96b1fb6c85219":[11,0,0,4,4,7],
+"classcursestone_1_1inventory_1_1DoubleChestInventory.html#ab9587f95706e1df2929e40a99e9a6548":[11,0,0,4,4,9],
+"classcursestone_1_1inventory_1_1DoubleChestInventory.html#ada2682bc1730a93a046752f08c977e34":[11,0,0,4,4,13],
+"classcursestone_1_1inventory_1_1FurnaceInventory.html":[11,0,0,4,5],
+"classcursestone_1_1inventory_1_1FurnaceInventory.html#a8eba1201f12e737d52b5e67eaa70ed05":[11,0,0,4,5,0]
 };

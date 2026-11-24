@@ -1,14 +1,5 @@
 var NAVTREEINDEX26 =
 {
-"classvgen_1_1NetherBridgeFeature.html#a518465c10e7b49088563d127a9aa7a51":[11,0,2,125,1],
-"classvgen_1_1NetherBridgeFeature.html#a8c601e36b5c83e41189d0dfcdf7c04fe":[11,0,2,125,3],
-"classvgen_1_1NetherBridgeFeature.html#ac09340da82aefeda9a92025945a5d7d8":[11,0,2,125,0],
-"classvgen_1_1NetherBridgeFeature.html#acf6d33c845e0065b25e687f469654eaf":[11,0,2,125,4],
-"classvgen_1_1NetherBridgePiece.html":[11,0,2,127],
-"classvgen_1_1NetherBridgePiece.html#a17f3549be8324a32fff233c3c3bf3db7":[11,0,2,127,9],
-"classvgen_1_1NetherBridgePiece.html#a301b2d15a02ff3ad8d249a6b93cbe3ae":[11,0,2,127,0],
-"classvgen_1_1NetherBridgePiece.html#a3340df4446b38c3d84714a1af1eb0200":[11,0,2,127,16],
-"classvgen_1_1NetherBridgePiece.html#a3b875a77dcaa71ec97973c77cb8275d0":[11,0,2,127,3],
 "classvgen_1_1NetherBridgePiece.html#a4742ac78395bbff7a41787d60bc27551":[11,0,2,127,2],
 "classvgen_1_1NetherBridgePiece.html#a541ff3329fbc1f2085449a5ecbe86d0f":[11,0,2,127,13],
 "classvgen_1_1NetherBridgePiece.html#a5c532aec6d3d497e868e0e3d8c4a2eac":[11,0,2,127,5],
@@ -249,5 +240,14 @@ var NAVTREEINDEX26 =
 "classvgen_1_1SmallTemple.html#a26e04025296feb457456a13e547660ac":[11,0,2,162,5],
 "classvgen_1_1SmallTemple.html#a32b98499f27c2b26ab0e2c7f83f8fc46":[11,0,2,162,0],
 "classvgen_1_1SmallTemple.html#a564a6802fd353440ce07a6bcfad11683":[11,0,2,162,3],
-"classvgen_1_1SmallTemple.html#a6e262e9c36f502c7bb25812f14884fc2":[11,0,2,162,4]
+"classvgen_1_1SmallTemple.html#a6e262e9c36f502c7bb25812f14884fc2":[11,0,2,162,4],
+"classvgen_1_1SmallTemple.html#a87f0cded5c0f7f1df1c560d772bb0854":[11,0,2,162,2],
+"classvgen_1_1SmallTemple.html#a8db5f83c6a6e6a669f14411ad7f5a111":[11,0,2,162,7],
+"classvgen_1_1SmallTemple.html#ad57be232a68d780acbf3b906d45addb7":[11,0,2,162,1],
+"classvgen_1_1SmallTemple.html#aee5674fa0cb8c14266641bed3e89d375":[11,0,2,162,6],
+"classvgen_1_1Smithy.html":[11,0,2,168],
+"classvgen_1_1Smithy.html#a134e42196c14e3392893c1137c0d2718":[11,0,2,168,3],
+"classvgen_1_1Smithy.html#a4020a139d40985ab80a787753bea2a41":[11,0,2,168,5],
+"classvgen_1_1Smithy.html#a765c684092a01f45f06627bd37c4293b":[11,0,2,168,4],
+"classvgen_1_1Smithy.html#a9fb78ef6310625b486d46d0f423475c5":[11,0,2,168,0]
 };

@@ -1,14 +1,5 @@
 var NAVTREEINDEX19 =
 {
-"classcursestone_1_1plugin_1_1PluginManager.html#a7c668fcf9e431c4f31550720e8d6f5ce":[11,0,0,13,6,4],
-"classcursestone_1_1plugin_1_1PluginManager.html#a7cfdfdf1a3f13bc362bcd3b25babfb0c":[11,0,0,13,6,3],
-"classcursestone_1_1plugin_1_1PluginManager.html#a8a5fffb22b5ee36448b4ffe84980da21":[11,0,0,13,6,2],
-"classcursestone_1_1plugin_1_1PluginManager.html#ac4f89bbee33052a437497b93be5365d6":[11,0,0,13,6,1],
-"classcursestone_1_1plugin_1_1PluginManager.html#adda3d304e09a16e3b4c1a3f1179544df":[11,0,0,13,6,5],
-"classcursestone_1_1scheduler_1_1AsyncPool.html":[11,0,0,14,1],
-"classcursestone_1_1scheduler_1_1AsyncPool.html#a06cb1381b53887913c37099433ecf1e1":[11,0,0,14,1,2],
-"classcursestone_1_1scheduler_1_1AsyncPool.html#a09f904af0299818e593df3b7cd01e941":[11,0,0,14,1,5],
-"classcursestone_1_1scheduler_1_1AsyncPool.html#a7bc57d571ed6f603e62e4515a872da02":[11,0,0,14,1,6],
 "classcursestone_1_1scheduler_1_1AsyncPool.html#a80191684edb23e0241ce1221b64ae696":[11,0,0,14,1,3],
 "classcursestone_1_1scheduler_1_1AsyncPool.html#ae4297468fc20fdef288cae46800e1c4a":[11,0,0,14,1,1],
 "classcursestone_1_1scheduler_1_1AsyncPool.html#aff782b4b3f9b5295640987c30ee61a86":[11,0,0,14,1,4],
@@ -249,5 +240,14 @@ var NAVTREEINDEX19 =
 "classcursestone_1_1world_1_1Location.html#afe2b7cc45eabd1b99f161a8c4ec11036":[11,0,0,18,7,7],
 "classcursestone_1_1world_1_1MobChunkCodec.html":[11,0,0,18,9],
 "classcursestone_1_1world_1_1PortalRegistry.html":[11,0,0,18,10],
-"classcursestone_1_1world_1_1PortalRegistry.html#a14e75376036bc8e0fc77264800de4317":[11,0,0,18,10,7]
+"classcursestone_1_1world_1_1PortalRegistry.html#a14e75376036bc8e0fc77264800de4317":[11,0,0,18,10,7],
+"classcursestone_1_1world_1_1PortalRegistry.html#a776352370a17451feaf03d55bb2ea6ee":[11,0,0,18,10,1],
+"classcursestone_1_1world_1_1PortalRegistry.html#a8202d8fa6b8fe2c5e8aed1421f8e4417":[11,0,0,18,10,6],
+"classcursestone_1_1world_1_1PortalRegistry.html#a865208482ab869b17211971744c9f2e6":[11,0,0,18,10,2],
+"classcursestone_1_1world_1_1PortalRegistry.html#a954d6139713f40f31f21ebf72bc8ff51":[11,0,0,18,10,3],
+"classcursestone_1_1world_1_1PortalRegistry.html#a9e59324d956f964a3a3883d988860d37":[11,0,0,18,10,5],
+"classcursestone_1_1world_1_1PortalRegistry.html#aadb454850109d021affbe439c6cb0d29":[11,0,0,18,10,4],
+"classcursestone_1_1world_1_1Position.html":[11,0,0,18,11],
+"classcursestone_1_1world_1_1Position.html#a16bcef1b335988e9c3d56377bde5ef74":[11,0,0,18,11,6],
+"classcursestone_1_1world_1_1Position.html#a3b7151d5dd28c14ca2216279401fd9c4":[11,0,0,18,11,11]
 };

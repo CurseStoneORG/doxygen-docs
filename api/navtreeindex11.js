@@ -1,5 +1,15 @@
 var NAVTREEINDEX11 =
 {
+"classcursestone_1_1WorkbenchManager.html#a193c7cfbb992105966e048759c7a6cf0":[11,0,0,53,11],
+"classcursestone_1_1WorkbenchManager.html#a1a21363222f2030cc67509b163d2631b":[11,0,0,53,8],
+"classcursestone_1_1WorkbenchManager.html#a550cc460516aea15d2b067dc038fd957":[11,0,0,53,5],
+"classcursestone_1_1WorkbenchManager.html#a5eb8b2171e4263c90edc101a319d794d":[11,0,0,53,16],
+"classcursestone_1_1WorkbenchManager.html#a6ca1b949b9f9a917cc79383291bd0105":[11,0,0,53,20],
+"classcursestone_1_1WorkbenchManager.html#a7afe5cf5fe14e5b1f41f2bbc378bb116":[11,0,0,53,17],
+"classcursestone_1_1WorkbenchManager.html#a7cc79095ce7262ad86058b0130bd68ce":[11,0,0,53,0],
+"classcursestone_1_1WorkbenchManager.html#a7e08b4f07c7a034fb17840be9aa778db":[11,0,0,53,1],
+"classcursestone_1_1WorkbenchManager.html#a806ce486bdaa2abf284bd31f933b9480":[11,0,0,53,15],
+"classcursestone_1_1WorkbenchManager.html#a836e339c39c440f7854bee31e4078248":[11,0,0,53,13],
 "classcursestone_1_1WorkbenchManager.html#a887b26aea8ad4f1d4a7db70e83055d33":[11,0,0,53,19],
 "classcursestone_1_1WorkbenchManager.html#a946dea63da719314e454b091ce578fec":[11,0,0,53,3],
 "classcursestone_1_1WorkbenchManager.html#ab02368d8a8614c46f18336e9377659c6":[11,0,0,53,4],
@@ -239,15 +249,5 @@ var NAVTREEINDEX11 =
 "classcursestone_1_1block_1_1LiquidFlow.html":[11,0,0,0,63],
 "classcursestone_1_1diagnostics_1_1DiagEngine.html":[11,0,0,1,1],
 "classcursestone_1_1diagnostics_1_1Diagnostics.html":[11,0,0,1,5],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a07478b18730369939e87f07ef5c4e15f":[11,0,0,1,5,15],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a1d77666b16faf3c30156d3146ba13a20":[11,0,0,1,5,11],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a27800ebc7bae68bd960528e3de509656":[11,0,0,1,5,8],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a2ec4c6fc895978b9649b93d98f4fd0c7":[11,0,0,1,5,6],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a39f126d4fb2a2daa61be23d575cc7feb":[11,0,0,1,5,1],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a425541846dd3056a709b4794ea282bad":[11,0,0,1,5,10],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a4db3f44c49419d346008f43f20a068c6":[11,0,0,1,5,13],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a5bd83a47450b2e4e27c7a2c3892a6da9":[11,0,0,1,5,5],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#a77d3d26a33877b0c26f22962c7fc368c":[11,0,0,1,5,4],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#aab2ada4b8054fe7a5e2ecbde5d4e2b8e":[11,0,0,1,5,0],
-"classcursestone_1_1diagnostics_1_1Diagnostics.html#ac04f0dbfa8d55f9c832cdfb533525423":[11,0,0,1,5,12]
+"classcursestone_1_1diagnostics_1_1Diagnostics.html#a07478b18730369939e87f07ef5c4e15f":[11,0,0,1,5,15]
 };

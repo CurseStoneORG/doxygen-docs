@@ -1,14 +1,5 @@
 var NAVTREEINDEX14 =
 {
-"classcursestone_1_1inventory_1_1DoubleChestInventory.html#a9be440929c510dbbf28d361d92ee3b81":[11,0,0,4,4,3],
-"classcursestone_1_1inventory_1_1DoubleChestInventory.html#aa9f019625ed4166511609bba74682db8":[11,0,0,4,4,6],
-"classcursestone_1_1inventory_1_1DoubleChestInventory.html#aac2ad85cf34a14674741c3b4b8f7d210":[11,0,0,4,4,5],
-"classcursestone_1_1inventory_1_1DoubleChestInventory.html#ab529737438601c6d6a8cf3c9b6a033c9":[11,0,0,4,4,2],
-"classcursestone_1_1inventory_1_1DoubleChestInventory.html#ab799678d3e26fdb1a1d96b1fb6c85219":[11,0,0,4,4,7],
-"classcursestone_1_1inventory_1_1DoubleChestInventory.html#ab9587f95706e1df2929e40a99e9a6548":[11,0,0,4,4,9],
-"classcursestone_1_1inventory_1_1DoubleChestInventory.html#ada2682bc1730a93a046752f08c977e34":[11,0,0,4,4,13],
-"classcursestone_1_1inventory_1_1FurnaceInventory.html":[11,0,0,4,5],
-"classcursestone_1_1inventory_1_1FurnaceInventory.html#a8eba1201f12e737d52b5e67eaa70ed05":[11,0,0,4,5,0],
 "classcursestone_1_1inventory_1_1Inventory.html":[11,0,0,4,6],
 "classcursestone_1_1inventory_1_1Inventory.html#a01c91287e50db30912e77435dff0de79":[11,0,0,4,6,6],
 "classcursestone_1_1inventory_1_1Inventory.html#a049c520a52d7b495355e2cf869b5cc7e":[11,0,0,4,6,16],
@@ -249,5 +240,14 @@ var NAVTREEINDEX14 =
 "classcursestone_1_1item_1_1ItemFood.html":[11,0,0,5,37],
 "classcursestone_1_1item_1_1ItemFood.html#a0eb55af8beb4a39d35cb6f69070d3f95":[11,0,0,5,37,1],
 "classcursestone_1_1item_1_1ItemFood.html#a1831b6682eb7cd16d43dba5ca9917eb7":[11,0,0,5,37,2],
-"classcursestone_1_1item_1_1ItemFood.html#a19209d89001ee1bea0c9222a9ff55324":[11,0,0,5,37,7]
+"classcursestone_1_1item_1_1ItemFood.html#a19209d89001ee1bea0c9222a9ff55324":[11,0,0,5,37,7],
+"classcursestone_1_1item_1_1ItemFood.html#a28d4c9e10369484acea38c073d4379ca":[11,0,0,5,37,3],
+"classcursestone_1_1item_1_1ItemFood.html#a3f163310726ede48401bf15cd3c36561":[11,0,0,5,37,9],
+"classcursestone_1_1item_1_1ItemFood.html#a55dad15ae721f250f94b85d78e35bf02":[11,0,0,5,37,4],
+"classcursestone_1_1item_1_1ItemFood.html#a5d21ddb6c42c275f8f0494162d1896bb":[11,0,0,5,37,6],
+"classcursestone_1_1item_1_1ItemFood.html#aa5c67952adc54fdb62495ec813560663":[11,0,0,5,37,0],
+"classcursestone_1_1item_1_1ItemFood.html#adee5f4e254e7af24d093dcd3e227c63a":[11,0,0,5,37,5],
+"classcursestone_1_1item_1_1ItemFood.html#af2bfc36daa938eb710ff920eded119c7":[11,0,0,5,37,11],
+"classcursestone_1_1item_1_1ItemFood.html#af3ba52f0356aeec94a988d0224689559":[11,0,0,5,37,10],
+"classcursestone_1_1item_1_1ItemFood.html#afeaba87a36582e9c21f96b456313497f":[11,0,0,5,37,8]
 };

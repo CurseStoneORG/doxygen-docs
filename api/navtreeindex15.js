@@ -1,14 +1,5 @@
 var NAVTREEINDEX15 =
 {
-"classcursestone_1_1item_1_1ItemFood.html#a28d4c9e10369484acea38c073d4379ca":[11,0,0,5,37,3],
-"classcursestone_1_1item_1_1ItemFood.html#a3f163310726ede48401bf15cd3c36561":[11,0,0,5,37,9],
-"classcursestone_1_1item_1_1ItemFood.html#a55dad15ae721f250f94b85d78e35bf02":[11,0,0,5,37,4],
-"classcursestone_1_1item_1_1ItemFood.html#a5d21ddb6c42c275f8f0494162d1896bb":[11,0,0,5,37,6],
-"classcursestone_1_1item_1_1ItemFood.html#aa5c67952adc54fdb62495ec813560663":[11,0,0,5,37,0],
-"classcursestone_1_1item_1_1ItemFood.html#adee5f4e254e7af24d093dcd3e227c63a":[11,0,0,5,37,5],
-"classcursestone_1_1item_1_1ItemFood.html#af2bfc36daa938eb710ff920eded119c7":[11,0,0,5,37,11],
-"classcursestone_1_1item_1_1ItemFood.html#af3ba52f0356aeec94a988d0224689559":[11,0,0,5,37,10],
-"classcursestone_1_1item_1_1ItemFood.html#afeaba87a36582e9c21f96b456313497f":[11,0,0,5,37,8],
 "classcursestone_1_1item_1_1ItemGoldBoots.html":[11,0,0,5,38],
 "classcursestone_1_1item_1_1ItemGoldBoots.html#a9225e36648eff4c911265d8bc51f8517":[11,0,0,5,38,1],
 "classcursestone_1_1item_1_1ItemGoldBoots.html#ac498c5e8151e176975c2878b4caf9c53":[11,0,0,5,38,0],
@@ -249,5 +240,14 @@ var NAVTREEINDEX15 =
 "classcursestone_1_1nbt_1_1DoubleTag.html#aca2eb9c65410bfdc81c72b76e8e6ee30":[11,0,0,8,4,2],
 "classcursestone_1_1nbt_1_1DoubleTag.html#af1aecef1e4abb3ba272f2a9762a8d98a":[11,0,0,8,4,1],
 "classcursestone_1_1nbt_1_1EndTag.html":[11,0,0,8,5],
-"classcursestone_1_1nbt_1_1EndTag.html#a7af09f2df78e64e63cca90a154e0f28e":[11,0,0,8,5,0]
+"classcursestone_1_1nbt_1_1EndTag.html#a7af09f2df78e64e63cca90a154e0f28e":[11,0,0,8,5,0],
+"classcursestone_1_1nbt_1_1FloatTag.html":[11,0,0,8,6],
+"classcursestone_1_1nbt_1_1FloatTag.html#a4e87c21ec095ec0a767b2bf83a5be8d9":[11,0,0,8,6,1],
+"classcursestone_1_1nbt_1_1FloatTag.html#ade24bed385ca3a74453d82b0d6647296":[11,0,0,8,6,0],
+"classcursestone_1_1nbt_1_1FloatTag.html#af30960119d9a766cf863bfa83e554d0a":[11,0,0,8,6,2],
+"classcursestone_1_1nbt_1_1FloatTag.html#af536f1e0fd5ecc6cc41dd6715f41c24e":[11,0,0,8,6,3],
+"classcursestone_1_1nbt_1_1IntArrayTag.html":[11,0,0,8,7],
+"classcursestone_1_1nbt_1_1IntArrayTag.html#a157cd48efc7a9843161de2e45f9a590a":[11,0,0,8,7,2],
+"classcursestone_1_1nbt_1_1IntArrayTag.html#a618e95a9434a763a232aeff84ed74a13":[11,0,0,8,7,3],
+"classcursestone_1_1nbt_1_1IntArrayTag.html#a9c64f25d3d350c767ee0cea33fa80b69":[11,0,0,8,7,4]
 };
