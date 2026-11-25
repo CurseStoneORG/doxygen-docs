@@ -341,9 +341,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>flushUnorderedNow</b>
 <tr class="memitem:a81509bf51c957e01d997d385d55d04e7"><td class="memItemLeft" align="right" valign="top"><a id="a81509bf51c957e01d997d385d55d04e7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendMessage</b> (const std::string &amp;msg) override</td></tr>
 <tr class="separator:a81509bf51c957e01d997d385d55d04e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01657e1ab9793ca114bf4eefa3ae0c48"><td class="memItemLeft" align="right" valign="top"><a id="a01657e1ab9793ca114bf4eefa3ae0c48"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>kick</b> (const std::string &amp;reason=&quot;disconnect.kick&quot;)</td></tr>
-<tr class="separator:a01657e1ab9793ca114bf4eefa3ae0c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed34200b31fd5a7d0d94f36cf0528aa9"><td class="memItemLeft" align="right" valign="top"><a id="aed34200b31fd5a7d0d94f36cf0528aa9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>kick</b> (const std::string &amp;reason=&quot;disconnect.kicked&quot;)</td></tr>
+<tr class="separator:aed34200b31fd5a7d0d94f36cf0528aa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accf564732e13770888a412826e7cfacf"><td class="memItemLeft" align="right" valign="top"><a id="accf564732e13770888a412826e7cfacf"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>kick</b> (const std::string &amp;reason, const std::string &amp;detail)</td></tr>
 <tr class="separator:accf564732e13770888a412826e7cfacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -467,9 +467,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendPopup</b> (const 
 <tr class="memitem:aed3861c27196e2abdd02a57460ce6288"><td class="memItemLeft" align="right" valign="top"><a id="aed3861c27196e2abdd02a57460ce6288"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendTip</b> (const std::string &amp;msg)</td></tr>
 <tr class="separator:aed3861c27196e2abdd02a57460ce6288"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42306918bfc89b615754cae141330d8e"><td class="memItemLeft" align="right" valign="top"><a id="a42306918bfc89b615754cae141330d8e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>sendTranslation</b> (const std::string &amp;key)</td></tr>
-<tr class="separator:a42306918bfc89b615754cae141330d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39b0e788da29d96f398df0c7fc680a9f"><td class="memItemLeft" align="right" valign="top"><a id="a39b0e788da29d96f398df0c7fc680a9f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sendTranslation</b> (const std::string &amp;key, const std::vector&lt; std::string &gt; &amp;parameters={}, const std::string &amp;prefix=&quot;&quot;)</td></tr>
+<tr class="separator:a39b0e788da29d96f398df0c7fc680a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2f517ee84c866c409f04443b406023"><td class="memItemLeft" align="right" valign="top"><a id="a7a2f517ee84c866c409f04443b406023"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>sendTranslatable</b> (const std::string &amp;key, const std::string &amp;fallback, const std::vector&lt; std::string &gt; &amp;parameters={}, const std::string &amp;prefix=&quot;&quot;) override</td></tr>
+<tr class="separator:a7a2f517ee84c866c409f04443b406023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4649a8704cf29ad71934fb552ee43ed"><td class="memItemLeft" align="right" valign="top"><a id="aa4649a8704cf29ad71934fb552ee43ed"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setExperience</b> (int exp, int level)</td></tr>
 <tr class="separator:aa4649a8704cf29ad71934fb552ee43ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
