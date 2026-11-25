@@ -87,13 +87,13 @@ $(document).ready(function(){initNavTree('md_docs_DIAGNOSTIC_ENGINE.html',''); i
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The console and diagnostics layer of CurseStone v1.0.3. It borrows the error-reporting ideas of modern compilers (GCC, Clang, Rust): the console stays minimal while everything is fine, and the moment something fails it renders a precise report — what failed, where, why, and how to fix it.</p>
-<h1><a class="anchor" id="autotoc_md158"></a>
+<h1><a class="anchor" id="autotoc_md160"></a>
 Identity</h1>
 <p>The boot log opens with the stage line; the full version details (Minecraft PE target and protocol) ride <code>DEBUG</code> so the normal console never repeats them:</p>
 <div class="fragment"><div class="line">[17:14:40] INFO  Starting server in CurseStone v1.0.3...</div>
 </div><!-- fragment --><div class="fragment"><div class="line">DEBUG: CurseStone v1.0.3 — Minecraft PE 0.15.x, protocol 84</div>
 <div class="line">DEBUG: Log file: ./server.log</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md159"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md161"></a>
 Message levels</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -115,7 +115,7 @@ Message levels</h1>
 <div class="fragment"><div class="line">[17:14:40] INFO  Loading worlds...</div>
 <div class="line">[17:14:40] ERROR Failed to load plugin &#39;ExamplePlugin2&#39;</div>
 </div><!-- fragment --><p><code>server.log</code> keeps the long-standing bracketed format (<code>[17:14:40] [INFO] ...</code>) so scripts and <code>grep</code> keep working; it is always plain text (no ANSI codes).</p>
-<h1><a class="anchor" id="autotoc_md160"></a>
+<h1><a class="anchor" id="autotoc_md162"></a>
 Startup stages</h1>
 <div class="fragment"><div class="line">[17:14:40] INFO  Starting server in CurseStone v1.0.3...</div>
 <div class="line">[17:14:40] INFO  Loading config files...</div>
@@ -136,7 +136,7 @@ Startup stages</h1>
 <p>When recoverable problems were reported, the boot ends with:</p>
 <div class="fragment"><div class="line">[17:14:40] WARN  Startup completed with 2 issues.</div>
 </div><!-- fragment --><p>No summary is printed when there was nothing to report.</p>
-<h1><a class="anchor" id="autotoc_md161"></a>
+<h1><a class="anchor" id="autotoc_md163"></a>
 Diagnostics</h1>
 <p>Failures render immediately (the boot keeps going when it is safe):</p>
 <div class="fragment"><div class="line">[17:14:40] ERROR Failed to load plugin &#39;ExamplePlugin2&#39;</div>
@@ -159,7 +159,7 @@ Diagnostics</h1>
 <li>An essential config file that exists but cannot be read is FATAL (E0001), and so are a failed network bind (E3001) and a failed default world (E2004): the diagnostic prints, then <code>Startup aborted.</code> and the process exits non-zero so supervisors (systemd, Docker, panels) see it.</li>
 <li>Client-side crashes render as runtime diagnostics (E5002, no snippet) and keep the full wire-tail report under <code>crashdumps/</code>.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md162"></a>
+<h1><a class="anchor" id="autotoc_md164"></a>
 Diagnostic codes</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -213,7 +213,7 @@ Diagnostic codes</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">E5003   </td><td class="markdownTableBodyNone">Internal   </td><td class="markdownTableBodyNone">internal memory guard tripped   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md163"></a>
+<h1><a class="anchor" id="autotoc_md165"></a>
 Configuration</h1>
 <p><code>cursestone.yml</code>:</p>
 <div class="fragment"><div class="line">settings:</div>
@@ -225,7 +225,7 @@ Configuration</h1>
 <li><code>always</code>: force ANSI even when piped (some Android host apps need this).</li>
 <li><code>never</code>: plain text everywhere.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md164"></a>
+<h1><a class="anchor" id="autotoc_md166"></a>
 Performance notes</h1>
 <ul>
 <li>Logging is asynchronous: producers only stamp and copy into a ring buffer; a worker does all I/O. Every drain cycle ends in one write per target and an immediate flush — console commands echo in well under a tick (measured ~46 ms end-to-end for <code>help</code>, which is the tick cadence of the command executor itself; the old batching window added up to 500 ms on top).</li>

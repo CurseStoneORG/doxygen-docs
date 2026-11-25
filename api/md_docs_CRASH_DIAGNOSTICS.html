@@ -86,7 +86,7 @@ $(document).ready(function(){initNavTree('md_docs_CRASH_DIAGNOSTICS.html',''); i
 <div class="title">Crash Diagnostics — client-side crash forensics </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md148"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md150"></a>
 Problem</h1>
 <p>When a MCPE 0.15.10 client dies, it tells the operator nothing: the device shows its own generic crash screen and the server log shows a bare <code>Session closed</code> line. Every real client crash we have root-caused so far was <em>bad bytes on the wire</em> — e.g. a little-endian float where protocol 84 demands big-endian, which desyncs the client's packet parser ("freeze on
 Generating terrain, then *Minecraft se detuvo*") — but the server had no way to show WHICH packet carried the poison bytes.</p>
@@ -96,7 +96,7 @@ Generating terrain, then *Minecraft se detuvo*") — but the server had no way t
 <li><b>Is any outbound packet malformed <em>before</em> we send it?</b> Nothing validated outgoing payloads. A NaN position, a count field that exceeds the payload, or a desynced metadata walk went straight to the client and crashed it.</li>
 </ol>
 <p><code>/workbench</code> is an opt-in recorder (<code>/workbench start</code>), so by definition it was not recording when the crash happened. This system is the opposite: <b>always on, zero configuration, near-zero cost</b>.</p>
-<h1><a class="anchor" id="autotoc_md149"></a>
+<h1><a class="anchor" id="autotoc_md151"></a>
 Design — three layers</h1>
 <div class="fragment"><div class="line">sendPacket()/broadcast</div>
 <div class="line">        │</div>
@@ -110,7 +110,7 @@ Design — three layers</h1>
 <div class="line">        ├──► WorkbenchManager          existing opt-in stats recorder (unchanged)</div>
 <div class="line">        │</div>
 <div class="line">        └──► batch queue → RakLib wire</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md150"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md152"></a>
 [1] &lt;tt&gt;network/protocol/PacketSanitizer&lt;/tt&gt; — the bad-byte firewall</h2>
 <p><code>sanitizeOutbound(pid, payload, len)</code> runs on every outbound packet inside <code>Player::sendEncodedBody</code>, <em>after</em> encoding and <em>before</em> the batch queue. It re-reads the wire bytes with the exact protocol-84 layouts the encoders write (offsets documented per packet in the header) and reports the violation classes that crash real 0.15.10 clients:</p>
 <table class="markdownTable">
@@ -128,7 +128,7 @@ Design — three layers</h1>
 <td class="markdownTableBodyNone">Absurd single-packet size   </td><td class="markdownTableBodyNone">every packet (&gt; 4 MiB)   </td><td class="markdownTableBodyNone">client OOM   </td></tr>
 </table>
 <p>Policy on violation: <b>drop the packet</b> (a desynced payload crashes the client; one dropped movement broadcast is invisible), log the full detail with <code>MainLogger::error</code> (packet name, field, offending value, byte offset, hex dump of the first 64 payload bytes, player name), record it in the <code>Diagnostics</code> error ring, and write a self-contained report file under <code>crashdumps/</code> — rate-limited to one file per 5 s so a runaway producer cannot flood disk. Dropping is fail-safe by design: the sanitizer can only miss a crasher, never invent one, because every check mirrors the encoder byte-for-byte.</p>
-<h2><a class="anchor" id="autotoc_md151"></a>
+<h2><a class="anchor" id="autotoc_md153"></a>
 [2] &lt;tt&gt;diagnostics/PacketForensics&lt;/tt&gt; — per-player wire recorder</h2>
 <p>One instance per <code>Player</code>. Two fixed rings:</p>
 <ul>
@@ -137,7 +137,7 @@ Design — three layers</h1>
 </ul>
 <p>Recording is allocation-free (fixed arrays + a short memcpy) and runs from the same single-threaded path as the batch queue, so a plain mutex is enough. Total cost is ~100 ns per packet — 24 KB per player worst case.</p>
 <p>This answers "what did THIS client receive last" without the global ring's cross-talk, including the 16 payload bytes that hint at the poison field before the dump is even opened.</p>
-<h2><a class="anchor" id="autotoc_md152"></a>
+<h2><a class="anchor" id="autotoc_md154"></a>
 [3] Client-lost classification in &lt;tt&gt;Player::close()&lt;/tt&gt;</h2>
 <p>The RakLib close reasons already separate the cases:</p>
 <ul>
@@ -155,7 +155,7 @@ Design — three layers</h1>
 <li>the global <code>Diagnostics</code> context (server version, tick, players, recent errors, recent packets) via the existing <code>writeReport</code> machinery.</li>
 </ul>
 <p>Console output is a CurseStone Diagnostic Engine block (E5002, see docs/DIAGNOSTIC_ENGINE.md): the tagged header line, the classification and the last-outbound summary as <code>note:</code> lines, a <code>help:</code> line, and the dump path — an operator reading the log sees the suspect packet without opening the dump.</p>
-<h1><a class="anchor" id="autotoc_md153"></a>
+<h1><a class="anchor" id="autotoc_md155"></a>
 How to read a &lt;tt&gt;client-lost&lt;/tt&gt; dump</h1>
 <ol type="1">
 <li><code>Classification</code> — was it a timeout (client died) or a forced close?</li>
@@ -164,7 +164,7 @@ How to read a &lt;tt&gt;client-lost&lt;/tt&gt; dump</h1>
 <li><code>Recent errors</code> — a <code>PacketSanitizer</code> violation listed here is usually the root cause of the crash below it.</li>
 <li>Cross-reference the dump's tick with <code>crashdumps/error_*.json</code> files written by the sanitizer: the offending offset + value identify the producer system.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md154"></a>
+<h1><a class="anchor" id="autotoc_md156"></a>
 Performance budget</h1>
 <p>Measured on the reference build (2 M iterations each, -O2):</p>
 <table class="markdownTable">
@@ -180,14 +180,14 @@ Performance budget</h1>
 <td class="markdownTableBodyNone"><b>Combined worst case</b>   </td><td class="markdownTableBodyNone">**~34 ns**   </td></tr>
 </table>
 <p>Even at an extreme 1000 outbound packets per tick that is ~34 µs against a 50 ms tick budget (0.07%). Memory: 24 KB per player for the two rings, allocated once in the Player. Zero heap traffic on the hot path; the only string building happens when a violation fires (a bug condition) or when a dump is rendered (a crash).</p>
-<h1><a class="anchor" id="autotoc_md155"></a>
+<h1><a class="anchor" id="autotoc_md157"></a>
 Extension points</h1>
 <ul>
 <li>New crash-prone packet → add its offsets to <code>PacketSanitizer.cpp</code> and a line to the table above; the encoder comment in the packet header is the source of truth for the layout.</li>
 <li>Deeper payload capture → raise <code>kPreviewBytes</code> in <code><a class="el" href="PacketForensics_8h_source.html">PacketForensics.h</a></code> (each byte costs 2 hex chars in dumps only, never at record time).</li>
 <li>The <code>timeout</code> vs <code>client disconnect</code> classification also gives plugins the raw material for a <code>PlayerKickEvent</code>-style "crash reason" surface later.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md156"></a>
+<h1><a class="anchor" id="autotoc_md158"></a>
 Verification</h1>
 <p>Two layers of tests guard this system (run them after touching any of the files above):</p>
 <ol type="1">

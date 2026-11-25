@@ -26,245 +26,249 @@ var NAVTREE =
 [
   [ "CurseStone", "index.html", [
     [ "CurseStone", "index.html#autotoc_md0", [
-      [ "Why CurseStone exists", "index.html#autotoc_md2", null ],
-      [ "What CurseStone is", "index.html#autotoc_md3", null ],
-      [ "What you get", "index.html#autotoc_md4", null ],
-      [ "Why choose CurseStone", "index.html#autotoc_md5", null ],
-      [ "Quick start", "index.html#autotoc_md6", null ],
-      [ "Technology", "index.html#autotoc_md7", null ],
-      [ "Project status", "index.html#autotoc_md8", null ],
-      [ "Documentation", "index.html#autotoc_md9", null ],
-      [ "Contributing", "index.html#autotoc_md10", null ],
-      [ "License", "index.html#autotoc_md11", null ]
+      [ "What is CurseStone?", "index.html#autotoc_md2", null ],
+      [ "What you get", "index.html#autotoc_md3", [
+        [ "A server that just works", "index.html#autotoc_md4", null ],
+        [ "The game, as players remember it", "index.html#autotoc_md5", null ],
+        [ "Make it your own", "index.html#autotoc_md6", null ],
+        [ "Clear answers when something goes wrong", "index.html#autotoc_md7", null ]
+      ] ],
+      [ "Why choose CurseStone", "index.html#autotoc_md8", [
+        [ "Honest limits", "index.html#autotoc_md9", null ]
+      ] ],
+      [ "Quick start", "index.html#autotoc_md10", null ],
+      [ "Learn more", "index.html#autotoc_md11", null ],
+      [ "Community and contributing", "index.html#autotoc_md12", null ],
+      [ "License", "index.html#autotoc_md13", null ]
     ] ],
     [ "Contributing to CurseStone", "md_CONTRIBUTING.html", [
-      [ "1. Ways to contribute", "md_CONTRIBUTING.html#autotoc_md15", null ],
-      [ "2. Setting up", "md_CONTRIBUTING.html#autotoc_md17", null ],
-      [ "3. Architecture at a glance", "md_CONTRIBUTING.html#autotoc_md19", null ],
-      [ "4. Naming and style", "md_CONTRIBUTING.html#autotoc_md21", [
-        [ "Items and blocks", "md_CONTRIBUTING.html#autotoc_md22", null ],
-        [ "General", "md_CONTRIBUTING.html#autotoc_md23", null ],
-        [ "Comments and documentation", "md_CONTRIBUTING.html#autotoc_md24", null ]
+      [ "1. Ways to contribute", "md_CONTRIBUTING.html#autotoc_md17", null ],
+      [ "2. Setting up", "md_CONTRIBUTING.html#autotoc_md19", null ],
+      [ "3. Architecture at a glance", "md_CONTRIBUTING.html#autotoc_md21", null ],
+      [ "4. Naming and style", "md_CONTRIBUTING.html#autotoc_md23", [
+        [ "Items and blocks", "md_CONTRIBUTING.html#autotoc_md24", null ],
+        [ "General", "md_CONTRIBUTING.html#autotoc_md25", null ],
+        [ "Comments and documentation", "md_CONTRIBUTING.html#autotoc_md26", null ]
       ] ],
-      [ "5. Protocol 84 notes", "md_CONTRIBUTING.html#autotoc_md26", null ],
-      [ "6. Where things go", "md_CONTRIBUTING.html#autotoc_md28", null ],
-      [ "7. Testing your change", "md_CONTRIBUTING.html#autotoc_md30", null ],
-      [ "8. Commits and pull requests", "md_CONTRIBUTING.html#autotoc_md32", null ],
-      [ "9. Reporting bugs", "md_CONTRIBUTING.html#autotoc_md34", null ],
-      [ "10. Plugins", "md_CONTRIBUTING.html#autotoc_md36", null ],
-      [ "11. License", "md_CONTRIBUTING.html#autotoc_md38", null ]
+      [ "5. Protocol 84 notes", "md_CONTRIBUTING.html#autotoc_md28", null ],
+      [ "6. Where things go", "md_CONTRIBUTING.html#autotoc_md30", null ],
+      [ "7. Testing your change", "md_CONTRIBUTING.html#autotoc_md32", null ],
+      [ "8. Commits and pull requests", "md_CONTRIBUTING.html#autotoc_md34", null ],
+      [ "9. Reporting bugs", "md_CONTRIBUTING.html#autotoc_md36", null ],
+      [ "10. Plugins", "md_CONTRIBUTING.html#autotoc_md38", null ],
+      [ "11. License", "md_CONTRIBUTING.html#autotoc_md40", null ]
     ] ],
     [ "Cómo compilar CurseStone", "md_docs_BUILDING.html", [
-      [ "Opción 1 — GitHub Actions (recomendado)", "md_docs_BUILDING.html#autotoc_md40", null ],
-      [ "Opción 1.5 — Release personalizado (versión y descripción custom)", "md_docs_BUILDING.html#autotoc_md42", null ],
-      [ "</blockquote>", "md_docs_BUILDING.html#autotoc_md43", null ],
-      [ "Opción 2 — Linux x86_64 (VPS / PC)", "md_docs_BUILDING.html#autotoc_md44", null ],
-      [ "Opción 3 — Android ARM64 desde Termux (en tu celular)", "md_docs_BUILDING.html#autotoc_md46", null ],
-      [ "</blockquote>", "md_docs_BUILDING.html#autotoc_md47", null ],
-      [ "Opción 4 — Windows x86_64 (MSVC)", "md_docs_BUILDING.html#autotoc_md48", null ],
-      [ "Opción 5 — Cross-compile ARM64 desde Linux (con NDK)", "md_docs_BUILDING.html#autotoc_md50", null ],
-      [ "Variables CMake útiles", "md_docs_BUILDING.html#autotoc_md52", null ]
+      [ "Opción 1 — GitHub Actions (recomendado)", "md_docs_BUILDING.html#autotoc_md42", null ],
+      [ "Opción 1.5 — Release personalizado (versión y descripción custom)", "md_docs_BUILDING.html#autotoc_md44", null ],
+      [ "</blockquote>", "md_docs_BUILDING.html#autotoc_md45", null ],
+      [ "Opción 2 — Linux x86_64 (VPS / PC)", "md_docs_BUILDING.html#autotoc_md46", null ],
+      [ "Opción 3 — Android ARM64 desde Termux (en tu celular)", "md_docs_BUILDING.html#autotoc_md48", null ],
+      [ "</blockquote>", "md_docs_BUILDING.html#autotoc_md49", null ],
+      [ "Opción 4 — Windows x86_64 (MSVC)", "md_docs_BUILDING.html#autotoc_md50", null ],
+      [ "Opción 5 — Cross-compile ARM64 desde Linux (con NDK)", "md_docs_BUILDING.html#autotoc_md52", null ],
+      [ "Variables CMake útiles", "md_docs_BUILDING.html#autotoc_md54", null ]
     ] ],
     [ "CURSESTONE — AUDITORÍA ARQUITECTÓNICA COMPLETA (C++ NATIVO)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html", [
-      [ "1. RESUMEN EJECUTIVO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md55", null ],
-      [ "2. MAPA DE ARQUITECTURA DEL REPOSITORIO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md57", [
-        [ "2.1 Distribución del código", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md58", null ],
-        [ "2.2 Hilos (inventario completo, verificado por sitios de creación)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md59", null ],
-        [ "2.3 Singletons / estado global", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md60", null ],
-        [ "2.4 Flujo de un tick (orden real, <tt>Server::tick()</tt> <tt>Server.cpp:508-674</tt>)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md61", null ],
-        [ "2.5 Grafo de propiedad (resumen; detalle completo en <tt>docs/audits/ownership-map.md</tt>, que sigue siendo esencialmente válido)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md62", null ]
+      [ "1. RESUMEN EJECUTIVO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md57", null ],
+      [ "2. MAPA DE ARQUITECTURA DEL REPOSITORIO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md59", [
+        [ "2.1 Distribución del código", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md60", null ],
+        [ "2.2 Hilos (inventario completo, verificado por sitios de creación)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md61", null ],
+        [ "2.3 Singletons / estado global", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md62", null ],
+        [ "2.4 Flujo de un tick (orden real, <tt>Server::tick()</tt> <tt>Server.cpp:508-674</tt>)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md63", null ],
+        [ "2.5 Grafo de propiedad (resumen; detalle completo en <tt>docs/audits/ownership-map.md</tt>, que sigue siendo esencialmente válido)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md64", null ]
       ] ],
-      [ "3. ANÁLISIS DE LA HERENCIA ARQUITECTÓNICA DE LA REFERENCIA DE LA ERA", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md64", [
-        [ "3.1 H1 — Objeto heap + <tt>dynamic_cast</tt> por paquete entrante", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md65", null ],
-        [ "3.2 H2 — Sistema de eventos con coste por disparo heredado del bus de the reference", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md66", null ],
-        [ "3.3 H3 — <tt>playersSnapshot()</tt>: copia de la lista de jugadores por difusión", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md67", null ],
-        [ "3.4 H4 — Virtualización FullChunk/WorldProvider que nadie más usa", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md68", null ],
-        [ "3.5 H5 — Scheduler genérico de the reference usado como cola de ticks de bloque", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md69", null ],
-        [ "3.6 H6 — <tt>Player</tt> god-class: 84 miembros, 3 bases, 3 mutex, split puramente organizativo", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md70", null ],
-        [ "3.7 H7 — Dos registros de sesión paralelos (herencia + migración a medias)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md71", null ],
-        [ "3.8 Herencia evaluada y <strong>correcta</strong> (no tocar)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md72", null ],
-        [ "3.9 Ausencias heredadas (huecos funcionales que the reference sí tiene)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md73", null ]
+      [ "3. ANÁLISIS DE LA HERENCIA ARQUITECTÓNICA DE LA REFERENCIA DE LA ERA", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md66", [
+        [ "3.1 H1 — Objeto heap + <tt>dynamic_cast</tt> por paquete entrante", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md67", null ],
+        [ "3.2 H2 — Sistema de eventos con coste por disparo heredado del bus de the reference", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md68", null ],
+        [ "3.3 H3 — <tt>playersSnapshot()</tt>: copia de la lista de jugadores por difusión", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md69", null ],
+        [ "3.4 H4 — Virtualización FullChunk/WorldProvider que nadie más usa", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md70", null ],
+        [ "3.5 H5 — Scheduler genérico de the reference usado como cola de ticks de bloque", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md71", null ],
+        [ "3.6 H6 — <tt>Player</tt> god-class: 84 miembros, 3 bases, 3 mutex, split puramente organizativo", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md72", null ],
+        [ "3.7 H7 — Dos registros de sesión paralelos (herencia + migración a medias)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md73", null ],
+        [ "3.8 Herencia evaluada y <strong>correcta</strong> (no tocar)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md74", null ],
+        [ "3.9 Ausencias heredadas (huecos funcionales que the reference sí tiene)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md75", null ]
       ] ],
-      [ "4. EVALUACIÓN DEL APROVECHAMIENTO DE C++", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md75", [
-        [ "4.1 Gestión de memoria", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md76", null ],
-        [ "4.2 Estructuras de datos", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md77", null ],
-        [ "4.3 Diseño orientado a datos", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md78", null ],
-        [ "4.4 Templates y cómputo en compilación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md79", null ],
-        [ "4.5 NBT: el caso de estudio del \"a medio camino\"", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md80", null ]
+      [ "4. EVALUACIÓN DEL APROVECHAMIENTO DE C++", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md77", [
+        [ "4.1 Gestión de memoria", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md78", null ],
+        [ "4.2 Estructuras de datos", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md79", null ],
+        [ "4.3 Diseño orientado a datos", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md80", null ],
+        [ "4.4 Templates y cómputo en compilación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md81", null ],
+        [ "4.5 NBT: el caso de estudio del \"a medio camino\"", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md82", null ]
       ] ],
-      [ "5. ANÁLISIS DE MEMORIA", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md82", null ],
-      [ "6. ANÁLISIS DE ESTRUCTURAS DE DATOS", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md84", null ],
-      [ "7. ANÁLISIS DE RENDIMIENTO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md86", [
-        [ "7.1 Ruta interactiva (bloque colocado/roto)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md87", null ],
-        [ "7.2 Ruta de red", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md88", null ],
-        [ "7.3 Ruta de guardado/mundo", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md89", null ],
-        [ "7.4 Ruta de entidades/juego", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md90", null ]
+      [ "5. ANÁLISIS DE MEMORIA", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md84", null ],
+      [ "6. ANÁLISIS DE ESTRUCTURAS DE DATOS", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md86", null ],
+      [ "7. ANÁLISIS DE RENDIMIENTO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md88", [
+        [ "7.1 Ruta interactiva (bloque colocado/roto)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md89", null ],
+        [ "7.2 Ruta de red", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md90", null ],
+        [ "7.3 Ruta de guardado/mundo", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md91", null ],
+        [ "7.4 Ruta de entidades/juego", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md92", null ]
       ] ],
-      [ "8. ARQUITECTURA MULTIHILO Y CONCURRENCIA", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md92", null ],
-      [ "9. AUDITORÍA DE NETWORKING", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md94", [
-        [ "9.1 Hilos y puentes", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md95", null ],
-        [ "9.2 Ruta de recepción (con conteo de copias)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md96", null ],
-        [ "9.3 Ruta de envío", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md97", null ],
-        [ "9.4 Fiabilidad raklib (post-migración)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md98", null ],
-        [ "9.5 Capa de protocolo MCPE", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md99", null ],
-        [ "9.6 Inmutable por compatibilidad protocolo 84 (no tocar)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md100", null ],
-        [ "9.7 RCON y Query", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md101", null ]
+      [ "8. ARQUITECTURA MULTIHILO Y CONCURRENCIA", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md94", null ],
+      [ "9. AUDITORÍA DE NETWORKING", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md96", [
+        [ "9.1 Hilos y puentes", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md97", null ],
+        [ "9.2 Ruta de recepción (con conteo de copias)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md98", null ],
+        [ "9.3 Ruta de envío", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md99", null ],
+        [ "9.4 Fiabilidad raklib (post-migración)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md100", null ],
+        [ "9.5 Capa de protocolo MCPE", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md101", null ],
+        [ "9.6 Inmutable por compatibilidad protocolo 84 (no tocar)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md102", null ],
+        [ "9.7 RCON y Query", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md103", null ]
       ] ],
-      [ "10. AUDITORÍA DEL MOTOR DE MUNDO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md103", [
-        [ "10.1 Representación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md104", null ],
-        [ "10.2 Acceso y mutación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md105", null ],
-        [ "10.3 Iluminación (doble motor)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md106", null ],
-        [ "10.4 Generación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md107", null ],
-        [ "10.5 Almacenamiento", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md108", null ],
-        [ "10.6 Tiles y entidades", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md109", null ]
+      [ "10. AUDITORÍA DEL MOTOR DE MUNDO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md105", [
+        [ "10.1 Representación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md106", null ],
+        [ "10.2 Acceso y mutación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md107", null ],
+        [ "10.3 Iluminación (doble motor)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md108", null ],
+        [ "10.4 Generación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md109", null ],
+        [ "10.5 Almacenamiento", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md110", null ],
+        [ "10.6 Tiles y entidades", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md111", null ]
       ] ],
-      [ "11. AUDITORÍA DE EVENTOS, PLUGINS Y COMANDOS", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md111", [
-        [ "11.1 Eventos", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md112", null ],
-        [ "11.2 Plugins Lua", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md113", null ],
-        [ "11.3 Comandos y permisos", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md114", null ],
-        [ "11.4 ¿La API obliga a estructuras ineficientes al motor?", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md115", null ]
+      [ "11. AUDITORÍA DE EVENTOS, PLUGINS Y COMANDOS", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md113", [
+        [ "11.1 Eventos", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md114", null ],
+        [ "11.2 Plugins Lua", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md115", null ],
+        [ "11.3 Comandos y permisos", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md116", null ],
+        [ "11.4 ¿La API obliga a estructuras ineficientes al motor?", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md117", null ]
       ] ],
-      [ "12. SEGURIDAD Y ESTABILIDAD", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md117", [
-        [ "12.1 🔴 CRÍTICA [confirmado] — Use-after-free en el índice de sesiones tras kick", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md118", null ],
-        [ "12.2 🟠 [confirmado] — Bug de corrección: daño ambiental en el mundo equivocado", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md119", null ],
-        [ "12.3 🟠 [confirmado] — Anti-flood declarado y nunca aplicado", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md120", null ],
-        [ "12.4 Endurecimiento verificado en su sitio (positivo)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md121", null ],
-        [ "12.5 Superficie C restante (riesgo de clase, no hallazgo puntual)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md122", null ],
-        [ "12.6 Otros riesgos menores", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md123", null ]
+      [ "12. SEGURIDAD Y ESTABILIDAD", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md119", [
+        [ "12.1 🔴 CRÍTICA [confirmado] — Use-after-free en el índice de sesiones tras kick", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md120", null ],
+        [ "12.2 🟠 [confirmado] — Bug de corrección: daño ambiental en el mundo equivocado", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md121", null ],
+        [ "12.3 🟠 [confirmado] — Anti-flood declarado y nunca aplicado", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md122", null ],
+        [ "12.4 Endurecimiento verificado en su sitio (positivo)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md123", null ],
+        [ "12.5 Superficie C restante (riesgo de clase, no hallazgo puntual)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md124", null ],
+        [ "12.6 Otros riesgos menores", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md125", null ]
       ] ],
-      [ "13. COMPILACIÓN Y OPTIMIZACIÓN DEL BINARIO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md125", [
-        [ "13.1 Configuración actual (verificada en <tt>CMakeLists.txt</tt> y cache de build)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md126", null ],
-        [ "13.2 Evaluación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md127", null ]
+      [ "13. COMPILACIÓN Y OPTIMIZACIÓN DEL BINARIO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md127", [
+        [ "13.1 Configuración actual (verificada en <tt>CMakeLists.txt</tt> y cache de build)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md128", null ],
+        [ "13.2 Evaluación", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md129", null ]
       ] ],
-      [ "14. PROPUESTAS DE REDISEÑO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md129", [
-        [ "R1 — Handle de chunk / <tt>ChunkView</tt> para rutas calientes", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md130", null ],
-        [ "R2 — Luz incremental (light removal/addition queue)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md131", null ],
-        [ "R3 — Presupuesto de E/S fuera del mutex de chunks", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md132", null ],
-        [ "R4 — Anti-churn de red (pools de buffers + writer con reserve + move)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md133", null ],
-        [ "R5 — Índice espacial de viewers y entidades por chunk", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md134", null ],
-        [ "R6 — Cola dedicada de ticks de bloque (liquids) por mundo", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md135", null ],
-        [ "R7 — Consolidación raklib: RAII real y un solo registro de sesiones", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md136", null ],
-        [ "R8 — Quitar o cablear los scaffolds muertos (higiene)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md137", null ]
+      [ "14. PROPUESTAS DE REDISEÑO", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md131", [
+        [ "R1 — Handle de chunk / <tt>ChunkView</tt> para rutas calientes", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md132", null ],
+        [ "R2 — Luz incremental (light removal/addition queue)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md133", null ],
+        [ "R3 — Presupuesto de E/S fuera del mutex de chunks", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md134", null ],
+        [ "R4 — Anti-churn de red (pools de buffers + writer con reserve + move)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md135", null ],
+        [ "R5 — Índice espacial de viewers y entidades por chunk", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md136", null ],
+        [ "R6 — Cola dedicada de ticks de bloque (liquids) por mundo", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md137", null ],
+        [ "R7 — Consolidación raklib: RAII real y un solo registro de sesiones", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md138", null ],
+        [ "R8 — Quitar o cablear los scaffolds muertos (higiene)", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md139", null ]
       ] ],
-      [ "15. LISTADO PRIORIZADO DE MEJORAS", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md139", null ],
-      [ "16. HOJA DE RUTA DE EVOLUCIÓN", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md141", null ],
-      [ "17. EVALUACIÓN FINAL", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md143", [
-        [ "17.1 Respuestas explícitas a las preguntas del encargo", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md144", null ],
-        [ "17.2 Diagnóstico honesto final", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md145", null ]
+      [ "15. LISTADO PRIORIZADO DE MEJORAS", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md141", null ],
+      [ "16. HOJA DE RUTA DE EVOLUCIÓN", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md143", null ],
+      [ "17. EVALUACIÓN FINAL", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md145", [
+        [ "17.1 Respuestas explícitas a las preguntas del encargo", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md146", null ],
+        [ "17.2 Diagnóstico honesto final", "md_docs_audits_CURSESTONE_ARCHITECTURE_AUDIT.html#autotoc_md147", null ]
       ] ]
     ] ],
     [ "Crash Diagnostics — client-side crash forensics", "md_docs_CRASH_DIAGNOSTICS.html", [
-      [ "Problem", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md148", null ],
-      [ "Design — three layers", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md149", [
-        [ "[1] <tt>network/protocol/PacketSanitizer</tt> — the bad-byte firewall", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md150", null ],
-        [ "[2] <tt>diagnostics/PacketForensics</tt> — per-player wire recorder", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md151", null ],
-        [ "[3] Client-lost classification in <tt>Player::close()</tt>", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md152", null ]
+      [ "Problem", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md150", null ],
+      [ "Design — three layers", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md151", [
+        [ "[1] <tt>network/protocol/PacketSanitizer</tt> — the bad-byte firewall", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md152", null ],
+        [ "[2] <tt>diagnostics/PacketForensics</tt> — per-player wire recorder", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md153", null ],
+        [ "[3] Client-lost classification in <tt>Player::close()</tt>", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md154", null ]
       ] ],
-      [ "How to read a <tt>client-lost</tt> dump", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md153", null ],
-      [ "Performance budget", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md154", null ],
-      [ "Extension points", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md155", null ],
-      [ "Verification", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md156", null ]
+      [ "How to read a <tt>client-lost</tt> dump", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md155", null ],
+      [ "Performance budget", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md156", null ],
+      [ "Extension points", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md157", null ],
+      [ "Verification", "md_docs_CRASH_DIAGNOSTICS.html#autotoc_md158", null ]
     ] ],
     [ "CurseStone Diagnostic Engine", "md_docs_DIAGNOSTIC_ENGINE.html", [
-      [ "Identity", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md158", null ],
-      [ "Message levels", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md159", null ],
-      [ "Startup stages", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md160", null ],
-      [ "Diagnostics", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md161", null ],
-      [ "Diagnostic codes", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md162", null ],
-      [ "Configuration", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md163", null ],
-      [ "Performance notes", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md164", null ]
+      [ "Identity", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md160", null ],
+      [ "Message levels", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md161", null ],
+      [ "Startup stages", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md162", null ],
+      [ "Diagnostics", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md163", null ],
+      [ "Diagnostic codes", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md164", null ],
+      [ "Configuration", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md165", null ],
+      [ "Performance notes", "md_docs_DIAGNOSTIC_ENGINE.html#autotoc_md166", null ]
     ] ],
     [ "Player mechanics events", "md_docs_EVENTS.html", [
-      [ "Listening", "md_docs_EVENTS.html#autotoc_md166", null ],
-      [ "The events", "md_docs_EVENTS.html#autotoc_md167", [
-        [ "PlayerExhaustEvent", "md_docs_EVENTS.html#autotoc_md168", null ],
-        [ "PlayerHungerChangeEvent", "md_docs_EVENTS.html#autotoc_md169", null ],
-        [ "PlayerToggleSneakEvent / PlayerToggleSprintEvent", "md_docs_EVENTS.html#autotoc_md170", null ],
-        [ "PlayerAnimationEvent", "md_docs_EVENTS.html#autotoc_md171", null ],
-        [ "PlayerGamemodeChangeEvent", "md_docs_EVENTS.html#autotoc_md172", null ],
-        [ "PlayerPreLoginEvent", "md_docs_EVENTS.html#autotoc_md173", null ],
-        [ "PlayerCreationEvent", "md_docs_EVENTS.html#autotoc_md174", null ],
-        [ "PlayerBucketEvent / PlayerBucketFillEvent", "md_docs_EVENTS.html#autotoc_md175", null ]
+      [ "Listening", "md_docs_EVENTS.html#autotoc_md168", null ],
+      [ "The events", "md_docs_EVENTS.html#autotoc_md169", [
+        [ "PlayerExhaustEvent", "md_docs_EVENTS.html#autotoc_md170", null ],
+        [ "PlayerHungerChangeEvent", "md_docs_EVENTS.html#autotoc_md171", null ],
+        [ "PlayerToggleSneakEvent / PlayerToggleSprintEvent", "md_docs_EVENTS.html#autotoc_md172", null ],
+        [ "PlayerAnimationEvent", "md_docs_EVENTS.html#autotoc_md173", null ],
+        [ "PlayerGamemodeChangeEvent", "md_docs_EVENTS.html#autotoc_md174", null ],
+        [ "PlayerPreLoginEvent", "md_docs_EVENTS.html#autotoc_md175", null ],
+        [ "PlayerCreationEvent", "md_docs_EVENTS.html#autotoc_md176", null ],
+        [ "PlayerBucketEvent / PlayerBucketFillEvent", "md_docs_EVENTS.html#autotoc_md177", null ]
       ] ],
-      [ "Native <tt>CsEvent</tt> field map", "md_docs_EVENTS.html#autotoc_md176", null ],
-      [ "Integration notes (server developers)", "md_docs_EVENTS.html#autotoc_md177", null ]
+      [ "Native <tt>CsEvent</tt> field map", "md_docs_EVENTS.html#autotoc_md178", null ],
+      [ "Integration notes (server developers)", "md_docs_EVENTS.html#autotoc_md179", null ]
     ] ],
     [ "Mob AI architecture", "md_docs_MOB_AI.html", [
-      [ "1. Starting point (facts about the current tree)", "md_docs_MOB_AI.html#autotoc_md179", null ],
-      [ "2. Design goals and constraints", "md_docs_MOB_AI.html#autotoc_md180", null ],
-      [ "3. Components", "md_docs_MOB_AI.html#autotoc_md181", [
-        [ "Goal", "md_docs_MOB_AI.html#autotoc_md182", null ],
-        [ "MobBrain", "md_docs_MOB_AI.html#autotoc_md183", null ],
-        [ "MobContext", "md_docs_MOB_AI.html#autotoc_md184", null ],
-        [ "MobAIManager", "md_docs_MOB_AI.html#autotoc_md185", null ]
+      [ "1. Starting point (facts about the current tree)", "md_docs_MOB_AI.html#autotoc_md181", null ],
+      [ "2. Design goals and constraints", "md_docs_MOB_AI.html#autotoc_md182", null ],
+      [ "3. Components", "md_docs_MOB_AI.html#autotoc_md183", [
+        [ "Goal", "md_docs_MOB_AI.html#autotoc_md184", null ],
+        [ "MobBrain", "md_docs_MOB_AI.html#autotoc_md185", null ],
+        [ "MobContext", "md_docs_MOB_AI.html#autotoc_md186", null ],
+        [ "MobAIManager", "md_docs_MOB_AI.html#autotoc_md187", null ]
       ] ],
-      [ "4. Cadences and budgets", "md_docs_MOB_AI.html#autotoc_md186", null ],
-      [ "5. Activation gate", "md_docs_MOB_AI.html#autotoc_md187", null ],
-      [ "6. Threading contract (now and later)", "md_docs_MOB_AI.html#autotoc_md188", null ],
-      [ "7. Compatibility contract", "md_docs_MOB_AI.html#autotoc_md189", null ],
-      [ "8. Stage roadmap", "md_docs_MOB_AI.html#autotoc_md190", null ],
-      [ "9. Implementation status", "md_docs_MOB_AI.html#autotoc_md191", [
-        [ "The tier contract", "md_docs_MOB_AI.html#autotoc_md192", null ],
-        [ "The swim model (hold-band regulator + flotation bob)", "md_docs_MOB_AI.html#autotoc_md193", null ],
-        [ "Steering", "md_docs_MOB_AI.html#autotoc_md194", null ],
-        [ "Panic", "md_docs_MOB_AI.html#autotoc_md195", null ],
-        [ "Benchmarks", "md_docs_MOB_AI.html#autotoc_md196", null ]
+      [ "4. Cadences and budgets", "md_docs_MOB_AI.html#autotoc_md188", null ],
+      [ "5. Activation gate", "md_docs_MOB_AI.html#autotoc_md189", null ],
+      [ "6. Threading contract (now and later)", "md_docs_MOB_AI.html#autotoc_md190", null ],
+      [ "7. Compatibility contract", "md_docs_MOB_AI.html#autotoc_md191", null ],
+      [ "8. Stage roadmap", "md_docs_MOB_AI.html#autotoc_md192", null ],
+      [ "9. Implementation status", "md_docs_MOB_AI.html#autotoc_md193", [
+        [ "The tier contract", "md_docs_MOB_AI.html#autotoc_md194", null ],
+        [ "The swim model (hold-band regulator + flotation bob)", "md_docs_MOB_AI.html#autotoc_md195", null ],
+        [ "Steering", "md_docs_MOB_AI.html#autotoc_md196", null ],
+        [ "Panic", "md_docs_MOB_AI.html#autotoc_md197", null ],
+        [ "Benchmarks", "md_docs_MOB_AI.html#autotoc_md198", null ]
       ] ],
-      [ "10. Mob persistence", "md_docs_MOB_AI.html#autotoc_md197", null ]
+      [ "10. Mob persistence", "md_docs_MOB_AI.html#autotoc_md199", null ]
     ] ],
     [ "CurseStone Plugin API", "md_docs_PLUGINS.html", [
-      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md199", [
-        [ "Building blocks from plugins", "md_docs_PLUGINS.html#autotoc_md200", null ],
-        [ "Particles", "md_docs_PLUGINS.html#autotoc_md201", [
-          [ "Tag types (all ride the same one-carrier model)", "md_docs_PLUGINS.html#autotoc_md202", null ],
-          [ "Why this cannot hurt the FPS", "md_docs_PLUGINS.html#autotoc_md203", null ]
+      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md201", [
+        [ "Building blocks from plugins", "md_docs_PLUGINS.html#autotoc_md202", null ],
+        [ "Particles", "md_docs_PLUGINS.html#autotoc_md203", [
+          [ "Tag types (all ride the same one-carrier model)", "md_docs_PLUGINS.html#autotoc_md204", null ],
+          [ "Why this cannot hurt the FPS", "md_docs_PLUGINS.html#autotoc_md205", null ]
         ] ],
-        [ "Entities (standing mobs)", "md_docs_PLUGINS.html#autotoc_md204", [
-          [ "Mob combat and health", "md_docs_PLUGINS.html#autotoc_md205", null ]
+        [ "Entities (standing mobs)", "md_docs_PLUGINS.html#autotoc_md206", [
+          [ "Mob combat and health", "md_docs_PLUGINS.html#autotoc_md207", null ]
         ] ]
       ] ],
-      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md206", [
-        [ "Structure", "md_docs_PLUGINS.html#autotoc_md207", null ],
-        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md208", null ],
-        [ "Building", "md_docs_PLUGINS.html#autotoc_md209", null ],
-        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md210", null ],
-        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md211", null ],
-        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md212", null ],
-        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md213", null ]
+      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md208", [
+        [ "Structure", "md_docs_PLUGINS.html#autotoc_md209", null ],
+        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md210", null ],
+        [ "Building", "md_docs_PLUGINS.html#autotoc_md211", null ],
+        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md212", null ],
+        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md213", null ],
+        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md214", null ],
+        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md215", null ]
       ] ],
-      [ "Commands", "md_docs_PLUGINS.html#autotoc_md214", null ],
-      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md215", null ]
+      [ "Commands", "md_docs_PLUGINS.html#autotoc_md216", null ],
+      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md217", null ]
     ] ],
     [ "CurseStone Comment and Documentation Style Guide", "md_docs_STYLE_COMMENTS.html", [
-      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md224", null ],
-      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md225", null ],
-      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md226", null ],
-      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md227", null ],
-      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md228", null ],
-      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md229", null ],
-      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md230", null ]
+      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md226", null ],
+      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md227", null ],
+      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md228", null ],
+      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md229", null ],
+      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md230", null ],
+      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md231", null ],
+      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md232", null ]
     ] ],
     [ "Threading notes: what the historical thread moves mean for CurseStone", "md_docs_THREADING.html", [
-      [ "1. CurseStone threading snapshot (current tree)", "md_docs_THREADING.html#autotoc_md232", null ],
-      [ "2. The historical thread moves and their outcomes", "md_docs_THREADING.html#autotoc_md233", null ],
-      [ "3. Lessons, applied to CurseStone", "md_docs_THREADING.html#autotoc_md234", [
-        [ "Lesson 1 — thread I/O, not game state", "md_docs_THREADING.html#autotoc_md235", null ],
-        [ "Lesson 2 — extract the storage boundary BEFORE threading the provider", "md_docs_THREADING.html#autotoc_md236", null ],
-        [ "Lesson 3 — budget small stateful work instead of threading it", "md_docs_THREADING.html#autotoc_md237", null ],
-        [ "Lesson 4 — entity ticking needs a budget and a radius the day AI lands", "md_docs_THREADING.html#autotoc_md238", null ],
-        [ "Lesson 5 — name your threads", "md_docs_THREADING.html#autotoc_md239", null ]
+      [ "1. CurseStone threading snapshot (current tree)", "md_docs_THREADING.html#autotoc_md234", null ],
+      [ "2. The historical thread moves and their outcomes", "md_docs_THREADING.html#autotoc_md235", null ],
+      [ "3. Lessons, applied to CurseStone", "md_docs_THREADING.html#autotoc_md236", [
+        [ "Lesson 1 — thread I/O, not game state", "md_docs_THREADING.html#autotoc_md237", null ],
+        [ "Lesson 2 — extract the storage boundary BEFORE threading the provider", "md_docs_THREADING.html#autotoc_md238", null ],
+        [ "Lesson 3 — budget small stateful work instead of threading it", "md_docs_THREADING.html#autotoc_md239", null ],
+        [ "Lesson 4 — entity ticking needs a budget and a radius the day AI lands", "md_docs_THREADING.html#autotoc_md240", null ],
+        [ "Lesson 5 — name your threads", "md_docs_THREADING.html#autotoc_md241", null ]
       ] ],
-      [ "4. What is still worth adopting (ranked)", "md_docs_THREADING.html#autotoc_md240", null ],
-      [ "5. What NOT to adopt", "md_docs_THREADING.html#autotoc_md241", null ],
-      [ "6. Status against the historical kept list", "md_docs_THREADING.html#autotoc_md242", null ],
-      [ "7. Implementation status (named threads + async chunk encode)", "md_docs_THREADING.html#autotoc_md243", [
-        [ "Named threads", "md_docs_THREADING.html#autotoc_md244", null ],
-        [ "Async chunk encode", "md_docs_THREADING.html#autotoc_md245", null ],
-        [ "Measurements", "md_docs_THREADING.html#autotoc_md246", null ],
-        [ "Simultaneous joins: the \"single-streamer\" observation, root-caused", "md_docs_THREADING.html#autotoc_md247", null ],
-        [ "Multi-player concurrency verification (server unchanged)", "md_docs_THREADING.html#autotoc_md248", null ]
+      [ "4. What is still worth adopting (ranked)", "md_docs_THREADING.html#autotoc_md242", null ],
+      [ "5. What NOT to adopt", "md_docs_THREADING.html#autotoc_md243", null ],
+      [ "6. Status against the historical kept list", "md_docs_THREADING.html#autotoc_md244", null ],
+      [ "7. Implementation status (named threads + async chunk encode)", "md_docs_THREADING.html#autotoc_md245", [
+        [ "Named threads", "md_docs_THREADING.html#autotoc_md246", null ],
+        [ "Async chunk encode", "md_docs_THREADING.html#autotoc_md247", null ],
+        [ "Measurements", "md_docs_THREADING.html#autotoc_md248", null ],
+        [ "Simultaneous joins: the \"single-streamer\" observation, root-caused", "md_docs_THREADING.html#autotoc_md249", null ],
+        [ "Multi-player concurrency verification (server unchanged)", "md_docs_THREADING.html#autotoc_md250", null ]
       ] ],
-      [ "8. Mob AI (added after the join-storm study)", "md_docs_THREADING.html#autotoc_md249", null ]
+      [ "8. Mob AI (added after the join-storm study)", "md_docs_THREADING.html#autotoc_md251", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -298,42 +302,42 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"",
-"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a994872d75cc154f715f1b9b3c8dfc1d9",
-"Blocks_8h.html#adb4d45999c1ac59398074f857397bfc8",
-"EntityTypes_8h.html#a5ef74f397cc6f7cdc59b504e453ed71a",
-"ItemConstants_8h.html#a12becab81c6a6b9f164e6df42ccbea59",
-"ItemConstants_8h.html#ab353c00ca1c1f789fef7b42d0529d47f",
-"ItemIds_8h.html#a3e000ec119790a8d8275720ada569223ae23534fcbde425168dfd076441653bbd",
-"MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea98eb39147854d784623f0060f30905fd",
-"SetPlayerGameTypePacket_8h_source.html",
-"Utils_8hpp_source.html",
-"classcursestone_1_1Player.html#a4bb647650803d85e1b49ac7227898b38",
-"classcursestone_1_1SimpleCommandMap.html#ab0d8151068f979b2581527ede303af72",
-"classcursestone_1_1block_1_1BlockThinDecor.html#ae0d7d0b2948003d1b3355d9c21d7908c",
-"classcursestone_1_1event_1_1EventManager.html#ad05829e13db2814c31fcb9e34000f70a",
-"classcursestone_1_1event_1_1player_1_1PlayerToggleSprintEvent.html#a60e90de4973726dcad1e6535246d2913",
-"classcursestone_1_1item_1_1ItemBow.html#ac64df269dfc88bad0860d2e32957bb5a",
-"classcursestone_1_1item_1_1ItemSpiderEye.html#a029b923323507e10f12c1a42dedcb47e",
-"classcursestone_1_1network_1_1protocol_1_1AddPlayerPacket.html#ad3d5b5d2db33e45c38d7246960ab703e",
-"classcursestone_1_1network_1_1protocol_1_1MovePlayerPacket.html#a1239038e01f0e580d3f2b955e2b265ce",
-"classcursestone_1_1permission_1_1PermissibleBase.html",
-"classcursestone_1_1utils_1_1MainLogger.html#a17ef55991f79e5e8afdd30fe542892cc",
-"classcursestone_1_1world_1_1format_1_1ChunkAdapter.html#ae672ef209a0058cda406ab47f95e963e",
-"classcursestone_1_1world_1_1generator_1_1VgenSource.html#a5094952cc8448628a391ddcd25525ae7",
-"classvgen_1_1Biome.html#af201c460059fa7a03da338187cd1d7c3",
-"classvgen_1_1CompoundTag.html#a1aa9c56e68c4ca4e785ee78af0c40687",
-"classvgen_1_1LargeFeature.html",
-"classvgen_1_1NBBridgeStraight.html#af79c746f888072478632c70508998134",
-"classvgen_1_1RemoveTooMuchOceanLayer.html#a86eb3e478f31f75baadcb2a1a2a1fe82",
-"classvgen_1_1SwamplandHut.html#ac347488f26d3dbb02323237e8d6d0191",
-"md_docs_BUILDING.html#autotoc_md42",
-"structCsEvent.html#a594c168f3d5b40f6ae4d4696292a6e25",
-"structcursestone_1_1diagnostics_1_1Diagnostic.html#ad27c0dc85f9c98ba2c716435a2ee72cf",
-"structcursestone_1_1performance_1_1CpuFeatures.html#a0412779c52888310fc500e197fa5de75",
-"structcursestone_1_1world_1_1World_1_1ChunkViewer.html#ae032079f11ae0b076498ce50e7ec7fc7",
-"structmcp__rak__session.html#ab92f88ba8890c17fe5e178a6a4e110d7",
-"structvgen_1_1Color.html#a1224253d9846e43fa53f9e7bfbfe2f5c"
+"AddDeepOceanLayer_8h_source.html",
+"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4ac8395fd08cbe169d6cdf9624fe420b2d",
+"CompoundTag_8cpp.html#afc5e5b528f2a96736765020727a90879",
+"FileWriteTask_8h_source.html",
+"ItemConstants_8h.html#a2f6939357a9ddd4416e066bc7039b79a",
+"ItemConstants_8h.html#aced9d2574cf4c43b72c28140849a97cc",
+"ItemNbt_8h.html#a8bc762d1bca0dab071b658cc0f914727",
+"OakFeature_8h_source.html",
+"SpringFeature_8h_source.html",
+"Vanilla_8h_source.html",
+"classcursestone_1_1Player.html#a861133cf48d9d4dfacee073afa1eb971",
+"classcursestone_1_1WorkbenchManager.html#af5567ca3f7f53fe55d816d34e893324a",
+"classcursestone_1_1diagnostics_1_1PacketForensics.html#a86a42a55bab8ba77d734263efe270d12",
+"classcursestone_1_1event_1_1entity_1_1EntityDamageByEntityEvent.html#a47c17ce6c3472e2402f6e38c354471a8",
+"classcursestone_1_1inventory_1_1BaseInventory.html#ab8f64aa31fc7de1f5114bc78f98df1a9",
+"classcursestone_1_1item_1_1ItemDiamondBoots.html#aec51e3f5f8eb76a9c999710ca6f36d41",
+"classcursestone_1_1item_1_1ItemWheatSeeds.html",
+"classcursestone_1_1network_1_1protocol_1_1ChangeDimensionPacket.html",
+"classcursestone_1_1network_1_1protocol_1_1PacketWriter.html#a34a124288bdf9d6db0f54da4a3ec2887",
+"classcursestone_1_1plugin_1_1LuaPlugin.html#aeb4815b06880951439654ea34607afb0",
+"classcursestone_1_1world_1_1ChunkManager.html#ab916ae4a6f8a8a4b45a49b1e5387fefa",
+"classcursestone_1_1world_1_1format_1_1WorldProvider.html#ab559e99b1a4ed35140a4acb9f7be518a",
+"classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a62254e5062b1195e25d081bd74082cf1",
+"classvgen_1_1BiomeDecorator.html#a9f434257a2a189408953fa64472adcb4",
+"classvgen_1_1DirtBlock.html#ad513e287b32dc5df6acf02e9848a3270",
+"classvgen_1_1LevelChunk.html#a564d6245582d24aa17fa970d82eb5846",
+"classvgen_1_1NBCastleSmallCorridorRightTurnPiece.html#ab557545f888a07e51938f5d2f55b9396",
+"classvgen_1_1ScatteredFeaturePiece.html#a349a5ed16c54dcd17ad2dee102065519",
+"classvgen_1_1VillageFeature.html#a29ef0196c7aa6d8c72188d9ed09f5efa",
+"md_docs_MOB_AI.html#autotoc_md183",
+"structCsPlayerApi.html#a05138f25bdb90028fc271f9f25ff897d",
+"structcursestone_1_1entity_1_1MobProfile.html#a0212084a84d242daddd601b67ec18bb5",
+"structcursestone_1_1performance_1_1noise_1_1Params.html#a9d0296d08c13f1434aead9dd00174ffb",
+"structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1VersionEdit.html#a41f2ddd6204227ffa59e22be0f518fbd",
+"structmcp__rak__session__manager.html#a656552ac0ee21785adb99d0e9c4cbfd4",
+"structvgen_1_1Pos.html#a1cc699d4f48de8fc1db06223ea2266a4"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

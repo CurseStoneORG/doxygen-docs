@@ -88,94 +88,80 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_README"></a> </p><div align="center"></div><div align="center"> <img src="logo.svg" alt="CurseStone" style="pointer-events: none;" width="160" class="inline"/></div><div align="center"></div><h1><a class="anchor" id="autotoc_md0"></a>
 CurseStone</h1>
-<div align="center"> <b>A modern, native server for Minecraft: Pocket Edition</b></div><div align="center"> Open-source server software written in C++20.</div><div align="center"> </div><div align="center"> <a href="https://github.com/CurseStoneORG/CurseStone/actions/workflows/Build.yml"><img src="https://github.com/CurseStoneORG/CurseStone/actions/workflows/Build.yml/badge.svg" alt="Build" style="pointer-events: none;" class="inline"/> </a> <img src="https://img.shields.io/badge/license-LGPL--3.0--or--later-blue" alt="License" class="inline"/> </div><div align="center"></div><div align="center"> </div><div align="center"> <a href="https://cursestoneorg.github.io/">Website</a> · <a href="https://cursestoneorg.github.io/docs/">Docs</a> · <a href="https://github.com/CurseStoneORG/CurseStone/releases">Releases</a> · <a href="https://github.com/CurseStoneORG/CurseStone/issues">Issues</a> </div><div align="center"></div><div align="center"></div><hr  />
+<div align="center"> <b>A modern, native server for Minecraft: Pocket Edition</b></div><div align="center"> Fast to start. Faithful to the game. Yours to customize.</div><div align="center"> </div><div align="center"> <img src="https://img.shields.io/badge/license-LGPL--3.0--or--later-blue" alt="License" class="inline"/> </div><div align="center"></div><div align="center"> </div><div align="center"> <a href="https://cursestoneorg.github.io/">Website</a> · <a href="https://cursestoneorg.github.io/docs/">Docs</a> · <a href="https://github.com/CurseStoneORG/CurseStone/releases">Download</a> · <a href="https://github.com/CurseStoneORG/CurseStone/issues">Issues</a> </div><div align="center"></div><div align="center"></div><hr  />
 <h2><a class="anchor" id="autotoc_md2"></a>
-Why CurseStone exists</h2>
-<p>CurseStoneORG builds a Minecraft: Pocket Edition server that treats the game with respect: one that starts fast, runs as a single native program, behaves like the game players remember, and gives server owners and plugin authors real control.</p>
-<p>Pocket Edition has a loyal community that deserves server software that is actively maintained, honest about what it does and doesn't do, and built to last. That is what we build here, in the open, with everyone who wants to help.</p>
+What is CurseStone?</h2>
+<p><b>CurseStone</b> is server software for <b>Minecraft: Pocket Edition</b>. It lets you host your own multiplayer world for you and your friends, or for a whole community, with a server that starts quickly, plays like the game people remember, and gives you real control over how it works.</p>
+<p>It is a single native program: no extra runtime to install and nothing to set up before you play.</p>
 <h2><a class="anchor" id="autotoc_md3"></a>
-What CurseStone is</h2>
-<p><b>CurseStone</b> is an independent server implementation for <b>Minecraft: Pocket Edition</b>. The whole core is native C++20: networking, world generation, physics, inventories, redstone, commands and the plugin system. It is not a fork and it does not need a language runtime installed on your host.</p>
-<h2><a class="anchor" id="autotoc_md4"></a>
 What you get</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone"></th><th class="markdownTableHeadNone"></th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>One native binary</b>   </td><td class="markdownTableBodyNone">No interpreter or runtime to install. Download, run, play. Releases ship for <b>Linux x86-64</b>, <b>Linux ARM64</b>, <b>Android (Termux)</b> and <b>Windows x86-64</b>.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Vanilla-faithful worlds</b>   </td><td class="markdownTableBodyNone">A port of the vanilla Pocket Edition overworld generator: biome layout, rivers, mesa surfaces, vanilla structures, plus the vanilla liquid flow engine. Anvil and LevelDB world formats are supported.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Two ways to write plugins</b>   </td><td class="markdownTableBodyNone">Script in <b>Lua 5.4</b> (built in) or ship <b>native C++ plugins</b> (<code>.so</code> / <code>.dll</code>) for maximum speed. Both are documented and come with working examples.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Client-translated messages</b>   </td><td class="markdownTableBodyNone">Join/leave messages, command feedback, chat formats and death messages are rendered by the player's own game in their own language, with color support.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>Diagnostics you can read</b>   </td><td class="markdownTableBodyNone">A compiler-style error console, runtime profiling, <code>/status</code> with tick-level costs, client-lost reports and crash memory dumps with symbolized backtraces.    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><b>Built for hosting</b>   </td><td class="markdownTableBodyNone">Linux builds are compiled against an old glibc ceiling (2.31) so they start on common hosting images, including Pterodactyl. Incomplete <code>server.properties</code> files are completed automatically, and the launcher script restarts the server after a crash.    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><b>A real test client</b>   </td><td class="markdownTableBodyNone"><code>cursestone-bot</code>, a protocol test client, exercises login, chunk streaming, containers and furnaces end to end.   </td></tr>
-</table>
-<h2><a class="anchor" id="autotoc_md5"></a>
+<h3><a class="anchor" id="autotoc_md4"></a>
+A server that just works</h3>
+<ul>
+<li><b>Download and run.</b> Ready-made builds for <b>Linux (x86-64 and ARM64)</b>, <b>Android (Termux)</b> and <b>Windows</b>.</li>
+<li><b>Made for hosting.</b> Runs on common hosting images and panels, including Pterodactyl.</li>
+<li><b>Forgiving setup.</b> A short or incomplete <code>server.properties</code> is completed with the missing options for you.</li>
+<li><b>Self-healing.</b> The included launcher restarts the server automatically if it crashes.</li>
+<li><b>Your own server name</b> in the server list, set in <code>cursestone.yml</code>.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md5"></a>
+The game, as players remember it</h3>
+<ul>
+<li><b>Vanilla-style worlds.</b> Natural biomes, rivers, mesa terrain, villages and the vanilla way water and lava flow.</li>
+<li><b>Vanilla gameplay rules.</b> Mining needs the right tool and follows real break speeds, chests (including double chests), furnaces, buckets, fire, combat, redstone and more.</li>
+<li><b>Your worlds, your format.</b> Works with Anvil and LevelDB worlds.</li>
+<li><b>Messages in every player's language.</b> Join and leave messages, command feedback, chat and death messages are shown by each player's own game, in their own language, with colors.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Make it your own</h3>
+<ul>
+<li><b>Plugins in Lua.</b> Write scripts with the built-in Lua 5.4 support, no compiling needed.</li>
+<li><b>Native plugins for speed.</b> Ship <code>.so</code> / <code>.dll</code> plugins when you need maximum performance.</li>
+<li><b>Events and commands.</b> Hook into player actions, cancel or change them, and add your own commands and permissions.</li>
+<li><b>Examples included</b>, such as spawn protection and floating text.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md7"></a>
+Clear answers when something goes wrong</h3>
+<ul>
+<li><b>Readable errors</b> that say what failed, where and how to fix it, instead of walls of log text.</li>
+<li>**<code>/status</code>** shows how the server is performing, including per-tick costs.</li>
+<li><b>Crash reports</b> with readable backtraces, so problems can be fixed instead of guessed at.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Why choose CurseStone</h2>
-<p>We won't claim it is the best at everything. Here is where it genuinely stands out, and where it doesn't (yet).</p>
-<p><b>Choose CurseStone if you want:</b></p>
 <ul>
-<li><b>A single native program.</b> C++20 end to end, with per-tick work budgets, bounded chunk streaming and a main-thread-safe design written down in the open (<a class="el" href="md_docs_THREADING.html">THREADING.md</a>). Less to install, less to break.</li>
-<li><b>The classic game, not an approximation of it.</b> Mining rules, tool gating, liquids and terrain follow vanilla behavior, and every change is checked against a real game client.</li>
-<li><b>Freedom in how you extend it.</b> Lua when you want to iterate quickly, native C++ when you need raw performance, with the same event model for both.</li>
-<li><b>A project that explains itself.</b> Architecture notes, a published audit, per-version changelogs in English and Spanish, a documented plugin API and a Doxygen reference.</li>
-<li><b>Hosting that just works.</b> Prebuilt binaries for four platforms, including Android and ARM64.</li>
-<li><b>An open, welcoming codebase.</b> LGPL-licensed, with contribution guidelines and a style guide.</li>
+<li><b>Light and fast to run.</b> One native program written in C++20, with bounded per-tick work so busy moments don't freeze your server.</li>
+<li><b>Faithful to the game.</b> Worlds and mechanics follow vanilla behavior instead of approximating it.</li>
+<li><b>Flexible.</b> Lua for quick ideas, native code for demanding plugins, the same events for both.</li>
+<li><b>Runs almost anywhere.</b> From a Windows PC to a Linux host or an Android phone.</li>
+<li><b>Open and maintained.</b> Free software under the LGPL, developed in the open and updated with clear release notes.</li>
 </ul>
-<p><b>Be aware that:</b></p>
+<h3><a class="anchor" id="autotoc_md9"></a>
+Honest limits</h3>
 <ul>
-<li>CurseStone supports specific client versions at a time. Check the release notes for the versions each release supports.</li>
-<li>Not every vanilla mechanic is implemented. Mob AI and pathfinding, for example, are still in development.</li>
-<li>The project is in beta. Features move quickly, and the changelogs say exactly what changed.</li>
+<li>Each release supports specific client versions. Check the release notes to see which.</li>
+<li>Not every vanilla mechanic is implemented yet. Mob AI and pathfinding, for example, are still in development.</li>
+<li>The project is in beta and moves quickly.</li>
 </ul>
-<p>If you want a stable, readable, hackable home for Pocket Edition multiplayer, this is it.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Quick start</h2>
 <ol type="1">
 <li>Download the archive for your platform from the <a href="https://github.com/CurseStoneORG/CurseStone/releases">Releases</a> page.</li>
 <li>Extract it and run <code>start.sh</code> (Linux / Termux) or <code>start.bat</code> (Windows).</li>
-<li>Join with a supported Minecraft: Pocket Edition client (see the release notes) using your server's address and port.</li>
+<li>Join with a supported Minecraft: Pocket Edition client using your server's address and port.</li>
 </ol>
-<p>Prefer to build it yourself? See <a class="el" href="md_docs_BUILDING.html">docs/BUILDING.md</a> (CMake + Ninja, GCC 12 or newer).</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
-Technology</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Technology   </th><th class="markdownTableHeadNone">Purpose    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">C++20   </td><td class="markdownTableBodyNone">The whole server core: networking, game mechanics and low-level systems    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Lua 5.4   </td><td class="markdownTableBodyNone">Integrated scripting for plugins    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Native Plugin ABI   </td><td class="markdownTableBodyNone">Function-pointer interface for <code>.so</code> / <code>.dll</code> plugins    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">CMake + Ninja   </td><td class="markdownTableBodyNone">Build configuration and build system   </td></tr>
-</table>
-<h2><a class="anchor" id="autotoc_md8"></a>
-Project status</h2>
-<p>CurseStone is actively developed. Systems and gameplay features keep evolving while compatibility with Minecraft: Pocket Edition stays the priority. Support for more client versions is planned as the project grows, without compromising the quality of the existing experience.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
-Documentation</h2>
-<ul>
-<li><b>Building:</b> <a class="el" href="md_docs_BUILDING.html">docs/BUILDING.md</a></li>
-<li><b>Plugin API (Lua + native C++):</b> <a class="el" href="md_docs_PLUGINS.html">docs/PLUGINS.md</a></li>
-<li><b>Events:</b> <a class="el" href="md_docs_EVENTS.html">docs/EVENTS.md</a></li>
-<li><b>Diagnostics:</b> <a class="el" href="md_docs_DIAGNOSTIC_ENGINE.html">docs/DIAGNOSTIC_ENGINE.md</a> · <a class="el" href="md_docs_CRASH_DIAGNOSTICS.html">docs/CRASH_DIAGNOSTICS.md</a></li>
-<li><b>Documentation index:</b> <a class="el" href="/home/runner/work/CurseStone/CurseStone/docs/README.md#md_docs_README">docs/README.md</a></li>
-<li><b>Release notes:</b> changelogs</li>
-<li><b>Online docs:</b> <a href="https://cursestoneorg.github.io/docs/">https://cursestoneorg.github.io/docs/</a></li>
-<li><b>API reference (Doxygen):</b> <a href="https://cursestoneorg.github.io/doxygen-docs/">https://cursestoneorg.github.io/doxygen-docs/</a></li>
-</ul>
-<h2><a class="anchor" id="autotoc_md10"></a>
-Contributing</h2>
-<p>CurseStone grows with its community. Server code, plugins, testing, documentation, translations and bug reports are all welcome. Start with <a class="el" href="md_CONTRIBUTING.html">CONTRIBUTING.md</a> and use the <a href="https://github.com/CurseStoneORG/CurseStone/issues">issue tracker</a> to report bugs or suggest ideas.</p>
 <h2><a class="anchor" id="autotoc_md11"></a>
+Learn more</h2>
+<ul>
+<li><b>Plugins (Lua + native C++):</b> <a class="el" href="md_docs_PLUGINS.html">docs/PLUGINS.md</a></li>
+<li><b>Release notes:</b> changelogs</li>
+<li><b>Online documentation:</b> <a href="https://cursestoneorg.github.io/docs/">https://cursestoneorg.github.io/docs/</a></li>
+<li><b>Website:</b> <a href="https://cursestoneorg.github.io/">https://cursestoneorg.github.io/</a></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md12"></a>
+Community and contributing</h2>
+<p>CurseStone grows with its community. Plugins, bug reports, testing, translations and code are all welcome. See <a class="el" href="md_CONTRIBUTING.html">CONTRIBUTING.md</a> to get started, and use the <a href="https://github.com/CurseStoneORG/CurseStone/issues">issue tracker</a> to report bugs or suggest ideas.</p>
+<h2><a class="anchor" id="autotoc_md13"></a>
 License</h2>
 <p>CurseStone is distributed under the <b>GNU Lesser General Public License, version 3.0 or later (LGPL-3.0-or-later)</b>. Full text: <a href="https://www.gnu.org/licenses/lgpl-3.0.html">https://www.gnu.org/licenses/lgpl-3.0.html</a>.</p>
 <hr  />

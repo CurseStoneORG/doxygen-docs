@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('md_CONTRIBUTING.html',''); initResizab
 <li><a href="#11-license">License</a></li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 1. Ways to contribute</h1>
 <ul>
 <li><b>Report a bug</b> with a clear way to reproduce it.</li>
@@ -113,7 +113,7 @@ $(document).ready(function(){initNavTree('md_CONTRIBUTING.html',''); initResizab
 </ul>
 <p>For anything larger than a small fix, open an issue first so the approach can be agreed before you invest time.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 2. Setting up</h1>
 <ol type="1">
 <li>Fork the repository and clone your fork.</li>
@@ -128,7 +128,7 @@ $(document).ready(function(){initNavTree('md_CONTRIBUTING.html',''); initResizab
 </ol>
 <div class="fragment"><div class="line">git checkout -b fix/short-description</div>
 </div><!-- fragment --><hr  />
-<h1><a class="anchor" id="autotoc_md19"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 3. Architecture at a glance</h1>
 <p>CurseStone is a <b>single C++20 codebase</b> targeting MCPE 0.15.x (protocol 84). There are no first-party sources in any other language; the C language stays enabled in the build only for the vendored Lua 5.4 in <code>third_party/</code>.</p>
 <p>Conventions that keep the tree consistent:</p>
@@ -141,9 +141,9 @@ $(document).ready(function(){initNavTree('md_CONTRIBUTING.html',''); initResizab
 <li>A new block, item, command, packet or event does nothing until it is registered — see section 6.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 4. Naming and style</h1>
-<h2><a class="anchor" id="autotoc_md22"></a>
+<h2><a class="anchor" id="autotoc_md24"></a>
 Items and blocks</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -155,7 +155,7 @@ Items and blocks</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code>Block</code> + Adjective + Noun   </td><td class="markdownTableBodyNone"><code>BlockRedstoneOre</code>   </td><td class="markdownTableBodyNone">✅   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md23"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 General</h2>
 <ul>
 <li>Types are <code>PascalCase</code>, methods are <code>camelCase</code>, data members end with <code>_</code> (<code>dataPath_</code>, <code>running_</code>), protocol constants are <code>UPPER_SNAKE</code>.</li>
@@ -163,7 +163,7 @@ General</h2>
 <li>Do not add a new dependency without discussing it in an issue first.</li>
 <li>Do not leave debugging output, commented-out code or unrelated changes in your pull request.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md26"></a>
 Comments and documentation</h2>
 <ul>
 <li>Comments and Doxygen documentation follow <a class="el" href="md_docs_STYLE_COMMENTS.html">docs/STYLE_COMMENTS.md</a>: American English, concise and technically accurate, Doxygen for public/protected declarations, no debugging diaries or decorative separators, and no invented behavior.</li>
@@ -177,7 +177,7 @@ Comments and documentation</h2>
 <li>API documentation is generated with <code>doxygen Doxyfile</code> (output in <code>build/docs/html/</code>, git-ignored). Missing-doc warnings are non-fatal.</li>
 </ul>
 <hr  />
-<h1><a class="anchor" id="autotoc_md26"></a>
+<h1><a class="anchor" id="autotoc_md28"></a>
 5. Protocol 84 notes</h1>
 <ul>
 <li>Block positions in packets are <code>int32_t</code> (<b>signed</b>), not unsigned.</li>
@@ -187,7 +187,7 @@ Comments and documentation</h2>
 </ul>
 <p>Keep wire formats unchanged unless your change is explicitly a protocol change, and call it out in the pull request.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md28"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 6. Where things go</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -214,7 +214,7 @@ Comments and documentation</h2>
 <td class="markdownTableBodyNone">A standalone check or benchmark   </td><td class="markdownTableBodyNone"><code>tools/</code>   </td></tr>
 </table>
 <hr  />
-<h1><a class="anchor" id="autotoc_md30"></a>
+<h1><a class="anchor" id="autotoc_md32"></a>
 7. Testing your change</h1>
 <p><code>tools/</code> contains standalone check programs (<code>*_check.cpp</code>), Python end-to-end checks that talk to a running server, fuzzing helpers and benchmarks. If a check exists for the area you changed, run it. If none exists, consider adding one.</p>
 <p>Before you open a pull request, make sure that:</p>
@@ -226,7 +226,7 @@ Comments and documentation</h2>
 </ul>
 <p>For performance problems or disconnects, <code>/workbench start</code> followed by <code>/workbench report</code> gives you TPS, tick timing, packet logs and RakNet counters to attach to your pull request.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md32"></a>
+<h1><a class="anchor" id="autotoc_md34"></a>
 8. Commits and pull requests</h1>
 <p><b>Commits</b></p>
 <ul>
@@ -243,7 +243,7 @@ Comments and documentation</h2>
 <li>Respond to review comments by pushing new commits; the maintainers may ask you to squash at the end.</li>
 </ol>
 <hr  />
-<h1><a class="anchor" id="autotoc_md34"></a>
+<h1><a class="anchor" id="autotoc_md36"></a>
 9. Reporting bugs</h1>
 <p>Open an issue and include:</p>
 <ul>
@@ -256,11 +256,11 @@ Comments and documentation</h2>
 </ul>
 <p>If you find a security problem, do not post it publicly: contact the maintainers privately instead.</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md38"></a>
 10. Plugins</h1>
 <p>CurseStone supports two plugin load types: <b>Lua plugins</b> (a folder with <code>plugin.yml</code>) and <b>native C++ plugins</b> (a bare <code>.so</code>/<code>.dll</code> file, no manifest). The full API reference and build instructions live in <a class="el" href="md_docs_PLUGINS.html">docs/PLUGINS.md</a>; working examples are `plugins/SpawnProtection/` (Lua) and `plugins/HelloNative/` (C++).</p>
 <hr  />
-<h1><a class="anchor" id="autotoc_md38"></a>
+<h1><a class="anchor" id="autotoc_md40"></a>
 11. License</h1>
 <p>CurseStone is licensed under <b>LGPL-3.0-or-later</b>. By submitting a contribution you agree that it is released under the same license. </p>
 </div></div><!-- contents -->
