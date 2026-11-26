@@ -161,6 +161,7 @@ var classcursestone_1_1Player =
     [ "sendMessage", "classcursestone_1_1Player.html#a81509bf51c957e01d997d385d55d04e7", null ],
     [ "sendMovementSpeedAttribute", "classcursestone_1_1Player.html#af647e8315cc38c8e95ed009c2cb1e8fc", null ],
     [ "sendPacket", "classcursestone_1_1Player.html#a1ab2e99279b57b4c3491e401d3e6ca68", null ],
+    [ "sendPickupSequence", "classcursestone_1_1Player.html#a1be6a8d66c041919cc38f3eb76bde563", null ],
     [ "sendPopup", "classcursestone_1_1Player.html#a440ea02efaa3cdc0e8d85b2eebe8f55f", null ],
     [ "sendPosition", "classcursestone_1_1Player.html#a92f5b9bf4460f8a4a975e1da0c4d89c8", null ],
     [ "sendSettings", "classcursestone_1_1Player.html#a309e767e6f7e0141b6eeca200ce25838", null ],

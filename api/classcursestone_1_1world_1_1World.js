@@ -82,6 +82,7 @@ var classcursestone_1_1world_1_1World =
     [ "saveBudget", "classcursestone_1_1world_1_1World.html#a9a6e66c6c32588007c6e8493a1e70a0e", null ],
     [ "savePortals", "classcursestone_1_1world_1_1World.html#a29500e53e8677e83596233b389250052", null ],
     [ "seed", "classcursestone_1_1world_1_1World.html#a299933da0df76fdf2a1fb5c9414dce78", null ],
+    [ "sendDroppedItemsInChunk", "classcursestone_1_1world_1_1World.html#afb6df36bd63e6b8a65fa9872e577594d", null ],
     [ "sendMobsInChunk", "classcursestone_1_1world_1_1World.html#a3352eefc9984ae4dd905c6ed596df796", null ],
     [ "sendWeatherTo", "classcursestone_1_1world_1_1World.html#aa2420abb9a37767ed5401050c982a635", null ],
     [ "setBlock", "classcursestone_1_1world_1_1World.html#af19d0e99acc34eef7d8e8425cd068200", null ],

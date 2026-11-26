@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('md_docs_EVENTS.html',''); initResizabl
 <div class="contents">
 <div class="textblock"><p>CurseStone fires a set of gameplay events around the player mechanics that plugins most often need to hook: exhaustion, hunger, sneaking, sprinting, animations, game mode switches, the login handshake, player creation and bucket operations. This document covers the ten events added under <code>src/event/player/</code>; the earlier event surface (join, quit, chat, move, block, inventory, damage...) is described in <a class="el" href="md_docs_PLUGINS.html">PLUGINS.md</a>.</p>
 <p>Every event below lives in <code>src/event/player/&lt;Name&gt;.h</code> under the <code>cursestone::event::player</code> namespace, derives from <code>PlayerEvent</code> (or the plain <code>Event</code> base when no player object exists yet) and — when noted — from <code>Cancellable</code>. Cancelling is checked by the engine BEFORE the mechanic is applied, so a cancelled event leaves the world, the inventory and the player state untouched.</p>
-<h1><a class="anchor" id="autotoc_md168"></a>
+<h1><a class="anchor" id="autotoc_md175"></a>
 Listening</h1>
 <p>From Lua:</p>
 <div class="fragment"><div class="line">events.on(&quot;PlayerExhaust&quot;, function(e)</div>
@@ -106,9 +106,9 @@ Listening</h1>
 <div class="ttc" id="astructCsEvent_html_a5d54481846ee77c813ca6c4db0000b77"><div class="ttname"><a href="structCsEvent.html#a5d54481846ee77c813ca6c4db0000b77">CsEvent::cause</a></div><div class="ttdeci">const char * cause</div><div class="ttdoc">Damage cause string (EntityDamage*), e.g.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:170</div></div>
 <div class="ttc" id="astructCsEvent_html_ab41533c7dc8ce276a95b226e35c3601f"><div class="ttname"><a href="structCsEvent.html#ab41533c7dc8ce276a95b226e35c3601f">CsEvent::cancelled</a></div><div class="ttdeci">bool cancelled</div><div class="ttdoc">Writable: set true to cancel a cancellable event.</div><div class="ttdef"><b>Definition:</b> NativeAPI.h:175</div></div>
 </div><!-- fragment --><p>Writable fields per event are listed in the table at the end. Listener ordering, priorities and error isolation are handled by the shared <code>EventManager</code> — see <code><a class="el" href="EventManager_8h_source.html">src/event/EventManager.h</a></code>.</p>
-<h1><a class="anchor" id="autotoc_md169"></a>
+<h1><a class="anchor" id="autotoc_md176"></a>
 The events</h1>
-<h2><a class="anchor" id="autotoc_md170"></a>
+<h2><a class="anchor" id="autotoc_md177"></a>
 PlayerExhaustEvent</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -121,7 +121,7 @@ PlayerExhaustEvent</h2>
 <p>| Fields | <code>player</code>; <code>amount</code> (writable, exhaustion units the accumulator will receive — non-finite or non-positive values are dropped); <code>cause</code> (readable name: <code>attack</code>, <code>damage</code>, <code>mining</code>, <code>health_regen</code>, <code>potion</code>, <code>walking</code>, <code>sneaking</code>, <code>swimming</code>, <code>jumping</code>, <code>custom</code>, with a <code>|sprint</code> suffix when the sprint modifier applied). |</p>
 <p>The cause constants live on the class: <code>CAUSE_ATTACK</code> (=1) ... <code>CAUSE_CUSTOM</code> (=11), plus <code>CAUSE_FLAG_SPRINT</code> (=0x10000), a bitwise flag OR-ed onto a base cause — sprint movement reports <code>CAUSE_WALKING | CAUSE_FLAG_SPRINT</code>. Read it back with <code>baseCause()</code> and <code>hasSprintFlag()</code> (Lua/native listeners just see the <code>|sprint</code> suffix in <code>cause</code>).</p>
 <p>Exhaustion is its own mechanic: it is NOT hunger and NOT saturation. When the accumulator crosses 4.0 the server drains saturation (then food); the resulting food change surfaces as <code>PlayerHungerChange</code>, never here.</p>
-<h2><a class="anchor" id="autotoc_md171"></a>
+<h2><a class="anchor" id="autotoc_md178"></a>
 PlayerHungerChangeEvent</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -134,7 +134,7 @@ PlayerHungerChangeEvent</h2>
 <td class="markdownTableBodyNone">Fields   </td><td class="markdownTableBodyNone"><code>player</code>; <code>old_level</code>, <code>new_level</code> (writable; the caller clamps into 0..20); <code>reason</code> (<code>eating</code>, <code>exhaustion</code>, <code>saturation_effect</code>, <code>creative_sync</code>, <code>login</code>, <code>respawn</code>, <code>plugin</code>, <code>unknown</code>).   </td></tr>
 </table>
 <p>Re-entrancy is guarded: a listener whose side effects trigger another food change applies it silently instead of dispatching a nested event, so event storms are impossible.</p>
-<h2><a class="anchor" id="autotoc_md172"></a>
+<h2><a class="anchor" id="autotoc_md179"></a>
 PlayerToggleSneakEvent / PlayerToggleSprintEvent</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -147,7 +147,7 @@ PlayerToggleSneakEvent / PlayerToggleSprintEvent</h2>
 <td class="markdownTableBodyNone">Fields   </td><td class="markdownTableBodyNone"><code>player</code>; <code>sneaking</code> / <code>sprinting</code> (boolean, the new state); native <code>aux1</code> = new state, <code>action</code> = <code>start</code>/<code>stop</code>.   </td></tr>
 </table>
 <p>Both are independent mechanics with separate event names; duplicates never reach listeners (a no-op toggle is swallowed by the state guard before any dispatch). The vanilla food gate for starting a sprint (food must be above six) is a server rule applied before the event.</p>
-<h2><a class="anchor" id="autotoc_md173"></a>
+<h2><a class="anchor" id="autotoc_md180"></a>
 PlayerAnimationEvent</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -159,7 +159,7 @@ PlayerAnimationEvent</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Fields   </td><td class="markdownTableBodyNone"><code>player</code>; <code>animation</code> (raw id), <code>action</code> (<code>swing_arm</code>, <code>wake_up</code>, <code>unknown</code>); native <code>aux1</code> = raw id.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md174"></a>
+<h2><a class="anchor" id="autotoc_md181"></a>
 PlayerGamemodeChangeEvent</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -172,7 +172,7 @@ PlayerGamemodeChangeEvent</h2>
 <td class="markdownTableBodyNone">Fields   </td><td class="markdownTableBodyNone"><code>player</code>; <code>old_gamemode</code>, <code>new_gamemode</code> (integers); native <code>aux1</code>/<code>aux2</code> and <code>cause</code> = readable mode name.   </td></tr>
 </table>
 <p>No event fires when the requested mode equals the current one.</p>
-<h2><a class="anchor" id="autotoc_md175"></a>
+<h2><a class="anchor" id="autotoc_md182"></a>
 PlayerPreLoginEvent</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -185,7 +185,7 @@ PlayerPreLoginEvent</h2>
 <td class="markdownTableBodyNone">Fields   </td><td class="markdownTableBodyNone"><code>player</code> (username), <code>ip</code>, <code>port</code>, <code>client_id</code>; <code>message</code> is the WRITABLE kick message.   </td></tr>
 </table>
 <p>Fires exactly once per login attempt.</p>
-<h2><a class="anchor" id="autotoc_md176"></a>
+<h2><a class="anchor" id="autotoc_md183"></a>
 PlayerCreationEvent</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -216,7 +216,7 @@ PlayerCreationEvent</h2>
 <div class="ttc" id="aclasscursestone_1_1Player_html"><div class="ttname"><a href="classcursestone_1_1Player.html">cursestone::Player</a></div><div class="ttdef"><b>Definition:</b> Player.h:101</div></div>
 <div class="ttc" id="aclasscursestone_1_1Server_html"><div class="ttname"><a href="classcursestone_1_1Server.html">cursestone::Server</a></div><div class="ttdoc">Server singleton for startup, ticking, and shutdown.</div><div class="ttdef"><b>Definition:</b> Server.h:96</div></div>
 <div class="ttc" id="astructcursestone_1_1PlayerConfig_html"><div class="ttname"><a href="structcursestone_1_1PlayerConfig.html">cursestone::PlayerConfig</a></div><div class="ttdef"><b>Definition:</b> Player.h:83</div></div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md177"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md184"></a>
 PlayerBucketEvent / PlayerBucketFillEvent</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -229,7 +229,7 @@ PlayerBucketEvent / PlayerBucketFillEvent</h2>
 <td class="markdownTableBodyNone">Fields   </td><td class="markdownTableBodyNone"><code>player</code>; <code>bucket_id</code>/<code>bucket_meta</code>/<code>bucket_count</code> (the held BUCKET stack), <code>liquid_id</code> (8 water / 10 lava), <code>x</code>,<code>y</code>,<code>z</code> (pour: the cell receiving liquid; fill: the source cell being drained), <code>action</code> (<code>pour</code>/<code>fill</code>).   </td></tr>
 </table>
 <p><code>PlayerBucketFillEvent</code> derives from <code>PlayerBucketEvent</code>; register the two names separately.</p>
-<h1><a class="anchor" id="autotoc_md178"></a>
+<h1><a class="anchor" id="autotoc_md185"></a>
 Native &lt;tt&gt;CsEvent&lt;/tt&gt; field map</h1>
 <p>The native snapshot reuses generic slots (<code>aux1</code>, <code>aux2</code> — appended fields, zero unless the event documents them) plus the shared <code>message</code>/<code>amount</code>/ <code>cancelled</code>/<code>cause</code>/<code>action</code> fields:</p>
 <table class="markdownTable">
@@ -255,7 +255,7 @@ Native &lt;tt&gt;CsEvent&lt;/tt&gt; field map</h1>
 <td class="markdownTableBodyNone">PlayerBucket / PlayerBucketFill   </td><td class="markdownTableBodyNone">–   </td><td class="markdownTableBodyNone">–   </td><td class="markdownTableBodyNone">–   </td><td class="markdownTableBodyNone">pour/fill   </td><td class="markdownTableBodyNone"><code>cancelled</code>   </td></tr>
 </table>
 <p><code>itemId</code>/<code>itemMeta</code>/<code>itemCount</code> carry the bucket stack and <code>blockId</code> the liquid id for both bucket events; <code>x</code>/<code>y</code>/<code>z</code> the target cell.</p>
-<h1><a class="anchor" id="autotoc_md179"></a>
+<h1><a class="anchor" id="autotoc_md186"></a>
 Integration notes (server developers)</h1>
 <p>The fire points, all on the main thread:</p>
 <table class="markdownTable">

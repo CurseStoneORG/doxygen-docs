@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['datadir_1961',['dataDir',['../classcursestone_1_1plugin_1_1NativePlugin.html#a4fe45ab309606e2a3da8ae869613f695',1,'cursestone::plugin::NativePlugin']]],
-  ['decayknockback_1962',['decayKnockback',['../classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a5d4074d8f9db5b006e892ba89b7f135c',1,'cursestone::entity::ai::MobBrain']]],
-  ['despawnfrom_1963',['despawnFrom',['../classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a4ed81e9d2f3cc0d03509cd33590f2a4e',1,'cursestone::world::particle::FloatingTextParticle']]],
-  ['despawnfromall_1964',['despawnFromAll',['../classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a65382d8a1eb0a0fc84a111426ca777bf',1,'cursestone::world::particle::FloatingTextParticle']]],
-  ['dimension_1965',['dimension',['../classcursestone_1_1world_1_1World.html#ae4b2e3241f8fa81d91580925b3399a8f',1,'cursestone::world::World']]],
-  ['disable_1966',['disable',['../classcursestone_1_1plugin_1_1LuaPlugin.html#aafd6205c2d843629c8e63826179ab72d',1,'cursestone::plugin::LuaPlugin::disable()'],['../classcursestone_1_1plugin_1_1NativePlugin.html#a8e65d29b0b1932d0e753e42110297b96',1,'cursestone::plugin::NativePlugin::disable()'],['../classcursestone_1_1plugin_1_1PluginBase.html#a5ee7e37fdf34a19fd338c9083a53dd86',1,'cursestone::plugin::PluginBase::disable()']]],
-  ['dynamic_1967',['dynamic',['../classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d',1,'cursestone::entity::ai::MobBrain']]]
+  ['datadir_1963',['dataDir',['../classcursestone_1_1plugin_1_1NativePlugin.html#a4fe45ab309606e2a3da8ae869613f695',1,'cursestone::plugin::NativePlugin']]],
+  ['decayknockback_1964',['decayKnockback',['../classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a5d4074d8f9db5b006e892ba89b7f135c',1,'cursestone::entity::ai::MobBrain']]],
+  ['despawnfrom_1965',['despawnFrom',['../classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a4ed81e9d2f3cc0d03509cd33590f2a4e',1,'cursestone::world::particle::FloatingTextParticle']]],
+  ['despawnfromall_1966',['despawnFromAll',['../classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a65382d8a1eb0a0fc84a111426ca777bf',1,'cursestone::world::particle::FloatingTextParticle']]],
+  ['dimension_1967',['dimension',['../classcursestone_1_1world_1_1World.html#ae4b2e3241f8fa81d91580925b3399a8f',1,'cursestone::world::World']]],
+  ['disable_1968',['disable',['../classcursestone_1_1plugin_1_1LuaPlugin.html#aafd6205c2d843629c8e63826179ab72d',1,'cursestone::plugin::LuaPlugin::disable()'],['../classcursestone_1_1plugin_1_1NativePlugin.html#a8e65d29b0b1932d0e753e42110297b96',1,'cursestone::plugin::NativePlugin::disable()'],['../classcursestone_1_1plugin_1_1PluginBase.html#a5ee7e37fdf34a19fd338c9083a53dd86',1,'cursestone::plugin::PluginBase::disable()']]],
+  ['dynamic_1969',['dynamic',['../classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d',1,'cursestone::entity::ai::MobBrain']]]
 ];

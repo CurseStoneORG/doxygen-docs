@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mob_20ai_20architecture_2231',['Mob AI architecture',['../md_docs_MOB_AI.html',1,'']]]
+  ['entorno_2emd_20—_20informe_20de_20entorno_20_28fase_200–3_2c_20fix_2dpickup_2dvanilla_29_2233',['ENTORNO.md — Informe de entorno (FASE 0–3, fix-pickup-vanilla)',['../md_docs_ENTORNO.html',1,'']]]
 ];
