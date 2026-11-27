@@ -397,6 +397,8 @@ var hierarchy =
       [ "cursestone::event::world::WorldLoadEvent", "classcursestone_1_1event_1_1world_1_1WorldLoadEvent.html", null ]
     ] ],
     [ "cursestone::event::EventManager", "classcursestone_1_1event_1_1EventManager.html", null ],
+    [ "cursestone::world::ExperienceBottleEntity", "structcursestone_1_1world_1_1ExperienceBottleEntity.html", null ],
+    [ "cursestone::world::ExperienceOrbEntity", "structcursestone_1_1world_1_1ExperienceOrbEntity.html", null ],
     [ "cursestone::world::Explosion", "classcursestone_1_1world_1_1Explosion.html", null ],
     [ "vgen::Facing", "classvgen_1_1Facing.html", null ],
     [ "cursestone::entity::ai::FacingStep", "structcursestone_1_1entity_1_1ai_1_1FacingStep.html", null ],
@@ -524,6 +526,7 @@ var hierarchy =
       [ "cursestone::item::ItemDiamond", "classcursestone_1_1item_1_1ItemDiamond.html", null ],
       [ "cursestone::item::ItemEgg", "classcursestone_1_1item_1_1ItemEgg.html", null ],
       [ "cursestone::item::ItemEmerald", "classcursestone_1_1item_1_1ItemEmerald.html", null ],
+      [ "cursestone::item::ItemExpBottle", "classcursestone_1_1item_1_1ItemExpBottle.html", null ],
       [ "cursestone::item::ItemFeather", "classcursestone_1_1item_1_1ItemFeather.html", null ],
       [ "cursestone::item::ItemFlint", "classcursestone_1_1item_1_1ItemFlint.html", null ],
       [ "cursestone::item::ItemFlintSteel", "classcursestone_1_1item_1_1ItemFlintSteel.html", null ],

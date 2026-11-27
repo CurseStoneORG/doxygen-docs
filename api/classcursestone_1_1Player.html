@@ -476,6 +476,21 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendTranslation</b> (
 <tr class="memitem:a7a2f517ee84c866c409f04443b406023"><td class="memItemLeft" align="right" valign="top"><a id="a7a2f517ee84c866c409f04443b406023"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sendTranslatable</b> (const std::string &amp;key, const std::string &amp;fallback, const std::vector&lt; std::string &gt; &amp;parameters={}, const std::string &amp;prefix=&quot;&quot;) override</td></tr>
 <tr class="separator:a7a2f517ee84c866c409f04443b406023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13bfc6283f23a8d32d1acb55a11a57f6"><td class="memItemLeft" align="right" valign="top"><a id="a13bfc6283f23a8d32d1acb55a11a57f6"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>canTakeXpOrb</b> () const</td></tr>
+<tr class="separator:a13bfc6283f23a8d32d1acb55a11a57f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac30b11fdb55060bb8d3f7f9fb469d356"><td class="memItemLeft" align="right" valign="top"><a id="ac30b11fdb55060bb8d3f7f9fb469d356"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>setXpTakeDelay</b> (int ticks)</td></tr>
+<tr class="separator:ac30b11fdb55060bb8d3f7f9fb469d356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90634bc18d7f512d824a2ca709451174"><td class="memItemLeft" align="right" valign="top"><a id="a90634bc18d7f512d824a2ca709451174"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>velocityEstX</b> () const</td></tr>
+<tr class="separator:a90634bc18d7f512d824a2ca709451174"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac38b05fc60f1fd06e48674b11fdb0583"><td class="memItemLeft" align="right" valign="top"><a id="ac38b05fc60f1fd06e48674b11fdb0583"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>velocityEstY</b> () const</td></tr>
+<tr class="separator:ac38b05fc60f1fd06e48674b11fdb0583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68b5c1b306113221d221d5f9f7a58d32"><td class="memItemLeft" align="right" valign="top"><a id="a68b5c1b306113221d221d5f9f7a58d32"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>velocityEstZ</b> () const</td></tr>
+<tr class="separator:a68b5c1b306113221d221d5f9f7a58d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa4649a8704cf29ad71934fb552ee43ed"><td class="memItemLeft" align="right" valign="top"><a id="aa4649a8704cf29ad71934fb552ee43ed"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setExperience</b> (int exp, int level)</td></tr>
 <tr class="separator:aa4649a8704cf29ad71934fb552ee43ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -491,6 +506,18 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>experienceLevel</b> ()
 <tr class="memitem:afe6da62c00c3461802061c6a68488d56"><td class="memItemLeft" align="right" valign="top"><a id="afe6da62c00c3461802061c6a68488d56"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>experienceProgressPercent</b> () const</td></tr>
 <tr class="separator:afe6da62c00c3461802061c6a68488d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e1ef1a3bee4fae7ea568284e37be53a"><td class="memItemLeft" align="right" valign="top"><a id="a3e1ef1a3bee4fae7ea568284e37be53a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>experiencePoints</b> () const</td></tr>
+<tr class="separator:a3e1ef1a3bee4fae7ea568284e37be53a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb641dd4c7c10b63b3873dbc5247c7b1"><td class="memItemLeft" align="right" valign="top"><a id="acb641dd4c7c10b63b3873dbc5247c7b1"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>experienceTotal</b> () const</td></tr>
+<tr class="separator:acb641dd4c7c10b63b3873dbc5247c7b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82340e4a390453df7e2d96ec0e98cbfe"><td class="memItemLeft" align="right" valign="top"><a id="a82340e4a390453df7e2d96ec0e98cbfe"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addExperience</b> (int amount)</td></tr>
+<tr class="separator:a82340e4a390453df7e2d96ec0e98cbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8ba2903c90e3a96ae18a741b9f0c007"><td class="memItemLeft" align="right" valign="top"><a id="ac8ba2903c90e3a96ae18a741b9f0c007"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addLevels</b> (int levels)</td></tr>
+<tr class="separator:ac8ba2903c90e3a96ae18a741b9f0c007"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37bcd61ab614acd2dec1ee8e2cb9e2e3"><td class="memItemLeft" align="right" valign="top"><a id="a37bcd61ab614acd2dec1ee8e2cb9e2e3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>setHealth</b> (int h)</td></tr>
 <tr class="separator:a37bcd61ab614acd2dec1ee8e2cb9e2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -680,6 +707,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sendActiveEffects</b>
 <tr class="memitem:aa677cab3d5e46cee9829ead8b43ef87b"><td class="memItemLeft" align="right" valign="top"><a id="aa677cab3d5e46cee9829ead8b43ef87b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>throwSplashPotion</b> ()</td></tr>
 <tr class="separator:aa677cab3d5e46cee9829ead8b43ef87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a723f396c863bc66e5ca1fd65e34b0a09"><td class="memItemLeft" align="right" valign="top"><a id="a723f396c863bc66e5ca1fd65e34b0a09"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>throwExpBottle</b> ()</td></tr>
+<tr class="separator:a723f396c863bc66e5ca1fd65e34b0a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a445edac82e7ddd8d750447dfa19c7a59"><td class="memItemLeft" align="right" valign="top"><a id="a445edac82e7ddd8d750447dfa19c7a59"></a>
 Entity *&#160;</td><td class="memItemRight" valign="bottom"><b>getKiller</b> () const</td></tr>
 <tr class="separator:a445edac82e7ddd8d750447dfa19c7a59"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -852,6 +882,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>removePermission</b> 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a4ab23bf0919e7fcc7988ada351fd7c0e"><td class="memItemLeft" align="right" valign="top"><a id="a4ab23bf0919e7fcc7988ada351fd7c0e"></a>
+static int&#160;</td><td class="memItemRight" valign="bottom"><b>xpLevelCost</b> (int level)</td></tr>
+<tr class="separator:a4ab23bf0919e7fcc7988ada351fd7c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb972bd78c19c6307786fe4ec4ecb4b7"><td class="memItemLeft" align="right" valign="top"><a id="acb972bd78c19c6307786fe4ec4ecb4b7"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>parseUuidBytes</b> (const std::string &amp;s, std::array&lt; uint8_t, 16 &gt; &amp;out)</td></tr>
 <tr class="separator:acb972bd78c19c6307786fe4ec4ecb4b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
