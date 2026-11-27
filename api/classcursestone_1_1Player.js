@@ -10,6 +10,7 @@ var classcursestone_1_1Player =
     [ "announceSelfToOthers", "classcursestone_1_1Player.html#a58389f5d03050e22a3b8fa4092395966", null ],
     [ "announceTo", "classcursestone_1_1Player.html#ab6779acd55f8afe68d7131463d49e662", null ],
     [ "appendTileSpawnPayload", "classcursestone_1_1Player.html#add53fb06470054d44347c19cb606d20d", null ],
+    [ "applyHealthBoost", "classcursestone_1_1Player.html#a34c764bf1e3ea7d8387e1a8e51693614", null ],
     [ "batchDataPacket", "classcursestone_1_1Player.html#a92f18b1088b25f75eace6569cf08d603", null ],
     [ "beginSurvivalSlotWrite", "classcursestone_1_1Player.html#a64362ecf60468f8ca3e080d6afaf7b4b", null ],
     [ "blendedEffectColor", "classcursestone_1_1Player.html#afdbfe3ff0a4c3e445d40902ea1f2e56d", null ],

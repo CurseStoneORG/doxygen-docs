@@ -12,5 +12,6 @@ var structcursestone_1_1world_1_1ExperienceOrbEntity =
     [ "vz", "structcursestone_1_1world_1_1ExperienceOrbEntity.html#acfc18059eb47cf78a5e578cedb299b38", null ],
     [ "x", "structcursestone_1_1world_1_1ExperienceOrbEntity.html#af149a51f1400f88cbfe551a741ba8995", null ],
     [ "y", "structcursestone_1_1world_1_1ExperienceOrbEntity.html#aad59c6aef07b7f8ccf00f3779be4955e", null ],
+    [ "yaw", "structcursestone_1_1world_1_1ExperienceOrbEntity.html#a76fa4182ca834e61e1fac835e10db9e0", null ],
     [ "z", "structcursestone_1_1world_1_1ExperienceOrbEntity.html#a605a52bdb7c967b1a3d8a69cc211ae0b", null ]
 ];

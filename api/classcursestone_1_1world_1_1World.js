@@ -67,6 +67,7 @@ var classcursestone_1_1world_1_1World =
     [ "mobCount", "classcursestone_1_1world_1_1World.html#a16e7ab963a5b78d82f5d823157a794a6", null ],
     [ "mobMutex", "classcursestone_1_1world_1_1World.html#addad7d0c37a076496cfdbd700e40ae9b", null ],
     [ "mobs", "classcursestone_1_1world_1_1World.html#ad7590fd0ad13316b8c3caf4a845b032d", null ],
+    [ "mobSpeedMultiplier", "classcursestone_1_1world_1_1World.html#a13ba821de98c20a30ff41c1c6f0e6179", null ],
     [ "moveFloatingText", "classcursestone_1_1world_1_1World.html#a07caa1e1a96327f8a7bc19d053dd8e1c", null ],
     [ "moveMob", "classcursestone_1_1world_1_1World.html#a0db318ebc47affb774c51c5b5b3fd541", null ],
     [ "name", "classcursestone_1_1world_1_1World.html#aa8bbe67906904757a149b34ec3418776", null ],
