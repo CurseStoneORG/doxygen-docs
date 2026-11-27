@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <div class="contents">
 <div class="textblock"><p>Rama: <code>fix-potion-effects-vanilla</code> (base: <code>stable</code> @ <code>6605b4b</code>). Objetivo: que los efectos de poción de CurseStone se comporten como la referencia vanilla 0.15.10 — aplicación, duración, amplificador, ticks, expiración, sustitución, metadata, sincronización y efectos sobre el gameplay.</p>
 <p>Estado de la referencia vanilla: <b>análisis estático del binario real</b> (<code>libminecraftpe.so</code> del APK original 0.15.10, sha256 <code>2d12209093b87f22960f32a1ef3c2af3251ed348a93a3ead78e8b206457a0b3f</code>, 49.066 símbolos dinámicos, desensamblado Thumb-2 con capstone + resolución de llamadas por relocations GOT/PLT) <b>más</b> el código de Genisys 0.15.0 (tag <code>ec716b0ea4</code>, copia local) y un cruce puntual con la Minecraft Wiki. No hubo entorno Android ejecutable en el sandbox (ver <code>docs/ENTORNO.md</code> de la rama pickup y <code>POTION_EFFECTS_PROGRESS.md</code>): <b>toda medición visual en vivo queda NO VERIFICADO</b>; nada de este documento se apoya en capturas simuladas.</p>
-<h1><a class="anchor" id="autotoc_md248"></a>
+<h1><a class="anchor" id="autotoc_md235"></a>
 1. El paquete de efectos del protocolo 84 (medido en el binario)</h1>
 <p><code>MobEffectPacket::getId()</code> @ <code>0x00AAAD34</code> = bytes <code>19 20 70 47</code> (<code>movs r0,#0x19; bx lr</code>) ⇒ <b>ID 0x19</b> (Genisys <code>Info.php</code> declara el mismo <code>0x19</code>; el valor usado por CurseStone era correcto).</p>
 <p><code>MobEffectPacket::read(RakNet::BitStream*)</code> @ <code>0x00AAAE1C</code>, campo a campo:</p>
@@ -109,7 +109,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <td class="markdownTableBodyNone">duration   </td><td class="markdownTableBodyNone"><code>+0x18</code> (4 bytes)   </td><td class="markdownTableBodyNone"><b>Int big-endian</b> (<code>ReadBits(…,0x20,1)</code> + <code>ReverseBytes</code>)   </td></tr>
 </table>
 <p>El layout coincide exactamente con el encode de Genisys y con el de CurseStone.</p>
-<h1><a class="anchor" id="autotoc_md249"></a>
+<h1><a class="anchor" id="autotoc_md236"></a>
 2. Handler del cliente 0.15.10 (&lt;tt&gt;LegacyClientNetworkHandler::handle(MobEffectPacket*)&lt;/tt&gt; @ &lt;tt&gt;0x0091F668&lt;/tt&gt;)</h1>
 <p>Desensamblado completo, en orden:</p>
 <ol type="1">
@@ -123,7 +123,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <li><b>ADD/MODIFY</b>: eid = <code>Entity::getUniqueID()</code> real, eventId 1/2, effectId, amplifier, particles = <code>isEffectVisible()</code>, duration = restante.</li>
 <li><b>REMOVE</b>: eid real, eventId 3, effectId, y <b>amplifier=0, particles=0, duration=0</b> (los tres campos a cero).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md250"></a>
+<h1><a class="anchor" id="autotoc_md237"></a>
 3. Reglas de aplicación vanilla (binario)</h1>
 <p><code>Mob::addEffect(MobEffectInstance const&amp;)</code> @ <code>0x00BF4358</code>:</p>
 <ul>
@@ -140,14 +140,14 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <li><code>MobEffectInstance::tick(Mob*)</code> @ <code>0x00BA5C94</code>: decrementa la duración y devuelve «no expirado» mientras <code>&gt; 0</code>; <code>Mob::tickEffects</code> @ <code>0x00BF0F90</code> elimina el efecto al llegar a 0 vía <code>onEffectRemoved</code> + slot vaciado.</li>
 <li><code>Mob::canBeAffected(MobEffectInstance const&amp;)</code> @ <code>0x00BF7551</code> es la puerta de entrada de <code>addEffect</code> (vtable slot 0x320/4 debe devolver 1).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md251"></a>
+<h1><a class="anchor" id="autotoc_md238"></a>
 4. Metadata de efectos (binario)</h1>
 <ul>
 <li><code>DATA_POTION_COLOR</code> = <b>7</b> (int, RGB mezclado) y <code>DATA_POTION_AMBIENT</code> = <b>8</b> (byte) — confirmados por <code>Mob::tickEffects</code>, que los lee con <code>SynchedEntityData::getInt(7)</code> / <code>getInt(8)</code> para decidir si hay que limpiar el color. Coinciden con Genisys (<code>Entity.php</code> 92-93) y con CurseStone.</li>
 <li><code>DATA_POTION_ID</code> = <b>16</b> (short) para la poción arrojada — confirmado por <code>ThrownPotion::onHit</code> (<code>SynchedEntityData::getShort(0x10)</code>); CurseStone ya lo envía dentro del <code>AddEntityPacket</code> ✓.</li>
 <li>Mezcla del color: pesos <code>(amplifier+1)</code> por efecto (Genisys <code>recalculateEffectColor</code>, mismo algoritmo que CurseStone ya usa).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md252"></a>
+<h1><a class="anchor" id="autotoc_md239"></a>
 5. Poción arrojada (splash) — &lt;tt&gt;ThrownPotion::onHit&lt;/tt&gt; @ &lt;tt&gt;0x00C208B4&lt;/tt&gt;</h1>
 <ul>
 <li><code>ThrownPotion::SPLASH_RANGE</code> @ <code>0x01547A88</code> = <b>4.0f</b> (dato crudo <code>00 00 80 40</code>).</li>
@@ -157,7 +157,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <li>Partículas del estallido: <code>Level::potionSplash(pos, color, bool)</code>.</li>
 <li>Física: gravedad 0.1 / drag 0.05 / ruptura por edad 1200 ticks (coincide con Genisys <code>ThrownPotion.php</code> y con CurseStone).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md253"></a>
+<h1><a class="anchor" id="autotoc_md240"></a>
 6. Absorción (binario)</h1>
 <ul>
 <li>El atributo existe: la cadena **<code>generic.absorption</code>** está en <code>.rodata</code> (@ offset <code>0x176AB0</code> aprox, junto a <code>generic.movementSpeed</code>, <code>generic.attackDamage</code>, <code>generic.knockbackResistance</code>).</li>
@@ -165,7 +165,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <li>Genisys <code>Human::setAbsorption</code> (mismo nombre de atributo) y su pipeline de daño: la absorción se consume antes de la salud (<code>absorption -= damage; health += sobrante</code>).</li>
 <li>Consecuencia: la manzana dorada/encantada con Absorption debe otorgar corazones que absorben daño; CurseStone hoy solo muestra el icono.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md254"></a>
+<h1><a class="anchor" id="autotoc_md241"></a>
 7. Catálogo de pociones (0.15.x)</h1>
 <p>Tabla de metas 5..35 con efecto/duración/amplificador — CurseStone (<code>ItemPotion.cpp kPotions</code>) y Genisys 0.15.0 (<code>Potion.php POTIONS</code>) son <b>idénticas entrada por entrada</b> (incluido veneno extendido 120 s):</p>
 <table class="markdownTable">
@@ -202,7 +202,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 </table>
 <p>Nota sobre el veneno extendido: PC 1.9 lo había reducido a 1:30 y Java 1.14.2 lo devolvió a 2:00 (Minecraft Wiki, «Potion of Poison», historial). La era MCPE 0.15 usa la variante de 120 s — Genisys 0.15.0 (referencia de la época) y CurseStone coinciden. <b>La extracción exacta de la tabla desde el binario quedó fuera de alcance</b> (<code>Potion::initPotions</code> construye la tabla en runtime a través de cadenas GOT; los objetos <code>Potion::*</code> viven en BSS): las duraciones de la tabla quedan basadas en la referencia de la época, <b>NO VERIFICADO a nivel de binario</b>.</p>
 <p>Catálogo de efectos soportados (ids protocolo 84, verificados contra <code>MobEffect::initEffects</code> y Genisys): 1 Speed, 2 Slowness, 3 Haste, 4 Mining Fatigue, 5 Strength, 6 Instant Health, 7 Instant Damage, 8 Jump Boost, 9 Nausea, 10 Regeneration, 11 Resistance, 12 Fire Resistance, 13 Water Breathing, 14 Invisibility, 15 Blindness, 16 Night Vision, 17 Hunger, 18 Weakness, 19 Poison, 20 Wither, 21 Health Boost, 22 Absorption, 23 Saturation. (Health Boost/Absorption/Saturation existen en el registro del 0.15 aunque ninguna poción bebible los use; llegan por manzanas y comandos.)</p>
-<h1><a class="anchor" id="autotoc_md255"></a>
+<h1><a class="anchor" id="autotoc_md242"></a>
 8. Referencia Genisys 0.15.0 (flujo server-side)</h1>
 <ul>
 <li><code>Potion::onConsume</code>: <code>EntityEvent USE_ITEM</code> con eid real (owner + viewers), evento de consumo, <code>addEffect</code> por efecto, botella de vidrio de vuelta (salvo creativo). CurseStone ya replica este flujo ✓.</li>
@@ -212,7 +212,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <li>Genisys envía el MobEffectPacket <b>solo al dueño y con eid=0</b> — en el binario 0.15.10 el handler hace <code>Level::getEntity(eid)</code>, por lo que el eid=0 no resuelve; el eid real de CurseStone es el correcto (§2).</li>
 <li>Bug conocido de Genisys: <code>SLOWNESS</code> multiplica por <code>1 − (0.15·amp + 1)</code> = 0 con amp 0 (paréntesis mal puesto); CurseStone usa <code>max(0, 1 − 0.15·(amp+1))</code>, que es la fórmula correcta.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md256"></a>
+<h1><a class="anchor" id="autotoc_md243"></a>
 9. Estado inicial de CurseStone (verificado leyendo el código)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -250,7 +250,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Sonido gulp   </td><td class="markdownTableBodyNone">presente (EntityEvent USE_ITEM, eid real)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md257"></a>
+<h1><a class="anchor" id="autotoc_md244"></a>
 10. Implementación (esta rama)</h1>
 <p>Commits reales de <code>fix-potion-effects-vanilla</code> (en orden):</p>
 <ol type="1">
@@ -263,7 +263,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <li><code>3634374</code> — <code>test(effects)</code>: <code>tools/potion_effect_check.cpp</code>.</li>
 <li><code>2e55d4d</code> — <code>fix(splash)</code>: las pociones instantáneas arrojadizas (harming/healing) aterrizan a plena fuerza (el escalado ×0.75 colapsaría su duración de 1 tick a cero).</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md258"></a>
+<h1><a class="anchor" id="autotoc_md245"></a>
 9bis. Pruebas ejecutadas (resultados reales)</h1>
 <ul>
 <li><code>tools/potion_effect_check.cpp</code> (nuevo): <b>27/27 PASS, exit 0</b> — wire byte-a-byte del 0x19 (ADD/MODIFY/REMOVE a cero), regla de sustitución, geometría de splash, dowse solo con agua, intervalos de la era (25/50/40/40/20 &gt;&gt; amp) y drenaje directo del hambre. Ejecutado con: `g++ -std=c++20 -Wall -Wextra -O1 -Isrc tools/potion_effect_check.cpp src/network/protocol/MobEffectPacket.cpp src/network/protocol/DataPacket.cpp src/entity/Effect.cpp -o /tmp/tools/potion_effect_check` desde la raíz del repo (los checks que escanean fuentes requieren el CWD del repo).</li>
@@ -271,7 +271,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <li>Smoke test del binario: arranque real (<code>./build/CurseStone</code>) → config cargada, <code>listening on 0.0.0.0:19132</code>, <code>world</code> cargada, preparación de spawn iniciada; terminado con <code>timeout -k</code> limpio.</li>
 <li>El resto del harness de <code>tools/</code> <b>no</b> se ejecutó (instrucción del usuario: solo lo necesario).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md259"></a>
+<h1><a class="anchor" id="autotoc_md246"></a>
 11. NO VERIFICADO (honesto)</h1>
 <ul>
 <li><b>Cero medición en vivo</b>: ningún cliente 0.15.10 real consumió pociones contra esta rama (sin entorno Android ejecutable; ver <code>docs/ENTORNO.md</code>). Iconos del HUD, fade de pantallas, partículas de hechizo y sonidos quedan sustentados en el desensamblado y en la era, no en capturas.</li>
@@ -282,7 +282,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_VANILLA.html','
 <li>Trato del lanzador en el splash: vanilla PC 1.9 da duración completa al lanzador (<code>d2 = 1.0</code>); el desensamblado de <code>onHit</code> no llegó hasta esa rama, así que CurseStone aplica el mismo escalado por distancia al lanzador que a cualquier entidad. Diferencia máxima posible: el lanzador centrado en el estallido recibe <code>base × 0.75</code> en vez de <code>base</code>.</li>
 <li>El ancla vertical del escalado (torso: y+0.9 jugador, y+0.5 mob): la caja candidata ±2 vertical es del binario; el punto exacto de medida de la distancia no se correlacionó con una fórmula cerrada.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md260"></a>
+<h1><a class="anchor" id="autotoc_md247"></a>
 12. Limitaciones del entorno</h1>
 <p>Sandbox Linux sin KVM/binder/root (detalle en <code>docs/ENTORNO.md</code>); la referencia en vivo requiere una máquina con <code>/dev/kvm</code> (QEMU/KVM + Android-x86</p><ul>
 <li>houdini) o un dispositivo Android real con el APK original. </li>

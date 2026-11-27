@@ -84,54 +84,59 @@ $(document).ready(function(){initNavTree('classcursestone_1_1entity_1_1ai_1_1Goa
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classcursestone_1_1entity_1_1ai_1_1Goal-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">cursestone::entity::ai::Goal Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>One behavior of a mob brain.  
- <a href="classcursestone_1_1entity_1_1ai_1_1Goal.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="Goal_8h_source.html">Goal.h</a>&gt;</code></p>
-
-<p>Inherited by <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html">cursestone::entity::ai::IdleLookGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html">cursestone::entity::ai::LookAtPlayerGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html">cursestone::entity::ai::PanicGoal</a>, and <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html">cursestone::entity::ai::WanderGoal</a>.</p>
+<p>Inherited by <a class="el" href="classcursestone_1_1entity_1_1ai_1_1ArrowAttackGoal.html">cursestone::entity::ai::ArrowAttackGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1DoorInteractGoal.html">cursestone::entity::ai::DoorInteractGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1EatTileGoal.html">cursestone::entity::ai::EatTileGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1FleeSunGoal.html">cursestone::entity::ai::FleeSunGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1FloatGoal.html">cursestone::entity::ai::FloatGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html">cursestone::entity::ai::LookAtPlayerGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MeleeAttackGoal.html">cursestone::entity::ai::MeleeAttackGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html">cursestone::entity::ai::PanicGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1RandomLookAroundGoal.html">cursestone::entity::ai::RandomLookAroundGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1RandomStrollGoal.html">cursestone::entity::ai::RandomStrollGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1RestrictSunGoal.html">cursestone::entity::ai::RestrictSunGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1SwellGoal.html">cursestone::entity::ai::SwellGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1TargetGoal.html">cursestone::entity::ai::TargetGoal</a>, and <a class="el" href="classcursestone_1_1entity_1_1ai_1_1TemptGoal.html">cursestone::entity::ai::TemptGoal</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac9a81216a3604c920efeee1b45d8aad5"><td class="memItemLeft" align="right" valign="top"><a id="ac9a81216a3604c920efeee1b45d8aad5"></a>
-virtual uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ac9a81216a3604c920efeee1b45d8aad5">flags</a> () const</td></tr>
-<tr class="memdesc:ac9a81216a3604c920efeee1b45d8aad5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutex bits claimed while this goal runs. <br /></td></tr>
-<tr class="separator:ac9a81216a3604c920efeee1b45d8aad5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a645bc150e6c0ae3e9392aa3f6fa1140b"><td class="memItemLeft" align="right" valign="top"><a id="a645bc150e6c0ae3e9392aa3f6fa1140b"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a645bc150e6c0ae3e9392aa3f6fa1140b">priority</a> () const</td></tr>
-<tr class="memdesc:a645bc150e6c0ae3e9392aa3f6fa1140b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selection weight; higher wins an overlapping flag. <br /></td></tr>
-<tr class="separator:a645bc150e6c0ae3e9392aa3f6fa1140b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad73c6ac5623a78027e82b8dc48d3d98b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ad73c6ac5623a78027e82b8dc48d3d98b">canStart</a> (const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;ctx, class <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;brain)=0</td></tr>
-<tr class="memdesc:ad73c6ac5623a78027e82b8dc48d3d98b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the goal may activate on this evaluation.  <a href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ad73c6ac5623a78027e82b8dc48d3d98b">More...</a><br /></td></tr>
-<tr class="separator:ad73c6ac5623a78027e82b8dc48d3d98b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b747726de2dde7d06409fc696f7d06e"><td class="memItemLeft" align="right" valign="top"><a id="a5b747726de2dde7d06409fc696f7d06e"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a5b747726de2dde7d06409fc696f7d06e">shouldContinue</a> (const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;ctx) const =0</td></tr>
-<tr class="memdesc:a5b747726de2dde7d06409fc696f7d06e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether an active goal keeps running. <br /></td></tr>
-<tr class="separator:a5b747726de2dde7d06409fc696f7d06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a38290a126a27b75740237b54505141"><td class="memItemLeft" align="right" valign="top"><a id="a6a38290a126a27b75740237b54505141"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a6a38290a126a27b75740237b54505141">start</a> (const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;ctx, class <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;brain)</td></tr>
-<tr class="memdesc:a6a38290a126a27b75740237b54505141"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once when the goal activates; may initialize its own state (and consume <code>brain's</code> randomness). <br /></td></tr>
-<tr class="separator:a6a38290a126a27b75740237b54505141"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad2eb9c0bd8d64e71dc2a1b683b9906a0"><td class="memItemLeft" align="right" valign="top"><a id="ad2eb9c0bd8d64e71dc2a1b683b9906a0"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ad2eb9c0bd8d64e71dc2a1b683b9906a0">stop</a> ()</td></tr>
-<tr class="memdesc:ad2eb9c0bd8d64e71dc2a1b683b9906a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called once when the goal deactivates. <br /></td></tr>
-<tr class="separator:ad2eb9c0bd8d64e71dc2a1b683b9906a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e15b4cd6239fbda3447841fc0dd7226"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a0e15b4cd6239fbda3447841fc0dd7226">tick</a> (const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;ctx, class <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;brain)=0</td></tr>
-<tr class="memdesc:a0e15b4cd6239fbda3447841fc0dd7226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs on every think tick while the goal is active.  <a href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a0e15b4cd6239fbda3447841fc0dd7226">More...</a><br /></td></tr>
-<tr class="separator:a0e15b4cd6239fbda3447841fc0dd7226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac4c4ec68b59217942b42088fd83793"><td class="memItemLeft" align="right" valign="top"><a id="a3ac4c4ec68b59217942b42088fd83793"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Goal</b> (const <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &amp;)=delete</td></tr>
+<tr class="separator:a3ac4c4ec68b59217942b42088fd83793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03df218aaf7d657d507f38be84357fc4"><td class="memItemLeft" align="right" valign="top"><a id="a03df218aaf7d657d507f38be84357fc4"></a>
+<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator=</b> (const <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &amp;)=delete</td></tr>
+<tr class="separator:a03df218aaf7d657d507f38be84357fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a325b5fdfddc98528e6b41d782db1000e"><td class="memItemLeft" align="right" valign="top"><a id="a325b5fdfddc98528e6b41d782db1000e"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a325b5fdfddc98528e6b41d782db1000e">canUse</a> (<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;mob)=0</td></tr>
+<tr class="memdesc:a325b5fdfddc98528e6b41d782db1000e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the goal wants to start this evaluation. <br /></td></tr>
+<tr class="separator:a325b5fdfddc98528e6b41d782db1000e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a990407e609a08523a091d286c96e38e5"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a990407e609a08523a091d286c96e38e5">canContinueToUse</a> (<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;mob)</td></tr>
+<tr class="memdesc:a990407e609a08523a091d286c96e38e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether a running goal keeps running.  <a href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a990407e609a08523a091d286c96e38e5">More...</a><br /></td></tr>
+<tr class="separator:a990407e609a08523a091d286c96e38e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77d472b744692f53048d8fdf37e00739"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a77d472b744692f53048d8fdf37e00739">canInterrupt</a> ()</td></tr>
+<tr class="memdesc:a77d472b744692f53048d8fdf37e00739"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether an already-running goal can be interrupted by a higher-priority goal that wants the same flags.  <a href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a77d472b744692f53048d8fdf37e00739">More...</a><br /></td></tr>
+<tr class="separator:a77d472b744692f53048d8fdf37e00739"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac2e4a99e3f9aa3b96fa51923d8963f"><td class="memItemLeft" align="right" valign="top"><a id="a3ac2e4a99e3f9aa3b96fa51923d8963f"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> (<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;mob)</td></tr>
+<tr class="separator:a3ac2e4a99e3f9aa3b96fa51923d8963f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8349d4ff936993205399f88c69c0bbbd"><td class="memItemLeft" align="right" valign="top"><a id="a8349d4ff936993205399f88c69c0bbbd"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> (<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;mob)</td></tr>
+<tr class="separator:a8349d4ff936993205399f88c69c0bbbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2c2004be00bcdde7c501923bbeeeff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a7b2c2004be00bcdde7c501923bbeeeff">tick</a> (<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;mob)</td></tr>
+<tr class="memdesc:a7b2c2004be00bcdde7c501923bbeeeff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs on every selector pass while the goal is running.  <a href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a7b2c2004be00bcdde7c501923bbeeeff">More...</a><br /></td></tr>
+<tr class="separator:a7b2c2004be00bcdde7c501923bbeeeff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8d48962af2c8b57a3184694b0f90112"><td class="memItemLeft" align="right" valign="top"><a id="ae8d48962af2c8b57a3184694b0f90112"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ae8d48962af2c8b57a3184694b0f90112">setRequiredControlFlags</a> (int32_t flags)</td></tr>
+<tr class="memdesc:ae8d48962af2c8b57a3184694b0f90112"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the era constructor-time setRequiredControlFlags. <br /></td></tr>
+<tr class="separator:ae8d48962af2c8b57a3184694b0f90112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3882c9bfb44ad6552c661d1ce9deca4"><td class="memItemLeft" align="right" valign="top"><a id="aa3882c9bfb44ad6552c661d1ce9deca4"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>getRequiredControlFlags</b> () const</td></tr>
+<tr class="separator:aa3882c9bfb44ad6552c661d1ce9deca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a01749c738dee324792ce4c35cd151f3b"><td class="memItemLeft" align="right" valign="top"><a id="a01749c738dee324792ce4c35cd151f3b"></a>
+int32_t&#160;</td><td class="memItemRight" valign="bottom"><b>control_flags_</b> = kControlNone</td></tr>
+<tr class="separator:a01749c738dee324792ce4c35cd151f3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>One behavior of a mob brain. </p>
-<p>A goal object is owned by exactly one <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html" title="Per-mob AI state machine.">MobBrain</a> and may keep its own state between evaluations (wander targets, timers). Selection runs on the mob's think cadence: goals with a higher <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a645bc150e6c0ae3e9392aa3f6fa1140b" title="Selection weight; higher wins an overlapping flag.">priority()</a> win flag conflicts, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#ad73c6ac5623a78027e82b8dc48d3d98b" title="Returns whether the goal may activate on this evaluation.">canStart()</a> gates activation, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a5b747726de2dde7d06409fc696f7d06e" title="Returns whether an active goal keeps running.">shouldContinue()</a> decides when to release. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad73c6ac5623a78027e82b8dc48d3d98b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad73c6ac5623a78027e82b8dc48d3d98b">&#9670;&nbsp;</a></span>canStart()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a990407e609a08523a091d286c96e38e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a990407e609a08523a091d286c96e38e5">&#9670;&nbsp;</a></span>canContinueToUse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,39 +145,59 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool cursestone::entity::ai::Goal::canStart </td>
+          <td class="memname">virtual bool cursestone::entity::ai::Goal::canContinueToUse </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;&#160;</td>
-          <td class="paramname"><em>ctx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;&#160;</td>
+          <td class="paramname"><em>mob</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">class <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;&#160;</td>
-          <td class="paramname"><em>brain</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Returns whether the goal may activate on this evaluation. </p>
-<p>May consume <code>brain's</code> randomness (per-mob, deterministic on the main thread). </p>
+<p>Whether a running goal keeps running. </p>
+<p>The era default delegates to <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html#a325b5fdfddc98528e6b41d782db1000e" title="Whether the goal wants to start this evaluation.">canUse()</a>. </p>
 
-<p>Implemented in <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#a266e9aa12ad231555387404a9970531e">cursestone::entity::ai::PanicGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#a5ef9c26c5b697a9639b738c606a89729">cursestone::entity::ai::IdleLookGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#abad2a40da348ba5ca572e39b995ea246">cursestone::entity::ai::LookAtPlayerGoal</a>, and <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ab17ddd14bca99e37a3dfe965e80f2d04">cursestone::entity::ai::WanderGoal</a>.</p>
+<p>Reimplemented in <a class="el" href="classcursestone_1_1entity_1_1ai_1_1TargetGoal.html#a45ac292c0735a297d4abdcd6df6301a1">cursestone::entity::ai::TargetGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1FleeSunGoal.html#ad2e53ca6c1a43b32ca3cad6c9e0a5878">cursestone::entity::ai::FleeSunGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1EatTileGoal.html#ab56dff677049fcc493e9fbc0efa5f685">cursestone::entity::ai::EatTileGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1TemptGoal.html#a64f4b6f283271fd68764a7cc63127497">cursestone::entity::ai::TemptGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#ae1ef27259a1472dde009f32fe04a6770">cursestone::entity::ai::PanicGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#ac9e8b5646c1fd2114687a3b17ff1291e">cursestone::entity::ai::LookAtPlayerGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1RandomLookAroundGoal.html#a2efa055393f795dd3e13b547a85a3f7d">cursestone::entity::ai::RandomLookAroundGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1RandomStrollGoal.html#a99be516c3a2633d5342159a08d144448">cursestone::entity::ai::RandomStrollGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1BreakDoorGoal.html#a08c044ba9c9118ee13ff3a7402b75bed">cursestone::entity::ai::BreakDoorGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1DoorInteractGoal.html#a1a55f11a87dd2fd78c7b49cafa738f44">cursestone::entity::ai::DoorInteractGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1ArrowAttackGoal.html#a804ea0b3cbfa20105974426731b897d5">cursestone::entity::ai::ArrowAttackGoal</a>, and <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MeleeAttackGoal.html#a1b26f96bdc4bf4f4b69a874552f315ab">cursestone::entity::ai::MeleeAttackGoal</a>.</p>
 
 </div>
 </div>
-<a id="a0e15b4cd6239fbda3447841fc0dd7226"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e15b4cd6239fbda3447841fc0dd7226">&#9670;&nbsp;</a></span>tick()</h2>
+<a id="a77d472b744692f53048d8fdf37e00739"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a77d472b744692f53048d8fdf37e00739">&#9670;&nbsp;</a></span>canInterrupt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool cursestone::entity::ai::Goal::canInterrupt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Whether an already-running goal can be interrupted by a higher-priority goal that wants the same flags. </p>
+<p>The era default allows interruption. </p>
+
+<p>Reimplemented in <a class="el" href="classcursestone_1_1entity_1_1ai_1_1TargetGoal.html#aa87227ca654d075476bbcb72918d5cd7">cursestone::entity::ai::TargetGoal</a>.</p>
+
+</div>
+</div>
+<a id="a7b2c2004be00bcdde7c501923bbeeeff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b2c2004be00bcdde7c501923bbeeeff">&#9670;&nbsp;</a></span>tick()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,32 +208,22 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
         <tr>
           <td class="memname">virtual void cursestone::entity::ai::Goal::tick </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;&#160;</td>
-          <td class="paramname"><em>ctx</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;&#160;</td>
+          <td class="paramname"><em>mob</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">class <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html">MobBrain</a> &amp;&#160;</td>
-          <td class="paramname"><em>brain</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Runs on every think tick while the goal is active. </p>
-<p>Writes intent into <code>brain</code> (see <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobIntent.html" title="The movement decision the goals produced on one think tick.">MobIntent</a>). </p>
+<p>Runs on every selector pass while the goal is running. </p>
+<p>The era default was an empty body (Goal.cpp), so goals without per-tick work (the stroll family) simply omit it. </p>
 
-<p>Implemented in <a class="el" href="classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#a4dde33d468dd894a4ddac62ed58f1886">cursestone::entity::ai::PanicGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html#abc363670c19678ea743b82152cae5009">cursestone::entity::ai::IdleLookGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#af3b8dd39548b2ee396f001ad0482e3d2">cursestone::entity::ai::LookAtPlayerGoal</a>, and <a class="el" href="classcursestone_1_1entity_1_1ai_1_1WanderGoal.html#ae8c2a516e3619ba80d873ad5cda4f7b7">cursestone::entity::ai::WanderGoal</a>.</p>
+<p>Reimplemented in <a class="el" href="classcursestone_1_1entity_1_1ai_1_1TargetGoal.html#aff3169e79c952419a3761f3dc58a1bf1">cursestone::entity::ai::TargetGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1FleeSunGoal.html#a23b840f78e597cc0f59f367373ce14f4">cursestone::entity::ai::FleeSunGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1RestrictSunGoal.html#a7f0579a84ed1ed1f4d0993ee8856e1da">cursestone::entity::ai::RestrictSunGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1EatTileGoal.html#a2e0d9d730e6abae4bb6e972a70cec1ea">cursestone::entity::ai::EatTileGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1TemptGoal.html#a7f334360e22830a70326957f04a04ed4">cursestone::entity::ai::TemptGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a243ebebb5082bc6357237f14cde57d64">cursestone::entity::ai::LookAtPlayerGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1RandomLookAroundGoal.html#a548ad13e96c202557ee055ff9a7e84f6">cursestone::entity::ai::RandomLookAroundGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1FloatGoal.html#a0c8451960243015e4ae70861d8720c3e">cursestone::entity::ai::FloatGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1BreakDoorGoal.html#ac1b1c1aee4da11488f650cac28ecedf9">cursestone::entity::ai::BreakDoorGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1DoorInteractGoal.html#a87f9c299f97a7017ce26cc8cb5e9e918">cursestone::entity::ai::DoorInteractGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1SwellGoal.html#aec373339c0985532182410c688929331">cursestone::entity::ai::SwellGoal</a>, <a class="el" href="classcursestone_1_1entity_1_1ai_1_1ArrowAttackGoal.html#ae4c8839315060fde7d8d0a5c1b938dda">cursestone::entity::ai::ArrowAttackGoal</a>, and <a class="el" href="classcursestone_1_1entity_1_1ai_1_1MeleeAttackGoal.html#a6fb9ba4f7a4ee215ee4d8f626562fa04">cursestone::entity::ai::MeleeAttackGoal</a>.</p>
 
 </div>
 </div>

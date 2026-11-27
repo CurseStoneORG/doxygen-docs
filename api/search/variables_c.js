@@ -1,12 +1,4 @@
 var searchData=
 [
-  ['max_5fmobs_2157',['max_mobs',['../structcursestone_1_1world_1_1WorldConfig.html#ab746e5b48650530608e13ddb0422b033',1,'cursestone::world::WorldConfig']]],
-  ['maxerrors_2158',['maxErrors',['../structcursestone_1_1plugin_1_1PluginLimits.html#a76eacc3bc2bb982eee9e073221c70759',1,'cursestone::plugin::PluginLimits']]],
-  ['maxplayers_2159',['maxPlayers',['../structCsServerApi.html#af294a337a0f54fcb7d248291dcefa01a',1,'CsServerApi']]],
-  ['message_2160',['message',['../structCsEvent.html#a3fd6df991a020443ee86b2b5e4c15517',1,'CsEvent']]],
-  ['motd_2161',['motd',['../structCsServerApi.html#a4647ff8b0d8f2ff1ddc68ff511ae6d00',1,'CsServerApi']]],
-  ['move_2162',['move',['../structcursestone_1_1entity_1_1ai_1_1MobIntent.html#ab3b7023629fddf7f786ea7d3c859b0a0',1,'cursestone::entity::ai::MobIntent']]],
-  ['moveentity_2163',['moveEntity',['../structCsWorldApi.html#a9e48655b66e53780f7609169276be6cd',1,'CsWorldApi']]],
-  ['movefloatingtext_2164',['moveFloatingText',['../structCsWorldApi.html#a0106f853b1cc6ce23f2fbc73e93246fa',1,'CsWorldApi']]],
-  ['mspt_2165',['mspt',['../structCsServerApi.html#a49350e117ab93c63964d7f7a9729ff4f',1,'CsServerApi']]]
+  ['name_2283',['name',['../structCsPluginDesc.html#a8fde5db8252ee9b74d048dfa08a074dc',1,'CsPluginDesc::name()'],['../structCsCommandSender.html#a44d8d88e190de4b5dd6d9e9c0ebd1064',1,'CsCommandSender::name()']]]
 ];

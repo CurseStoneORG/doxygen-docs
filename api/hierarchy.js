@@ -10,6 +10,7 @@ var hierarchy =
     [ "cursestone::permission::BanEntry", "classcursestone_1_1permission_1_1BanEntry.html", null ],
     [ "cursestone::permission::BanList", "classcursestone_1_1permission_1_1BanList.html", null ],
     [ "vgen::BaseRailBlock", "classvgen_1_1BaseRailBlock.html", null ],
+    [ "cursestone::entity::ai::BinaryHeap", "classcursestone_1_1entity_1_1ai_1_1BinaryHeap.html", null ],
     [ "vgen::Biome", "classvgen_1_1Biome.html", [
       [ "vgen::BeachBiome", "classvgen_1_1BeachBiome.html", null ],
       [ "vgen::DesertBiome", "classvgen_1_1DesertBiome.html", null ],
@@ -121,6 +122,7 @@ var hierarchy =
     [ "vgen::BlockStateRef", "classvgen_1_1BlockStateRef.html", null ],
     [ "vgen::BlockVolume", "classvgen_1_1BlockVolume.html", null ],
     [ "cursestone::world::World::BlockWrite", "structcursestone_1_1world_1_1World_1_1BlockWrite.html", null ],
+    [ "cursestone::entity::ai::BodyControl", "classcursestone_1_1entity_1_1ai_1_1BodyControl.html", null ],
     [ "vgen::BoundingBox", "classvgen_1_1BoundingBox.html", null ],
     [ "vgen::Brightness", "structvgen_1_1Brightness.html", null ],
     [ "cursestone::entity::ai::MobBrain::BroadcastCache", "structcursestone_1_1entity_1_1ai_1_1MobBrain_1_1BroadcastCache.html", null ],
@@ -336,7 +338,8 @@ var hierarchy =
         [ "cursestone::entity::EntityFallingSand", "classcursestone_1_1entity_1_1EntityFallingSand.html", null ],
         [ "cursestone::entity::EntityItemDrop", "classcursestone_1_1entity_1_1EntityItemDrop.html", null ],
         [ "cursestone::entity::EntityPrimedTNT", "classcursestone_1_1entity_1_1EntityPrimedTNT.html", null ]
-      ] ]
+      ] ],
+      [ "cursestone::entity::ai::MobDamagerProxy", "classcursestone_1_1entity_1_1ai_1_1MobDamagerProxy.html", null ]
     ] ],
     [ "vgen::Entity", "classvgen_1_1Entity.html", [
       [ "vgen::Player", "classvgen_1_1Player.html", null ]
@@ -401,7 +404,6 @@ var hierarchy =
     [ "cursestone::world::ExperienceOrbEntity", "structcursestone_1_1world_1_1ExperienceOrbEntity.html", null ],
     [ "cursestone::world::Explosion", "classcursestone_1_1world_1_1Explosion.html", null ],
     [ "vgen::Facing", "classvgen_1_1Facing.html", null ],
-    [ "cursestone::entity::ai::FacingStep", "structcursestone_1_1entity_1_1ai_1_1FacingStep.html", null ],
     [ "cursestone::world::FallingBlockEntity", "structcursestone_1_1world_1_1FallingBlockEntity.html", null ],
     [ "vgen::Feature", "classvgen_1_1Feature.html", [
       [ "vgen::BlockBlobFeature", "classvgen_1_1BlockBlobFeature.html", null ],
@@ -466,11 +468,27 @@ var hierarchy =
       [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
     ] ],
     [ "cursestone::entity::ai::Goal", "classcursestone_1_1entity_1_1ai_1_1Goal.html", [
-      [ "cursestone::entity::ai::IdleLookGoal", "classcursestone_1_1entity_1_1ai_1_1IdleLookGoal.html", null ],
+      [ "cursestone::entity::ai::ArrowAttackGoal", "classcursestone_1_1entity_1_1ai_1_1ArrowAttackGoal.html", null ],
+      [ "cursestone::entity::ai::DoorInteractGoal", "classcursestone_1_1entity_1_1ai_1_1DoorInteractGoal.html", [
+        [ "cursestone::entity::ai::BreakDoorGoal", "classcursestone_1_1entity_1_1ai_1_1BreakDoorGoal.html", null ]
+      ] ],
+      [ "cursestone::entity::ai::EatTileGoal", "classcursestone_1_1entity_1_1ai_1_1EatTileGoal.html", null ],
+      [ "cursestone::entity::ai::FleeSunGoal", "classcursestone_1_1entity_1_1ai_1_1FleeSunGoal.html", null ],
+      [ "cursestone::entity::ai::FloatGoal", "classcursestone_1_1entity_1_1ai_1_1FloatGoal.html", null ],
       [ "cursestone::entity::ai::LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html", null ],
+      [ "cursestone::entity::ai::MeleeAttackGoal", "classcursestone_1_1entity_1_1ai_1_1MeleeAttackGoal.html", null ],
       [ "cursestone::entity::ai::PanicGoal", "classcursestone_1_1entity_1_1ai_1_1PanicGoal.html", null ],
-      [ "cursestone::entity::ai::WanderGoal", "classcursestone_1_1entity_1_1ai_1_1WanderGoal.html", null ]
+      [ "cursestone::entity::ai::RandomLookAroundGoal", "classcursestone_1_1entity_1_1ai_1_1RandomLookAroundGoal.html", null ],
+      [ "cursestone::entity::ai::RandomStrollGoal", "classcursestone_1_1entity_1_1ai_1_1RandomStrollGoal.html", null ],
+      [ "cursestone::entity::ai::RestrictSunGoal", "classcursestone_1_1entity_1_1ai_1_1RestrictSunGoal.html", null ],
+      [ "cursestone::entity::ai::SwellGoal", "classcursestone_1_1entity_1_1ai_1_1SwellGoal.html", null ],
+      [ "cursestone::entity::ai::TargetGoal", "classcursestone_1_1entity_1_1ai_1_1TargetGoal.html", [
+        [ "cursestone::entity::ai::HurtByTargetGoal", "classcursestone_1_1entity_1_1ai_1_1HurtByTargetGoal.html", null ],
+        [ "cursestone::entity::ai::NearestAttackableTargetGoal", "classcursestone_1_1entity_1_1ai_1_1NearestAttackableTargetGoal.html", null ]
+      ] ],
+      [ "cursestone::entity::ai::TemptGoal", "classcursestone_1_1entity_1_1ai_1_1TemptGoal.html", null ]
     ] ],
+    [ "cursestone::entity::ai::GoalSelector", "classcursestone_1_1entity_1_1ai_1_1GoalSelector.html", null ],
     [ "cursestone::event::HandlerList", "classcursestone_1_1event_1_1HandlerList.html", null ],
     [ "std::hash<::vgen::ChunkPos >", "structstd_1_1hash_3_1_1vgen_1_1ChunkPos_01_4.html", null ],
     [ "std::hash<::vgen::FullBlock >", "structstd_1_1hash_3_1_1vgen_1_1FullBlock_01_4.html", null ],
@@ -495,6 +513,9 @@ var hierarchy =
     ] ],
     [ "cursestone::inventory::InventoryHolder", "classcursestone_1_1inventory_1_1InventoryHolder.html", null ],
     [ "cursestone::inventory::InventoryType", "classcursestone_1_1inventory_1_1InventoryType.html", null ],
+    [ "cursestone::entity::ai::IPathSource", "classcursestone_1_1entity_1_1ai_1_1IPathSource.html", [
+      [ "cursestone::entity::ai::WorldPathSource", "classcursestone_1_1entity_1_1ai_1_1WorldPathSource.html", null ]
+    ] ],
     [ "cursestone::world::generator::ISpillQueue", "classcursestone_1_1world_1_1generator_1_1ISpillQueue.html", [
       [ "cursestone::world::generator::Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", null ],
       [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
@@ -610,6 +631,7 @@ var hierarchy =
       [ "cursestone::world::generator::Nether", "classcursestone_1_1world_1_1generator_1_1Nether.html", null ],
       [ "cursestone::world::generator::VgenSource", "classcursestone_1_1world_1_1generator_1_1VgenSource.html", null ]
     ] ],
+    [ "cursestone::entity::ai::JumpControl", "classcursestone_1_1entity_1_1ai_1_1JumpControl.html", null ],
     [ "vgen::LargeCaveFeature", "classvgen_1_1LargeCaveFeature.html", null ],
     [ "vgen::LargeFeature", "classvgen_1_1LargeFeature.html", [
       [ "vgen::StructureFeature", "classvgen_1_1StructureFeature.html", [
@@ -633,6 +655,7 @@ var hierarchy =
     [ "cursestone::world::format::anvil::LocationEntry", "structcursestone_1_1world_1_1format_1_1anvil_1_1LocationEntry.html", null ],
     [ "cursestone::world::ChunkManager::LockStats", "structcursestone_1_1world_1_1ChunkManager_1_1LockStats.html", null ],
     [ "cursestone::world::format::leveldb::db::LogReader", "classcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1LogReader.html", null ],
+    [ "cursestone::entity::ai::LookControl", "classcursestone_1_1entity_1_1ai_1_1LookControl.html", null ],
     [ "cursestone::loot::LootEntry", "structcursestone_1_1loot_1_1LootEntry.html", null ],
     [ "cursestone::loot::LootTable", "structcursestone_1_1loot_1_1LootTable.html", null ],
     [ "cursestone::utils::MainLogger", "classcursestone_1_1utils_1_1MainLogger.html", null ],
@@ -670,12 +693,11 @@ var hierarchy =
     [ "cursestone::MemoryManager", "classcursestone_1_1MemoryManager.html", null ],
     [ "cursestone::world::generator::MersenneRandom", "classcursestone_1_1world_1_1generator_1_1MersenneRandom.html", null ],
     [ "vgen::MineshaftData", "structvgen_1_1MineshaftData.html", null ],
+    [ "cursestone::entity::ai::Mob", "classcursestone_1_1entity_1_1ai_1_1Mob.html", null ],
     [ "cursestone::entity::ai::MobAIManager", "classcursestone_1_1entity_1_1ai_1_1MobAIManager.html", null ],
     [ "cursestone::entity::ai::MobBrain", "classcursestone_1_1entity_1_1ai_1_1MobBrain.html", null ],
     [ "cursestone::world::MobChunkCodec", "classcursestone_1_1world_1_1MobChunkCodec.html", null ],
-    [ "cursestone::entity::ai::MobContext", "structcursestone_1_1entity_1_1ai_1_1MobContext.html", null ],
     [ "cursestone::world::MobEntity", "structcursestone_1_1world_1_1MobEntity.html", null ],
-    [ "cursestone::entity::ai::MobIntent", "structcursestone_1_1entity_1_1ai_1_1MobIntent.html", null ],
     [ "cursestone::entity::MobProfile", "structcursestone_1_1entity_1_1MobProfile.html", null ],
     [ "vgen::MobSpawnUtils", "classvgen_1_1MobSpawnUtils.html", null ],
     [ "cursestone::entity::mobs::MobType", "structcursestone_1_1entity_1_1mobs_1_1MobType.html", [
@@ -715,6 +737,7 @@ var hierarchy =
     ] ],
     [ "cursestone::network::protocol::SetEntityMotionPacket::Motion", "structcursestone_1_1network_1_1protocol_1_1SetEntityMotionPacket_1_1Motion.html", null ],
     [ "cursestone::physics::MotionResult", "structcursestone_1_1physics_1_1MotionResult.html", null ],
+    [ "cursestone::entity::ai::MoveControl", "classcursestone_1_1entity_1_1ai_1_1MoveControl.html", null ],
     [ "cursestone::tile::Nameable", "classcursestone_1_1tile_1_1Nameable.html", [
       [ "cursestone::tile::TileChest", "classcursestone_1_1tile_1_1TileChest.html", null ],
       [ "cursestone::tile::TileFurnace", "classcursestone_1_1tile_1_1TileFurnace.html", null ]
@@ -775,6 +798,11 @@ var hierarchy =
         [ "cursestone::world::particle::WhiteSmokeParticle", "classcursestone_1_1world_1_1particle_1_1WhiteSmokeParticle.html", null ]
       ] ]
     ] ],
+    [ "cursestone::entity::ai::Path", "classcursestone_1_1entity_1_1ai_1_1Path.html", null ],
+    [ "cursestone::entity::ai::PathBox", "structcursestone_1_1entity_1_1ai_1_1PathBox.html", null ],
+    [ "cursestone::entity::ai::PathFinder", "classcursestone_1_1entity_1_1ai_1_1PathFinder.html", null ],
+    [ "cursestone::entity::ai::PathNavigation", "classcursestone_1_1entity_1_1ai_1_1PathNavigation.html", null ],
+    [ "cursestone::entity::ai::PathNode", "structcursestone_1_1entity_1_1ai_1_1PathNode.html", null ],
     [ "cursestone::performance::PerformanceManager", "classcursestone_1_1performance_1_1PerformanceManager.html", null ],
     [ "vgen::PerlinNoise", "classvgen_1_1PerlinNoise.html", null ],
     [ "vgen::PerlinSimplexNoise", "classvgen_1_1PerlinSimplexNoise.html", null ],
@@ -791,6 +819,7 @@ var hierarchy =
     [ "vgen::PlainsRefTable", "classvgen_1_1PlainsRefTable.html", null ],
     [ "vgen::Facing::Plane", "classvgen_1_1Facing_1_1Plane.html", null ],
     [ "cursestone::PlayerConfig", "structcursestone_1_1PlayerConfig.html", null ],
+    [ "cursestone::entity::ai::MobAIManager::PlayerContext", "structcursestone_1_1entity_1_1ai_1_1MobAIManager_1_1PlayerContext.html", null ],
     [ "cursestone::diagnostics::PlayerSnapshot", "structcursestone_1_1diagnostics_1_1PlayerSnapshot.html", null ],
     [ "cursestone::plugin::PluginBase", "classcursestone_1_1plugin_1_1PluginBase.html", [
       [ "cursestone::plugin::LuaPlugin", "classcursestone_1_1plugin_1_1LuaPlugin.html", null ],
@@ -826,6 +855,7 @@ var hierarchy =
     [ "cursestone::performance::SaveProfiler::Scope", "classcursestone_1_1performance_1_1SaveProfiler_1_1Scope.html", null ],
     [ "vgen::ScopedProfile", "structvgen_1_1ScopedProfile.html", null ],
     [ "cursestone::performance::ScopedStage", "classcursestone_1_1performance_1_1ScopedStage.html", null ],
+    [ "cursestone::entity::ai::Sensing", "classcursestone_1_1entity_1_1ai_1_1Sensing.html", null ],
     [ "cursestone::Server", "classcursestone_1_1Server.html", null ],
     [ "cursestone::scheduler::ServerScheduler", "classcursestone_1_1scheduler_1_1ServerScheduler.html", null ],
     [ "vgen::SimplexNoise", "classvgen_1_1SimplexNoise.html", null ],
@@ -906,7 +936,6 @@ var hierarchy =
       [ "vgen::VillageStart", "classvgen_1_1VillageStart.html", null ]
     ] ],
     [ "vgen::Biome::SurfaceMats", "structvgen_1_1Biome_1_1SurfaceMats.html", null ],
-    [ "cursestone::entity::ai::water::SwimBob", "structcursestone_1_1entity_1_1ai_1_1water_1_1SwimBob.html", null ],
     [ "cursestone::world::generator::Synth", "classcursestone_1_1world_1_1generator_1_1Synth.html", [
       [ "cursestone::world::generator::ImprovedNoise", "classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html", null ],
       [ "cursestone::world::generator::PerlinNoise", "classcursestone_1_1world_1_1generator_1_1PerlinNoise.html", null ]
@@ -933,6 +962,7 @@ var hierarchy =
       [ "vgen::ListTag", "classvgen_1_1ListTag.html", null ]
     ] ],
     [ "vgen::TallGrassTypeShim", "classvgen_1_1TallGrassTypeShim.html", null ],
+    [ "cursestone::entity::ai::TargetRef", "structcursestone_1_1entity_1_1ai_1_1TargetRef.html", null ],
     [ "cursestone::scheduler::Task", "classcursestone_1_1scheduler_1_1Task.html", [
       [ "cursestone::scheduler::AsyncTask", "classcursestone_1_1scheduler_1_1AsyncTask.html", [
         [ "cursestone::network::CompressBatchedTask", "classcursestone_1_1network_1_1CompressBatchedTask.html", null ],
@@ -961,7 +991,7 @@ var hierarchy =
     [ "cursestone::world::format::leveldb::db::VersionEdit", "structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1VersionEdit.html", null ],
     [ "cursestone::utils::VersionString", "classcursestone_1_1utils_1_1VersionString.html", null ],
     [ "vgen::VineBlock", "classvgen_1_1VineBlock.html", null ],
-    [ "cursestone::entity::ai::water::WaterVerticalStep", "structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html", null ],
+    [ "cursestone::entity::ai::Path::WalkPos", "structcursestone_1_1entity_1_1ai_1_1Path_1_1WalkPos.html", null ],
     [ "vgen::WeighedRandom", "classvgen_1_1WeighedRandom.html", null ],
     [ "vgen::WeighedRandom::WeighedRandomItem", "classvgen_1_1WeighedRandom_1_1WeighedRandomItem.html", [
       [ "vgen::MobSpawnerData", "classvgen_1_1MobSpawnerData.html", null ]

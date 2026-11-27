@@ -1,9 +1,9 @@
 var classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal =
 [
-    [ "LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a3509aa97d3e55d5083ae727670fd25ad", null ],
-    [ "canStart", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#abad2a40da348ba5ca572e39b995ea246", null ],
-    [ "flags", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a9a9d6ff6c58a79d3e384cdabbacdeda8", null ],
-    [ "priority", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a0ea9557b40ffba7d5fa6407329f72220", null ],
-    [ "shouldContinue", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#add131a435d1a9b1f876059094eba0d78", null ],
-    [ "tick", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#af3b8dd39548b2ee396f001ad0482e3d2", null ]
+    [ "LookAtPlayerGoal", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a3b14e091c72de6172071fe4ba3f97d46", null ],
+    [ "canContinueToUse", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#ac9e8b5646c1fd2114687a3b17ff1291e", null ],
+    [ "canUse", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a15e75ac0731b84f3657c679567843e48", null ],
+    [ "start", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a8a9cfe84ae75c57b8f893910c3fb2578", null ],
+    [ "stop", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a049a9fb3678fe4a04b1b560f95d3bf56", null ],
+    [ "tick", "classcursestone_1_1entity_1_1ai_1_1LookAtPlayerGoal.html#a243ebebb5082bc6357237f14cde57d64", null ]
 ];

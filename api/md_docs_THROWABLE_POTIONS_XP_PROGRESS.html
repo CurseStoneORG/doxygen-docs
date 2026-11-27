@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('md_docs_THROWABLE_POTIONS_XP_PROGRESS.
 <div class="textblock"><blockquote class="doxtable">
 <p>Última actualización: 2026-11-27, tras completar FASE 1-3 (investigación). Tarea: implementar el comportamiento vanilla de MCPE 0.15.x para pociones arrojadizas (lanzado, trayectoria, impacto, efectos, partículas, sonido, sincronización), botellas de experiencia (lanzado, impacto, orbes, recolección) y el sistema de XP/niveles del jugador (curva, HUD, persistencia). </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md342"></a>
+<h1><a class="anchor" id="autotoc_md329"></a>
 Estado Git</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -107,10 +107,10 @@ Estado Git</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Estado del árbol   </td><td class="markdownTableBodyNone">limpio tras cada commit   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md343"></a>
+<h1><a class="anchor" id="autotoc_md330"></a>
 Ramas protegidas (no modificar)</h1>
 <p><code>stable</code>, <code>fix-pickup-metadata</code>, <code>fix-pickup-vanilla</code>, <code>fix-potion-effects-vanilla</code>. Autor obligatorio de todos los commits: <code>Dr1xyDev &lt;240832661+Dr1xyDev@users.noreply.github.com&gt;</code> (configurado localmente).</p>
-<h1><a class="anchor" id="autotoc_md344"></a>
+<h1><a class="anchor" id="autotoc_md331"></a>
 Estado de FASES</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -140,7 +140,7 @@ Estado de FASES</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">10 — Commit final, push, resumen   </td><td class="markdownTableBodyNone">COMPLETADA en esta sesión   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md345"></a>
+<h1><a class="anchor" id="autotoc_md332"></a>
 Entorno</h1>
 <ul>
 <li>Clon real del repo: <code>/home/z/my-project/repos/CurseStone</code> (OJO: <code>/home/z/my-project/CurseStone</code> NO es un clon git).</li>
@@ -149,10 +149,10 @@ Entorno</h1>
 <li>Herramientas RE: <code>scripts/re_disasm.py</code> (SO apunta a <code>android/lib/...</code>), <code>scripts/xp_re.py</code> ... <code>xp_re10.txt</code> en <code>android/</code>, <code>scripts/xp_plt.py</code> (resolutor PLT JUMP_SLOT), <code>scripts/xp_callers.py</code>.</li>
 <li>Genisys 0.15.0 (tag <code>ec716b0ea4</code>) extraído en <code>/home/z/my-project/android/genisys-0.15/</code>.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md346"></a>
+<h1><a class="anchor" id="autotoc_md333"></a>
 Investigación de MCPE vanilla (binario real, verificada)</h1>
 <p>Todo lo siguiente fue medido en <code>libminecraftpe.so</code> 0.15.10 con desensamblado Thumb-2 (capstone) + resolución PLT/GOT (scripts <code>xp_*.py</code>, volcados <code>android/xp_re*.txt</code>):</p>
-<h2><a class="anchor" id="autotoc_md347"></a>
+<h2><a class="anchor" id="autotoc_md334"></a>
 Entidades e items</h2>
 <ul>
 <li><code>ExperiencePotionItem</code> (item botella XP): <code>registerItem&lt;ExperiencePotionItem, char[18], int&gt;</code> — nombre de 17 chars; ID de item <b>384</b> (confirmado por Genisys <code>ItemIds.php</code>: <code>BOTTLE_O_ENCHANTING/ENCHANTING_BOTTLE = 384</code>, <code>SPLASH_POTION = 438</code>).</li>
@@ -162,7 +162,7 @@ Entidades e items</h2>
 <li><code>Player::addExperience(int)</code> @ 0x00c15e78; <code>Player::addLevels(int)</code> @ 0x00c1604d; <code>Player::spawnExperienceOrb(Vec3 const&amp;, int)</code> @ 0x00c15dcd (ruta cliente); <code>Player::getXpTakeDelay/setXpTakeDelay</code> @ 0x00c16295/0x00c1629d.</li>
 <li>Atributos del HUD: strings <code>player.level</code> @ 0x1534723 y <code>player.experience</code> @ 0x1534730 presentes en el binario.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md348"></a>
+<h2><a class="anchor" id="autotoc_md335"></a>
 Lanzamiento (común a ambas botellas — &lt;tt&gt;Throwable::shoot(Mob&amp;)&lt;/tt&gt; @ 0x00c1e735 + &lt;tt&gt;Throwable::shoot(Vec3,float,float,Vec3)&lt;/tt&gt; @ 0x00c1e858)</h2>
 <ul>
 <li>Dirección: trigonométrica estándar desde yaw/pitch del lanzador (tablas trigonométricas fijas, multiplicador 16384).</li>
@@ -174,7 +174,7 @@ Lanzamiento (común a ambas botellas — &lt;tt&gt;Throwable::shoot(Mob&amp;)&lt
 <li>Consumo: 1 en survival (<code>ItemInstance::remove(1)</code>), creative sin consumo (<code>[player+0xd2f]</code> check).</li>
 <li>El spawn server-side: <code>new ExperiencePotion(player)</code> (0x1d0 bytes) → <code>Level vtable+0x30 (addEntity)</code>; solo si <code>Level::isClientSide()==false</code>.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md349"></a>
+<h2><a class="anchor" id="autotoc_md336"></a>
 Física del proyectil (&lt;tt&gt;Throwable::normalTick&lt;/tt&gt; @ 0x00c1ed19 + getters)</h2>
 <ul>
 <li><b>Gravedad: ThrownPotion 0.05/tick, ExperiencePotion 0.05/tick</b> (<code>getGravity</code> = 0x3D4CCCCD; base Throwable = 0.03 = 0x3CF5C28F). ¡CurseStone/Genisys usaban 0.1 — incorrecto!</li>
@@ -183,14 +183,14 @@ Física del proyectil (&lt;tt&gt;Throwable::normalTick&lt;/tt&gt; @ 0x00c1ed19 +
 <li>En cambio de dimensión: flag reiniciado, edad a 0, motion amortiguada aleatoriamente.</li>
 <li>Rotación del sprite: normalización ±180/±360 (spin).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md350"></a>
+<h2><a class="anchor" id="autotoc_md337"></a>
 Impacto de la botella XP (&lt;tt&gt;ExperiencePotion::onHit&lt;/tt&gt; @ 0x00c1c0d0)</h2>
 <ol type="1">
 <li><code>Level::potionSplash(pos, &lt;Color global&gt;, false)</code> — partículas/sonido de ruptura (la misma ruta que ThrownPotion; el Color es un global no legible estáticamente → color NO VERIFICADO, se usa el de Genisys 46,82,153 como aproximación documentada).</li>
 <li>Si <code>!isClientSide()</code>: <code>ExperienceOrb::spawnOrbs(region, hitPos, 3, 11, nullptr)</code>.</li>
 <li>kill (vtable+0x14).</li>
 </ol>
-<h2><a class="anchor" id="autotoc_md351"></a>
+<h2><a class="anchor" id="autotoc_md338"></a>
 Orbes (&lt;tt&gt;ExperienceOrb::spawnOrbs&lt;/tt&gt; 2 overloads + normalTick + playerTouch)</h2>
 <ul>
 <li>Reparto en orbes canónicos: mientras remaining&gt;0: valor = truncar a la escalera **{1,3,7,17,37,73,149,307,617,1237,2477}** (regla del binario: <code>&gt;2→3, &gt;6→7, &gt;16→17, &gt;36→37, &gt;72→73, &gt;148→149, &gt;306→307, &gt;616→617, &gt;1236→1237, &gt;2476→2477, si no 1</code>); remaining −= valor; bucle. (2 → dos orbes de 1; 5 → 3+1+1.)</li>
@@ -200,7 +200,7 @@ Orbes (&lt;tt&gt;ExperienceOrb::spawnOrbs&lt;/tt&gt; 2 overloads + normalTick + 
 <li>Atracción (formula verificada @ 0x00be8194): jugador seguido recordado por UniqueID (+0x1a8/+0x1b0 tick de adquisición); re-adquisición si no hay jugador, o <code>distanceToSqr &gt; 64.0</code> (8 bloques), o cada ~(20+rand(100)) ticks; <code>Level::getNearestPlayer(this, 8.0)</code> para adquirir. Movimiento: delta=(playerPos+eyeHeight−orbPos)/8; len=|delta|; c=1−len; si c&gt;0: <b>motion += delta/len × c²</b> (por eje). Sin factor 0.7 (Genisys lo tenía — incorrecto).</li>
 <li>Recogida (<code>playerTouch</code> @ 0x00be8688): sólo server-side (<code>Level::isClientSide</code>); espectador excluido (vtable+0xfc); **<code>Player::getXpTakeDelay() != 0 → return</code>**; al recoger **<code>setXpTakeDelay(2)</code>** (máx 1 orbe cada 2 ticks); **<code>Player::addExperience(valor de metadata 11)</code>**; sonido **<code>Level::broadcastDimensionEvent(region, 1051, playerPos+0.5, 0, null)</code>** (evento 1051 = "random.orb", string @ 0x152e885); kill del orbe. Sin paquete Take.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md352"></a>
+<h2><a class="anchor" id="autotoc_md339"></a>
 Sistema XP del jugador (&lt;tt&gt;Player::addExperience(int)&lt;/tt&gt; @ 0x00c15e78)</h2>
 <ul>
 <li>Campos: progreso (atributo player.experience 0..1), nivel (player.level), total acumulado (+0xd18).</li>
@@ -209,14 +209,14 @@ Sistema XP del jugador (&lt;tt&gt;Player::addExperience(int)&lt;/tt&gt; @ 0x00c1
 <li>Recogida orbe a orbe con delay 2 ticks (ver arriba).</li>
 <li>Persistencia NBT vanilla: claves <code>XpLevel</code> + <code>XpP</code> (CurseStone ya las usa) — añadir <code>XpTotal</code> para el total.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md353"></a>
+<h2><a class="anchor" id="autotoc_md340"></a>
 Referencia Genisys 0.15.0 (diferencias documentadas)</h2>
 <ul>
 <li><code>ThrownExpBottle</code>: NETWORK_ID=68 ✓ (correcto), gravity 0.1 ✗ (binario 0.05), drag 0.15 ✗, throwPower 1.1 ✗ (binario 0.5), 3 orbes de <code>mt_rand(1,4)</code> ✗ (binario: total 3..10 repartido en escalera canónica), partículas (46,82,153) (única referencia de color).</li>
 <li><code>XPOrb</code>: NETWORK_ID=69 ✓, gravity 0.04 ✓ (−0.04 en binario), drag 0 ✗, atracción con factor 0.7 ✗ (el binario NO lo tiene), recogida ≤1.3 ✗ (el binario usa contact AABB + XpTakeDelay), sin metadata del valor ✗ (el binario usa metadata 11 INT).</li>
 <li><code>Player</code>: curva moderna ✗ (binario: curva antigua), <code>updateExperience</code> via atributos ✓ (mecanismo correcto).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md354"></a>
+<h1><a class="anchor" id="autotoc_md341"></a>
 Inventario funcional (FASE 1.1)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -252,7 +252,7 @@ Inventario funcional (FASE 1.1)</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Persistencia   </td><td class="markdownTableBodyNone">NBT XpLevel + XpP ✓ (guardar/cargar)   </td><td class="markdownTableBodyNone">sin persistencia XP   </td><td class="markdownTableBodyNone">XpLevel/XpP (+XpTotal en Java)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md355"></a>
+<h1><a class="anchor" id="autotoc_md342"></a>
 Diseño de implementación</h1>
 <ol type="1">
 <li><b>XP del jugador</b> (<code><a class="el" href="Player_8h_source.html">src/Player.h</a></code>, <code>src/player/PlayerStats.cpp</code>, <code>src/Player.cpp</code>, <code>src/player/PlayerLogin.cpp</code>):<ul>
@@ -266,7 +266,7 @@ Diseño de implementación</h1>
 <li><b>Corrección trayectoria splash potion</b>: <code>throwSplashPotion</code> power 0.5 + pitch−20 + gaussiana + hereda motion; <code>tickSplashPotions</code> gravity 0.05 + drag 0.99 (0.8 en agua).</li>
 <li>Tests enfocados (curva XP, escalera de orbes, serialización de paquetes, física por tick) reutilizando la infraestructura de tests existente.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md356"></a>
+<h1><a class="anchor" id="autotoc_md343"></a>
 Problemas encontrados</h1>
 <ul>
 <li>Los valores de Genisys (power 1.1, gravity 0.1, drag 0.05/0.15, factor 0.7, curva moderna, sin metadata de orbe) difieren del binario 0.15.10 — el binario manda.</li>
@@ -274,7 +274,7 @@ Problemas encontrados</h1>
 <li>PR #15 (pociones) ya cubre efectos/splash; NO duplicar ese sistema.</li>
 <li>Emulador no viable (docs/ENTORNO.md) → pruebas con cliente real NO VERIFICADAS.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md357"></a>
+<h1><a class="anchor" id="autotoc_md344"></a>
 Elementos "NO VERIFICADOS"</h1>
 <ul>
 <li>Todo lo visual/en vivo con el cliente real (trayectoria medida, HUD en pantalla, sonido audible).</li>
@@ -284,7 +284,7 @@ Elementos "NO VERIFICADOS"</h1>
 <li>La caja de colisión del ExperiencePotion (setSize(1.0,1.0) visto en un ctor; Genisys dice 0.25).</li>
 <li>La semántica del rand del spawnOrbs (umodsi3 → [0,n) asumido).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md358"></a>
+<h1><a class="anchor" id="autotoc_md345"></a>
 Commits de la sesión (todos con autor Dr1xyDev, push verificado)</h1>
 <ol type="1">
 <li><code>cb2883b</code> docs: checkpoint inicial</li>
@@ -294,25 +294,25 @@ Commits de la sesión (todos con autor Dr1xyDev, push verificado)</h1>
 <li><code>0ba6316</code> test: focused throwable potion and xp checks against the 0.15.10 binary</li>
 <li>(este commit) docs: THROWABLE_POTIONS_XP_VANILLA.md + checkpoint final</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md359"></a>
+<h1><a class="anchor" id="autotoc_md346"></a>
 Problemas encontrados (adición)</h1>
 <ul>
 <li>El script de build incremental del sandbox NO reconstruye los TUs que incluyen headers modificados: tras cambiar <a class="el" href="World_8h_source.html">World.h</a>/Player.h hay que borrar el directorio de objetos. El crash «malloc(): invalid size (unsorted)» del smoke vino de esa mezcla de ABIs, NO del código: rebuild limpio de <code>871aa99</code>, de <code>0ac368f</code> y de HEAD arrancan y apagan limpios (HEAD también bajo ASAN sin hallazgos).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md360"></a>
+<h1><a class="anchor" id="autotoc_md347"></a>
 Estado de compilación / smoke</h1>
 <ul>
 <li>Build completo limpio de HEAD: OK (<code>/tmp/cs_xp/CurseStone</code>).</li>
 <li>Smoke: arranque + 15 s + SIGTERM + cierre limpio ("Shutdown complete", mundo guardado).</li>
 <li>ASAN (d50161d): sin hallazgos.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md361"></a>
+<h1><a class="anchor" id="autotoc_md348"></a>
 CI y PR (resultado real)</h1>
 <ul>
 <li><b>PR #16</b> abierto: <code>fix-throwable-potions-xp-vanilla</code> → <code>stable</code> — <a href="https://github.com/CurseStoneORG/CurseStone/pull/16">https://github.com/CurseStoneORG/CurseStone/pull/16</a></li>
 <li><b>CI sobre el commit exacto <code>fd8f085</code></b>: run 45945084172 "Build CurseStone" = <b>completed success</b>; run 45945084171 "Docs" = success. (Nota: Build.yml no se dispara por push a esta rama, solo por el PR/push a stable; el run se verificó por API con la autenticación configurada.)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md362"></a>
+<h1><a class="anchor" id="autotoc_md349"></a>
 Próximo paso exacto</h1>
 <ol type="1">
 <li>Revisar y fusionar el PR #16 (no fusionar sin revisión).</li>

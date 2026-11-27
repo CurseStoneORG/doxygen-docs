@@ -86,199 +86,87 @@ $(document).ready(function(){initNavTree('md_docs_MOB_AI.html',''); initResizabl
 <div class="title">Mob AI architecture </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Design document for CurseStone's entity AI system. Written <b>before</b> the implementation it describes; the implementation status lives in section 9. The architecture keeps every world mutation on the main thread, budgets the AI work per tick, tiers updates by distance to the players and leaves the public plugin surface untouched.</p>
+<div class="textblock"><p>CurseStone's mob AI is a port of the <b>MCPE 0.8.1 goal system</b> — the <code>minecraftpe/impl/entity/ai</code> decompile (oldminecraftcommunity): a GoalSelector pair per mob, the five controls (Move / Look / Body / Jump / Sensing), the bounded A* <code>PathFinder</code>, and the era goal set registered exactly where the era mob constructors register them. The era code operated on real <code>Mob</code> entities; CurseStone mobs are plain <code>world::MobEntity</code> records driven by <code>MobAIManager</code>, so the port runs through a per-brain <code>Mob</code> facade (<a class="el" href="Mob_8h_source.html">entity/ai/Mob.h</a>) that reproduces the era Mob surface on top of the record.</p>
 <h1><a class="anchor" id="autotoc_md188"></a>
-1. Starting point (facts about the current tree)</h1>
-<p>Mobs are lightweight server records, not ticking entities:</p>
-<ul>
-<li><code>world::MobEntity</code> (<a class="el" href="World_8h_source.html">World.h</a>) — a plain struct: <code>eid</code>, protocol-84 <code>type</code>, feet position <code>x/y/z</code>, <code>yaw/pitch</code>, and the chunk index <code>cx/cz</code> mirrored by <code>World::mobs_by_chunk_</code>. No health, no physics, no tick entry.</li>
-<li><code>World::spawnMob / moveMob / removeMob / mob / mobs / mobCount</code> are the whole C++ surface; the Lua bindings (<code>world.spawnEntity / moveEntity / removeEntity / getEntity / getEntities / entityTypes</code>) and the native plugin ABI wrap exactly these functions. All of them mutate on the main thread behind <code>mobs_mtx_</code>.</li>
-<li>Client sync: one <code>AddEntityPacket</code> on spawn (with the metadata NoAI flag, so the 0.15.10 client never simulates the mob itself), one <code>MoveEntityPacket</code> per explicit move, one <code>RemoveEntityPacket</code> on removal, and a per-chunk resend (<code>sendMobsInChunk</code>) for viewers that stream the chunk later.</li>
-<li>Physics: <code>physics::sweep()</code> + <code>World::collisionBoxes()</code> already resolve displacement against block collision (dropped items and falling blocks use them).</li>
-<li>Behavior families: the per-mob headers in <code>src/entity/mobs/</code> declare a <code>MobKind</code> (Passive / Neutral / Hostile / Water / Ambient), exposed as <code>entity::mobTypeKind(id)</code>.</li>
-<li><code>docs/THREADING.md</code>, Lesson 4 already calls for exactly two things when AI lands: a drained update budget and render-distance gating.</li>
-</ul>
+1. What replaced what</h1>
+<p>The previous CurseStone AI (intent-based: goals wrote a <code>MobIntent</code> snapshot, the manager steered and actuated) is gone. In its place:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Era class (0.8.1 decompile)   </th><th class="markdownTableHeadNone">CurseStone port    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>entity/ai/Goal.cpp</code>   </td><td class="markdownTableBodyNone"><code><a class="el" href="Goal_8h_source.html">entity/ai/Goal.h</a></code> (control flags, canUse/canContinueToUse/canInterrupt/start/stop/tick)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>entity/ai/GoalSelector.cpp</code>   </td><td class="markdownTableBodyNone"><code><a class="el" href="GoalSelector_8h_source.html">entity/ai/GoalSelector.h</a>/.cpp</code> (two selectors per brain: targets first, then movement)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>entity/ai/MoveControl.cpp</code>   </td><td class="markdownTableBodyNone"><code><a class="el" href="MoveControl_8h_source.html">entity/ai/MoveControl.h</a>/.cpp</code> (wanted position, ±30 deg/tick yaw, speed arm, step jump)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>entity/ai/LookControl.cpp</code>   </td><td class="markdownTableBodyNone"><code><a class="el" href="LookControl_8h_source.html">entity/ai/LookControl.h</a>/.cpp</code> (look target, ±speed head turn, drift, ±75 navigation cone)    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>entity/ai/BodyControl.cpp</code>   </td><td class="markdownTableBodyNone"><code><a class="el" href="BodyControl_8h_source.html">entity/ai/BodyControl.h</a>/.cpp</code> (idle ramp, 10 deg/tick chase, ±75 cone)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>entity/ai/JumpControl.cpp</code>   </td><td class="markdownTableBodyNone"><code><a class="el" href="JumpControl_8h_source.html">entity/ai/JumpControl.h</a></code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>entity/ai/Sensing.cpp</code> (empty)   </td><td class="markdownTableBodyNone"><code><a class="el" href="Sensing_8h_source.html">entity/ai/Sensing.h</a>/.cpp</code> (reconstructed: per-tick can-see raycast cache)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>entity/path/{Node,Path,BinaryHeap,PathFinder,PathNavigation}.cpp</code>   </td><td class="markdownTableBodyNone"><code>entity/ai/path/*</code> + <code>entity/ai/PathNavigation.*</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>util/RandomPos.hpp</code> (body lost)   </td><td class="markdownTableBodyNone"><code>entity/ai/RandomPos.*</code> (reconstructed era behavior)    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>entity/ai/goals/*.cpp</code>   </td><td class="markdownTableBodyNone"><code>entity/ai/goals/</code> (grouped: Movement / Target / Combat / Passive / Sun / Door)   </td></tr>
+</table>
+<p>Reconstructed bodies (the decompile ships them empty): <code>TargetGoal</code>, <code>HurtByTargetGoal</code>, <code>NearestAttackableTargetGoal</code> (era contract restored from the call sites: they run in the second selector, set the mob's attack target), <code>Sensing::canSee</code>, <code>RandomPos::generateRandomPos</code>.</p>
+<p>Not ported (no supporting system exists on this server): <code>BreedGoal</code> and <code>FollowParentGoal</code> (no love/age system). The era pig/cow/sheep/chicken <code>TemptGoal</code> lists keep their item ids (potato/carrot for the pig, wheat for cow/sheep, seeds for the chicken).</p>
 <h1><a class="anchor" id="autotoc_md189"></a>
-2. Design goals and constraints</h1>
+2. Per-tick pipeline (era &lt;tt&gt;Mob::newServerAiStep&lt;/tt&gt;)</h1>
+<p><code>MobBrain::newServerAiStep(world, record, tick)</code> runs the era order:</p>
 <ol type="1">
-<li><b>Public surface unchanged.</b> <code>MobEntity</code>, <code>spawnMob/moveMob/ removeMob/mob/mobs/mobCount</code>, the Lua table shapes and the native ABI stay byte-for-byte compatible. AI is added <em>around</em> them, never instead of them.</li>
-<li><b>Main thread owns the world.</b> No worker thread reads or writes <code>MobEntity</code>, chunk data or player state. Stage 1 runs AI entirely on the main thread, inside a budget; the architecture reserves the seam for later off-thread <em>calculations</em> (see section 6).</li>
-<li><b>Budget, not unbounded iteration.</b> Mob AI drains a per-tick wall clock budget with a round-robin cursor, the same contract light and liquid use. Under load, mobs slow down; the server does not.</li>
-<li><b>Presence gating.</b> A mob thinks and moves only when at least one spawned player is within the world's view distance (Chebyshev chunk distance). Far mobs are frozen, not despawned.</li>
-<li><b>Per-mob scalability.</b> Behaviors are independent, composable goals with priority + mutex flags; a mob's brain is a goal list assembled from its <code>MobKind</code>. Adding a behavior must not touch the manager or the world.</li>
-<li><b>Calculation vs. mutation.</b> Goals read an immutable snapshot (<code>MobContext</code>) and write <em>intent</em> into their own brain. Only the actuation step turns intent into physics, record updates and packets — on the main thread.</li>
+<li><code>++noActionTime</code>, then the era <code>checkDespawn</code> reset (a player within 32 blocks zeroes the counter — without it the stroll goal would fall silent after 100 ticks).</li>
+<li><code>goalSelector2.tick()</code> — the target goals.</li>
+<li><code>goalSelector.tick()</code> — the movement goals (they call <code>navigation-&gt;moveTo</code>, <code>lookControl-&gt;setLookAt</code>, <code>jumpControl-&gt;jump</code>).</li>
+<li><code>navigation.tick()</code> — skips the path ahead, feeds <code>MoveControl::setWantedPosition</code>.</li>
+<li>The mob-specific step: the creeper fuse (<code>swellTime</code> 0..30, then the actuation detonates a power-3 <code>Explosion</code> and removes the record).</li>
+<li><code>moveControl.tick()</code>, <code>lookControl.tick()</code>, <code>jumpControl.tick()</code>.</li>
 </ol>
+<p>The actuation step (MobAIManager::actuateOne) then converts the control state into world movement: the era speed channel × the movement yaw direction (halved in water), the era vertical model (0.42 ground jump, water gravity 0.02 / drag 0.8 / paddle 0.04 from the jump channel, 0.30 shore hop), <code>physics::sweep()</code> against the resident chunks, and the broadcast gate (only changes past the packet thresholds reach the wire). Body yaw rides the record's <code>yaw</code> channel (BodyControl reconciled it), head yaw and pitch ride their own channels.</p>
 <h1><a class="anchor" id="autotoc_md190"></a>
-3. Components</h1>
-<div class="fragment"><div class="line">src/entity/ai/</div>
-<div class="line">  Goal.h          Goal interface: flags(), priority(), canStart(),</div>
-<div class="line">                  shouldContinue(), start(), stop(), tick()</div>
-<div class="line">  Goals.h/.cpp    Stage-1 behaviors: WanderGoal, LookAtPlayerGoal,</div>
-<div class="line">                  IdleGoal (plus goal factories per MobKind)</div>
-<div class="line">  MobAI.h/.cpp    MobBrain (per-mob state machine + intent), MobContext</div>
-<div class="line">                  (immutable inputs), brain assembly per mob kind</div>
-<div class="line">  MobAIManager.h/.cpp  Per-world driver: sensing, cadence, budget,</div>
-<div class="line">                  actuation through World::moveMob</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md191"></a>
-Goal</h2>
-<p>One behavior = one object, stateless across mobs, state inside its brain slot. Selection rules:</p>
+3. Goal wiring (era registrations)</h1>
+<p><code>MobBrain::setupGoals</code> copies the exact <code>addGoal</code> sequences from the era mob constructors:</p>
 <ul>
-<li><code>priority()</code> — higher wins when two runnable goals share a flag.</li>
-<li><code>flags()</code> — mutex bits (<code>kFlagMove</code>, <code>kFlagLook</code>): a running goal blocks starting another goal with an overlapping bit (a mob cannot wander and panic-move at the same time).</li>
-<li><code>canStart(ctx)</code> is evaluated only on the mob's think cadence; <code>tick(ctx, brain)</code> runs on think ticks while the goal is active; <code>shouldContinue(ctx)</code> decides when to release it.</li>
+<li><b>Zombie / ZombieVillager / Husk</b> (Zombie.cpp): Float(0), BreakDoor(1), MeleeAttack(2, 1.0), RandomStroll(6, 1.0), LookAtPlayer(7, 8), RandomLookAround(7); targets HurtBy(1), NearestAttackable(2).</li>
+<li><b>Skeleton / Stray</b> (Skeleton.cpp): Float(1), RestrictSun(2), FleeSun(3, 1.0), ArrowAttack(4, 1.0, arrow, 60), RandomStroll(5, 1.0), LookAtPlayer(6, 8), RandomLookAround(6); targets HurtBy(1), NearestAttackable(2).</li>
+<li><b>Creeper</b> (Creeper.cpp): Float(1), Swell(2), MeleeAttack(4, 1.25), RandomStroll(5, 1.0), LookAtPlayer(6, 8), RandomLookAround(6); targets NearestAttackable(2), HurtBy(2).</li>
+<li><b>Pig / Cow / Mooshroom / Sheep / Chicken</b>: the era passive sequences (Float(0), Panic(1, 1.5), Tempt(3, …), the sheep's EatTileGoal(5), RandomStroll, LookAtPlayer, RandomLookAround) with the era stroll speeds (cow 0.8, the rest 1.0).</li>
+<li><b>ZombiePigman</b> (neutral): the era mob ran the old AI; the port gives it the retaliate-only shape (no NearestAttackableTargetGoal).</li>
+<li><b>Other grounded kinds</b> (era mobs ran other movement code): the closest family template — hostiles get the zombie combat template, neutrals the pigman template, passives the pig template — documented in MobBrain.cpp.</li>
+<li><b>Flight / hopping / aquatic</b> (ghast, blaze, bat, squid, slime): static, the pre-AI behavior, exactly as before.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md192"></a>
-MobBrain</h2>
-<p>All per-mob dynamic state lives here (keyed by eid in the manager): the owned goal list, which goals are active, movement intent (direction, speed, jump request, look yaw), physics carry-over (<code>motion_y</code>, <code>on_ground</code>), timers and a per-brain RNG. The brain never touches <code>World</code>, <code>Player</code> or packets — it only <em>decides</em>.</p>
-<h2><a class="anchor" id="autotoc_md193"></a>
-MobContext</h2>
-<p>The read-only input snapshot a goal may see: own position/rotation, own kind, nearest-player distance and position, whether any player is in range at all, and the current tick. It contains no pointers into mutable world state, so a future off-thread thinker can consume the same struct unchanged.</p>
-<h2><a class="anchor" id="autotoc_md194"></a>
-MobAIManager</h2>
-<p>One instance per <code>World</code> (owned by the world, driven from <code>World::tick()</code>). Per tick:</p>
-<div class="fragment"><div class="line">tick(world, currentTick):</div>
-<div class="line">  players   = spawned players of this world        (read snapshot)</div>
-<div class="line">  mobs      = record snapshot under mobs_mtx_      (pointers, stable)</div>
-<div class="line">  gc brains whose eid vanished from mobs_</div>
-<div class="line">  for each mob in round-robin order:</div>
-<div class="line">    gate     = any player within view distance      (chunk coords)</div>
-<div class="line">    if gate:</div>
-<div class="line">      think   = (tick + eid) % kThinkInterval == 0   (staggered)</div>
-<div class="line">      if think: build MobContext; goal selection; active goals tick</div>
-<div class="line">                and write intent into the brain</div>
-<div class="line">      actuate: intent -&gt; velocity, physics::sweep against</div>
-<div class="line">               collisionBoxes(), then World::moveMob() when the</div>
-<div class="line">               position changed enough to matter</div>
-<div class="line">    else:</div>
-<div class="line">      brain intent cleared (frozen mob keeps its last state)</div>
-<div class="line">    if elapsed &gt; kMobBudgetMs: advance cursor and leave the rest</div>
-<div class="line">                                        for the next tick</div>
-</div><!-- fragment --><p>Actuation calls the existing <code>World::moveMob()</code>, so chunk re-indexing and <code>MoveEntityPacket</code> broadcast reuse the tested path (a send threshold skips moves smaller than 0.0005 blocks, matching dropped items).</p>
-<h1><a class="anchor" id="autotoc_md195"></a>
-4. Cadences and budgets</h1>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Constant   </th><th class="markdownTableHeadNone">Default   </th><th class="markdownTableHeadNone">Meaning    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>kMobBudgetMs</code>   </td><td class="markdownTableBodyNone">2.0 ms   </td><td class="markdownTableBodyNone">Wall-clock cap for the whole mob pass per tick    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone"><code>kThinkInterval</code>   </td><td class="markdownTableBodyNone">10 ticks   </td><td class="markdownTableBodyNone">Full goal evaluation every 0.5 s, staggered by eid    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone"><code>kMoveBroadcastEps</code>   </td><td class="markdownTableBodyNone">0.0005   </td><td class="markdownTableBodyNone">Position delta below which no packet is sent    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">walk speed   </td><td class="markdownTableBodyNone">~0.05 blocks/tick   </td><td class="markdownTableBodyNone">Calm wander pace (≈1 block/s)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">gravity / jump   </td><td class="markdownTableBodyNone">0.08 / 0.42   </td><td class="markdownTableBodyNone">Matches the era entity model   </td></tr>
-</table>
-<p>Staggering means a 1024-mob world thinks 100 goals per tick on average, not 1024 — the think step stays inside the budget even before it is measured.</p>
-<h1><a class="anchor" id="autotoc_md196"></a>
-5. Activation gate</h1>
-<p>Gate = at least one spawned, connected, non-removal player in the same world whose chunk is within the world's view distance (Chebyshev) of the mob's chunk. Frozen mobs: no think, no physics, no packets — the client keeps the last pose it received, which is also what vanilla renders for entities outside ticking range. The gate runs per mob per tick; with the per-tick player snapshot it is a handful of integer comparisons per mob.</p>
-<h1><a class="anchor" id="autotoc_md197"></a>
-6. Threading contract (now and later)</h1>
-<p>Stage 1: everything on the main thread, inside the budget. The manager is the only component allowed to convert intent into world mutation.</p>
-<p>The reserved seam for phase 2+ is <b>async sensing/steering for far mobs</b>: goal logic reads only <code>MobContext</code>, so a worker can evaluate goals over immutable copies and hand back intents for the main thread to apply (the same snapshot-then-actuate shape the chunk encoder uses). What will <em>never</em> move: <code>MobEntity</code> records, chunk data, packet sends, plugin callbacks — they stay main-thread by contract, matching <code>docs/THREADING.md</code> Lesson 1.</p>
-<h1><a class="anchor" id="autotoc_md198"></a>
-7. Compatibility contract</h1>
+<h1><a class="anchor" id="autotoc_md191"></a>
+4. Performance (server adaptations, behavior-preserving)</h1>
 <ul>
-<li><code>MobEntity</code> struct and all existing functions keep their signatures and semantics; plugins that call <code>moveEntity</code> fight nothing — the AI re-paths from the record's current position on its next think.</li>
-<li>The AddEntity metadata keeps the NoAI flag: the client stays a pure renderer for server-driven movement.</li>
-<li><code>kMaxMobs</code> rises 256 → 1024. The AI phase must validate 500-entity behavior, which the old cap made impossible; the cap still bounds memory and the round-robin pass.</li>
-<li>Water and Ambient kinds (squid, bat) stay static in stage 1; their movement models differ enough to deserve their own pass.</li>
+<li><b>Tiering and budget unchanged</b>: FULL tier (≤4 chunks from a player) runs the full era pipeline every tick; REDUCED tier runs it every 4th tick; chunks with no player are never visited; a wall-clock budget (2 ms base, 8 ms cap) degrades the farthest chunks first.</li>
+<li><b>Re-path rate limit</b>: the era re-ran A* on every <code>moveTo</code> request; the port re-paths only when the path is gone or finished, the goal moved more than 1.5 blocks, or the path aged past 40 ticks (PathNavigation::kRepathTicks). The goals still re-request at their era cadence.</li>
+<li><b>Node cache without the leak</b>: the era finder cleared its node map without freeing; the port owns nodes through unique_ptr entries cleared per search and keys them with the full 64-bit cell (the era 32-bit hash collided outside ±127).</li>
+<li><b>Era quirk kept</b>: GoalSelector::tick stops and re-arms a finished goal in the same pass (era <code>goto LABEL_8</code>).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md199"></a>
-8. Stage roadmap</h1>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Stage   </th><th class="markdownTableHeadNone">Content   </th><th class="markdownTableHeadNone">Trigger/integration    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">Wander, look-at-player, idle for Passive kinds; budget; gate; actuation   </td><td class="markdownTableBodyNone">Done    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">Species profiles (per-species speeds + body boxes + eye heights); natural movement for every grounded kind; panic reflex for passives (sprint pose + flee); hold-band swim model (~55% submersion, entry splash, swim wake); obstacle steering; tiered simulation (full/reduced/frozen) with a distance-ordered budget pass   </td><td class="markdownTableBodyNone">Done (this document, section 9)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">3   </td><td class="markdownTableBodyNone">Retaliation for Neutral kinds; hostile sight targeting, melee approach + attack cooldown   </td><td class="markdownTableBodyNone">Needs melee hit resolution against mob AABBs    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">Async steering for far mobs on the reserved seam; flight/hop/aquatic movement models (bat, ghast, blaze, slimes, squid)   </td><td class="markdownTableBodyNone">After stage 3 proves the intent format   </td></tr>
-</table>
-<h1><a class="anchor" id="autotoc_md200"></a>
-9. Implementation status</h1>
-<p>Implemented and verified (see commit history):</p>
+<h1><a class="anchor" id="autotoc_md192"></a>
+5. Conventions and deviations</h1>
 <ul>
-<li><code>src/entity/ai/</code> — Goal, Goals (Wander / LookAtPlayer / Idle / Panic), MobBrain/MobContext, MobAIManager (budget, tiers, actuation, steering, water effects).</li>
-<li><code><a class="el" href="EntityTypes_8h_source.html">src/entity/EntityTypes.h</a>/.cpp</code> — <code>MobProfile</code> table: per-species walk/panic speeds, collision width/height, eye height and the <code>grounded</code> flag. Grounded kinds (passives, neutrals, land hostiles) get the stage-2 goal set; flight (ghast, blaze, bat), hopping (slimes) and aquatic (squid) kinds stay static records until their movement model lands.</li>
-<li><code>World::damageMob</code> stamps the panic reflex (away-from-damager direction + tick) under the mob lock; <code>World::setMobSprinting</code> toggles the FLAGS metadata sprint bit — the 0.15.10 client renders the sprint pose and the faster leg cycle for fleeing mobs.</li>
-<li><code>World::chunkMobs</code> feeds the AI pass chunk by chunk (no whole-population list per tick); <code>MobAIManager::forget</code> drops brains event-driven on every removal path; <code>WorldConfig::max_mobs</code> (the <code>max-mobs</code> property) replaces the old compile-time cap.</li>
-<li><code>World::addParticle</code> rides the era LevelEventPacket particle ids 19 (water splash) and 20 (water wake) — the same particles the player's own swimming effect uses — for the mob entry splash and the rate-limited swim wake.</li>
-<li>Benchmark harness <code>tools/mob_ai_bench.py</code>: protocol-84 client joins, progressive populations (0 → 1,000,000) spawn in a golden-angle spiral; TPS/MSPT from the server's own /status, CPU and RAM from <code>/proc</code>, per-window AI work from the <code>[MOB AI]</code> diagnostics line, movement verified from the client's MoveEntityPacket stream.</li>
-<li>Model check <code>tools/mob_ai_water_check.cpp</code>: the hold-band swim equilibrium (idle + swimming + small bodies), the clamps, the shore hop, the facing split, the goal gates, the panic reflex and the species profile table — pure logic, no World.</li>
+<li><b>Yaw convention</b>: the AI layer uses the protocol-84 entity yaw the server already broadcasts (0 = +Z, 90 = +X; direction = (sin, cos)). The era math (<code>atan2(dz, dx) - 90</code>) is the mirror image; every era rotation is a symmetric clamp, so the port reproduces the motion exactly in the protocol convention (see <a class="el" href="AiMath_8h_source.html">AiMath.h</a>).</li>
+<li><b>Look request hold</b>: the era LookControl consumed its request in one tick; the port holds it for 4 ticks so the goal cadence (FULL tier = every tick, REDUCED = every 4th) cannot snap the head back between two goal ticks.</li>
+<li><b>Damage</b>: melee hits deal a single reconstructed value (3.0, the era-normal-difficulty shape; the per-kind <code>attackDamage</code> seeds are lost). Skeleton arrows launch with the era Arrow parameters (velocity 1.6, inaccuracy 12.0, gaussian 0.0075 × inaccuracy) and the era 2.0 arrow damage.</li>
+<li><b>RNG</b>: the era goals drew from the shared level random; the port draws from each brain's own Mersenne Twister (seeded per eid), which keeps every decision main-thread-only and reproducible.</li>
+<li><b>Mob burning does not exist yet</b>, so FleeSunGoal stays inert until that lands; RestrictSunGoal still steers skeleton paths away from the sky during the day.</li>
+<li><b>Doors</b>: the zombie keeps its era BreakDoorGoal registration, and the navigation's <code>canOpenDoors</code> default (off) gates the family — the era zombie shipped the same inert pairing.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md201"></a>
-The tier contract</h2>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Tier   </th><th class="markdownTableHeadNone">Condition   </th><th class="markdownTableHeadNone">Cost    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">FULL   </td><td class="markdownTableBodyNone">Chunk within 4 of a player's chunk (Chebyshev), or a panicking mob   </td><td class="markdownTableBodyNone">Think every 10 ticks, actuate every tick    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">REDUCED   </td><td class="markdownTableBodyNone">Inside the view distance, outside that radius   </td><td class="markdownTableBodyNone">Think every 40 ticks, actuate every 4 ticks (stride unchanged — positions stay exact, packets arrive at 5 Hz)    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">FROZEN   </td><td class="markdownTableBodyNone">Outside every player's view distance   </td><td class="markdownTableBodyNone">The chunk is not visited; the record persists in the region files   </td></tr>
-</table>
-<p>The pass walks chunks nearest-first and stops at the wall-clock budget (base 2 ms plus 0.5 ms per 1000 records, capped at 8 ms): under load, degradation lands on the OUTERMOST chunks — the mobs a player watches keep their smooth per-tick simulation, far mobs hold their last pose instead of stuttering. One <code>[MOB AI]</code> diagnostics line per 200 ticks reports records, live brains, actuations, thinks and budget cuts — the real numbers, not estimates.</p>
-<h2><a class="anchor" id="autotoc_md202"></a>
-The swim model (hold-band regulator + flotation bob)</h2>
-<p>The stage-1 loop integrated every floater up to the surface (mobs riding ON the water). Stage 2 is a regulator: inside the hold band (55% ± 7% of the body height under the rendered waterline) no net regulator force applies; below it the paddle lifts; above it water gravity sinks the body back. A swimming mob strokes toward the hold depth, never above it — it crosses chest-deep, its head clear for every species (profile heights). Shallow fords (water shallower than the hold depth) are WALKED, with the era water slowdown on the stride; the shore hop still climbs banks.</p>
-<p>The flotation bob replaces the frozen waterline inside the band. A per-mob oscillator (phase spread over a full cycle from the identity seed at brain creation, advanced one step per floating tick, frozen on land) drives a zero-mean vertical force (<code>water::swimBob</code>, one sine per swimming mob per tick) that rocks the body up and down over the surface — measured envelope 0.50..0.61 submersion for a cow, ~0.14 blocks peak-to-peak at 0.35 Hz — plus a ±5° pitch component that rides the move packet's pitch channel: a rising body noses up, a sinking body noses down, so the float reads as a natural rocking instead of a suspended statue. The excursions stay regulator-owned (anything beyond the band is corrected exactly as before), each mob rocks on its own beat (no synchronized herd wave), and equilibrium, sink recovery and the shore hop are unchanged — <code>tools/mob_ai_water_check.cpp</code> verifies the envelope, the smoothness bound, the straddle and the phase wrap.</p>
-<h2><a class="anchor" id="autotoc_md203"></a>
-Steering</h2>
-<p>Before the sweep, the actuation probes the cell one stride ahead: a wall (two body levels of solid) or — for a mob on land — deep water rotates the intended direction toward the first open candidate (±30°, ±60°, ±90°, ±135°, nearest turn first). A one-block step is NOT steered around (the jump logic climbs it); a one-deep ford is NOT steered around (it is walkable). The steered direction owns the facing, so the body always faces where the mob will actually walk.</p>
-<h2><a class="anchor" id="autotoc_md204"></a>
-Panic</h2>
-<p>Every hit stamps the away-from-threat direction and the tick into the mob record (the same cross-thread contract as knockback). A fresh hit forces an extra think the same tick, so the reflex starts at most one tick after the strike; the goal flees at the species panic pace for 100 ticks (re-aimed every ~15 ticks with a small per-mob lean so a herd scatters), re-arms on every further hit, and carries the FLAGS sprint bit while it runs. Hostile and neutral records stamp the same fields; their brains simply have no panic goal, so their combat behaviors stay untouched.</p>
-<h2><a class="anchor" id="autotoc_md205"></a>
-Benchmarks</h2>
-<p>Recorded runs (15 s measurement window per population unless noted, protocol-84 client standing at the world spawn of a fresh flat world, <code>tools/mob_ai_bench.py</code>, sandbox: 2 cores, 3 GB RAM; sheep at species pace spread over a 24-block radius for ≤2000 and a 120-block radius above, so the tier system actually tiers):</p>
-<table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Population   </th><th class="markdownTableHeadNone">TPS   </th><th class="markdownTableHeadNone">MSPT avg   </th><th class="markdownTableHeadNone">CPU %   </th><th class="markdownTableHeadNone">RSS   </th><th class="markdownTableHeadNone">AI actuations/tick   </th><th class="markdownTableHeadNone">Budget cuts/200 ticks   </th><th class="markdownTableHeadNone">Movers client-verified    </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">0 (baseline)   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">0.05 ms   </td><td class="markdownTableBodyNone">0.8%   </td><td class="markdownTableBodyNone">18 MB   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">—    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">100   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">0.36 ms   </td><td class="markdownTableBodyNone">1.3%   </td><td class="markdownTableBodyNone">19 MB   </td><td class="markdownTableBodyNone">2002   </td><td class="markdownTableBodyNone">0   </td><td class="markdownTableBodyNone">100/100    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">500   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">1.3 ms   </td><td class="markdownTableBodyNone">2.9%   </td><td class="markdownTableBodyNone">21 MB   </td><td class="markdownTableBodyNone">9975   </td><td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">500/500    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">1,000   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">2.2 ms   </td><td class="markdownTableBodyNone">4.7%   </td><td class="markdownTableBodyNone">22 MB   </td><td class="markdownTableBodyNone">16241   </td><td class="markdownTableBodyNone">25   </td><td class="markdownTableBodyNone">1000/1000    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">10,000   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">7.3 ms   </td><td class="markdownTableBodyNone">13.9%   </td><td class="markdownTableBodyNone">43 MB   </td><td class="markdownTableBodyNone">~30000   </td><td class="markdownTableBodyNone">200   </td><td class="markdownTableBodyNone">555k moves consumed    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">50,000   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">8.2 ms   </td><td class="markdownTableBodyNone">16.5%   </td><td class="markdownTableBodyNone">61 MB   </td><td class="markdownTableBodyNone">3965   </td><td class="markdownTableBodyNone">200   </td><td class="markdownTableBodyNone">688k moves consumed    </td></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">100,000   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">8.3 ms   </td><td class="markdownTableBodyNone">17.4%   </td><td class="markdownTableBodyNone">82 MB   </td><td class="markdownTableBodyNone">3966   </td><td class="markdownTableBodyNone">200   </td><td class="markdownTableBodyNone">731k moves consumed    </td></tr>
-<tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">1,000,000   </td><td class="markdownTableBodyNone">20   </td><td class="markdownTableBodyNone">8.2 ms   </td><td class="markdownTableBodyNone">39.2%   </td><td class="markdownTableBodyNone">545 MB   </td><td class="markdownTableBodyNone">3748   </td><td class="markdownTableBodyNone">200   </td><td class="markdownTableBodyNone">1.69M moves consumed   </td></tr>
-</table>
-<p>Reading, and the honest limits:</p>
-<ul>
-<li><b>TPS never left 20</b> at any population — the budget contract held (8 ms cap, a sixth of the tick budget).</li>
-<li>Up to ~1,000 mobs inside one view distance every mob actuates every tick (smooth 20 Hz movement, client-verified). Beyond that the pass spends its budget on the nearest chunks first.</li>
-<li>50k–1M mobs inside ONE player's view distance is far beyond any natural density (hundreds per chunk): the near ring (thousands of mobs, 7.4k live brains) keeps full 20 Hz simulation and the outer rings hold their pose under the 8 ms cap. That is the designed degradation, and the <code>[MOB AI]</code> line reports it (actuated ≈ 3.7–4k per tick, budget cuts on every tick).</li>
-<li><b>1,000,000 mobs REGISTERED and LOADED cost TPS 20, 8.2 ms MSPT and 545 MB RSS on this 2-core sandbox</b> — records are ~200 bytes each and only near mobs carry brains. This is NOT "a million mobs running
-  full AI": a million mobs each actuating every tick would need ~200 ms of AI per tick on this hardware. The architecture scales by tiers, not by making every mob expensive.</li>
-<li>Remaining limits: far-mob actuation under extreme density is budget starved (held pose, resumed as the budget allows); flight, hopping and aquatic movement models are still static (stage 4); hostile targeting and melee are stage 3; a 1M-mob world's first /save rebuilds every touched chunk's roster (budgeted, but slow the first time).</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md206"></a>
-10. Mob persistence</h1>
-<p>Mob records used to be memory-only: a restart wiped every mob the eggs or the plugin API had spawned. The persistence seam closes that gap by making mobs chunk state, exactly like blocks and tile entities — every mob lives inside its chunk's entity list in the region files (<code>worlds/&lt;world&gt;/region/r.X.Z.mca</code>, the <code>Entities</code> list of the chunk NBT), and there is no side file left to drift out of sync.</p>
-<ul>
-<li><b>Format</b> (<a class="el" href="MobChunkCodec_8h_source.html">world/MobChunkCodec.h</a>/.cpp): one little-endian NBT compound per mob, riding the same chunk-blob channel <code>mcp_chunk_t</code> already round-trips through the Anvil codec: <code>id</code> (registry name), <code>Pos</code> (List&lt;Float&gt;[3], feet position), <code>Rotation</code> (List&lt;Float&gt;[2]), <code>Health</code>, <code>MaxHealth</code>. The runtime eid is deliberately not stored — ids are allocated fresh whenever the chunk loads — and knockback / death-window state is transient by design.</li>
-<li><b>Restore</b>: <code>World::reconcileMobsForChunk()</code> runs once per chunk that enters the level (any install path: disk load, sync or async generation). Parsable rows become <code>MobEntity</code> records with fresh eids, before any viewer stream or save pass can observe the chunk — no packets (<code>sendMobsInChunk</code> re-adds each restored mob to the viewers that stream it), no dirty marking (the list already mirrors the rows). A roster already in memory for the chunk (a mob a plugin moved into not-yet-resident terrain) is newer than the disk list and wins.</li>
-<li><b>Save points</b>: every mob mutation (spawn, move, damage, heal, remove) flags the owning chunk in a per-chunk dirty set; <code>World::syncMobsToChunks()</code> rebuilds exactly those chunks' entity lists at every full save point (<code>World::save()</code> — shutdown, <code>/save</code>, world unload — and the <code>write_level_data</code> pass of <code>World::saveBudget()</code>, the autosave's level-dat step), right before the dirty-chunk flush. The rebuild is byte-compared against the current list, so an untouched roster never costs a chunk rewrite. Dying bodies and dead health values are never persisted, so a restart cannot resurrect a corpse mid-animation.</li>
-<li><b>Chunk lifecycle</b>: mob records exist only for resident chunks — <code>spawnMob</code> and <code>moveMob</code> force the owning chunk resident — and <code>World::evictMobsForChunk()</code> runs beside the tile eviction when a chunk is unloaded: alive records are folded into the chunk's list (which the eviction then writes) and dropped from memory, and every viewer who still knows the old eids gets one RemoveEntity. Mob memory is therefore bounded by what players can actually see, and the per-chunk restore is lazy: a world's far-away mobs cost nothing until someone streams their chunk.</li>
-<li><b>Identity</b>: eids are runtime ids and are re-allocated whenever the chunk loads, so a restored world never collides with the login-time player id space; plugins re-resolve entities after a restart. Type validity, the health ceiling (registry fallback) and the per-world cap (<code>kMaxMobs</code>) are enforced at restore exactly as at spawn time.</li>
-<li><b>Migration</b>: a world saved by a pre-region build still carries its <code>mobs.dat</code> beside <code>level.dat</code>. The world constructor folds those rows into the owning chunks' entity lists (chunks forced resident, flushed to disk) and removes the legacy file, so the region files are the only mob storage from that moment on. The migration is crash-safe by ordering: the chunks are durable before the file is deleted, and a boot that finds the file again simply re-runs the (idempotent) import.</li>
-</ul>
-<p>Verified end to end by <code>tools/mob_persistence_check.py</code>: four boots over one runtime — a hand-written legacy <code>mobs.dat</code> is migrated into the region files on boot 1 (file gone, entities inside the .mca, bodies restored); boot 2 spawns a fourth sheep in a chunk two rows south (which the region file then carries as its own entity list); boot 3 sees only the home chunk's bodies until the far chunk loads (lazy per-chunk restore), then all four at their saved positions with both wounds intact; clear + <code>/save</code> + stop; boot 4 sees none (an emptied world must not resurrect its old mobs). </p>
+<h1><a class="anchor" id="autotoc_md193"></a>
+6. Testing</h1>
+<p><code>tools/mob_ai_check.cpp</code> is the pure-logic check (no World, no network): goal-selector arbitration (flag mutex, era registration order, era same-pass restart), MoveControl (±30 step, speed arm, step jump), BodyControl (10 deg/tick chase, idle ramp onto the head), LookControl (approach, hold, drift), the A* (open walk, wall detour, best-effort unreachable), and the path container.</p>
+<div class="fragment"><div class="line">g++ -std=c++20 -Isrc tools/mob_ai_check.cpp \</div>
+<div class="line">    src/entity/ai/GoalSelector.cpp src/entity/ai/LookControl.cpp \</div>
+<div class="line">    src/entity/ai/MoveControl.cpp src/entity/ai/BodyControl.cpp \</div>
+<div class="line">    src/entity/ai/path/Path.cpp src/entity/ai/path/PathFinder.cpp \</div>
+<div class="line">    src/utils/Random.cpp -o /tmp/mob_ai_check &amp;&amp; /tmp/mob_ai_check</div>
+</div><!-- fragment --><p><code>tools/mob_ai_bench.py</code> stays the black-box population benchmark (it spawns sheep through a Lua plugin and counts packets). </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

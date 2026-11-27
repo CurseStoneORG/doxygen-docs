@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['version_2220',['version',['../structCsPluginDesc.html#aed59f4ce910c1431ea8c5ee5d690b8c2',1,'CsPluginDesc']]],
-  ['vy_2221',['vy',['../structcursestone_1_1entity_1_1ai_1_1water_1_1WaterVerticalStep.html#a3372a0f387a968bc39068793114b5d9e',1,'cursestone::entity::ai::water::WaterVerticalStep']]]
+  ['walk_5fspeed_2333',['walk_speed',['../structcursestone_1_1entity_1_1MobProfile.html#ab542cdc0baf929a2bf7c44bd759d37d6',1,'cursestone::entity::MobProfile']]],
+  ['warn_2334',['warn',['../structCsLogApi.html#a4a07616768b3015e748840053deb6ac3',1,'CsLogApi']]],
+  ['whitelistenabled_2335',['whitelistEnabled',['../structCsServerApi.html#ad35c6cedc15128c0911150004fc744e0',1,'CsServerApi']]],
+  ['width_2336',['width',['../structcursestone_1_1entity_1_1ai_1_1TargetRef.html#a3089f9be9503fa1d21c5ef8ff5042322',1,'cursestone::entity::ai::TargetRef::width()'],['../structcursestone_1_1entity_1_1MobProfile.html#a984e33896ffca0ceefd6552d21532ebe',1,'cursestone::entity::MobProfile::width()']]],
+  ['worldcount_2337',['worldCount',['../structCsServerApi.html#a81b072b17a064542a422c5805d5b7caf',1,'CsServerApi']]],
+  ['worldexists_2338',['worldExists',['../structCsServerApi.html#abe752d34cccc2cbbb6aa203b8fde5450',1,'CsServerApi']]],
+  ['worldnameat_2339',['worldNameAt',['../structCsServerApi.html#abc0c3f8999e7d0910834f17488a4f27e',1,'CsServerApi']]]
 ];

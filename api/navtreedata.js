@@ -203,214 +203,199 @@ var NAVTREE =
       [ "Integration notes (server developers)", "md_docs_EVENTS.html#autotoc_md186", null ]
     ] ],
     [ "Mob AI architecture", "md_docs_MOB_AI.html", [
-      [ "1. Starting point (facts about the current tree)", "md_docs_MOB_AI.html#autotoc_md188", null ],
-      [ "2. Design goals and constraints", "md_docs_MOB_AI.html#autotoc_md189", null ],
-      [ "3. Components", "md_docs_MOB_AI.html#autotoc_md190", [
-        [ "Goal", "md_docs_MOB_AI.html#autotoc_md191", null ],
-        [ "MobBrain", "md_docs_MOB_AI.html#autotoc_md192", null ],
-        [ "MobContext", "md_docs_MOB_AI.html#autotoc_md193", null ],
-        [ "MobAIManager", "md_docs_MOB_AI.html#autotoc_md194", null ]
-      ] ],
-      [ "4. Cadences and budgets", "md_docs_MOB_AI.html#autotoc_md195", null ],
-      [ "5. Activation gate", "md_docs_MOB_AI.html#autotoc_md196", null ],
-      [ "6. Threading contract (now and later)", "md_docs_MOB_AI.html#autotoc_md197", null ],
-      [ "7. Compatibility contract", "md_docs_MOB_AI.html#autotoc_md198", null ],
-      [ "8. Stage roadmap", "md_docs_MOB_AI.html#autotoc_md199", null ],
-      [ "9. Implementation status", "md_docs_MOB_AI.html#autotoc_md200", [
-        [ "The tier contract", "md_docs_MOB_AI.html#autotoc_md201", null ],
-        [ "The swim model (hold-band regulator + flotation bob)", "md_docs_MOB_AI.html#autotoc_md202", null ],
-        [ "Steering", "md_docs_MOB_AI.html#autotoc_md203", null ],
-        [ "Panic", "md_docs_MOB_AI.html#autotoc_md204", null ],
-        [ "Benchmarks", "md_docs_MOB_AI.html#autotoc_md205", null ]
-      ] ],
-      [ "10. Mob persistence", "md_docs_MOB_AI.html#autotoc_md206", null ]
+      [ "1. What replaced what", "md_docs_MOB_AI.html#autotoc_md188", null ],
+      [ "2. Per-tick pipeline (era <tt>Mob::newServerAiStep</tt>)", "md_docs_MOB_AI.html#autotoc_md189", null ],
+      [ "3. Goal wiring (era registrations)", "md_docs_MOB_AI.html#autotoc_md190", null ],
+      [ "4. Performance (server adaptations, behavior-preserving)", "md_docs_MOB_AI.html#autotoc_md191", null ],
+      [ "5. Conventions and deviations", "md_docs_MOB_AI.html#autotoc_md192", null ],
+      [ "6. Testing", "md_docs_MOB_AI.html#autotoc_md193", null ]
     ] ],
     [ "PICKUP_VANILLA.md — Recogida de items flotantes, paridad vanilla MCPE 0.15.10", "md_docs_PICKUP_VANILLA.html", [
-      [ "1. Qué dibuja realmente el cliente", "md_docs_PICKUP_VANILLA.html#autotoc_md208", null ],
-      [ "2. Formato del paquete TakeItemEntityPacket (protocolo 84)", "md_docs_PICKUP_VANILLA.html#autotoc_md209", null ],
-      [ "3. AddItemEntityPacket (protocolo 84)", "md_docs_PICKUP_VANILLA.html#autotoc_md210", null ],
-      [ "4. Recogida server-side vanilla (single-player integrado)", "md_docs_PICKUP_VANILLA.html#autotoc_md211", null ],
-      [ "5. Referencia Genisys 0.15.0 (comparación)", "md_docs_PICKUP_VANILLA.html#autotoc_md212", null ],
-      [ "6. CurseStone antes del parche (verificado línea a línea)", "md_docs_PICKUP_VANILLA.html#autotoc_md213", null ],
-      [ "7. CurseStone después del parche", "md_docs_PICKUP_VANILLA.html#autotoc_md214", null ],
-      [ "8. Pruebas ejecutadas (resultados reales)", "md_docs_PICKUP_VANILLA.html#autotoc_md215", null ],
-      [ "9. Entorno Android (FASE 0–3)", "md_docs_PICKUP_VANILLA.html#autotoc_md216", null ],
-      [ "10. NO VERIFICADO (honesto)", "md_docs_PICKUP_VANILLA.html#autotoc_md217", null ],
-      [ "11. Limitaciones del entorno de trabajo", "md_docs_PICKUP_VANILLA.html#autotoc_md218", null ]
+      [ "1. Qué dibuja realmente el cliente", "md_docs_PICKUP_VANILLA.html#autotoc_md195", null ],
+      [ "2. Formato del paquete TakeItemEntityPacket (protocolo 84)", "md_docs_PICKUP_VANILLA.html#autotoc_md196", null ],
+      [ "3. AddItemEntityPacket (protocolo 84)", "md_docs_PICKUP_VANILLA.html#autotoc_md197", null ],
+      [ "4. Recogida server-side vanilla (single-player integrado)", "md_docs_PICKUP_VANILLA.html#autotoc_md198", null ],
+      [ "5. Referencia Genisys 0.15.0 (comparación)", "md_docs_PICKUP_VANILLA.html#autotoc_md199", null ],
+      [ "6. CurseStone antes del parche (verificado línea a línea)", "md_docs_PICKUP_VANILLA.html#autotoc_md200", null ],
+      [ "7. CurseStone después del parche", "md_docs_PICKUP_VANILLA.html#autotoc_md201", null ],
+      [ "8. Pruebas ejecutadas (resultados reales)", "md_docs_PICKUP_VANILLA.html#autotoc_md202", null ],
+      [ "9. Entorno Android (FASE 0–3)", "md_docs_PICKUP_VANILLA.html#autotoc_md203", null ],
+      [ "10. NO VERIFICADO (honesto)", "md_docs_PICKUP_VANILLA.html#autotoc_md204", null ],
+      [ "11. Limitaciones del entorno de trabajo", "md_docs_PICKUP_VANILLA.html#autotoc_md205", null ]
     ] ],
     [ "CurseStone Plugin API", "md_docs_PLUGINS.html", [
-      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md220", [
-        [ "Building blocks from plugins", "md_docs_PLUGINS.html#autotoc_md221", null ],
-        [ "Particles", "md_docs_PLUGINS.html#autotoc_md222", [
-          [ "Tag types (all ride the same one-carrier model)", "md_docs_PLUGINS.html#autotoc_md223", null ],
-          [ "Why this cannot hurt the FPS", "md_docs_PLUGINS.html#autotoc_md224", null ]
+      [ "Folder plugins (Lua)", "md_docs_PLUGINS.html#autotoc_md207", [
+        [ "Building blocks from plugins", "md_docs_PLUGINS.html#autotoc_md208", null ],
+        [ "Particles", "md_docs_PLUGINS.html#autotoc_md209", [
+          [ "Tag types (all ride the same one-carrier model)", "md_docs_PLUGINS.html#autotoc_md210", null ],
+          [ "Why this cannot hurt the FPS", "md_docs_PLUGINS.html#autotoc_md211", null ]
         ] ],
-        [ "Entities (standing mobs)", "md_docs_PLUGINS.html#autotoc_md225", [
-          [ "Mob combat and health", "md_docs_PLUGINS.html#autotoc_md226", null ]
+        [ "Entities (standing mobs)", "md_docs_PLUGINS.html#autotoc_md212", [
+          [ "Mob combat and health", "md_docs_PLUGINS.html#autotoc_md213", null ]
         ] ]
       ] ],
-      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md227", [
-        [ "Structure", "md_docs_PLUGINS.html#autotoc_md228", null ],
-        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md229", null ],
-        [ "Building", "md_docs_PLUGINS.html#autotoc_md230", null ],
-        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md231", null ],
-        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md232", null ],
-        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md233", null ],
-        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md234", null ]
+      [ "File plugins (C++ via .so / .dll)", "md_docs_PLUGINS.html#autotoc_md214", [
+        [ "Structure", "md_docs_PLUGINS.html#autotoc_md215", null ],
+        [ "Minimal complete plugin", "md_docs_PLUGINS.html#autotoc_md216", null ],
+        [ "Building", "md_docs_PLUGINS.html#autotoc_md217", null ],
+        [ "Data folder", "md_docs_PLUGINS.html#autotoc_md218", null ],
+        [ "Rules and guarantees", "md_docs_PLUGINS.html#autotoc_md219", null ],
+        [ "API reference (native)", "md_docs_PLUGINS.html#autotoc_md220", null ],
+        [ "Versioning", "md_docs_PLUGINS.html#autotoc_md221", null ]
       ] ],
-      [ "Commands", "md_docs_PLUGINS.html#autotoc_md235", null ],
-      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md236", null ]
+      [ "Commands", "md_docs_PLUGINS.html#autotoc_md222", null ],
+      [ "Reference implementation", "md_docs_PLUGINS.html#autotoc_md223", null ]
     ] ],
     [ "POTION_EFFECTS_PROGRESS.md — checkpoint de fix-potion-effects-vanilla", "md_docs_POTION_EFFECTS_PROGRESS.html", [
-      [ "Identidad de la tarea", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md238", null ],
-      [ "Estado final de las fases", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md239", null ],
-      [ "Commits de la rama (base 6605b4b)", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md240", null ],
-      [ "Hallazgos clave del binario (FASE 5, con direcciones)", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md241", null ],
-      [ "Archivos modificados", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md242", null ],
-      [ "Tests ejecutados (reales)", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md243", null ],
-      [ "Problemas encontrados y resueltos", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md244", null ],
-      [ "Próximos pasos exactos para continuar", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md245", null ],
-      [ "Resultado de CI (real)", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md246", null ]
+      [ "Identidad de la tarea", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md225", null ],
+      [ "Estado final de las fases", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md226", null ],
+      [ "Commits de la rama (base 6605b4b)", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md227", null ],
+      [ "Hallazgos clave del binario (FASE 5, con direcciones)", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md228", null ],
+      [ "Archivos modificados", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md229", null ],
+      [ "Tests ejecutados (reales)", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md230", null ],
+      [ "Problemas encontrados y resueltos", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md231", null ],
+      [ "Próximos pasos exactos para continuar", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md232", null ],
+      [ "Resultado de CI (real)", "md_docs_POTION_EFFECTS_PROGRESS.html#autotoc_md233", null ]
     ] ],
     [ "POTION_EFFECTS_VANILLA.md — Efectos de pociones, paridad vanilla MCPE 0.15.10", "md_docs_POTION_EFFECTS_VANILLA.html", [
-      [ "1. El paquete de efectos del protocolo 84 (medido en el binario)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md248", null ],
-      [ "2. Handler del cliente 0.15.10 (<tt>LegacyClientNetworkHandler::handle(MobEffectPacket*)</tt> @ <tt>0x0091F668</tt>)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md249", null ],
-      [ "3. Reglas de aplicación vanilla (binario)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md250", null ],
-      [ "4. Metadata de efectos (binario)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md251", null ],
-      [ "5. Poción arrojada (splash) — <tt>ThrownPotion::onHit</tt> @ <tt>0x00C208B4</tt>", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md252", null ],
-      [ "6. Absorción (binario)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md253", null ],
-      [ "7. Catálogo de pociones (0.15.x)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md254", null ],
-      [ "8. Referencia Genisys 0.15.0 (flujo server-side)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md255", null ],
-      [ "9. Estado inicial de CurseStone (verificado leyendo el código)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md256", null ],
-      [ "10. Implementación (esta rama)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md257", null ],
-      [ "9bis. Pruebas ejecutadas (resultados reales)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md258", null ],
-      [ "11. NO VERIFICADO (honesto)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md259", null ],
-      [ "12. Limitaciones del entorno", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md260", null ]
+      [ "1. El paquete de efectos del protocolo 84 (medido en el binario)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md235", null ],
+      [ "2. Handler del cliente 0.15.10 (<tt>LegacyClientNetworkHandler::handle(MobEffectPacket*)</tt> @ <tt>0x0091F668</tt>)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md236", null ],
+      [ "3. Reglas de aplicación vanilla (binario)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md237", null ],
+      [ "4. Metadata de efectos (binario)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md238", null ],
+      [ "5. Poción arrojada (splash) — <tt>ThrownPotion::onHit</tt> @ <tt>0x00C208B4</tt>", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md239", null ],
+      [ "6. Absorción (binario)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md240", null ],
+      [ "7. Catálogo de pociones (0.15.x)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md241", null ],
+      [ "8. Referencia Genisys 0.15.0 (flujo server-side)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md242", null ],
+      [ "9. Estado inicial de CurseStone (verificado leyendo el código)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md243", null ],
+      [ "10. Implementación (esta rama)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md244", null ],
+      [ "9bis. Pruebas ejecutadas (resultados reales)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md245", null ],
+      [ "11. NO VERIFICADO (honesto)", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md246", null ],
+      [ "12. Limitaciones del entorno", "md_docs_POTION_EFFECTS_VANILLA.html#autotoc_md247", null ]
     ] ],
     [ "CHECKPOINT — Efectos de movimiento (Velocidad/Lentitud), dispersión de orbes de experiencia y elevación de ítems — MCPE 0.15.x", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html", [
-      [ "Estado Git", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md262", null ],
-      [ "Ramas protegidas (no modificar ni commitear)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md263", null ],
-      [ "Estado real de los PR previos (verificado por API el 2026-11-27)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md264", null ],
-      [ "Entorno", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md265", null ],
-      [ "Estado de FASES", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md266", null ],
-      [ "Commits de la tarea (autor Dr1xyDev, push verificado en remoto en cada paso)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md267", null ],
-      [ "Estado de compilación / smoke", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md268", null ],
-      [ "Tests ejecutados y resultados reales", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md269", null ],
-      [ "Estado de CI y commit exacto comprobado", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md270", null ],
-      [ "Elementos NO VERIFICADOS", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md271", null ],
-      [ "Próximo paso exacto", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md272", null ],
-      [ "Investigación (FASE 1-3, verificada contra el binario 0.15.10 y Genisys 0.15.0)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md273", [
-        [ "A) Velocidad / Lentitud — cadena de atributos verificada eslabón por eslabón", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md274", null ],
-        [ "B) Orbes de experiencia — CAUSA RAÍZ DEMOSTRADA", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md275", null ],
-        [ "C) Elevación de ítems tirados — verificación sistemática", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md276", null ]
+      [ "Estado Git", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md249", null ],
+      [ "Ramas protegidas (no modificar ni commitear)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md250", null ],
+      [ "Estado real de los PR previos (verificado por API el 2026-11-27)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md251", null ],
+      [ "Entorno", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md252", null ],
+      [ "Estado de FASES", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md253", null ],
+      [ "Commits de la tarea (autor Dr1xyDev, push verificado en remoto en cada paso)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md254", null ],
+      [ "Estado de compilación / smoke", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md255", null ],
+      [ "Tests ejecutados y resultados reales", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md256", null ],
+      [ "Estado de CI y commit exacto comprobado", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md257", null ],
+      [ "Elementos NO VERIFICADOS", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md258", null ],
+      [ "Próximo paso exacto", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md259", null ],
+      [ "Investigación (FASE 1-3, verificada contra el binario 0.15.10 y Genisys 0.15.0)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md260", [
+        [ "A) Velocidad / Lentitud — cadena de atributos verificada eslabón por eslabón", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md261", null ],
+        [ "B) Orbes de experiencia — CAUSA RAÍZ DEMOSTRADA", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md262", null ],
+        [ "C) Elevación de ítems tirados — verificación sistemática", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md263", null ]
       ] ],
-      [ "Inventario funcional (FASE 1)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md277", null ],
-      [ "Auditoría de efectos (tabla de estado — se completa por fase)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md278", null ],
-      [ "Investigación previa reutilizable (de los checkpoints de PR #15 y #16, ya en el repo)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md279", null ],
-      [ "Comparación con vanilla MCPE 0.15.x (tabla inicial — se rellena por fase)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md280", null ],
-      [ "Emulador", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md281", null ],
-      [ "Tests ejecutados y resultados reales", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md282", null ],
-      [ "Estado de compilación", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md283", null ],
-      [ "Estado de CI y commit exacto comprobado", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md284", null ],
-      [ "Problemas encontrados", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md285", null ],
-      [ "Elementos NO VERIFICADOS", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md286", null ],
-      [ "Próximo paso exacto", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md287", null ]
+      [ "Inventario funcional (FASE 1)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md264", null ],
+      [ "Auditoría de efectos (tabla de estado — se completa por fase)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md265", null ],
+      [ "Investigación previa reutilizable (de los checkpoints de PR #15 y #16, ya en el repo)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md266", null ],
+      [ "Comparación con vanilla MCPE 0.15.x (tabla inicial — se rellena por fase)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md267", null ],
+      [ "Emulador", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md268", null ],
+      [ "Tests ejecutados y resultados reales", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md269", null ],
+      [ "Estado de compilación", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md270", null ],
+      [ "Estado de CI y commit exacto comprobado", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md271", null ],
+      [ "Problemas encontrados", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md272", null ],
+      [ "Elementos NO VERIFICADOS", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md273", null ],
+      [ "Próximo paso exacto", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.html#autotoc_md274", null ]
     ] ],
     [ "Efectos de movimiento, orbes de experiencia y elevación de ítems — referencia vanilla MCPE 0.15.x", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html", [
-      [ "1. Estado inicial de CurseStone (stable @ 6364bf2)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md289", null ],
-      [ "2. Velocidad y Lentitud (prioridad 1)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md290", [
-        [ "Investigación vanilla (binario)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md291", null ],
-        [ "Multiplicadores de era", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md292", null ],
-        [ "Verificación de la cadena en CurseStone", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md293", null ],
-        [ "Lo que SÍ faltaba y se corrigió", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md294", null ]
+      [ "1. Estado inicial de CurseStone (stable @ 6364bf2)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md276", null ],
+      [ "2. Velocidad y Lentitud (prioridad 1)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md277", [
+        [ "Investigación vanilla (binario)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md278", null ],
+        [ "Multiplicadores de era", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md279", null ],
+        [ "Verificación de la cadena en CurseStone", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md280", null ],
+        [ "Lo que SÍ faltaba y se corrigió", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md281", null ]
       ] ],
-      [ "3. Auditoría del resto de efectos", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md295", null ],
-      [ "4. Orbes de experiencia: dispersión y salto (prioridad 2)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md296", [
-        [ "Causa raíz (demostrada en código)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md297", null ],
-        [ "Vanilla medido (RE del ctor real <tt>ExperienceOrb::ExperienceOrb(BlockSource&, Vec3 const&, int, Player*)</tt> @ 0x00be7c38, vía PLT 0x5c5088)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md298", null ],
-        [ "Corrección", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md299", null ],
-        [ "Ciclo de sincronización (comprobado)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md300", null ]
+      [ "3. Auditoría del resto de efectos", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md282", null ],
+      [ "4. Orbes de experiencia: dispersión y salto (prioridad 2)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md283", [
+        [ "Causa raíz (demostrada en código)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md284", null ],
+        [ "Vanilla medido (RE del ctor real <tt>ExperienceOrb::ExperienceOrb(BlockSource&, Vec3 const&, int, Player*)</tt> @ 0x00be7c38, vía PLT 0x5c5088)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md285", null ],
+        [ "Corrección", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md286", null ],
+        [ "Ciclo de sincronización (comprobado)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md287", null ]
       ] ],
-      [ "5. Elevación de ítems tirados (prioridad 3)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md301", [
-        [ "Verificación sistemática (todas las piezas medidas)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md302", null ]
+      [ "5. Elevación de ítems tirados (prioridad 3)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md288", [
+        [ "Verificación sistemática (todas las piezas medidas)", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md289", null ]
       ] ],
-      [ "6. Paquetes afectados", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md303", null ],
-      [ "7. Tests, compilación y CI", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md304", null ],
-      [ "8. Limitaciones y elementos NO VERIFICADOS", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md305", null ],
-      [ "9. Referencia cruzada", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md306", null ]
+      [ "6. Paquetes afectados", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md290", null ],
+      [ "7. Tests, compilación y CI", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md291", null ],
+      [ "8. Limitaciones y elementos NO VERIFICADOS", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md292", null ],
+      [ "9. Referencia cruzada", "md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIGHT_VANILLA.html#autotoc_md293", null ]
     ] ],
     [ "CurseStone Comment and Documentation Style Guide", "md_docs_STYLE_COMMENTS.html", [
-      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md315", null ],
-      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md316", null ],
-      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md317", null ],
-      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md318", null ],
-      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md319", null ],
-      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md320", null ],
-      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md321", null ]
+      [ "1. Language", "md_docs_STYLE_COMMENTS.html#autotoc_md302", null ],
+      [ "2. What deserves a comment", "md_docs_STYLE_COMMENTS.html#autotoc_md303", null ],
+      [ "3. Doxygen conventions", "md_docs_STYLE_COMMENTS.html#autotoc_md304", null ],
+      [ "4. What to remove or rewrite", "md_docs_STYLE_COMMENTS.html#autotoc_md305", null ],
+      [ "5. Prohibited or restricted changes", "md_docs_STYLE_COMMENTS.html#autotoc_md306", null ],
+      [ "6. File headers", "md_docs_STYLE_COMMENTS.html#autotoc_md307", null ],
+      [ "7. Tooling workflow", "md_docs_STYLE_COMMENTS.html#autotoc_md308", null ]
     ] ],
     [ "Threading notes: what the historical thread moves mean for CurseStone", "md_docs_THREADING.html", [
-      [ "1. CurseStone threading snapshot (current tree)", "md_docs_THREADING.html#autotoc_md323", null ],
-      [ "2. The historical thread moves and their outcomes", "md_docs_THREADING.html#autotoc_md324", null ],
-      [ "3. Lessons, applied to CurseStone", "md_docs_THREADING.html#autotoc_md325", [
-        [ "Lesson 1 — thread I/O, not game state", "md_docs_THREADING.html#autotoc_md326", null ],
-        [ "Lesson 2 — extract the storage boundary BEFORE threading the provider", "md_docs_THREADING.html#autotoc_md327", null ],
-        [ "Lesson 3 — budget small stateful work instead of threading it", "md_docs_THREADING.html#autotoc_md328", null ],
-        [ "Lesson 4 — entity ticking needs a budget and a radius the day AI lands", "md_docs_THREADING.html#autotoc_md329", null ],
-        [ "Lesson 5 — name your threads", "md_docs_THREADING.html#autotoc_md330", null ]
+      [ "1. CurseStone threading snapshot (current tree)", "md_docs_THREADING.html#autotoc_md310", null ],
+      [ "2. The historical thread moves and their outcomes", "md_docs_THREADING.html#autotoc_md311", null ],
+      [ "3. Lessons, applied to CurseStone", "md_docs_THREADING.html#autotoc_md312", [
+        [ "Lesson 1 — thread I/O, not game state", "md_docs_THREADING.html#autotoc_md313", null ],
+        [ "Lesson 2 — extract the storage boundary BEFORE threading the provider", "md_docs_THREADING.html#autotoc_md314", null ],
+        [ "Lesson 3 — budget small stateful work instead of threading it", "md_docs_THREADING.html#autotoc_md315", null ],
+        [ "Lesson 4 — entity ticking needs a budget and a radius the day AI lands", "md_docs_THREADING.html#autotoc_md316", null ],
+        [ "Lesson 5 — name your threads", "md_docs_THREADING.html#autotoc_md317", null ]
       ] ],
-      [ "4. What is still worth adopting (ranked)", "md_docs_THREADING.html#autotoc_md331", null ],
-      [ "5. What NOT to adopt", "md_docs_THREADING.html#autotoc_md332", null ],
-      [ "6. Status against the historical kept list", "md_docs_THREADING.html#autotoc_md333", null ],
-      [ "7. Implementation status (named threads + async chunk encode)", "md_docs_THREADING.html#autotoc_md334", [
-        [ "Named threads", "md_docs_THREADING.html#autotoc_md335", null ],
-        [ "Async chunk encode", "md_docs_THREADING.html#autotoc_md336", null ],
-        [ "Measurements", "md_docs_THREADING.html#autotoc_md337", null ],
-        [ "Simultaneous joins: the \"single-streamer\" observation, root-caused", "md_docs_THREADING.html#autotoc_md338", null ],
-        [ "Multi-player concurrency verification (server unchanged)", "md_docs_THREADING.html#autotoc_md339", null ]
+      [ "4. What is still worth adopting (ranked)", "md_docs_THREADING.html#autotoc_md318", null ],
+      [ "5. What NOT to adopt", "md_docs_THREADING.html#autotoc_md319", null ],
+      [ "6. Status against the historical kept list", "md_docs_THREADING.html#autotoc_md320", null ],
+      [ "7. Implementation status (named threads + async chunk encode)", "md_docs_THREADING.html#autotoc_md321", [
+        [ "Named threads", "md_docs_THREADING.html#autotoc_md322", null ],
+        [ "Async chunk encode", "md_docs_THREADING.html#autotoc_md323", null ],
+        [ "Measurements", "md_docs_THREADING.html#autotoc_md324", null ],
+        [ "Simultaneous joins: the \"single-streamer\" observation, root-caused", "md_docs_THREADING.html#autotoc_md325", null ],
+        [ "Multi-player concurrency verification (server unchanged)", "md_docs_THREADING.html#autotoc_md326", null ]
       ] ],
-      [ "8. Mob AI (added after the join-storm study)", "md_docs_THREADING.html#autotoc_md340", null ]
+      [ "8. Mob AI (added after the join-storm study)", "md_docs_THREADING.html#autotoc_md327", null ]
     ] ],
     [ "CHECKPOINT — Botellas de pociones arrojadizas, botellas de experiencia y sistema XP vanilla MCPE 0.15.x", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html", [
-      [ "Estado Git", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md342", null ],
-      [ "Ramas protegidas (no modificar)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md343", null ],
-      [ "Estado de FASES", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md344", null ],
-      [ "Entorno", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md345", null ],
-      [ "Investigación de MCPE vanilla (binario real, verificada)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md346", [
-        [ "Entidades e items", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md347", null ],
-        [ "Lanzamiento (común a ambas botellas — <tt>Throwable::shoot(Mob&)</tt> @ 0x00c1e735 + <tt>Throwable::shoot(Vec3,float,float,Vec3)</tt> @ 0x00c1e858)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md348", null ],
-        [ "Física del proyectil (<tt>Throwable::normalTick</tt> @ 0x00c1ed19 + getters)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md349", null ],
-        [ "Impacto de la botella XP (<tt>ExperiencePotion::onHit</tt> @ 0x00c1c0d0)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md350", null ],
-        [ "Orbes (<tt>ExperienceOrb::spawnOrbs</tt> 2 overloads + normalTick + playerTouch)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md351", null ],
-        [ "Sistema XP del jugador (<tt>Player::addExperience(int)</tt> @ 0x00c15e78)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md352", null ],
-        [ "Referencia Genisys 0.15.0 (diferencias documentadas)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md353", null ]
+      [ "Estado Git", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md329", null ],
+      [ "Ramas protegidas (no modificar)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md330", null ],
+      [ "Estado de FASES", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md331", null ],
+      [ "Entorno", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md332", null ],
+      [ "Investigación de MCPE vanilla (binario real, verificada)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md333", [
+        [ "Entidades e items", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md334", null ],
+        [ "Lanzamiento (común a ambas botellas — <tt>Throwable::shoot(Mob&)</tt> @ 0x00c1e735 + <tt>Throwable::shoot(Vec3,float,float,Vec3)</tt> @ 0x00c1e858)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md335", null ],
+        [ "Física del proyectil (<tt>Throwable::normalTick</tt> @ 0x00c1ed19 + getters)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md336", null ],
+        [ "Impacto de la botella XP (<tt>ExperiencePotion::onHit</tt> @ 0x00c1c0d0)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md337", null ],
+        [ "Orbes (<tt>ExperienceOrb::spawnOrbs</tt> 2 overloads + normalTick + playerTouch)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md338", null ],
+        [ "Sistema XP del jugador (<tt>Player::addExperience(int)</tt> @ 0x00c15e78)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md339", null ],
+        [ "Referencia Genisys 0.15.0 (diferencias documentadas)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md340", null ]
       ] ],
-      [ "Inventario funcional (FASE 1.1)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md354", null ],
-      [ "Diseño de implementación", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md355", null ],
-      [ "Problemas encontrados", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md356", null ],
-      [ "Elementos \"NO VERIFICADOS\"", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md357", null ],
-      [ "Commits de la sesión (todos con autor Dr1xyDev, push verificado)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md358", null ],
-      [ "Problemas encontrados (adición)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md359", null ],
-      [ "Estado de compilación / smoke", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md360", null ],
-      [ "CI y PR (resultado real)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md361", null ],
-      [ "Próximo paso exacto", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md362", null ]
+      [ "Inventario funcional (FASE 1.1)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md341", null ],
+      [ "Diseño de implementación", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md342", null ],
+      [ "Problemas encontrados", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md343", null ],
+      [ "Elementos \"NO VERIFICADOS\"", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md344", null ],
+      [ "Commits de la sesión (todos con autor Dr1xyDev, push verificado)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md345", null ],
+      [ "Problemas encontrados (adición)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md346", null ],
+      [ "Estado de compilación / smoke", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md347", null ],
+      [ "CI y PR (resultado real)", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md348", null ],
+      [ "Próximo paso exacto", "md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md349", null ]
     ] ],
     [ "THROWABLE_POTIONS_XP_VANILLA.md — Pociones arrojadizas, botellas de experiencia, orbes y XP, paridad vanilla MCPE 0.15.10", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html", [
-      [ "1. Catálogo de objetos y entidades (binario 0.15.10)", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md364", null ],
-      [ "2. Lanzamiento — <tt>Throwable::shoot(Mob&)</tt> @ 0x00c1e735 + <tt>shoot(Vec3,float,float,Vec3)</tt> @ 0x00c1e858", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md365", null ],
-      [ "3. Vuelo — <tt>Throwable::normalTick</tt> @ 0x00c1ed19 + overrides de gravedad/power", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md366", null ],
-      [ "4. Impacto", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md367", [
-        [ "4.1 Botella XP — <tt>ExperiencePotion::onHit</tt> @ 0x00c1c0d0", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md368", null ],
-        [ "4.2 Orbe XP — generación canónica <tt>ExperienceOrb::spawnOrbs</tt> @ 0x00be8864", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md369", null ]
+      [ "1. Catálogo de objetos y entidades (binario 0.15.10)", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md351", null ],
+      [ "2. Lanzamiento — <tt>Throwable::shoot(Mob&)</tt> @ 0x00c1e735 + <tt>shoot(Vec3,float,float,Vec3)</tt> @ 0x00c1e858", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md352", null ],
+      [ "3. Vuelo — <tt>Throwable::normalTick</tt> @ 0x00c1ed19 + overrides de gravedad/power", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md353", null ],
+      [ "4. Impacto", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md354", [
+        [ "4.1 Botella XP — <tt>ExperiencePotion::onHit</tt> @ 0x00c1c0d0", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md355", null ],
+        [ "4.2 Orbe XP — generación canónica <tt>ExperienceOrb::spawnOrbs</tt> @ 0x00be8864", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md356", null ]
       ] ],
-      [ "5. Orbe — <tt>ExperienceOrb::normalTick</tt> @ 0x00be7e70, <tt>playerTouch</tt> @ 0x00be8688, <tt>_init</tt> @ 0x00be7d70", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md370", null ],
-      [ "6. XP del jugador — <tt>Player::addExperience(int)</tt> @ 0x00c15e78", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md371", null ],
-      [ "7. Persistencia", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md372", null ],
-      [ "8. Implementación en CurseStone", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md373", null ],
-      [ "9. Comparación con Genisys 0.15.0 (tag ec716b0ea4)", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md374", null ],
-      [ "10. Tests", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md375", null ],
-      [ "11. Compilación y CI", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md376", null ],
-      [ "12. Pruebas con cliente original", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md377", null ],
-      [ "13. Limitaciones y NO VERIFICADOS", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md378", null ]
+      [ "5. Orbe — <tt>ExperienceOrb::normalTick</tt> @ 0x00be7e70, <tt>playerTouch</tt> @ 0x00be8688, <tt>_init</tt> @ 0x00be7d70", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md357", null ],
+      [ "6. XP del jugador — <tt>Player::addExperience(int)</tt> @ 0x00c15e78", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md358", null ],
+      [ "7. Persistencia", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md359", null ],
+      [ "8. Implementación en CurseStone", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md360", null ],
+      [ "9. Comparación con Genisys 0.15.0 (tag ec716b0ea4)", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md361", null ],
+      [ "10. Tests", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md362", null ],
+      [ "11. Compilación y CI", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md363", null ],
+      [ "12. Pruebas con cliente original", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md364", null ],
+      [ "13. Limitaciones y NO VERIFICADOS", "md_docs_THROWABLE_POTIONS_XP_VANILLA.html#autotoc_md365", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
@@ -426,7 +411,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -445,42 +430,43 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "",
-"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a994872d75cc154f715f1b9b3c8dfc1d9",
-"Blocks_8h.html#adb4d45999c1ac59398074f857397bfc8",
-"EntityTypes_8h.html#a5b74f641c5ff1a2e8c16dc928b8784cf",
-"ItemConstants_8h.html#a11bb52cf67fe2da7904a10110ca2a911",
-"ItemConstants_8h.html#ab1af63dbbe1180f059915884a404ce27",
-"ItemIds_8h.html#a3e000ec119790a8d8275720ada569223addb319f48f7718b6b270d4ce68320bd4",
-"MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea7d037f8be425e72ef6a68c59d91673ef",
-"SetDifficultyPacket_8h_source.html",
-"UpdateAttributesPacket_8h_source.html",
-"classcursestone_1_1Player.html#a3f2ec0bc524a6fd2f6cfcd97554b90ca",
-"classcursestone_1_1Server.html#ad7f9ca7cae0ef787fd0a094d0e6bdd0e",
-"classcursestone_1_1block_1_1BlockSolidLike.html",
-"classcursestone_1_1entity_1_1ai_1_1PanicGoal.html#a266e9aa12ad231555387404a9970531e",
-"classcursestone_1_1event_1_1player_1_1PlayerQuitEvent.html",
-"classcursestone_1_1item_1_1ItemAxeGolden.html#afcc5bcff60c40f0f59ebd04e40b731b0",
-"classcursestone_1_1item_1_1ItemRottenFlesh.html#a03025de55851644a5b7b7f571b488c5b",
-"classcursestone_1_1network_1_1protocol_1_1AddItemEntityPacket.html#a0de1ab1cabe2b10d5441811279edabed",
-"classcursestone_1_1network_1_1protocol_1_1MobEffectPacket.html#a7e062f8eb3daddaf946d381f5585767d",
-"classcursestone_1_1performance_1_1SaveProfiler_1_1Scope.html#aa0c9310836dabf469fc076c49bdec415",
-"classcursestone_1_1tile_1_1TileSpawner.html#a3960188698b72c6188c7790328c2d05c",
-"classcursestone_1_1world_1_1World.html#aee96755f96eb2616f5ba078bb8142f80",
-"classcursestone_1_1world_1_1generator_1_1Nether.html#ac001a2abb116daebfa7f5fde31da83d7",
-"classvgen_1_1Biome.html#a858327c988bd21a0daf06e3c4783db01",
-"classvgen_1_1BoundingBox.html#a203ae7130d8ba78a8ccc24c73bb93c83",
-"classvgen_1_1ImprovedNoise.html#a4c2e35f98ab6f13dc7a5dc0310f74486",
-"classvgen_1_1MobSpawnerData.html#a428802306cd6df711f4712cccd25be8c",
-"classvgen_1_1Random.html#a756334299c601c81abd8b480d4e3e47d",
-"classvgen_1_1StructurePiece.html#afbe30e6634c432ef4e36d04687615811",
-"functions_w.html",
-"md_docs_THROWABLE_POTIONS_XP_PROGRESS.html#autotoc_md358",
-"structCsPluginApi.html#a8c32d10c25829537634762e8f8b7416d",
-"structcursestone_1_1entity_1_1ai_1_1MobContext.html#ad4fa279dfd88bdc74e4a49b5a57dd16b",
-"structcursestone_1_1scheduler_1_1AsyncPool_1_1Snapshot.html#acc3146bac8af54d87dec80dde5aecc13",
-"structcursestone_1_1world_1_1generator_1_1GenerationContext.html#a5449d544ce23703d64defe78ad59d0d8",
-"structmcp__rak__session__manager.html#ae4f7ffa9e6bf9b18672823d66b49d3cc",
-"structvgen_1_1Pos.html#a9691893cef4b4fe7534101ee0a388a56"
+"BlockIds_8h.html#afffd59fac8da24da79a88bfd701003d4a933566025d7a1379cf2f800e845fbe6e",
+"Blocks_8h.html#a2327da8d7ef4c713baad4cc095440a8f",
+"EntityTypes_8cpp.html#ac853a216f7be2107791fa0726322035e",
+"ItemConstants_8h.html#a0a2d41ff4615521e98368f636f56ecbc",
+"ItemConstants_8h.html#aab396005e8eb56cd59cfc890e45b0d31",
+"ItemIds_8h.html#a3e000ec119790a8d8275720ada569223ab929da0c49b337ae73c9938bf4bbde40",
+"MobSpawnerData_8h.html#a0d1fa2a7493e93cf21337fd3e91dc66ea4797c3a0ff67b479f71a3633c4ffca6f",
+"SaveProfiler_8h.html#a131c41358941ac92fad881498ef70252a326b773412d0368c2c32b77e0677a5fa",
+"ThreadPort_8h.html#a91343c06751de27c61f6fa1e3ab0dae9",
+"classcursestone_1_1Player.html#a2865ad5125ca9b52ed6b2764bfdaf126",
+"classcursestone_1_1Server.html#a96f07b132a2c75ec3e5c336d41073662",
+"classcursestone_1_1block_1_1BlockSand.html#a2453c603a1c33ff429764cfc7e2ae0f0",
+"classcursestone_1_1entity_1_1ai_1_1EatTileGoal.html",
+"classcursestone_1_1entity_1_1ai_1_1RestrictSunGoal.html#a7f0579a84ed1ed1f4d0993ee8856e1da",
+"classcursestone_1_1event_1_1player_1_1PlayerItemHeldEvent.html#ac74685d455044e3877f57c4f3aa08571",
+"classcursestone_1_1item_1_1Item.html#aac42d245627be377d17d804f7b7cfac6",
+"classcursestone_1_1item_1_1ItemPumpkinPie.html#a14b8b71e49e09858d3125f133c862808",
+"classcursestone_1_1network_1_1SourceInterface.html",
+"classcursestone_1_1network_1_1protocol_1_1LoginPacket.html#ac8bc6281aaf2532a71ec4d3865fdd27f",
+"classcursestone_1_1network_1_1protocol_1_1UpdateBlockPacket.html#aab3c91dd463dd7ea31c243ac20dc6c9a",
+"classcursestone_1_1tile_1_1TileFurnace.html#a6b9a523c82d39230c830ec228ad46383",
+"classcursestone_1_1world_1_1World.html#aaeb37b776e72f68f27f84814af0ec05b",
+"classcursestone_1_1world_1_1generator_1_1ImprovedNoise.html#afa2dd24e53a83c01cb3711407ce9fc55",
+"classvgen_1_1Biome.html#a60315a10590e8d3a228a4eb683f65187a1824e8e0307cbfdd1993511ab040075c",
+"classvgen_1_1BlockVolume.html#a5ba21b42b46e267f9e09a6a2af844a07",
+"classvgen_1_1HugeMushroomFeature.html",
+"classvgen_1_1MineshaftRoom.html#a4a0fabebd05e8ca53f5cb1939a6111dc",
+"classvgen_1_1PlainsRefTable.html",
+"classvgen_1_1StructurePiece.html#a4488ea26116e1ff395a2a6be24f6f906",
+"dir_f6c1c82b4d30ae548d5286e2c80025e9.html",
+"md_docs_THREADING.html",
+"structCsPlayerApi.html#abaefaa3429449097ada7ac2a163fb05d",
+"structcursestone_1_1entity_1_1ai_1_1PathBox.html#a6e786674ffb2b141ad0916083295d3df",
+"structcursestone_1_1plugin_1_1NativePlugin_1_1CommandEntry.html#a2cbcc0f604f6d6583de8d35ecdd11427",
+"structcursestone_1_1world_1_1format_1_1leveldb_1_1db_1_1FileMeta.html#a2f9e6702313acb68f919c5b282b480c3",
+"structmcp__rak__session__manager.html#a3015a909556d0a5ccd2378273eaf5667",
+"structvgen_1_1LightLayer.html#a627c8365c55739b0805821e58def3b09"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

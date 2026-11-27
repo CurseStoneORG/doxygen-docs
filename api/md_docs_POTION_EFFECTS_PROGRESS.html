@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_EFFECTS_PROGRESS.html',
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Última actualización: 2026-11-26 — **TAREA COMPLETA: FASES 0-12, CI verde; sin entorno Android (documentado).***</p>
-<h1><a class="anchor" id="autotoc_md238"></a>
+<h1><a class="anchor" id="autotoc_md225"></a>
 Identidad de la tarea</h1>
 <ul>
 <li>Rama: <code>fix-potion-effects-vanilla</code></li>
@@ -95,7 +95,7 @@ Identidad de la tarea</h1>
 <li>Autor de commits: <code>Dr1xyDev &lt;240832661+Dr1xyDev@users.noreply.github.com&gt;</code> (config local del repo ya lo fija).</li>
 <li>Ramas prohibidas para trabajar/commit: <code>stable</code>, <code>fix-pickup-metadata</code>, <code>fix-pickup-vanilla</code> (las tres solo como lectura).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md239"></a>
+<h1><a class="anchor" id="autotoc_md226"></a>
 Estado final de las fases</h1>
 <ul>
 <li>[x] FASE 0 — protección/checkpoint/rama (commit <code>a252ee7</code>)</li>
@@ -112,7 +112,7 @@ Estado final de las fases</h1>
 <li>[x] FASE 11 — commits/push progresivos: todos pushados y verificados con ls-remote</li>
 <li>[x] FASE 12 — docs finales listos; CI workflow_dispatch run 45747722439 <b>success</b>.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md240"></a>
+<h1><a class="anchor" id="autotoc_md227"></a>
 Commits de la rama (base 6605b4b)</h1>
 <ol type="1">
 <li><code>a252ee7</code> docs(potions): checkpoint and task setup</li>
@@ -126,7 +126,7 @@ Commits de la rama (base 6605b4b)</h1>
 <li><code>2e55d4d</code> fix(splash): instant splash potions land at full strength</li>
 <li>(este commit) docs finales + checkpoint</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md241"></a>
+<h1><a class="anchor" id="autotoc_md228"></a>
 Hallazgos clave del binario (FASE 5, con direcciones)</h1>
 <ul>
 <li><code>MobEffectPacket::getId()</code> @ 0x00AAAD34 = <b>0x19</b>; <code>::read</code> @ 0x00AAAE1C: <code>[eid 8B BE][eventId][effectId][amplifier][particles][duration 4B BE]</code>.</li>
@@ -137,7 +137,7 @@ Hallazgos clave del binario (FASE 5, con direcciones)</h1>
 <li>Metadata: DATA_POTION_COLOR=7, DATA_POTION_AMBIENT=8 (confirmados en <code>Mob::tickEffects</code> con getInt(7)/getInt(8)); DATA_POTION_ID=16 (short, confirmado en onHit con getShort(0x10)).</li>
 <li>Absorción: atributo **<code>generic.absorption</code>** en .rodata; <code>AbsorptionMobEffect::applyEffects</code> @ 0x00B9FE18.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md242"></a>
+<h1><a class="anchor" id="autotoc_md229"></a>
 Archivos modificados</h1>
 <ul>
 <li><code><a class="el" href="Living_8h_source.html">src/entity/Living.h</a>/.cpp</code> — pool de absorción, regla addEffect, applyDamage</li>
@@ -150,14 +150,14 @@ Archivos modificados</h1>
 <li><code>tools/potion_effect_check.cpp</code> — test (27 checks)</li>
 <li><code>docs/POTION_EFFECTS_VANILLA.md</code>, <code>docs/POTION_EFFECTS_PROGRESS.md</code></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md243"></a>
+<h1><a class="anchor" id="autotoc_md230"></a>
 Tests ejecutados (reales)</h1>
 <ul>
 <li><code>tools/potion_effect_check.cpp</code>: <b>27/27 PASS, exit 0</b> (compilado con `g++ -std=c++20 -Wall -Wextra -O1 -Isrc tools/potion_effect_check.cpp src/network/protocol/MobEffectPacket.cpp src/network/protocol/DataPacket.cpp src/entity/Effect.cpp` desde la raíz del repo).</li>
 <li>Build completo ninja 56/56 targets OK (GCC 14.2); smoke test real del binario (arranque, listen 19132, carga de mundo, timeout -k limpio).</li>
 <li>Harness completo de tools/ NO ejecutado (instrucción del usuario).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md244"></a>
+<h1><a class="anchor" id="autotoc_md231"></a>
 Problemas encontrados y resueltos</h1>
 <ul>
 <li>Test inicial de REMOVE probaba el encoder en vez de la ruta de producción → movido a escaneo de fuente + bytes con campos a cero.</li>
@@ -165,7 +165,7 @@ Problemas encontrados y resueltos</h1>
 <li>Desensamblado lineal con des-sincronización por literal pools → lecturas directas de datos + patrones mangleados + resolución PLT (rotate ARM = 2× el campo de rotación).</li>
 <li>Tabla de duraciones de Potion construida en runtime vía GOT → no extraída estáticamente; documentada como NO VERIFICADO a nivel de bytes.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md245"></a>
+<h1><a class="anchor" id="autotoc_md232"></a>
 Próximos pasos exactos para continuar</h1>
 <ol type="1">
 <li>Si la sesión terminó: <code>git fetch origin &amp;&amp; git switch fix-potion-effects-vanilla</code> — todo el trabajo ya está pushado.</li>
@@ -173,7 +173,7 @@ Próximos pasos exactos para continuar</h1>
 <li>Opcional: abrir PR de <code>fix-potion-effects-vanilla</code> → <code>stable</code> (el usuario hace el merge, como en la tarea pickup).</li>
 <li>NO VERIFICADO pendiente (requiere host con KVM o Android real): validación visual/funcional de cada poción con el cliente 0.15.10 (FASE 9), medición de duraciones desde el binario, trato del lanzador en splash.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md246"></a>
+<h1><a class="anchor" id="autotoc_md233"></a>
 Resultado de CI (real)</h1>
 <ul>
 <li>Run 45747722439 (Build.yml, workflow_dispatch, ref fix-potion-effects-vanilla @ bfab2b7): <b>success</b>. Pull_request/push también corren automáticamente contra esta rama. </li>

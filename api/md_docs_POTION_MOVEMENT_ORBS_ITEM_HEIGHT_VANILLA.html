@@ -89,16 +89,16 @@ $(document).ready(function(){initNavTree('md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIG
 <div class="textblock"><blockquote class="doxtable">
 <p>Tarea: corregir la integración real de Velocidad/Lentitud, la dispersión/salto inicial de los orbes de experiencia y la elevación de los ítems tirados; además auditar el resto del catálogo de efectos. Autoridad de comportamiento: <b>Minecraft PE 0.15.10</b> (<code>Minecraft-PE-0-15-10.apk</code>, sha256 <code>2d12209093b87f22960f32a1ef3c2af3251ed348a93a3ead78e8b206457a0b3f</code>); referencia secundaria <b>Genisys 0.15.0</b> (tag <code>ec716b0ea4</code>). Todo lo medido del binario se indica con su dirección. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md289"></a>
+<h1><a class="anchor" id="autotoc_md276"></a>
 1. Estado inicial de CurseStone (stable @ 6364bf2)</h1>
 <ul>
 <li>PR #15 (efectos de poción, protocolo 84) y PR #16 (botellas arrojadizas, orbes, XP) ya fusionados.</li>
 <li>El jugador local es cliente-autoritativo en movimiento (<code>MovePlayerPacket</code> aceptado con validación básica en <code>Player::handleMovePlayer</code>, d² &gt; 400 rechazado); los mobs son server-side (<code>MobAIManager</code> → <code>MobContext</code> → <code>actuateOne</code>).</li>
 <li>La cadena de atributos del jugador existía completa (<code>sendMovementSpeedAttribute</code>), los orbes spawneaban con velocidad cero, los ítems no flotaban en agua.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md290"></a>
+<h1><a class="anchor" id="autotoc_md277"></a>
 2. Velocidad y Lentitud (prioridad 1)</h1>
-<h2><a class="anchor" id="autotoc_md291"></a>
+<h2><a class="anchor" id="autotoc_md278"></a>
 Investigación vanilla (binario)</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -114,14 +114,14 @@ Investigación vanilla (binario)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Consumo en movimiento   </td><td class="markdownTableBodyNone"><code>Mob::calcMoveRelativeSpeed(TravelType)</code> @ 0x00bf2658 + travel @ 0x00bf2830: la velocidad caminando sale de un getter virtual (vtable+0x240) con multiplicadores por contexto (sigilo ×0.5, Depth Strider, aire ×0.2). El binario comparte ese código entre cliente y servidor integrado; en partida local el efecto llega al cliente por el MISMO paquete de atributos vía loopback.   </td></tr>
 </table>
-<h2><a class="anchor" id="autotoc_md292"></a>
+<h2><a class="anchor" id="autotoc_md279"></a>
 Multiplicadores de era</h2>
 <ul>
 <li><b>Velocidad</b>: <code>×(1 + 0.2×(amplificador+1))</code> — Genisys <code>Effect.php</code> idéntico; semántica Java 1.8 (+20 %/nivel).</li>
 <li><b>Lentitud</b>: <code>×max(0, 1 − 0.15×(amplificador+1))</code> — Genisys usa el mismo factor (su forma de add tenía un bug aritmético: <code>1−(0.15×amp+1)</code> = negativo; el remove usaba el factor correcto).</li>
 <li>CurseStone recalcula SIEMPRE desde <code>movement_speed_base_ = 0.1</code> (velocidad base) en <code>Player::sendMovementSpeedAttribute()</code> — reversible por construcción, sin acumulación ni deriva.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md293"></a>
+<h2><a class="anchor" id="autotoc_md280"></a>
 Verificación de la cadena en CurseStone</h2>
 <ol type="1">
 <li>MobEffectPacket: dos paquetes por evento (eid 0 para el cliente local, runtimeId para el broadcast).</li>
@@ -130,12 +130,12 @@ Verificación de la cadena en CurseStone</h2>
 <li>Flujos cubiertos: add/modify/remove (<code>onEffectAdded/Modified/Removed</code>), login (<code>sendActiveEffects</code> → atributo si hay Speed/Slowness), muerte (<code>removeAllEffects</code> antes del flujo de muerte restaura el valor base). El cambio de dimensión no existe todavía en el codebase (era de un solo mundo).</li>
 </ol>
 <p><b>Resultado</b>: no se halló defecto en la ruta servidor→paquete→cliente del jugador local. La percepción en pantalla con cliente real queda <b>NO VERIFICADO</b> (no hay emulador en el sandbox: sin KVM ni binder).</p>
-<h2><a class="anchor" id="autotoc_md294"></a>
+<h2><a class="anchor" id="autotoc_md281"></a>
 Lo que SÍ faltaba y se corrigió</h2>
 <ul>
 <li><b>Mobs</b>: el splash aplicaba efectos a los mobs (metadata/partículas) pero <code>MobAIManager::buildContext</code> pasaba los <code>profile.walk_speed/panic_speed</code> sin consultar los efectos → el movimiento real no cambiaba. Ahora <code>World::mobSpeedMultiplier(eid)</code> (bajo <code>mob_effects_mtx_</code>, lock interior, sin locks externos sostenidos en el caller) devuelve el factor de era y el contexto multiplica la base del perfil una vez por tick — sin acumulación y reversible al expirar.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md295"></a>
+<h1><a class="anchor" id="autotoc_md282"></a>
 3. Auditoría del resto de efectos</h1>
 <p>Catálogo del registro (<code>Effect.cpp</code>, protocolo 84) — 23 efectos. Estado tras esta tarea:</p>
 <table class="markdownTable">
@@ -185,12 +185,12 @@ Lo que SÍ faltaba y se corrigió</h2>
 <td class="markdownTableBodyNone">Salto (Jump Boost)   </td><td class="markdownTableBodyNone">✓   </td><td class="markdownTableBodyNone">salto simulado por el cliente en 0.15; sin mecánica server-side añadida (no hay evidencia de factor de era y no se inventa)   </td><td class="markdownTableBodyNone">INCOMPLETO (server-side) — documentado   </td><td class="markdownTableBodyNone">—   </td></tr>
 </table>
 <p>Distinción aplicada: registrado ≠ visible ≠ aplicado ≠ mecánica ≠ verificado-con-cliente. Nada se marcó funcional solo por aparecer en inventario o mostrar partículas.</p>
-<h1><a class="anchor" id="autotoc_md296"></a>
+<h1><a class="anchor" id="autotoc_md283"></a>
 4. Orbes de experiencia: dispersión y salto (prioridad 2)</h1>
-<h2><a class="anchor" id="autotoc_md297"></a>
+<h2><a class="anchor" id="autotoc_md284"></a>
 Causa raíz (demostrada en código)</h2>
 <p><code>World::spawnXPOrbs</code> construía cada <code>ExperienceOrbEntity</code> sin asignar <code>vx/vy/vz</code> (cero por defecto del struct) y <code>addExperienceOrb</code> enviaba <code>AddEntityPacket</code> + <code>SetEntityMotionPacket</code> con velocidad nula: todos los orbes nacían en la misma posición, congelados — el síntoma exacto del reporte.</p>
-<h2><a class="anchor" id="autotoc_md298"></a>
+<h2><a class="anchor" id="autotoc_md285"></a>
 Vanilla medido (RE del ctor real &lt;tt&gt;ExperienceOrb::ExperienceOrb(BlockSource&amp;, Vec3 const&amp;, int, Player*)&lt;/tt&gt; @ 0x00be7c38, vía PLT 0x5c5088)</h2>
 <p>Para <b>cada orbe</b>, cuatro tiradas de <code>Level::getRandom()</code> → <code>Random::genrand_int32() × 1/2^32</code> (2.3283064365386963e-10, pool 0x00be7d50):</p>
 <table class="markdownTable">
@@ -206,18 +206,18 @@ Vanilla medido (RE del ctor real &lt;tt&gt;ExperienceOrb::ExperienceOrb(BlockSou
 <td class="markdownTableBodyNone">yaw   </td><td class="markdownTableBodyNone"><code>rand01 × 360.0</code>   </td><td class="markdownTableBodyNone">0x43B40000 (pool 0x00be7d64)   </td><td class="markdownTableBodyNone">[0°, 360°)   </td></tr>
 </table>
 <p>Después <code>_init(value)</code>; el path server de <code>ExperienceOrb::spawnOrbs</code> @ 0x00be8864 solo hace <code>new ExperienceOrb(...)</code> → <code>Level::addEntity</code> — sin motion extra por el impacto. La escalera de valores {1,3,7,17,37,73,149,307,617,1237,2477} (botella: total 3..10 = 3+rand(8)) y la física por tick (gravedad −0.04, agua +0.2, drag 0.588/0.98, atracción <code>delta/8 × (1−len)²</code>, recogida con <code>XpTakeDelay(2)</code> + evento 1051) ya estaban en PR #16 y no se tocaron.</p>
-<h2><a class="anchor" id="autotoc_md299"></a>
+<h2><a class="anchor" id="autotoc_md286"></a>
 Corrección</h2>
 <p><code>spawnXPOrbs</code> dibuja ahora las cuatro tiradas por orbe (fuente uniforme [0,1) compartida con el resto de spawns; el generador exacto difiere del MT19937 vanilla — los rangos y la independencia por orbe son los verificados). El yaw se añadió al struct y se envía en el AddEntityPacket.</p>
-<h2><a class="anchor" id="autotoc_md300"></a>
+<h2><a class="anchor" id="autotoc_md287"></a>
 Ciclo de sincronización (comprobado)</h2>
 <ol type="1">
 <li>Crear orbe (eid propio) → 2. posición → 3. velocidad+yaw → 4. registro bajo <code>xp_orbs_mtx_</code> →</li>
 <li>AddEntity (tipo 69, metadata 11 INT con el valor) + SetEntityMotion a los viewers → 6. tick de física → 7. MoveEntity/SetEntityMotion por diff → 8. atracción al jugador ≤ 8 bloques → 9. recogida con delay 2 ticks → 10. <code>addExperience</code> server-authority + evento 1051 → 11. RemoveEntity → 12. sin doble recompensa (una entrada por eid; <code>taken</code> excluye del snapshot).</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md301"></a>
+<h1><a class="anchor" id="autotoc_md288"></a>
 5. Elevación de ítems tirados (prioridad 3)</h1>
-<h2><a class="anchor" id="autotoc_md302"></a>
+<h2><a class="anchor" id="autotoc_md289"></a>
 Verificación sistemática (todas las piezas medidas)</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -240,7 +240,7 @@ Verificación sistemática (todas las piezas medidas)</h2>
 <td class="markdownTableBodyNone">Q-drop   </td><td class="markdownTableBodyNone">Genisys 0.15.0: origen <code>feet+1.3</code>, motion = dirección × 0.4, delay 40   </td><td class="markdownTableBodyNone">origen igual; motion ×0.4 <b>corregido</b> (antes 0.15)   </td><td class="markdownTableBodyNone">CORREGIDO   </td></tr>
 </table>
 <p>Conclusión: la posición física y el paquete ya seguían la convención vanilla (sin offsets arbitrarios, el enunciado pide no confundir render con física). El reposo exacto queda demostrado por el test de física: caja de ítem 0.25 sobre bloque completo reposa en y = superficie EXACTA, sobre losa en y = cara superior de la losa. La apariencia visual en el cliente real queda <b>NO VERIFICADO</b> (sin emulador).</p>
-<h1><a class="anchor" id="autotoc_md303"></a>
+<h1><a class="anchor" id="autotoc_md290"></a>
 6. Paquetes afectados</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -256,7 +256,7 @@ Verificación sistemática (todas las piezas medidas)</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">MobEffectPacket   </td><td class="markdownTableBodyNone">sin cambios (ya correcto en PR #15)   </td><td class="markdownTableBodyNone">potion_effect_check verde   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md304"></a>
+<h1><a class="anchor" id="autotoc_md291"></a>
 7. Tests, compilación y CI</h1>
 <ul>
 <li><code>tools/potion_move_orbs_height_check.cpp</code>: <b>34 checks PASS</b> (source-scan de constantes de era, byte-exact del paquete de atributos contra el orden de <code>AttributeData::read</code>, y física real de reposo sobre bloque completo y losa).</li>
@@ -265,7 +265,7 @@ Verificación sistemática (todas las piezas medidas)</h2>
 <li>Build completo limpio (<code>build_local.sh</code>, C++20): OK. Smoke del binario: arranque + SIGTERM + "Shutdown complete" con mundo guardado.</li>
 <li>CI: <code>Build.yml</code> corre sobre el head del PR (los pushes de rama no lo disparan); el run del commit exacto se registra en el checkpoint.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md305"></a>
+<h1><a class="anchor" id="autotoc_md292"></a>
 8. Limitaciones y elementos NO VERIFICADOS</h1>
 <ul>
 <li><b>Sin emulador</b> (sin KVM/binder — <code>docs/ENTORNO.md</code>): ninguna prueba con el cliente real 0.15.10 se ejecutó. Quedan NO VERIFICADOS: la percepción de velocidad/lentitud en pantalla, la dispersión observada de los orbes, la elevación visual de los ítems y el HUD de Health Boost.</li>
@@ -274,7 +274,7 @@ Verificación sistemática (todas las piezas medidas)</h2>
 <li>Jump Boost: sin mecánica server-side añadida (el salto es client-side en 0.15 y no hay factor de era medido para mobs).</li>
 <li>El color global del splash de la botella XP (heredado de PR #16) sigue sin símbolo en el binario.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md306"></a>
+<h1><a class="anchor" id="autotoc_md293"></a>
 9. Referencia cruzada</h1>
 <ul>
 <li>Checkpoint vivo: <code>docs/POTION_MOVEMENT_ORBS_ITEM_HEIGHT_PROGRESS.md</code>.</li>

@@ -65,6 +65,7 @@ var classcursestone_1_1world_1_1World =
     [ "light", "classcursestone_1_1world_1_1World.html#a26b48a045f218234ceb8c8b422e04d5b", null ],
     [ "mob", "classcursestone_1_1world_1_1World.html#ad7251b5b3ba72804d7048b4c8b33aa4e", null ],
     [ "mobCount", "classcursestone_1_1world_1_1World.html#a16e7ab963a5b78d82f5d823157a794a6", null ],
+    [ "mobEntityEvent", "classcursestone_1_1world_1_1World.html#ae909ad3a400eaf28f0a8fbcc74f7e1ab", null ],
     [ "mobMutex", "classcursestone_1_1world_1_1World.html#addad7d0c37a076496cfdbd700e40ae9b", null ],
     [ "mobs", "classcursestone_1_1world_1_1World.html#ad7590fd0ad13316b8c3caf4a845b032d", null ],
     [ "mobSpeedMultiplier", "classcursestone_1_1world_1_1World.html#a13ba821de98c20a30ff41c1c6f0e6179", null ],

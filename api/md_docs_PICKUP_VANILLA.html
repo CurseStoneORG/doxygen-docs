@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('md_docs_PICKUP_VANILLA.html',''); init
 <div class="contents">
 <div class="textblock"><p>Rama: <code>fix-pickup-vanilla</code> (base: <code>stable</code> @ <code>1cac949</code>). Objetivo: que el cliente 0.15.10 muestre la animación de absorción al recoger un item flotante, con el mismo volumen de recogida, el mismo orden de paquetes y el mismo ritmo de difusión que la referencia de la era.</p>
 <p>Estado de la referencia vanilla: <b>análisis estático completo del binario real</b> (<code>libminecraftpe.so</code> del APK original 0.15.10, sha256 <code>2d12209093b87f22960f32a1ef3c2af3251ed348a93a3ead78e8b206457a0b3f</code>, símbolos dinámicos intactos, 49.066 entradas) <b>más</b> el código de Genisys 0.15.0 (tag <code>ec716b0ea4</code>). No se dispuso de un entorno Android ejecutable en el sandbox de trabajo (ver «Entorno Android» más abajo): <b>toda medición visual en vivo queda NO VERIFICADO</b>; nada de este documento se apoya en capturas simuladas.</p>
-<h1><a class="anchor" id="autotoc_md208"></a>
+<h1><a class="anchor" id="autotoc_md195"></a>
 1. Qué dibuja realmente el cliente</h1>
 <p>La animación de absorción <b>no es parte de la entidad item</b>: es una partícula que el cliente genera al recibir <code>TakeItemEntityPacket</code>. Desensamblado de <code>ClientNetworkHandler::handle(TakeItemEntityPacket*)</code> @ <code>0x0091d198</code> (912 bytes, Thumb-2), con cada llamada resuelta vía GOT/relocations:</p>
 <ol type="1">
@@ -103,7 +103,7 @@ $(document).ready(function(){initNavTree('md_docs_PICKUP_VANILLA.html',''); init
 <li>El <code>RemoveEntityPacket</code> posterior <b>no puede cortar la animación</b>: la partícula no depende de la entidad viva. El intento anterior en <code>stable</code> (postergar el despawn 10 ticks, <code>8d28c70</code>, revertido en <code>1cac949</code>) atacaba una causa inexistente.</li>
 <li>Lo que deja el pickup «seco» es que <b>el handler aborta antes de crear la partícula</b> — y eso ocurre exactamente cuando la búsqueda del jugador falla o la del item falla.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md209"></a>
+<h1><a class="anchor" id="autotoc_md196"></a>
 2. Formato del paquete TakeItemEntityPacket (protocolo 84)</h1>
 <p>Medido en el binario (no deducido de otros protocolos):</p>
 <table class="markdownTable">
@@ -118,7 +118,7 @@ $(document).ready(function(){initNavTree('md_docs_PICKUP_VANILLA.html',''); init
 </table>
 <p>Orden confirmado por <code>read()</code> (<code>0x00AAC821</code>): dos lecturas de 64 bits a <code>this+0x10</code> y <code>this+0x18</code> vía <code>RakNet::BitStream::ReadBits(..., 0x40, 1)</code> con el camino corto <code>BitStream::ReverseBytes</code> cuando <code>IsNetworkOrderInternal()</code> indica host little-endian ⇒ <b>el orden del cable es BIG-ENDIAN</b> para int/long y float en todo el protocolo (igual que PMMP: &lsquo;pack('N&rsquo;)<code>y</code>strrev(pack('f'))`). La convención big-endian de CurseStone es correcta; el endianness no era el bug.</p>
 <p>IDs del paquete vecinos, medidos igual: <code>RemoveEntityPacket</code> = <code>0x0C</code> (<code>0x00AABB58</code>: <code>0C 20 70 47</code>) y <code>AddItemEntityPacket</code> = <code>0x0D</code> (<code>0x00AAC924</code>: <code>0D 20 70 47</code>). Genisys 0.15.0 <code>Info.php</code> declara exactamente <code>0x0c / 0x0d / 0x0e</code>. El comentario antiguo «ID 0x11» del header de CurseStone era incorrecto (el valor <code>0x11</code> no aparece en el binario ni en la referencia de la era).</p>
-<h1><a class="anchor" id="autotoc_md210"></a>
+<h1><a class="anchor" id="autotoc_md197"></a>
 3. AddItemEntityPacket (protocolo 84)</h1>
 <p><code>AddItemEntityPacket::write()</code> @ <code>0x00AAC928</code> (868 bytes):</p>
 <table class="markdownTable">
@@ -137,10 +137,10 @@ $(document).ready(function(){initNavTree('md_docs_PICKUP_VANILLA.html',''); init
 </table>
 <p><b>Sin bloque de metadata.</b> El cliente define los datos por defecto él mismo (<code>ItemEntity::_defineEntityData()</code> @ <code>0x00BE979D</code>). El cambio de la rama <code>fix-pickup-metadata</code> (enviar <code>SetEntityDataPacket</code> tras <code>AddItemEntity</code>) es paridad con Genisys (<code>Item::spawnTo</code> → <code>sendData($player)</code>), <b>no</b> un requisito del cliente vanilla 0.15.10; esta rama no lo replica.</p>
 <p>Al recibirlo, el cliente (<code>LegacyClientNetworkHandler::handle(AddItemEntityPacket)</code> @ <code>0x0091F1D0</code>) crea un <code>ItemEntity</code> nuevo (464 bytes) y llama a <code>MultiPlayerLevel::putEntity(EntityUniqueID, unique_ptr&lt;Entity&gt;)</code> @ <code>0x0091C3B8</code>, que <b>busca por uid antes de insertar y elimina la entidad previa si el eid repite</b>: reenviar <code>AddItemEntityPacket</code> es un reemplazo seguro, no un duplicado.</p>
-<h1><a class="anchor" id="autotoc_md211"></a>
+<h1><a class="anchor" id="autotoc_md198"></a>
 4. Recogida server-side vanilla (single-player integrado)</h1>
 <p><code>ItemEntity::playerTouch(Player&amp;)</code> @ <code>0x00BE9DD8</code>: comprueba el pickup delay (<code>item + 0x1C0</code>), una comprobación del jugador y otra del <code>Level</code>, llama a <code>Player::take(Entity&amp;, int)</code> (<code>0x00C13E04</code>) y después a la ranura virtual 5 de la entidad (kill). <code>Player::take</code> <b>construye el TakeItemEntityPacket inline en el stack con el uid REAL del item (field1) y el uid REAL del jugador (field2)</b> — nunca <code>eid=0</code> — y lo entrega al gestor de red del jugador.</p>
-<h1><a class="anchor" id="autotoc_md212"></a>
+<h1><a class="anchor" id="autotoc_md199"></a>
 5. Referencia Genisys 0.15.0 (comparación)</h1>
 <p><code>Player::checkNearEntities</code> (línea 1551 del Player.php del tag <code>0.15.0</code>):</p>
 <ul>
@@ -153,7 +153,7 @@ $(document).ready(function(){initNavTree('md_docs_PICKUP_VANILLA.html',''); init
 <li>Entidades existentes: <code>sendChunk</code> hace <code>spawnTo($this)</code> por entidad del chunk y tras <code>PLAYER_SPAWN</code> recorre los <code>usedChunks</code> — los items que ya existían se envían a quien entra en rango.</li>
 <li><code>Item::spawnTo</code> añade <code>sendData($player)</code> tras <code>AddItemEntityPacket</code> (véase §3: no es necesario para vanilla).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md213"></a>
+<h1><a class="anchor" id="autotoc_md200"></a>
 6. CurseStone antes del parche (verificado línea a línea)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -175,7 +175,7 @@ $(document).ready(function(){initNavTree('md_docs_PICKUP_VANILLA.html',''); init
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Causa real de la animación seca</b>   </td><td class="markdownTableBodyNone"><b>Nueva (RE)</b>   </td><td class="markdownTableBodyNone">Las <b>tres</b> rutas enviaban al recolector <code>Take(target=item, entityId=0)</code> («forma auto-dirigida» heredada de la era). El cliente hace <code>Level::getPlayer(0)</code> → <code>null</code> → <b>sin partícula para el único jugador que está mirando el item</b>.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md214"></a>
+<h1><a class="anchor" id="autotoc_md201"></a>
 7. CurseStone después del parche</h1>
 <p>Commits en <code>fix-pickup-vanilla</code>:</p>
 <ol type="1">
@@ -185,17 +185,17 @@ $(document).ready(function(){initNavTree('md_docs_PICKUP_VANILLA.html',''); init
 <li><code>9149ca6 feat(items): stream pre-existing dropped items to players entering range</code> <code>World::sendDroppedItemsInChunk(cx, cz, viewer)</code> en las tres rutas de stream de chunks (síncrona, pipeline asíncrono y pase post-spawn de <code>doFirstSpawn</code>), junto a <code>sendMobsInChunk</code>. Sin dedup por visor a propósito: el <code>putEntity</code> del cliente reemplaza por eid (§3), así que el reenvío es un resync de posición/motion con los valores <b>actuales</b> del item.</li>
 <li><code>9badc6c test(items): protocol-84 pickup layer check + pinned pickup volume</code> <code>tools/pickup_vanilla_check.cpp</code> (ver §8) y los <code>static_assert</code> del volumen.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md215"></a>
+<h1><a class="anchor" id="autotoc_md202"></a>
 8. Pruebas ejecutadas (resultados reales)</h1>
 <ul>
 <li><code>tools/pickup_vanilla_check.cpp</code> (nuevo): <b>11/11 PASS</b> (IDs 0x0C/0x0D/0x0E; cable byte-a-byte de <code>Take</code> con picker real distinto de cero; escaneo de fuente: cero <code>entityId = 0</code> restante, cero constructores <code>pk_picker</code>/<code>tk_self</code>, las tres rutas vía <code>sendPickupSequence</code>, declaración en <code><a class="el" href="Player_8h_source.html">Player.h</a></code>; cable byte-a-byte de <code>AddItemEntity</code> con slot y 6 floats). Ejecutado: <code>g++ -std=c++20 -Wall -Wextra -O1 -Isrc … -o /tmp/tools/pickup_vanilla_check</code> → exit 0.</li>
 <li>Compilación completa <code>cmake -G Ninja</code> + <code>ninja</code>: <b>OK</b> (539/540 targets, enlaza <code>CurseStone</code> y <code>cursestone-bot</code>, GCC 14.2). Tras cada commit se recompilaron además los TU afectados individualmente.</li>
 <li>El resto del harness de <code>tools/</code> <b>no</b> se ejecutó (instrucción del usuario: solo lo necesario).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md216"></a>
+<h1><a class="anchor" id="autotoc_md203"></a>
 9. Entorno Android (FASE 0–3)</h1>
 <p>Informe completo en <code>docs/ENTORNO.md</code>. Resumen verificado: contenedor Docker sobre hipervisor KVM <b>sin <code>/dev/kvm</code> expuesto</b>, kernel sin <code>binder</code>/<code>ashmem</code>, sin privilegios de root, 2 vCPU / 4 GB / 6.2 GB libres. Consecuencias: Waydroid/Redroid/Anbox imposibles (sin binder), Android Emulator imposible (sin KVM), Genymotion/VirtualBox imposible (sin VT-x accesible). Único candidato: QEMU por TCG + Android-x86 8.1-r6 (con traducción ARM houdini opcional, descargable dentro del guest). El APK 0.15.10 solo trae <code>lib/armeabi-v7a</code> (<code>libminecraftpe.so</code> 23.7 MB, <code>libfmod.so</code>, <code>libgnustl_shared.so</code>) — cualquier emulador x86 exige traducción ARM.</p>
-<h1><a class="anchor" id="autotoc_md217"></a>
+<h1><a class="anchor" id="autotoc_md204"></a>
 10. NO VERIFICADO (honesto)</h1>
 <ul>
 <li><b>Cero medición visual en vivo del juego vanilla</b>: distancia real de inicio de absorción, duración medida en pantalla, trayectoria/escala/rotación frame a frame, momento exacto de desaparición y volumen del sonido. Todo lo anterior se sustenta en el análisis estático del binario (§1–§4) y en el código de Genisys (§5), no en capturas.</li>
@@ -203,7 +203,7 @@ $(document).ready(function(){initNavTree('md_docs_PICKUP_VANILLA.html',''); init
 <li>El pitch exacto del sonido «pop» (las constantes de jitter del desensamblado no se correlacionaron con una fórmula cerrada).</li>
 <li>QEMU TCG + Android-x86 no llegó a arrancar el guest en el sandbox (red de salida intermitente hacia OSDN/archive.org + coste TCG); el intento y sus límites quedan documentados en <code>docs/ENTORNO.md</code>.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md218"></a>
+<h1><a class="anchor" id="autotoc_md205"></a>
 11. Limitaciones del entorno de trabajo</h1>
 <p>Sandbox Linux sin KVM/binder/root, 2 vCPU y 4 GB RAM (detalle en <code>docs/ENTORNO.md</code>); la referencia vanilla en vivo requiere una máquina con aceleración (host con <code>/dev/kvm</code> + QEMU/KVM, o un terminal Android real con el APK original y una compilación con <code>adb</code>). </p>
 </div></div><!-- contents -->

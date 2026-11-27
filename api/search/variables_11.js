@@ -1,29 +1,7 @@
 var searchData=
 [
-  ['save_2187',['save',['../structCsWorldApi.html#ac68c330dd79ba27065ed1db675bc151a',1,'CsWorldApi']]],
-  ['serverapi_2188',['serverApi',['../structCsPluginApi.html#a725bfbfb7e2425c2c59ef7761df595a6',1,'CsPluginApi']]],
-  ['setbanned_2189',['setBanned',['../structCsServerApi.html#a90a0249dd800302345ee16c2f7eee6a9',1,'CsServerApi']]],
-  ['setblock_2190',['setBlock',['../structCsWorldApi.html#ae4e920cbb7c6c719be92554d99c8fb59',1,'CsWorldApi']]],
-  ['setblocks_2191',['setBlocks',['../structCsWorldApi.html#a116f56214502ad89134b246a2432ceac',1,'CsWorldApi']]],
-  ['setentityhealth_2192',['setEntityHealth',['../structCsWorldApi.html#a01cb61b41df215292790d9e601eeb3c5',1,'CsWorldApi']]],
-  ['setentitymaxhealth_2193',['setEntityMaxHealth',['../structCsWorldApi.html#a4ee152b3cf2734ee2c194b1b18832c41',1,'CsWorldApi']]],
-  ['setexperience_2194',['setExperience',['../structCsPlayerApi.html#a103b896d24611fb9a122e4c44222fa44',1,'CsPlayerApi']]],
-  ['setfloatingtext_2195',['setFloatingText',['../structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c',1,'CsWorldApi']]],
-  ['setfloatingtextbody_2196',['setFloatingTextBody',['../structCsWorldApi.html#a4aefa308f8496a3b761cdfac99c63b5a',1,'CsWorldApi']]],
-  ['setfloatingtextfollow_2197',['setFloatingTextFollow',['../structCsWorldApi.html#a6944cafbb8ac14fc6513b9c5c7b0f623',1,'CsWorldApi']]],
-  ['setfloatingtexttitle_2198',['setFloatingTextTitle',['../structCsWorldApi.html#afb82df9dfb8add86f36bd87a7f0f6809',1,'CsWorldApi']]],
-  ['setfloatingtextviewers_2199',['setFloatingTextViewers',['../structCsWorldApi.html#a7e302af85e8a471bca9273e25ba4ed53',1,'CsWorldApi']]],
-  ['setfloatingtextvisible_2200',['setFloatingTextVisible',['../structCsWorldApi.html#adec6c45deb058f34f3bb4ed558f7574b',1,'CsWorldApi']]],
-  ['setgamemode_2201',['setGamemode',['../structCsPlayerApi.html#ab3b6275189b9b40f3cc368b6ead3e6b0',1,'CsPlayerApi']]],
-  ['setonfire_2202',['setOnFire',['../structCsPlayerApi.html#a18c82024b2cbc92c0d44fdcaa29d7355',1,'CsPlayerApi']]],
-  ['setspawnpoint_2203',['setSpawnPoint',['../structCsPlayerApi.html#a6fc15f0d748320107d92634314848d96',1,'CsPlayerApi::setSpawnPoint()'],['../structCsWorldApi.html#a00f720c52bb241d41b3aebe6b04f49a5',1,'CsWorldApi::setSpawnPoint()']]],
-  ['setweather_2204',['setWeather',['../structCsWorldApi.html#a7c5627238a7d3ad5ad1bc54431453782',1,'CsWorldApi']]],
-  ['slot_2205',['slot',['../structCsEvent.html#a832396cb6b9d13443111d92b7e05f858',1,'CsEvent']]],
-  ['spawnblockparticles_2206',['spawnBlockParticles',['../structCsWorldApi.html#ac8a295aee8a34774391715a261b9792e',1,'CsWorldApi']]],
-  ['spawnentity_2207',['spawnEntity',['../structCsWorldApi.html#ac1725b09c5bebe8d584995b861ad9c8a',1,'CsWorldApi']]],
-  ['spawnfloatingtext_2208',['spawnFloatingText',['../structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc',1,'CsWorldApi']]],
-  ['spawnitem_2209',['spawnItem',['../structCsWorldApi.html#a8adc738141d7da740d05ee7e2ebbb474',1,'CsWorldApi']]],
-  ['spawnparticle_2210',['spawnParticle',['../structCsWorldApi.html#a3def6755ab53639b995d8d501ce71509',1,'CsWorldApi']]],
-  ['spawnsplashparticles_2211',['spawnSplashParticles',['../structCsWorldApi.html#a0230605d345ccc36048cd9d707efb798',1,'CsWorldApi']]],
-  ['speed_2212',['speed',['../structcursestone_1_1entity_1_1ai_1_1MobIntent.html#acbd2b7596e463395c5e8e815fea7a706',1,'cursestone::entity::ai::MobIntent']]]
+  ['timems_2326',['timeMs',['../structcursestone_1_1plugin_1_1PluginLimits.html#aa2dca583ca622c261d42da0e500be002',1,'cursestone::plugin::PluginLimits']]],
+  ['toz_2327',['toZ',['../structCsEvent.html#a999742eb3263c0034155edf891fdd8a7',1,'CsEvent']]],
+  ['tps_2328',['tps',['../structCsServerApi.html#a38e3589d8d8ef79c826da63e0c7c32f0',1,'CsServerApi']]],
+  ['type_2329',['type',['../structCsEvent.html#a594c168f3d5b40f6ae4d4696292a6e25',1,'CsEvent']]]
 ];

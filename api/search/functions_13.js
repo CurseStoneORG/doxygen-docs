@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['wantsjump_2053',['wantsJump',['../classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a3c230a915a6173da4af39454437a1425',1,'cursestone::entity::ai::MobBrain']]],
-  ['waterverticalstep_2054',['waterVerticalStep',['../namespacecursestone_1_1entity_1_1ai_1_1water.html#a135c8c9ea104996e90c30088009c0af4',1,'cursestone::entity::ai::water']]],
-  ['writedefaultconfigs_2055',['writeDefaultConfigs',['../namespacecursestone_1_1utils.html#a91abddc8b7d39138161301056118706b',1,'cursestone::utils']]]
+  ['yaw_2185',['yaw',['../classcursestone_1_1entity_1_1ai_1_1Mob.html#a68b31280a70ee1f63e51801adc71328a',1,'cursestone::entity::ai::Mob']]]
 ];

@@ -1,7 +1,29 @@
 var searchData=
 [
-  ['removealias_2183',['removeAlias',['../structCsCommandApi.html#a331127cb256408caee19db7b74a5f810',1,'CsCommandApi']]],
-  ['removeentity_2184',['removeEntity',['../structCsWorldApi.html#a4cde88018e4fc5689df88f0a4a819833',1,'CsWorldApi']]],
-  ['removefloatingtext_2185',['removeFloatingText',['../structCsWorldApi.html#a7249412c78ac54ab090813a30353fc33',1,'CsWorldApi']]],
-  ['reply_2186',['reply',['../structCsCommandApi.html#ac6e2956c7aa58f601d16d68c1737cb0d',1,'CsCommandApi']]]
+  ['save_2300',['save',['../structCsWorldApi.html#ac68c330dd79ba27065ed1db675bc151a',1,'CsWorldApi']]],
+  ['serverapi_2301',['serverApi',['../structCsPluginApi.html#a725bfbfb7e2425c2c59ef7761df595a6',1,'CsPluginApi']]],
+  ['setbanned_2302',['setBanned',['../structCsServerApi.html#a90a0249dd800302345ee16c2f7eee6a9',1,'CsServerApi']]],
+  ['setblock_2303',['setBlock',['../structCsWorldApi.html#ae4e920cbb7c6c719be92554d99c8fb59',1,'CsWorldApi']]],
+  ['setblocks_2304',['setBlocks',['../structCsWorldApi.html#a116f56214502ad89134b246a2432ceac',1,'CsWorldApi']]],
+  ['setentityhealth_2305',['setEntityHealth',['../structCsWorldApi.html#a01cb61b41df215292790d9e601eeb3c5',1,'CsWorldApi']]],
+  ['setentitymaxhealth_2306',['setEntityMaxHealth',['../structCsWorldApi.html#a4ee152b3cf2734ee2c194b1b18832c41',1,'CsWorldApi']]],
+  ['setexperience_2307',['setExperience',['../structCsPlayerApi.html#a103b896d24611fb9a122e4c44222fa44',1,'CsPlayerApi']]],
+  ['setfloatingtext_2308',['setFloatingText',['../structCsWorldApi.html#a4873894f316b3a3045537728a60ca10c',1,'CsWorldApi']]],
+  ['setfloatingtextbody_2309',['setFloatingTextBody',['../structCsWorldApi.html#a4aefa308f8496a3b761cdfac99c63b5a',1,'CsWorldApi']]],
+  ['setfloatingtextfollow_2310',['setFloatingTextFollow',['../structCsWorldApi.html#a6944cafbb8ac14fc6513b9c5c7b0f623',1,'CsWorldApi']]],
+  ['setfloatingtexttitle_2311',['setFloatingTextTitle',['../structCsWorldApi.html#afb82df9dfb8add86f36bd87a7f0f6809',1,'CsWorldApi']]],
+  ['setfloatingtextviewers_2312',['setFloatingTextViewers',['../structCsWorldApi.html#a7e302af85e8a471bca9273e25ba4ed53',1,'CsWorldApi']]],
+  ['setfloatingtextvisible_2313',['setFloatingTextVisible',['../structCsWorldApi.html#adec6c45deb058f34f3bb4ed558f7574b',1,'CsWorldApi']]],
+  ['setgamemode_2314',['setGamemode',['../structCsPlayerApi.html#ab3b6275189b9b40f3cc368b6ead3e6b0',1,'CsPlayerApi']]],
+  ['setonfire_2315',['setOnFire',['../structCsPlayerApi.html#a18c82024b2cbc92c0d44fdcaa29d7355',1,'CsPlayerApi']]],
+  ['setspawnpoint_2316',['setSpawnPoint',['../structCsPlayerApi.html#a6fc15f0d748320107d92634314848d96',1,'CsPlayerApi::setSpawnPoint()'],['../structCsWorldApi.html#a00f720c52bb241d41b3aebe6b04f49a5',1,'CsWorldApi::setSpawnPoint()']]],
+  ['setweather_2317',['setWeather',['../structCsWorldApi.html#a7c5627238a7d3ad5ad1bc54431453782',1,'CsWorldApi']]],
+  ['slot_2318',['slot',['../structCsEvent.html#a832396cb6b9d13443111d92b7e05f858',1,'CsEvent']]],
+  ['spawnblockparticles_2319',['spawnBlockParticles',['../structCsWorldApi.html#ac8a295aee8a34774391715a261b9792e',1,'CsWorldApi']]],
+  ['spawnentity_2320',['spawnEntity',['../structCsWorldApi.html#ac1725b09c5bebe8d584995b861ad9c8a',1,'CsWorldApi']]],
+  ['spawnfloatingtext_2321',['spawnFloatingText',['../structCsWorldApi.html#a583f83052b69476cdc9dcc54f216dbdc',1,'CsWorldApi']]],
+  ['spawnitem_2322',['spawnItem',['../structCsWorldApi.html#a8adc738141d7da740d05ee7e2ebbb474',1,'CsWorldApi']]],
+  ['spawnparticle_2323',['spawnParticle',['../structCsWorldApi.html#a3def6755ab53639b995d8d501ce71509',1,'CsWorldApi']]],
+  ['spawnsplashparticles_2324',['spawnSplashParticles',['../structCsWorldApi.html#a0230605d345ccc36048cd9d707efb798',1,'CsWorldApi']]],
+  ['swelltime_2325',['swellTime',['../classcursestone_1_1entity_1_1ai_1_1Mob.html#abbf721055f6bca5950491fea7694987d',1,'cursestone::entity::ai::Mob']]]
 ];

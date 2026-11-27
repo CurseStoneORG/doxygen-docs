@@ -90,11 +90,6 @@ $(document).ready(function(){initNavTree('classcursestone_1_1entity_1_1ai_1_1Mob
 <div class="title">cursestone::entity::ai::MobBrain Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Per-mob AI state machine.  
- <a href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="MobAI_8h_source.html">MobAI.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -103,45 +98,37 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adc31e3f478ec56b43a451b6cc0b49ff8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#adc31e3f478ec56b43a451b6cc0b49ff8">addGoal</a> (std::unique_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &gt; goal)</td></tr>
-<tr class="memdesc:adc31e3f478ec56b43a451b6cc0b49ff8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a goal; the brain owns it.  <a href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#adc31e3f478ec56b43a451b6cc0b49ff8">More...</a><br /></td></tr>
-<tr class="separator:adc31e3f478ec56b43a451b6cc0b49ff8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3fcbddfda4b01051cf24ae749befa6e"><td class="memItemLeft" align="right" valign="top"><a id="ac3fcbddfda4b01051cf24ae749befa6e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ac3fcbddfda4b01051cf24ae749befa6e">stepThink</a> (const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobContext.html">MobContext</a> &amp;ctx)</td></tr>
-<tr class="memdesc:ac3fcbddfda4b01051cf24ae749befa6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">One goal-selection pass: releases finished goals, starts runnable ones respecting the flag mutex, then lets every active goal write its intent. <br /></td></tr>
-<tr class="separator:ac3fcbddfda4b01051cf24ae749befa6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0d0eee7713b88fcc5a449d067ac0012"><td class="memItemLeft" align="right" valign="top"><a id="ad0d0eee7713b88fcc5a449d067ac0012"></a>
-const <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobIntent.html">MobIntent</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>intent</b> () const</td></tr>
-<tr class="separator:ad0d0eee7713b88fcc5a449d067ac0012"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a8cc6dfe0f3638a91202829f74e01c5"><td class="memItemLeft" align="right" valign="top"><a id="a6a8cc6dfe0f3638a91202829f74e01c5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a6a8cc6dfe0f3638a91202829f74e01c5">clearIntent</a> ()</td></tr>
-<tr class="memdesc:a6a8cc6dfe0f3638a91202829f74e01c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Drops any previously produced intent (start of a think). <br /></td></tr>
-<tr class="separator:a6a8cc6dfe0f3638a91202829f74e01c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4481f2aa10d53403c826844173b75e8"><td class="memItemLeft" align="right" valign="top"><a id="ab4481f2aa10d53403c826844173b75e8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setMoveIntent</b> (double dirX, double dirZ, float speed)</td></tr>
-<tr class="separator:ab4481f2aa10d53403c826844173b75e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3645994c8e561b148dd64502d213d86"><td class="memItemLeft" align="right" valign="top"><a id="af3645994c8e561b148dd64502d213d86"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setLookIntent</b> (float yaw)</td></tr>
-<tr class="separator:af3645994c8e561b148dd64502d213d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8ae7c1e240f7c40302a63792841b6f6"><td class="memItemLeft" align="right" valign="top"><a id="ad8ae7c1e240f7c40302a63792841b6f6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ad8ae7c1e240f7c40302a63792841b6f6">setLookIntent</a> (float yaw, float pitch)</td></tr>
-<tr class="memdesc:ad8ae7c1e240f7c40302a63792841b6f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks at <code>yaw</code> with the head tilted to <code>pitch</code>. <br /></td></tr>
-<tr class="separator:ad8ae7c1e240f7c40302a63792841b6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42dee9035b5ff39dfc21c18eb674242b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a42dee9035b5ff39dfc21c18eb674242b">MobBrain</a> (int32_t type, uint64_t seed)</td></tr>
+<tr class="separator:a42dee9035b5ff39dfc21c18eb674242b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d2a071b349ceb83c59529873c963f25"><td class="memItemLeft" align="right" valign="top"><a id="a1d2a071b349ceb83c59529873c963f25"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a1d2a071b349ceb83c59529873c963f25">newServerAiStep</a> (<a class="el" href="classcursestone_1_1world_1_1World.html">World</a> *world, <a class="el" href="structcursestone_1_1world_1_1MobEntity.html">world::MobEntity</a> &amp;record, uint64_t tick)</td></tr>
+<tr class="memdesc:a1d2a071b349ceb83c59529873c963f25"><td class="mdescLeft">&#160;</td><td class="mdescRight">One era newServerAiStep pass: idle counter, target selector, movement selector, navigation, the mob-specific step (the creeper fuse), then move/look/jump controls. <br /></td></tr>
+<tr class="separator:a1d2a071b349ceb83c59529873c963f25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdcd91c6d41a004e27aa7410a55dc75d"><td class="memItemLeft" align="right" valign="top"><a id="afdcd91c6d41a004e27aa7410a55dc75d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d">dynamic</a> () const</td></tr>
+<tr class="memdesc:afdcd91c6d41a004e27aa7410a55dc75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">True when the mob carries behaviors: static kinds keep the pre-AI behavior (no physics, no packets). <br /></td></tr>
+<tr class="separator:afdcd91c6d41a004e27aa7410a55dc75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0066d4d735d9135ba11549026729657"><td class="memItemLeft" align="right" valign="top"><a id="aa0066d4d735d9135ba11549026729657"></a>
+<a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>host</b> ()</td></tr>
+<tr class="separator:aa0066d4d735d9135ba11549026729657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ccae9a2af29d1b104cf5a489d6bb81"><td class="memItemLeft" align="right" valign="top"><a id="a37ccae9a2af29d1b104cf5a489d6bb81"></a>
+const <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Mob.html">Mob</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>host</b> () const</td></tr>
+<tr class="separator:a37ccae9a2af29d1b104cf5a489d6bb81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75e944631667112599ba7f0f114f4a12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a75e944631667112599ba7f0f114f4a12">setupGoals</a> (int32_t type, uint8_t kind)</td></tr>
+<tr class="memdesc:a75e944631667112599ba7f0f114f4a12"><td class="mdescLeft">&#160;</td><td class="mdescRight">The era constructor goal registrations, per mob type.  <a href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a75e944631667112599ba7f0f114f4a12">More...</a><br /></td></tr>
+<tr class="separator:a75e944631667112599ba7f0f114f4a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad630777d15deac6a9ad9ac02e91702dd"><td class="memItemLeft" align="right" valign="top"><a id="ad630777d15deac6a9ad9ac02e91702dd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#ad630777d15deac6a9ad9ac02e91702dd">wantsExplode</a> () const</td></tr>
+<tr class="memdesc:ad630777d15deac6a9ad9ac02e91702dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">The creeper fuse finished: the actuation must detonate and remove the record. <br /></td></tr>
+<tr class="separator:ad630777d15deac6a9ad9ac02e91702dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af544b0374c8fb2359daa83d46dbdc256"><td class="memItemLeft" align="right" valign="top"><a id="af544b0374c8fb2359daa83d46dbdc256"></a>
 float &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>motionY</b> ()</td></tr>
 <tr class="separator:af544b0374c8fb2359daa83d46dbdc256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedaadc8003e1bec7ac8c4d5a1cc4605e"><td class="memItemLeft" align="right" valign="top"><a id="aedaadc8003e1bec7ac8c4d5a1cc4605e"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>motionY</b> () const</td></tr>
 <tr class="separator:aedaadc8003e1bec7ac8c4d5a1cc4605e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f05087e46e399188717dde58f9cb9be"><td class="memItemLeft" align="right" valign="top"><a id="a0f05087e46e399188717dde58f9cb9be"></a>
-bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>onGround</b> ()</td></tr>
-<tr class="separator:a0f05087e46e399188717dde58f9cb9be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a951f9157694e79dfbdd88603663cb55d"><td class="memItemLeft" align="right" valign="top"><a id="a951f9157694e79dfbdd88603663cb55d"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>onGround</b> () const</td></tr>
-<tr class="separator:a951f9157694e79dfbdd88603663cb55d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c230a915a6173da4af39454437a1425"><td class="memItemLeft" align="right" valign="top"><a id="a3c230a915a6173da4af39454437a1425"></a>
-bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a3c230a915a6173da4af39454437a1425">wantsJump</a> ()</td></tr>
-<tr class="memdesc:a3c230a915a6173da4af39454437a1425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Jump requested by the actuation step after a horizontal clip; consumed (and cleared) on the next integration. <br /></td></tr>
+bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>wantsJump</b> ()</td></tr>
 <tr class="separator:a3c230a915a6173da4af39454437a1425"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39d27ca6cd2b70e153eb13e0b3fe3272"><td class="memItemLeft" align="right" valign="top"><a id="a39d27ca6cd2b70e153eb13e0b3fe3272"></a>
 int &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>jumpCooldown</b> ()</td></tr>
@@ -153,12 +140,11 @@ float &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>motionX</b> ()
 float &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>motionZ</b> ()</td></tr>
 <tr class="separator:aee52877ef2caa0d41f2e324df67d0af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af30d74835594645b007a12093d1f6dfe"><td class="memItemLeft" align="right" valign="top"><a id="af30d74835594645b007a12093d1f6dfe"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#af30d74835594645b007a12093d1f6dfe">hasKnockback</a> () const</td></tr>
-<tr class="memdesc:af30d74835594645b007a12093d1f6dfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">True while a consumed shove still carries motion. <br /></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>hasKnockback</b> () const</td></tr>
 <tr class="separator:af30d74835594645b007a12093d1f6dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d4074d8f9db5b006e892ba89b7f135c"><td class="memItemLeft" align="right" valign="top"><a id="a5d4074d8f9db5b006e892ba89b7f135c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a5d4074d8f9db5b006e892ba89b7f135c">decayKnockback</a> (float friction)</td></tr>
-<tr class="memdesc:a5d4074d8f9db5b006e892ba89b7f135c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies one friction tick (the era ground knockback decay); values under the stop epsilon snap to zero. <br /></td></tr>
+<tr class="memdesc:a5d4074d8f9db5b006e892ba89b7f135c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies one friction tick; sub-epsilon values snap to zero. <br /></td></tr>
 <tr class="separator:a5d4074d8f9db5b006e892ba89b7f135c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c26bf5425e15e882359f16b1f325a3a"><td class="memItemLeft" align="right" valign="top"><a id="a5c26bf5425e15e882359f16b1f325a3a"></a>
 bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>inWater</b> ()</td></tr>
@@ -169,90 +155,87 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>inWater</b> () const<
 <tr class="memitem:afdae1e4faca5b4762b8d0840c4c4cdc5"><td class="memItemLeft" align="right" valign="top"><a id="afdae1e4faca5b4762b8d0840c4c4cdc5"></a>
 int &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>splashCooldown</b> ()</td></tr>
 <tr class="separator:afdae1e4faca5b4762b8d0840c4c4cdc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2596a55627b40572c76dc21d7fcb3ca7"><td class="memItemLeft" align="right" valign="top"><a id="a2596a55627b40572c76dc21d7fcb3ca7"></a>
-float &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>swimPhase</b> ()</td></tr>
-<tr class="separator:a2596a55627b40572c76dc21d7fcb3ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a899a247458514ae959f0f1cf0a54e51f"><td class="memItemLeft" align="right" valign="top"><a id="a899a247458514ae959f0f1cf0a54e51f"></a>
 bool &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>sprintFlag</b> ()</td></tr>
 <tr class="separator:a899a247458514ae959f0f1cf0a54e51f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a188315f3d0cd3bfe2efaecd657970468"><td class="memItemLeft" align="right" valign="top"><a id="a188315f3d0cd3bfe2efaecd657970468"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>sprintFlag</b> () const</td></tr>
 <tr class="separator:a188315f3d0cd3bfe2efaecd657970468"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8dbdc78a750197c044e49558257606fb"><td class="memItemLeft" align="right" valign="top"><a id="a8dbdc78a750197c044e49558257606fb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setKind</b> (uint8_t kind)</td></tr>
-<tr class="separator:a8dbdc78a750197c044e49558257606fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adafeaa6595528fde6fc8c328f0c694bd"><td class="memItemLeft" align="right" valign="top"><a id="adafeaa6595528fde6fc8c328f0c694bd"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>kind</b> () const</td></tr>
-<tr class="separator:adafeaa6595528fde6fc8c328f0c694bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdcd91c6d41a004e27aa7410a55dc75d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d">dynamic</a> () const</td></tr>
-<tr class="memdesc:afdcd91c6d41a004e27aa7410a55dc75d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true when the brain owns behaviors, i.e.  <a href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#afdcd91c6d41a004e27aa7410a55dc75d">More...</a><br /></td></tr>
-<tr class="separator:afdcd91c6d41a004e27aa7410a55dc75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a466b8da03c51cb5c115616e36739524e"><td class="memItemLeft" align="right" valign="top"><a id="a466b8da03c51cb5c115616e36739524e"></a>
-const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcursestone_1_1entity_1_1ai_1_1MobBrain.html#a466b8da03c51cb5c115616e36739524e">goals</a> () const</td></tr>
-<tr class="memdesc:a466b8da03c51cb5c115616e36739524e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read-only goal list (tests and diagnostics; the brain owns the goals and nothing outside may start them). <br /></td></tr>
-<tr class="separator:a466b8da03c51cb5c115616e36739524e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5c861a1d9dc0c47f90a1181f8627d99"><td class="memItemLeft" align="right" valign="top"><a id="ae5c861a1d9dc0c47f90a1181f8627d99"></a>
-<a class="el" href="structmcp__random.html">mcp_random_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>rng</b> ()</td></tr>
-<tr class="separator:ae5c861a1d9dc0c47f90a1181f8627d99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a810755718fb1829671bcc5b35168e065"><td class="memItemLeft" align="right" valign="top"><a id="a810755718fb1829671bcc5b35168e065"></a>
 <a class="el" href="structcursestone_1_1entity_1_1ai_1_1MobBrain_1_1BroadcastCache.html">BroadcastCache</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>broadcast</b> ()</td></tr>
 <tr class="separator:a810755718fb1829671bcc5b35168e065"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Per-mob AI state machine. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="adc31e3f478ec56b43a451b6cc0b49ff8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adc31e3f478ec56b43a451b6cc0b49ff8">&#9670;&nbsp;</a></span>addGoal()</h2>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a42dee9035b5ff39dfc21c18eb674242b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42dee9035b5ff39dfc21c18eb674242b">&#9670;&nbsp;</a></span>MobBrain()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void cursestone::entity::ai::MobBrain::addGoal </td>
+          <td class="memname">cursestone::entity::ai::MobBrain::MobBrain </td>
           <td>(</td>
-          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1ai_1_1Goal.html">Goal</a> &gt;&#160;</td>
-          <td class="paramname"><em>goal</em></td><td>)</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>seed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Adds a goal; the brain owns it. </p>
-<p>Selection order is priority-descending among goals added so far. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>the protocol-84 registry id (selects the goal set). </td></tr>
+    <tr><td class="paramname">seed</td><td>diversifies the per-mob randomness. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="afdcd91c6d41a004e27aa7410a55dc75d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afdcd91c6d41a004e27aa7410a55dc75d">&#9670;&nbsp;</a></span>dynamic()</h2>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a75e944631667112599ba7f0f114f4a12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75e944631667112599ba7f0f114f4a12">&#9670;&nbsp;</a></span>setupGoals()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool cursestone::entity::ai::MobBrain::dynamic </td>
+          <td class="memname">void cursestone::entity::ai::MobBrain::setupGoals </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>kind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Returns true when the brain owns behaviors, i.e. </p>
-<p>the mob is dynamic. Static kinds (Water, Ambient, and kinds that have no behavior stage yet) keep the pre-AI behavior: no physics, no packets. </p>
+<p>The era constructor goal registrations, per mob type. </p>
+<p>The factory in makeMobBrain calls it right after construction. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/entity/ai/<a class="el" href="MobAI_8h_source.html">MobAI.h</a></li>
-<li>src/entity/ai/MobAI.cpp</li>
+<li>src/entity/ai/<a class="el" href="MobBrain_8h_source.html">MobBrain.h</a></li>
+<li>src/entity/ai/MobBrain.cpp</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

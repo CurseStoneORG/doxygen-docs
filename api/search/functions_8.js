@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['id_1996',['id',['../classcursestone_1_1world_1_1particle_1_1FloatingTextParticle.html#a4297cb785564c80362e1f57222dc2bed',1,'cursestone::world::particle::FloatingTextParticle']]],
-  ['invokecommand_1997',['invokeCommand',['../classcursestone_1_1plugin_1_1NativePlugin.html#aa70f5ef2706edc78f3fd9e206ca64e0c',1,'cursestone::plugin::NativePlugin']]],
-  ['invokeguarded_1998',['invokeGuarded',['../classcursestone_1_1plugin_1_1NativePlugin.html#a2cdb9686cef502506e0784a59aff3d84',1,'cursestone::plugin::NativePlugin']]],
-  ['isenabled_1999',['isEnabled',['../classcursestone_1_1plugin_1_1LuaPlugin.html#a44dfa4fab570249150b1e59bd62a125c',1,'cursestone::plugin::LuaPlugin::isEnabled()'],['../classcursestone_1_1plugin_1_1NativePlugin.html#a02ea3e66140c1af9cb2b3de3783eb401',1,'cursestone::plugin::NativePlugin::isEnabled()'],['../classcursestone_1_1plugin_1_1PluginBase.html#a41f3ed445fcfe3555f842e525d096ab6',1,'cursestone::plugin::PluginBase::isEnabled()']]]
+  ['kind_2109',['kind',['../classcursestone_1_1plugin_1_1LuaPlugin.html#acaabb27e6d3e1b9b665d465eb2918642',1,'cursestone::plugin::LuaPlugin::kind()'],['../classcursestone_1_1plugin_1_1NativePlugin.html#a27cfd77e5b72e3364c1ca09cb2012b4f',1,'cursestone::plugin::NativePlugin::kind()'],['../classcursestone_1_1plugin_1_1PluginBase.html#aef7f3f29adf65bf7aab20fcb9c13f9eb',1,'cursestone::plugin::PluginBase::kind()']]]
 ];

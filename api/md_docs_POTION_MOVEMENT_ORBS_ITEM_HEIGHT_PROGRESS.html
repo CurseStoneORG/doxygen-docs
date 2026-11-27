@@ -89,7 +89,7 @@ $(document).ready(function(){initNavTree('md_docs_POTION_MOVEMENT_ORBS_ITEM_HEIG
 <div class="textblock"><blockquote class="doxtable">
 <p>Última actualización: 2026-11-27 — FASE 0 completada (inspección Git, rama creada, checkpoint inicial). Tarea: corregir (1) efectos Velocidad/Lentitud sobre el movimiento real del jugador, (2) dispersión/salto inicial de los orbes de experiencia al romper la botella, (3) elevación vanilla de los ítems tirados al suelo; además auditar el resto de efectos de poción del catálogo 0.15.x. </p>
 </blockquote>
-<h1><a class="anchor" id="autotoc_md262"></a>
+<h1><a class="anchor" id="autotoc_md249"></a>
 Estado Git</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -107,17 +107,17 @@ Estado Git</h1>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Estado del árbol   </td><td class="markdownTableBodyNone">limpio al crear la rama (<code>git status --short --branch</code> sin entradas)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md263"></a>
+<h1><a class="anchor" id="autotoc_md250"></a>
 Ramas protegidas (no modificar ni commitear)</h1>
 <p><code>stable</code>, <code>fix-pickup-metadata</code>, <code>fix-pickup-vanilla</code>, <code>fix-potion-effects-vanilla</code>, <code>fix-throwable-potions-xp-vanilla</code>. Autor obligatorio de todos los commits: <code>Dr1xyDev &lt;240832661+Dr1xyDev@users.noreply.github.com&gt;</code> (configurado localmente en el clon).</p>
-<h1><a class="anchor" id="autotoc_md264"></a>
+<h1><a class="anchor" id="autotoc_md251"></a>
 Estado real de los PR previos (verificado por API el 2026-11-27)</h1>
 <ul>
 <li><b>PR #15</b> "Fix potion effects vanilla": <b>MERGED</b> (2026-11-27T03:10:11Z, base <code>6605b4b</code>, head <code>7a06b23</code>).</li>
 <li><b>PR #16</b> "Vanilla throwable potions, experience bottles, XP orbs and player XP (MCPE 0.15.10)": <b>MERGED</b> (2026-11-27T15:48:58Z, base <code>871aa99</code>, head <code>afb3cf1</code>) → merge commit <code>6364bf2</code> en <code>stable</code>.</li>
 <li>Consecuencia: el sistema de efectos, las botellas arrojadizas, los orbes y el XP del jugador YA existen en <code>origin/stable</code>. Esta tarea corrige su integración (movimiento real, dispersión inicial de orbes) y la elevación de ítems; NO duplicar nada.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md265"></a>
+<h1><a class="anchor" id="autotoc_md252"></a>
 Entorno</h1>
 <ul>
 <li>Clon real del repo: <code>/home/z/my-project/repos/CurseStone</code> (OJO: <code>/home/z/my-project/CurseStone</code> NO es un clon git).</li>
@@ -127,7 +127,7 @@ Entorno</h1>
 <li>Genisys 0.15: tarball persistente <code>/home/z/my-project/android/genisys-0.15.tar.gz</code> (extraer de nuevo si /tmp se recicló).</li>
 <li>Nota de build previa: el build incremental NO reconstruye los TU que incluyen headers modificados; tras cambiar un header hay rebuild limpio (ver checkpoint de PR #16).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md266"></a>
+<h1><a class="anchor" id="autotoc_md253"></a>
 Estado de FASES</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -155,7 +155,7 @@ Estado de FASES</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">9 — Compilación + CI + docs finales + push + resumen   </td><td class="markdownTableBodyNone">COMPLETADA (build limpio + smoke OK + docs + PR)   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md267"></a>
+<h1><a class="anchor" id="autotoc_md254"></a>
 Commits de la tarea (autor Dr1xyDev, push verificado en remoto en cada paso)</h1>
 <ol type="1">
 <li><code>1af4709</code> docs: checkpoint inicial</li>
@@ -168,13 +168,13 @@ Commits de la tarea (autor Dr1xyDev, push verificado en remoto en cada paso)</h1
 <li><code>76a15fd</code> docs: final reference and checkpoint</li>
 <li>(este) docs: record PR #17 and the green CI run on the head commit</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md268"></a>
+<h1><a class="anchor" id="autotoc_md255"></a>
 Estado de compilación / smoke</h1>
 <ul>
 <li>Build completo limpio tras cada cambio de headers (<code>build_local.sh</code>): OK (3 reconstrucciones).</li>
 <li>Smoke del binario final: arranque, pregen, SIGTERM a 12 s, "Shutdown complete", mundo guardado — limpio.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md269"></a>
+<h1><a class="anchor" id="autotoc_md256"></a>
 Tests ejecutados y resultados reales</h1>
 <ul>
 <li><code>tools/potion_move_orbs_height_check.cpp</code> (nuevo): <b>34/34 PASS</b> — constantes de era por source-scan, byte-exact del UpdateAttributesPacket contra el orden de <code>AttributeData::read</code> del cliente ([min][max][value][name], sin default en el cable), física real de reposo (ítem 0.25 sobre bloque completo: y == 64.0 EXACTO; sobre losa: y == 63.5 EXACTO).</li>
@@ -182,14 +182,14 @@ Tests ejecutados y resultados reales</h1>
 <li><code>tools/potion_effect_check.cpp</code> (PR #15): ALL PASS.</li>
 <li>Harness completo de tools/ NO ejecutado (instrucción del usuario).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md270"></a>
+<h1><a class="anchor" id="autotoc_md257"></a>
 Estado de CI y commit exacto comprobado</h1>
 <ul>
 <li>Pushes verificados con <code>git ls-remote</code> tras cada commit (punta del remoto = commit local en cada paso).</li>
 <li><b>PR #17</b> abierto: <code>fix-potion-movement-effects-xp-orbs-item-height</code> → <code>stable</code> <a href="https://github.com/CurseStoneORG/CurseStone/pull/17">https://github.com/CurseStoneORG/CurseStone/pull/17</a> (creado vía API con la autenticación ya configurada; el tool de PR del plugin fallaba de forma consistente).</li>
 <li><b>CI sobre el commit exacto <code>76a15fd</code></b>: run 46038549793 "Build CurseStone" = <b>completed success</b> (verificado por API, resolución final observada en vivo). Nota: Build.yml no se dispara por push a la rama, solo por el PR/push a stable.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md271"></a>
+<h1><a class="anchor" id="autotoc_md258"></a>
 Elementos NO VERIFICADOS</h1>
 <ul>
 <li>Todo lo visual/en vivo con cliente real (velocidad percibida, dispersión observada, elevación visual, HUD de Health Boost) — sin emulador (sin KVM/binder).</li>
@@ -198,16 +198,16 @@ Elementos NO VERIFICADOS</h1>
 <li>Jump Boost server-side para mobs: sin factor de era medido; no se inventa.</li>
 <li>Color global del splash de la botella XP (heredado de PR #16).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md272"></a>
+<h1><a class="anchor" id="autotoc_md259"></a>
 Próximo paso exacto</h1>
 <ol type="1">
 <li>Revisar y fusionar el PR (no fusionar sin revisión); verificar que CI quede verde sobre el head commit exacto.</li>
 <li>Con un entorno Android real (emulador o dispositivo 0.15.10): medir la velocidad percibida con /effect speed|slowness, lanzar una botella de experiencia y observar dispersión/salto, tirar ítems sobre suelo plano/losa/escaleras/agua y comparar la elevación con vanilla; marcar cada medición como VERIFICADO o corregir lo que difiera.</li>
 <li>Si se llega a simbolizar el color global del splash XP del binario, ajustar el punto en <code>tickExperienceBottles</code>.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md273"></a>
+<h1><a class="anchor" id="autotoc_md260"></a>
 Investigación (FASE 1-3, verificada contra el binario 0.15.10 y Genisys 0.15.0)</h1>
-<h2><a class="anchor" id="autotoc_md274"></a>
+<h2><a class="anchor" id="autotoc_md261"></a>
 A) Velocidad / Lentitud — cadena de atributos verificada eslabón por eslabón</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -228,7 +228,7 @@ A) Velocidad / Lentitud — cadena de atributos verificada eslabón por eslabón
 <td class="markdownTableBodyNone">Aplicación vanilla server-side   </td><td class="markdownTableBodyNone">RE de <code>ServerPlayer::onEffectAdded</code> @ 0x00b2c904 → <code>Mob::onEffectAdded</code> @ 0x00bf7830: marca dirty +0xcc6 y SOLO server-side llama <code>MobEffectInstance::applyEffects(Mob*)</code> → <code>MobEffect::applyEffects</code> @ 0x00ba3754 añade <b>modificadores de atributo</b> con UUID (<code>Mob::_addSpeedBonus(mce::UUID, string, float)</code> @ 0x00bf7b89 / <code>_removeSpeedBonus</code> @ 0x00bf7cc1). El servidor vanilla sincroniza el valor final vía paquete de atributos — CurseStone lo replica con el recálculo directo.   </td></tr>
 </table>
 <p><b>Conclusión A</b>: en <code>origin/stable</code> la cadena servidor→paquete→cliente está completa y coincide con la referencia en todos los puntos RE-verificables; NO se encontró defecto en la ruta del atributo del jugador local. Gaps demostrables a corregir: (1) los <b>mobs</b> afectados por splash no reciben los multiplicadores en su movimiento real (<code>MobAIManager::buildContext</code> usa <code>profile.walk_speed</code>/<code>panic_speed</code> sin consultar <code>mob_effects_</code>), (2) el atributo no se reenvía tras cambio de dimensión (hoy solo <code>sendHealthAttribute</code>), (3) falta el test byte-level del paquete. La percepción visual del jugador con cliente real queda NO VERIFICADA (sin emulador).</p>
-<h2><a class="anchor" id="autotoc_md275"></a>
+<h2><a class="anchor" id="autotoc_md262"></a>
 B) Orbes de experiencia — CAUSA RAÍZ DEMOSTRADA</h2>
 <ul>
 <li><code>World::spawnXPOrbs</code> (World.cpp:3585-3602) construye cada <code>ExperienceOrbEntity</code> <b>sin asignar vx/vy/vz</b> (quedan a 0 por el struct) y <code>addExperienceOrb</code> envía <code>AddEntityPacket</code> + <code>SetEntityMotionPacket</code> con velocidad nula. Todos los orbes aparecen en la MISMA posición con velocidad 0 → exactamente el síntoma reportado (quietos, superpuestos, acumulados).</li>
@@ -242,7 +242,7 @@ B) Orbes de experiencia — CAUSA RAÍZ DEMOSTRADA</h2>
 </li>
 <li>La escalera de valores {1,3,7,17,37,73,149,307,617,1237,2477} y el reparto por orbe ya están bien (PR #16); la física por tick (gravedad −0.04, drag 0.588/0.98, atracción delta/8×(1−len)², recogida XpTakeDelay 2 + evento 1051) ya está bien. <b>Falta únicamente la velocidad inicial por orbe.</b></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md276"></a>
+<h2><a class="anchor" id="autotoc_md263"></a>
 C) Elevación de ítems tirados — verificación sistemática</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -265,7 +265,7 @@ C) Elevación de ítems tirados — verificación sistemática</h2>
 <td class="markdownTableBodyNone">Q-drop (tirar objeto)   </td><td class="markdownTableBodyNone">Genisys 0.15.0 Player.php:3235-3237: <code>dropItem($this-&gt;add(0,1.3,0), item, getDirectionVector()×0.4, delay 40)</code>   </td><td class="markdownTableBodyNone">PlayerInventory.cpp:490: (x, y+1.3, z) con motion (0, 0.2, 0) — sin dirección del lanzador   </td><td class="markdownTableBodyNone">DIVERGENCIA de era (comportamiento)   </td></tr>
 </table>
 <p><b>Conclusión C</b>: la posición física y el paquete de CurseStone ya siguen la convención vanilla (posición cruda, sin offsets de paquete; el propio enunciado avisa de no confundir render con física). Divergencias demostradas y corregibles: flotación en agua ausente y motion del Q-drop. La apariencia visual exacta con cliente real queda NO VERIFICADA (sin emulador); el test afirmará la altura física exacta de reposo.</p>
-<h1><a class="anchor" id="autotoc_md277"></a>
+<h1><a class="anchor" id="autotoc_md264"></a>
 Inventario funcional (FASE 1)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -293,7 +293,7 @@ Inventario funcional (FASE 1)</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Ítems: agua   </td><td class="markdownTableBodyNone"><b>se hunden</b> ✗   </td><td class="markdownTableBodyNone">flotan (motionY=+0.2)   </td><td class="markdownTableBodyNone">flotan   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md278"></a>
+<h1><a class="anchor" id="autotoc_md265"></a>
 Auditoría de efectos (tabla de estado — se completa por fase)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -342,7 +342,7 @@ Auditoría de efectos (tabla de estado — se completa por fase)</h1>
 <td class="markdownTableBodyNone">Health Boost   </td><td class="markdownTableBodyNone">✓ registro   </td><td class="markdownTableBodyNone">¿+4 corazones/nivel? — verificar   </td><td class="markdownTableBodyNone">✓   </td><td class="markdownTableBodyNone">✓   </td><td class="markdownTableBodyNone">✓   </td><td class="markdownTableBodyNone">✓   </td><td class="markdownTableBodyNone">POR VERIFICAR   </td></tr>
 </table>
 <p>Notas: los "POR VERIFICAR" se resuelven leyendo el pipeline correspondiente (daño, minado, oxígeno, salto) en la FASE 5; lo que el cliente muestra solo por MobEffectPacket (visión nocturna, náusea, ceguera) es client-side por diseño de la era.</p>
-<h1><a class="anchor" id="autotoc_md279"></a>
+<h1><a class="anchor" id="autotoc_md266"></a>
 Investigación previa reutilizable (de los checkpoints de PR #15 y #16, ya en el repo)</h1>
 <ul>
 <li><code>docs/THROWABLE_POTIONS_XP_PROGRESS.md</code>: RE verificado del binario 0.15.10 — orbes (<code>ExperienceOrb::spawnOrbs</code>, escalera {1,3,7,17,37,73,149,307,617,1237,2477}, metadata 11 INT, gravedad −0.04, drag 0.98×fricción 0.588, atracción <code>motion += delta/len × c²</code> con re-adquisición 8 bloques, recogida XpTakeDelay=2 + evento 1051), botella XP (total 3..10 = 3+rand(8)), física de proyectiles (gravity 0.05, drag 0.99/0.8).</li>
@@ -350,7 +350,7 @@ Investigación previa reutilizable (de los checkpoints de PR #15 y #16, ya en el
 <li>La queja del usuario sobre orbes apunta a la FASE DE SPAWN (velocidad inicial / separación / registro en World / paquete con motion), no a la física por tick ya implementada. A verificar con el código real.</li>
 <li>La queja sobre ítems enterrados apunta a <code>EntityItemDrop</code> (altura/bounding box/offset de render o posición Y de reposo).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md280"></a>
+<h1><a class="anchor" id="autotoc_md267"></a>
 Comparación con vanilla MCPE 0.15.x (tabla inicial — se rellena por fase)</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -372,28 +372,28 @@ Comparación con vanilla MCPE 0.15.x (tabla inicial — se rellena por fase)</h1
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">Altura de ítems / bounding box   </td><td class="markdownTableBodyNone">Investigar   </td><td class="markdownTableBodyNone">Investigar   </td><td class="markdownTableBodyNone">Investigar   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md281"></a>
+<h1><a class="anchor" id="autotoc_md268"></a>
 Emulador</h1>
 <p>Ninguno viable (ver Entorno). Toda prueba con cliente real 0.15.10 queda <b>NO VERIFICADA</b>; se sustituye por análisis estático del binario + tests automatizados.</p>
-<h1><a class="anchor" id="autotoc_md282"></a>
+<h1><a class="anchor" id="autotoc_md269"></a>
 Tests ejecutados y resultados reales</h1>
 <p>(ninguno aún en esta tarea)</p>
-<h1><a class="anchor" id="autotoc_md283"></a>
+<h1><a class="anchor" id="autotoc_md270"></a>
 Estado de compilación</h1>
 <p>(pendiente; nota de rebuild limpio tras cambios de headers)</p>
-<h1><a class="anchor" id="autotoc_md284"></a>
+<h1><a class="anchor" id="autotoc_md271"></a>
 Estado de CI y commit exacto comprobado</h1>
 <p>(pendiente; verificar run sobre el commit exacto, no sobre anteriores)</p>
-<h1><a class="anchor" id="autotoc_md285"></a>
+<h1><a class="anchor" id="autotoc_md272"></a>
 Problemas encontrados</h1>
 <p>(ninguno aún)</p>
-<h1><a class="anchor" id="autotoc_md286"></a>
+<h1><a class="anchor" id="autotoc_md273"></a>
 Elementos NO VERIFICADOS</h1>
 <ul>
 <li>Todo lo visual/en vivo con cliente real (velocidad percibida, dispersión observada, elevación observada) — sin emulador.</li>
 <li>(se ampliará por fase)</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md287"></a>
+<h1><a class="anchor" id="autotoc_md274"></a>
 Próximo paso exacto</h1>
 <p>FASE 6 (orbes, fix principal): editar <code>World::spawnXPOrbs</code> (World.cpp:3585) para asignar a cada orbe <code>vx = rand01()*0.4 - 0.2; vy = rand01()*0.4; vz = rand01()*0.4 - 0.2;</code> (rand01 = generador del servidor, una tirada independiente por orbe y por eje, como el ctor vanilla 0x00be7c38); después FASE 7 ítems (rama de agua +0.2 en tickDroppedItems y motion de Q-drop = dirección × 0.4), FASE 4 mobs (multiplicadores Speed/Slowness en buildContext + reenvío del atributo tras cambio de dimensión), FASE 5 (resolver los POR VERIFICAR de la tabla), FASE 8 (tools/potion_move_orbs_height_check.cpp), FASE 9 (build limpio, CI del commit exacto, docs). </p>
 </div></div><!-- contents -->
