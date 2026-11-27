@@ -511,7 +511,8 @@ var namespacecursestone =
           [ "LOGIN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba4976d7ca80f2cb54c1c7d5c87fb0c7ef", null ],
           [ "RESPAWN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdbad122da1650c96167bd172487e86c4854", null ],
           [ "PLUGIN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdbafd87a731781e74f4c784fa78bd4835b3", null ],
-          [ "UNKNOWN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba696b031073e74bf2cb98e5ef201d4aa3", null ]
+          [ "UNKNOWN", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba696b031073e74bf2cb98e5ef201d4aa3", null ],
+          [ "HUNGER_EFFECT", "PlayerHungerChangeEvent_8h.html#a114cf02ceac4b57429897281fc617fdba49a6f6563fff5b5e542c77e303734503", null ]
         ] ]
       ] ],
       [ "world", null, [
@@ -1916,6 +1917,7 @@ var namespacecursestone =
     [ "CommandSender", "classcursestone_1_1CommandSender.html", "classcursestone_1_1CommandSender" ],
     [ "ConsoleCommandSender", "classcursestone_1_1ConsoleCommandSender.html", "classcursestone_1_1ConsoleCommandSender" ],
     [ "DeopCommand", "classcursestone_1_1DeopCommand.html", "classcursestone_1_1DeopCommand" ],
+    [ "EffectCommand", "classcursestone_1_1EffectCommand.html", "classcursestone_1_1EffectCommand" ],
     [ "GamemodeCommand", "classcursestone_1_1GamemodeCommand.html", "classcursestone_1_1GamemodeCommand" ],
     [ "GiveCommand", "classcursestone_1_1GiveCommand.html", "classcursestone_1_1GiveCommand" ],
     [ "HelpCommand", "classcursestone_1_1HelpCommand.html", "classcursestone_1_1HelpCommand" ],

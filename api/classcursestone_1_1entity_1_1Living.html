@@ -152,6 +152,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>tickEffects</b> ()</t
 <tr class="memitem:ac0c2a0b49074e4ed83df48ceca9600c0"><td class="memItemLeft" align="right" valign="top"><a id="ac0c2a0b49074e4ed83df48ceca9600c0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>tick</b> (uint64_t current_tick) override</td></tr>
 <tr class="separator:ac0c2a0b49074e4ed83df48ceca9600c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a319cd2578b48a393cd92fa77a42fa3fc"><td class="memItemLeft" align="right" valign="top"><a id="a319cd2578b48a393cd92fa77a42fa3fc"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>absorption</b> () const</td></tr>
+<tr class="separator:a319cd2578b48a393cd92fa77a42fa3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55094ce768e9618ae32ce62ed8e400a4"><td class="memItemLeft" align="right" valign="top"><a id="a55094ce768e9618ae32ce62ed8e400a4"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setAbsorption</b> (float v)</td></tr>
+<tr class="separator:a55094ce768e9618ae32ce62ed8e400a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb3d63926a91866221c478061bccb3b1"><td class="memItemLeft" align="right" valign="top"><a id="adb3d63926a91866221c478061bccb3b1"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Entity</b> (int64_t runtime_id, std::shared_ptr&lt; <a class="el" href="classcursestone_1_1world_1_1World.html">World</a> &gt; lvl)</td></tr>
 <tr class="separator:adb3d63926a91866221c478061bccb3b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,6 +216,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setOnFire</b>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr class="memitem:a39de2fbc1d9800c0dba6d8d0fbd8757d"><td class="memItemLeft" align="right" valign="top"><a id="a39de2fbc1d9800c0dba6d8d0fbd8757d"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onAbsorptionChanged</b> ()</td></tr>
+<tr class="separator:a39de2fbc1d9800c0dba6d8d0fbd8757d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0feddb01d0b6785f2580a0f6e35c071"><td class="memItemLeft" align="right" valign="top"><a id="ab0feddb01d0b6785f2580a0f6e35c071"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>onHealthChanged</b> ()</td></tr>
 <tr class="separator:ab0feddb01d0b6785f2580a0f6e35c071"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -249,6 +258,9 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>health_</b> = 20.0f<
 <tr class="memitem:a8d135268b9e0f335b8b29d11abc991e4"><td class="memItemLeft" align="right" valign="top"><a id="a8d135268b9e0f335b8b29d11abc991e4"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>max_health_</b> = 20.0f</td></tr>
 <tr class="separator:a8d135268b9e0f335b8b29d11abc991e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9a073fed92979b8af4c94322d5a564e"><td class="memItemLeft" align="right" valign="top"><a id="aa9a073fed92979b8af4c94322d5a564e"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>absorption_</b> = 0.0f</td></tr>
+<tr class="separator:aa9a073fed92979b8af4c94322d5a564e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9f73a3ece05440bc1cb92afcb69e1ca"><td class="memItemLeft" align="right" valign="top"><a id="ac9f73a3ece05440bc1cb92afcb69e1ca"></a>
 std::vector&lt; std::shared_ptr&lt; <a class="el" href="classcursestone_1_1entity_1_1Effect.html">Effect</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>effects_</b></td></tr>
 <tr class="separator:ac9f73a3ece05440bc1cb92afcb69e1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>

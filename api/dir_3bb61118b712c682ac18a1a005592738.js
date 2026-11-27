@@ -1,6 +1,7 @@
 var dir_3bb61118b712c682ac18a1a005592738 =
 [
     [ "DeopCommand.h", "DeopCommand_8h_source.html", null ],
+    [ "EffectCommand.h", "EffectCommand_8h_source.html", null ],
     [ "GamemodeCommand.h", "GamemodeCommand_8h_source.html", null ],
     [ "GiveCommand.h", "GiveCommand_8h_source.html", null ],
     [ "HelpCommand.h", "HelpCommand_8h_source.html", null ],

@@ -596,6 +596,7 @@ var annotated_dup =
       [ "CommandSender", "classcursestone_1_1CommandSender.html", "classcursestone_1_1CommandSender" ],
       [ "ConsoleCommandSender", "classcursestone_1_1ConsoleCommandSender.html", "classcursestone_1_1ConsoleCommandSender" ],
       [ "DeopCommand", "classcursestone_1_1DeopCommand.html", "classcursestone_1_1DeopCommand" ],
+      [ "EffectCommand", "classcursestone_1_1EffectCommand.html", "classcursestone_1_1EffectCommand" ],
       [ "GamemodeCommand", "classcursestone_1_1GamemodeCommand.html", "classcursestone_1_1GamemodeCommand" ],
       [ "GiveCommand", "classcursestone_1_1GiveCommand.html", "classcursestone_1_1GiveCommand" ],
       [ "HelpCommand", "classcursestone_1_1HelpCommand.html", "classcursestone_1_1HelpCommand" ],

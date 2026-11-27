@@ -1,5 +1,6 @@
 var classcursestone_1_1entity_1_1Living =
 [
+    [ "absorption", "classcursestone_1_1entity_1_1Living.html#a319cd2578b48a393cd92fa77a42fa3fc", null ],
     [ "addEffect", "classcursestone_1_1entity_1_1Living.html#ae7222436a4b7792fb045e813e42dc178", null ],
     [ "applyDamage", "classcursestone_1_1entity_1_1Living.html#a7347bb149aad5a171a74e0b94642db2d", null ],
     [ "applyEffectBehavior", "classcursestone_1_1entity_1_1Living.html#ab7efd2c533105571e7d1ea147f0ca990", null ],
@@ -16,6 +17,7 @@ var classcursestone_1_1entity_1_1Living =
     [ "health", "classcursestone_1_1entity_1_1Living.html#a7f87f6abd82e21bc59b3d2a11a9d5408", null ],
     [ "isDead", "classcursestone_1_1entity_1_1Living.html#a5f3b0f7a781c7779334da5206e3cf6d6", null ],
     [ "maxHealth", "classcursestone_1_1entity_1_1Living.html#a5cfe32efc85a4d69a60b449973574c60", null ],
+    [ "onAbsorptionChanged", "classcursestone_1_1entity_1_1Living.html#a39de2fbc1d9800c0dba6d8d0fbd8757d", null ],
     [ "onDeath", "classcursestone_1_1entity_1_1Living.html#a05e798591f7f8347b2c0bb4aac78db10", null ],
     [ "onEffectAdded", "classcursestone_1_1entity_1_1Living.html#ab8eb7696f8c4731673e455d990b80d3e", null ],
     [ "onEffectModified", "classcursestone_1_1entity_1_1Living.html#a425abb3c060e11900230269722f037e7", null ],
@@ -25,10 +27,12 @@ var classcursestone_1_1entity_1_1Living =
     [ "onSaturationEffectTick", "classcursestone_1_1entity_1_1Living.html#ab801cb8ea3b5c654dbf050c1739f4a11", null ],
     [ "removeAllEffects", "classcursestone_1_1entity_1_1Living.html#a0b043f70f6476649ed9fe42fcb0542a5", null ],
     [ "removeEffect", "classcursestone_1_1entity_1_1Living.html#a980c4d9a74b0b77c2d165cdef8ca0f6c", null ],
+    [ "setAbsorption", "classcursestone_1_1entity_1_1Living.html#a55094ce768e9618ae32ce62ed8e400a4", null ],
     [ "setHealth", "classcursestone_1_1entity_1_1Living.html#a14576e696fe6b8bb2e948585b7e7f8ab", null ],
     [ "setMaxHealth", "classcursestone_1_1entity_1_1Living.html#a172320fd23291c5968281d91dccf8f19", null ],
     [ "tick", "classcursestone_1_1entity_1_1Living.html#ac0c2a0b49074e4ed83df48ceca9600c0", null ],
     [ "tickEffects", "classcursestone_1_1entity_1_1Living.html#a4f3dc21c5a5a766ae456649a3a8dbfe4", null ],
+    [ "absorption_", "classcursestone_1_1entity_1_1Living.html#aa9a073fed92979b8af4c94322d5a564e", null ],
     [ "effects_", "classcursestone_1_1entity_1_1Living.html#ac9f73a3ece05440bc1cb92afcb69e1ca", null ],
     [ "health_", "classcursestone_1_1entity_1_1Living.html#a98cadd85f58648a81d2b416ab75eacb4", null ],
     [ "max_health_", "classcursestone_1_1entity_1_1Living.html#a8d135268b9e0f335b8b29d11abc991e4", null ]

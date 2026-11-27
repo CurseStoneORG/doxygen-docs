@@ -172,6 +172,7 @@ var hierarchy =
     [ "vgen::Color", "structvgen_1_1Color.html", null ],
     [ "cursestone::Command", "classcursestone_1_1Command.html", [
       [ "cursestone::DeopCommand", "classcursestone_1_1DeopCommand.html", null ],
+      [ "cursestone::EffectCommand", "classcursestone_1_1EffectCommand.html", null ],
       [ "cursestone::GamemodeCommand", "classcursestone_1_1GamemodeCommand.html", null ],
       [ "cursestone::GiveCommand", "classcursestone_1_1GiveCommand.html", null ],
       [ "cursestone::HelpCommand", "classcursestone_1_1HelpCommand.html", null ],
